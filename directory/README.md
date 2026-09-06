@@ -151,3 +151,12 @@ hand-written dashboard at `dashboard/index.html`) to free the name, which was
 then re-claimed from the Pro account. Site names are global across ifhost
 accounts and first-claim-wins, which is why the reclaim had to happen in the
 same breath as the delete.
+
+## Repository
+
+Canonical home: **https://github.com/shuenrui/qwen-local-run** (branch `main`,
+pushed from this box's `qwen-directory-standalone` branch). The history starts
+with this project; it contains no commits from any other repository. The
+serving and benchmarking stack this directory measures against lives in a
+local checkout of the public `MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark` repo and
+is credited where its numbers appear, but is not an upstream of this project.
