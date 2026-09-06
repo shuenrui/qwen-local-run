@@ -1,0 +1,491 @@
+[
+  {
+    "thread": "https://huggingface.co/unsloth/Qwen3.5-122B-A10B-GGUF/discussions/3",
+    "platform": "huggingface",
+    "model": "Qwen3.5-122B-A10B (unsloth GGUF, UD-Q4_K_XL)",
+    "engine": "llama-cpp",
+    "hardware": "other: 1x NVIDIA RTX 4090D 48GB + 1x RTX 3090 24GB (72GB VRAM), Xeon W5-3425, 256GB DDR5-4800",
+    "quant": "UD-Q4_K_XL (GGUF, 63.65 GiB, 4.48 BPW)",
+    "measurements": [
+      {
+        "metric": "decode_chat",
+        "value": 66.2,
+        "unit": "tok/s",
+        "context": "llama.cpp server-cuda12-b8124, ctx-size 131072, parallel=2 slots; eval time 36753.18 ms / 2433 tokens"
+      },
+      {
+        "metric": "ttft_ms",
+        "value": 1322.38,
+        "unit": "ms",
+        "context": "prompt eval of 1734 tokens (1311.27 tok/s prefill)"
+      }
+    ],
+    "quote": "prompt eval time = 1322.38 ms / 1734 tokens ( 0.76 ms per token, 1311.27 tokens per second) eval time = 36753.18 ms / 2433 tokens ( 15.11 ms per token, 66.20 tokens per second)",
+    "date": "2026-02-25",
+    "author": "SlavikF"
+  },
+  {
+    "thread": "https://huggingface.co/unsloth/Qwen3.5-122B-A10B-GGUF/discussions/3",
+    "platform": "huggingface",
+    "model": "Qwen3.5-122B-A10B (unsloth GGUF)",
+    "engine": "llama-cpp",
+    "hardware": "other: 1x RTX 4090 + 2x RTX 3090 = 72GB VRAM (author notes PCIe-lane limited)",
+    "quant": "UD-Q3_K_XL (also runs IQ4_XS at ~240k context)",
+    "measurements": [
+      {
+        "metric": "decode_chat",
+        "value": 50,
+        "unit": "tok/s",
+        "context": "llama.cpp b8157, 256k-token prompt"
+      },
+      {
+        "metric": "bench_other",
+        "value": 800,
+        "unit": "tok/s",
+        "context": "prefill on a single 256k-token prompt (worst case)"
+      },
+      {
+        "metric": "bench_other",
+        "value": 1800,
+        "unit": "tok/s",
+        "context": "prefill on a 4k-token prompt"
+      }
+    ],
+    "quote": "I get about 50 tok/s generation and 800 tok/s prefill on 256k tok prompt on llama cpp b8157. This is with 72gb vram (1x 4090 + 2x 3090). I'm curious what prefill speed others get with these qwen models. 800tok/s is worst case on a single huge prompt but on a 4k tok prompt I get about 1800tok/s prefill. I'm using UD-Q3_K_XL",
+    "date": "2026-02-26",
+    "author": "barnesea"
+  },
+  {
+    "thread": "https://forums.developer.nvidia.com/t/qwen3-5-122b-a10b-on-single-spark-up-to-51-tok-s-v2-1-patches-quick-start-benchmark/365639",
+    "platform": "forum",
+    "model": "Qwen3.5-122B-A10B (Intel/Qwen3.5-122B-A10B-int4-AutoRound)",
+    "engine": "vllm",
+    "hardware": "dgx-spark",
+    "quant": "Intel AutoRound INT4 + hybrid FP8 shared-expert dense layers",
+    "measurements": [
+      {
+        "metric": "decode_chat",
+        "value": 28.3,
+        "unit": "tok/s",
+        "context": "baseline: vLLM 0.19 + Intel AutoRound INT4 + FlashInfer, single stream, Q&A 256-token test"
+      },
+      {
+        "metric": "decode_chat",
+        "value": 38.4,
+        "unit": "tok/s",
+        "context": "hybrid INT4+FP8 + MTP-1 speculative decoding (95% acceptance), single stream, warm cache"
+      },
+      {
+        "metric": "decode_code",
+        "value": 39.1,
+        "unit": "tok/s",
+        "context": "Code 512-token generation, hybrid+MTP, run 2 warm cache"
+      },
+      {
+        "metric": "decode_chat",
+        "value": 51,
+        "unit": "tok/s",
+        "context": "v2 recipe reported in post #71 of the same thread (details not fetched; flagged)"
+      }
+    ],
+    "quote": "The short version: managed to get from 28.3 to 38.4 tok/s with no quality loss.",
+    "date": "2026-04-05",
+    "author": "Albond"
+  },
+  {
+    "thread": "https://forums.developer.nvidia.com/t/qwen3-5-122b-a10b-on-single-spark-up-to-51-tok-s-v2-1-patches-quick-start-benchmark/365639",
+    "platform": "forum",
+    "model": "Qwen3.5-122B-A10B (RedHatAI NVFP4)",
+    "engine": "vllm",
+    "hardware": "dgx-spark",
+    "quant": "NVFP4 (RedHatAI)",
+    "measurements": [
+      {
+        "metric": "decode_chat",
+        "value": 16.6,
+        "unit": "tok/s",
+        "context": "single DGX Spark, vLLM; slower than INT4 because FP4 CUTLASS kernels do not work on SM121"
+      }
+    ],
+    "quote": "NVFP4 (RedHatAI): 16.6 tok/s — slower than INT4 because FP4 CUTLASS kernels don't work on SM121 yet",
+    "date": "2026-04-05",
+    "author": "Albond"
+  },
+  {
+    "thread": "https://forums.developer.nvidia.com/t/qwen3-5-122b-a10b-on-single-spark-up-to-51-tok-s-v2-1-patches-quick-start-benchmark/365639",
+    "platform": "forum",
+    "model": "Qwen3.5-122B-A10B (Intel int4-AutoRound, unmodified)",
+    "engine": "vllm",
+    "hardware": "other: DGX Spark cluster with eugr spark-vllm-docker + Ray; exact node count/GPU config not stated in the comment",
+    "quant": "Intel AutoRound INT4",
+    "measurements": [
+      {
+        "metric": "decode_agg",
+        "value": 56,
+        "unit": "tok/s",
+        "context": "'up to 56t/s in agt from the logs' via Open WebUI, MTP acceptance rate 85%-100%; concurrency not stated"
+      }
+    ],
+    "quote": "No problem with Ray using the unmodified model, and up to 56t/s in agt from the logs when using OWUI, with 85%-100% acceptance rate.",
+    "date": "2026-04-05",
+    "author": "AoE"
+  },
+  {
+    "thread": "https://forums.developer.nvidia.com/t/does-qwen3-5-35b-a3b-on-gb10-leave-a-lot-of-performance-on-the-table/362200",
+    "platform": "forum",
+    "model": "Intel/Qwen3.5-35B-A3B-int4-AutoRound",
+    "engine": "vllm",
+    "hardware": "dgx-spark",
+    "quant": "INT4 AutoRound, FP8 KV cache, prefix caching on, gpu_memory_utilization 0.8, max_num_seqs 10",
+    "measurements": [
+      {
+        "metric": "decode_agg",
+        "value": 60.87,
+        "unit": "tok/s",
+        "context": "output token throughput at 5x concurrency, 100 prompts, 42k input tokens each (37k shared prefix + 5k suffix), 325 output tokens"
+      },
+      {
+        "metric": "ttft_ms",
+        "value": 15715.12,
+        "unit": "ms",
+        "context": "mean TTFT at 5x concurrency with prefix caching enabled (median 12491.23 ms)"
+      },
+      {
+        "metric": "decode_agg",
+        "value": 66.27,
+        "unit": "tok/s",
+        "context": "output token throughput at 10x concurrency, same prompt set; mean TTFT 27935.46 ms"
+      },
+      {
+        "metric": "bench_other",
+        "value": 82.32,
+        "unit": "%",
+        "context": "GPQA Diamond, 198 questions x 5 repeats = 990 eval calls, 9,131,329 total tokens in 11148.7 s wall time"
+      }
+    ],
+    "quote": "5x concurrency ... Output token throughput (tok/s): 60.87 ... Mean TTFT (ms): 15715.12 ... Median TPOT (ms): 32.77 | 10x concurrency (same # of prompts) ... Output token throughput (tok/s): 66.27 ... Mean TTFT (ms): 27935.46 | score (all repeats): 0.8232 (82.32%)",
+    "date": "2026-03-02",
+    "author": "trystan1"
+  },
+  {
+    "thread": "https://forums.developer.nvidia.com/t/does-qwen3-5-35b-a3b-on-gb10-leave-a-lot-of-performance-on-the-table/362200",
+    "platform": "forum",
+    "model": "Qwen/Qwen3.5-35B-A3B (original BF16 weights)",
+    "engine": "vllm",
+    "hardware": "dgx-spark",
+    "quant": "BF16 weights with vLLM runtime MXFP4 (Marlin backend) for MoE experts + FP8 KV cache",
+    "measurements": [
+      {
+        "metric": "decode_per_stream",
+        "value": 69.45,
+        "unit": "tok/s",
+        "context": "1 concurrent request, 1024 input / 128 output tokens, DGX Spark x Ray 2-node cluster"
+      },
+      {
+        "metric": "ttft_ms",
+        "value": 167.71,
+        "unit": "ms",
+        "context": "mean TTFT at 1 concurrent request"
+      },
+      {
+        "metric": "decode_agg",
+        "value": 253.53,
+        "unit": "tok/s",
+        "context": "10 concurrent requests (mean TTFT 935.12 ms)"
+      },
+      {
+        "metric": "decode_agg",
+        "value": 339.5,
+        "unit": "tok/s",
+        "context": "100 concurrent requests (mean TTFT 17137.53 ms)"
+      }
+    ],
+    "quote": "The results below are from running Qwen/Qwen3.5-35B-A3B on my custom vllm build based on vllm nightly 0.16.1rc1.dev174+g5dfc5abe9.cu130, using DGX Spark × Ray 2-node cluster. 1 concurrent request: 69.45 tok/s ... 10 concurrent requests: 253.53 tok/s ... 100 concurrent requests: 339.50 tok/s",
+    "date": "2026-03-06",
+    "author": "amasawa_seiji"
+  },
+  {
+    "thread": "https://forums.developer.nvidia.com/t/does-qwen3-5-35b-a3b-on-gb10-leave-a-lot-of-performance-on-the-table/362200",
+    "platform": "forum",
+    "model": "Qwen3.5-35B-A3B",
+    "engine": "llama-cpp",
+    "hardware": "other: not stated in the post (thread is the NVIDIA DGX Spark / GB10 forum, so GB10 is implied but unconfirmed)",
+    "quant": "MXFP4 (Q4 mentioned as alternative)",
+    "measurements": [
+      {
+        "metric": "decode_chat",
+        "value": 57,
+        "unit": "tok/s",
+        "context": "'~57 TPS (256k)' = 256k context; concurrency and exact fixture not stated"
+      }
+    ],
+    "quote": "Guys, why are you all spinning up these obscure inference stacks when plain llama.cpp (no rituals required) gives me ~57 TPS (256k)?",
+    "date": "2026-03-04",
+    "author": "parad8x010"
+  },
+  {
+    "thread": "https://forums.developer.nvidia.com/t/does-qwen3-5-35b-a3b-on-gb10-leave-a-lot-of-performance-on-the-table/362200",
+    "platform": "forum",
+    "model": "Qwen/Qwen3.5-35B-A3B",
+    "engine": "vllm",
+    "hardware": "dgx-spark",
+    "quant": "not stated (BF16 weights, --gpu-memory-utilization 0.8, qwen3_next_mtp num_speculative_tokens=2)",
+    "measurements": [
+      {
+        "metric": "decode_agg",
+        "value": 431.42,
+        "unit": "tok/s",
+        "context": "DGX Spark, vllm bench serve, 1000 requests, max concurrency 100, 128k input / 128k output tokens, MTP acceptance rate 70.24% (source: vllm-project/vllm issue #35625, quoted by raphael.amorim in this thread)"
+      },
+      {
+        "metric": "ttft_ms",
+        "value": 2242.31,
+        "unit": "ms",
+        "context": "mean TTFT on DGX Spark at concurrency 100; median 1550.75 ms, P99 10033.63 ms; median TPOT 194.25 ms"
+      },
+      {
+        "metric": "decode_agg",
+        "value": 3341.89,
+        "unit": "tok/s",
+        "context": "same benchmark on 2x RTX PRO 6000 Blackwell (x86 Threadripper 9960X), mean TTFT 611.98 ms, median TPOT 22.93 ms"
+      }
+    ],
+    "quote": "DGX Spark: ============ Serving Benchmark Result ============ ... Output token throughput (tok/s): 431.42 ... Mean TTFT (ms): 2242.31 Median TTFT (ms): 1550.75 P99 TTFT (ms): 10033.63",
+    "date": "2026-03-02",
+    "author": "shahizat (quoted by raphael.amorim)"
+  },
+  {
+    "thread": "https://forums.developer.nvidia.com/t/whats-the-best-speed-we-can-get-with-qwen-3-6-27b-without-quantizing/367561",
+    "platform": "forum",
+    "model": "Qwen/Qwen3.6-27B-FP8",
+    "engine": "vllm",
+    "hardware": "dgx-spark",
+    "quant": "FP8 model weights, unquantized KV cache",
+    "measurements": [
+      {
+        "metric": "decode_code",
+        "value": 7.8,
+        "unit": "tok/s",
+        "context": "baseline without MTP, 'write me a commented quicksort function in Python', max-model-len 32000, max-num-seqs 4, gpu-memory-utilization 0.4, prefix caching on"
+      },
+      {
+        "metric": "decode_essay",
+        "value": 7.8,
+        "unit": "tok/s",
+        "context": "baseline without MTP, '2-page essay on phone addiction'"
+      },
+      {
+        "metric": "decode_code",
+        "value": 14.5,
+        "unit": "tok/s",
+        "context": "with --speculative-config method=mtp num_speculative_tokens=3 (quicksort prompt)"
+      },
+      {
+        "metric": "decode_essay",
+        "value": 15.8,
+        "unit": "tok/s",
+        "context": "with MTP num_speculative_tokens=3 (essay prompt); 15.2 tok/s average, 1.94x over baseline"
+      }
+    ],
+    "quote": "Baseline (no MTP) | 7.8 | 7.8 | 7.8 | 1.00x ... num_speculative_tokens=3 | 14.5 | 15.8 | 15.2 | 1.94x ← best",
+    "date": "2026-04-23",
+    "author": "starkrun"
+  },
+  {
+    "thread": "https://forums.developer.nvidia.com/t/whats-the-best-speed-we-can-get-with-qwen-3-6-27b-without-quantizing/367561",
+    "platform": "forum",
+    "model": "Qwen3.6-27B (FP8, discussed) / Qwen3.6-35B-A3B UD-Q4_K_M (eval cited)",
+    "engine": "other",
+    "hardware": "dgx-spark",
+    "quant": "UD-Q4_K_M for the cited TerminalBench run",
+    "measurements": [
+      {
+        "metric": "bench_code",
+        "value": 40,
+        "unit": "%",
+        "context": "TerminalBench score for Qwen3.6-35B-A3B UD-Q4_K_M under the 'little-coder' harness, compared to Sonnet 4.5 in Claude Code"
+      },
+      {
+        "metric": "bench_code",
+        "value": 45,
+        "unit": "%",
+        "context": "Aider Polyglot for Qwen3.5 9B with the same small-model harness (19% without it)"
+      }
+    ],
+    "quote": "With Qwen3.6-35B-A3B UD-Q4_K_M on TerminalBench, he got 40%, which is the score Sonnet 4.5 got when used with Claude Code, which is the most likely use-case for developers doing agentic tasks.",
+    "date": "2026-04-23",
+    "author": "starkrun"
+  },
+  {
+    "thread": "https://forums.developer.nvidia.com/t/whats-the-best-speed-we-can-get-with-qwen-3-6-27b-without-quantizing/367561",
+    "platform": "forum",
+    "model": "Qwen3.6-27B (dense) vs Qwen3.6-35B-A3B (MoE)",
+    "engine": "other",
+    "hardware": "dgx-spark",
+    "quant": "BF16 dense Qwen3.6 compared against MoE quants; MTP=2 on all runs",
+    "measurements": [
+      {
+        "metric": "quality_index",
+        "value": 1,
+        "unit": "score",
+        "context": "qualitative AgentBench finding, not a numeric score: the dense bf16 Qwen3.6 was barely slower than the MoE while scoring better; numbers are in an image in the post (flagged: values not extractable as text)"
+      }
+    ],
+    "quote": "I don't know how well it translates to real work, but I was very surprised when running AgentBench that the dense model was barely slower than the MoE for a better score, see timings here",
+    "date": "2026-04-23",
+    "author": "DannyTup"
+  },
+  {
+    "thread": "https://raw.githubusercontent.com/hasso5703/dgx-spark-qwen38/main/README.md",
+    "platform": "forum",
+    "model": "Qwen3.8-27B (RadixArk/Qwen3.8-27B-NVFP4)",
+    "engine": "sglang",
+    "hardware": "dgx-spark",
+    "quant": "NVFP4 + DFlash2 speculative decoding (draft block 8), --mem-fraction-static 0.50",
+    "measurements": [
+      {
+        "metric": "decode_chat",
+        "value": 50,
+        "unit": "tok/s",
+        "context": "./bench.sh streaming decode net of TTFT, greedy median, thinking on, single DGX Spark (128GB unified)"
+      },
+      {
+        "metric": "decode_code",
+        "value": 32,
+        "unit": "tok/s",
+        "context": "frozen battery ./bench-matrix.sh, agentic coding (code, diffs, tool calls), low end of the stated 32-40 tok/s range"
+      },
+      {
+        "metric": "decode_code",
+        "value": 40,
+        "unit": "tok/s",
+        "context": "same battery, agentic coding, high end of 32-40 tok/s"
+      },
+      {
+        "metric": "decode_essay",
+        "value": 22,
+        "unit": "tok/s",
+        "context": "free-form prose EN (FR 20, DE 17) in the same battery; bench.sh free prose quoted as 17-23 tok/s"
+      },
+      {
+        "metric": "decode_agg",
+        "value": 135,
+        "unit": "tok/s",
+        "context": "8 concurrent streams aggregate (stated range 135-148 tok/s)"
+      },
+      {
+        "metric": "decode_agg",
+        "value": 258,
+        "unit": "tok/s",
+        "context": "32 concurrent streams aggregate"
+      },
+      {
+        "metric": "bench_gsm8k",
+        "value": 94.0,
+        "unit": "%",
+        "context": "GSM8K, 200 problems (188/200), same box, v1.2.1, thinking on"
+      },
+      {
+        "metric": "bench_toolcall",
+        "value": 91,
+        "unit": "score",
+        "context": "tool-eval-bench, 69 scenarios, 91/100 'Excellent'; IFEval 200 prompts 81.4% prompt-level / 87.4% instruction-level"
+      },
+      {
+        "metric": "disk_gb",
+        "value": 84,
+        "unit": "GB",
+        "context": "free disk needed for a 27B target (~39GB under $HOME + ~45GB Docker image)"
+      }
+    ],
+    "quote": "50 tok/s greedy median on ./bench.sh (code 41-47, reasoning 52-57, math peak 60), free prose 17-23 in any language, 135-148 tok/s aggregate at 8 concurrent streams, 258 at 32.",
+    "date": "2026-08-30",
+    "author": "hasso5703 (repo README; community GitHub project page, not a thread - flagged)"
+  },
+  {
+    "thread": "https://raw.githubusercontent.com/hasso5703/dgx-spark-qwen38/main/README.md",
+    "platform": "forum",
+    "model": "Qwen3.8-Flash-Next 176B hybrid MoE (RadixArk/Qwen3.8-Flash-Next-NVFP4)",
+    "engine": "sglang",
+    "hardware": "dgx-spark",
+    "quant": "NVFP4 with NEXTN/MTP speculative head, bf16 KV cache, 51B N-gram (PLE) table mmap-served from NVMe",
+    "measurements": [
+      {
+        "metric": "decode_chat",
+        "value": 34.2,
+        "unit": "tok/s",
+        "context": "decode, reasoning, single Spark, two-call wall-clock; README headline range 34-42 tok/s (up to ~42 on short-context profiles)"
+      },
+      {
+        "metric": "decode_essay",
+        "value": 20.3,
+        "unit": "tok/s",
+        "context": "decode, free prose, single Spark"
+      },
+      {
+        "metric": "decode_chat",
+        "value": 28,
+        "unit": "tok/s",
+        "context": "field report (hashd1ve) at ~100K context depth, stated as 'near 28-31 tok/s'; ~22 tok/s at 240K"
+      },
+      {
+        "metric": "bench_other",
+        "value": 18.4,
+        "unit": "s",
+        "context": "prefix caching: 30K-token conversation re-served in 18.4 s cold vs 0.5 s cached (x36); known 30K prefix + fresh question ~3 s"
+      },
+      {
+        "metric": "bench_other",
+        "value": 1500,
+        "unit": "tok/s",
+        "context": "prefill, cold, stated as ~1,500-2,000 tok/s with real QSA sparse kernels"
+      },
+      {
+        "metric": "memory_gb",
+        "value": 16.6,
+        "unit": "GB",
+        "context": "host MemAvailable (GiB) during a 120K-token prompt; 12.6 GiB at 135K, ~24 GiB idle after boot; one prompt capped at 128K tokens on a 128GB box"
+      },
+      {
+        "metric": "disk_gb",
+        "value": 230,
+        "unit": "GB",
+        "context": "free disk for the flash target (~195GB under $HOME: ~136GB checkpoint + ~48GB mmap backing file for the N-gram table, ~35GB Docker image)"
+      },
+      {
+        "metric": "quality_index",
+        "value": 9,
+        "unit": "score",
+        "context": "exact needle retrieval 9/9 at 120k prompt tokens, quality canaries 4/4, KV pool pinned at --max-total-tokens 190000; fp8 KV cache alternative measures x1.9 pool but b3_itinerary drops to 2/6 against 6/6 in bf16 and costs 9% decode / 30% prefill"
+      }
+    ],
+    "quote": "Since v1.5 the lane runs on SGLang: prefix caching works (a 30K-token conversation is re-served in 0.5 s instead of 18.4 s, x36; an agent turn with a fresh question on a known prefix lands in ~3 s), decode is 34-42 tok/s with the model's own NEXTN/MTP head, prefill ~1,500-2,000 tok/s cold, and image input stays available.",
+    "date": "2026-09-03",
+    "author": "hasso5703 (repo README; community GitHub project page, not a thread - flagged)"
+  },
+  {
+    "thread": "https://raw.githubusercontent.com/hasso5703/dgx-spark-qwen38/main/README.md",
+    "platform": "forum",
+    "model": "Qwen3.8-27B FP8 (Qwen/Qwen3.8-27B-FP8, Qwen's own release)",
+    "engine": "sglang",
+    "hardware": "dgx-spark",
+    "quant": "FP8 weights + --kv-cache-dtype fp8_e4m3",
+    "measurements": [
+      {
+        "metric": "decode_agg",
+        "value": 108,
+        "unit": "tok/s",
+        "context": "8 concurrent streams aggregate, single Spark, 1M-context unit; vs 135-148 tok/s for the NVFP4 default (author notes this is a single aggregate probe, not a full battery)"
+      },
+      {
+        "metric": "memory_gb",
+        "value": 30.9,
+        "unit": "GB",
+        "context": "FP8 weight size against 21 GB for NVFP4; KV pool 771,139 tokens on FP8 vs 863,398 on NVFP4 (~92,000 fewer)"
+      }
+    ],
+    "quote": "the weights are 30.9 GB against 21 GB for NVFP4, SGLang takes that out of the KV pool: the same 1m unit measures 863,398 tokens on NVFP4 and 771,139 on FP8, about 92,000 fewer, and decode is bandwidth bound on GB10 so it is also slower (108 tok/s aggregate at 8 streams against 135-148 for the NVFP4 default).",
+    "date": "2026-08-30",
+    "author": "hasso5703 (repo README; community GitHub project page, not a thread - flagged)"
+  }
+]

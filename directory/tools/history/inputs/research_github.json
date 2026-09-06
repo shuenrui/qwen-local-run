@@ -1,0 +1,986 @@
+[
+  {
+    "title": "Qwen3.8 on DGX Spark (GB10): SGLang + DFlash2 spec-decode stack",
+    "repo": "https://github.com/hasso5703/dgx-spark-qwen38",
+    "model": "Qwen3.8-27B (NVFP4/FP8) and Qwen3.8-Flash-Next 176B hybrid MoE (NVFP4)",
+    "engine": "sglang",
+    "hardware": "dgx-spark",
+    "config_notes": "One-command boot-persistent SGLang install with five switchable targets, pinned image digest + checkpoint revisions, systemd, OpenAI/Anthropic-compatible API on :30000 and a keepalive proxy on :30001 for agent CLIs. Hardened against the GB10 unified-memory trap: Docker caps --memory 100g plus --mem-fraction-static 0.50 (0.70 for the 1M-context mode), --disable-flashinfer-autotune for boot-to-boot determinism, --sleep-on-idle. 27B uses DFlash2 block-diffusion speculative decoding (draft block 8); Flash-Next 176B is served on ONE box by mmap-ing the 51B N-gram/PLE table from NVMe through the page cache (torch.from_file + madvise(MADV_RANDOM), 48 GB backing file) with the model's own NEXTN/MTP head as draft, --max-running-requests 1, --max-total-tokens pinned to 190000, and a proxy prompt ceiling of 128K tokens. FP8 targets add --kv-cache-dtype fp8_e4m3; 1M mode patches YaRN (factor 4.0) into both target and draft config.json.",
+    "claimed": [
+      {
+        "metric": "decode_code",
+        "value": 43.2,
+        "unit": "tok/s",
+        "context": "bench-matrix.sh frozen battery, Qwen3.8-27B NVFP4 + DFlash2, agentic coding range 32-40 tok/s, thinking on, single stream"
+      },
+      {
+        "metric": "decode_chat",
+        "value": 50,
+        "unit": "tok/s",
+        "context": "./bench.sh greedy median for Qwen3.8-27B NVFP4 + SGLang + DFlash2 on GB10"
+      },
+      {
+        "metric": "decode_agg",
+        "value": 148,
+        "unit": "tok/s",
+        "context": "Qwen3.8-27B NVFP4, 8 concurrent streams (range 135-148)"
+      },
+      {
+        "metric": "decode_agg",
+        "value": 258,
+        "unit": "tok/s",
+        "context": "Qwen3.8-27B NVFP4, 32 concurrent streams"
+      },
+      {
+        "metric": "decode_agg",
+        "value": 108,
+        "unit": "tok/s",
+        "context": "Qwen3.8-27B FP8 (Qwen's own release) with fp8_e4m3 KV cache, 8 concurrent streams"
+      },
+      {
+        "metric": "decode_essay",
+        "value": 22,
+        "unit": "tok/s",
+        "context": "Qwen3.8-27B NVFP4 free-form prose EN (FR 20, DE 17)"
+      },
+      {
+        "metric": "decode_code",
+        "value": 34.2,
+        "unit": "tok/s",
+        "context": "Qwen3.8-Flash-Next 176B NVFP4 reasoning decode, up to ~42 on short-context profiles"
+      },
+      {
+        "metric": "decode_essay",
+        "value": 20.3,
+        "unit": "tok/s",
+        "context": "Qwen3.8-Flash-Next 176B NVFP4 free-prose decode"
+      },
+      {
+        "metric": "task_time_min",
+        "value": 18.4,
+        "unit": "s",
+        "context": "Flash-Next 30K-token conversation re-serve cold; 0.5 s cached (x36) thanks to working radix prefix cache"
+      },
+      {
+        "metric": "bench_gsm8k",
+        "value": 94.0,
+        "unit": "%",
+        "context": "GSM8K 200 problems, 188/200, v1.2.1, thinking on, parity with DSpark profile"
+      },
+      {
+        "metric": "bench_toolcall",
+        "value": 91,
+        "unit": "score",
+        "context": "tool-eval-bench, 69 scenarios, 91/100 'Excellent', reproducible across seeds"
+      },
+      {
+        "metric": "bench_other",
+        "value": 81.4,
+        "unit": "%",
+        "context": "IFEval 200 prompts, prompt-level (87.4% instruction-level)"
+      },
+      {
+        "metric": "disk_gb",
+        "value": 84,
+        "unit": "GB",
+        "context": "free disk needed for a 27B target (~39 GB $HOME checkpoints/caches + ~45 GB Docker partition)"
+      },
+      {
+        "metric": "disk_gb",
+        "value": 230,
+        "unit": "GB",
+        "context": "free disk needed for the Flash-Next target (~136 GB checkpoint + ~48 GB mmap PLE backing file + ~30 GB image)"
+      },
+      {
+        "metric": "task_time_min",
+        "value": 15,
+        "unit": "min",
+        "context": "first boot of the flash lane (weight load + 48 GB PLE backing file write); later boots ~10 min; 27B first boot ~7-9 min"
+      },
+      {
+        "metric": "memory_gb",
+        "value": 23.7,
+        "unit": "GB",
+        "context": "host MemAvailable idle after boot on the flash lane (17.2 GiB on the unlucky 249K-pool boot; 16.6 GiB during a 120K prompt, 12.6 GiB at 135K)"
+      }
+    ],
+    "source_quote": "The 27B path is the fastest configuration measured so far on GB10 (SGLang + NVFP4 + DFlash2 speculative decoding with deterministic kernels): 50 tok/s greedy median on ./bench.sh (code 41-47, reasoning 52-57, math peak 60), free prose 17-23 in any language, 135-148 tok/s aggregate at 8 concurrent streams, 258 at 32.",
+    "date": "2026-09-03"
+  },
+  {
+    "title": "Local LLM benchmark on NVIDIA GB10 (Ollama, 11 models incl. Qwen3.6 27B / 35B-A3B)",
+    "repo": "https://github.com/OscarActual/gb10-llm-benchmark",
+    "model": "qwen3.6:27b and qwen3.6:35b-a3b (Ollama default quants), plus Qwen3-Embedding 0.6B/4B/8B",
+    "engine": "ollama",
+    "hardware": "dgx-spark",
+    "config_notes": "Lenovo ThinkStation PGX (same GB10 silicon as DGX Spark), 128 GB unified, Ollama 0.24.0 with Flash Attention on and KV cache f16, driven by OLLAMA_FLASH_ATTENTION=1 OLLAMA_NUM_PARALLEL=1 OLLAMA_MAX_LOADED_MODELS=1. Stdlib-only bench.py defeats prompt caching with a unique nonce prefix per measurement, temperature=0, seed=42, num_predict 512 (2048 with --think), contexts 0.5k-256k, plus a Czech RAG embedder matrix and a needle-retrieval recheck.",
+    "claimed": [
+      {
+        "metric": "decode_chat",
+        "value": 60.2,
+        "unit": "tok/s",
+        "context": "qwen3.6:35b-a3b MoE (3B active) decode at 0.5k prompt, reasoning off - fastest of the 11 models tested"
+      },
+      {
+        "metric": "decode_chat",
+        "value": 11.5,
+        "unit": "tok/s",
+        "context": "qwen3.6:27b dense decode at 0.5k prompt, reasoning off"
+      },
+      {
+        "metric": "ttft_ms",
+        "value": 17000,
+        "unit": "ms",
+        "context": "qwen3.6:35b-a3b TTFT at 32k prompt with caching defeated (175000 ms at 128k)"
+      },
+      {
+        "metric": "ttft_ms",
+        "value": 40000,
+        "unit": "ms",
+        "context": "qwen3.6:27b TTFT at 32k prompt (175 s at 128k)"
+      },
+      {
+        "metric": "memory_gb",
+        "value": 27,
+        "unit": "GB",
+        "context": "qwen3.6:35b-a3b model footprint from ollama ps at 32k context (30 GB at 128k); qwen3.6:27b 25 GB at 32k, 32 GB at 128k"
+      },
+      {
+        "metric": "disk_gb",
+        "value": 23,
+        "unit": "GB",
+        "context": "on-disk footprint of Qwen 3.6 35B-A3B at Ollama default quant (Qwen 27B is 17 GB)"
+      },
+      {
+        "metric": "memory_gb",
+        "value": 15.4,
+        "unit": "GB",
+        "context": "Qwen3-Embedding 8B size on disk / in memory for the Czech RAG lane (4B 13.0 GB, 0.6B 6.3 GB)"
+      }
+    ],
+    "source_quote": "Active parameters decide speed, not total size. A 35B MoE (3B active) does 60 tok/s; a 128B dense model does 2.7 tok/s on the same box - a ~22x gap.",
+    "date": "2026-06-30"
+  },
+  {
+    "title": "MLX-Flash: MoE expert caching / SSD streaming on Apple Silicon",
+    "repo": "https://github.com/szibis/mlx-flash",
+    "model": "Qwen3-30B-A3B (4-bit), Qwen1.5-MoE-14B, Qwen3-8B, Qwen3.5-27B, Qwen3.5-35B-A3B, Qwen3.6-35B-A3B, Qwen3.5-397B",
+    "engine": "mlx-lm",
+    "hardware": "mac-128gb",
+    "config_notes": "Runs models larger than RAM on Apple Silicon by streaming cold MoE experts from SSD and keeping predicted-hot experts in RAM (97% routing prediction), reading macOS kernel vm_statistics64 every inference call (0.1 ms) to shrink/expand cache under pressure, madvise(MADV_FREE) page-cache control, 7-tier mixed precision (hot experts FP16/Q8, cold Q2), and shared-expert pinning for Qwen MoE. Server mode is a Rust sidecar on :8080 routing to N Python workers with session affinity (warm KV), exposing OpenAI + Ollama + MCP APIs; auto-profiling picks DFlash / LayerSkip / EAGLE-3 speculative strategy by AR speed (>50 tok/s = skip). Also StreamingLLM sinks and 4-bit quantized KV for 4x longer context.",
+    "claimed": [
+      {
+        "metric": "decode_chat",
+        "value": 82.6,
+        "unit": "tok/s",
+        "context": "Qwen3-30B-A3B 4-bit (~17 GB) on Apple M3 Max 36GB with browser + VS Code open, only 2.1 GB RAM free (memory pressure 'warning'); 3 tok/s under stock Ollama/llama.cpp swapping = 27x"
+      },
+      {
+        "metric": "decode_chat",
+        "value": 122.1,
+        "unit": "tok/s",
+        "context": "Qwen1.5-MoE-14B 4-bit (7.9 GB) on M3 Max 36GB, 6.2 GB RAM free"
+      },
+      {
+        "metric": "decode_chat",
+        "value": 53.5,
+        "unit": "tok/s",
+        "context": "Qwen3-8B dense 4-bit (4.3 GB) on M3 Max 36GB baseline"
+      },
+      {
+        "metric": "decode_chat",
+        "value": 101.0,
+        "unit": "tok/s",
+        "context": "Qwen3.6-35B-A3B-4bit (19 GB, SSM+MoE) AR on M5 Pro 64GB auto-detected profile; DFlash skipped"
+      },
+      {
+        "metric": "decode_chat",
+        "value": 100.6,
+        "unit": "tok/s",
+        "context": "Qwen3.5-35B-A3B-4bit (20 GB, SSM+MoE) AR on M5 Pro 64GB; DFlash skipped"
+      },
+      {
+        "metric": "decode_chat",
+        "value": 17.8,
+        "unit": "tok/s",
+        "context": "Qwen3.5-27B-4bit (SSM, 15 GB) AR on M5 Pro 64GB - flagged as a DFlash speculative sweet spot"
+      },
+      {
+        "metric": "decode_chat",
+        "value": 4.4,
+        "unit": "tok/s",
+        "context": "Qwen3.5-397B MoE (209 GB) on a 64GB Mac via SSD streaming; CRASH/OOM without MLX-Flash"
+      },
+      {
+        "metric": "memory_gb",
+        "value": 36,
+        "unit": "GB",
+        "context": "M3 Max unified RAM used for the 30B-A3B run with 2.1 GB left"
+      }
+    ],
+    "source_quote": "Qwen3-30B-A3B (MoE, 4-bit):       82.6 tok/s  ... 30B model, only 2.1GB RAM free",
+    "date": null
+  },
+  {
+    "title": "Qwen3.6-27B on a single RTX 4090: llama.cpp recipes and per-category quality receipts",
+    "repo": "https://github.com/outsourc-e/qwen36-4090-recipes",
+    "model": "Qwen3.6-27B-Q4_K_M with Qwen3.5-4B-Q4_K_M draft",
+    "engine": "llama-cpp",
+    "hardware": "gpu-24gb",
+    "config_notes": "Recommends mainline llama.cpp (built with -DGGML_CUDA=ON, CUDA 12.8) over ik_llama.cpp, because mainline implements SSM_CONV_TREE and can load Qwen3.5-4B (vocab 248,320, identical BPE and specials) as a true same-vocab speculative draft with no token-translation layer; ik_llama 4274 cross-vocab spec-dec hits higher peak tps but silently corrupts JSON braces, list separators and tool-call boundaries. Working configs: 8K ctx with q8 KV (C1-agg) and 32K with q4 KV on both target and draft (C1-32K-dkv, required because same-vocab spec-dec hangs >32K with q8 KV). Documented dead ends on 24 GB: z-lab/Qwen3.6-27B-DFlash under vLLM nightly (auxiliary BF16 hidden-state cache OOMs even at max_model_len=1024, max_num_seqs=1, num_speculative_tokens=4), spiritbuun DFlash-GGUF (unknown arch 'dflash-draft'), vLLM --speculative-algo NEXTN (INT4 wrecks acceptance), AutoRound INT4 + cudagraph hangs.",
+    "claimed": [
+      {
+        "metric": "decode_agg",
+        "value": 43.2,
+        "unit": "tok/s",
+        "context": "C1-agg: mainline llama.cpp, Qwen3.5-4B same-vocab draft, 8K ctx, q8 KV, mean across 6 quality categories on one RTX 4090"
+      },
+      {
+        "metric": "decode_agg",
+        "value": 67.1,
+        "unit": "tok/s",
+        "context": "C1-agg peak tps, same config"
+      },
+      {
+        "metric": "decode_agg",
+        "value": 41.6,
+        "unit": "tok/s",
+        "context": "C1-32K-dkv: 32K ctx with q4 KV on target and draft, mean (peak 61.9), 23 GB VRAM"
+      },
+      {
+        "metric": "decode_agg",
+        "value": 38.6,
+        "unit": "tok/s",
+        "context": "C2-64K, no spec-dec, q4 KV, ~21 GB VRAM (peak 41.3)"
+      },
+      {
+        "metric": "decode_agg",
+        "value": 38.2,
+        "unit": "tok/s",
+        "context": "C3-256K, no spec-dec, q4 KV, 22 GB VRAM (peak 42.1)"
+      },
+      {
+        "metric": "bench_code",
+        "value": 63,
+        "unit": "tok/s",
+        "context": "per-category split of the ik_llama.cpp cross-vocab 'speed king' A2 config (mean 61.2, peak 102.1, 18 GB VRAM)"
+      },
+      {
+        "metric": "bench_other",
+        "value": 102,
+        "unit": "tok/s",
+        "context": "A2 json category - fastest tps but FAILS the quality check (4/6 pass overall), the silent-corruption case"
+      },
+      {
+        "metric": "quality_index",
+        "value": 6,
+        "unit": "score",
+        "context": "bench-split.py 6-category quality pass (list, code, json, reason, tool, essay) for all mainline configs; A2 scores 4/6"
+      },
+      {
+        "metric": "memory_gb",
+        "value": 22,
+        "unit": "GB",
+        "context": "VRAM for the recommended C1-agg stack on a 24 GB RTX 4090 (23 GB at 32K)"
+      }
+    ],
+    "source_quote": "TL;DR: Same-vocab speculative decoding via mainline llama.cpp (not ik_llama.cpp) + Qwen3.5-4B draft = 43 tok/s mean / 67 peak with 6/6 quality pass on Q4_K_M. Cross-vocab spec-dec setups hit higher peak numbers but silently corrupt JSON and structured output.",
+    "date": "2026-04-25"
+  },
+  {
+    "title": "Qwen3.8-Flash-Next 176B on a single DGX Spark via vLLM + mmap'd n-gram table",
+    "repo": "https://github.com/blazux/qwen3.8-Flash-DGX",
+    "model": "Qwen3.8-Flash-Next (~176B: 125B main + 51B n-gram, 6B active), RadixArk NVFP4 checkpoint",
+    "engine": "vllm",
+    "hardware": "dgx-spark",
+    "config_notes": "The 122 GiB NVFP4 checkpoint cannot coexist with a usable KV cache in 128 GB unified memory, so the repo patches the official vLLM image (vllm/vllm-openai:qwen38-flash-next) to mmap the 44-48 GiB n-gram 'PLE' embedding shards from NVMe and gather the ~16 rows x 160 bytes each token needs, dropping resident weights to ~76 GiB; PREWARM=1 streams the table once at boot. It also fixes two GB10 bugs: a vLLM block_size overwrite that made every prefix-cache hit restore an all-zero Mamba state (PREFIX_CACHE=1 now default), and the non-deterministic QSA persistent_topk kernel, replaced by a compiled deterministic kernel (DET_TOPK=1) with EXACT_TOPK=1 as a slower fallback. MODE=hybrid converts the dense GDN/QSA/shared-expert side layers to blockwise fp8-e4m3 (prepare-hybrid.sh) while experts stay NVFP4. Serve knobs: GPU_MEM=0.80 (0.85 drifts to swap, 0.875 OOM-killed on a 300k prefill), MTP=2 speculative tokens, SEQS=8 (benchmarking at 1-2 flatlines aggregate tok/s on silent queueing), CTX=262144 native or 500000 with YARN=1, KV_DTYPE=fp8_e4m3 for 1.9x KV / 1M context at a quality cost, PAD_M4=1 for the blockwise-fp8 GEMM when prefix caching is off.",
+    "claimed": [
+      {
+        "metric": "decode_chat",
+        "value": 31,
+        "unit": "tok/s",
+        "context": "single-stream greedy decode on real answers, hybrid mode (NVFP4 experts + fp8 side layers), MTP=2; ~26 tok/s in plain NVFP4 mode, ~22 tok/s for llama.cpp IQ4_XS with no MTP"
+      },
+      {
+        "metric": "decode_chat",
+        "value": 32.5,
+        "unit": "tok/s",
+        "context": "kernel-level decode with DET_TOPK=1 deterministic top-k, hybrid, MTP=2, prefix caching on (same as stock non-deterministic kernel)"
+      },
+      {
+        "metric": "decode_agg",
+        "value": 266.8,
+        "unit": "tok/s",
+        "context": "48 concurrent streams, RadixArk NVFP4, 8k ctx, no speculative decoding, vLLM native PLE CPU offload (1 stream 17.1, 8 -> 87.5, 16 -> 131.6, 32 -> 212.0)"
+      },
+      {
+        "metric": "decode_per_stream",
+        "value": 5.6,
+        "unit": "tok/s",
+        "context": "per-stream at 48 concurrent (major page faults/token fall 4.4x from c=1 to c=48, so the paged table argues FOR concurrency)"
+      },
+      {
+        "metric": "ttft_ms",
+        "value": 1400,
+        "unit": "ms",
+        "context": "prefix-cache hit on a 20k-token prefix, vs ~14 s cold (x10); with 8 concurrent conversations ~80 s -> ~4-6 s"
+      },
+      {
+        "metric": "ttft_ms",
+        "value": 1190,
+        "unit": "ms",
+        "context": "TTFT at 32 concurrent streams (0.22 s at 1, 0.53 s at 8, 0.83 s at 16, 1.60 s at 48)"
+      },
+      {
+        "metric": "decode_agg",
+        "value": 2904,
+        "unit": "tok/s",
+        "context": "prefill throughput at 32k prompt with the deterministic kernel, up from 1,794 tok/s with exact torch.topk (NVFP4 mode ~2,400-2,900 tok/s vs llama.cpp IQ4_XS ~540 tok/s)"
+      },
+      {
+        "metric": "task_time_min",
+        "value": 48,
+        "unit": "s",
+        "context": "needle-in-haystack retrieval at a 92k-token prompt"
+      },
+      {
+        "metric": "memory_gb",
+        "value": 19,
+        "unit": "GB",
+        "context": "KV cache pool at GPU_MEM=0.80 with 500k YaRN + MTP: ~580k tokens in NVFP4 mode (~630k in hybrid, +8%), about 19 GB at the ~32.8 KB/token the 27B lane measures"
+      },
+      {
+        "metric": "disk_gb",
+        "value": 130,
+        "unit": "GB",
+        "context": "free disk for the checkpoint (+13 GB for the hybrid variant), NVMe strongly recommended since the table is read at runtime"
+      },
+      {
+        "metric": "task_time_min",
+        "value": 13,
+        "unit": "min",
+        "context": "boot/load time for scripts/serve.sh (~8-13 min), plus ~1 min docker build and ~10 min one-time prepare-hybrid.sh"
+      },
+      {
+        "metric": "quality_index",
+        "value": 45,
+        "unit": "score",
+        "context": "17-scenario agentic tournament x 3 repeats = 45/51, identical for NVFP4 and hybrid modes; the AutoRound int4 variant scored 44/51 at ~34 tok/s but is non-deterministic"
+      },
+      {
+        "metric": "memory_gb",
+        "value": 76,
+        "unit": "GB",
+        "context": "resident weights after mmap-ing the 48 GiB PLE table out of the unified pool (from 122 GiB)"
+      }
+    ],
+    "source_quote": "Measured on the GX10 (hybrid, MTP=2, prefix caching): **4/4 prompts stable, first-token logprobs identical to the 4th decimal**, and speed at kernel level — decode 32.5 tok/s, prefill 2,436 tok/s at 8k / 2,904 at 32k, needle 92k in 48 s — i.e. the same as the stock non-deterministic kernel.",
+    "date": "2026-09-04"
+  },
+  {
+    "title": "Qwen3.8-27B on SGLang for DGX Spark: three speculative engines, measured flag stack",
+    "repo": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
+    "model": "Qwen3.8-27B (RadixArk/Qwen3.8-27B-NVFP4-BF16-LMHead default; QUANT=nvfp4-fp4 | fp8 | bf16)",
+    "engine": "sglang",
+    "hardware": "dgx-spark",
+    "config_notes": "Opinionated start.sh / start-dspark.sh / start-dflash.sh wrappers over the cookbook-pinned lmsysorg/sglang:qwen38-27b image (and the digest-pinned dev-qwen38-27b-dflash2 tag), with three swap-in speculative modes: EAGLE/MTP 3/1/4, native DSpark block-7, and DFlash2 block-8 with the pinned z-lab/Qwen3.8-27B-DFlash2 block-diffusion drafter. Flags diverge from the SGLang cookbook where measured on-device: GDN bf16 (cookbook float32 cost -3%), mamba-radix-cache-strategy extra_buffer_lazy, --mem-fraction-static 0.90 (0.95 for MTP), chunked prefill 8192 (cookbook 2048), torch.compile + decode graphs, --num-continuous-decode-steps 2, FP8 KV e4m3, and --cpuset-cpus 5-9,15-19 pinning the container to GB10's ten 3.9 GHz Cortex-X5 cores so the scheduler/tokenizer never land on the 2.8 GHz A725s. GDN state pool sized as --max-mamba-cache-size = concurrency x 4; YaRN to 1M context works on the MTP path only (the override leaks into DSpark/DFlash2 draft configs and crashes at boot). bench/ndec.py does two-call net-decode A/B and bench/ab-image.sh interleaves sides inside one session because two boots of the same image differed 6.5% on the essay probe.",
+    "claimed": [
+      {
+        "metric": "decode_code",
+        "value": 51.5,
+        "unit": "tok/s",
+        "context": "DSpark block-7, LRUCache + small test code probe, bench/ndec.py n=5 (range 51.4-51.7); MTP EAGLE 3/1/4 is 34.5, DFlash2 on NVFP4 is 50.9"
+      },
+      {
+        "metric": "decode_essay",
+        "value": 25.4,
+        "unit": "tok/s",
+        "context": "DFlash2 long-essay probe (Babbage -> GPUs), n=5, range 25.3-25.4; DSpark 18.3, MTP 24.1"
+      },
+      {
+        "metric": "decode_code",
+        "value": 54.56,
+        "unit": "tok/s",
+        "context": "2026-09-05 interleaved A/B: DFlash2 on the official digest-pinned image vs EAGLE/MTP 24.20 tok/s on the same NVFP4-BF16-LMHead checkpoint = 2.25x"
+      },
+      {
+        "metric": "decode_essay",
+        "value": 25.61,
+        "unit": "tok/s",
+        "context": "same 2026-09-05 A/B, long essay: DFlash2 25.61 vs MTP 18.19 = 1.41x"
+      },
+      {
+        "metric": "decode_chat",
+        "value": 66.6,
+        "unit": "tok/s",
+        "context": "DFlash2 short-chat stream, temperature 1 with thinking on (31.7 at T=0 thinking off, 28.9 at T=1 thinking off); DSpark 22.0-23.2, MTP 21.0-24.6"
+      },
+      {
+        "metric": "decode_agg",
+        "value": 227.6,
+        "unit": "tok/s",
+        "context": "DFlash2 NVFP4 concurrency ladder, 16 streams, synthetic structural-decode fixture (1 stream 56.6, 2 -> 58.4, 4 -> 111.6, 8 -> 184.9)"
+      },
+      {
+        "metric": "decode_per_stream",
+        "value": 28.2,
+        "unit": "tok/s",
+        "context": "per-stream at 16 concurrent, down gracefully from 56.6 at 1 stream"
+      },
+      {
+        "metric": "ttft_ms",
+        "value": 127,
+        "unit": "ms",
+        "context": "TTFT at 1 stream on the DFlash2 concurrency ladder (202 ms at 2, 224 at 4, 280 at 8, jumping to 4.18 s at 16-way admission)"
+      },
+      {
+        "metric": "ttft_ms",
+        "value": 8200,
+        "unit": "ms",
+        "context": "TTFT on a fresh ~16K prompt warm (~13 s on first boot before Triton kernel warmup is cached)"
+      },
+      {
+        "metric": "bench_other",
+        "value": 14.1,
+        "unit": "%",
+        "context": "official digest-pinned image vs the retired self-built image on a compressed-tensors NVFP4 fine-tune, code probe 46.47 -> 53.05 tok/s (indistinguishable on the modelopt export)"
+      },
+      {
+        "metric": "disk_gb",
+        "value": 24,
+        "unit": "GB",
+        "context": "first-start checkpoint download for the default BF16-head NVFP4 export (+~2.7 GB DSpark draft or ~2.6 GB DFlash2 draft; packed-FP4 twin ~1.7 GB smaller; ~14 GB compressed image)"
+      },
+      {
+        "metric": "memory_gb",
+        "value": 81,
+        "unit": "GB",
+        "context": "measured FP8 KV pool ~2.48M tokens at ~32.8 KB/token, so two full 1M-token requests fit at once (a 1M sequence is ~33 GB)"
+      }
+    ],
+    "source_quote": "| Code — LRUCache + small test (`bench/ndec.py`, n=5 all) | **51.5 tok/s** (51.4–51.7; `c2` always 518) | **34.5 tok/s** (34.5–34.6; `c2` always 508) | **50.9 tok/s** (50.8–51.1; `c2` always 600) |",
+    "date": "2026-09-05"
+  },
+  {
+    "title": "Qwen3.8-27B NVFP4 on SGLang (DGX Spark / SM121): click-run profiles + matched evals",
+    "repo": "https://github.com/r0b0tlab/qwen38-27b-nvfp4-sm121-sglang",
+    "model": "Qwen3.8-27B NVFP4 (r0b0tlab/Qwen3.8-27B-NVFP4-MTP-sm121) with z-lab/Qwen3.8-27B-DFlash2 (K8), RadixArk/Qwen3.8-27B-DSpark (K7) or in-checkpoint EAGLE/MTP 3/1/4",
+    "engine": "sglang",
+    "hardware": "dgx-spark",
+    "config_notes": "Click-run scripts (click_run_dflash2.sh / dspark / eagle) that download checkpoints, validate the draft architecture, build a DFlash2 overlay image from the digest-pinned lmsysorg/sglang plus the seven files of sglang PR #35371 and a compat layer that runs a quantized lm_head in place via lm_head.quant_method.apply, then launch, fail-closed on /health (90 x 10 s probes) and pass a 10-check semantic gate. All profiles share FlashInfer, --kv-cache-dtype auto, --disable-prefill-cuda-graph, --reasoning-parser qwen3, --tool-call-parser qwen3_coder and 262144 context, on port 30000 with --mem-fraction-static 0.70 by default (raised to 0.73 for the core-subset campaign because a 0.70 boot drew only 234,240 KV tokens, below the 235,955 the 90% NIAH probe needs; NIAH ran at 0.85). Explicit warnings: do not use the vLLM Qwen3DSparkModel adapter, do not use unsloth/Qwen3.8-27B-NVFP4 (sglang #34895), and the canary 19 x 23 must return 437 (417 signals the FP8-KV flag defect). Includes a DFLASH_BLOCK_SIZE sweep and a matched vLLM sibling package.",
+    "claimed": [
+      {
+        "metric": "decode_chat",
+        "value": 27.88,
+        "unit": "tok/s",
+        "context": "DFlash2 draft-block sweep, block 8 (the draft's native block_size) c1 median on one GB10; block 6 25.28, block 7 25.79, block 9 26.05 (-22% at c8)"
+      },
+      {
+        "metric": "decode_agg",
+        "value": 153.9,
+        "unit": "tok/s",
+        "context": "c8 best aggregate at block 8 (block 6 158.23, block 7 157.82, block 9 123.16)"
+      },
+      {
+        "metric": "decode_chat",
+        "value": 28.38,
+        "unit": "tok/s",
+        "context": "SGLang DFlash2 dedicated c1 median (1024->256 ladder, ignore-eos, temp 0, seed 0, thinking off) vs SGLang DSpark 20.97 = +35%, EAGLE 25.62"
+      },
+      {
+        "metric": "decode_agg",
+        "value": 276.4,
+        "unit": "tok/s",
+        "context": "r0b0bench core-subset concurrency lane at C6 (C1 68.6 / C2 124.3 / C4 212.0), 512-output portable backend, think-off"
+      },
+      {
+        "metric": "decode_agg",
+        "value": 178.9,
+        "unit": "tok/s",
+        "context": "supplementary extended ladder c16 aggregate = saturation peak with max_running_requests=48 (c8 131.1, c32 158.6)"
+      },
+      {
+        "metric": "decode_chat",
+        "value": 26.02,
+        "unit": "tok/s",
+        "context": "core-subset throughput lane, decode median over 2048-output x5 runs (30.45 tok/s in the think-on-low companion row, +17%)"
+      },
+      {
+        "metric": "decode_agg",
+        "value": 22663,
+        "unit": "tok/s",
+        "context": "core-subset prefill server throughput on ~22.8k-token prompts (26,320 think-on-low)"
+      },
+      {
+        "metric": "ttft_ms",
+        "value": 214.6,
+        "unit": "ms",
+        "context": "core-subset latency lane, c1 streaming mean TTFT (216.4 ms think-on-low)"
+      },
+      {
+        "metric": "bench_gsm8k",
+        "value": 0.865,
+        "unit": "score",
+        "context": "GSM8K 0-shot flexible-extract at 200 items, think-off (0.970 in the think-on-low row)"
+      },
+      {
+        "metric": "bench_humaneval",
+        "value": 0.872,
+        "unit": "score",
+        "context": "HumanEval pass@1 over 164 items, think-off (0.9756 think-on-low)"
+      },
+      {
+        "metric": "bench_other",
+        "value": 0.82,
+        "unit": "score",
+        "context": "IFEval lightweight constraint scorer over 200 prompts (0.845 think-on-low); ARC-Easy MC 0.9625 at 400"
+      },
+      {
+        "metric": "bench_toolcall",
+        "value": 0.69,
+        "unit": "score",
+        "context": "BFCL multi_turn_base over 200 rows, think-off (0.715 think-on-low); BFCL-AST mean 0.2733 over 600"
+      },
+      {
+        "metric": "bench_other",
+        "value": 336,
+        "unit": "s",
+        "context": "NIAH full-max-context lane: exact retrieval at 65,472 / 130,944 / 235,699 prompt tokens, all PASS, 90% completed in 336 s"
+      },
+      {
+        "metric": "quality_index",
+        "value": 3.58,
+        "unit": "score",
+        "context": "SGLang mean accept-length per verify step for DFlash2 K8 (2.26 for DSpark K7; telemetry campaign mean 4.63)"
+      },
+      {
+        "metric": "disk_gb",
+        "value": 25,
+        "unit": "GB",
+        "context": "free disk prerequisite: 21 GB body + 4 GB DFlash2 draft plus Docker image space"
+      }
+    ],
+    "source_quote": "| concurrency (512-out, portable) | C1 68.6 / C2 124.3 / C4 212.0 / C6 **276.4** agg tok/s |",
+    "date": "2026-08-19"
+  },
+  {
+    "title": "vllm-mlx: continuous-batching OpenAI/Anthropic server for Apple Silicon (Qwen3 MoE)",
+    "repo": "https://github.com/waybarrios/vllm-mlx",
+    "model": "mlx-community/Qwen3-30B-A3B-4bit (plus Qwen3-8B, Qwen3-0.6B, Qwen3-VL, Qwen3-Next)",
+    "engine": "mlx-lm",
+    "hardware": "mac-128gb",
+    "config_notes": "A vLLM-style server on native MLX (mlx-lm / mlx-vlm / mlx-audio / mlx-embeddings) that adds what bare mlx-lm lacks: continuous batching, paged KV cache, trie-based prefix caching shared across requests, and an SSD-tiered KV cache (--ssd-cache-dir) for long-context agents, exposing both OpenAI /v1/* and Anthropic /v1/messages from one process. Qwen-specific recipe knobs: --reasoning-parser qwen3 to surface thinking as reasoning_content, --moe-top-k expert reduction (+7-16% on Qwen3-30B-A3B), --mtp speculative decoding for Qwen3-Next, --spec-prefill attention-based sparse prefill for TTFT, --warm-prompts to preload popular prefixes at startup (1.3-2.25x TTFT), and 19 MCP tool-call parsers including Qwen. Ships its own bench-serve harness (--workload, --repetitions, CSV/JSON/SQLite output) and model inspect/acquire/convert commands.",
+    "claimed": [
+      {
+        "metric": "decode_chat",
+        "value": 127.7,
+        "unit": "tok/s",
+        "context": "Qwen3-30B-A3B-4bit LLM decode on M4 Max 128 GB, greedy, single stream, ~18 GB memory"
+      },
+      {
+        "metric": "decode_chat",
+        "value": 417.9,
+        "unit": "tok/s",
+        "context": "Qwen3-0.6B-8bit on the same M4 Max fixture, 0.7 GB memory (Llama-3.2-3B-Instruct-4bit 205.6 tok/s, 1.8 GB)"
+      },
+      {
+        "metric": "memory_gb",
+        "value": 18,
+        "unit": "GB",
+        "context": "memory footprint of Qwen3-30B-A3B-4bit while decoding on M4 Max 128 GB"
+      },
+      {
+        "metric": "bench_other",
+        "value": 16,
+        "unit": "%",
+        "context": "upper end of the MoE expert-reduction gain from --moe-top-k on Qwen3-30B-A3B (+7-16%)"
+      },
+      {
+        "metric": "bench_other",
+        "value": 2.25,
+        "unit": "score",
+        "context": "TTFT improvement factor from --warm-prompts preloading popular prefixes at startup (1.3-2.25x)"
+      }
+    ],
+    "source_quote": "**LLM decode (M4 Max, 128 GB, greedy, single stream):** | Qwen3-30B-A3B-4bit | 127.7 | ~18 GB |",
+    "date": null
+  },
+  {
+    "title": "Qwen3.5-122B-A10B on DGX Spark: 28.3 -> 52 tok/s vLLM optimization stack",
+    "repo": "https://github.com/albond/DGX_Spark_Qwen3.5-122B-A10B-AR-INT4",
+    "model": "Qwen3.5-122B-A10B (Intel/Qwen3.5-122B-A10B-int4-AutoRound + Qwen FP8 donor); same stack on Qwen3.5-35B-A3B",
+    "engine": "vllm",
+    "hardware": "dgx-spark",
+    "config_notes": "Five independent, additive optimizations on a single GB10 (ASUS Ascent GX10, 273 GB/s LPDDR5x), all baked into ./install.sh and Dockerfile.v2: --attention-backend FLASHINFER (vLLM defaults to FLASH_ATTN on SM121), a rebuilt hybrid INT4+FP8 checkpoint where the 144 shared_expert dense tensors come from Qwen's FP8 release while routed experts stay INT4 Marlin, add-mtp-weights.py registering the 785 MTP tensors that Intel AutoRound ships in model_extra_tensors.safetensors but omits from the index (--speculative-config {\"method\":\"mtp\",\"num_speculative_tokens\":2}), and a runtime INT8 LM-head Triton GEMV patch (per-channel BF16->INT8 at first request, single kernel launch reading the 729 MB head once per batch, ~84% of memory bandwidth vs ~24% for the BF16 matmul) plus @triton.autotune and a cherry-pick of vLLM PR #38325 swapAB SM120 FP8 GEMM. Serve flags: --max-model-len 262144, --gpu-memory-utilization 0.90 (0.85 if OOM), --reasoning-parser qwen3, tool parser qwen3_xml for Qwen3.5. --enable-prefix-caching is deliberately omitted (DeltaNet hybrid attention on vLLM 0.19); an optional TurboQuant KV variant trades -22% speed for 4x KV capacity. Extensive 'graveyard' section: NVFP4 RedHatAI 16.6 tok/s, FP8 KV negligible, EAGLE-3 loses to MTP-2, SERE expert re-routing 0%, abliterated BF16 variant needs 244 GB and OOMs.",
+    "claimed": [
+      {
+        "metric": "decode_agg",
+        "value": 51.58,
+        "unit": "tok/s",
+        "context": "v2.4 cross-prompt mean of per-sub-run averages, bench_qwen35.sh 2026-05-09, n=50 prompt measurements (+-0.30), single stream"
+      },
+      {
+        "metric": "decode_code",
+        "value": 54.9,
+        "unit": "tok/s",
+        "context": "LongCode 2048 prompt peak, the most decode-bound fixture (Q&A 256 51.3, Code 512 52.8, JSON 1024 51.1, Math 64 47.8)"
+      },
+      {
+        "metric": "decode_chat",
+        "value": 28.3,
+        "unit": "tok/s",
+        "context": "baseline vLLM 0.19 + AutoRound INT4 + FlashInfer (24.0 tok/s before FlashInfer, so the backend alone is +16%)"
+      },
+      {
+        "metric": "decode_chat",
+        "value": 38.4,
+        "unit": "tok/s",
+        "context": "after hybrid INT4+FP8 (30.8) plus MTP-2 speculative decoding; v2 with the INT8 LM head reaches 51 tok/s"
+      },
+      {
+        "metric": "decode_chat",
+        "value": 112,
+        "unit": "tok/s",
+        "context": "Qwen3.5-35B-A3B with the same optimization stack (same architecture, smaller)"
+      },
+      {
+        "metric": "decode_agg",
+        "value": 39,
+        "unit": "tok/s",
+        "context": "v2-tq TurboQuant KV variant (-22% vs 51 tok/s) in exchange for 1.4M KV tokens and 5 concurrent users at 256K instead of 1"
+      },
+      {
+        "metric": "memory_gb",
+        "value": 128,
+        "unit": "GB",
+        "context": "unified LPDDR5x pool on the ASUS Ascent GX10 at 273 GB/s; the standard v2 image fits a 256K context with a 355K-token KV cache (1 concurrent user), while the TurboQuant variant reaches 1.4M KV tokens and 5 concurrent users at 256K"
+      },
+      {
+        "metric": "decode_chat",
+        "value": 16.6,
+        "unit": "tok/s",
+        "context": "NVFP4 RedHatAI checkpoint under vLLM on SM121 (-42% vs baseline: no working FP4 CUTLASS kernels, falls back to Marlin SM80 PTX); llama.cpp GGUF Q5_K 23.0, official GPTQ-Int4 15.0"
+      },
+      {
+        "metric": "task_time_min",
+        "value": 13,
+        "unit": "min",
+        "context": "first-launch load + warmup (weights ~10 min, compile/warmup ~2.5 min, graph capture ~30 s); cached re-launches 5-7 min; image build 30-60 min since vLLM has no SM121 wheels"
+      },
+      {
+        "metric": "disk_gb",
+        "value": 71,
+        "unit": "GB",
+        "context": "output size of build-hybrid-checkpoint.py (~20 min to build) from the Intel AutoRound INT4 dir + Qwen FP8 donor"
+      },
+      {
+        "metric": "decode_agg",
+        "value": 30.48,
+        "unit": "tok/s",
+        "context": "vLLM 0.27.1 stock with the plain Intel checkpoint, 1024 in / 512 out at concurrency 1 with the INT8 LM head on (28.54 off, +6.8%); TPOT 32.41 -> 30.80 ms"
+      },
+      {
+        "metric": "bench_other",
+        "value": 73.6,
+        "unit": "%",
+        "context": "MTP-2 acceptance on vLLM 0.27.1 (8532 accepted tokens over 5798 draft steps = 1.47 of 2), close to the ~80% reported on the 0.19 stack"
+      }
+    ],
+    "source_quote": "Optimizations for Qwen3.5-122B-A10B inference on a single NVIDIA DGX Spark from **28.3 to 52 tok/s** (+82%), with 256K context support, no quality degradation. Headline 52 = round of 51.6 tok/s cross-prompt average measured 2026-05-09 on v2.4 (autotune + PR #38325, both default-on); LongCode peak 54.9 tok/s.",
+    "date": "2026-05-09"
+  },
+  {
+    "title": "Qwen3.5-122B-A10B on a DGX Spark with DFlash block-diffusion speculative decode",
+    "repo": "https://github.com/Entrpi/qwen3.5-122B-A10B-on-spark",
+    "model": "Qwen3.5-122B-A10B (bleysg/Qwen3.5-122B-A10B-int4-fp8-hybrid; Intel AutoRound INT4 for dflash/base/mtp profiles) + z-lab/Qwen3.5-122B-A10B-DFlash drafter",
+    "engine": "vllm",
+    "hardware": "dgx-spark",
+    "config_notes": "One-shot curl|bash installer that pulls a prebuilt sm121 vLLM 0.23 image and a ready-to-run hybrid INT4+FP8 checkpoint, then applies five runtime patches in-place (sentinel-guarded, vLLM unmodified on disk): a scale-block KV-cache unify so the hybrid GDN+mamba target absorbs the drafter's attention spec, an align-aware resolve_kv_cache_block_sizes that uses the GCD hash block size 2240 so prefix caching coexists with DFlash, an INCConfig.maybe_update_config hook dispatching Fp8LinearMethod for shared_expert, a batched int8 w8a16 Triton GEMV lm-head that keeps the bf16 weight for the shared drafter, and an FLA sm121 99 KiB shared-memory gate lift. Defaults tuned for one user with up to 3 concurrent streams: --gpu-mem 0.82 (0.88+ over-subscribes and swaps, hard-freezing the host), --ctx 262144, --max-num-seqs 3, --max-batched-tokens 8192, --load-format fastsafetensors, --tool-call-parser qwen3_xml (hermes returns 200 with empty tool_calls), --reasoning-parser qwen3. Four profiles: dense (default, hybrid + int8 lm-head + DFlash n=12), dflash (largest KV pool), base (no spec), mtp (native head). Documents an 'amortization law': the dense levers are worth +28% at accept length 1, +10% at ~6.4 and ~0% at ~8.3 because speculative verify amortizes the always-on weight reads.",
+    "claimed": [
+      {
+        "metric": "decode_chat",
+        "value": 81,
+        "unit": "tok/s",
+        "context": "median DFlash decode on 10 real agent tool-call turns regenerated from a live agent state.db (73% tool calls, accept length 8.3), vs ~40 tok/s for the native MTP-2 head and 51.58 for albond's fully-patched MTP recipe"
+      },
+      {
+        "metric": "decode_agg",
+        "value": 200,
+        "unit": "tok/s",
+        "context": "agentic workload aggregate at 3 concurrent streams (per-stream 121.8 / 98.9 / 66.7)"
+      },
+      {
+        "metric": "decode_code",
+        "value": 54.5,
+        "unit": "tok/s",
+        "context": "code workload single stream, DFlash n=12 (accept ~5.4) vs MTP-2 40.5 and base 28.2; at 3 streams 43.0 per stream, 129 aggregate"
+      },
+      {
+        "metric": "decode_chat",
+        "value": 124.5,
+        "unit": "tok/s",
+        "context": "counting workload single stream, accept length ~11 (MTP-2 caps at 43.7 because sequential drafting limits acceptance to ~3)"
+      },
+      {
+        "metric": "decode_essay",
+        "value": 48.8,
+        "unit": "tok/s",
+        "context": "prose workload single stream (38.4 at 2 streams, 30.8 at 3, aggregate 92.5); DFlash only ties MTP-2 (33.2 vs 33.7) on low-acceptance prose"
+      },
+      {
+        "metric": "decode_agg",
+        "value": 59.0,
+        "unit": "tok/s",
+        "context": "dense profile on albond's end-to-end harness (completion tokens / total wallclock incl. prefill, 5 prompts, run 1 discarded): 53.7 for the plain dflash profile, +14% and +4% over albond's published 51.58"
+      },
+      {
+        "metric": "decode_chat",
+        "value": 36.0,
+        "unit": "tok/s",
+        "context": "dense profile base decode with both levers (+28% over the 28.2 INT4 baseline; hybrid-FP8 alone 30.4, int8 lm-head alone 32.7)"
+      },
+      {
+        "metric": "memory_gb",
+        "value": 16,
+        "unit": "GB",
+        "context": "free unified memory at READY on the default dense profile at gpu-mem 0.82 (~15 GiB under peak 3-stream load); 0.88-0.89 leaves only ~5 GiB and the host swaps"
+      },
+      {
+        "metric": "memory_gb",
+        "value": 119,
+        "unit": "GB",
+        "context": "usable unified memory of the 128 GB Spark; the GPU KV cache pool measures 426,610 tokens on the dense profile (456,664 on dflash, lifted from 376,518 by +13% at the same 0.82 headroom), i.e. 1.63x max concurrency at a full 262,144-token context"
+      },
+      {
+        "metric": "task_time_min",
+        "value": 3,
+        "unit": "min",
+        "context": "time to READY with --load-format fastsafetensors (vs ~12 min on the default loader); weight read ~32 s vs ~8 min, remaining ~2.5 min is torch.compile (~42 s) + CUDA-graph capture (~2 min)"
+      },
+      {
+        "metric": "disk_gb",
+        "value": 75,
+        "unit": "GB",
+        "context": "minimum free disk (40 GiB image + 67 GiB hybrid checkpoint + 1.6 GiB drafter); >=150 GiB with --build-hybrid"
+      }
+    ],
+    "source_quote": "On real agent tool-call turns, **DFlash decode reaches a median ~81 tok/s on GB10** — about **2× the native MTP-2 head (~40 tok/s)** on the same workload, and above albond's fully-patched MTP recipe (51.58 tok/s end-to-end), the recipe this project builds on.",
+    "date": null
+  },
+  {
+    "title": "Qwen3.5-122B-A10B NVFP4 + DFlash on one DGX Spark: stable production serve recipe",
+    "repo": "https://github.com/sojufx/Qwen3.5-122B-A10B-DFlash-DGX-Spark-Recipe",
+    "model": "unsloth/Qwen3.5-122B-A10B-NVFP4 verifier + z-lab/Qwen3.5-122B-A10B-DFlash drafter",
+    "engine": "vllm",
+    "hardware": "dgx-spark",
+    "config_notes": "Native vLLM 0.26.0 launched from a venv (not Docker) with CUTE_DSL_ARCH=sm_121a, PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True and FLASHINFER_DISABLE_VERSION_CHECK=1, deliberately conservative for stability over peak speed: --max-model-len 131072, --gpu-memory-utilization 0.75, --max-num-seqs 2, --max-num-batched-tokens 2048 (avoids giant prefill working-set spikes), --kv-cache-dtype fp8, --prefix-match-unit 16, and --speculative-config {\"method\":\"dflash\",\"num_speculative_tokens\":8}. Documents the failed 'max everything' profile (--max-model-len 250000 at gpu-memory-utilization 0.60) that left only 0.08 GiB of KV cache and refused to open the API. Parser note: Qwen3.5 emits XML tool calls, so --tool-call-parser qwen3_xml is required or agentic tool use fails silently; --reasoning-parser qwen3 with --default-chat-template-kwargs '{\"enable_thinking\":false}'. Ships systemd units, a TROUBLESHOOTING.md and a benchmarks/results.md.",
+    "claimed": [
+      {
+        "metric": "decode_chat",
+        "value": 36.0,
+        "unit": "tok/s",
+        "context": "single-stream decode, fixed 256-token benchmark at temperature 0 through the OpenAI-compatible vLLM endpoint, 'generic' prompt"
+      },
+      {
+        "metric": "decode_code",
+        "value": 27.0,
+        "unit": "tok/s",
+        "context": "code_edit prompt in the same 256-token single-stream fixture (long_context_code 20.6, agent_tool 19.7)"
+      },
+      {
+        "metric": "decode_agg",
+        "value": 34.3,
+        "unit": "tok/s",
+        "context": "agent-shaped concurrency 2 aggregate (17.2 per stream); 34.4 at concurrency 4 (8.6/8.6/17.1/18.4), 20.8 at concurrency 1"
+      },
+      {
+        "metric": "memory_gb",
+        "value": 17.83,
+        "unit": "GB",
+        "context": "available KV cache memory at the stable config = 498,866 KV tokens, 3.81x maximum concurrency for 131,072 tokens/request"
+      },
+      {
+        "metric": "memory_gb",
+        "value": 102,
+        "unit": "GB",
+        "context": "post-start unified RAM used on the 128 GB Spark, leaving ~18 GiB available"
+      }
+    ],
+    "source_quote": "Available KV cache memory: 17.83 GiB\nGPU KV cache size: 498,866 tokens\nMaximum concurrency for 131,072 tokens/request: 3.81x",
+    "date": null
+  },
+  {
+    "title": "Qwen3.8 Flash-Next: 8-slot concurrent serving on a 128 GB Mac via oMLX",
+    "repo": "https://github.com/hudsonwa/Qwen3.8-Flash-Next-oMLX-Recipe",
+    "model": "Qwen3.8-Flash-Next (125B-A6B MoE), oQ4e checkpoint",
+    "engine": "mlx-lm",
+    "hardware": "mac-128gb",
+    "config_notes": "Measured recipe for one oMLX 0.6.4 process (an MLX serving runtime, not stock mlx-lm) advertising max_concurrent_requests=8 on a 128 GB M5 Max-class MacBook Pro: 2 orchestrators sized toward 252K + 2 TDD toward 32K + 2 coders and 2 auditors toward 64K. The decisive setting is scheduler.chunked_prefill=true with prefill_priority 'context' and decode_fairness=true, plus server.burst_decode_mode 'balanced' and a memory guard (prefill_memory_guard, memory_guard_tier balanced, soft_threshold 0.85, hard_threshold 0.95) because the real budget line is the ~107.5 GB Metal working-set cap, not 128 GB RAM. Per-model settings: mtp_enabled=false (measured 60.9 tok/s solo with MTP on vs ~86 off on this box/checkpoint), max_context_window=262144, and qwen4_ple_ssd_offload=true so the n-gram table is SSD-mapped; launch with --paged-ssd-cache-dir ~/.omlx/ssd-cache. Operating rules are all measured traps: salt every repeated benchmark prompt (identical fillers hit the prefix cache and walls collapse 12.1 s -> 3.4 s), read memory with /usr/bin/footprint not RSS, stop by port because omlx serve spawns a surviving child, and never cold-fill both 252K orchestrators while the fleet is resident. Raw JSON receipts ship in results/; every mlx-serve comparison is labelled 'receipt pending re-run'.",
+    "claimed": [
+      {
+        "metric": "task_time_min",
+        "value": 483.6,
+        "unit": "s",
+        "context": "W1 dual ~252K concurrent cold prefill wall (488.4 s for the second, spread 4.73 s = true concurrency), measured prompt_tokens 240,393 each, 2026-08-31"
+      },
+      {
+        "metric": "memory_gb",
+        "value": 102,
+        "unit": "GB",
+        "context": "peak phys_footprint during dual-252K cold fill (G1 run) = the planning number against the 107.5 GB Metal cap; W1 peaked at 98 GB"
+      },
+      {
+        "metric": "memory_gb",
+        "value": 69,
+        "unit": "GB",
+        "context": "booted idle footprint with the flash oQ4e weights paged in; ~73 GB steady with all 8 HTTP slots resident after orchestrator KV auto-tiers to SSD"
+      },
+      {
+        "metric": "task_time_min",
+        "value": 8.7,
+        "unit": "s",
+        "context": "re-promoting a 252K prefix from the SSD tier (a self-managed 185.8 GB LRU) vs ~229 s for a full re-prefill on an LRU miss"
+      },
+      {
+        "metric": "decode_chat",
+        "value": 60.9,
+        "unit": "tok/s",
+        "context": "solo decode with MTP speculative decode ON for this checkpoint on this box, vs ~86 tok/s with it off - the measured reason mtp_enabled=false"
+      },
+      {
+        "metric": "task_time_min",
+        "value": 939,
+        "unit": "s",
+        "context": "27B dense 4x118K per-stream wall spread with chunked prefill OFF (304/1225/1240/1243 s FIFO staircase); with chunked ON the spread is 25.6 s and every stream TTFT ~4 s"
+      },
+      {
+        "metric": "ttft_ms",
+        "value": 660,
+        "unit": "ms",
+        "context": "worst TTFT across six worker prefills over hot orchestrators (range 0.05-0.66 s, measured prompt_tokens 30,585 TDD and 61,089 coder/auditor)"
+      },
+      {
+        "metric": "memory_gb",
+        "value": 9.25,
+        "unit": "GB",
+        "context": "KV slot rate per ~252K orchestrator slot (~1.2 GB per 32K slot, ~2.3 GB per 64K slot); static worst case with nothing tiered ~97-99 GB"
+      },
+      {
+        "metric": "task_time_min",
+        "value": 11.26,
+        "unit": "s",
+        "context": "longest observed memory-planner tick during the W1 dual fill (the pair was 11.26 s and 1.12 s; range across the box ~1-25 s)"
+      }
+    ],
+    "source_quote": "Flash-Next 2×252K with chunked on: W1 walls 483.6 / 488.4 s, spread **4.73 s**.",
+    "date": "2026-08-31"
+  },
+  {
+    "title": "qwen38-flash-next-mlx: MLX runtime and streaming quantization for Qwen3.8-Flash-Next",
+    "repo": "https://github.com/PipeNetwork/qwen38-flash-next-mlx",
+    "model": "Qwen/Qwen3.8-Flash-Next (125B-A6B hybrid Gated-DeltaNet / Qwen-Sparse-Attention MoE, model_type qwen4_exp) - published MLX 8bit / 6bit / mixed-4_8bit / 4bit builds",
+    "engine": "mlx-lm",
+    "hardware": "mac-128gb",
+    "config_notes": "The qwen4_exp architecture is carried by no released mlx-lm or mlx-vlm, so this repo ships a corrected version of ml-explore/mlx-lm PR #1788 as qwen4_exp.py (bundled as model_file in every published checkpoint, loadable through stock mlx-lm with trust_remote_code=True). The three fixes are correctness-critical, not speed: RMSNorm must be x/rms*(1+w) with w zero-initialised (the PR's x/rms*w sign-flips half the channels of every residual-stream read), the n-gram hash seed must be 1234 (the PR's seed 0 makes every bigram/trigram lookup hit an unrelated row of the 51B table), and sparse-attention prefill must mask per-query over its own visible prefix ANDed with causal (the PR leaks the global tail to all queries past 2048), plus an exact l2norm for DeltaNet q/k. Quantization is streamed shard by shard so the 360 GB bf16 release never has to sit next to its own quantized copy: routed experts (120.8B, 96.6% of the model) at --bits group 64, the 128 n-gram shards at --ngram-bits group 32 because 160 is not a multiple of 64 and unquantized the tables alone are 102 GB, everything else at --other-bits, and the MoE router, shared_expert_gate, residual write gates, DeltaNet in_proj_a/b and indexer projection kept in bfloat16; the 4B MTP head is dropped.",
+    "claimed": [
+      {
+        "metric": "quality_index",
+        "value": 4.4708,
+        "unit": "score",
+        "context": "wikitext-2 (test) perplexity of the upstream bfloat16 model, teacher-forced over 145 windows of 2048 tokens"
+      },
+      {
+        "metric": "quality_index",
+        "value": 4.5286,
+        "unit": "score",
+        "context": "perplexity of the recommended mixed-4_8bit build (106.2 GB), +0.0128 NLL/token vs bf16 [95% CI +0.0109, +0.0148], 128/145 windows worse = +1.3%"
+      },
+      {
+        "metric": "quality_index",
+        "value": 5.3914,
+        "unit": "score",
+        "context": "uniform 4-bit build (103.8 GB), +0.1872 NLL/token [95% CI +0.1778, +0.1968], 145/145 windows worse = +20.6% cost"
+      },
+      {
+        "metric": "quality_index",
+        "value": 4.4749,
+        "unit": "score",
+        "context": "8-bit build (192.2 GB), +0.0009 NLL/token [-0.0003, +0.0021] = statistically indistinguishable from bf16; 6-bit (148.0 GB) 4.4767, +0.0013"
+      },
+      {
+        "metric": "quality_index",
+        "value": 1.3,
+        "unit": "%",
+        "context": "NLL penalty of the mixed 4/8-bit build vs +20.6% for uniform 4-bit; ablation shows the hyper-connection read gates (+11.3%) and attention/DeltaNet/shared-expert projections (+9.5%) each carry about half the 4-bit loss"
+      },
+      {
+        "metric": "memory_gb",
+        "value": 106.2,
+        "unit": "GB",
+        "context": "on-disk size of the mixed-4_8bit build, the recommended one below 150 GB (8bit 192.2 GB, 6bit 148.0 GB, 4bit 103.8 GB, bf16 360.0 GB)"
+      },
+      {
+        "metric": "decode_chat",
+        "value": 24,
+        "unit": "tok/s",
+        "context": "bf16 model loaded through this runtime generating coherently, 354 GB resident (text-only runtime; the 0.4B vision tower is carried in bf16 but unused)"
+      },
+      {
+        "metric": "memory_gb",
+        "value": 102,
+        "unit": "GB",
+        "context": "size of the 51B-parameter n-gram embedding tables alone if left unquantized - the reason they get their own group-32 quantization"
+      }
+    ],
+    "source_quote": "**6-bit and 8-bit are statistically indistinguishable from bfloat16; uniform 4-bit costs +20.6% while the mixed 4/8-bit build costs +1.3% — the recommended build below 150 GB.**",
+    "date": null
+  },
+  {
+    "title": "Running Qwen3.5-35B-A3B and Qwen3-Coder-Next locally on 32-64 GB Apple Silicon MacBooks",
+    "repo": "https://github.com/petems/qwen-local-silicon-32to64gb-macbook-guide",
+    "model": "Qwen3.5-35B-A3B (35B MoE, 3B active, unsloth GGUF Q4_K_M / ollama qwen3.5:35b-a3b); also Qwen3-Coder-Next 80B MoE and Qwen2.5-Coder-32B",
+    "engine": "llama-cpp",
+    "hardware": "other: Apple Silicon MacBook with 32 GB or 64 GB unified memory (M1/M2/M3/M4)",
+    "config_notes": "Decision-tree runbook with a check-compatibility.sh probe and a RAM auto-detecting start-llama-server.sh, covering both llama-server (brew install llama.cpp, Metal by default) and the simpler Ollama path (ollama pull qwen3.5:35b-a3b, OpenAI-compatible API on :11434). The 32 GB recipe is llama-server -hf unsloth/Qwen3.5-35B-A3B-GGUF:Q4_K_M --ctx-size 32768 --n-gpu-layers 99 --no-mmap --flash-attn on --temp 1.0 --top-p 0.95 --top-k 40 --min-p 0.01 --jinja --port 8080; the 64 GB recipe swaps in Qwen3-Coder-Next Q4_K_M at --ctx-size 65536. Two non-obvious points: --ctx-size must be capped because the model's default 256K context OOMs instantly, and --no-mmap loads the model fully into RAM upfront to avoid page-fault stuttering on macOS. The aggressive Q2_K Coder-Next build deliberately drops to --n-gpu-layers 40 to prevent swap storms on first run (tune to 60-80 once stable), and if a 32 GB box swaps the guide's order is reduce ctx to 16384, then GPU layers to 30, then close apps, and avoid conversation branching because llama.cpp handles linear conversations better. Ships ready-made agent configs: .aider.model.metadata.json (registers context windows so Aider stops warning), .aider.model.settings.yml (num_ctx), opencode.jsonc with both llama.cpp and Ollama providers, setup-pi-local.sh writing ~/.pi/agent/models.json, and setup-llm-local.sh for Simon Willison's llm CLI.",
+    "claimed": [
+      {
+        "metric": "decode_chat",
+        "value": 25,
+        "unit": "tok/s",
+        "context": "expected generation speed range 15-25 tok/s on a 64 GB Mac with Qwen3-Coder-Next Q4_K_M at 64K context ('bottleneck is compute, not memory')"
+      },
+      {
+        "metric": "decode_chat",
+        "value": 25,
+        "unit": "tok/s",
+        "context": "expected generation speed range 15-25 tok/s on a 32 GB Mac with Q2_K at a 32K context window, usable for day-to-day coding but struggling on complex multi-file architectural tasks"
+      },
+      {
+        "metric": "memory_gb",
+        "value": 22,
+        "unit": "GB",
+        "context": "RAM for Qwen3.5-35B-A3B at Q4_K_M on a 32 GB Mac, which is why all 99 layers can go to the Metal GPU"
+      },
+      {
+        "metric": "memory_gb",
+        "value": 45,
+        "unit": "GB",
+        "context": "RAM needed by Qwen3-Coder-Next Q4_K_M (~38 GB weights) with a 64K context on a 64 GB Mac (Q5_K_M ~52 GB, Q6_K ~58 GB at 32K, Q2_K ~32 GB at 32K)"
+      },
+      {
+        "metric": "disk_gb",
+        "value": 50,
+        "unit": "GB",
+        "context": "free disk prerequisite range ~30-50 GB depending on quantization choice"
+      },
+      {
+        "metric": "bench_other",
+        "value": 72,
+        "unit": "%",
+        "context": "SWE-Bench Verified score quoted for the Qwen3.5 27B variant, used to argue the 35B-A3B generalist is competitive at coding"
+      }
+    ],
+    "source_quote": "**Expected performance on 64GB with Q4_K_M:** Generation speed typically in the 15–25 tokens/sec range (bottleneck is compute, not memory)",
+    "date": null
+  }
+]
