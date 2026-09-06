@@ -1,0 +1,65 @@
+{
+  "id": "qwen35-122b-a10b-qwen-gptq-int4-vllm",
+  "title": "Qwen3.5-122B-A10B official GPTQ-Int4 on vLLM (Spark)",
+  "slug_note": "Qwen's own GPTQ-Int4 export of the 122B MoE: fits one Spark, no third-party quant.",
+  "model": "qwen3-5-122b-a10b",
+  "status": "untested",
+  "variation": {
+    "license": "Apache-2.0",
+    "downloads": null,
+    "checkpoint": "Qwen/Qwen3.5-122B-A10B-GPTQ-Int4",
+    "publisher": "qwen",
+    "quant": "gptq",
+    "quant_detail": "Official GPTQ Int4 export",
+    "format": "gptq",
+    "size_gb": 78.9,
+    "url": "https://huggingface.co/Qwen/Qwen3.5-122B-A10B-GPTQ-Int4"
+  },
+  "engine": {
+    "image": null,
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "none",
+    "flags": [],
+    "id": "vllm",
+    "config": "vLLM with the GPTQ checkpoint on a DGX Spark"
+  },
+  "hardware": [
+    "dgx-spark"
+  ],
+  "requirements": {
+    "memory_gb": 66,
+    "disk_gb": 64,
+    "min_vram_gb": null,
+    "notes": "Resident estimate from the quant size plus KV headroom."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "repo": "https://huggingface.co/Qwen/Qwen3.5-122B-A10B-GPTQ-Int4",
+    "command": null,
+    "steps": [
+      "Download Qwen/Qwen3.5-122B-A10B-GPTQ-Int4",
+      "vLLM with the GPTQ checkpoint on a DGX Spark"
+    ]
+  },
+  "measurements": [],
+  "caveats": [
+    "No numbers yet; compare against the Intel AutoRound and Albond lanes before choosing."
+  ],
+  "provenance_tier": null,
+  "sources": [
+    {
+      "url": "https://huggingface.co/Qwen/Qwen3.5-122B-A10B-GPTQ-Int4",
+      "kind": "model",
+      "note": "weights / quant card"
+    }
+  ],
+  "updated": "2026-09-05"
+}

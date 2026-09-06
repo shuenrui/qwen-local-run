@@ -1,0 +1,37 @@
+{
+  "id": "qwen3-0-omni-30b-a3b",
+  "name": "Qwen3-Omni-30B-A3B-Instruct",
+  "family": "Qwen3.0",
+  "generation": "3.0",
+  "publisher": "qwen",
+  "released": "2025-09",
+  "license": "Apache-2.0",
+  "architecture": {
+    "kind": "moe",
+    "params_total_b": 35.3,
+    "params_active_b": 3,
+    "hybrid": false,
+    "anatomy": "Thinker-Talker MoE with AuT audio pretraining and multi-codebook speech output; HF safetensors counts 35.3B params across all encoders"
+  },
+  "context": {
+    "native": 32768,
+    "max": 32768,
+    "extension": null
+  },
+  "modalities": [
+    "text",
+    "image",
+    "audio",
+    "video"
+  ],
+  "output_modalities": [
+    "text",
+    "audio"
+  ],
+  "base_weight_size": {
+    "bf16_gb": 70.5
+  },
+  "url": "https://huggingface.co/Qwen/Qwen3-Omni-30B-A3B-Instruct",
+  "summary": "End-to-end omni-modal MoE: text, image, audio and video in, streaming text and speech out. Context length is not stated on the card, so it is left null here.",
+  "updated": "2026-09-06"
+}

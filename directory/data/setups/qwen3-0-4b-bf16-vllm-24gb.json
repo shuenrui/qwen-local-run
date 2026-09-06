@@ -1,0 +1,69 @@
+{
+  "id": "qwen3-0-4b-bf16-vllm-24gb",
+  "title": "Qwen3-4B BF16 on vLLM: single 24GB card",
+  "slug_note": "The 8GB BF16 reference fits a 24GB card with most of the pool left for KV.",
+  "model": "qwen3-0-4b",
+  "status": "untested",
+  "variation": {
+    "checkpoint": "Qwen/Qwen3-4B",
+    "publisher": "qwen",
+    "quant": "bf16",
+    "quant_detail": "Official BF16 reference weights",
+    "format": "safetensors",
+    "size_gb": 8.0,
+    "url": "https://huggingface.co/Qwen/Qwen3-4B",
+    "license": "Apache-2.0",
+    "downloads": null
+  },
+  "engine": {
+    "id": "vllm",
+    "config": "Stock vLLM serve at 32K; YaRN factor 4.0 for 128K",
+    "image": null,
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "none",
+    "flags": [
+      "--max-model-len 32768"
+    ]
+  },
+  "hardware": [
+    "gpu-24gb",
+    "dgx-spark"
+  ],
+  "requirements": {
+    "memory_gb": 12,
+    "disk_gb": 8,
+    "min_vram_gb": 10,
+    "notes": "8GB weights + KV; 128K YaRN context is the only thing that pressures a 24GB card here."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 32768,
+    "max_context": 131072
+  },
+  "run": {
+    "command": "vllm serve Qwen/Qwen3-4B --max-model-len 32768",
+    "repo": "https://github.com/vllm-project/vllm",
+    "profile": null,
+    "steps": [
+      "pip install vllm",
+      "vllm serve Qwen/Qwen3-4B --max-model-len 32768"
+    ]
+  },
+  "measurements": [],
+  "caveats": [
+    "No local measurement attached; size computed from the HF API."
+  ],
+  "provenance_tier": null,
+  "sources": [
+    {
+      "url": "https://huggingface.co/Qwen/Qwen3-4B",
+      "kind": "model",
+      "note": "weights and card"
+    }
+  ],
+  "updated": "2026-09-06"
+}

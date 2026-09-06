@@ -1,0 +1,108 @@
+{
+  "id": "qwen36-27b-fp8-vllm-mtp3-spark",
+  "title": "Qwen3.6-27B FP8 on vLLM: 7.8 tok/s bare, ~2x with MTP=3 on Spark",
+  "slug_note": "The dense-27B reality check on Spark: 7.8 tok/s without speculative decoding, 14.5-15.8 with MTP=3 — and the reason the directory pushes MoE on this box.",
+  "model": "qwen3-6-27b",
+  "status": "reported",
+  "variation": {
+    "license": "Apache-2.0",
+    "downloads": null,
+    "checkpoint": "Qwen/Qwen3.6-27B-FP8",
+    "publisher": "qwen",
+    "quant": "fp8",
+    "quant_detail": "FP8 weights, unquantized KV cache",
+    "format": "safetensors",
+    "size_gb": 30.9,
+    "url": "https://huggingface.co/Qwen/Qwen3.6-27B-FP8"
+  },
+  "engine": {
+    "image": null,
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "mtp",
+    "flags": [],
+    "id": "vllm",
+    "config": "--speculative-config method=mtp num_speculative_tokens=3 for the doubled rows"
+  },
+  "hardware": [
+    "dgx-spark"
+  ],
+  "requirements": {
+    "memory_gb": 32,
+    "disk_gb": 30,
+    "min_vram_gb": null,
+    "notes": "Fits easily; bandwidth, not capacity, is the wall for dense 27B."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "repo": "https://forums.developer.nvidia.com/t/whats-the-best-speed-we-can-get-with-qwen-3-6-27b-without-quantizing/367561",
+    "command": null,
+    "steps": [
+      "Serve Qwen3.6-27B-FP8 with stock vLLM on one Spark",
+      "Bench the two prompts below with and without the MTP speculative config"
+    ]
+  },
+  "measurements": [
+    {
+      "metric": "decode_code",
+      "value": 7.8,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://forums.developer.nvidia.com/t/whats-the-best-speed-we-can-get-with-qwen-3-6-27b-without-quantizing/367561",
+      "date": "2026-04-23",
+      "method": "'write me a commented quicksort function in Python', baseline without MTP"
+    },
+    {
+      "metric": "decode_essay",
+      "value": 7.8,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://forums.developer.nvidia.com/t/whats-the-best-speed-we-can-get-with-qwen-3-6-27b-without-quantizing/367561",
+      "date": "2026-04-23",
+      "method": "'2-page essay on phone addiction', baseline without MTP"
+    },
+    {
+      "metric": "decode_code",
+      "value": 14.5,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://forums.developer.nvidia.com/t/whats-the-best-speed-we-can-get-with-qwen-3-6-27b-without-quantizing/367561",
+      "date": "2026-04-23",
+      "method": "same quicksort prompt with MTP num_speculative_tokens=3"
+    },
+    {
+      "metric": "decode_essay",
+      "value": 15.8,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://forums.developer.nvidia.com/t/whats-the-best-speed-we-can-get-with-qwen-3-6-27b-without-quantizing/367561",
+      "date": "2026-04-23",
+      "method": "same essay prompt with MTP=3; 15.2 tok/s average across prompts"
+    }
+  ],
+  "caveats": [
+    "A deliberate negative result: keep it visible so 'just run the dense 27B' comes with its number attached.",
+    "The thread's qualitative AgentBench note — dense BF16 Qwen3.6 beating MoE quants on agent tasks — is a quality signal, not recorded as a metric here."
+  ],
+  "provenance_tier": "forum",
+  "sources": [
+    {
+      "url": "https://forums.developer.nvidia.com/t/whats-the-best-speed-we-can-get-with-qwen-3-6-27b-without-quantizing/367561",
+      "kind": "thread",
+      "note": "thread with the MTP comparison table"
+    },
+    {
+      "url": "https://huggingface.co/Qwen/Qwen3.6-27B-FP8",
+      "kind": "model",
+      "note": "weights"
+    }
+  ],
+  "updated": "2026-09-05"
+}

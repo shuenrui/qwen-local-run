@@ -1,0 +1,24 @@
+{
+  "id": "gpu-24gb",
+  "name": "24 GB consumer GPU (RTX 3090 / 4090 class)",
+  "vendor": "NVIDIA",
+  "chip": "GA102 / AD102",
+  "arch": "x86_64 host + discrete GPU, sm_86 / sm_89",
+  "form_factor": "discrete-gpu",
+  "memory_gb": 24,
+  "memory_usable_gb": 23,
+  "memory_type": "GDDR6X, dedicated VRAM",
+  "bandwidth_gbs": 936,
+  "bandwidth_range_gbs": [936, 1008],
+  "cpu": "host CPU varies",
+  "gpu": "24 GB VRAM, 936 GB/s (RTX 3090) to 1008 GB/s (RTX 4090)",
+  "notes": [
+    "A class entry, not one SKU: 936 GB/s is the RTX 3090 floor, 1008 GB/s the RTX 4090. Setups listed against this class were reported by builders on either card.",
+    "Capacity is the binding constraint here, not bandwidth: 24 GB VRAM against 273 GB/s on DGX Spark means small models run much faster on this card and large models do not fit at all.",
+    "Nothing above ~24 GB resident fits without CPU offload. Qwen3.8-27B needs a 4-bit quant to stay on-card; BF16 does not fit.",
+    "No unified memory, so the disk-mapped embedding-table trick used for 100B+ MoE on Spark has no equivalent path here."
+  ],
+  "measured_by_us": false,
+  "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4090/",
+  "updated": "2026-09-05"
+}

@@ -1,0 +1,112 @@
+{
+  "id": "qwen36-35b-a3b-ollama-gb10-pgx",
+  "title": "Qwen3.6-35B-A3B via Ollama on a ThinkStation PGX (GB10)",
+  "slug_note": "The zero-effort lane on GB10 silicon: Ollama's default quant does 60.2 tok/s on the 35B MoE, and 11.5 on the dense 27B — the MoE gap in one row.",
+  "model": "qwen3-6-35b-a3b",
+  "status": "reported",
+  "variation": {
+    "checkpoint": "ollama.com/library/qwen3.6:35b-a3b",
+    "publisher": "ollama",
+    "quant": "gguf-q4",
+    "quant_detail": "Ollama default Q4 quant",
+    "format": "gguf",
+    "size_gb": 23,
+    "url": "https://ollama.com/library/qwen3.6:35b-a3b",
+    "license": "Apache-2.0"
+  },
+  "engine": {
+    "image": null,
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "none",
+    "flags": [],
+    "id": "ollama",
+    "config": "Ollama 0.24.0 with Flash Attention on GB10"
+  },
+  "hardware": [
+    "thinkstation-pgx"
+  ],
+  "requirements": {
+    "memory_gb": 27,
+    "disk_gb": 23,
+    "min_vram_gb": null,
+    "notes": "ollama ps footprint at 32K context."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "repo": "https://github.com/OscarActual/gb10-llm-benchmark",
+    "command": null,
+    "steps": [
+      "ollama pull qwen3.6:35b-a3b",
+      "ollama run qwen3.6:35b-a3b"
+    ]
+  },
+  "measurements": [
+    {
+      "metric": "decode_chat",
+      "value": 60.2,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://github.com/OscarActual/gb10-llm-benchmark",
+      "date": "2026-06-30",
+      "method": "Ollama benchmark script in the repo, 0.5K prompt",
+      "note": "qwen3.6:35b-a3b MoE (3B active) decode at 0.5k prompt, reasoning off - fastest of the 11 models tested"
+    },
+    {
+      "metric": "ttft_ms",
+      "value": 17000,
+      "unit": "ms",
+      "provenance": "forum",
+      "source": "https://github.com/OscarActual/gb10-llm-benchmark",
+      "date": "2026-06-30",
+      "method": "Ollama benchmark script in the repo, 0.5K prompt",
+      "note": "qwen3.6:35b-a3b TTFT at 32k prompt with caching defeated (175000 ms at 128k)"
+    },
+    {
+      "metric": "memory_gb",
+      "value": 27,
+      "unit": "GB",
+      "provenance": "forum",
+      "source": "https://github.com/OscarActual/gb10-llm-benchmark",
+      "date": "2026-06-30",
+      "method": "Ollama benchmark script in the repo, 0.5K prompt",
+      "note": "qwen3.6:35b-a3b model footprint from ollama ps at 32k context (30 GB at 128k); qwen3.6:27b 25 GB at 32k, 32 GB at 128k"
+    },
+    {
+      "metric": "disk_gb",
+      "value": 23,
+      "unit": "GB",
+      "provenance": "forum",
+      "source": "https://github.com/OscarActual/gb10-llm-benchmark",
+      "date": "2026-06-30",
+      "method": "Ollama benchmark script in the repo, 0.5K prompt",
+      "note": "on-disk footprint of Qwen 3.6 35B-A3B at Ollama default quant (Qwen 27B is 17 GB)"
+    }
+  ],
+  "caveats": [
+    "The dense 27B on the same box does 11.5 tok/s with TTFT 40 s at 32K (175 s at 128K) — kept as context here because this card is the 35B MoE lane.",
+    "Ollama's default quant is a convenience choice, not a quality-optimised one; compare against the GGUF/MLX lanes before trusting it for quality work.",
+    "License is the upstream Qwen weights' Apache-2.0; Ollama's packaging adds no further restriction."
+  ],
+  "provenance_tier": "forum",
+  "sources": [
+    {
+      "url": "https://github.com/OscarActual/gb10-llm-benchmark",
+      "kind": "repo",
+      "note": "benchmark repo and script"
+    },
+    {
+      "url": "https://ollama.com/library/qwen3.6:35b-a3b",
+      "kind": "model",
+      "note": "model pull"
+    }
+  ],
+  "updated": "2026-09-05"
+}

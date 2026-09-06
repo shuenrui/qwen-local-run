@@ -1,0 +1,92 @@
+{
+  "id": "qwen35-397b-a17b-szibis-mlx-flash-ssd-mac64",
+  "title": "Qwen3.5-397B-A17B on mlx-flash: 4.4 tok/s via SSD expert streaming on a 64GB Mac",
+  "slug_note": "A 224GB 4-bit MoE served from a 64GB Mac by keeping hot experts in RAM and streaming cold ones from SSD: 4.4 tok/s reported.",
+  "model": "qwen3-5-397b-a17b",
+  "status": "reported",
+  "variation": {
+    "checkpoint": "mlx-community/Qwen3.5-397B-A17B-4bit",
+    "publisher": "mlx-community",
+    "quant": "mlx-4",
+    "quant_detail": "4-bit MLX; mlx-flash streams cold MoE experts from SSD and caches predicted-hot experts in RAM",
+    "format": "mlx",
+    "size_gb": 223.9,
+    "url": "https://huggingface.co/mlx-community/Qwen3.5-397B-A17B-4bit",
+    "license": "Apache-2.0",
+    "downloads": null
+  },
+  "engine": {
+    "id": "mlx-lm",
+    "config": "mlx-flash runtime: SSD expert streaming with mixed-precision expert tiers and an adaptive RAM cache driven by macOS vm_statistics64 pressure",
+    "image": null,
+    "requires_fork": true,
+    "draft_model": null,
+    "spec_decode": "none",
+    "flags": []
+  },
+  "hardware": [
+    "mac-64gb"
+  ],
+  "requirements": {
+    "memory_gb": 60,
+    "disk_gb": 224,
+    "min_vram_gb": null,
+    "notes": "Weights far exceed RAM by design; szibis quotes a ~209GB working set streamed from SSD with the hot-expert cache filling available RAM."
+  },
+  "capabilities": {
+    "vision": true,
+    "video": true,
+    "tools": true,
+    "thinking": null,
+    "long_context": 262144,
+    "max_context": 1010000
+  },
+  "run": {
+    "command": null,
+    "repo": "https://github.com/szibis/mlx-flash",
+    "profile": null,
+    "steps": [
+      "Install mlx-flash from the repo",
+      "Point it at mlx-community/Qwen3.5-397B-A17B-4bit on fast NVMe SSD storage",
+      "Serve; cold experts stream from disk while hot experts stay resident"
+    ]
+  },
+  "measurements": [
+    {
+      "metric": "decode_chat",
+      "value": 4.4,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://github.com/szibis/mlx-flash",
+      "date": null,
+      "n": null,
+      "method": "mlx-flash benchmark quoted in the repo README",
+      "note": "Qwen3.5-397B MoE (~209GB working set) on a 64GB Mac via SSD streaming; crashes/OOM without mlx-flash"
+    }
+  ],
+  "caveats": [
+    "The model exceeds RAM on every local machine listed: it only runs via SSD expert streaming (this row, at the 4.4 tok/s measured) or a multi-GPU split.",
+    "Uniform 4-bit quantization of this generation costs +20.6% NLL/token vs BF16 per PipeNetwork's Flash-Next ablation; mlx-flash's mixed precision mitigates but does not erase quant loss.",
+    "The 4.4 tok/s figure is a builder-quoted single-stream number with no further method detail."
+  ],
+  "provenance_tier": "forum",
+  "sources": [
+    {
+      "url": "https://github.com/szibis/mlx-flash",
+      "kind": "repo",
+      "note": "runtime and the 4.4 tok/s measurement"
+    },
+    {
+      "url": "https://huggingface.co/mlx-community/Qwen3.5-397B-A17B-4bit",
+      "kind": "model",
+      "note": "weights"
+    },
+    {
+      "url": "https://github.com/PipeNetwork/qwen38-flash-next-mlx",
+      "kind": "repo",
+      "note": "uniform 4-bit +20.6% NLL ablation"
+    }
+  ],
+  "updated": "2026-09-06",
+  "builder": "szibis"
+}

@@ -1,0 +1,22 @@
+{
+  "id": "thinkstation-pgx",
+  "name": "Lenovo ThinkStation PGX (GB10, 128 GB unified)",
+  "vendor": "Lenovo",
+  "chip": "GB10 Grace Blackwell",
+  "arch": "aarch64 / SM121",
+  "form_factor": "desktop",
+  "memory_gb": 128,
+  "memory_usable_gb": 119,
+  "memory_type": "unified LPDDR5x",
+  "bandwidth_gbs": 273,
+  "cpu": "10x Cortex-X5 + 10x Cortex-A725 (big.LITTLE), same as DGX Spark",
+  "gpu": "Blackwell, SM121, same as DGX Spark",
+  "notes": [
+    "Same GB10 silicon, memory and bandwidth as the NVIDIA DGX Spark in a Lenovo chassis; CUDA behaviour matches, so engine recipes transfer.",
+    "Kept as its own class because reported numbers name this box, and OEM firmware/power limits can differ from NVIDIA's reference board.",
+    "Ollama and containerised SGLang/vLLM paths behave as on Spark; treat Spark numbers as comparable but not identical."
+  ],
+  "measured_by_us": false,
+  "url": "https://github.com/OscarActual/gb10-llm-benchmark",
+  "updated": "2026-09-05"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "qwen3-0-235b-a22b",
+  "name": "Qwen3-235B-A22B",
+  "family": "Qwen3.0",
+  "generation": "3.0",
+  "publisher": "qwen",
+  "released": "2025-04",
+  "license": "Apache-2.0",
+  "architecture": {
+    "kind": "moe",
+    "params_total_b": 235,
+    "params_active_b": 22,
+    "hybrid": false,
+    "anatomy": "Card: '235B in total and 22B activated'"
+  },
+  "context": {
+    "native": 32768,
+    "max": 131072,
+    "extension": "YaRN factor 4.0"
+  },
+  "modalities": [
+    "text"
+  ],
+  "base_weight_size": {
+    "bf16_gb": 470.2
+  },
+  "url": "https://huggingface.co/Qwen/Qwen3-235B-A22B",
+  "summary": "Wave-1 flagship MoE. At 470GB BF16 it exceeds the RAM of every machine in this directory; local lanes are heavy quants, SSD expert streaming, or multi-GPU splits.",
+  "updated": "2026-09-06"
+}

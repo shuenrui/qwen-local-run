@@ -1,0 +1,158 @@
+{
+  "id": "qwen38-27b-hasso-nvfp4-dflash2-sglang-spark",
+  "title": "Qwen3.8-27B NVFP4 — hasso5703 one-command SGLang + DFlash2 block-8",
+  "slug_note": "An independent builder's boot-persistent DFlash2 lane at half memory fraction: 50 tok/s chat, 135-258 aggregate, with quality canaries attached.",
+  "model": "qwen3-8-27b",
+  "status": "reported",
+  "variation": {
+    "license": "Apache-2.0",
+    "downloads": null,
+    "checkpoint": "RadixArk/Qwen3.8-27B-NVFP4",
+    "publisher": "radixark",
+    "quant": "nvfp4",
+    "quant_detail": "W4A4 body; builder pairs it with the z-lab DFlash2 draft",
+    "format": "safetensors",
+    "size_gb": 21.9,
+    "url": "https://huggingface.co/RadixArk/Qwen3.8-27B-NVFP4"
+  },
+  "engine": {
+    "image": null,
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "dflash2",
+    "flags": [
+      "--mem-fraction-static 0.50"
+    ],
+    "id": "sglang",
+    "config": "DFlash2 draft block 8, --mem-fraction-static 0.50, boot-persistent one-command install"
+  },
+  "hardware": [
+    "dgx-spark"
+  ],
+  "requirements": {
+    "memory_gb": 30,
+    "disk_gb": 84,
+    "min_vram_gb": null,
+    "notes": "Builder states ~39 GB under $HOME plus ~45 GB Docker image for the 27B target."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "repo": "https://github.com/hasso5703/dgx-spark-qwen38",
+    "command": null,
+    "steps": [
+      "Follow the repo's one-command boot-persistent SGLang install",
+      "Select the 27B NVFP4 + DFlash2 target",
+      "./bench.sh to reproduce the decode numbers"
+    ]
+  },
+  "measurements": [
+    {
+      "metric": "decode_chat",
+      "value": 50,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://raw.githubusercontent.com/hasso5703/dgx-spark-qwen38/main/README.md",
+      "date": "2026-08-30",
+      "method": "builder's ./bench.sh streaming decode net of TTFT, greedy median; frozen battery ./bench-matrix.sh",
+      "note": "Thinking on, single stream; code 41-47, reasoning 52-57, math peak 60."
+    },
+    {
+      "metric": "decode_code",
+      "value": 40,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://raw.githubusercontent.com/hasso5703/dgx-spark-qwen38/main/README.md",
+      "date": "2026-08-30",
+      "method": "builder's ./bench.sh streaming decode net of TTFT, greedy median; frozen battery ./bench-matrix.sh",
+      "note": "Agentic coding battery (code, diffs, tool calls); range 32-40.",
+      "range": [
+        32,
+        40
+      ]
+    },
+    {
+      "metric": "decode_essay",
+      "value": 22,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://raw.githubusercontent.com/hasso5703/dgx-spark-qwen38/main/README.md",
+      "date": "2026-08-30",
+      "method": "builder's ./bench.sh streaming decode net of TTFT, greedy median; frozen battery ./bench-matrix.sh",
+      "note": "Free-form prose EN; FR 20, DE 17 in the same battery.",
+      "range": [
+        17,
+        23
+      ]
+    },
+    {
+      "metric": "decode_agg",
+      "value": 135,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://raw.githubusercontent.com/hasso5703/dgx-spark-qwen38/main/README.md",
+      "date": "2026-08-30",
+      "method": "builder's ./bench.sh streaming decode net of TTFT, greedy median; frozen battery ./bench-matrix.sh",
+      "note": "8 concurrent streams aggregate; stated range 135-148.",
+      "range": [
+        135,
+        148
+      ]
+    },
+    {
+      "metric": "decode_agg",
+      "value": 258,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://raw.githubusercontent.com/hasso5703/dgx-spark-qwen38/main/README.md",
+      "date": "2026-08-30",
+      "method": "builder's ./bench.sh streaming decode net of TTFT, greedy median; frozen battery ./bench-matrix.sh",
+      "note": "32 concurrent streams aggregate."
+    },
+    {
+      "metric": "bench_gsm8k",
+      "value": 94.0,
+      "unit": "%",
+      "provenance": "forum",
+      "source": "https://raw.githubusercontent.com/hasso5703/dgx-spark-qwen38/main/README.md",
+      "date": "2026-08-30",
+      "method": "GSM8K, 200 problems (188/200), same box, thinking on",
+      "note": "Quality canary, not a speed number."
+    },
+    {
+      "metric": "bench_toolcall",
+      "value": 91,
+      "unit": "score",
+      "provenance": "forum",
+      "source": "https://raw.githubusercontent.com/hasso5703/dgx-spark-qwen38/main/README.md",
+      "date": "2026-08-30",
+      "method": "tool-eval-bench, 69 scenarios, 91/100 'Excellent'; IFEval 200 prompts",
+      "note": "Quality canary, not a speed number."
+    }
+  ],
+  "caveats": [
+    "Single-builder numbers on a configuration we have not run: mem-fraction 0.50 versus our 0.90/16 profile, so his aggregates are not directly comparable to our box rows.",
+    "The quality canaries (GSM8K 94%, tool-eval 91) are his harness, not a shared benchmark; compare them only against his other targets."
+  ],
+  "provenance_tier": "forum",
+  "sources": [
+    {
+      "url": "https://github.com/hasso5703/dgx-spark-qwen38",
+      "kind": "repo",
+      "note": "the recipe and scripts"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hasso5703/dgx-spark-qwen38/main/README.md",
+      "kind": "docs",
+      "note": "README carrying the quoted numbers"
+    }
+  ],
+  "updated": "2026-09-05",
+  "builder": "hasso5703"
+}

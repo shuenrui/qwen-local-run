@@ -1,0 +1,14 @@
+{
+  "id": "ollama",
+  "name": "Ollama",
+  "kind": "runtime",
+  "url": "https://github.com/ollama/ollama",
+  "api": ["openai", "native"],
+  "qwen_support": "GGUF-based, one-command pulls for mainstream Qwen sizes. Latest generations and unusual quants lag.",
+  "spec_decode": ["none"],
+  "features": ["one-command-install", "gguf", "modelfile", "vision", "tool-calling"],
+  "notable_flags": ["ollama run <model>", "OLLAMA_NUM_PARALLEL", "num_ctx"],
+  "gotchas": ["Lowest ceiling of the group: no speculative decoding, no NVFP4, limited control over KV dtype."],
+  "arm64": true,
+  "updated": "2026-09-05"
+}

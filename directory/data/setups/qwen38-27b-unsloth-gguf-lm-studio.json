@@ -1,0 +1,73 @@
+{
+  "id": "qwen38-27b-unsloth-gguf-lm-studio",
+  "title": "Qwen3.8-27B unsloth GGUF in LM Studio (the GUI lane)",
+  "slug_note": "The no-terminal path: load the GGUF in LM Studio and serve it locally on a Mac or a 24 GB card.",
+  "model": "qwen3-8-27b",
+  "status": "untested",
+  "variation": {
+    "checkpoint": "unsloth/Qwen3.8-27B-GGUF",
+    "publisher": "unsloth",
+    "quant": "gguf-q4",
+    "quant_detail": "Q4_K_M as offered in LM Studio's download picker",
+    "format": "gguf",
+    "size_gb": 17.6,
+    "url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
+    "license": "Apache-2.0",
+    "downloads": null
+  },
+  "engine": {
+    "id": "lm-studio",
+    "config": "LM Studio local server, default GPU/CPU offload settings",
+    "image": null,
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "none",
+    "flags": []
+  },
+  "hardware": [
+    "mac-128gb",
+    "gpu-24gb"
+  ],
+  "requirements": {
+    "memory_gb": 20,
+    "disk_gb": 18,
+    "min_vram_gb": 18,
+    "notes": "Q4_K_M weights plus KV headroom; LM Studio manages offload itself."
+  },
+  "capabilities": {
+    "vision": true,
+    "video": true,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "repo": "https://lmstudio.ai/",
+    "command": null,
+    "steps": [
+      "Search 'Qwen3.8-27B' in LM Studio and download the Q4_K_M GGUF",
+      "Load it in the Chat or Developer tab",
+      "Start the local server; point any OpenAI client at http://localhost:1234/v1"
+    ]
+  },
+  "measurements": [],
+  "caveats": [
+    "No numbers yet: this is the newcomer GUI lane, kept so the directory covers the path people actually start with.",
+    "LM Studio's quant picker may offer different files than unsloth's repo listing; match by name (Q4_K_M) and size before comparing to other rows."
+  ],
+  "provenance_tier": null,
+  "sources": [
+    {
+      "url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
+      "kind": "model",
+      "note": "GGUF repo"
+    },
+    {
+      "url": "https://lmstudio.ai/",
+      "kind": "docs",
+      "note": "LM Studio home and docs"
+    }
+  ],
+  "updated": "2026-09-06"
+}

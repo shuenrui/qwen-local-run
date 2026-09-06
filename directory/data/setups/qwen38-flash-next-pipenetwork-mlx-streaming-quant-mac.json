@@ -1,0 +1,144 @@
+{
+  "id": "qwen38-flash-next-pipenetwork-mlx-streaming-quant-mac",
+  "title": "Qwen3.8-Flash-Next on PipeNetwork's MLX runtime with streaming quantization",
+  "slug_note": "The only MLX path that carries the Flash-Next architecture at all, with the quantization economics measured: mixed 4/8-bit costs +1.3% NLL versus +20.6% for uniform 4-bit.",
+  "model": "qwen3-8-flash-next",
+  "status": "reported",
+  "variation": {
+    "checkpoint": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+    "publisher": "radixark",
+    "quant": "mixed",
+    "quant_detail": "mixed 4/8-bit MLX build (106.2 GB), the repo's recommended one",
+    "format": "mlx",
+    "size_gb": 136,
+    "url": "https://huggingface.co/RadixArk/Qwen3.8-Flash-Next-NVFP4",
+    "license": "Apache-2.0"
+  },
+  "engine": {
+    "image": null,
+    "requires_fork": true,
+    "draft_model": null,
+    "spec_decode": "none",
+    "flags": [],
+    "id": "mlx-lm",
+    "config": "PipeNetwork runtime shipping qwen4_exp support + streaming quantization; mixed-4_8bit build recommended"
+  },
+  "hardware": [
+    "mac-128gb"
+  ],
+  "requirements": {
+    "memory_gb": 110,
+    "disk_gb": 107,
+    "min_vram_gb": null,
+    "notes": "Mixed build is 106.2 GB on disk; the 51B n-gram tables alone would be 102 GB unquantized."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "repo": "https://github.com/PipeNetwork/qwen38-flash-next-mlx",
+    "command": null,
+    "steps": [
+      "Build the mixed-4_8bit quant with the repo's streaming quantizer",
+      "Serve through the repo's MLX runtime (stock mlx-lm cannot load qwen4_exp)"
+    ]
+  },
+  "measurements": [
+    {
+      "metric": "quality_index",
+      "value": 4.4708,
+      "unit": "score",
+      "provenance": "forum",
+      "source": "https://github.com/PipeNetwork/qwen38-flash-next-mlx",
+      "date": null,
+      "method": "wikitext-2 perplexity of each build plus a coherent-generation check",
+      "note": "wikitext-2 (test) perplexity of the upstream bfloat16 model, teacher-forced over 145 windows of 2048 tokens"
+    },
+    {
+      "metric": "quality_index",
+      "value": 4.5286,
+      "unit": "score",
+      "provenance": "forum",
+      "source": "https://github.com/PipeNetwork/qwen38-flash-next-mlx",
+      "date": null,
+      "method": "wikitext-2 perplexity of each build plus a coherent-generation check",
+      "note": "perplexity of the recommended mixed-4_8bit build (106.2 GB), +0.0128 NLL/token vs bf16 [95% CI +0.0109, +0.0148], 128/145 windows worse = +1.3%"
+    },
+    {
+      "metric": "quality_index",
+      "value": 5.3914,
+      "unit": "score",
+      "provenance": "forum",
+      "source": "https://github.com/PipeNetwork/qwen38-flash-next-mlx",
+      "date": null,
+      "method": "wikitext-2 perplexity of each build plus a coherent-generation check",
+      "note": "uniform 4-bit build (103.8 GB), +0.1872 NLL/token [95% CI +0.1778, +0.1968], 145/145 windows worse = +20.6% cost"
+    },
+    {
+      "metric": "quality_index",
+      "value": 4.4749,
+      "unit": "score",
+      "provenance": "forum",
+      "source": "https://github.com/PipeNetwork/qwen38-flash-next-mlx",
+      "date": null,
+      "method": "wikitext-2 perplexity of each build plus a coherent-generation check",
+      "note": "8-bit build (192.2 GB), +0.0009 NLL/token [-0.0003, +0.0021] = statistically indistinguishable from bf16; 6-bit (148.0 GB) 4.4767, +0.0013"
+    },
+    {
+      "metric": "memory_gb",
+      "value": 106.2,
+      "unit": "GB",
+      "provenance": "forum",
+      "source": "https://github.com/PipeNetwork/qwen38-flash-next-mlx",
+      "date": null,
+      "method": "wikitext-2 perplexity of each build plus a coherent-generation check",
+      "note": "on-disk size of the mixed-4_8bit build, the recommended one below 150 GB (8bit 192.2 GB, 6bit 148.0 GB, 4bit 103.8 GB, bf16 360.0 GB)"
+    },
+    {
+      "metric": "decode_chat",
+      "value": 24,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://github.com/PipeNetwork/qwen38-flash-next-mlx",
+      "date": null,
+      "method": "wikitext-2 perplexity of each build plus a coherent-generation check",
+      "note": "bf16 model loaded through this runtime generating coherently, 354 GB resident (text-only runtime; the 0.4B vision tower is carried in bf16 but unused)"
+    },
+    {
+      "metric": "memory_gb",
+      "value": 102,
+      "unit": "GB",
+      "provenance": "forum",
+      "source": "https://github.com/PipeNetwork/qwen38-flash-next-mlx",
+      "date": null,
+      "method": "wikitext-2 perplexity of each build plus a coherent-generation check",
+      "note": "size of the 51B-parameter n-gram embedding tables alone if left unquantized - the reason they get their own group-32 quantization"
+    }
+  ],
+  "caveats": [
+    "The +1.3% NLL penalty of the mixed build (versus +20.6% uniform 4-bit) is a ratio, not a perplexity; kept as a caveat so it is not mistaken for a score.",
+    "Perplexity rows compare builds of the same weights: 4.4708 bf16, 4.4749 8-bit, 4.5286 mixed, 5.3914 uniform 4-bit.",
+    "The builder repo tags its own license as 'other'; the weights lineage is Qwen Apache-2.0.",
+    "Builder runtimes carry their own terms on top of the weights (Mia's scripts are AGPL-3.0)."
+  ],
+  "provenance_tier": "forum",
+  "sources": [
+    {
+      "url": "https://github.com/PipeNetwork/qwen38-flash-next-mlx",
+      "kind": "repo",
+      "note": "runtime, quantizer and perplexity tables"
+    },
+    {
+      "url": "https://huggingface.co/RadixArk/Qwen3.8-Flash-Next-NVFP4",
+      "kind": "model",
+      "note": "source weights"
+    }
+  ],
+  "updated": "2026-09-05",
+  "builder": "pipenetwork"
+}

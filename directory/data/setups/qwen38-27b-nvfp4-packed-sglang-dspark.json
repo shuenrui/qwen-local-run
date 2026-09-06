@@ -1,0 +1,132 @@
+{
+  "id": "qwen38-27b-nvfp4-packed-sglang-dspark",
+  "title": "Qwen3.8-27B NVFP4 (packed FP4 head) — SGLang + DSpark block-7",
+  "slug_note": "The code peak: 51.5 tok/s on the LRUCache probe, about 1.5x MTP. Gives the long essay back — 18.3 versus MTP's 24.1.",
+  "model": "qwen3-8-27b",
+  "status": "measured",
+  "variation": {
+    "checkpoint": "RadixArk/Qwen3.8-27B-NVFP4",
+    "publisher": "radixark",
+    "quant": "nvfp4",
+    "quant_detail": "W4A4 body with lm_head packed to FP4. ~1.7GB smaller on disk than the BF16-head twin.",
+    "format": "safetensors",
+    "size_gb": 21.9,
+    "url": "https://huggingface.co/RadixArk/Qwen3.8-27B-NVFP4",
+    "license": "Apache-2.0",
+    "downloads": null
+  },
+  "engine": {
+    "id": "sglang",
+    "config": "DSpark block-7 with 8 draft tokens, unquantized draft. torch.compile plus decode-graph caps, --num-continuous-decode-steps 2, prefill CUDA graphs off, flashinfer.",
+    "image": "lmsysorg/sglang:qwen38-27b",
+    "requires_fork": false,
+    "draft_model": "RadixArk/Qwen3.8-27B-DSpark (~2.7GB, fetched once)",
+    "spec_decode": "dspark",
+    "flags": [
+      "--speculative-dspark-block-size 7",
+      "--speculative-num-draft-tokens 8",
+      "--cuda-graph-max-bs-decode 4",
+      "--mem-fraction-static 0.90",
+      "--kv-cache-dtype fp8_e4m3",
+      "--cpuset-cpus 5-9,15-19"
+    ]
+  },
+  "hardware": [
+    "dgx-spark"
+  ],
+  "requirements": {
+    "memory_gb": 30,
+    "disk_gb": 25,
+    "min_vram_gb": null,
+    "notes": "~22GB target + ~2.7GB DSpark draft + KV pool at mem-fraction 0.90."
+  },
+  "capabilities": {
+    "vision": true,
+    "video": true,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "command": "./start-dspark.sh",
+    "repo": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
+    "profile": "profiles/qwen3.8-27b.env",
+    "steps": [
+      "cp .env.sample .env",
+      "./start-dspark.sh"
+    ],
+    "auto_bootable": true
+  },
+  "measurements": [
+    {
+      "metric": "decode_code",
+      "value": 51.5,
+      "unit": "tok/s",
+      "provenance": "box",
+      "date": "2026-08-18",
+      "n": 5,
+      "method": "bench/ndec.py two-call net-decode, median of 5, tokens counted from the server's completion_tokens via stream_options.include_usage",
+      "range": [
+        51.4,
+        51.7
+      ],
+      "note": "Block-7 is the measured code peak. Block-5 trades -16% code for +8% prose."
+    },
+    {
+      "metric": "decode_essay",
+      "value": 18.3,
+      "unit": "tok/s",
+      "provenance": "box",
+      "date": "2026-08-18",
+      "n": 5,
+      "method": "bench/ndec.py two-call net-decode, median of 5, tokens counted from the server's completion_tokens via stream_options.include_usage",
+      "range": [
+        18.2,
+        18.3
+      ],
+      "note": "The essay is what DSpark gives back versus MTP."
+    },
+    {
+      "metric": "decode_chat",
+      "value": 23.2,
+      "unit": "tok/s",
+      "provenance": "box",
+      "date": "2026-08-18",
+      "n": 5,
+      "method": "bench/ndec.py two-call net-decode, median of 5, tokens counted from the server's completion_tokens via stream_options.include_usage; streamed, temperature 1.0, thinking on",
+      "note": "Slightly beat MTP (21.0) on default chat with thinking on and no degrade. Thinking-off chat was a small MTP edge (22.0 / 21.3 here vs 24.6 / 23.4)."
+    }
+  ],
+  "caveats": [
+    "Not compatible with YaRN or context >262144 — same draft-config leak as DFlash2. Keep YARN=0 and CONTEXT_LENGTH=262144.",
+    "--cuda-graph-max-bs is a deprecated alias in this build; the DSpark stack uses --cuda-graph-max-bs-decode 4.",
+    "--speculative-accept-threshold-acc below 1.0 measured worse. Leave it at 1.0.",
+    "The DSpark draft was trained on FP8, but switching the target to QUANT=fp8 did not lift acceptance.",
+    "Recorded on the older stock image with an event-counting script for the short-chat cell, where events did approximate single tokens. That is not true of the DFlash2 image."
+  ],
+  "provenance_tier": "box",
+  "sources": [
+    {
+      "url": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
+      "kind": "repo",
+      "note": "recipe + start-dspark.sh"
+    },
+    {
+      "url": "https://huggingface.co/RadixArk/Qwen3.8-27B-DSpark",
+      "kind": "model",
+      "note": "DSpark draft"
+    },
+    {
+      "url": "https://github.com/hasso5703/dgx-spark-qwen38",
+      "kind": "repo",
+      "note": "published DSpark-on-GB10 config this stack builds on"
+    },
+    {
+      "url": "https://docs.sglang.io/cookbook/autoregressive/Qwen/Qwen3.8-27B",
+      "kind": "docs",
+      "note": "SGLang DGX Spark serving recipe"
+    }
+  ],
+  "updated": "2026-09-05"
+}

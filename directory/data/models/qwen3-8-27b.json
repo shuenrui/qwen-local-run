@@ -1,0 +1,44 @@
+{
+  "id": "qwen3-8-27b",
+  "name": "Qwen3.8-27B",
+  "family": "Qwen3.8",
+  "generation": "3.8",
+  "publisher": "qwen",
+  "released": "2026-08-14",
+  "license": "Apache-2.0",
+  "architecture": {
+    "kind": "dense",
+    "params_total_b": 27.8,
+    "params_active_b": 27.8,
+    "layers": 64,
+    "layer_mix": "48 linear (Gated DeltaNet) + 16 full attention, every 4th layer full",
+    "hybrid": true,
+    "mtp_head": true,
+    "thinking_depths": [
+      "low",
+      "medium",
+      "xhigh"
+    ],
+    "default_thinking": "xhigh"
+  },
+  "context": {
+    "native": 262144,
+    "max": 1000000,
+    "extension": "YaRN, factor = round(len/262144); 2.0 and 4.0 are the card's validated points"
+  },
+  "modalities": [
+    "text",
+    "image",
+    "video"
+  ],
+  "kv_bytes_per_token": 32768,
+  "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+  "summary": "Dense all-rounder. Every parameter is awake for every token, so it is 5-8x slower than an equal-quality MoE on bandwidth-limited boxes, but it is the safe default: it fits with room to spare and nothing about it depends on a builder's trick.",
+  "known_regressions": [
+    "Trivia recall got worse vs 3.6 at default settings.",
+    "Long analytical documents got worse vs 3.6 at default settings.",
+    "Both are a deliberate agentic trade. The vendor's headline table (OSWorld 84.3, SWE-Pro 61.7) is all agentic and visual work; it says nothing about spreadsheets or long-form analysis."
+  ],
+  "sampler_guidance": "Thinking mode wants temperature=1.0, top_p=0.95, top_k=20, presence_penalty=0.0. Instruct/non-thinking wants temperature=0.7, top_p=0.8, top_k=20, presence_penalty=1.5. For agent work, community reports greedy (temperature 0) ties the thinking sampler on tool-calling at about 2.5x lower latency, and survived a fake-system-message injection the thinking setup fell for. Pull the reasoning_effort lever instead of temperature.",
+  "updated": "2026-09-05"
+}

@@ -1,0 +1,76 @@
+{
+  "id": "qwen3-5-4b-bf16-vllm-24gb",
+  "title": "Qwen3.5-4B BF16 on vLLM: single 24GB card, and the 4090 same-vocab draft",
+  "slug_note": "9.3GB BF16 with a vision encoder on one 24GB card; also the same-vocab speculative draft in the outsourc-e RTX 4090 recipes.",
+  "model": "qwen3-5-4b",
+  "status": "untested",
+  "variation": {
+    "checkpoint": "Qwen/Qwen3.5-4B",
+    "publisher": "qwen",
+    "quant": "bf16",
+    "quant_detail": "BF16 reference weights",
+    "format": "safetensors",
+    "size_gb": 9.3,
+    "url": "https://huggingface.co/Qwen/Qwen3.5-4B",
+    "license": "Apache-2.0",
+    "downloads": null
+  },
+  "engine": {
+    "id": "vllm",
+    "config": "Stock vLLM serve at 32K; the draft-model role runs under mainline llama.cpp in the outsourc-e recipes instead",
+    "image": null,
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "none",
+    "flags": [
+      "--max-model-len 32768"
+    ]
+  },
+  "hardware": [
+    "gpu-24gb",
+    "dgx-spark"
+  ],
+  "requirements": {
+    "memory_gb": 14,
+    "disk_gb": 10,
+    "min_vram_gb": 11,
+    "notes": "9.3GB weights + KV; the 256K native context is out of reach on a 24GB card."
+  },
+  "capabilities": {
+    "vision": true,
+    "video": true,
+    "tools": true,
+    "thinking": null,
+    "long_context": 32768,
+    "max_context": 1010000
+  },
+  "run": {
+    "command": "vllm serve Qwen/Qwen3.5-4B --max-model-len 32768",
+    "repo": "https://github.com/outsourc-e/qwen36-4090-recipes",
+    "profile": null,
+    "steps": [
+      "pip install vllm",
+      "vllm serve Qwen/Qwen3.5-4B --max-model-len 32768",
+      "For the draft role: load the Q4_K_M GGUF alongside Qwen3.6-27B in mainline llama.cpp per the recipe repo"
+    ]
+  },
+  "measurements": [],
+  "caveats": [
+    "Doubles as the same-vocab (248,320-token BPE) speculative draft for Qwen3.6-27B in the outsourc-e RTX 4090 recipes; cross-vocab drafts silently corrupted JSON and tool calls there.",
+    "No local measurement attached to this row; size computed from the HF API."
+  ],
+  "provenance_tier": null,
+  "sources": [
+    {
+      "url": "https://huggingface.co/Qwen/Qwen3.5-4B",
+      "kind": "model",
+      "note": "weights and card"
+    },
+    {
+      "url": "https://github.com/outsourc-e/qwen36-4090-recipes",
+      "kind": "repo",
+      "note": "same-vocab draft recipes"
+    }
+  ],
+  "updated": "2026-09-06"
+}

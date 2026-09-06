@@ -1,0 +1,165 @@
+{
+  "id": "qwen38-flash-next-hudsonwa-omlx-8slot-mac",
+  "title": "Qwen3.8-Flash-Next on oMLX: 8 concurrent 252K slots on a 128 GB Mac",
+  "slug_note": "The Mac answer to the 180B MoE: oMLX pages the PLE table through an SSD tier and holds eight ~252K orchestrator slots, 60.9 tok/s solo decode with MTP on.",
+  "model": "qwen3-8-flash-next",
+  "status": "reported",
+  "variation": {
+    "checkpoint": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+    "publisher": "radixark",
+    "quant": "mlx-4",
+    "quant_detail": "NVFP4 weights converted to oMLX 'flash oQ4e' with SSD-paged PLE tables",
+    "format": "mlx",
+    "size_gb": 136,
+    "url": "https://huggingface.co/RadixArk/Qwen3.8-Flash-Next-NVFP4",
+    "license": "Apache-2.0"
+  },
+  "engine": {
+    "image": null,
+    "requires_fork": true,
+    "draft_model": null,
+    "spec_decode": "none",
+    "flags": [],
+    "id": "mlx-lm",
+    "config": "oMLX 0.6.4 single process: SSD tier for PLE tables, self-managed prefix promotion, MTP spec-dec on"
+  },
+  "hardware": [
+    "mac-128gb"
+  ],
+  "requirements": {
+    "memory_gb": 102,
+    "disk_gb": 140,
+    "min_vram_gb": null,
+    "notes": "69 GB booted idle; 102 GB peak during dual-252K cold fill; ~9.25 GB KV per 252K slot."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "repo": "https://github.com/hudsonwa/Qwen3.8-Flash-Next-oMLX-Recipe",
+    "command": null,
+    "steps": [
+      "Follow the oMLX recipe in the repo",
+      "Keep the PLE tables on fast SSD; they page in and out",
+      "Enable MTP speculative decode for the quoted solo decode"
+    ]
+  },
+  "measurements": [
+    {
+      "metric": "task_time_min",
+      "value": 483.6,
+      "unit": "s",
+      "provenance": "forum",
+      "source": "https://github.com/hudsonwa/Qwen3.8-Flash-Next-oMLX-Recipe",
+      "date": "2026-08-31",
+      "method": "oMLX recipe runs: dual-252K cold prefill walls, solo decode with MTP, prefix re-promotion",
+      "note": "W1 dual ~252K concurrent cold prefill wall (488.4 s for the second, spread 4.73 s = true concurrency), measured prompt_tokens 240,393 each, 2026-08-31"
+    },
+    {
+      "metric": "memory_gb",
+      "value": 102,
+      "unit": "GB",
+      "provenance": "forum",
+      "source": "https://github.com/hudsonwa/Qwen3.8-Flash-Next-oMLX-Recipe",
+      "date": "2026-08-31",
+      "method": "oMLX recipe runs: dual-252K cold prefill walls, solo decode with MTP, prefix re-promotion",
+      "note": "peak phys_footprint during dual-252K cold fill (G1 run) = the planning number against the 107.5 GB Metal cap; W1 peaked at 98 GB"
+    },
+    {
+      "metric": "memory_gb",
+      "value": 69,
+      "unit": "GB",
+      "provenance": "forum",
+      "source": "https://github.com/hudsonwa/Qwen3.8-Flash-Next-oMLX-Recipe",
+      "date": "2026-08-31",
+      "method": "oMLX recipe runs: dual-252K cold prefill walls, solo decode with MTP, prefix re-promotion",
+      "note": "booted idle footprint with the flash oQ4e weights paged in; ~73 GB steady with all 8 HTTP slots resident after orchestrator KV auto-tiers to SSD"
+    },
+    {
+      "metric": "task_time_min",
+      "value": 8.7,
+      "unit": "s",
+      "provenance": "forum",
+      "source": "https://github.com/hudsonwa/Qwen3.8-Flash-Next-oMLX-Recipe",
+      "date": "2026-08-31",
+      "method": "oMLX recipe runs: dual-252K cold prefill walls, solo decode with MTP, prefix re-promotion",
+      "note": "re-promoting a 252K prefix from the SSD tier (a self-managed 185.8 GB LRU) vs ~229 s for a full re-prefill on an LRU miss"
+    },
+    {
+      "metric": "decode_chat",
+      "value": 60.9,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://github.com/hudsonwa/Qwen3.8-Flash-Next-oMLX-Recipe",
+      "date": "2026-08-31",
+      "method": "oMLX recipe runs: dual-252K cold prefill walls, solo decode with MTP, prefix re-promotion",
+      "note": "solo decode with MTP speculative decode ON for this checkpoint on this box, vs ~86 tok/s with it off - the measured reason mtp_enabled=false"
+    },
+    {
+      "metric": "task_time_min",
+      "value": 939,
+      "unit": "s",
+      "provenance": "forum",
+      "source": "https://github.com/hudsonwa/Qwen3.8-Flash-Next-oMLX-Recipe",
+      "date": "2026-08-31",
+      "method": "oMLX recipe runs: dual-252K cold prefill walls, solo decode with MTP, prefix re-promotion",
+      "note": "27B dense 4x118K per-stream wall spread with chunked prefill OFF (304/1225/1240/1243 s FIFO staircase); with chunked ON the spread is 25.6 s and every stream TTFT ~4 s"
+    },
+    {
+      "metric": "ttft_ms",
+      "value": 660,
+      "unit": "ms",
+      "provenance": "forum",
+      "source": "https://github.com/hudsonwa/Qwen3.8-Flash-Next-oMLX-Recipe",
+      "date": "2026-08-31",
+      "method": "oMLX recipe runs: dual-252K cold prefill walls, solo decode with MTP, prefix re-promotion",
+      "note": "worst TTFT across six worker prefills over hot orchestrators (range 0.05-0.66 s, measured prompt_tokens 30,585 TDD and 61,089 coder/auditor)"
+    },
+    {
+      "metric": "memory_gb",
+      "value": 9.25,
+      "unit": "GB",
+      "provenance": "forum",
+      "source": "https://github.com/hudsonwa/Qwen3.8-Flash-Next-oMLX-Recipe",
+      "date": "2026-08-31",
+      "method": "oMLX recipe runs: dual-252K cold prefill walls, solo decode with MTP, prefix re-promotion",
+      "note": "KV slot rate per ~252K orchestrator slot (~1.2 GB per 32K slot, ~2.3 GB per 64K slot); static worst case with nothing tiered ~97-99 GB"
+    },
+    {
+      "metric": "task_time_min",
+      "value": 11.26,
+      "unit": "s",
+      "provenance": "forum",
+      "source": "https://github.com/hudsonwa/Qwen3.8-Flash-Next-oMLX-Recipe",
+      "date": "2026-08-31",
+      "method": "oMLX recipe runs: dual-252K cold prefill walls, solo decode with MTP, prefix re-promotion",
+      "note": "longest observed memory-planner tick during the W1 dual fill (the pair was 11.26 s and 1.12 s; range across the box ~1-25 s)"
+    }
+  ],
+  "caveats": [
+    "This is oMLX, not stock mlx-lm: the runtime carries the qwen4_exp/PLE paging that stock MLX lacks, so the recipe is runtime-specific.",
+    "Cold-fill walls (483.6 s for dual ~252K) are the price of the SSD tier; warm re-promotion at 8.7 s is the number that makes the lane usable.",
+    "The builder repo tags its own license as 'other'; the weights lineage is Qwen Apache-2.0.",
+    "Builder runtimes carry their own terms on top of the weights (Mia's scripts are AGPL-3.0)."
+  ],
+  "provenance_tier": "forum",
+  "sources": [
+    {
+      "url": "https://github.com/hudsonwa/Qwen3.8-Flash-Next-oMLX-Recipe",
+      "kind": "repo",
+      "note": "the oMLX recipe and measured walls"
+    },
+    {
+      "url": "https://huggingface.co/RadixArk/Qwen3.8-Flash-Next-NVFP4",
+      "kind": "model",
+      "note": "source weights"
+    }
+  ],
+  "updated": "2026-09-05",
+  "builder": "hudsonwa"
+}

@@ -1,0 +1,75 @@
+{
+  "id": "qwen3-0-8b-fp8-vllm-24gb",
+  "title": "Qwen3-8B FP8 on vLLM: single 24GB card",
+  "slug_note": "Official FP8 export (9.4GB) leaves a large KV pool on one 24GB card.",
+  "model": "qwen3-0-8b",
+  "status": "untested",
+  "variation": {
+    "checkpoint": "Qwen/Qwen3-8B-FP8",
+    "publisher": "qwen",
+    "quant": "fp8",
+    "quant_detail": "Official FP8 export",
+    "format": "safetensors",
+    "size_gb": 9.4,
+    "url": "https://huggingface.co/Qwen/Qwen3-8B-FP8",
+    "license": "Apache-2.0",
+    "downloads": null
+  },
+  "engine": {
+    "id": "vllm",
+    "config": "Stock vLLM serve at 32K; add --rope-scaling yarn factor 4.0 for 128K",
+    "image": null,
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "none",
+    "flags": [
+      "--max-model-len 32768"
+    ]
+  },
+  "hardware": [
+    "gpu-24gb",
+    "dgx-spark",
+    "thinkstation-pgx"
+  ],
+  "requirements": {
+    "memory_gb": 14,
+    "disk_gb": 10,
+    "min_vram_gb": 12,
+    "notes": "9.4GB weights + activations + KV for a 32K context; 128K YaRN raises KV demand."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 32768,
+    "max_context": 131072
+  },
+  "run": {
+    "command": "vllm serve Qwen/Qwen3-8B-FP8 --max-model-len 32768",
+    "repo": "https://github.com/vllm-project/vllm",
+    "profile": null,
+    "steps": [
+      "pip install vllm",
+      "vllm serve Qwen/Qwen3-8B-FP8 --max-model-len 32768"
+    ]
+  },
+  "measurements": [],
+  "caveats": [
+    "No local measurement attached; checkpoint size computed from the HF API."
+  ],
+  "provenance_tier": null,
+  "sources": [
+    {
+      "url": "https://huggingface.co/Qwen/Qwen3-8B-FP8",
+      "kind": "model",
+      "note": "weights"
+    },
+    {
+      "url": "https://huggingface.co/Qwen/Qwen3-8B",
+      "kind": "model",
+      "note": "model card"
+    }
+  ],
+  "updated": "2026-09-06"
+}

@@ -1,0 +1,65 @@
+{
+  "id": "qwen36-27b-nvidia-nvfp4-sglang",
+  "title": "Qwen3.6-27B nvidia NVFP4 on SGLang (Spark)",
+  "slug_note": "NVIDIA's own NVFP4 export of the dense 3.6 27B, the SM121-native quant.",
+  "model": "qwen3-6-27b",
+  "status": "untested",
+  "variation": {
+    "license": "Apache-2.0",
+    "downloads": null,
+    "checkpoint": "nvidia/Qwen3.6-27B-NVFP4",
+    "publisher": "nvidia",
+    "quant": "nvfp4",
+    "quant_detail": "NVIDIA NVFP4 export",
+    "format": "safetensors",
+    "size_gb": 21.9,
+    "url": "https://huggingface.co/nvidia/Qwen3.6-27B-NVFP4"
+  },
+  "engine": {
+    "image": null,
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "none",
+    "flags": [],
+    "id": "sglang",
+    "config": "SGLang with the NVFP4 checkpoint on a DGX Spark"
+  },
+  "hardware": [
+    "dgx-spark"
+  ],
+  "requirements": {
+    "memory_gb": 17,
+    "disk_gb": 16,
+    "min_vram_gb": null,
+    "notes": "Resident estimate from the quant size plus KV headroom."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "repo": "https://huggingface.co/nvidia/Qwen3.6-27B-NVFP4",
+    "command": null,
+    "steps": [
+      "Download nvidia/Qwen3.6-27B-NVFP4",
+      "SGLang with the NVFP4 checkpoint on a DGX Spark"
+    ]
+  },
+  "measurements": [],
+  "caveats": [
+    "No numbers yet; note the 122B NVFP4 row elsewhere in this directory: FP4 kernels on SM121 have been the slow path before, measure before trusting."
+  ],
+  "provenance_tier": null,
+  "sources": [
+    {
+      "url": "https://huggingface.co/nvidia/Qwen3.6-27B-NVFP4",
+      "kind": "model",
+      "note": "weights / quant card"
+    }
+  ],
+  "updated": "2026-09-05"
+}

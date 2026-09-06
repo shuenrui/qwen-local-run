@@ -1,0 +1,76 @@
+{
+  "id": "qwen3-0-omni-30b-a3b-bf16-vllm-spark",
+  "title": "Qwen3-Omni-30B-A3B-Instruct BF16 on vLLM: one 128GB Spark",
+  "slug_note": "Audio in and out (Thinker-Talker) at 70.5GB BF16 — the 128GB unified box is the smallest verified lane.",
+  "model": "qwen3-0-omni-30b-a3b",
+  "status": "untested",
+  "variation": {
+    "checkpoint": "Qwen/Qwen3-Omni-30B-A3B-Instruct",
+    "publisher": "qwen",
+    "quant": "bf16",
+    "quant_detail": "BF16 reference; no official FP8 export was verifiable at the time of writing",
+    "format": "safetensors",
+    "size_gb": 70.5,
+    "url": "https://huggingface.co/Qwen/Qwen3-Omni-30B-A3B-Instruct",
+    "license": "other (card license_name: Apache-2.0)",
+    "downloads": null
+  },
+  "engine": {
+    "id": "vllm",
+    "config": "Stock vLLM serve of the Thinker-Talker stack; streaming text and speech output, capped context",
+    "image": null,
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "none",
+    "flags": [
+      "--max-model-len 32768"
+    ]
+  },
+  "hardware": [
+    "dgx-spark",
+    "thinkstation-pgx"
+  ],
+  "requirements": {
+    "memory_gb": 88,
+    "disk_gb": 71,
+    "min_vram_gb": null,
+    "notes": "70.5GB weights + audio/vision encoders + KV on 128GB unified; does not fit 24GB or 72GB GPU lanes."
+  },
+  "capabilities": {
+    "vision": true,
+    "video": true,
+    "tools": null,
+    "thinking": null,
+    "long_context": null,
+    "max_context": null
+  },
+  "run": {
+    "command": "vllm serve Qwen/Qwen3-Omni-30B-A3B-Instruct --max-model-len 32768",
+    "repo": "https://github.com/QwenLM/Qwen3-Omni",
+    "profile": null,
+    "steps": [
+      "pip install vllm",
+      "vllm serve Qwen/Qwen3-Omni-30B-A3B-Instruct --max-model-len 32768",
+      "Send audio/image/video inputs; responses stream as text and speech"
+    ]
+  },
+  "measurements": [],
+  "caveats": [
+    "The card does not state a context length, so long_context is left null and the serve command caps at 32K.",
+    "Card metadata lists license 'other' with license_name Apache-2.0; check the repo LICENSE before redistribution."
+  ],
+  "provenance_tier": null,
+  "sources": [
+    {
+      "url": "https://huggingface.co/Qwen/Qwen3-Omni-30B-A3B-Instruct",
+      "kind": "model",
+      "note": "weights and card"
+    },
+    {
+      "url": "https://github.com/QwenLM/Qwen3-Omni",
+      "kind": "repo",
+      "note": "serving cookbooks"
+    }
+  ],
+  "updated": "2026-09-06"
+}

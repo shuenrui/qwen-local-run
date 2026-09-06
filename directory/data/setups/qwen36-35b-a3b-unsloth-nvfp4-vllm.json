@@ -1,0 +1,78 @@
+{
+  "id": "qwen36-35b-a3b-unsloth-nvfp4-vllm",
+  "title": "Qwen3.6-35B-A3B — unsloth NVFP4 Fast on vLLM",
+  "slug_note": "The tool-calling lane: reported +6.7% on tool-call accuracy and 83.8 tok/s on vLLM.",
+  "model": "qwen3-6-35b-a3b",
+  "status": "untested",
+  "variation": {
+    "checkpoint": "unsloth/Qwen3.6-35B-A3B-NVFP4",
+    "publisher": "unsloth",
+    "quant": "nvfp4",
+    "quant_detail": "unsloth 'Fast' NVFP4 with tool-call fixes and a developer role.",
+    "format": "safetensors",
+    "size_gb": 26.5,
+    "url": "https://huggingface.co/unsloth",
+    "license": "Apache-2.0",
+    "downloads": null
+  },
+  "engine": {
+    "id": "vllm",
+    "config": "SGLang from our recipe card. Speculative decoding off.",
+    "image": "lmsysorg/sglang:qwen38-27b",
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "mtp",
+    "flags": [
+      "--mem-fraction-static 0.85",
+      "--max-running-requests 10",
+      "--context-length 262144"
+    ]
+  },
+  "hardware": [
+    "dgx-spark"
+  ],
+  "requirements": {
+    "memory_gb": 30,
+    "disk_gb": 22,
+    "min_vram_gb": null,
+    "notes": "mem-fraction 0.85, concurrency 10, context 262144."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "command": "PROFILE=profiles/qwen36-35b-a3b-unsloth-nvfp4-vllm.env ./start-model.sh",
+    "repo": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
+    "profile": null,
+    "steps": [
+      "PROFILE=profiles/<card>.env ./start-model.sh"
+    ],
+    "auto_bootable": false
+  },
+  "measurements": [],
+  "caveats": [
+    "The 83.8 tok/s and +6.7% figures are publisher claims, not measurements, and are recorded in the model notes rather than as measurements on this entry until we can source them to a specific page.",
+    "Manual-only lane: start-model.sh refuses ENGINE=vllm cards.",
+    "Exact repo id needs re-verification against the publisher before download.",
+    "Recipe card validates and the container reaches 'Starting container', but no benchmark has been run. There are no numbers for this entry yet."
+  ],
+  "provenance_tier": null,
+  "sources": [
+    {
+      "url": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
+      "kind": "repo",
+      "note": "recipe card in profiles/"
+    },
+    {
+      "url": "https://huggingface.co/unsloth",
+      "kind": "model",
+      "note": "weights"
+    }
+  ],
+  "updated": "2026-09-05"
+}

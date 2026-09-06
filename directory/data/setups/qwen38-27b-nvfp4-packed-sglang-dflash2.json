@@ -1,0 +1,153 @@
+{
+  "id": "qwen38-27b-nvfp4-packed-sglang-dflash2",
+  "title": "Qwen3.8-27B NVFP4 (packed FP4 head) — SGLang + DFlash2",
+  "slug_note": "Fastest all-round configuration measured on our box: ties DSpark on code inside the noise band, beats MTP on the long essay, and wins every short-chat condition once tokens are counted correctly.",
+  "model": "qwen3-8-27b",
+  "status": "measured",
+  "variation": {
+    "checkpoint": "RadixArk/Qwen3.8-27B-NVFP4",
+    "publisher": "radixark",
+    "quant": "nvfp4",
+    "quant_detail": "W4A4 body with lm_head packed to FP4. ~1.7GB smaller on disk than the BF16-head twin.",
+    "format": "safetensors",
+    "size_gb": 21.9,
+    "url": "https://huggingface.co/RadixArk/Qwen3.8-27B-NVFP4",
+    "license": "Apache-2.0",
+    "downloads": null
+  },
+  "engine": {
+    "id": "sglang",
+    "config": "DFlash2 block-diffusion draft. speculative_num_steps forced to 1; EAGLE knobs (topk, num_steps) do not apply to a diffusion drafter. --enable-dp-attention and the overlap scheduler off. Radix cache strategy forced to extra_buffer because DFLASH rejects extra_buffer_lazy.",
+    "image": "lmsysorg/sglang:qwen38-27b-dflash2",
+    "requires_fork": true,
+    "draft_model": "z-lab/Qwen3.8-27B-DFlash2@50307d4 (mirror of incoai/...)",
+    "spec_decode": "dflash2",
+    "flags": [
+      "--mem-fraction-static 0.90",
+      "--kv-cache-dtype fp8_e4m3",
+      "--max-running-requests 16",
+      "--chunked-prefill-size 8192",
+      "--reasoning-parser qwen3",
+      "--tool-call-parser qwen3_coder"
+    ]
+  },
+  "hardware": [
+    "dgx-spark"
+  ],
+  "requirements": {
+    "memory_gb": 30,
+    "disk_gb": 25,
+    "min_vram_gb": null,
+    "notes": "~22GB packed-head target + ~2.6GB block-diffusion draft + KV pool at mem-fraction 0.90."
+  },
+  "capabilities": {
+    "vision": true,
+    "video": true,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "command": "./start-dflash.sh",
+    "repo": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
+    "profile": "profiles/qwen3.8-27b.env",
+    "steps": [
+      "cp .env.sample .env",
+      "./start-dflash.sh",
+      "curl http://127.0.0.1:8888/v1/models",
+      "./stop.sh"
+    ],
+    "auto_bootable": true
+  },
+  "measurements": [
+    {
+      "metric": "decode_code",
+      "value": 50.9,
+      "unit": "tok/s",
+      "provenance": "box",
+      "date": "2026-08-19",
+      "n": 5,
+      "method": "bench/ndec.py two-call net-decode, median of 5, tokens counted from the server's completion_tokens via stream_options.include_usage",
+      "range": [
+        50.8,
+        51.1
+      ],
+      "note": "LRUCache + small test probe. Ties DSpark's 51.5 inside the <15% noise band."
+    },
+    {
+      "metric": "decode_essay",
+      "value": 25.4,
+      "unit": "tok/s",
+      "provenance": "box",
+      "date": "2026-08-19",
+      "n": 5,
+      "method": "bench/ndec.py two-call net-decode, median of 5, tokens counted from the server's completion_tokens via stream_options.include_usage",
+      "range": [
+        25.3,
+        25.4
+      ],
+      "note": "Babbage-to-GPUs long essay. Beats both DSpark (18.3) and MTP (24.1)."
+    },
+    {
+      "metric": "decode_chat",
+      "value": 66.6,
+      "unit": "tok/s",
+      "provenance": "box",
+      "date": "2026-08-19",
+      "n": 5,
+      "method": "bench/ndec.py two-call net-decode, median of 5, tokens counted from the server's completion_tokens via stream_options.include_usage; streamed, temperature 1.0, thinking on",
+      "range": [
+        45.6,
+        80.2
+      ],
+      "note": "Short chat with thinking on. This image batches ~3.75 tokens per SSE event at a fixed ~8 events/s, so a client that counts events as tokens reads ~9 tok/s. Always count completion_tokens."
+    },
+    {
+      "metric": "ttft_ms",
+      "value": 8200,
+      "unit": "ms",
+      "provenance": "box",
+      "date": "2026-08-19",
+      "n": 1,
+      "method": "bench/bench.sh wall-time probe on a fresh ~16K prompt, warm",
+      "note": "Cold boot is ~13s (Triton kernel warmup); the .cache/triton volume persists it."
+    }
+  ],
+  "caveats": [
+    "Not compatible with YaRN or context >262144. The rope override leaks into the draft config and crashes with AttributeError: 'PreTrainedConfig' object has no attribute 'max_position_embeddings'. Keep YARN=0 and CONTEXT_LENGTH=262144.",
+    "No released SGLang image has DFlash2 — it merged upstream 2026-08-19, after every published tag. start-dflash.sh builds the image from patch/ on first run, which needs git and network once.",
+    "Crash history, now fixed: the original head handling dequantized the whole NVFP4 lm_head (~2.5-5GB) during draft-graph capture and hard-rebooted the box at mem-fraction 0.95, and at 0.80 with concurrency >= 8-10. The image now runs the quantized head in place via lm_head.quant_method.apply. If you still see that reboot signature it is not the memory fraction.",
+    "Measured 2026-08-19 on a single boot, one day after the DSpark/MTP figures. Cross-engine deltas are indicative, not a race. The recommendation in the repo is one replication boot before switching a production default.",
+    "A minimal 5-file overlay build measured 61.1 code / 28.4 essay versus 50.9 / 25.4 for the whole-tree build at the same base digest — but that A/B is confounded (fresh boot, concurrency 10 vs 4), so it is recorded and not believed."
+  ],
+  "provenance_tier": "box",
+  "sources": [
+    {
+      "url": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
+      "kind": "repo",
+      "note": "recipe + start-dflash.sh"
+    },
+    {
+      "url": "https://huggingface.co/RadixArk/Qwen3.8-27B-NVFP4",
+      "kind": "model",
+      "note": "weights"
+    },
+    {
+      "url": "https://huggingface.co/z-lab/Qwen3.8-27B-DFlash2",
+      "kind": "model",
+      "note": "block-diffusion draft"
+    },
+    {
+      "url": "https://inco.ai/blog/dflash2/",
+      "kind": "blog",
+      "note": "DFlash2 write-up, serving recipe"
+    },
+    {
+      "url": "https://github.com/sgl-project/sglang/commit/c14312a66",
+      "kind": "repo",
+      "note": "upstream DFlash2 support"
+    }
+  ],
+  "updated": "2026-09-05"
+}

@@ -1,0 +1,30 @@
+{
+  "id": "qwen3-0-coder-next",
+  "name": "Qwen3-Coder-Next",
+  "family": "Qwen3.0",
+  "generation": "3.5",
+  "publisher": "qwen",
+  "released": "2026-01",
+  "license": "Apache-2.0",
+  "architecture": {
+    "kind": "moe",
+    "params_total_b": 80,
+    "params_active_b": 3,
+    "hybrid": true,
+    "anatomy": "Qwen3Next architecture (Gated DeltaNet hybrid attention); card: 'only 3B activated parameters (80B total)'"
+  },
+  "context": {
+    "native": 262144,
+    "max": null,
+    "extension": null
+  },
+  "modalities": [
+    "text"
+  ],
+  "base_weight_size": {
+    "bf16_gb": 159.4
+  },
+  "url": "https://huggingface.co/Qwen/Qwen3-Coder-Next",
+  "summary": "Coder-tuned 80B-A3B hybrid-attention MoE with 256K native context; an official GGUF export exists alongside BF16.",
+  "updated": "2026-09-06"
+}

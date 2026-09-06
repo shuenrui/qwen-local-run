@@ -1,0 +1,73 @@
+{
+  "id": "qwen38-27b-nvfp4-bf16head-sglang-mtp",
+  "title": "Qwen3.8-27B NVFP4 (BF16 lm_head) — SGLang + in-checkpoint MTP",
+  "slug_note": "The current default export under its own MTP head: the lane bench/ab.py measures when run with --engine mtp.",
+  "model": "qwen3-8-27b",
+  "status": "untested",
+  "variation": {
+    "checkpoint": "RadixArk/Qwen3.8-27B-NVFP4-BF16-LMHead",
+    "publisher": "radixark",
+    "quant": "nvfp4",
+    "quant_detail": "W4A4 body, dense BF16 lm_head; MTP 3/1/4 head in-checkpoint",
+    "format": "safetensors",
+    "size_gb": 23.7,
+    "url": "https://huggingface.co/RadixArk/Qwen3.8-27B-NVFP4-BF16-LMHead",
+    "license": "Apache-2.0",
+    "downloads": null
+  },
+  "engine": {
+    "id": "sglang",
+    "config": "SGLang with the in-checkpoint MTP head, default profile",
+    "image": "lmsysorg/sglang:qwen38-27b",
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "mtp",
+    "flags": []
+  },
+  "hardware": [
+    "dgx-spark"
+  ],
+  "requirements": {
+    "memory_gb": 30,
+    "disk_gb": 27,
+    "min_vram_gb": null,
+    "notes": "From the recipe card's mem-fraction and context settings."
+  },
+  "capabilities": {
+    "vision": true,
+    "video": true,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "repo": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
+    "command": "PROFILE=profiles/qwen3.8-27b.env ./start-model.sh",
+    "profile": "profiles/qwen3.8-27b.env",
+    "steps": [
+      "PROFILE=profiles/qwen3.8-27b.env ./start-model.sh",
+      "curl http://127.0.0.1:8888/v1/models"
+    ],
+    "auto_bootable": true
+  },
+  "measurements": [],
+  "caveats": [
+    "No numbers yet: the README's MTP row (34.5/24.1/21.0) was measured on the older packed-FP4-head export, not this one.",
+    "This is the setup bench/ab.py --engine mtp populates; run it and import to fill the row."
+  ],
+  "provenance_tier": null,
+  "sources": [
+    {
+      "url": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
+      "kind": "repo",
+      "note": "recipe card in profiles/"
+    },
+    {
+      "url": "https://huggingface.co/RadixArk/Qwen3.8-27B-NVFP4-BF16-LMHead",
+      "kind": "model",
+      "note": "weights"
+    }
+  ],
+  "updated": "2026-09-05"
+}

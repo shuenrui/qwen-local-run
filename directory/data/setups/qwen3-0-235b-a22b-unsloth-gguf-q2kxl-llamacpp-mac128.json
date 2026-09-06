@@ -1,0 +1,77 @@
+{
+  "id": "qwen3-0-235b-a22b-unsloth-gguf-q2kxl-llamacpp-mac128",
+  "title": "Qwen3-235B-A22B UD-Q2_K_XL GGUF on llama.cpp: 128GB unified memory",
+  "slug_note": "The only single-machine resident lane: unsloth's ~2-bit dynamic GGUF at 88GB on a 128GB Mac or Spark.",
+  "model": "qwen3-0-235b-a22b",
+  "status": "untested",
+  "variation": {
+    "checkpoint": "unsloth/Qwen3-235B-A22B-GGUF",
+    "publisher": "unsloth",
+    "quant": "gguf-q2",
+    "quant_detail": "UD-Q2_K_XL dynamic ~2-bit, two shards (49.8GB + 38.2GB)",
+    "format": "gguf",
+    "size_gb": 88.0,
+    "url": "https://huggingface.co/unsloth/Qwen3-235B-A22B-GGUF",
+    "license": "Apache-2.0",
+    "downloads": null
+  },
+  "engine": {
+    "id": "llama-cpp",
+    "config": "llama-server with all layers offloaded; context capped so KV fits the ~40GB left after weights",
+    "image": null,
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "none",
+    "flags": [
+      "--ctx-size 8192",
+      "-ngl 99",
+      "--flash-attn on"
+    ]
+  },
+  "hardware": [
+    "mac-128gb"
+  ],
+  "requirements": {
+    "memory_gb": 96,
+    "disk_gb": 88,
+    "min_vram_gb": null,
+    "notes": "88GB weights + KV at 8-16K context; growing the context pushes a 128GB box into swap."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 32768,
+    "max_context": 131072
+  },
+  "run": {
+    "command": "llama-server -hf unsloth/Qwen3-235B-A22B-GGUF:UD-Q2_K_XL --ctx-size 8192 -ngl 99",
+    "repo": "https://github.com/ggml-org/llama.cpp",
+    "profile": null,
+    "steps": [
+      "brew install llama.cpp (or build with Metal/CUDA)",
+      "llama-server -hf unsloth/Qwen3-235B-A22B-GGUF:UD-Q2_K_XL --ctx-size 8192 -ngl 99"
+    ]
+  },
+  "measurements": [],
+  "caveats": [
+    "The model exceeds the RAM of every machine in this directory at BF16 (470GB) and at any quant above ~2 bits; it only runs locally via heavy quantization, SSD expert streaming, or a multi-GPU split.",
+    "No sourced speed number exists for this lane, so the row stays untested.",
+    "Quality loss at ~2 bits per weight on a 235B MoE is not characterized in our sources."
+  ],
+  "provenance_tier": null,
+  "sources": [
+    {
+      "url": "https://huggingface.co/unsloth/Qwen3-235B-A22B-GGUF",
+      "kind": "model",
+      "note": "GGUF quants"
+    },
+    {
+      "url": "https://huggingface.co/Qwen/Qwen3-235B-A22B",
+      "kind": "model",
+      "note": "model card"
+    }
+  ],
+  "updated": "2026-09-06"
+}

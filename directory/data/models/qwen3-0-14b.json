@@ -1,0 +1,30 @@
+{
+  "id": "qwen3-0-14b",
+  "name": "Qwen3-14B",
+  "family": "Qwen3.0",
+  "generation": "3.0",
+  "publisher": "qwen",
+  "released": "2025-04",
+  "license": "Apache-2.0",
+  "architecture": {
+    "kind": "dense",
+    "params_total_b": 14.8,
+    "hybrid": false,
+    "anatomy": "Dense transformer with hybrid thinking/non-thinking modes"
+  },
+  "context": {
+    "native": 32768,
+    "max": 131072,
+    "extension": "YaRN factor 4.0"
+  },
+  "modalities": [
+    "text"
+  ],
+  "base_weight_size": {
+    "bf16_gb": 29.5,
+    "fp8_gb": 16.3
+  },
+  "url": "https://huggingface.co/Qwen/Qwen3-14B",
+  "summary": "Wave-1 dense 14B: BF16 (29.5GB) exceeds a 24GB card; the official FP8 export (16.3GB) fits.",
+  "updated": "2026-09-06"
+}

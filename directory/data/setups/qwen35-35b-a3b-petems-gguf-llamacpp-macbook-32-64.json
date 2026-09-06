@@ -1,0 +1,93 @@
+{
+  "id": "qwen35-35b-a3b-petems-gguf-llamacpp-macbook-32-64",
+  "title": "Qwen3.5-35B-A3B Q4 on 32-64 GB MacBooks: the decision-tree runbook",
+  "slug_note": "The small-Mac lane: a compatibility probe and RAM-detecting launcher put the 35B MoE at an expected 15-25 tok/s on 32-64 GB Apple Silicon.",
+  "model": "qwen3-5-35b-a3b",
+  "status": "reported",
+  "variation": {
+    "checkpoint": "unsloth/Qwen3.5-35B-A3B-GGUF",
+    "publisher": "unsloth",
+    "quant": "gguf-q4",
+    "quant_detail": "Q4_K_M chosen by the guide's RAM auto-detection",
+    "format": "gguf",
+    "size_gb": 22.2,
+    "url": "https://huggingface.co/unsloth/Qwen3.5-35B-A3B-GGUF",
+    "license": "Apache-2.0"
+  },
+  "engine": {
+    "image": null,
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "none",
+    "flags": [],
+    "id": "llama-cpp",
+    "config": "mainline llama.cpp Metal, guide's start-launcher picks ctx and threads by RAM"
+  },
+  "hardware": [
+    "mac-64gb"
+  ],
+  "requirements": {
+    "memory_gb": 22,
+    "disk_gb": 50,
+    "min_vram_gb": null,
+    "notes": "22 GB RAM for Q4_K_M on a 32 GB Mac, which is what makes it fit; ~30-50 GB disk."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "repo": "https://github.com/petems/qwen-local-silicon-32to64gb-macbook-guide",
+    "command": null,
+    "steps": [
+      "Run the guide's check-compatibility.sh probe",
+      "Use the RAM auto-detecting start-launcher",
+      "Stay at Q4_K_M or below on 32 GB machines"
+    ]
+  },
+  "measurements": [
+    {
+      "metric": "memory_gb",
+      "value": 22,
+      "unit": "GB",
+      "provenance": "forum",
+      "source": "https://github.com/petems/qwen-local-silicon-32to64gb-macbook-guide",
+      "date": null,
+      "method": "guide's expected-range figures, not a controlled bench",
+      "note": "RAM for Qwen3.5-35B-A3B at Q4_K_M on a 32 GB Mac, which is why all 99 layers can go to the Metal GPU"
+    },
+    {
+      "metric": "disk_gb",
+      "value": 50,
+      "unit": "GB",
+      "provenance": "forum",
+      "source": "https://github.com/petems/qwen-local-silicon-32to64gb-macbook-guide",
+      "date": null,
+      "method": "guide's expected-range figures, not a controlled bench",
+      "note": "free disk prerequisite range ~30-50 GB depending on quantization choice"
+    }
+  ],
+  "caveats": [
+    "These are expected ranges (15-25 tok/s), not measured benchmarks: the guide states them as planning numbers, so treat this card as a fit-check, not a performance claim.",
+    "Qwen3-Coder-Next at Q4_K_M needs ~45 GB RAM and is out of reach on 32 GB Macs; the SWE-Bench 72% quote belongs to a 27B variant, not this model."
+  ],
+  "provenance_tier": "forum",
+  "sources": [
+    {
+      "url": "https://github.com/petems/qwen-local-silicon-32to64gb-macbook-guide",
+      "kind": "repo",
+      "note": "the runbook, probe and launcher"
+    },
+    {
+      "url": "https://huggingface.co/unsloth/Qwen3.5-35B-A3B-GGUF",
+      "kind": "model",
+      "note": "weights"
+    }
+  ],
+  "updated": "2026-09-05",
+  "builder": "petems"
+}

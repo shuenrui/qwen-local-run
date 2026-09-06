@@ -1,0 +1,107 @@
+{
+  "id": "qwen38-27b-fp8-official",
+  "title": "Qwen3.8-27B FP8 — official near-lossless daily driver",
+  "slug_note": "The vendor's own FP8 export. Roughly half the BF16 footprint with no community quantizer in the chain.",
+  "model": "qwen3-8-27b",
+  "status": "reported",
+  "variation": {
+    "checkpoint": "Qwen/Qwen3.8-27B-FP8",
+    "publisher": "qwen",
+    "quant": "fp8",
+    "quant_detail": "Official FP8 export. Near-lossless per the vendor.",
+    "format": "safetensors",
+    "size_gb": 30.9,
+    "url": "https://huggingface.co/Qwen/Qwen3.8-27B-FP8",
+    "license": "Apache-2.0",
+    "downloads": null
+  },
+  "engine": {
+    "id": "sglang",
+    "config": "QUANT=fp8. Loads on both SGLang and vLLM without a fork.",
+    "image": "lmsysorg/sglang:qwen38-27b",
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "mtp",
+    "flags": [
+      "--kv-cache-dtype fp8_e4m3"
+    ]
+  },
+  "hardware": [
+    "dgx-spark"
+  ],
+  "requirements": {
+    "memory_gb": 38,
+    "disk_gb": 29,
+    "min_vram_gb": null,
+    "notes": null
+  },
+  "capabilities": {
+    "vision": true,
+    "video": true,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 1000000
+  },
+  "run": {
+    "command": "QUANT=fp8 ./start.sh",
+    "repo": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
+    "profile": null,
+    "steps": [
+      "QUANT=fp8 ./start.sh"
+    ],
+    "auto_bootable": true
+  },
+  "measurements": [
+    {
+      "metric": "decode_agg",
+      "value": 108,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://raw.githubusercontent.com/hasso5703/dgx-spark-qwen38/main/README.md",
+      "date": "2026-08-30",
+      "method": "builder's ./bench.sh at 8 concurrent streams on a single DGX Spark",
+      "note": "Against 135-148 tok/s for the NVFP4 export at the same concurrency: FP8 weights cost KV pool, not just disk."
+    },
+    {
+      "metric": "memory_gb",
+      "value": 30.9,
+      "unit": "GB",
+      "provenance": "forum",
+      "source": "https://raw.githubusercontent.com/hasso5703/dgx-spark-qwen38/main/README.md",
+      "date": "2026-08-30",
+      "method": "checkpoint size on disk; SGLang KV pool held 771,139 tokens at fp8_e4m3",
+      "note": "The trade this lane makes: 30.9 GB of weights versus 21 GB for NVFP4, taken straight out of the KV pool on a 128 GB box."
+    }
+  ],
+  "caveats": [
+    "Unbenched on our box.",
+    "GDN in float32 measured -3% versus bf16, and the FP8 KV path measured ~30% slower on the cookbook's own config — the repo pins bf16 GDN for that reason. That is about the GDN state dtype, not this checkpoint, but the two get confused.",
+    "The DSpark draft was trained on FP8, yet QUANT=fp8 did not lift draft acceptance.",
+    "The forum numbers above come from a builder lane using --kv-cache-dtype fp8_e4m3; our own card for these weights is still unbenched, so treat 108 tok/s at 8 streams as his configuration, not ours."
+  ],
+  "provenance_tier": "forum",
+  "sources": [
+    {
+      "url": "https://huggingface.co/Qwen/Qwen3.8-27B-FP8",
+      "kind": "model",
+      "note": "official FP8"
+    },
+    {
+      "url": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
+      "kind": "repo",
+      "note": "QUANT=fp8 path"
+    },
+    {
+      "url": "https://github.com/hasso5703/dgx-spark-qwen38",
+      "kind": "repo",
+      "note": "independent builder's FP8 lane with numbers"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hasso5703/dgx-spark-qwen38/main/README.md",
+      "kind": "docs",
+      "note": "README carrying the quoted measurements"
+    }
+  ],
+  "updated": "2026-09-05"
+}

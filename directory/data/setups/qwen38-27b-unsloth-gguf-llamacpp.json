@@ -1,0 +1,67 @@
+{
+  "id": "qwen38-27b-unsloth-gguf-llamacpp",
+  "title": "Qwen3.8-27B unsloth GGUF on llama.cpp (24 GB card or Mac)",
+  "slug_note": "Dynamic UD quants from IQ1_S to BF16 put the 27B on a 24 GB card or a Mac.",
+  "model": "qwen3-8-27b",
+  "status": "untested",
+  "variation": {
+    "license": "Apache-2.0",
+    "downloads": null,
+    "checkpoint": "unsloth/Qwen3.8-27B-GGUF",
+    "publisher": "unsloth",
+    "quant": "gguf-q4",
+    "quant_detail": "Dynamic UD quants; size shown is the Q4-class representative",
+    "format": "gguf",
+    "size_gb": 17.6,
+    "url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF"
+  },
+  "engine": {
+    "image": null,
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "none",
+    "flags": [],
+    "id": "llama-cpp",
+    "config": "llama.cpp with CUDA or Metal, Q4_K_M or smaller to stay on-card"
+  },
+  "hardware": [
+    "gpu-24gb",
+    "mac-128gb"
+  ],
+  "requirements": {
+    "memory_gb": 18,
+    "disk_gb": 18,
+    "min_vram_gb": null,
+    "notes": "Resident estimate from the quant size plus KV headroom."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "repo": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
+    "command": null,
+    "steps": [
+      "Download unsloth/Qwen3.8-27B-GGUF",
+      "llama.cpp with CUDA or Metal, Q4_K_M or smaller to stay on-card"
+    ]
+  },
+  "measurements": [],
+  "caveats": [
+    "No numbers yet; pick the quant by your VRAM, not by the benchmark tables.",
+    "At IQ1_S the 27B fits almost anywhere but quality cost is real."
+  ],
+  "provenance_tier": null,
+  "sources": [
+    {
+      "url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
+      "kind": "model",
+      "note": "weights / quant card"
+    }
+  ],
+  "updated": "2026-09-05"
+}

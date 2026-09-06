@@ -1,0 +1,26 @@
+{
+  "id": "mac-64gb",
+  "name": "Apple Silicon Mac, 32-64 GB unified (M1-M5 Pro/Max class)",
+  "vendor": "Apple",
+  "chip": "M1-M5 Pro/Max",
+  "arch": "arm64, Metal",
+  "form_factor": "laptop/desktop",
+  "memory_gb": 64,
+  "memory_usable_gb": 58,
+  "memory_type": "unified LPDDR4x/LPDDR5",
+  "bandwidth_gbs": 200,
+  "bandwidth_range_gbs": [
+    68,
+    546
+  ],
+  "cpu": "Apple Silicon Pro/Max class",
+  "gpu": "integrated, shares the unified pool",
+  "notes": [
+    "A wide class on purpose: 32 GB and 64 GB Macs behave differently, and bandwidth spans 68 GB/s (M1 8-core) to 546 GB/s (M4 Max). Reported numbers name the exact chip in the measurement note.",
+    "The binding constraint is RAM, not bandwidth: a 35B MoE at Q4 needs ~22 GB, which a 32 GB Mac runs with almost nothing left for context.",
+    "MoE expert streaming from SSD (mlx-flash style) is what makes over-RAM models possible here at a large speed cost."
+  ],
+  "measured_by_us": false,
+  "url": "https://github.com/petems/qwen-local-silicon-32to64gb-macbook-guide",
+  "updated": "2026-09-05"
+}

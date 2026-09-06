@@ -1,0 +1,178 @@
+{
+  "publishers": {
+    "qwen": {
+      "name": "Qwen Team (Alibaba)",
+      "kind": "lab",
+      "role": "Original weights. Publishes BF16 references plus official FP8 exports.",
+      "url": "https://huggingface.co/Qwen"
+    },
+    "nvidia": {
+      "name": "NVIDIA",
+      "kind": "lab",
+      "role": "ModelOpt NVFP4 quantizations, tuned for Blackwell and DGX Spark.",
+      "url": "https://huggingface.co/nvidia"
+    },
+    "intel": {
+      "name": "Intel",
+      "kind": "lab",
+      "role": "AutoRound INT4 quantizations.",
+      "url": "https://huggingface.co/Intel"
+    },
+    "redhatai": {
+      "name": "Red Hat AI",
+      "kind": "lab",
+      "role": "Enterprise-grade NVFP4 / INT4 quantizations with published eval deltas.",
+      "url": "https://huggingface.co/RedHatAI"
+    },
+    "radixark": {
+      "name": "RadixArk",
+      "kind": "quant-shop",
+      "role": "NVFP4 exports and the DSpark draft models. Their BF16-lm_head export is what the SGLang cookbook measured against.",
+      "url": "https://huggingface.co/RadixArk"
+    },
+    "unsloth": {
+      "name": "Unsloth",
+      "kind": "quant-shop",
+      "role": "Dynamic GGUF and NVFP4 quants across every Qwen. Publishes tool-call fixes and per-quant accuracy tables.",
+      "url": "https://huggingface.co/unsloth"
+    },
+    "z-lab": {
+      "name": "z-lab",
+      "kind": "lab",
+      "role": "DFlash2 block-diffusion draft models.",
+      "url": "https://huggingface.co/z-lab"
+    },
+    "incoai": {
+      "name": "inco.ai",
+      "kind": "lab",
+      "role": "DFlash2 authors; mirror of the z-lab drafts plus the SGLang serving recipe.",
+      "url": "https://inco.ai/blog/dflash2/"
+    },
+    "mia-ai-lab": {
+      "name": "Mia's AI Lab",
+      "kind": "builder",
+      "role": "DGX Spark serving recipes: the 27B SGLang stack and the single-Spark Flash-Next build.",
+      "url": "https://github.com/MiaAI-Lab"
+    },
+    "albond": {
+      "name": "Albond",
+      "kind": "builder",
+      "role": "INT4-hybrid single-Spark recipes for 100B-class MoE models.",
+      "url": "https://github.com/albond"
+    },
+    "azampatti": {
+      "name": "azampatti",
+      "kind": "builder",
+      "role": "Single-Spark SGLang Flash-Next recipe; easiest install of the five known builds.",
+      "url": "https://github.com/azampatti"
+    },
+    "blazux": {
+      "name": "blazux",
+      "kind": "builder",
+      "role": "vLLM hybrid mmap Flash-Next build; hybrid FP8 sides give roughly +20%.",
+      "url": "https://github.com/blazux"
+    },
+    "saren": {
+      "name": "Saren",
+      "kind": "builder",
+      "role": "Fork of the blazux build with higher reported code and JSON scores.",
+      "url": "https://github.com/saren"
+    },
+    "orcarouter": {
+      "name": "OrcaRouter",
+      "kind": "builder",
+      "role": "Uncensored Flash-Next GGUF plus a custom Rust engine fork. Gated download; not SGLang/vLLM compatible.",
+      "url": "https://huggingface.co/Baekpica"
+    },
+    "hasso5703": {
+      "name": "hasso5703",
+      "kind": "builder",
+      "role": "Published DSpark-on-GB10 config that this repo's DSpark flag stack builds on.",
+      "url": "https://github.com/hasso5703/dgx-spark-qwen38"
+    },
+    "mlx-community": {
+      "name": "MLX Community",
+      "kind": "community-org",
+      "url": "https://huggingface.co/mlx-community",
+      "note": "Apple MLX exports of open weights for local Mac inference."
+    },
+    "bartowski": {
+      "name": "bartowski",
+      "kind": "individual",
+      "url": "https://huggingface.co/bartowski",
+      "note": "Prolific GGUF quant publisher; per-quant cards with llama.cpp test notes."
+    },
+    "quanttrio": {
+      "name": "QuantTrio",
+      "kind": "individual",
+      "url": "https://huggingface.co/QuantTrio",
+      "note": "AWQ/GPTQ-style quants aimed at vLLM serving."
+    },
+    "szibis": {
+      "name": "szibis (mlx-flash)",
+      "kind": "individual",
+      "url": "https://github.com/szibis/mlx-flash",
+      "note": "Author of mlx-flash: SSD-streamed MoE experts on Apple Silicon."
+    },
+    "waybarrios": {
+      "name": "waybarrios (vllm-mlx)",
+      "kind": "individual",
+      "url": "https://github.com/waybarrios/vllm-mlx",
+      "note": "Author of vllm-mlx: continuous-batching OpenAI-compatible server on native MLX."
+    },
+    "outsourc-e": {
+      "name": "outsourc-e",
+      "kind": "individual",
+      "url": "https://github.com/outsourc-e/qwen36-4090-recipes",
+      "note": "Single-24GB-GPU llama.cpp recipes with same-vocab speculative decoding."
+    },
+    "r0b0tlab": {
+      "name": "r0b0tlab",
+      "kind": "individual",
+      "url": "https://github.com/r0b0tlab/qwen38-27b-nvfp4-sm121-sglang",
+      "note": "Click-run SGLang speculative-decoding scripts for SM121 (DGX Spark)."
+    },
+    "oscaractual": {
+      "name": "OscarActual",
+      "kind": "individual",
+      "url": "https://github.com/OscarActual/gb10-llm-benchmark",
+      "note": "GB10 (ThinkStation PGX) Ollama benchmark across 11 local models."
+    },
+    "ollama": {
+      "name": "Ollama library",
+      "kind": "vendor",
+      "url": "https://ollama.com",
+      "note": "Packaged default-quant pulls of open weights."
+    },
+    "entrpi": {
+      "name": "Entrpi",
+      "kind": "individual",
+      "url": "https://github.com/Entrpi/qwen3.5-122B-A10B-on-spark",
+      "note": "DFlash block-diffusion spec-dec installer for the 122B on Spark."
+    },
+    "sojufx": {
+      "name": "sojufx",
+      "kind": "individual",
+      "url": "https://github.com/sojufx/Qwen3.5-122B-A10B-DFlash-DGX-Spark-Recipe",
+      "note": "Native-vLLM production serve recipe for 122B NVFP4 + DFlash on Spark."
+    },
+    "hudsonwa": {
+      "name": "hudsonwa",
+      "kind": "individual",
+      "url": "https://github.com/hudsonwa/Qwen3.8-Flash-Next-oMLX-Recipe",
+      "note": "oMLX 8-slot concurrent Flash-Next serving recipe on 128 GB Macs."
+    },
+    "pipenetwork": {
+      "name": "PipeNetwork",
+      "kind": "community-org",
+      "url": "https://github.com/PipeNetwork/qwen38-flash-next-mlx",
+      "note": "MLX runtime + streaming quantization for the Flash-Next architecture."
+    },
+    "petems": {
+      "name": "petems",
+      "kind": "individual",
+      "url": "https://github.com/petems/qwen-local-silicon-32to64gb-macbook-guide",
+      "note": "Decision-tree runbook for Qwen on 32-64 GB Apple Silicon MacBooks."
+    }
+  }
+}

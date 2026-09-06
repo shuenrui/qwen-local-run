@@ -1,0 +1,30 @@
+{
+  "id": "qwen3-0-coder-30b-a3b",
+  "name": "Qwen3-Coder-30B-A3B-Instruct",
+  "family": "Qwen3.0",
+  "generation": "3.0",
+  "publisher": "qwen",
+  "released": "2025-07",
+  "license": "Apache-2.0",
+  "architecture": {
+    "kind": "moe",
+    "params_total_b": 30.5,
+    "params_active_b": 3,
+    "hybrid": false
+  },
+  "context": {
+    "native": 262144,
+    "max": 1000000,
+    "extension": "YaRN (card: 256K native, extendable to 1M)"
+  },
+  "modalities": [
+    "text"
+  ],
+  "base_weight_size": {
+    "bf16_gb": 61.1,
+    "fp8_gb": 31.2
+  },
+  "url": "https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct",
+  "summary": "Wave-1 coder MoE: 30B total, 3B active, 256K native context, official FP8 export at 31.2GB.",
+  "updated": "2026-09-06"
+}

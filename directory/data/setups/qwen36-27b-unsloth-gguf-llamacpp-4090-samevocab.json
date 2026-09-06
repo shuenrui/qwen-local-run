@@ -1,0 +1,143 @@
+{
+  "id": "qwen36-27b-unsloth-gguf-llamacpp-4090-samevocab",
+  "title": "Qwen3.6-27B Q4 on one RTX 4090: mainline llama.cpp + same-vocab draft",
+  "slug_note": "The 24 GB-card lane with a quality gate: 43.2 tok/s aggregate with a Qwen3.5-4B same-vocab draft, and a documented warning that ik_llama.cpp cross-vocab spec-dec silently corrupts output here.",
+  "model": "qwen3-6-27b",
+  "status": "reported",
+  "variation": {
+    "checkpoint": "unsloth/Qwen3.6-27B-GGUF",
+    "publisher": "unsloth",
+    "quant": "gguf-q4",
+    "quant_detail": "Q4_K_M target with Qwen3.5-4B-Q4_K_M same-vocab draft",
+    "format": "gguf",
+    "size_gb": 17.6,
+    "url": "https://huggingface.co/unsloth/Qwen3.6-27B-GGUF",
+    "license": "Apache-2.0"
+  },
+  "engine": {
+    "image": null,
+    "requires_fork": false,
+    "draft_model": "Qwen3.5-4B-Q4_K_M",
+    "spec_decode": "other",
+    "flags": [],
+    "id": "llama-cpp",
+    "config": "mainline llama.cpp -DGGML_CUDA=ON CUDA 12.8, same-vocab speculative draft, q4 KV"
+  },
+  "hardware": [
+    "gpu-24gb"
+  ],
+  "requirements": {
+    "memory_gb": 22,
+    "disk_gb": 32,
+    "min_vram_gb": 22,
+    "notes": "22 GB VRAM for the C1-agg stack; 32K/64K/256K configs sit at 21-22 GB with q4 KV."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "repo": "https://github.com/outsourc-e/qwen36-4090-recipes",
+    "command": null,
+    "steps": [
+      "Build mainline llama.cpp with CUDA 12.8",
+      "Load the Q4_K_M target plus the Qwen3.5-4B same-vocab draft",
+      "Run the repo's bench-split.py quality gate before trusting any speed number"
+    ]
+  },
+  "measurements": [
+    {
+      "metric": "decode_agg",
+      "value": 43.2,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://github.com/outsourc-e/qwen36-4090-recipes",
+      "date": "2026-04-25",
+      "method": "repo's per-category bench with the quality gate",
+      "note": "C1-agg: mainline llama.cpp, Qwen3.5-4B same-vocab draft, 8K ctx, q8 KV, mean across 6 quality categories on one RTX 4090"
+    },
+    {
+      "metric": "decode_agg",
+      "value": 67.1,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://github.com/outsourc-e/qwen36-4090-recipes",
+      "date": "2026-04-25",
+      "method": "repo's per-category bench with the quality gate",
+      "note": "C1-agg peak tps, same config"
+    },
+    {
+      "metric": "decode_agg",
+      "value": 41.6,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://github.com/outsourc-e/qwen36-4090-recipes",
+      "date": "2026-04-25",
+      "method": "repo's per-category bench with the quality gate",
+      "note": "C1-32K-dkv: 32K ctx with q4 KV on target and draft, mean (peak 61.9), 23 GB VRAM"
+    },
+    {
+      "metric": "decode_agg",
+      "value": 38.6,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://github.com/outsourc-e/qwen36-4090-recipes",
+      "date": "2026-04-25",
+      "method": "repo's per-category bench with the quality gate",
+      "note": "C2-64K, no spec-dec, q4 KV, ~21 GB VRAM (peak 41.3)"
+    },
+    {
+      "metric": "decode_agg",
+      "value": 38.2,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://github.com/outsourc-e/qwen36-4090-recipes",
+      "date": "2026-04-25",
+      "method": "repo's per-category bench with the quality gate",
+      "note": "C3-256K, no spec-dec, q4 KV, 22 GB VRAM (peak 42.1)"
+    },
+    {
+      "metric": "quality_index",
+      "value": 6,
+      "unit": "score",
+      "provenance": "forum",
+      "source": "https://github.com/outsourc-e/qwen36-4090-recipes",
+      "date": "2026-04-25",
+      "method": "repo's per-category bench with the quality gate",
+      "note": "bench-split.py 6-category quality pass (list, code, json, reason, tool, essay) for all mainline configs; A2 scores 4/6"
+    },
+    {
+      "metric": "memory_gb",
+      "value": 22,
+      "unit": "GB",
+      "provenance": "forum",
+      "source": "https://github.com/outsourc-e/qwen36-4090-recipes",
+      "date": "2026-04-25",
+      "method": "repo's per-category bench with the quality gate",
+      "note": "VRAM for the recommended C1-agg stack on a 24 GB RTX 4090 (23 GB at 32K)"
+    }
+  ],
+  "caveats": [
+    "The dropped ik_llama.cpp numbers (63 code / 102 json tok/s) FAIL the repo's own quality check: cross-vocab speculative decoding silently corrupts output on this stack. Speed without the gate is a trap here.",
+    "Quality gate score 6/6 categories is recorded in the measurements; treat any config that scores below that as broken, not fast."
+  ],
+  "provenance_tier": "forum",
+  "sources": [
+    {
+      "url": "https://github.com/outsourc-e/qwen36-4090-recipes",
+      "kind": "repo",
+      "note": "recipes, benches and the quality gate"
+    },
+    {
+      "url": "https://huggingface.co/unsloth/Qwen3.6-27B-GGUF",
+      "kind": "model",
+      "note": "weights"
+    }
+  ],
+  "updated": "2026-09-05",
+  "builder": "outsourc-e"
+}

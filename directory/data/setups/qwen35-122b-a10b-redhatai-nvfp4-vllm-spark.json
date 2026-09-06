@@ -1,0 +1,82 @@
+{
+  "id": "qwen35-122b-a10b-redhatai-nvfp4-vllm-spark",
+  "title": "Qwen3.5-122B-A10B RedHatAI NVFP4 on vLLM — the SM121 kernel trap",
+  "slug_note": "A documented negative result: NVFP4 of the 122B decodes at 16.6 tok/s on Spark, slower than INT4, because FP4 CUTLASS kernels do not run on SM121 yet.",
+  "model": "qwen3-5-122b-a10b",
+  "status": "reported",
+  "variation": {
+    "license": "Apache-2.0",
+    "downloads": null,
+    "checkpoint": "RedHatAI/Qwen3.5-122B-A10B-NVFP4",
+    "publisher": "redhatai",
+    "quant": "nvfp4",
+    "quant_detail": "NVFP4 export of the 122B MoE",
+    "format": "safetensors",
+    "size_gb": 76.4,
+    "url": "https://huggingface.co/RedHatAI/Qwen3.5-122B-A10B-NVFP4"
+  },
+  "engine": {
+    "image": null,
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "none",
+    "flags": [],
+    "id": "vllm",
+    "config": "stock vLLM on a single DGX Spark"
+  },
+  "hardware": [
+    "dgx-spark"
+  ],
+  "requirements": {
+    "memory_gb": 70,
+    "disk_gb": 68,
+    "min_vram_gb": null,
+    "notes": "Fits a single Spark; the problem is kernel support, not capacity."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "repo": "https://forums.developer.nvidia.com/t/qwen3-5-122b-a10b-on-single-spark-up-to-51-tok-s-v2-1-patches-quick-start-benchmark/365639",
+    "command": null,
+    "steps": [
+      "Serve the RedHatAI NVFP4 checkpoint with stock vLLM on one Spark",
+      "Expect FP4 kernels to fall back; measure before trusting the quant label"
+    ]
+  },
+  "measurements": [
+    {
+      "metric": "decode_chat",
+      "value": 16.6,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://forums.developer.nvidia.com/t/qwen3-5-122b-a10b-on-single-spark-up-to-51-tok-s-v2-1-patches-quick-start-benchmark/365639",
+      "date": "2026-04-05",
+      "method": "single DGX Spark, vLLM, single stream",
+      "note": "'slower than INT4 because FP4 CUTLASS kernels don't work on SM121 yet'."
+    }
+  ],
+  "caveats": [
+    "Keep this entry precisely because it is slow: it is the counter-example to 'NVFP4 is always faster' on Blackwell-mini silicon.",
+    "Kernel support moves; re-check vLLM/FlashInfer SM121 FP4 status before deleting this row."
+  ],
+  "provenance_tier": "forum",
+  "sources": [
+    {
+      "url": "https://forums.developer.nvidia.com/t/qwen3-5-122b-a10b-on-single-spark-up-to-51-tok-s-v2-1-patches-quick-start-benchmark/365639",
+      "kind": "thread",
+      "note": "NVIDIA developer forum thread with the measurement"
+    },
+    {
+      "url": "https://huggingface.co/RedHatAI/Qwen3.5-122B-A10B-NVFP4",
+      "kind": "model",
+      "note": "weights"
+    }
+  ],
+  "updated": "2026-09-05"
+}

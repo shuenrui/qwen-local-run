@@ -1,0 +1,79 @@
+{
+  "id": "qwen35-9b-bf16-sglang",
+  "title": "Qwen3.5-9B — BF16 on SGLang",
+  "slug_note": "Fits essentially anywhere: 24GB cards, 32GB Macs, and comfortably on a Spark. Vendor-reported MMLU-Pro 82.5.",
+  "model": "qwen3-5-9b",
+  "status": "untested",
+  "variation": {
+    "checkpoint": "Qwen/Qwen3.5-9B",
+    "publisher": "qwen",
+    "quant": "bf16",
+    "quant_detail": "Full precision, ~18GB. No quantization needed at this size.",
+    "format": "safetensors",
+    "size_gb": 19.3,
+    "url": "https://huggingface.co/Qwen/Qwen3.5-9B",
+    "license": "Apache-2.0",
+    "downloads": null
+  },
+  "engine": {
+    "id": "sglang",
+    "config": "SGLang from our recipe card. Speculative decoding off.",
+    "image": "lmsysorg/sglang:qwen38-27b",
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "none",
+    "flags": [
+      "--mem-fraction-static 0.9",
+      "--max-running-requests 16",
+      "--context-length 131072"
+    ]
+  },
+  "hardware": [
+    "dgx-spark",
+    "gpu-24gb",
+    "mac-128gb"
+  ],
+  "requirements": {
+    "memory_gb": 23,
+    "disk_gb": 18,
+    "min_vram_gb": null,
+    "notes": "mem-fraction 0.9, concurrency 16, context 131072."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 131072,
+    "max_context": 131072
+  },
+  "run": {
+    "command": "PROFILE=profiles/qwen3.5-9b.env ./start-model.sh",
+    "repo": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
+    "profile": "profiles/qwen3.5-9b.env",
+    "steps": [
+      "PROFILE=profiles/qwen3.5-9b.env ./start-model.sh"
+    ],
+    "auto_bootable": true
+  },
+  "measurements": [],
+  "caveats": [
+    "Small models in this family carry no MTP head, so speculative decoding is off and there is no free speed available.",
+    "The MMLU-Pro 82.5 figure is a vendor claim recorded in the model notes, not a measurement on this entry.",
+    "Recipe card validates and the container reaches 'Starting container', but no benchmark has been run. There are no numbers for this entry yet."
+  ],
+  "provenance_tier": null,
+  "sources": [
+    {
+      "url": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
+      "kind": "repo",
+      "note": "recipe card in profiles/"
+    },
+    {
+      "url": "https://huggingface.co/Qwen/Qwen3.5-9B",
+      "kind": "model",
+      "note": "weights"
+    }
+  ],
+  "updated": "2026-09-05"
+}

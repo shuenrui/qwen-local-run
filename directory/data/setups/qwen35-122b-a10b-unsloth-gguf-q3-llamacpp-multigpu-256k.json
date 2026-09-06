@@ -1,0 +1,99 @@
+{
+  "id": "qwen35-122b-a10b-unsloth-gguf-q3-llamacpp-multigpu-256k",
+  "title": "Qwen3.5-122B-A10B UD-Q3_K_XL on llama.cpp at 256K context, 72 GB VRAM",
+  "slug_note": "The long-context 122B report: 50 tok/s generation on a 256K-token prompt, with prefill collapsing from 1800 tok/s at 4K to 800 tok/s at 256K.",
+  "model": "qwen3-5-122b-a10b",
+  "status": "reported",
+  "variation": {
+    "license": "Apache-2.0",
+    "downloads": null,
+    "checkpoint": "unsloth/Qwen3.5-122B-A10B-GGUF",
+    "publisher": "unsloth",
+    "quant": "gguf-q3",
+    "quant_detail": "UD-Q3_K_XL (author also runs IQ4_XS at ~240K context)",
+    "format": "gguf",
+    "size_gb": 57.0,
+    "url": "https://huggingface.co/unsloth/Qwen3.5-122B-A10B-GGUF"
+  },
+  "engine": {
+    "image": null,
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "none",
+    "flags": [],
+    "id": "llama-cpp",
+    "config": "llama.cpp b8157, 256K-token prompt, tensor-split across 4090 + 2x 3090"
+  },
+  "hardware": [
+    "gpu-multigpu-72gb"
+  ],
+  "requirements": {
+    "memory_gb": 60,
+    "disk_gb": 60,
+    "min_vram_gb": 60,
+    "notes": "Q3 fits with KV room for 256K; author notes the rig is PCIe-lane limited."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "repo": "https://huggingface.co/unsloth/Qwen3.5-122B-A10B-GGUF/discussions/3",
+    "command": null,
+    "steps": [
+      "Download the UD-Q3_K_XL GGUF",
+      "llama.cpp b8157 or newer with tensor-split over three cards",
+      "Load a 256K-token prompt and measure generation and prefill"
+    ]
+  },
+  "measurements": [
+    {
+      "metric": "decode_chat",
+      "value": 50,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://huggingface.co/unsloth/Qwen3.5-122B-A10B-GGUF/discussions/3",
+      "date": "2026-02-26",
+      "method": "llama.cpp b8157 with a 256K-token prompt loaded"
+    },
+    {
+      "metric": "bench_other",
+      "value": 800,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://huggingface.co/unsloth/Qwen3.5-122B-A10B-GGUF/discussions/3",
+      "date": "2026-02-26",
+      "method": "prefill on a single 256K-token prompt (worst case)"
+    },
+    {
+      "metric": "bench_other",
+      "value": 1800,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://huggingface.co/unsloth/Qwen3.5-122B-A10B-GGUF/discussions/3",
+      "date": "2026-02-26",
+      "method": "prefill on a 4K-token prompt"
+    }
+  ],
+  "caveats": [
+    "Prefill at 256K is the number to watch: it is 2.25x worse than at 4K on the same rig, which is the PCIe-lane tax made visible."
+  ],
+  "provenance_tier": "forum",
+  "sources": [
+    {
+      "url": "https://huggingface.co/unsloth/Qwen3.5-122B-A10B-GGUF/discussions/3",
+      "kind": "thread",
+      "note": "HF discussion with the numbers"
+    },
+    {
+      "url": "https://huggingface.co/unsloth/Qwen3.5-122B-A10B-GGUF",
+      "kind": "model",
+      "note": "GGUF repo"
+    }
+  ],
+  "updated": "2026-09-05"
+}

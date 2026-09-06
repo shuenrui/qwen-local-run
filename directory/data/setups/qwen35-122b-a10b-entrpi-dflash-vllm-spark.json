@@ -1,0 +1,174 @@
+{
+  "id": "qwen35-122b-a10b-entrpi-dflash-vllm-spark",
+  "title": "Qwen3.5-122B-A10B + DFlash block-diffusion spec-dec on one Spark",
+  "slug_note": "The 122B lane that applies block-diffusion drafting to agent workloads: 81 tok/s median on real tool-call turns, accept length ~5.4 on code.",
+  "model": "qwen3-5-122b-a10b",
+  "status": "reported",
+  "variation": {
+    "checkpoint": "Intel/Qwen3.5-122B-A10B-int4-AutoRound",
+    "publisher": "intel",
+    "quant": "int4-hybrid",
+    "quant_detail": "AutoRound INT4 hybrid served with a DFlash block-diffusion draft",
+    "format": "safetensors",
+    "size_gb": 76.7,
+    "url": "https://huggingface.co/Intel/Qwen3.5-122B-A10B-int4-AutoRound",
+    "license": "Apache-2.0"
+  },
+  "engine": {
+    "image": null,
+    "requires_fork": true,
+    "draft_model": null,
+    "spec_decode": "dflash2",
+    "flags": [],
+    "id": "vllm",
+    "config": "one-shot curl|bash installer, prebuilt sm121 vLLM 0.23 image, DFlash draft for the 122B"
+  },
+  "hardware": [
+    "dgx-spark"
+  ],
+  "requirements": {
+    "memory_gb": 112,
+    "disk_gb": 75,
+    "min_vram_gb": null,
+    "notes": "40 GiB image + 67 GiB hybrid checkpoint; 16 GB unified free at READY on the dense profile."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "repo": "https://github.com/Entrpi/qwen3.5-122B-A10B-on-spark",
+    "command": null,
+    "steps": [
+      "Run the repo's one-shot installer",
+      "Choose the DFlash profile for agent workloads",
+      "--load-format fastsafetensors cuts time-to-READY to ~3 min versus ~12"
+    ]
+  },
+  "measurements": [
+    {
+      "metric": "decode_chat",
+      "value": 81,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://github.com/Entrpi/qwen3.5-122B-A10B-on-spark",
+      "date": null,
+      "method": "repo harness: real agent tool-call turns regenerated, per-workload ladders",
+      "note": "median DFlash decode on 10 real agent tool-call turns regenerated from a live agent state.db (73% tool calls, accept length 8.3), vs ~40 tok/s for the native MTP-2 head and 51.58 for albond's fully-patched MTP recipe"
+    },
+    {
+      "metric": "decode_agg",
+      "value": 200,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://github.com/Entrpi/qwen3.5-122B-A10B-on-spark",
+      "date": null,
+      "method": "repo harness: real agent tool-call turns regenerated, per-workload ladders",
+      "note": "agentic workload aggregate at 3 concurrent streams (per-stream 121.8 / 98.9 / 66.7)"
+    },
+    {
+      "metric": "decode_code",
+      "value": 54.5,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://github.com/Entrpi/qwen3.5-122B-A10B-on-spark",
+      "date": null,
+      "method": "repo harness: real agent tool-call turns regenerated, per-workload ladders",
+      "note": "code workload single stream, DFlash n=12 (accept ~5.4) vs MTP-2 40.5 and base 28.2; at 3 streams 43.0 per stream, 129 aggregate"
+    },
+    {
+      "metric": "decode_chat",
+      "value": 124.5,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://github.com/Entrpi/qwen3.5-122B-A10B-on-spark",
+      "date": null,
+      "method": "repo harness: real agent tool-call turns regenerated, per-workload ladders",
+      "note": "counting workload single stream, accept length ~11 (MTP-2 caps at 43.7 because sequential drafting limits acceptance to ~3)"
+    },
+    {
+      "metric": "decode_essay",
+      "value": 48.8,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://github.com/Entrpi/qwen3.5-122B-A10B-on-spark",
+      "date": null,
+      "method": "repo harness: real agent tool-call turns regenerated, per-workload ladders",
+      "note": "prose workload single stream (38.4 at 2 streams, 30.8 at 3, aggregate 92.5); DFlash only ties MTP-2 (33.2 vs 33.7) on low-acceptance prose"
+    },
+    {
+      "metric": "decode_agg",
+      "value": 59.0,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://github.com/Entrpi/qwen3.5-122B-A10B-on-spark",
+      "date": null,
+      "method": "repo harness: real agent tool-call turns regenerated, per-workload ladders",
+      "note": "dense profile on albond's end-to-end harness (completion tokens / total wallclock incl. prefill, 5 prompts, run 1 discarded): 53.7 for the plain dflash profile, +14% and +4% over albond's published 51.58"
+    },
+    {
+      "metric": "decode_chat",
+      "value": 36.0,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://github.com/Entrpi/qwen3.5-122B-A10B-on-spark",
+      "date": null,
+      "method": "repo harness: real agent tool-call turns regenerated, per-workload ladders",
+      "note": "dense profile base decode with both levers (+28% over the 28.2 INT4 baseline; hybrid-FP8 alone 30.4, int8 lm-head alone 32.7)"
+    },
+    {
+      "metric": "memory_gb",
+      "value": 16,
+      "unit": "GB",
+      "provenance": "forum",
+      "source": "https://github.com/Entrpi/qwen3.5-122B-A10B-on-spark",
+      "date": null,
+      "method": "repo harness: real agent tool-call turns regenerated, per-workload ladders",
+      "note": "free unified memory at READY on the default dense profile at gpu-mem 0.82 (~15 GiB under peak 3-stream load); 0.88-0.89 leaves only ~5 GiB and the host swaps"
+    },
+    {
+      "metric": "task_time_min",
+      "value": 3,
+      "unit": "min",
+      "provenance": "forum",
+      "source": "https://github.com/Entrpi/qwen3.5-122B-A10B-on-spark",
+      "date": null,
+      "method": "repo harness: real agent tool-call turns regenerated, per-workload ladders",
+      "note": "time to READY with --load-format fastsafetensors (vs ~12 min on the default loader); weight read ~32 s vs ~8 min, remaining ~2.5 min is torch.compile (~42 s) + CUDA-graph capture (~2 min)"
+    },
+    {
+      "metric": "disk_gb",
+      "value": 75,
+      "unit": "GB",
+      "provenance": "forum",
+      "source": "https://github.com/Entrpi/qwen3.5-122B-A10B-on-spark",
+      "date": null,
+      "method": "repo harness: real agent tool-call turns regenerated, per-workload ladders",
+      "note": "minimum free disk (40 GiB image + 67 GiB hybrid checkpoint + 1.6 GiB drafter); >=150 GiB with --build-hybrid"
+    }
+  ],
+  "caveats": [
+    "The 119 GB figure is the box's usable unified memory, not this setup's footprint; kept out of the measurements.",
+    "DFlash on the 122B is a fork-path feature: stock vLLM will not reproduce it, so reproducibility depends on the prebuilt image.",
+    "The checkpoint card states no license field; the weights lineage is Qwen Apache-2.0."
+  ],
+  "provenance_tier": "forum",
+  "sources": [
+    {
+      "url": "https://github.com/Entrpi/qwen3.5-122B-A10B-on-spark",
+      "kind": "repo",
+      "note": "installer and workload benches"
+    },
+    {
+      "url": "https://huggingface.co/Intel/Qwen3.5-122B-A10B-int4-AutoRound",
+      "kind": "model",
+      "note": "weights"
+    }
+  ],
+  "updated": "2026-09-05",
+  "builder": "entrpi"
+}

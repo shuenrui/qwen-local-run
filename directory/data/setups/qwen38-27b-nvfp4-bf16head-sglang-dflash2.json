@@ -1,0 +1,116 @@
+{
+  "id": "qwen38-27b-nvfp4-bf16head-sglang-dflash2",
+  "title": "Qwen3.8-27B NVFP4 (BF16 lm_head) — SGLang + DFlash2, 0.90/16 profile",
+  "slug_note": "The current default in our repo. Same NVFP4 body as the measured packed-head twin, with a denser lm_head. One community builder reports steadier tool-calls; that is unproven.",
+  "model": "qwen3-8-27b",
+  "status": "measured",
+  "variation": {
+    "checkpoint": "RadixArk/Qwen3.8-27B-NVFP4-BF16-LMHead",
+    "publisher": "radixark",
+    "quant": "nvfp4",
+    "quant_detail": "W4A4 body with a dense BF16 lm_head. The export the SGLang cookbook recipes were measured against. +~1.7GB on disk / +~3.2GB at runtime versus the packed-FP4 head.",
+    "format": "safetensors",
+    "size_gb": 23.7,
+    "url": "https://huggingface.co/RadixArk/Qwen3.8-27B-NVFP4-BF16-LMHead",
+    "license": "Apache-2.0",
+    "downloads": null
+  },
+  "engine": {
+    "id": "sglang",
+    "config": "DFlash2 block-diffusion draft on the dense-head export, so the DFLASH selector uses the native dense path and needs no quantized-head patch. mem-fraction 0.90 with 16 concurrent requests.",
+    "image": "lmsysorg/sglang:qwen38-27b-dflash2",
+    "requires_fork": true,
+    "draft_model": "z-lab/Qwen3.8-27B-DFlash2@50307d4",
+    "spec_decode": "dflash2",
+    "flags": [
+      "--mem-fraction-static 0.90",
+      "--max-running-requests 16",
+      "--max-mamba-cache-size 64",
+      "--kv-cache-dtype fp8_e4m3"
+    ]
+  },
+  "hardware": [
+    "dgx-spark"
+  ],
+  "requirements": {
+    "memory_gb": 32,
+    "disk_gb": 27,
+    "min_vram_gb": null,
+    "notes": "~24GB target + ~2.6GB draft + KV pool. GDN state pool = concurrency x 4 slots = 64 slots (~3.1GB at BF16, 78.4MB/slot)."
+  },
+  "capabilities": {
+    "vision": true,
+    "video": true,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "command": "PROFILE=profiles/qwen3.8-27b.env ./start-model.sh",
+    "repo": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
+    "profile": "profiles/qwen3.8-27b.env",
+    "steps": [
+      "cp .env.sample .env",
+      "./start-dflash.sh"
+    ],
+    "auto_bootable": true
+  },
+  "measurements": [
+    {
+      "metric": "decode_per_stream",
+      "value": 56.6,
+      "unit": "tok/s",
+      "provenance": "box",
+      "date": "2026-08-19",
+      "n": 1,
+      "method": "synthetic structural-decode fixture, single stream, first post-fix boot at the 0.90/16 profile"
+    },
+    {
+      "metric": "decode_agg",
+      "value": 227.6,
+      "unit": "tok/s",
+      "provenance": "box",
+      "date": "2026-08-19",
+      "n": 1,
+      "method": "same fixture at 16 concurrent streams; aggregate across all streams",
+      "note": "Per-stream degrades gracefully 56.6 -> 28.2 tok/s as concurrency rises 1 -> 16."
+    },
+    {
+      "metric": "ttft_ms",
+      "value": 127,
+      "unit": "ms",
+      "provenance": "box",
+      "date": "2026-08-19",
+      "n": 1,
+      "method": "same fixture, single stream",
+      "note": "TTFT holds 0.13-0.28s through 8 streams, then jumps to 4.18s at 16 (16-way admission on this box)."
+    }
+  ],
+  "caveats": [
+    "The canonical probe table (code 50.9 / essay 25.4 / chat 66.6) was recorded on the packed-FP4-head twin, not on this checkpoint. Same NVFP4 body, denser lm_head. The public dashboard attributes those numbers to this export; the README's canonical table does not. Treat them as indicative until re-measured here.",
+    "The concurrency ladder is one boot and one fixture — indicative, not a guarantee. Replicate before relying on it. It is also a third clock: not comparable to the net-decode table or to wall-time figures.",
+    "This boot completed all 16 streams without a reboot, which is what proved the draft-capture crash was gone.",
+    "Still not measured on this checkpoint: the BF16 full-precision target, and any long-context configuration.",
+    "One community builder reports steadier tool-calls on the BF16 head versus the packed head. Unproven — there is a disputed counter-report claiming -20-25% decode, which needs a controlled retest."
+  ],
+  "provenance_tier": "box",
+  "sources": [
+    {
+      "url": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
+      "kind": "repo",
+      "note": "recipe, profile card, concurrency ladder"
+    },
+    {
+      "url": "https://huggingface.co/RadixArk/Qwen3.8-27B-NVFP4-BF16-LMHead",
+      "kind": "model",
+      "note": "weights"
+    },
+    {
+      "url": "https://docs.sglang.io/cookbook/autoregressive/Qwen/Qwen3.8-27B",
+      "kind": "docs",
+      "note": "measured against this export"
+    }
+  ],
+  "updated": "2026-09-05"
+}

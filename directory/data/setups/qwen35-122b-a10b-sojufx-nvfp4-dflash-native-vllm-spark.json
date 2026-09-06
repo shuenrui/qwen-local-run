@@ -1,0 +1,124 @@
+{
+  "id": "qwen35-122b-a10b-sojufx-nvfp4-dflash-native-vllm-spark",
+  "title": "Qwen3.5-122B-A10B NVFP4 + DFlash on native vLLM 0.26 (no Docker), Spark",
+  "slug_note": "The production-serve recipe: native vLLM from a venv with CUTE_DSL_ARCH=sm_121a, 36 tok/s single stream and 34.3 aggregate at agent-shaped concurrency 2.",
+  "model": "qwen3-5-122b-a10b",
+  "status": "reported",
+  "variation": {
+    "checkpoint": "RedHatAI/Qwen3.5-122B-A10B-NVFP4",
+    "publisher": "redhatai",
+    "quant": "nvfp4",
+    "quant_detail": "NVFP4 with DFlash draft, native vLLM 0.26.0 from a venv",
+    "format": "safetensors",
+    "size_gb": 76.4,
+    "url": "https://huggingface.co/RedHatAI/Qwen3.5-122B-A10B-NVFP4",
+    "license": "Apache-2.0"
+  },
+  "engine": {
+    "image": null,
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "dflash2",
+    "flags": [],
+    "id": "vllm",
+    "config": "native vLLM 0.26.0 in a venv, CUTE_DSL_ARCH=sm_121a, PYTORCH_CUDA alloc tuning, no Docker"
+  },
+  "hardware": [
+    "dgx-spark"
+  ],
+  "requirements": {
+    "memory_gb": 102,
+    "disk_gb": 70,
+    "min_vram_gb": null,
+    "notes": "102 GB unified used post-start, ~18 GB left; 17.83 GB available KV at the stable config."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "repo": "https://github.com/sojufx/Qwen3.5-122B-A10B-DFlash-DGX-Spark-Recipe",
+    "command": null,
+    "steps": [
+      "Create the venv and install native vLLM 0.26.0 per the recipe",
+      "Export CUTE_DSL_ARCH=sm_121a before serving",
+      "Launch the NVFP4 checkpoint with the DFlash draft config from the recipe"
+    ]
+  },
+  "measurements": [
+    {
+      "metric": "decode_chat",
+      "value": 36.0,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://github.com/sojufx/Qwen3.5-122B-A10B-DFlash-DGX-Spark-Recipe",
+      "date": null,
+      "method": "fixed 256-token single-stream benchmark and agent-shaped concurrency runs",
+      "note": "single-stream decode, fixed 256-token benchmark at temperature 0 through the OpenAI-compatible vLLM endpoint, 'generic' prompt"
+    },
+    {
+      "metric": "decode_code",
+      "value": 27.0,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://github.com/sojufx/Qwen3.5-122B-A10B-DFlash-DGX-Spark-Recipe",
+      "date": null,
+      "method": "fixed 256-token single-stream benchmark and agent-shaped concurrency runs",
+      "note": "code_edit prompt in the same 256-token single-stream fixture (long_context_code 20.6, agent_tool 19.7)"
+    },
+    {
+      "metric": "decode_agg",
+      "value": 34.3,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://github.com/sojufx/Qwen3.5-122B-A10B-DFlash-DGX-Spark-Recipe",
+      "date": null,
+      "method": "fixed 256-token single-stream benchmark and agent-shaped concurrency runs",
+      "note": "agent-shaped concurrency 2 aggregate (17.2 per stream); 34.4 at concurrency 4 (8.6/8.6/17.1/18.4), 20.8 at concurrency 1"
+    },
+    {
+      "metric": "memory_gb",
+      "value": 17.83,
+      "unit": "GB",
+      "provenance": "forum",
+      "source": "https://github.com/sojufx/Qwen3.5-122B-A10B-DFlash-DGX-Spark-Recipe",
+      "date": null,
+      "method": "fixed 256-token single-stream benchmark and agent-shaped concurrency runs",
+      "note": "available KV cache memory at the stable config = 498,866 KV tokens, 3.81x maximum concurrency for 131,072 tokens/request"
+    },
+    {
+      "metric": "memory_gb",
+      "value": 102,
+      "unit": "GB",
+      "provenance": "forum",
+      "source": "https://github.com/sojufx/Qwen3.5-122B-A10B-DFlash-DGX-Spark-Recipe",
+      "date": null,
+      "method": "fixed 256-token single-stream benchmark and agent-shaped concurrency runs",
+      "note": "post-start unified RAM used on the 128 GB Spark, leaving ~18 GiB available"
+    }
+  ],
+  "caveats": [
+    "Deliberately Docker-free: the recipe's point is that the sm_121a CUTLASS path works from a venv, which changes what 'native' FP4 performance looks like.",
+    "Contrast with the RedHatAI NVFP4 row measured at 16.6 tok/s on stock vLLM: same weights, different kernel path, 2x apart.",
+    "The checkpoint card states no license field; the weights lineage is Qwen Apache-2.0."
+  ],
+  "provenance_tier": "forum",
+  "sources": [
+    {
+      "url": "https://github.com/sojufx/Qwen3.5-122B-A10B-DFlash-DGX-Spark-Recipe",
+      "kind": "repo",
+      "note": "the serve recipe and benches"
+    },
+    {
+      "url": "https://huggingface.co/RedHatAI/Qwen3.5-122B-A10B-NVFP4",
+      "kind": "model",
+      "note": "weights"
+    }
+  ],
+  "updated": "2026-09-05",
+  "builder": "sojufx"
+}

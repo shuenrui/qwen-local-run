@@ -1,0 +1,29 @@
+{
+  "id": "qwen3-5-27b",
+  "name": "Qwen3.5-27B",
+  "family": "Qwen3.5",
+  "generation": "3.5",
+  "publisher": "qwen",
+  "released": "2026",
+  "license": "Apache-2.0",
+  "architecture": {
+    "kind": "dense",
+    "params_total_b": 27,
+    "params_active_b": 27,
+    "mtp_head": null
+  },
+  "context": {
+    "native": 262144,
+    "max": 262144,
+    "extension": null
+  },
+  "modalities": [
+    "text"
+  ],
+  "url": "https://huggingface.co/Qwen/Qwen3.5-27B-FP8",
+  "summary": "Direct parent of the 3.6 dense line.",
+  "notes": [
+    "MTP on this checkpoint is unverified; set SPEC_ENABLE=0 if boot rejects it."
+  ],
+  "updated": "2026-09-05"
+}

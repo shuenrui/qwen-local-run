@@ -1,0 +1,73 @@
+{
+  "id": "qwen38-27b-nvfp4-bf16head-sglang-dspark",
+  "title": "Qwen3.8-27B NVFP4 (BF16 lm_head) — SGLang + DSpark block-7",
+  "slug_note": "The default export under DSpark: the code-peak engine, unmeasured on this export since the head swap.",
+  "model": "qwen3-8-27b",
+  "status": "untested",
+  "variation": {
+    "checkpoint": "RadixArk/Qwen3.8-27B-NVFP4-BF16-LMHead",
+    "publisher": "radixark",
+    "quant": "nvfp4",
+    "quant_detail": "W4A4 body, dense BF16 lm_head; DSpark block-7 draft",
+    "format": "safetensors",
+    "size_gb": 23.7,
+    "url": "https://huggingface.co/RadixArk/Qwen3.8-27B-NVFP4-BF16-LMHead",
+    "license": "Apache-2.0",
+    "downloads": null
+  },
+  "engine": {
+    "id": "sglang",
+    "config": "SGLang with the RadixArk DSpark draft, default profile",
+    "image": "lmsysorg/sglang:qwen38-27b",
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "dspark",
+    "flags": []
+  },
+  "hardware": [
+    "dgx-spark"
+  ],
+  "requirements": {
+    "memory_gb": 30,
+    "disk_gb": 27,
+    "min_vram_gb": null,
+    "notes": "From the recipe card's mem-fraction and context settings."
+  },
+  "capabilities": {
+    "vision": true,
+    "video": true,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "repo": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
+    "command": "PROFILE=profiles/qwen3.8-27b.env ./start-model.sh",
+    "profile": "profiles/qwen3.8-27b.env",
+    "steps": [
+      "PROFILE=profiles/qwen3.8-27b.env ./start-model.sh",
+      "curl http://127.0.0.1:8888/v1/models"
+    ],
+    "auto_bootable": true
+  },
+  "measurements": [],
+  "caveats": [
+    "No numbers yet on this export; the README's DSpark row (51.5/18.3/23.2) is the packed-FP4-head export.",
+    "YaRN stays off: DSpark shares the draft-config leak above 262144 context."
+  ],
+  "provenance_tier": null,
+  "sources": [
+    {
+      "url": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
+      "kind": "repo",
+      "note": "recipe card in profiles/"
+    },
+    {
+      "url": "https://huggingface.co/RadixArk/Qwen3.8-27B-NVFP4-BF16-LMHead",
+      "kind": "model",
+      "note": "weights"
+    }
+  ],
+  "updated": "2026-09-05"
+}

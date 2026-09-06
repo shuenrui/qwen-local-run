@@ -1,0 +1,24 @@
+{
+  "id": "dgx-spark",
+  "name": "NVIDIA DGX Spark",
+  "vendor": "NVIDIA",
+  "chip": "GB10 Grace Blackwell",
+  "arch": "aarch64 / SM121",
+  "form_factor": "desktop",
+  "memory_gb": 128,
+  "memory_usable_gb": 119,
+  "memory_type": "unified LPDDR5x",
+  "bandwidth_gbs": 273,
+  "cpu": "10x Cortex-X5 @ 3.9GHz + 10x Cortex-A725 @ 2.8GHz (big.LITTLE)",
+  "gpu": "Blackwell, SM121",
+  "notes": [
+    "Bandwidth, not capacity, decides speed here: 273 GB/s shared between CPU and GPU.",
+    "Dense 70B-class lands around 2.7 tok/s. A 35B MoE with 3B active reaches 60-100 tok/s. MoE wins on this box by 5-8x at equal quality.",
+    "big.LITTLE: pin containers to the X5 cores (--cpuset-cpus 5-9,15-19) or the scheduler lands on A725s about half the time. Measured +2-7% decode.",
+    "100B+ MoE needs the disk-mapped embedding-table trick to fit at all.",
+    "The box power-caps and drifts under sustained load: essay throughput fell 19.5 -> 18 tok/s over about an hour of heavy benching. Re-baseline in-session."
+  ],
+  "measured_by_us": true,
+  "url": "https://www.nvidia.com/en-us/products/workstations/dgx-spark/",
+  "updated": "2026-09-05"
+}

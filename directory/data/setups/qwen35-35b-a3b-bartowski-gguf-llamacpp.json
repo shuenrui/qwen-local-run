@@ -1,0 +1,66 @@
+{
+  "id": "qwen35-35b-a3b-bartowski-gguf-llamacpp",
+  "title": "Qwen3.5-35B-A3B bartowski GGUF on llama.cpp",
+  "slug_note": "bartowski's per-quant cards for the 35B MoE, the classic llama.cpp lane.",
+  "model": "qwen3-5-35b-a3b",
+  "status": "untested",
+  "variation": {
+    "license": "Apache-2.0",
+    "downloads": null,
+    "checkpoint": "bartowski/Qwen_Qwen3.5-35B-A3B-GGUF",
+    "publisher": "bartowski",
+    "quant": "gguf-q4",
+    "quant_detail": "Per-quant GGUF splits with llama.cpp test notes",
+    "format": "gguf",
+    "size_gb": 22.3,
+    "url": "https://huggingface.co/bartowski/Qwen_Qwen3.5-35B-A3B-GGUF"
+  },
+  "engine": {
+    "image": null,
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "none",
+    "flags": [],
+    "id": "llama-cpp",
+    "config": "llama.cpp CUDA or Metal; Q4_K_M fits 24 GB with KV room"
+  },
+  "hardware": [
+    "gpu-24gb",
+    "mac-128gb"
+  ],
+  "requirements": {
+    "memory_gb": 21,
+    "disk_gb": 21,
+    "min_vram_gb": null,
+    "notes": "Resident estimate from the quant size plus KV headroom."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "repo": "https://huggingface.co/bartowski/Qwen_Qwen3.5-35B-A3B-GGUF",
+    "command": null,
+    "steps": [
+      "Download bartowski/Qwen_Qwen3.5-35B-A3B-GGUF",
+      "llama.cpp CUDA or Metal; Q4_K_M fits 24 GB with KV room"
+    ]
+  },
+  "measurements": [],
+  "caveats": [
+    "No numbers yet; bartowski cards list per-quant quality samples, use them."
+  ],
+  "provenance_tier": null,
+  "sources": [
+    {
+      "url": "https://huggingface.co/bartowski/Qwen_Qwen3.5-35B-A3B-GGUF",
+      "kind": "model",
+      "note": "weights / quant card"
+    }
+  ],
+  "updated": "2026-09-05"
+}

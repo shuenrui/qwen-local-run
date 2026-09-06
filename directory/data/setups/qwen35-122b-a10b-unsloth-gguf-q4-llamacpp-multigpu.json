@@ -1,0 +1,89 @@
+{
+  "id": "qwen35-122b-a10b-unsloth-gguf-q4-llamacpp-multigpu",
+  "title": "Qwen3.5-122B-A10B UD-Q4_K_XL on llama.cpp across 72 GB of mixed GPUs",
+  "slug_note": "The 122B MoE at Q4 on a 4090D+3090 rig: 66.2 tok/s at 131K context with two parallel slots, and 1.3K tok/s prefill.",
+  "model": "qwen3-5-122b-a10b",
+  "status": "reported",
+  "variation": {
+    "license": "Apache-2.0",
+    "downloads": null,
+    "checkpoint": "unsloth/Qwen3.5-122B-A10B-GGUF",
+    "publisher": "unsloth",
+    "quant": "gguf-q4",
+    "quant_detail": "UD-Q4_K_XL, 63.65 GiB, 4.48 BPW",
+    "format": "gguf",
+    "size_gb": 77.0,
+    "url": "https://huggingface.co/unsloth/Qwen3.5-122B-A10B-GGUF"
+  },
+  "engine": {
+    "image": null,
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "none",
+    "flags": [],
+    "id": "llama-cpp",
+    "config": "llama.cpp server cuda12 b8124, --ctx-size 131072, --parallel 2, tensor-split across both cards"
+  },
+  "hardware": [
+    "gpu-multigpu-72gb"
+  ],
+  "requirements": {
+    "memory_gb": 68,
+    "disk_gb": 68,
+    "min_vram_gb": 68,
+    "notes": "63.65 GiB of weights split across 48+24 GB; host RAM 256 GB DDR5-4800."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "repo": "https://huggingface.co/unsloth/Qwen3.5-122B-A10B-GGUF/discussions/3",
+    "command": null,
+    "steps": [
+      "Download the UD-Q4_K_XL GGUF",
+      "llama.cpp server with CUDA, ctx 131072, parallel 2, tensor-split over both GPUs"
+    ]
+  },
+  "measurements": [
+    {
+      "metric": "decode_chat",
+      "value": 66.2,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://huggingface.co/unsloth/Qwen3.5-122B-A10B-GGUF/discussions/3",
+      "date": "2026-02-25",
+      "method": "llama.cpp server cuda12 b8124, ctx 131072, parallel 2 slots"
+    },
+    {
+      "metric": "ttft_ms",
+      "value": 1322.38,
+      "unit": "ms",
+      "provenance": "forum",
+      "source": "https://huggingface.co/unsloth/Qwen3.5-122B-A10B-GGUF/discussions/3",
+      "date": "2026-02-25",
+      "method": "prompt eval of 1734 tokens = 1311.27 tok/s prefill"
+    }
+  ],
+  "caveats": [
+    "Mixed-card rig: the 3090's slower kernels and the PCIe lanes cap this; do not compare it to single-GPU or unified-memory rows."
+  ],
+  "provenance_tier": "forum",
+  "sources": [
+    {
+      "url": "https://huggingface.co/unsloth/Qwen3.5-122B-A10B-GGUF/discussions/3",
+      "kind": "thread",
+      "note": "HF discussion with the server log"
+    },
+    {
+      "url": "https://huggingface.co/unsloth/Qwen3.5-122B-A10B-GGUF",
+      "kind": "model",
+      "note": "GGUF repo"
+    }
+  ],
+  "updated": "2026-09-05"
+}

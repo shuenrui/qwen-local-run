@@ -1,0 +1,90 @@
+{
+  "id": "qwen35-35b-a3b-vllm-nightly-mtp2-spark-c100",
+  "title": "Qwen3.5-35B-A3B on vLLM nightly with MTP=2 at concurrency 100 on Spark",
+  "slug_note": "The throughput ceiling reported for the 35B MoE on one Spark: 431 aggregate tok/s at concurrency 100 with the in-checkpoint MTP head.",
+  "model": "qwen3-5-35b-a3b",
+  "status": "reported",
+  "variation": {
+    "license": "Apache-2.0",
+    "downloads": null,
+    "checkpoint": "Qwen/Qwen3.5-35B-A3B",
+    "publisher": "qwen",
+    "quant": "bf16",
+    "quant_detail": "BF16 weights, --gpu-memory-utilization 0.8, qwen3_next_mtp num_speculative_tokens=2",
+    "format": "safetensors",
+    "size_gb": 71.9,
+    "url": "https://huggingface.co/Qwen/Qwen3.5-35B-A3B"
+  },
+  "engine": {
+    "image": null,
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "mtp",
+    "flags": [],
+    "id": "vllm",
+    "config": "vLLM nightly, MTP num_speculative_tokens=2, gpu-memory-utilization 0.8"
+  },
+  "hardware": [
+    "dgx-spark"
+  ],
+  "requirements": {
+    "memory_gb": 75,
+    "disk_gb": 70,
+    "min_vram_gb": null,
+    "notes": "BF16 MoE plus KV for 100 concurrent sequences at 128K unit context."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "repo": "https://forums.developer.nvidia.com/t/does-qwen3-5-35b-a3b-on-gb10-leave-a-lot-of-performance-on-the-table/362200",
+    "command": null,
+    "steps": [
+      "Serve with vLLM nightly and the MTP speculative config from the thread",
+      "vllm bench serve, 1000 requests, max concurrency 100"
+    ]
+  },
+  "measurements": [
+    {
+      "metric": "decode_agg",
+      "value": 431.42,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://forums.developer.nvidia.com/t/does-qwen3-5-35b-a3b-on-gb10-leave-a-lot-of-performance-on-the-table/362200",
+      "date": "2026-03-02",
+      "method": "vllm bench serve, 1000 requests, max concurrency 100, 128K-context unit"
+    },
+    {
+      "metric": "ttft_ms",
+      "value": 2242.31,
+      "unit": "ms",
+      "provenance": "forum",
+      "source": "https://forums.developer.nvidia.com/t/does-qwen3-5-35b-a3b-on-gb10-leave-a-lot-of-performance-on-the-table/362200",
+      "date": "2026-03-02",
+      "method": "mean TTFT at concurrency 100; median 1550.75 ms, P99 above 10 s"
+    }
+  ],
+  "caveats": [
+    "Aggregate throughput at concurrency 100 says nothing about single-stream latency; pair this row with the per-stream rows before choosing a config.",
+    "The same bench on 2x RTX PRO 6000 Blackwell reached 3341.89 tok/s — a datacenter comparison the thread includes, not a local target."
+  ],
+  "provenance_tier": "forum",
+  "sources": [
+    {
+      "url": "https://forums.developer.nvidia.com/t/does-qwen3-5-35b-a3b-on-gb10-leave-a-lot-of-performance-on-the-table/362200",
+      "kind": "thread",
+      "note": "thread with the bench output"
+    },
+    {
+      "url": "https://huggingface.co/Qwen/Qwen3.5-35B-A3B",
+      "kind": "model",
+      "note": "weights"
+    }
+  ],
+  "updated": "2026-09-05"
+}

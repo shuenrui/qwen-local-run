@@ -1,0 +1,127 @@
+{
+  "id": "qwen38-27b-nvfp4-packed-sglang-mtp",
+  "title": "Qwen3.8-27B NVFP4 (packed FP4 head) — SGLang + EAGLE/MTP 3/1/4",
+  "slug_note": "The long-form writing choice, and the only path that supports YaRN out to 1M context. Slower on code: 34.5 versus DSpark's 51.5.",
+  "model": "qwen3-8-27b",
+  "status": "measured",
+  "variation": {
+    "checkpoint": "RadixArk/Qwen3.8-27B-NVFP4",
+    "publisher": "radixark",
+    "quant": "nvfp4",
+    "quant_detail": "W4A4 body with lm_head packed to FP4. ~1.7GB smaller on disk than the BF16-head twin.",
+    "format": "safetensors",
+    "size_gb": 21.9,
+    "url": "https://huggingface.co/RadixArk/Qwen3.8-27B-NVFP4",
+    "license": "Apache-2.0",
+    "downloads": null
+  },
+  "engine": {
+    "id": "sglang",
+    "config": "EAGLE speculative decoding against the checkpoint's in-checkpoint MTP head, steps/topk/draft = 3/1/4 (the measured peak; the sweep gave 2->12.8, 3->17.2, 4->16.8, 5->16.3, 6->15.8). topk=1 requires draft = steps+1, validated at launch.",
+    "image": "lmsysorg/sglang:qwen38-27b",
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "mtp",
+    "flags": [
+      "--speculative-algorithm EAGLE",
+      "--speculative-num-steps 3",
+      "--speculative-eagle-topk 1",
+      "--speculative-num-draft-tokens 4",
+      "--mem-fraction-static 0.95",
+      "--kv-cache-dtype fp8_e4m3",
+      "--enable-metrics",
+      "--enable-cache-report"
+    ]
+  },
+  "hardware": [
+    "dgx-spark"
+  ],
+  "requirements": {
+    "memory_gb": 30,
+    "disk_gb": 22,
+    "min_vram_gb": null,
+    "notes": "~22GB target, no separate draft download (MTP head is in the checkpoint). mem-fraction 0.95."
+  },
+  "capabilities": {
+    "vision": true,
+    "video": true,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 1000000
+  },
+  "run": {
+    "command": "./start.sh",
+    "repo": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
+    "profile": "profiles/qwen3.8-27b.env",
+    "steps": [
+      "cp .env.sample .env",
+      "./start.sh"
+    ],
+    "auto_bootable": true
+  },
+  "measurements": [
+    {
+      "metric": "decode_code",
+      "value": 34.5,
+      "unit": "tok/s",
+      "provenance": "box",
+      "date": "2026-08-18",
+      "n": 5,
+      "method": "bench/ndec.py two-call net-decode, median of 5, tokens counted from the server's completion_tokens via stream_options.include_usage",
+      "range": [
+        34.5,
+        34.6
+      ]
+    },
+    {
+      "metric": "decode_essay",
+      "value": 24.1,
+      "unit": "tok/s",
+      "provenance": "box",
+      "date": "2026-08-18",
+      "n": 5,
+      "method": "bench/ndec.py two-call net-decode, median of 5, tokens counted from the server's completion_tokens via stream_options.include_usage",
+      "range": [
+        24.1,
+        24.1
+      ],
+      "note": "The MTP prose win is specifically the long essay."
+    },
+    {
+      "metric": "decode_chat",
+      "value": 21.0,
+      "unit": "tok/s",
+      "provenance": "box",
+      "date": "2026-08-18",
+      "n": 5,
+      "method": "bench/ndec.py two-call net-decode, median of 5, tokens counted from the server's completion_tokens via stream_options.include_usage; streamed, temperature 1.0, thinking on",
+      "note": "Thinking-off: 24.6 at T=0, 23.4 at T=1."
+    }
+  ],
+  "caveats": [
+    "Wall-time figures from bench/bench.sh are a different clock and are not comparable to the net-decode table: thinking 17.2-20.5 tok/s, non-thinking 21.6-22.7, tool-call 26-28, TTFT on a fresh ~16K prompt ~8.3s warm / ~13s first boot.",
+    "NGRAM speculative decoding measured ~30% under MTP and was rejected. Prefill CUDA graphs were also rejected — this build auto-disables them on this model anyway because GDN layers are not standard GQA.",
+    "Every Tier A (kernel-path) and Tier B (config/host) tuning experiment measured zero net gain. These flags are the local optimum on this box, not a starting point.",
+    "This is the only engine path here that supports YaRN. DSpark and DFlash2 both crash above 262144."
+  ],
+  "provenance_tier": "box",
+  "sources": [
+    {
+      "url": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
+      "kind": "repo",
+      "note": "recipe + start.sh"
+    },
+    {
+      "url": "https://docs.sglang.io/cookbook/autoregressive/Qwen/Qwen3.8-27B",
+      "kind": "docs",
+      "note": "SGLang DGX Spark serving recipe"
+    },
+    {
+      "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "kind": "model",
+      "note": "YaRN 1M recipe and sampling recommendations"
+    }
+  ],
+  "updated": "2026-09-05"
+}

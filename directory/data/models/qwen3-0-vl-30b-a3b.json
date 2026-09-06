@@ -1,0 +1,32 @@
+{
+  "id": "qwen3-0-vl-30b-a3b",
+  "name": "Qwen3-VL-30B-A3B-Instruct",
+  "family": "Qwen3.0",
+  "generation": "3.0",
+  "publisher": "qwen",
+  "released": "2025-09",
+  "license": "Apache-2.0",
+  "architecture": {
+    "kind": "moe",
+    "params_total_b": 31.1,
+    "params_active_b": 3,
+    "hybrid": false
+  },
+  "context": {
+    "native": 262144,
+    "max": 1000000,
+    "extension": "card: native 256K, expandable to 1M"
+  },
+  "modalities": [
+    "text",
+    "image",
+    "video"
+  ],
+  "base_weight_size": {
+    "bf16_gb": 62.1,
+    "fp8_gb": 32.3
+  },
+  "url": "https://huggingface.co/Qwen/Qwen3-VL-30B-A3B-Instruct",
+  "summary": "MoE vision-language model: 30B total, 3B active, image and video in, 256K native context.",
+  "updated": "2026-09-06"
+}

@@ -1,0 +1,76 @@
+{
+  "id": "qwen3-0-next-80b-a3b-fp8-vllm-spark",
+  "title": "Qwen3-Next-80B-A3B-Instruct FP8 on vLLM: one 128GB Spark",
+  "slug_note": "82.1GB of FP8 weights on a 128GB unified box: resident with ~30GB left for the KV pool.",
+  "model": "qwen3-0-next-80b-a3b",
+  "status": "untested",
+  "variation": {
+    "checkpoint": "Qwen/Qwen3-Next-80B-A3B-Instruct-FP8",
+    "publisher": "qwen",
+    "quant": "fp8",
+    "quant_detail": "Official FP8 export",
+    "format": "safetensors",
+    "size_gb": 82.1,
+    "url": "https://huggingface.co/Qwen/Qwen3-Next-80B-A3B-Instruct-FP8",
+    "license": "Apache-2.0",
+    "downloads": null
+  },
+  "engine": {
+    "id": "vllm",
+    "config": "Stock vLLM on one GB10; hybrid Gated DeltaNet attention, so cap max-model-len to keep a usable KV pool",
+    "image": null,
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "none",
+    "flags": [
+      "--max-model-len 131072",
+      "--gpu-memory-utilization 0.90"
+    ]
+  },
+  "hardware": [
+    "dgx-spark",
+    "thinkstation-pgx"
+  ],
+  "requirements": {
+    "memory_gb": 105,
+    "disk_gb": 83,
+    "min_vram_gb": null,
+    "notes": "82.1GB weights on 128GB unified; full 262K single-stream or shorter context with concurrency, not both."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": null,
+    "long_context": 262144,
+    "max_context": 1010000
+  },
+  "run": {
+    "command": "vllm serve Qwen/Qwen3-Next-80B-A3B-Instruct-FP8 --max-model-len 131072 --gpu-memory-utilization 0.90",
+    "repo": "https://github.com/vllm-project/vllm",
+    "profile": null,
+    "steps": [
+      "pip install vllm",
+      "vllm serve Qwen/Qwen3-Next-80B-A3B-Instruct-FP8 --max-model-len 131072 --gpu-memory-utilization 0.90"
+    ]
+  },
+  "measurements": [],
+  "caveats": [
+    "BF16 (162.7GB) does not fit any single machine in this directory; FP8 on a 128GB box is the resident lane.",
+    "No local measurement attached; size computed from the HF API."
+  ],
+  "provenance_tier": null,
+  "sources": [
+    {
+      "url": "https://huggingface.co/Qwen/Qwen3-Next-80B-A3B-Instruct-FP8",
+      "kind": "model",
+      "note": "weights"
+    },
+    {
+      "url": "https://huggingface.co/Qwen/Qwen3-Next-80B-A3B-Instruct",
+      "kind": "model",
+      "note": "model card"
+    }
+  ],
+  "updated": "2026-09-06"
+}

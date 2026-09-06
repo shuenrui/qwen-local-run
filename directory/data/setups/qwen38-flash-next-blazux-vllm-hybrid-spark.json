@@ -1,0 +1,218 @@
+{
+  "id": "qwen38-flash-next-blazux-vllm-hybrid-spark",
+  "title": "Qwen3.8-Flash-Next 180B — blazux vLLM hybrid mmap build",
+  "slug_note": "The memory-efficiency specialist: ~122GB on disk but only ~76GB resident, thanks to hybrid FP8 sides and mmap. Vision stays on. Reported ~26-31 tok/s.",
+  "model": "qwen3-8-flash-next",
+  "status": "reported",
+  "variation": {
+    "checkpoint": "Qwen3.8-Flash-Next hybrid FP8",
+    "publisher": "blazux",
+    "quant": "mixed",
+    "quant_detail": "Hybrid quantization: FP8 on the sides, lower precision elsewhere. Roughly +20% throughput from the hybrid FP8 sides alone.",
+    "format": "safetensors",
+    "size_gb": 122,
+    "url": "https://github.com/blazux",
+    "license": "Apache-2.0",
+    "downloads": null
+  },
+  "engine": {
+    "id": "vllm",
+    "config": "vLLM with mmap-backed weight loading. ~122GB on disk compresses to ~76GB resident.",
+    "image": null,
+    "requires_fork": true,
+    "draft_model": null,
+    "spec_decode": "none",
+    "flags": []
+  },
+  "hardware": [
+    "dgx-spark"
+  ],
+  "requirements": {
+    "memory_gb": 76,
+    "disk_gb": 122,
+    "min_vram_gb": null,
+    "notes": "Lowest resident footprint of the full-featured 180B builds — about 43GB of headroom left on a 128GB box, versus ~15GB for Mia's."
+  },
+  "capabilities": {
+    "vision": true,
+    "video": null,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": null
+  },
+  "run": {
+    "command": null,
+    "repo": "https://github.com/blazux",
+    "profile": null,
+    "steps": [
+      "See the builder's repo."
+    ],
+    "auto_bootable": false
+  },
+  "measurements": [
+    {
+      "metric": "decode_per_stream",
+      "value": 31,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "date": null,
+      "n": null,
+      "method": null,
+      "range": [
+        26,
+        31
+      ],
+      "note": "Builder-reported range. The Saren fork of this build reports 47.5 on code and 60 on JSON extraction.",
+      "source": "https://github.com/blazux"
+    },
+    {
+      "metric": "decode_chat",
+      "value": 31,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://github.com/blazux/qwen3.8-Flash-DGX",
+      "date": "2026-09-04",
+      "method": "blazux's serve.sh benches: kernel-level decode, concurrency ladders, prefix-cache probes",
+      "note": "single-stream greedy decode on real answers, hybrid mode (NVFP4 experts + fp8 side layers), MTP=2; ~26 tok/s in plain NVFP4 mode, ~22 tok/s for llama.cpp IQ4_XS with no MTP"
+    },
+    {
+      "metric": "decode_chat",
+      "value": 32.5,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://github.com/blazux/qwen3.8-Flash-DGX",
+      "date": "2026-09-04",
+      "method": "blazux's serve.sh benches: kernel-level decode, concurrency ladders, prefix-cache probes",
+      "note": "kernel-level decode with DET_TOPK=1 deterministic top-k, hybrid, MTP=2, prefix caching on (same as stock non-deterministic kernel)"
+    },
+    {
+      "metric": "decode_agg",
+      "value": 266.8,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://github.com/blazux/qwen3.8-Flash-DGX",
+      "date": "2026-09-04",
+      "method": "blazux's serve.sh benches: kernel-level decode, concurrency ladders, prefix-cache probes",
+      "note": "48 concurrent streams, RadixArk NVFP4, 8k ctx, no speculative decoding, vLLM native PLE CPU offload (1 stream 17.1, 8 -> 87.5, 16 -> 131.6, 32 -> 212.0)"
+    },
+    {
+      "metric": "decode_per_stream",
+      "value": 5.6,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://github.com/blazux/qwen3.8-Flash-DGX",
+      "date": "2026-09-04",
+      "method": "blazux's serve.sh benches: kernel-level decode, concurrency ladders, prefix-cache probes",
+      "note": "per-stream at 48 concurrent (major page faults/token fall 4.4x from c=1 to c=48, so the paged table argues FOR concurrency)"
+    },
+    {
+      "metric": "ttft_ms",
+      "value": 1400,
+      "unit": "ms",
+      "provenance": "forum",
+      "source": "https://github.com/blazux/qwen3.8-Flash-DGX",
+      "date": "2026-09-04",
+      "method": "blazux's serve.sh benches: kernel-level decode, concurrency ladders, prefix-cache probes",
+      "note": "prefix-cache hit on a 20k-token prefix, vs ~14 s cold (x10); with 8 concurrent conversations ~80 s -> ~4-6 s"
+    },
+    {
+      "metric": "ttft_ms",
+      "value": 1190,
+      "unit": "ms",
+      "provenance": "forum",
+      "source": "https://github.com/blazux/qwen3.8-Flash-DGX",
+      "date": "2026-09-04",
+      "method": "blazux's serve.sh benches: kernel-level decode, concurrency ladders, prefix-cache probes",
+      "note": "TTFT at 32 concurrent streams (0.22 s at 1, 0.53 s at 8, 0.83 s at 16, 1.60 s at 48)"
+    },
+    {
+      "metric": "task_time_min",
+      "value": 48,
+      "unit": "s",
+      "provenance": "forum",
+      "source": "https://github.com/blazux/qwen3.8-Flash-DGX",
+      "date": "2026-09-04",
+      "method": "blazux's serve.sh benches: kernel-level decode, concurrency ladders, prefix-cache probes",
+      "note": "needle-in-haystack retrieval at a 92k-token prompt"
+    },
+    {
+      "metric": "memory_gb",
+      "value": 19,
+      "unit": "GB",
+      "provenance": "forum",
+      "source": "https://github.com/blazux/qwen3.8-Flash-DGX",
+      "date": "2026-09-04",
+      "method": "blazux's serve.sh benches: kernel-level decode, concurrency ladders, prefix-cache probes",
+      "note": "KV cache pool at GPU_MEM=0.80 with 500k YaRN + MTP: ~580k tokens in NVFP4 mode (~630k in hybrid, +8%), about 19 GB at the ~32.8 KB/token the 27B lane measures"
+    },
+    {
+      "metric": "disk_gb",
+      "value": 130,
+      "unit": "GB",
+      "provenance": "forum",
+      "source": "https://github.com/blazux/qwen3.8-Flash-DGX",
+      "date": "2026-09-04",
+      "method": "blazux's serve.sh benches: kernel-level decode, concurrency ladders, prefix-cache probes",
+      "note": "free disk for the checkpoint (+13 GB for the hybrid variant), NVMe strongly recommended since the table is read at runtime"
+    },
+    {
+      "metric": "task_time_min",
+      "value": 13,
+      "unit": "min",
+      "provenance": "forum",
+      "source": "https://github.com/blazux/qwen3.8-Flash-DGX",
+      "date": "2026-09-04",
+      "method": "blazux's serve.sh benches: kernel-level decode, concurrency ladders, prefix-cache probes",
+      "note": "boot/load time for scripts/serve.sh (~8-13 min), plus ~1 min docker build and ~10 min one-time prepare-hybrid.sh"
+    },
+    {
+      "metric": "quality_index",
+      "value": 45,
+      "unit": "score",
+      "provenance": "forum",
+      "source": "https://github.com/blazux/qwen3.8-Flash-DGX",
+      "date": "2026-09-04",
+      "method": "blazux's serve.sh benches: kernel-level decode, concurrency ladders, prefix-cache probes",
+      "note": "17-scenario agentic tournament x 3 repeats = 45/51, identical for NVFP4 and hybrid modes; the AutoRound int4 variant scored 44/51 at ~34 tok/s but is non-deterministic"
+    },
+    {
+      "metric": "memory_gb",
+      "value": 76,
+      "unit": "GB",
+      "provenance": "forum",
+      "source": "https://github.com/blazux/qwen3.8-Flash-DGX",
+      "date": "2026-09-04",
+      "method": "blazux's serve.sh benches: kernel-level decode, concurrency ladders, prefix-cache probes",
+      "note": "resident weights after mmap-ing the 48 GiB PLE table out of the unified pool (from 122 GiB)"
+    }
+  ],
+  "caveats": [
+    "Slower than azampatti and Mia on throughput; the trade is resident memory and working vision.",
+    "The Saren fork reports substantially better numbers (47.5 code / 60 JSON) on the same approach. Fork-versus-upstream deltas this large are usually a configuration difference, not a code difference — verify which one you are actually installing.",
+    "The 2,904 tok/s figure in the repo is prefill throughput at a 32K prompt with the deterministic top-k kernel, not decode; excluded from the measurements.",
+    "DET_TOPK=1 deterministic top-k is what makes his kernel-level numbers reproducible; without it GB10 top-k is non-deterministic run to run.",
+    "The checkpoint card states no license field; the weights lineage is Qwen Apache-2.0.",
+    "Builder runtimes carry their own terms on top of the weights (Mia's scripts are AGPL-3.0)."
+  ],
+  "provenance_tier": "forum",
+  "sources": [
+    {
+      "url": "https://github.com/blazux/qwen3.8-Flash-DGX",
+      "kind": "repo",
+      "note": "the builder's pinned repo (located after the first seed)"
+    },
+    {
+      "url": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
+      "kind": "repo",
+      "note": "our builder sweep"
+    },
+    {
+      "url": "https://github.com/saren",
+      "kind": "repo",
+      "note": "Saren's fork of this build, the source of the 47.5 tok/s figure quoted in the measurements"
+    }
+  ],
+  "updated": "2026-09-05",
+  "builder": "blazux"
+}

@@ -1,0 +1,102 @@
+{
+  "id": "qwen38-27b-vllm-mtp-community",
+  "title": "Qwen3.8-27B — vLLM + MTP (community configuration)",
+  "slug_note": "What the same weights do on vLLM instead of SGLang. Reported 19.8-32.6 tok/s on code and ~13 on the essay across community threads — well under every SGLang path.",
+  "model": "qwen3-8-27b",
+  "status": "reported",
+  "variation": {
+    "checkpoint": "RadixArk/Qwen3.8-27B-NVFP4-BF16-LMHead",
+    "publisher": "radixark",
+    "quant": "nvfp4",
+    "quant_detail": "W4A4 body with a dense BF16 lm_head. The export the SGLang cookbook recipes were measured against. +~1.7GB on disk / +~3.2GB at runtime versus the packed-FP4 head.",
+    "format": "safetensors",
+    "size_gb": 23.7,
+    "url": "https://huggingface.co/RadixArk/Qwen3.8-27B-NVFP4-BF16-LMHead",
+    "license": "Apache-2.0",
+    "downloads": null
+  },
+  "engine": {
+    "id": "vllm",
+    "config": "vLLM with MTP speculative decoding. Community-reported configuration, no single canonical recipe.",
+    "image": null,
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "mtp",
+    "flags": [
+      "--enable-auto-tool-choice",
+      "--tool-call-parser"
+    ]
+  },
+  "hardware": [
+    "dgx-spark"
+  ],
+  "requirements": {
+    "memory_gb": 32,
+    "disk_gb": 24,
+    "min_vram_gb": null,
+    "notes": "No DSpark or DFlash2 support in vLLM, so the speed ceiling is MTP alone."
+  },
+  "capabilities": {
+    "vision": true,
+    "video": true,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": null
+  },
+  "run": {
+    "command": null,
+    "repo": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
+    "profile": null,
+    "steps": [
+      "Not a single recipe — see the linked community threads for the flags each builder used."
+    ],
+    "auto_bootable": false
+  },
+  "measurements": [
+    {
+      "metric": "decode_code",
+      "value": 32.6,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "date": null,
+      "n": null,
+      "method": null,
+      "range": [
+        19.8,
+        32.6
+      ],
+      "note": "Spread across community reports, not a single controlled run.",
+      "source": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark"
+    },
+    {
+      "metric": "decode_essay",
+      "value": 13,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "date": null,
+      "n": null,
+      "method": null,
+      "note": "Approximate. Single-sample community reports.",
+      "source": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark"
+    }
+  ],
+  "caveats": [
+    "The spread (19.8-32.6) is wide enough that these are not comparable to each other, let alone to our SGLang numbers. Different builders, different flags, different concurrency.",
+    "Recorded here because the SGLang-versus-vLLM gap on this model is the single most consequential engine choice on this hardware, and because the gap is large."
+  ],
+  "provenance_tier": "forum",
+  "sources": [
+    {
+      "url": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
+      "kind": "repo",
+      "note": "PLANS.md forum-signal summary"
+    },
+    {
+      "url": "https://github.com/vllm-project/vllm",
+      "kind": "repo",
+      "note": "engine"
+    }
+  ],
+  "updated": "2026-09-05"
+}

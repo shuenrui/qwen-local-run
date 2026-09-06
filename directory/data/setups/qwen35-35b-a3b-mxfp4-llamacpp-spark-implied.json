@@ -1,0 +1,81 @@
+{
+  "id": "qwen35-35b-a3b-mxfp4-llamacpp-spark-implied",
+  "title": "Qwen3.5-35B-A3B MXFP4 on plain llama.cpp, ~57 tok/s at 256K (hardware implied)",
+  "slug_note": "The 'no rituals required' datapoint: plain llama.cpp at ~57 TPS on 256K context, posted in the Spark forum but without the box named.",
+  "model": "qwen3-5-35b-a3b",
+  "status": "reported",
+  "variation": {
+    "license": "Apache-2.0",
+    "downloads": null,
+    "checkpoint": "unsloth/Qwen3.5-35B-A3B-GGUF",
+    "publisher": "unsloth",
+    "quant": "mxfp4",
+    "quant_detail": "MXFP4 GGUF (post mentions Q4 as the alternative)",
+    "format": "gguf",
+    "size_gb": 21.6,
+    "url": "https://huggingface.co/unsloth/Qwen3.5-35B-A3B-GGUF"
+  },
+  "engine": {
+    "image": null,
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "none",
+    "flags": [],
+    "id": "llama-cpp",
+    "config": "plain mainline llama.cpp, 256K context, no speculative decoding"
+  },
+  "hardware": [
+    "dgx-spark"
+  ],
+  "requirements": {
+    "memory_gb": 22,
+    "disk_gb": 22,
+    "min_vram_gb": null,
+    "notes": "MoE at 4-bit fits with room; hardware is implied by the thread, not stated."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "repo": "https://forums.developer.nvidia.com/t/does-qwen3-5-35b-a3b-on-gb10-leave-a-lot-of-performance-on-the-table/362200",
+    "command": null,
+    "steps": [
+      "Load the MXFP4 GGUF in mainline llama.cpp",
+      "Run at 256K context and measure tokens per second"
+    ]
+  },
+  "measurements": [
+    {
+      "metric": "decode_chat",
+      "value": 57,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://forums.developer.nvidia.com/t/does-qwen3-5-35b-a3b-on-gb10-leave-a-lot-of-performance-on-the-table/362200",
+      "date": "2026-03-04",
+      "method": "'~57 TPS (256k)'; concurrency and fixture not stated in the post"
+    }
+  ],
+  "caveats": [
+    "Hardware is NOT stated in the post: it sits in the NVIDIA DGX Spark / GB10 forum, so GB10 is implied but unconfirmed. Treat 57 tok/s as directional.",
+    "Concurrency and fixture unstated; this is a single anecdotal number, kept because it is the plainest possible stack."
+  ],
+  "provenance_tier": "forum",
+  "sources": [
+    {
+      "url": "https://forums.developer.nvidia.com/t/does-qwen3-5-35b-a3b-on-gb10-leave-a-lot-of-performance-on-the-table/362200",
+      "kind": "thread",
+      "note": "the post (hardware implied, not stated)"
+    },
+    {
+      "url": "https://huggingface.co/unsloth/Qwen3.5-35B-A3B-GGUF",
+      "kind": "model",
+      "note": "GGUF repo"
+    }
+  ],
+  "updated": "2026-09-05"
+}

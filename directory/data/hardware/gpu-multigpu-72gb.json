@@ -1,0 +1,24 @@
+{
+  "id": "gpu-multigpu-72gb",
+  "name": "Mixed multi-GPU desktop, ~72 GB VRAM (4090D/4090 + 3090s)",
+  "vendor": "NVIDIA",
+  "chip": "AD102 / GA102 mix",
+  "arch": "x86_64 host + 2-3 discrete GPUs, sm_89 / sm_86",
+  "form_factor": "discrete-gpu-multi",
+  "memory_gb": 72,
+  "memory_usable_gb": 70,
+  "memory_type": "GDDR6X across 2-3 cards, split by llama.cpp tensor parallelism",
+  "bandwidth_gbs": 1008,
+  "bandwidth_range_gbs": [936, 1008],
+  "cpu": "Xeon W5-3425 class, 256 GB DDR5-4800",
+  "gpu": "Reported builds mix 1x RTX 4090D or 4090 with 1-2x RTX 3090; PCIe-lane limited per the builders",
+  "notes": [
+    "A class entry for the mixed-card rigs builders actually report: total VRAM is the point (72 GB fits a 122B MoE at Q4), not any single card.",
+    "Tensor split across cards of different generations means the slowest card's kernels and the PCIe lanes set the ceiling; builders report PCIe-limited prefill.",
+    "No unified memory, so MoE expert streaming tricks from Apple Silicon have no equivalent; capacity here is bought with card count.",
+    "Numbers recorded against this class always name the exact card mix in the measurement context, because 4090D+3090 and 4090+2x3090 behave differently."
+  ],
+  "measured_by_us": false,
+  "url": "https://huggingface.co/unsloth/Qwen3.5-122B-A10B-GGUF/discussions/3",
+  "updated": "2026-09-05"
+}

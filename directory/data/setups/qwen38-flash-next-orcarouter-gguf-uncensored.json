@@ -1,0 +1,102 @@
+{
+  "id": "qwen38-flash-next-orcarouter-gguf-uncensored",
+  "title": "Qwen3.8-Flash-Next 180B — OrcaRouter uncensored GGUF (SSD sidecar)",
+  "slug_note": "The uncensored lane, and the fastest reading throughput anywhere in the directory: 489 tok/s prefill, 28.7 tok/s decode, vision on, 256K context. It needs a custom Rust engine fork.",
+  "model": "qwen3-8-flash-next",
+  "status": "reported",
+  "variation": {
+    "checkpoint": "Baekpica/Qwen3.8-Flash-Next-Uncensored-Mixed-Quant-SSD-PLE-GGUF",
+    "publisher": "orcarouter",
+    "quant": "gguf-q4",
+    "quant_detail": "Mixed-quant GGUF with the PLE embedding table split to an SSD sidecar. ~110GB plus the sidecar. Gated download.",
+    "format": "gguf",
+    "size_gb": 110,
+    "url": "https://huggingface.co/Baekpica",
+    "license": "Apache-2.0",
+    "downloads": null
+  },
+  "engine": {
+    "id": "custom-fork",
+    "config": "ds4-dfm-rs, the builder's own Rust engine fork. Not SGLang or vLLM compatible — these weights will not load in a stock engine.",
+    "image": null,
+    "requires_fork": true,
+    "draft_model": null,
+    "spec_decode": "other",
+    "flags": []
+  },
+  "hardware": [
+    "dgx-spark"
+  ],
+  "requirements": {
+    "memory_gb": 100,
+    "disk_gb": 140,
+    "min_vram_gb": null,
+    "notes": "Needs fast NVMe for the SSD sidecar; the embedding table is read from disk during generation."
+  },
+  "capabilities": {
+    "vision": true,
+    "video": null,
+    "tools": null,
+    "thinking": null,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "command": null,
+    "repo": "https://huggingface.co/Baekpica",
+    "profile": null,
+    "steps": [
+      "Request access — the download is gated.",
+      "Install the builder's ds4-dfm-rs Rust engine fork.",
+      "A stock engine will not load these weights."
+    ],
+    "auto_bootable": false
+  },
+  "measurements": [
+    {
+      "metric": "decode_per_stream",
+      "value": 28.7,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "date": null,
+      "n": null,
+      "method": null,
+      "note": "Write/decode throughput, builder-reported.",
+      "source": "https://huggingface.co/Baekpica"
+    },
+    {
+      "metric": "decode_agg",
+      "value": 489,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "date": null,
+      "n": null,
+      "method": null,
+      "note": "Read/prefill throughput. Comparable to Mia's 1500-2000 prefill claim on a different fixture, so these two numbers are not comparable to each other.",
+      "source": "https://huggingface.co/Baekpica"
+    }
+  ],
+  "caveats": [
+    "Gated download plus a mandatory custom engine fork. This is the least portable entry in the directory: the weights are useless without their engine.",
+    "Reproducibility is the weakest tier here. No independent replication of the 489 / 28.7 figures.",
+    "Uncensored means the alignment safety behavior is removed. That is a deliberate product choice by the builder, not a bug — know what you are deploying.",
+    "OrcaRouter itself is a router, not a benchmark harness. It does not publish comparative measurements against other builds.",
+    "The builder repo tags its own license as 'other'; the weights lineage is Qwen Apache-2.0.",
+    "Builder runtimes carry their own terms on top of the weights (Mia's scripts are AGPL-3.0)."
+  ],
+  "provenance_tier": "forum",
+  "sources": [
+    {
+      "url": "https://huggingface.co/Baekpica",
+      "kind": "model",
+      "note": "gated GGUF"
+    },
+    {
+      "url": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
+      "kind": "repo",
+      "note": "our verification of the engine requirement"
+    }
+  ],
+  "updated": "2026-09-05",
+  "builder": "orcarouter"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "qwen3-5-9b",
+  "name": "Qwen3.5-9B",
+  "family": "Qwen3.5",
+  "generation": "3.5",
+  "publisher": "qwen",
+  "released": "2026",
+  "license": "Apache-2.0",
+  "architecture": {
+    "kind": "dense",
+    "params_total_b": 9,
+    "params_active_b": 9,
+    "mtp_head": false
+  },
+  "context": {
+    "native": 131072,
+    "max": 131072,
+    "extension": null
+  },
+  "modalities": [
+    "text"
+  ],
+  "url": "https://huggingface.co/Qwen/Qwen3.5-9B",
+  "summary": "About 18GB in BF16, so it fits essentially anywhere including 24GB cards and 32GB Macs. Vendor-reported MMLU-Pro 82.5 punches far above its weight for the footprint.",
+  "notes": [
+    "Small models in this family carry no MTP head, so speculative decoding is off."
+  ],
+  "updated": "2026-09-05"
+}

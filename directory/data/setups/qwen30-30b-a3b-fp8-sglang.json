@@ -1,0 +1,76 @@
+{
+  "id": "qwen30-30b-a3b-fp8-sglang",
+  "title": "Qwen3-30B-A3B — official FP8 on SGLang",
+  "slug_note": "Pre-hybrid MoE control. Shows what the GDN hybrid bought versus the Wave-1 MoEs at the same active-parameter count.",
+  "model": "qwen3-0-30b-a3b",
+  "status": "untested",
+  "variation": {
+    "checkpoint": "Qwen/Qwen3-30B-A3B-FP8",
+    "publisher": "qwen",
+    "quant": "fp8",
+    "quant_detail": "Official FP8 export.",
+    "format": "safetensors",
+    "size_gb": 32.4,
+    "url": "https://huggingface.co/Qwen/Qwen3-30B-A3B-FP8",
+    "license": "Apache-2.0",
+    "downloads": null
+  },
+  "engine": {
+    "id": "sglang",
+    "config": "SGLang from our recipe card. Speculative decoding off.",
+    "image": "lmsysorg/sglang:qwen38-27b",
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "none",
+    "flags": [
+      "--mem-fraction-static 0.85",
+      "--max-running-requests 10",
+      "--context-length 131072"
+    ]
+  },
+  "hardware": [
+    "dgx-spark"
+  ],
+  "requirements": {
+    "memory_gb": 39,
+    "disk_gb": 31,
+    "min_vram_gb": null,
+    "notes": "mem-fraction 0.85, concurrency 10, context 131072."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 131072,
+    "max_context": 131072
+  },
+  "run": {
+    "command": "PROFILE=profiles/qwen3.0-30b-a3b-fp8.env ./start-model.sh",
+    "repo": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
+    "profile": "profiles/qwen3.0-30b-a3b-fp8.env",
+    "steps": [
+      "PROFILE=profiles/qwen3.0-30b-a3b-fp8.env ./start-model.sh"
+    ],
+    "auto_bootable": true
+  },
+  "measurements": [],
+  "caveats": [
+    "No MTP head, so speculative decoding is off.",
+    "Recipe card validates and the container reaches 'Starting container', but no benchmark has been run. There are no numbers for this entry yet."
+  ],
+  "provenance_tier": null,
+  "sources": [
+    {
+      "url": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
+      "kind": "repo",
+      "note": "recipe card in profiles/"
+    },
+    {
+      "url": "https://huggingface.co/Qwen/Qwen3-30B-A3B-FP8",
+      "kind": "model",
+      "note": "weights"
+    }
+  ],
+  "updated": "2026-09-05"
+}

@@ -1,0 +1,105 @@
+{
+  "id": "qwen38-flash-next-mia-vllm-spark",
+  "title": "Qwen3.8-Flash-Next 180B — Mia's single-Spark vLLM build",
+  "slug_note": "The reference single-box 180B recipe. 99GB resident plus a 27GB embedding lookup table memory-mapped from disk, vision verified on, and a 400K-context stress test passed.",
+  "model": "qwen3-8-flash-next",
+  "status": "reported",
+  "variation": {
+    "checkpoint": "Mia-AiLab/Qwen3.8-Flash-Next-NVFP4",
+    "publisher": "mia-ai-lab",
+    "quant": "nvfp4",
+    "quant_detail": "99GB re-zip of the model with the 51GB PLE lookup table split out to a 27GB disk-resident file, mmap'd with MADV_RANDOM and fetched line by line. FP8 KV cache notes on by default.",
+    "format": "safetensors",
+    "size_gb": 126,
+    "url": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Single-DGX-Spark",
+    "license": "Apache-2.0",
+    "downloads": null
+  },
+  "engine": {
+    "id": "vllm",
+    "config": "vLLM tensor-parallel 1, FP8 KV notes default, MTP-3 speculative decoding, 262144 native context with YARN=1 reaching 524288. Host-side memory budget: 26GB reserve plus a watchdog.",
+    "image": "vllm/vllm-openai:qwen38-flash-next",
+    "requires_fork": true,
+    "draft_model": "in-checkpoint MTP head (4B)",
+    "spec_decode": "mtp",
+    "flags": [
+      "--tensor-parallel-size 1",
+      "--max-model-len 262144"
+    ]
+  },
+  "hardware": [
+    "dgx-spark"
+  ],
+  "requirements": {
+    "memory_gb": 99,
+    "disk_gb": 126,
+    "min_vram_gb": null,
+    "notes": "99GB resident + 27GB table on disk + 26GB host reserve. About 15GB of headroom left on a 128GB box — mem-fraction pinned to 0.78 and concurrency capped at 4."
+  },
+  "capabilities": {
+    "vision": true,
+    "video": true,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 524288
+  },
+  "run": {
+    "command": "cp .env.sample .env && ./download.sh && ./start.sh",
+    "repo": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Single-DGX-Spark",
+    "profile": "profiles/qwen3.8-flash-next-mia.env",
+    "steps": [
+      "git clone the repo",
+      "cp .env.sample .env",
+      "./download.sh",
+      "./start.sh"
+    ],
+    "auto_bootable": false
+  },
+  "measurements": [
+    {
+      "metric": "decode_per_stream",
+      "value": 37,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "date": "2026-09-04",
+      "n": null,
+      "method": null,
+      "note": "Single stream. Builder-reported.",
+      "source": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Single-DGX-Spark"
+    },
+    {
+      "metric": "decode_agg",
+      "value": 86,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "date": "2026-09-04",
+      "n": null,
+      "method": null,
+      "note": "Aggregate at 4 concurrent streams.",
+      "source": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Single-DGX-Spark"
+    }
+  ],
+  "caveats": [
+    "Manual-only lane: our start-model.sh refuses to auto-boot ENGINE=vllm cards. Bring the server up from the builder's repo, then point the profile's PORT at it with auto=false to benchmark it.",
+    "Prefill reads 1500-2000 tok/s per the builder. Reading is cheap here; writing is the bottleneck.",
+    "The repo scripts are AGPL, which is a different license from the Apache-2.0 weights. Check both before shipping anything.",
+    "At 99GB resident with a 26GB host reserve, this build has roughly 15GB of slack. Context length and concurrency both have to stay tuned down.",
+    "Mia's serving scripts are AGPL-3.0 while the weights are apache-2.0; the license field records the weights."
+  ],
+  "provenance_tier": "forum",
+  "sources": [
+    {
+      "url": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Single-DGX-Spark",
+      "kind": "repo",
+      "note": "the build"
+    },
+    {
+      "url": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
+      "kind": "repo",
+      "note": "our profile card + teardown notes"
+    }
+  ],
+  "updated": "2026-09-05",
+  "builder": "mia-ai-lab"
+}

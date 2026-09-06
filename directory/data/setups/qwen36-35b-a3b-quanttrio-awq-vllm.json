@@ -1,0 +1,65 @@
+{
+  "id": "qwen36-35b-a3b-quanttrio-awq-vllm",
+  "title": "Qwen3.6-35B-A3B QuantTrio AWQ on vLLM (24 GB card)",
+  "slug_note": "The AWQ lane for the 3.6 MoE: small enough for a single 24 GB card in vLLM.",
+  "model": "qwen3-6-35b-a3b",
+  "status": "untested",
+  "variation": {
+    "license": "Apache-2.0",
+    "downloads": null,
+    "checkpoint": "QuantTrio/Qwen3.6-35B-A3B-AWQ",
+    "publisher": "quanttrio",
+    "quant": "awq",
+    "quant_detail": "AWQ quant aimed at vLLM serving",
+    "format": "awq",
+    "size_gb": 25.5,
+    "url": "https://huggingface.co/QuantTrio/Qwen3.6-35B-A3B-AWQ"
+  },
+  "engine": {
+    "image": null,
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "none",
+    "flags": [],
+    "id": "vllm",
+    "config": "vLLM with the AWQ checkpoint on a 24 GB card"
+  },
+  "hardware": [
+    "gpu-24gb"
+  ],
+  "requirements": {
+    "memory_gb": 19,
+    "disk_gb": 19,
+    "min_vram_gb": null,
+    "notes": "Resident estimate from the quant size plus KV headroom."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "repo": "https://huggingface.co/QuantTrio/Qwen3.6-35B-A3B-AWQ",
+    "command": null,
+    "steps": [
+      "Download QuantTrio/Qwen3.6-35B-A3B-AWQ",
+      "vLLM with the AWQ checkpoint on a 24 GB card"
+    ]
+  },
+  "measurements": [],
+  "caveats": [
+    "No numbers yet; AWQ on SM89 is well supported, SM121 less proven."
+  ],
+  "provenance_tier": null,
+  "sources": [
+    {
+      "url": "https://huggingface.co/QuantTrio/Qwen3.6-35B-A3B-AWQ",
+      "kind": "model",
+      "note": "weights / quant card"
+    }
+  ],
+  "updated": "2026-09-05"
+}

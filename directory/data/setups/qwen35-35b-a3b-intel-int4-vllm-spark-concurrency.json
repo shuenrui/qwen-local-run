@@ -1,0 +1,112 @@
+{
+  "id": "qwen35-35b-a3b-intel-int4-vllm-spark-concurrency",
+  "title": "Qwen3.5-35B-A3B Intel INT4 AutoRound on vLLM — concurrency sweep on Spark",
+  "slug_note": "The controlled concurrency sweep for the 35B MoE on one Spark: 60.9 aggregate at 5x, 66.3 at 10x, with a 990-call GPQA quality check attached.",
+  "model": "qwen3-5-35b-a3b",
+  "status": "reported",
+  "variation": {
+    "license": "Apache-2.0",
+    "downloads": null,
+    "checkpoint": "Intel/Qwen3.5-35B-A3B-int4-AutoRound",
+    "publisher": "intel",
+    "quant": "int4-hybrid",
+    "quant_detail": "AutoRound INT4 with FP8 KV cache",
+    "format": "safetensors",
+    "size_gb": 21.6,
+    "url": "https://huggingface.co/Intel/Qwen3.5-35B-A3B-int4-AutoRound"
+  },
+  "engine": {
+    "image": null,
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "none",
+    "flags": [
+      "--gpu-memory-utilization 0.8",
+      "--max-num-seqs 10"
+    ],
+    "id": "vllm",
+    "config": "prefix caching on, --gpu-memory-utilization 0.8, --max-num-seqs 10, FP8 KV"
+  },
+  "hardware": [
+    "dgx-spark"
+  ],
+  "requirements": {
+    "memory_gb": 26,
+    "disk_gb": 24,
+    "min_vram_gb": null,
+    "notes": "INT4 MoE plus FP8 KV leaves headroom for 10 concurrent sequences."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "repo": "https://forums.developer.nvidia.com/t/does-qwen3-5-35b-a3b-on-gb10-leave-a-lot-of-performance-on-the-table/362200",
+    "command": null,
+    "steps": [
+      "Serve the Intel INT4 checkpoint with vLLM on one Spark",
+      "Enable prefix caching and FP8 KV as in the thread",
+      "Run vllm bench serve at 5x and 10x concurrency"
+    ]
+  },
+  "measurements": [
+    {
+      "metric": "decode_agg",
+      "value": 60.87,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://forums.developer.nvidia.com/t/does-qwen3-5-35b-a3b-on-gb10-leave-a-lot-of-performance-on-the-table/362200",
+      "date": "2026-03-02",
+      "method": "vllm bench serve, 5x concurrency, 100 prompts, 42K input tokens total"
+    },
+    {
+      "metric": "ttft_ms",
+      "value": 15715.12,
+      "unit": "ms",
+      "provenance": "forum",
+      "source": "https://forums.developer.nvidia.com/t/does-qwen3-5-35b-a3b-on-gb10-leave-a-lot-of-performance-on-the-table/362200",
+      "date": "2026-03-02",
+      "method": "mean TTFT at 5x concurrency with prefix caching (median 12491 ms)"
+    },
+    {
+      "metric": "decode_agg",
+      "value": 66.27,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://forums.developer.nvidia.com/t/does-qwen3-5-35b-a3b-on-gb10-leave-a-lot-of-performance-on-the-table/362200",
+      "date": "2026-03-02",
+      "method": "same prompt set at 10x concurrency"
+    },
+    {
+      "metric": "bench_other",
+      "value": 82.32,
+      "unit": "%",
+      "provenance": "forum",
+      "source": "https://forums.developer.nvidia.com/t/does-qwen3-5-35b-a3b-on-gb10-leave-a-lot-of-performance-on-the-table/362200",
+      "date": "2026-03-02",
+      "method": "GPQA Diamond, 198 questions x 5 repeats = 990 eval calls, 9.1M tokens",
+      "note": "Quality check on the served quant, not a speed number."
+    }
+  ],
+  "caveats": [
+    "TTFT at these concurrencies is dominated by the 42K-token prompt set; do not read 15.7 s as single-request latency."
+  ],
+  "provenance_tier": "forum",
+  "sources": [
+    {
+      "url": "https://forums.developer.nvidia.com/t/does-qwen3-5-35b-a3b-on-gb10-leave-a-lot-of-performance-on-the-table/362200",
+      "kind": "thread",
+      "note": "thread with the full bench tables"
+    },
+    {
+      "url": "https://huggingface.co/Intel/Qwen3.5-35B-A3B-int4-AutoRound",
+      "kind": "model",
+      "note": "weights"
+    }
+  ],
+  "updated": "2026-09-05"
+}

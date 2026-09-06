@@ -1,0 +1,108 @@
+{
+  "id": "qwen35-35b-a3b-bf16-mxfp4-marlin-vllm-spark",
+  "title": "Qwen3.5-35B-A3B BF16 weights with runtime MXFP4 Marlin experts on Spark",
+  "slug_note": "BF16 checkpoint, MXFP4 quantised at load for the MoE experts: 69.5 tok/s per stream and 339.5 aggregate at 100 concurrent on one Spark.",
+  "model": "qwen3-5-35b-a3b",
+  "status": "reported",
+  "variation": {
+    "license": "Apache-2.0",
+    "downloads": null,
+    "checkpoint": "Qwen/Qwen3.5-35B-A3B",
+    "publisher": "qwen",
+    "quant": "mixed",
+    "quant_detail": "BF16 weights on disk, vLLM runtime MXFP4 (Marlin) for MoE experts, FP8 KV",
+    "format": "safetensors",
+    "size_gb": 71.9,
+    "url": "https://huggingface.co/Qwen/Qwen3.5-35B-A3B"
+  },
+  "engine": {
+    "image": null,
+    "requires_fork": true,
+    "draft_model": null,
+    "spec_decode": "none",
+    "flags": [],
+    "id": "vllm",
+    "config": "custom vLLM build (nightly-based) applying runtime MXFP4 Marlin to experts + FP8 KV"
+  },
+  "hardware": [
+    "dgx-spark"
+  ],
+  "requirements": {
+    "memory_gb": 40,
+    "disk_gb": 70,
+    "min_vram_gb": null,
+    "notes": "BF16 on disk (~70 GB) but experts compressed in memory; needs the builder's vLLM build."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "repo": "https://forums.developer.nvidia.com/t/does-qwen3-5-35b-a3b-on-gb10-leave-a-lot-of-performance-on-the-table/362200",
+    "command": null,
+    "steps": [
+      "Build or obtain the thread author's vLLM nightly-based fork",
+      "Serve Qwen/Qwen3.5-35B-A3B with runtime MXFP4 experts and FP8 KV",
+      "Bench at 1, 10 and 100 concurrency"
+    ]
+  },
+  "measurements": [
+    {
+      "metric": "decode_per_stream",
+      "value": 69.45,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://forums.developer.nvidia.com/t/does-qwen3-5-35b-a3b-on-gb10-leave-a-lot-of-performance-on-the-table/362200",
+      "date": "2026-03-06",
+      "method": "1 concurrent request, 1024 input / 128 output tokens, DGX Spark"
+    },
+    {
+      "metric": "ttft_ms",
+      "value": 167.71,
+      "unit": "ms",
+      "provenance": "forum",
+      "source": "https://forums.developer.nvidia.com/t/does-qwen3-5-35b-a3b-on-gb10-leave-a-lot-of-performance-on-the-table/362200",
+      "date": "2026-03-06",
+      "method": "mean TTFT at 1 concurrent request"
+    },
+    {
+      "metric": "decode_agg",
+      "value": 253.53,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://forums.developer.nvidia.com/t/does-qwen3-5-35b-a3b-on-gb10-leave-a-lot-of-performance-on-the-table/362200",
+      "date": "2026-03-06",
+      "method": "10 concurrent requests (mean TTFT 935.12 ms)"
+    },
+    {
+      "metric": "decode_agg",
+      "value": 339.5,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://forums.developer.nvidia.com/t/does-qwen3-5-35b-a3b-on-gb10-leave-a-lot-of-performance-on-the-table/362200",
+      "date": "2026-03-06",
+      "method": "100 concurrent requests (mean TTFT 17137.53 ms)"
+    }
+  ],
+  "caveats": [
+    "Requires the thread author's custom vLLM build; stock vLLM will not reproduce the runtime-MXFP4 path, so reproducibility is weaker than the stock-engine rows."
+  ],
+  "provenance_tier": "forum",
+  "sources": [
+    {
+      "url": "https://forums.developer.nvidia.com/t/does-qwen3-5-35b-a3b-on-gb10-leave-a-lot-of-performance-on-the-table/362200",
+      "kind": "thread",
+      "note": "thread with the serving benchmark tables"
+    },
+    {
+      "url": "https://huggingface.co/Qwen/Qwen3.5-35B-A3B",
+      "kind": "model",
+      "note": "weights"
+    }
+  ],
+  "updated": "2026-09-05"
+}

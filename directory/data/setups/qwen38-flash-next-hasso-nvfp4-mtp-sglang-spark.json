@@ -1,0 +1,132 @@
+{
+  "id": "qwen38-flash-next-hasso-nvfp4-mtp-sglang-spark",
+  "title": "Qwen3.8-Flash-Next NVFP4 — hasso5703 SGLang lane with prefix caching",
+  "slug_note": "The Flash-Next lane that actually makes prefix caching work on Spark: a 30K conversation re-served in 0.5 s warm versus 18.4 s cold.",
+  "model": "qwen3-8-flash-next",
+  "status": "reported",
+  "variation": {
+    "license": "Apache-2.0",
+    "downloads": null,
+    "checkpoint": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+    "publisher": "radixark",
+    "quant": "nvfp4",
+    "quant_detail": "NVFP4 main weights, bf16 KV cache, 51B N-gram (PLE) table mmap-served from NVMe",
+    "format": "safetensors",
+    "size_gb": 135.2,
+    "url": "https://huggingface.co/RadixArk/Qwen3.8-Flash-Next-NVFP4"
+  },
+  "engine": {
+    "image": null,
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "mtp",
+    "flags": [],
+    "id": "sglang",
+    "config": "NEXTN/MTP speculative head, bf16 KV, PLE table mmap from NVMe, prefix caching on"
+  },
+  "hardware": [
+    "dgx-spark"
+  ],
+  "requirements": {
+    "memory_gb": 110,
+    "disk_gb": 230,
+    "min_vram_gb": null,
+    "notes": "~195 GB under $HOME (~136 GB checkpoint plus PLE table) plus Docker; host MemAvailable 16.6 GiB during a 120K prompt."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "repo": "https://github.com/hasso5703/dgx-spark-qwen38",
+    "command": null,
+    "steps": [
+      "Follow the repo's one-command install",
+      "Select the flash-next NVFP4 + MTP target",
+      "Keep the PLE table on NVMe; it is mmap-served, not loaded"
+    ]
+  },
+  "measurements": [
+    {
+      "metric": "decode_chat",
+      "value": 34.2,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://raw.githubusercontent.com/hasso5703/dgx-spark-qwen38/main/README.md",
+      "date": "2026-09-03",
+      "method": "two-call wall-clock decode, reasoning, single Spark",
+      "note": "README headline number."
+    },
+    {
+      "metric": "decode_essay",
+      "value": 20.3,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://raw.githubusercontent.com/hasso5703/dgx-spark-qwen38/main/README.md",
+      "date": "2026-09-03",
+      "method": "two-call wall-clock decode, free prose, single Spark"
+    },
+    {
+      "metric": "decode_chat",
+      "value": 28,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://raw.githubusercontent.com/hasso5703/dgx-spark-qwen38/main/README.md",
+      "date": "2026-09-03",
+      "method": "field report at ~100K context depth (user hashd1ve)",
+      "note": "Stated as 'near 28-31' at depth; a depth point, not a fresh-context number."
+    },
+    {
+      "metric": "task_time_min",
+      "value": 18.4,
+      "unit": "s",
+      "provenance": "forum",
+      "source": "https://raw.githubusercontent.com/hasso5703/dgx-spark-qwen38/main/README.md",
+      "date": "2026-09-03",
+      "method": "30K-token conversation re-served cold versus 0.5 s warm with prefix caching",
+      "note": "The differentiator of this lane: prefix caching works here."
+    },
+    {
+      "metric": "bench_other",
+      "value": 1500,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://raw.githubusercontent.com/hasso5703/dgx-spark-qwen38/main/README.md",
+      "date": "2026-09-03",
+      "method": "cold prefill with real QSA sparse kernels, stated ~1500-2000 tok/s"
+    },
+    {
+      "metric": "quality_index",
+      "value": 9,
+      "unit": "score",
+      "provenance": "forum",
+      "source": "https://raw.githubusercontent.com/hasso5703/dgx-spark-qwen38/main/README.md",
+      "date": "2026-09-03",
+      "method": "exact needle retrieval 9/9 at 120K prompt tokens; quality canaries 4/4",
+      "note": "Retrieval canary at depth, not an intelligence index."
+    }
+  ],
+  "caveats": [
+    "Overlaps the Mia, azampatti and blazux lanes on the same weights; the prefix-caching and 120K-retrieval numbers are what this lane adds.",
+    "Disk footprint is the real price: ~230 GB free, most of it the mmap-served PLE table."
+  ],
+  "provenance_tier": "forum",
+  "sources": [
+    {
+      "url": "https://github.com/hasso5703/dgx-spark-qwen38",
+      "kind": "repo",
+      "note": "the recipe and scripts"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/hasso5703/dgx-spark-qwen38/main/README.md",
+      "kind": "docs",
+      "note": "README carrying the quoted numbers"
+    }
+  ],
+  "updated": "2026-09-05",
+  "builder": "hasso5703"
+}

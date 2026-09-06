@@ -1,0 +1,212 @@
+{
+  "id": "qwen38-27b-r0b0tlab-nvfp4-mtp-sm121-sglang",
+  "title": "Qwen3.8-27B NVFP4 — r0b0tlab click-run SGLang profiles on SM121",
+  "slug_note": "Click-run scripts with a matched draft-block sweep: DFlash2 K8 at 27.9 tok/s single stream, 276.4 aggregate at C6, plus think-on/think-off quality canaries.",
+  "model": "qwen3-8-27b",
+  "status": "reported",
+  "variation": {
+    "checkpoint": "r0b0tlab/Qwen3.8-27B-NVFP4-MTP-sm121",
+    "publisher": "r0b0tlab",
+    "quant": "nvfp4",
+    "quant_detail": "NVFP4 body with MTP head retained for SM121",
+    "format": "safetensors",
+    "size_gb": 21.9,
+    "url": "https://huggingface.co/r0b0tlab/Qwen3.8-27B-NVFP4-MTP-sm121",
+    "license": "Apache-2.0"
+  },
+  "engine": {
+    "image": null,
+    "requires_fork": false,
+    "draft_model": "z-lab/Qwen3.8-27B-DFlash2",
+    "spec_decode": "dflash2",
+    "flags": [],
+    "id": "sglang",
+    "config": "click_run_dflash2.sh / dspark / eagle scripts; DFlash2 K8 draft, draft-block sweep included"
+  },
+  "hardware": [
+    "dgx-spark"
+  ],
+  "requirements": {
+    "memory_gb": 30,
+    "disk_gb": 25,
+    "min_vram_gb": null,
+    "notes": "21 GB body + 4 GB DFlash2 draft plus KV; scripts validate the draft before serving."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "repo": "https://github.com/r0b0tlab/qwen38-27b-nvfp4-sm121-sglang",
+    "command": null,
+    "steps": [
+      "./click_run_dflash2.sh (or dspark / eagle variants)",
+      "Scripts download and validate checkpoints and drafts automatically"
+    ]
+  },
+  "measurements": [
+    {
+      "metric": "decode_chat",
+      "value": 27.88,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://github.com/r0b0tlab/qwen38-27b-nvfp4-sm121-sglang",
+      "date": "2026-08-19",
+      "method": "r0b0bench ladders in the repo, medians over repeated runs",
+      "note": "DFlash2 draft-block sweep, block 8 (the draft's native block_size) c1 median on one GB10; block 6 25.28, block 7 25.79, block 9 26.05 (-22% at c8)"
+    },
+    {
+      "metric": "decode_agg",
+      "value": 153.9,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://github.com/r0b0tlab/qwen38-27b-nvfp4-sm121-sglang",
+      "date": "2026-08-19",
+      "method": "r0b0bench ladders in the repo, medians over repeated runs",
+      "note": "c8 best aggregate at block 8 (block 6 158.23, block 7 157.82, block 9 123.16)"
+    },
+    {
+      "metric": "decode_chat",
+      "value": 28.38,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://github.com/r0b0tlab/qwen38-27b-nvfp4-sm121-sglang",
+      "date": "2026-08-19",
+      "method": "r0b0bench ladders in the repo, medians over repeated runs",
+      "note": "SGLang DFlash2 dedicated c1 median (1024->256 ladder, ignore-eos, temp 0, seed 0, thinking off) vs SGLang DSpark 20.97 = +35%, EAGLE 25.62"
+    },
+    {
+      "metric": "decode_agg",
+      "value": 276.4,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://github.com/r0b0tlab/qwen38-27b-nvfp4-sm121-sglang",
+      "date": "2026-08-19",
+      "method": "r0b0bench ladders in the repo, medians over repeated runs",
+      "note": "r0b0bench core-subset concurrency lane at C6 (C1 68.6 / C2 124.3 / C4 212.0), 512-output portable backend, think-off"
+    },
+    {
+      "metric": "decode_agg",
+      "value": 178.9,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://github.com/r0b0tlab/qwen38-27b-nvfp4-sm121-sglang",
+      "date": "2026-08-19",
+      "method": "r0b0bench ladders in the repo, medians over repeated runs",
+      "note": "supplementary extended ladder c16 aggregate = saturation peak with max_running_requests=48 (c8 131.1, c32 158.6)"
+    },
+    {
+      "metric": "decode_chat",
+      "value": 26.02,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://github.com/r0b0tlab/qwen38-27b-nvfp4-sm121-sglang",
+      "date": "2026-08-19",
+      "method": "r0b0bench ladders in the repo, medians over repeated runs",
+      "note": "core-subset throughput lane, decode median over 2048-output x5 runs (30.45 tok/s in the think-on-low companion row, +17%)"
+    },
+    {
+      "metric": "ttft_ms",
+      "value": 214.6,
+      "unit": "ms",
+      "provenance": "forum",
+      "source": "https://github.com/r0b0tlab/qwen38-27b-nvfp4-sm121-sglang",
+      "date": "2026-08-19",
+      "method": "r0b0bench ladders in the repo, medians over repeated runs",
+      "note": "core-subset latency lane, c1 streaming mean TTFT (216.4 ms think-on-low)"
+    },
+    {
+      "metric": "bench_gsm8k",
+      "value": 0.865,
+      "unit": "score",
+      "provenance": "forum",
+      "source": "https://github.com/r0b0tlab/qwen38-27b-nvfp4-sm121-sglang",
+      "date": "2026-08-19",
+      "method": "r0b0bench ladders in the repo, medians over repeated runs",
+      "note": "GSM8K 0-shot flexible-extract at 200 items, think-off (0.970 in the think-on-low row)"
+    },
+    {
+      "metric": "bench_humaneval",
+      "value": 0.872,
+      "unit": "score",
+      "provenance": "forum",
+      "source": "https://github.com/r0b0tlab/qwen38-27b-nvfp4-sm121-sglang",
+      "date": "2026-08-19",
+      "method": "r0b0bench ladders in the repo, medians over repeated runs",
+      "note": "HumanEval pass@1 over 164 items, think-off (0.9756 think-on-low)"
+    },
+    {
+      "metric": "bench_other",
+      "value": 0.82,
+      "unit": "score",
+      "provenance": "forum",
+      "source": "https://github.com/r0b0tlab/qwen38-27b-nvfp4-sm121-sglang",
+      "date": "2026-08-19",
+      "method": "r0b0bench ladders in the repo, medians over repeated runs",
+      "note": "IFEval lightweight constraint scorer over 200 prompts (0.845 think-on-low); ARC-Easy MC 0.9625 at 400"
+    },
+    {
+      "metric": "bench_toolcall",
+      "value": 0.69,
+      "unit": "score",
+      "provenance": "forum",
+      "source": "https://github.com/r0b0tlab/qwen38-27b-nvfp4-sm121-sglang",
+      "date": "2026-08-19",
+      "method": "r0b0bench ladders in the repo, medians over repeated runs",
+      "note": "BFCL multi_turn_base over 200 rows, think-off (0.715 think-on-low); BFCL-AST mean 0.2733 over 600"
+    },
+    {
+      "metric": "bench_other",
+      "value": 336,
+      "unit": "s",
+      "provenance": "forum",
+      "source": "https://github.com/r0b0tlab/qwen38-27b-nvfp4-sm121-sglang",
+      "date": "2026-08-19",
+      "method": "r0b0bench ladders in the repo, medians over repeated runs",
+      "note": "NIAH full-max-context lane: exact retrieval at 65,472 / 130,944 / 235,699 prompt tokens, all PASS, 90% completed in 336 s"
+    },
+    {
+      "metric": "quality_index",
+      "value": 3.58,
+      "unit": "score",
+      "provenance": "forum",
+      "source": "https://github.com/r0b0tlab/qwen38-27b-nvfp4-sm121-sglang",
+      "date": "2026-08-19",
+      "method": "r0b0bench ladders in the repo, medians over repeated runs",
+      "note": "SGLang mean accept-length per verify step for DFlash2 K8 (2.26 for DSpark K7; telemetry campaign mean 4.63)"
+    },
+    {
+      "metric": "disk_gb",
+      "value": 25,
+      "unit": "GB",
+      "provenance": "forum",
+      "source": "https://github.com/r0b0tlab/qwen38-27b-nvfp4-sm121-sglang",
+      "date": "2026-08-19",
+      "method": "r0b0bench ladders in the repo, medians over repeated runs",
+      "note": "free disk prerequisite: 21 GB body + 4 GB DFlash2 draft plus Docker image space"
+    }
+  ],
+  "caveats": [
+    "The 22,663 tok/s figure is server-side prefill throughput on a ~22.8K-token prompt, mislabelled as decode aggregate in the source; excluded rather than quoted as a decode number.",
+    "Quality canaries are think-off by default in his harness (GSM8K 0.865 vs 0.970 think-on): compare tiers, not absolutes, against other cards."
+  ],
+  "provenance_tier": "forum",
+  "sources": [
+    {
+      "url": "https://github.com/r0b0tlab/qwen38-27b-nvfp4-sm121-sglang",
+      "kind": "repo",
+      "note": "click-run scripts and benches"
+    },
+    {
+      "url": "https://huggingface.co/r0b0tlab/Qwen3.8-27B-NVFP4-MTP-sm121",
+      "kind": "model",
+      "note": "weights"
+    }
+  ],
+  "updated": "2026-09-05",
+  "builder": "r0b0tlab"
+}

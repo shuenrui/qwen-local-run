@@ -1,0 +1,18 @@
+{
+  "id": "custom-fork",
+  "name": "Custom / forked engine",
+  "kind": "fork",
+  "url": null,
+  "api": ["varies"],
+  "qwen_support": "Depends entirely on the fork. These entries exist because stock engines cannot serve the configuration.",
+  "spec_decode": ["other"],
+  "features": ["builder-specific"],
+  "notable_flags": [],
+  "gotchas": [
+    "Not portable: the weights usually only load in the author's engine.",
+    "Reproducibility is the weakest tier in the directory. Treat claimed numbers as unverified until someone else runs them.",
+    "Always check the license of the engine separately from the license of the weights."
+  ],
+  "arm64": null,
+  "updated": "2026-09-05"
+}

@@ -1,0 +1,32 @@
+{
+  "id": "qwen3-5-397b-a17b",
+  "name": "Qwen3.5-397B-A17B",
+  "family": "Qwen3.5",
+  "generation": "3.5",
+  "publisher": "qwen",
+  "released": "2026-02",
+  "license": "Apache-2.0",
+  "architecture": {
+    "kind": "moe",
+    "params_total_b": 397,
+    "params_active_b": 17,
+    "hybrid": false,
+    "anatomy": "Early-fusion vision encoder on a causal LM MoE; HF safetensors counts 403.4B params including the encoder"
+  },
+  "context": {
+    "native": 262144,
+    "max": 1010000,
+    "extension": "card: extensible up to 1,010,000 tokens"
+  },
+  "modalities": [
+    "text",
+    "image",
+    "video"
+  ],
+  "base_weight_size": {
+    "bf16_gb": 806.8
+  },
+  "url": "https://huggingface.co/Qwen/Qwen3.5-397B-A17B",
+  "summary": "Qwen3.5 flagship MoE with unified vision-language foundation: 397B total, 17B active, 256K native context. Hosted counterpart is Qwen3.5-Plus.",
+  "updated": "2026-09-06"
+}

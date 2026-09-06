@@ -1,0 +1,93 @@
+{
+  "id": "qwen3-30b-a3b-vllm-mlx-server-mac",
+  "title": "Qwen3-30B-A3B 4-bit on vllm-mlx: continuous batching on Apple Silicon",
+  "slug_note": "A vLLM-style server on native MLX: 127.7 tok/s single-stream decode on an M4 Max 128 GB, with continuous batching and warm-prompt preloading.",
+  "model": "qwen3-0-30b-a3b",
+  "status": "reported",
+  "variation": {
+    "checkpoint": "mlx-community/Qwen3-30B-A3B-4bit",
+    "publisher": "mlx-community",
+    "quant": "mlx-4",
+    "quant_detail": "4-bit MLX served by the vllm-mlx continuous-batching server",
+    "format": "mlx",
+    "size_gb": 17.2,
+    "url": "https://huggingface.co/mlx-community/Qwen3-30B-A3B-4bit",
+    "license": "Apache-2.0"
+  },
+  "engine": {
+    "image": null,
+    "requires_fork": true,
+    "draft_model": null,
+    "spec_decode": "none",
+    "flags": [],
+    "id": "mlx-lm",
+    "config": "vllm-mlx server: continuous batching, --moe-top-k expert reduction, --warm-prompts preloading"
+  },
+  "hardware": [
+    "mac-128gb"
+  ],
+  "requirements": {
+    "memory_gb": 18,
+    "disk_gb": 18,
+    "min_vram_gb": null,
+    "notes": "18 GB footprint while decoding on the M4 Max fixture."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "repo": "https://github.com/waybarrios/vllm-mlx",
+    "command": null,
+    "steps": [
+      "Install vllm-mlx from the repo",
+      "Serve the 4-bit MLX model",
+      "Optionally set --moe-top-k and --warm-prompts for the quoted gains"
+    ]
+  },
+  "measurements": [
+    {
+      "metric": "decode_chat",
+      "value": 127.7,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://github.com/waybarrios/vllm-mlx",
+      "date": null,
+      "method": "vllm-mlx benchmark fixture, greedy single stream",
+      "note": "Qwen3-30B-A3B-4bit LLM decode on M4 Max 128 GB, greedy, single stream, ~18 GB memory"
+    },
+    {
+      "metric": "memory_gb",
+      "value": 18,
+      "unit": "GB",
+      "provenance": "forum",
+      "source": "https://github.com/waybarrios/vllm-mlx",
+      "date": null,
+      "method": "vllm-mlx benchmark fixture, greedy single stream",
+      "note": "memory footprint of Qwen3-30B-A3B-4bit while decoding on M4 Max 128 GB"
+    }
+  ],
+  "caveats": [
+    "The 417.9 tok/s row is Qwen3-0.6B, a different model used as a harness sanity check; not a number for this card.",
+    "The --moe-top-k gain (up to 16%) and --warm-prompts TTFT factor (2.25x) are configuration levers, recorded as caveats rather than measurements."
+  ],
+  "provenance_tier": "forum",
+  "sources": [
+    {
+      "url": "https://github.com/waybarrios/vllm-mlx",
+      "kind": "repo",
+      "note": "the vllm-mlx server and benchmarks"
+    },
+    {
+      "url": "https://huggingface.co/mlx-community/Qwen3-30B-A3B-4bit",
+      "kind": "model",
+      "note": "weights"
+    }
+  ],
+  "updated": "2026-09-05",
+  "builder": "waybarrios"
+}

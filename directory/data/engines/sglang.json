@@ -1,0 +1,29 @@
+{
+  "id": "sglang",
+  "name": "SGLang",
+  "kind": "server",
+  "url": "https://github.com/sgl-project/sglang",
+  "api": ["openai", "anthropic"],
+  "qwen_support": "First-class. Native qwen3, qwen3_coder, qwen3_5_moe architectures; GDN hybrid support; vision tower served live.",
+  "spec_decode": ["mtp", "eagle", "dspark", "dflash2", "ngram"],
+  "features": ["fp8-kv", "nvfp4", "yarn-long-context", "vision", "video", "tool-calling", "thinking-parser", "cuda-graphs", "torch-compile", "prometheus-metrics"],
+  "notable_flags": [
+    "--speculative-algorithm {EAGLE,DSPARK,DFLASH}",
+    "--reasoning-parser qwen3",
+    "--tool-call-parser qwen3_coder",
+    "--kv-cache-dtype fp8_e4m3",
+    "--max-mamba-cache-size (concurrency x 4 GDN slots)",
+    "--mem-fraction-static",
+    "--chunked-prefill-size"
+  ],
+  "gotchas": [
+    "DFlash2 merged upstream 2026-08-19, after every released image tag. No published Docker image has it; you must build from the patch tree.",
+    "YaRN / context >262144 leaks into the DSpark and DFlash2 draft configs and crashes the rope validator with AttributeError: max_position_embeddings. YaRN is MTP-only.",
+    "--enable-dp-attention and the overlap scheduler must be off in the DFlash2 path.",
+    "Tool calling needs no extra flag here, unlike vLLM's --enable-auto-tool-choice.",
+    "Stock --mamba-full-memory-ratio 0.9 over-provisions KV and clamps concurrency; pin 4.21 on GDN models.",
+    "If speculative decoding errors at boot, try --attention-backend triton."
+  ],
+  "arm64": true,
+  "updated": "2026-09-05"
+}

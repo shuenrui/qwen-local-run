@@ -1,0 +1,205 @@
+{
+  "id": "qwen35-122b-a10b-albond-int4-vllm-spark",
+  "title": "Qwen3.5-122B-A10B — Albond INT4+FP8 hybrid on vLLM",
+  "slug_note": "The best-documented 100B-class single-Spark recipe: ~67GB resident, MTP-2, 256K context, and the builder publishes both throughput and a quality peak rather than only one of them.",
+  "model": "qwen3-5-122b-a10b",
+  "status": "reported",
+  "variation": {
+    "checkpoint": "Intel/Qwen3.5-122B-A10B-int4-AutoRound",
+    "publisher": "intel",
+    "quant": "int4-hybrid",
+    "quant_detail": "AutoRound INT4 body with FP8 on selected layers. ~67GB resident for a 122B-total / 10B-active MoE.",
+    "format": "safetensors",
+    "size_gb": 76.7,
+    "url": "https://huggingface.co/Intel/Qwen3.5-122B-A10B-int4-AutoRound",
+    "license": "Apache-2.0",
+    "downloads": null
+  },
+  "engine": {
+    "id": "vllm",
+    "config": "vLLM from the builder's repo with MTP-2 speculative decoding, mem-fraction 0.80, concurrency 4, chunked prefill 8192, 262144 context.",
+    "image": "vllm-vllm-openai-albond",
+    "requires_fork": true,
+    "draft_model": "in-checkpoint MTP head, 2 steps",
+    "spec_decode": "mtp",
+    "flags": [
+      "--gpu-memory-utilization 0.80",
+      "--max-model-len 262144"
+    ]
+  },
+  "hardware": [
+    "dgx-spark"
+  ],
+  "requirements": {
+    "memory_gb": 67,
+    "disk_gb": 70,
+    "min_vram_gb": null,
+    "notes": "~67GB resident leaves about 52GB of headroom on a 128GB box — far more comfortable than the 180B builds."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "command": "See the builder's repo — manual vLLM boot",
+    "repo": "https://github.com/albond/DGX_Spark_Qwen3.5-122B-A10B-AR-INT4",
+    "profile": "profiles/qwen3.5-122b-albond.env",
+    "steps": [
+      "Clone the builder's repo",
+      "Boot vLLM per his instructions",
+      "Point profiles/qwen3.5-122b-albond.env at the running PORT with auto=false to benchmark it"
+    ],
+    "auto_bootable": false
+  },
+  "measurements": [
+    {
+      "metric": "decode_per_stream",
+      "value": 52,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "date": null,
+      "n": null,
+      "method": null,
+      "note": "Builder-reported.",
+      "source": "https://github.com/albond/DGX_Spark_Qwen3.5-122B-A10B-AR-INT4"
+    },
+    {
+      "metric": "bench_code",
+      "value": 54.9,
+      "unit": "score",
+      "provenance": "forum",
+      "date": null,
+      "n": null,
+      "method": null,
+      "note": "LongCode peak, builder-reported. Different fixture from our code probe — not comparable to the 27B tok/s rows.",
+      "source": "https://github.com/albond/DGX_Spark_Qwen3.5-122B-A10B-AR-INT4"
+    },
+    {
+      "metric": "decode_chat",
+      "value": 28.3,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://forums.developer.nvidia.com/t/qwen3-5-122b-a10b-on-single-spark-up-to-51-tok-s-v2-1-patches-quick-start-benchmark/365639",
+      "date": "2026-04-05",
+      "method": "vLLM 0.19 + Intel AutoRound INT4 + FlashInfer, single stream, single Spark",
+      "note": "Baseline before speculative decoding."
+    },
+    {
+      "metric": "decode_chat",
+      "value": 38.4,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://forums.developer.nvidia.com/t/qwen3-5-122b-a10b-on-single-spark-up-to-51-tok-s-v2-1-patches-quick-start-benchmark/365639",
+      "date": "2026-04-05",
+      "method": "same stack with hybrid INT4+FP8 shared experts and MTP-1, 95% acceptance",
+      "note": "'managed to get from 28.3 to 38.4 tok/s with no quality loss'."
+    },
+    {
+      "metric": "decode_code",
+      "value": 39.1,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://forums.developer.nvidia.com/t/qwen3-5-122b-a10b-on-single-spark-up-to-51-tok-s-v2-1-patches-quick-start-benchmark/365639",
+      "date": "2026-04-05",
+      "method": "512-token code generation, hybrid+MTP, warm cache, run 2"
+    },
+    {
+      "metric": "decode_agg",
+      "value": 51.58,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://github.com/albond/DGX_Spark_Qwen3.5-122B-A10B-AR-INT4",
+      "date": "2026-05-09",
+      "method": "Albond's bench_qwen35 harness, v2.4 cross-prompt means",
+      "note": "v2.4 cross-prompt mean of per-sub-run averages, bench_qwen35.sh 2026-05-09, n=50 prompt measurements (+-0.30), single stream"
+    },
+    {
+      "metric": "decode_code",
+      "value": 54.9,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://github.com/albond/DGX_Spark_Qwen3.5-122B-A10B-AR-INT4",
+      "date": "2026-05-09",
+      "method": "Albond's bench_qwen35 harness, v2.4 cross-prompt means",
+      "note": "LongCode 2048 prompt peak, the most decode-bound fixture (Q&A 256 51.3, Code 512 52.8, JSON 1024 51.1, Math 64 47.8)"
+    },
+    {
+      "metric": "decode_agg",
+      "value": 39,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://github.com/albond/DGX_Spark_Qwen3.5-122B-A10B-AR-INT4",
+      "date": "2026-05-09",
+      "method": "Albond's bench_qwen35 harness, v2.4 cross-prompt means",
+      "note": "v2-tq TurboQuant KV variant (-22% vs 51 tok/s) in exchange for 1.4M KV tokens and 5 concurrent users at 256K instead of 1"
+    },
+    {
+      "metric": "task_time_min",
+      "value": 13,
+      "unit": "min",
+      "provenance": "forum",
+      "source": "https://github.com/albond/DGX_Spark_Qwen3.5-122B-A10B-AR-INT4",
+      "date": "2026-05-09",
+      "method": "Albond's bench_qwen35 harness, v2.4 cross-prompt means",
+      "note": "first-launch load + warmup (weights ~10 min, compile/warmup ~2.5 min, graph capture ~30 s); cached re-launches 5-7 min; image build 30-60 min since vLLM has no SM121 wheels"
+    },
+    {
+      "metric": "disk_gb",
+      "value": 71,
+      "unit": "GB",
+      "provenance": "forum",
+      "source": "https://github.com/albond/DGX_Spark_Qwen3.5-122B-A10B-AR-INT4",
+      "date": "2026-05-09",
+      "method": "Albond's bench_qwen35 harness, v2.4 cross-prompt means",
+      "note": "output size of build-hybrid-checkpoint.py (~20 min to build) from the Intel AutoRound INT4 dir + Qwen FP8 donor"
+    },
+    {
+      "metric": "decode_agg",
+      "value": 30.48,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://github.com/albond/DGX_Spark_Qwen3.5-122B-A10B-AR-INT4",
+      "date": "2026-05-09",
+      "method": "Albond's bench_qwen35 harness, v2.4 cross-prompt means",
+      "note": "vLLM 0.27.1 stock with the plain Intel checkpoint, 1024 in / 512 out at concurrency 1 with the INT8 LM head on (28.54 off, +6.8%); TPOT 32.41 -> 30.80 ms"
+    },
+    {
+      "metric": "bench_other",
+      "value": 73.6,
+      "unit": "%",
+      "provenance": "forum",
+      "source": "https://github.com/albond/DGX_Spark_Qwen3.5-122B-A10B-AR-INT4",
+      "date": "2026-05-09",
+      "method": "Albond's bench_qwen35 harness, v2.4 cross-prompt means",
+      "note": "MTP-2 acceptance on vLLM 0.27.1 (8532 accepted tokens over 5798 draft steps = 1.47 of 2), close to the ~80% reported on the 0.19 stack"
+    }
+  ],
+  "caveats": [
+    "Manual-only lane: our start-model.sh refuses to auto-boot ENGINE=vllm cards.",
+    "52 tok/s for a 10B-active MoE is faster than any 180B build in this directory, and it is the concrete demonstration of the bandwidth argument: on a 273 GB/s box, active parameters decide speed, not total parameters.",
+    "Not measured on our box. The profile card exists so the harness can record numbers once the server is up.",
+    "The thread's v2 recipe (post #71) claims 51 tok/s; the details were not fetched, so that claim is not recorded as a measurement here.",
+    "A comment in the same thread reports 56 tok/s aggregate via Open WebUI on a multi-Spark Ray cluster with eugr/spark-vllm-docker; node count unstated, so it is not comparable to the single-box rows.",
+    "The same optimization stack on Qwen3.5-35B-A3B reaches 112 tok/s on this box; different model, kept as context rather than a measurement here.",
+    "TurboQuant 3.5-bit KV buys ~4x KV capacity for -22% speed (39 tok/s aggregate): a capacity lever, recorded as a caveat."
+  ],
+  "provenance_tier": "forum",
+  "sources": [
+    {
+      "url": "https://github.com/albond/DGX_Spark_Qwen3.5-122B-A10B-AR-INT4",
+      "kind": "repo",
+      "note": "the recipe"
+    },
+    {
+      "url": "https://huggingface.co/Intel/Qwen3.5-122B-A10B-int4-AutoRound",
+      "kind": "model",
+      "note": "weights"
+    }
+  ],
+  "updated": "2026-09-05",
+  "builder": "albond"
+}

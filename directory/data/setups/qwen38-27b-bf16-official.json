@@ -1,0 +1,71 @@
+{
+  "id": "qwen38-27b-bf16-official",
+  "title": "Qwen3.8-27B BF16 — official reference weights",
+  "slug_note": "The ceiling. Nothing quantized, nothing to argue about. Proves what the other checkpoints are losing, and it still fits in 128GB.",
+  "model": "qwen3-8-27b",
+  "status": "untested",
+  "variation": {
+    "checkpoint": "Qwen/Qwen3.8-27B",
+    "publisher": "qwen",
+    "quant": "bf16",
+    "quant_detail": "Full-precision reference. The DFlash2 drafts were trained against this export.",
+    "format": "safetensors",
+    "size_gb": 55.6,
+    "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+    "license": "Apache-2.0",
+    "downloads": null
+  },
+  "engine": {
+    "id": "sglang",
+    "config": "QUANT=bf16 or DF_TARGET=bf16. Any engine that loads the arch.",
+    "image": "lmsysorg/sglang:qwen38-27b",
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "mtp",
+    "flags": []
+  },
+  "hardware": [
+    "dgx-spark"
+  ],
+  "requirements": {
+    "memory_gb": 60,
+    "disk_gb": 52,
+    "min_vram_gb": null,
+    "notes": "52GB of weights leaves room for KV on a 128GB box, but not for much concurrency."
+  },
+  "capabilities": {
+    "vision": true,
+    "video": true,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 1000000
+  },
+  "run": {
+    "command": "QUANT=bf16 ./start.sh",
+    "repo": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
+    "profile": null,
+    "steps": [
+      "QUANT=bf16 ./start.sh"
+    ],
+    "auto_bootable": true
+  },
+  "measurements": [],
+  "caveats": [
+    "Entirely unbenched on our box. It exists in the directory as the reference the quantized rows are compared against, not as a recommendation."
+  ],
+  "provenance_tier": null,
+  "sources": [
+    {
+      "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "kind": "model",
+      "note": "official model card"
+    },
+    {
+      "url": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
+      "kind": "repo",
+      "note": "QUANT=bf16 path"
+    }
+  ],
+  "updated": "2026-09-05"
+}

@@ -1,0 +1,88 @@
+{
+  "id": "qwen38-flash-next-azampatti-sglang-spark",
+  "title": "Qwen3.8-Flash-Next 180B — azampatti SGLang build",
+  "slug_note": "The easiest install of the five known single-Spark builds, and the fastest reported coding throughput at ~43 tok/s. The catch: vision is off, so it is language-only.",
+  "model": "qwen3-8-flash-next",
+  "status": "reported",
+  "variation": {
+    "checkpoint": "Qwen3.8-Flash-Next (base, ~135GB)",
+    "publisher": "azampatti",
+    "quant": "mixed",
+    "quant_detail": "~135GB base footprint served through SGLang at 200K context.",
+    "format": "safetensors",
+    "size_gb": 135,
+    "url": "https://github.com/azampatti",
+    "license": "Apache-2.0",
+    "downloads": null
+  },
+  "engine": {
+    "id": "sglang",
+    "config": "SGLang at 200K context. Builder describes it as the easiest install path.",
+    "image": null,
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "none",
+    "flags": []
+  },
+  "hardware": [
+    "dgx-spark"
+  ],
+  "requirements": {
+    "memory_gb": 110,
+    "disk_gb": 135,
+    "min_vram_gb": null,
+    "notes": "Largest disk footprint of the five builds. Tightest fit on a 128GB box."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 200000,
+    "max_context": 200000
+  },
+  "run": {
+    "command": null,
+    "repo": "https://github.com/azampatti",
+    "profile": null,
+    "steps": [
+      "See the builder's repo for the one-command install."
+    ],
+    "auto_bootable": false
+  },
+  "measurements": [
+    {
+      "metric": "decode_code",
+      "value": 43,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "date": null,
+      "n": null,
+      "method": null,
+      "note": "Coding workload, builder-reported.",
+      "source": "https://github.com/azampatti"
+    }
+  ],
+  "caveats": [
+    "Vision is OFF — this is a language-only build. If you need image or video input, this is not the lane.",
+    "The builder states a 60 tok/s upgrade is 'days away'. Treat the current number as a floor, and treat the promise as marketing until it ships.",
+    "Exact repo URL could not be pinned from our sources beyond the GitHub account; verify before following the install steps.",
+    "The checkpoint card states no license field; the weights lineage is Qwen Apache-2.0.",
+    "Builder runtimes carry their own terms on top of the weights (Mia's scripts are AGPL-3.0)."
+  ],
+  "provenance_tier": "forum",
+  "sources": [
+    {
+      "url": "https://github.com/azampatti",
+      "kind": "repo",
+      "note": "builder account"
+    },
+    {
+      "url": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
+      "kind": "repo",
+      "note": "our builder sweep"
+    }
+  ],
+  "updated": "2026-09-05",
+  "builder": "azampatti"
+}

@@ -1,0 +1,13 @@
+{
+  "qwen3.8-27b@mtp": "qwen38-27b-nvfp4-bf16head-sglang-mtp",
+  "qwen3.8-27b@dspark": "qwen38-27b-nvfp4-bf16head-sglang-dspark",
+  "qwen3.8-27b@dflash2": "qwen38-27b-nvfp4-bf16head-sglang-dflash2",
+  "qwen3.8-27b-redhat@mtp": "qwen38-27b-redhatai-nvfp4-sglang",
+  "qwen3.8-27b-redhat@dspark": "qwen38-27b-redhatai-nvfp4-sglang",
+  "qwen3.6-35b-a3b@mtp": "qwen36-35b-a3b-fp8-official",
+  "qwen3.6-27b-fp8@mtp": "qwen36-27b-fp8-sglang",
+  "qwen3.8-flash-next-mia@none": "qwen38-flash-next-mia-vllm-spark",
+  "qwen3.5-35b-a3b-fp8@mtp": "qwen35-35b-a3b-fp8-sglang",
+  "qwen3.5-27b-fp8@mtp": "qwen35-27b-fp8-sglang",
+  "qwen3.5-122b-albond@none": "qwen35-122b-a10b-albond-int4-vllm-spark"
+}

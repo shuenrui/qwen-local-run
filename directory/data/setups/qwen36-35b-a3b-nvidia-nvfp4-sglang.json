@@ -1,0 +1,78 @@
+{
+  "id": "qwen36-35b-a3b-nvidia-nvfp4-sglang",
+  "title": "Qwen3.6-35B-A3B — nvidia NVFP4 on SGLang (our default card)",
+  "slug_note": "Our default recipe card for the MoE challenger. Needs SGLang >=0.5.10 with both the qwen3 and qwen3_coder parsers.",
+  "model": "qwen3-6-35b-a3b",
+  "status": "untested",
+  "variation": {
+    "checkpoint": "nvidia/Qwen3.6-35B-A3B-NVFP4",
+    "publisher": "nvidia",
+    "quant": "nvfp4",
+    "quant_detail": "ModelOpt v0.44 NVFP4, ~21-24GB. The default in our recipe card.",
+    "format": "safetensors",
+    "size_gb": 23.4,
+    "url": "https://huggingface.co/nvidia/Qwen3.6-35B-A3B-NVFP4",
+    "license": "Apache-2.0",
+    "downloads": null
+  },
+  "engine": {
+    "id": "sglang",
+    "config": "SGLang from our recipe card. EAGLE 3/1/4 speculative decoding.",
+    "image": "lmsysorg/sglang:qwen38-27b",
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "eagle",
+    "flags": [
+      "--mem-fraction-static 0.85",
+      "--max-running-requests 10",
+      "--context-length 262144"
+    ]
+  },
+  "hardware": [
+    "dgx-spark"
+  ],
+  "requirements": {
+    "memory_gb": 29,
+    "disk_gb": 23,
+    "min_vram_gb": null,
+    "notes": "mem-fraction 0.85, concurrency 10, context 262144."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "command": "PROFILE=profiles/qwen3.6-35b-a3b.env ./start-model.sh",
+    "repo": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
+    "profile": "profiles/qwen3.6-35b-a3b.env",
+    "steps": [
+      "PROFILE=profiles/qwen3.6-35b-a3b.env ./start-model.sh"
+    ],
+    "auto_bootable": true
+  },
+  "measurements": [],
+  "caveats": [
+    "If boot rejects the qwen3_5_moe arch, set IMAGE=lmsysorg/sglang:v0.5.15-cu130 — the first release with native ModelOpt mixed-precision load, no patch needed.",
+    "mem-fraction 0.80-0.85 for this family, versus 0.95 on 3.8/MTP.",
+    "The DSpark draft is 3.8-only, so start-model.sh refuses dspark for this card and forces mtp.",
+    "Recipe card validates and the container reaches 'Starting container', but no benchmark has been run. There are no numbers for this entry yet."
+  ],
+  "provenance_tier": null,
+  "sources": [
+    {
+      "url": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
+      "kind": "repo",
+      "note": "recipe card in profiles/"
+    },
+    {
+      "url": "https://huggingface.co/nvidia/Qwen3.6-35B-A3B-NVFP4",
+      "kind": "model",
+      "note": "weights"
+    }
+  ],
+  "updated": "2026-09-05"
+}

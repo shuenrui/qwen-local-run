@@ -1,0 +1,32 @@
+{
+  "id": "qwen3-0-vl-8b",
+  "name": "Qwen3-VL-8B-Instruct",
+  "family": "Qwen3.0",
+  "generation": "3.0",
+  "publisher": "qwen",
+  "released": "2025-10",
+  "license": "Apache-2.0",
+  "architecture": {
+    "kind": "dense",
+    "params_total_b": 8.8,
+    "hybrid": false,
+    "anatomy": "Interleaved-MRoPE, DeepStack, text-timestamp alignment per card"
+  },
+  "context": {
+    "native": 262144,
+    "max": 1000000,
+    "extension": "card: native 256K, expandable to 1M"
+  },
+  "modalities": [
+    "text",
+    "image",
+    "video"
+  ],
+  "base_weight_size": {
+    "bf16_gb": 17.5,
+    "fp8_gb": 10.6
+  },
+  "url": "https://huggingface.co/Qwen/Qwen3-VL-8B-Instruct",
+  "summary": "Dense 8B vision-language model: image and video in, text out, 256K native context.",
+  "updated": "2026-09-06"
+}

@@ -1,0 +1,31 @@
+{
+  "id": "qwen3-5-4b",
+  "name": "Qwen3.5-4B",
+  "family": "Qwen3.5",
+  "generation": "3.5",
+  "publisher": "qwen",
+  "released": "2026-02",
+  "license": "Apache-2.0",
+  "architecture": {
+    "kind": "dense",
+    "params_total_b": 4.7,
+    "hybrid": false,
+    "anatomy": "Card: 'Number of Parameters: 4B' (safetensors count 4.66B); early-fusion vision encoder; 248,320-token vocab, identical BPE to Qwen3.6 per the outsourc-e recipe repo"
+  },
+  "context": {
+    "native": 262144,
+    "max": 1010000,
+    "extension": "card: extensible up to 1,010,000 tokens"
+  },
+  "modalities": [
+    "text",
+    "image",
+    "video"
+  ],
+  "base_weight_size": {
+    "bf16_gb": 9.3
+  },
+  "url": "https://huggingface.co/Qwen/Qwen3.5-4B",
+  "summary": "Qwen3.5 small dense model with a vision encoder and 256K native context; same vocab as Qwen3.6-27B, so it serves as a same-vocab speculative draft.",
+  "updated": "2026-09-06"
+}

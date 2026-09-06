@@ -1,0 +1,24 @@
+{
+  "id": "mac-128gb",
+  "name": "Apple Silicon Mac, 128 GB unified (M3 Max / M4 Max class)",
+  "vendor": "Apple",
+  "chip": "M3 Max / M4 Max",
+  "arch": "arm64, Metal",
+  "form_factor": "laptop/desktop",
+  "memory_gb": 128,
+  "memory_usable_gb": 121,
+  "memory_type": "unified LPDDR5",
+  "bandwidth_gbs": 400,
+  "bandwidth_range_gbs": [400, 546],
+  "cpu": "Apple M3 Max / M4 Max",
+  "gpu": "integrated, shares the 128 GB unified pool",
+  "notes": [
+    "A class entry, not one SKU: 400 GB/s is the M3 Max, 546 GB/s the M4 Max. Setups listed against this class were reported on either.",
+    "Closest structural analogue to DGX Spark — unified memory, so capacity is generous and bandwidth is the limiter — but at roughly 1.5-2x the Spark's 273 GB/s.",
+    "Serving path is MLX or llama.cpp/Metal, not SGLang or vLLM: the CUDA-specific forks (DSpark, DFlash2) have no port, so speculative-decoding setups are not comparable across this class and Spark.",
+    "Memory pressure is configurable (sysctl iogpu.wired_limit_mb); default GPU wired limit is well below 128 GB, so large MoE builds need it raised."
+  ],
+  "measured_by_us": false,
+  "url": "https://www.apple.com/macbook-pro/",
+  "updated": "2026-09-05"
+}

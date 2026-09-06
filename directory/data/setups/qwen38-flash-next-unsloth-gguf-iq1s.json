@@ -1,0 +1,91 @@
+{
+  "id": "qwen38-flash-next-unsloth-gguf-iq1s",
+  "title": "Qwen3.8-Flash-Next 180B — unsloth GGUF UD-IQ1_S (smallest usable)",
+  "slug_note": "The 24GB-card lane for a 180B model: ~67GB in IQ1_S, runnable through llama.cpp. Vision arrives via a separate projector file. Vendor-claimed ~34.5 tok/s.",
+  "model": "qwen3-8-flash-next",
+  "status": "claimed",
+  "variation": {
+    "checkpoint": "unsloth/Qwen3.8-Flash-Next-GGUF (UD-IQ1_S)",
+    "publisher": "unsloth",
+    "quant": "gguf-q2",
+    "quant_detail": "UD-IQ1_S, unsloth's dynamic ~1-bit-per-weight scheme. Smallest usable Flash-Next build known.",
+    "format": "gguf",
+    "size_gb": 67,
+    "url": "https://huggingface.co/unsloth",
+    "license": "Apache-2.0",
+    "downloads": null
+  },
+  "engine": {
+    "id": "llama-cpp",
+    "config": "llama.cpp with CPU/GPU layer split. Vision requires the separate mmproj projector file, which is not inside the main GGUF.",
+    "image": null,
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "none",
+    "flags": [
+      "-ngl (layers on GPU)",
+      "--mmproj (vision projector)"
+    ]
+  },
+  "hardware": [
+    "dgx-spark",
+    "gpu-24gb",
+    "mac-128gb"
+  ],
+  "requirements": {
+    "memory_gb": 72,
+    "disk_gb": 67,
+    "min_vram_gb": 24,
+    "notes": "Runs with partial GPU offload on a 24GB card — the rest spills to system RAM, which is where the throughput goes. Comfortable on 128GB unified memory."
+  },
+  "capabilities": {
+    "vision": true,
+    "video": null,
+    "tools": null,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": null
+  },
+  "run": {
+    "command": "llama-server -hf unsloth/Qwen3.8-Flash-Next-GGUF:UD-IQ1_S",
+    "repo": "https://huggingface.co/unsloth",
+    "profile": null,
+    "steps": [
+      "Download the GGUF plus its mmproj file",
+      "llama-server -hf unsloth/Qwen3.8-Flash-Next-GGUF:UD-IQ1_S -ngl 99"
+    ],
+    "auto_bootable": true
+  },
+  "measurements": [
+    {
+      "metric": "decode_per_stream",
+      "value": 34.5,
+      "unit": "tok/s",
+      "provenance": "vendor",
+      "date": null,
+      "n": null,
+      "method": null,
+      "note": "Vendor-claimed. No hardware or configuration stated in our source, so it is not comparable to any other row.",
+      "source": "https://huggingface.co/unsloth"
+    }
+  ],
+  "caveats": [
+    "At ~1 bit per weight, quality degradation on a 180B MoE is not characterized anywhere in our sources. The vendor number is a throughput claim, not a quality claim.",
+    "The 34.5 tok/s figure has no stated hardware. Do not compare it to the Spark builds.",
+    "Exact repo id and quant filename should be re-verified against the publisher before download; our source records the org and quant name but not a confirmed repo path."
+  ],
+  "provenance_tier": "vendor",
+  "sources": [
+    {
+      "url": "https://huggingface.co/unsloth",
+      "kind": "model",
+      "note": "GGUF publisher"
+    },
+    {
+      "url": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
+      "kind": "repo",
+      "note": "our quant shortlist"
+    }
+  ],
+  "updated": "2026-09-05"
+}

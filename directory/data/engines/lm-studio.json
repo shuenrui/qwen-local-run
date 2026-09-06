@@ -1,0 +1,14 @@
+{
+  "id": "lm-studio",
+  "name": "LM Studio",
+  "kind": "app",
+  "url": "https://lmstudio.ai/",
+  "api": ["openai"],
+  "qwen_support": "GGUF and MLX via a GUI. Simplest path on Apple Silicon and Windows.",
+  "spec_decode": ["none"],
+  "features": ["gui", "gguf", "mlx", "openai-server", "vision"],
+  "notable_flags": ["lms load <model>", "lms server start"],
+  "gotchas": ["Closed source. Fine for trying a model, not for reproducible benchmarking."],
+  "arm64": true,
+  "updated": "2026-09-05"
+}

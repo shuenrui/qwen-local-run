@@ -1,0 +1,30 @@
+{
+  "id": "qwen3-5-122b-a10b",
+  "name": "Qwen3.5-122B-A10B",
+  "family": "Qwen3.5",
+  "generation": "3.5",
+  "publisher": "qwen",
+  "released": "2026",
+  "license": "Apache-2.0",
+  "architecture": {
+    "kind": "moe",
+    "params_total_b": 122,
+    "params_active_b": 10,
+    "mtp_head": true
+  },
+  "context": {
+    "native": 262144,
+    "max": 262144,
+    "extension": null
+  },
+  "modalities": [
+    "text"
+  ],
+  "url": "https://huggingface.co/Intel/Qwen3.5-122B-A10B-int4-AutoRound",
+  "summary": "The best-documented 100B-class single-Spark recipe. Albond's INT4+FP8 hybrid lands at about 67GB resident with MTP-2 and 256K context, and he publishes both throughput and quality peaks rather than only one.",
+  "notes": [
+    "Reported 52 tok/s and a 54.9 LongCode peak by the builder; not measured on our box.",
+    "Runs under vLLM from the builder's repo, not from a stock engine launch."
+  ],
+  "updated": "2026-09-05"
+}
