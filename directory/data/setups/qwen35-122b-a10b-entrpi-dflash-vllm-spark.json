@@ -44,9 +44,9 @@
     "repo": "https://github.com/Entrpi/qwen3.5-122B-A10B-on-spark",
     "command": null,
     "steps": [
-      "Run the repo's one-shot installer",
-      "Choose the DFlash profile for agent workloads",
-      "--load-format fastsafetensors cuts time-to-READY to ~3 min versus ~12"
+      {"kind": "do", "text": "Run the repo's one-shot installer"},
+      {"kind": "do", "text": "Choose the DFlash profile for agent workloads"},
+      {"kind": "do", "text": "--load-format fastsafetensors cuts time-to-READY to ~3 min versus ~12"}
     ]
   },
   "measurements": [
@@ -54,6 +54,8 @@
       "metric": "decode_chat",
       "value": 81,
       "unit": "tok/s",
+      "concurrency": 1,
+      "stat": "median",
       "provenance": "forum",
       "source": "https://github.com/Entrpi/qwen3.5-122B-A10B-on-spark",
       "date": null,
@@ -64,6 +66,7 @@
       "metric": "decode_agg",
       "value": 200,
       "unit": "tok/s",
+      "concurrency": 3,
       "provenance": "forum",
       "source": "https://github.com/Entrpi/qwen3.5-122B-A10B-on-spark",
       "date": null,
@@ -74,6 +77,7 @@
       "metric": "decode_code",
       "value": 54.5,
       "unit": "tok/s",
+      "concurrency": 1,
       "provenance": "forum",
       "source": "https://github.com/Entrpi/qwen3.5-122B-A10B-on-spark",
       "date": null,
@@ -84,6 +88,7 @@
       "metric": "decode_chat",
       "value": 124.5,
       "unit": "tok/s",
+      "concurrency": 1,
       "provenance": "forum",
       "source": "https://github.com/Entrpi/qwen3.5-122B-A10B-on-spark",
       "date": null,
@@ -94,6 +99,7 @@
       "metric": "decode_essay",
       "value": 48.8,
       "unit": "tok/s",
+      "concurrency": 1,
       "provenance": "forum",
       "source": "https://github.com/Entrpi/qwen3.5-122B-A10B-on-spark",
       "date": null,
@@ -101,9 +107,10 @@
       "note": "prose workload single stream (38.4 at 2 streams, 30.8 at 3, aggregate 92.5); DFlash only ties MTP-2 (33.2 vs 33.7) on low-acceptance prose"
     },
     {
-      "metric": "decode_agg",
+      "metric": "decode_per_stream",
       "value": 59.0,
       "unit": "tok/s",
+      "concurrency": 1,
       "provenance": "forum",
       "source": "https://github.com/Entrpi/qwen3.5-122B-A10B-on-spark",
       "date": null,
@@ -114,6 +121,7 @@
       "metric": "decode_chat",
       "value": 36.0,
       "unit": "tok/s",
+      "concurrency": 1,
       "provenance": "forum",
       "source": "https://github.com/Entrpi/qwen3.5-122B-A10B-on-spark",
       "date": null,
@@ -169,6 +177,6 @@
       "note": "weights"
     }
   ],
-  "updated": "2026-09-05",
+  "updated": "2026-09-07",
   "builder": "entrpi"
 }

@@ -45,8 +45,8 @@
     "repo": "https://huggingface.co/mlx-community/Qwen3.8-27B-4bit",
     "command": null,
     "steps": [
-      "Download mlx-community/Qwen3.8-27B-4bit",
-      "mlx-lm serve on an M-series Mac with 64 GB+ unified memory"
+      {"kind": "do", "text": "Download mlx-community/Qwen3.8-27B-4bit"},
+      {"kind": "do", "text": "mlx-lm serve on an M-series Mac with 64 GB+ unified memory"}
     ]
   },
   "measurements": [],

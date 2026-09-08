@@ -46,8 +46,8 @@
     "command": "PROFILE=profiles/qwen3.8-27b.env ./start-model.sh",
     "profile": "profiles/qwen3.8-27b.env",
     "steps": [
-      "PROFILE=profiles/qwen3.8-27b.env ./start-model.sh",
-      "curl http://127.0.0.1:8888/v1/models"
+      {"kind": "cmd", "text": "PROFILE=profiles/qwen3.8-27b.env ./start-model.sh"},
+      {"kind": "cmd", "text": "curl http://127.0.0.1:8888/v1/models"}
     ],
     "auto_bootable": true
   },

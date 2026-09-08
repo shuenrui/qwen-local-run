@@ -49,9 +49,9 @@
     "repo": "https://github.com/outsourc-e/qwen36-4090-recipes",
     "profile": null,
     "steps": [
-      "pip install vllm",
-      "vllm serve Qwen/Qwen3.5-4B --max-model-len 32768",
-      "For the draft role: load the Q4_K_M GGUF alongside Qwen3.6-27B in mainline llama.cpp per the recipe repo"
+      {"kind": "cmd", "text": "pip install vllm"},
+      {"kind": "cmd", "text": "vllm serve Qwen/Qwen3.5-4B --max-model-len 32768"},
+      {"kind": "do", "text": "For the draft role: load the Q4_K_M GGUF alongside Qwen3.6-27B in mainline llama.cpp per the recipe repo"}
     ]
   },
   "measurements": [],

@@ -46,8 +46,8 @@
     "repo": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
     "command": null,
     "steps": [
-      "Download unsloth/Qwen3.8-27B-GGUF",
-      "llama.cpp with CUDA or Metal, Q4_K_M or smaller to stay on-card"
+      {"kind": "do", "text": "Download unsloth/Qwen3.8-27B-GGUF"},
+      {"kind": "do", "text": "llama.cpp with CUDA or Metal, Q4_K_M or smaller to stay on-card"}
     ]
   },
   "measurements": [],

@@ -51,8 +51,8 @@
     "repo": "https://huggingface.co/unsloth",
     "profile": null,
     "steps": [
-      "Download the GGUF plus its mmproj file",
-      "llama-server -hf unsloth/Qwen3.8-Flash-Next-GGUF:UD-IQ1_S -ngl 99"
+      {"kind": "do", "text": "Download the GGUF plus its mmproj file"},
+      {"kind": "cmd", "text": "llama-server -hf unsloth/Qwen3.8-Flash-Next-GGUF:UD-IQ1_S -ngl 99"}
     ],
     "auto_bootable": true
   },

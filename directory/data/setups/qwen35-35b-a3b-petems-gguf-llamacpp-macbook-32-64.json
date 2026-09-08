@@ -44,9 +44,9 @@
     "repo": "https://github.com/petems/qwen-local-silicon-32to64gb-macbook-guide",
     "command": null,
     "steps": [
-      "Run the guide's check-compatibility.sh probe",
-      "Use the RAM auto-detecting start-launcher",
-      "Stay at Q4_K_M or below on 32 GB machines"
+      {"kind": "do", "text": "Run the guide's check-compatibility.sh probe"},
+      {"kind": "do", "text": "Use the RAM auto-detecting start-launcher"},
+      {"kind": "do", "text": "Stay at Q4_K_M or below on 32 GB machines"}
     ]
   },
   "measurements": [

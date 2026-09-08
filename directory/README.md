@@ -4,6 +4,9 @@ A data-driven directory of every community way to run a Qwen model on hardware
 you own. It scales the hand-written dashboard at `local.host.impossibuild.ai`
 from a single shelf to hundreds of filterable entries without hand-editing HTML.
 
+[Open the live directory](https://local.host.impossibuild.ai/) or read the
+[repository overview](../README.md) for a visitor-focused tour.
+
 The unit of an entry is a **runnable setup**: one specific checkpoint, one
 specific engine configuration, on specific hardware. That is the thing that
 actually gets run and actually gets measured, so it is the thing the directory
@@ -28,15 +31,20 @@ directory/
 
 ## Workflow
 
-```
-# 1. edit or add data/setups/<id>.json (see SCHEMA.md for required fields)
-python3 directory/validate.py     # must print 0 errors
-python3 directory/build.py        # regenerates site/index.html
+```bash
+# Run once on a new checkout.
+bash directory/tools/install_verify_env.sh
+
+# After editing or adding data/setups/<id>.json:
+python3 directory/check.sh
 ```
 
-`build.py` runs `validate.py` first and refuses to write on failure. The
-generated page is a single self-contained HTML file: the dataset is inlined as
-JSON, so it can be served statically or opened from disk with no build step.
+The gate validates the data, fetches every cited URL, rebuilds the site, and
+runs the browser suite against a local server. It exits non-zero if any stage
+fails. `build.py` also runs `validate.py` itself and refuses to write on
+failure. The generated page is a single self-contained HTML file: the dataset
+is inlined as JSON, so it can be served statically or opened from disk with no
+build step.
 
 ## Provenance is the load-bearing rule
 
@@ -56,11 +64,11 @@ enforces that.
 
 ## Current coverage
 
-65 setups, 22 models, 6 hardware classes, 7 engines, 29 publishers. Provenance
+65 setups, 22 model families, 6 hardware classes, 7 engines, 29 publishers. Provenance
 splits 4 `box` (measured on our DGX Spark), 28 `forum` (builder- or
 thread-reported, each with its URL and the quoted sentence), 1 `vendor`
-(unsloth's own claim), and 32 `untested` lanes that validate and name a run
-command but carry no numbers yet.
+(unsloth's own claim), and 32 `untested` lanes that validate and provide run
+steps but carry no numbers yet.
 
 Hardware lanes: DGX Spark / GB10 (47 setups, plus 6 that also list the
 ThinkStation PGX as the same-silicon alternative), 24 GB consumer GPUs (13),
@@ -127,7 +135,7 @@ clipboard contents, provenance pills versus data, and horizontal overflow at
 1440px and 390px. It exits non-zero on any failure. See its docstring for the
 Playwright setup. Pass a URL as the first argument to verify a deployed copy:
 
-    /tmp/pwenv/bin/python directory/verify_browser.py https://local.host.impossibuild.ai/
+    directory/tools/.pwenv/bin/python directory/verify_browser.py https://local.host.impossibuild.ai/
 
 ## Live
 

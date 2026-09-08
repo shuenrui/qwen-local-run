@@ -46,7 +46,7 @@
     "repo": "https://github.com/blazux",
     "profile": null,
     "steps": [
-      "See the builder's repo."
+      {"kind": "do", "text": "See the builder's repo."}
     ],
     "auto_bootable": false
   },
@@ -70,6 +70,7 @@
       "metric": "decode_chat",
       "value": 31,
       "unit": "tok/s",
+      "concurrency": 1,
       "provenance": "forum",
       "source": "https://github.com/blazux/qwen3.8-Flash-DGX",
       "date": "2026-09-04",
@@ -90,6 +91,7 @@
       "metric": "decode_agg",
       "value": 266.8,
       "unit": "tok/s",
+      "concurrency": 48,
       "provenance": "forum",
       "source": "https://github.com/blazux/qwen3.8-Flash-DGX",
       "date": "2026-09-04",
@@ -100,6 +102,7 @@
       "metric": "decode_per_stream",
       "value": 5.6,
       "unit": "tok/s",
+      "concurrency": 48,
       "provenance": "forum",
       "source": "https://github.com/blazux/qwen3.8-Flash-DGX",
       "date": "2026-09-04",
@@ -213,6 +216,6 @@
       "note": "Saren's fork of this build, the source of the 47.5 tok/s figure quoted in the measurements"
     }
   ],
-  "updated": "2026-09-05",
+  "updated": "2026-09-07",
   "builder": "blazux"
 }

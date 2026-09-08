@@ -46,7 +46,7 @@
     "repo": "https://github.com/azampatti",
     "profile": null,
     "steps": [
-      "See the builder's repo for the one-command install."
+      {"kind": "do", "text": "See the builder's repo for the one-command install."}
     ],
     "auto_bootable": false
   },

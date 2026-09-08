@@ -45,8 +45,8 @@
     "repo": "https://forums.developer.nvidia.com/t/does-qwen3-5-35b-a3b-on-gb10-leave-a-lot-of-performance-on-the-table/362200",
     "command": null,
     "steps": [
-      "Load the MXFP4 GGUF in mainline llama.cpp",
-      "Run at 256K context and measure tokens per second"
+      {"kind": "do", "text": "Load the MXFP4 GGUF in mainline llama.cpp"},
+      {"kind": "do", "text": "Run at 256K context and measure tokens per second"}
     ]
   },
   "measurements": [

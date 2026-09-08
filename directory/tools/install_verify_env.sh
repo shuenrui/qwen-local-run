@@ -9,8 +9,12 @@ if [ -x "$VENV/bin/python" ]; then
   echo "$VENV already exists"
 else
   python3 -m venv "$VENV"
-  "$VENV/bin/pip" install --quiet playwright
-  "$VENV/bin/playwright" install chromium
-  echo "created $VENV with Playwright + Chromium"
+  echo "created $VENV"
 fi
+if [ ! -x "$VENV/bin/playwright" ]; then
+  "$VENV/bin/pip" install --quiet playwright
+  echo "installed Playwright in $VENV"
+fi
+"$VENV/bin/playwright" install chromium
+echo "$VENV is ready with Playwright + Chromium"
 echo "verify with: $VENV/bin/python verify_browser.py [URL]"

@@ -45,13 +45,13 @@
     "max_context": 262144
   },
   "run": {
-    "command": "See the builder's repo — manual vLLM boot",
+    "command": null,
     "repo": "https://github.com/albond/DGX_Spark_Qwen3.5-122B-A10B-AR-INT4",
     "profile": "profiles/qwen3.5-122b-albond.env",
     "steps": [
-      "Clone the builder's repo",
-      "Boot vLLM per his instructions",
-      "Point profiles/qwen3.5-122b-albond.env at the running PORT with auto=false to benchmark it"
+      {"kind": "do", "text": "Clone the builder's repo"},
+      {"kind": "do", "text": "See the builder's repo — manual vLLM boot"},
+      {"kind": "do", "text": "Point profiles/qwen3.5-122b-albond.env at the running PORT with auto=false to benchmark it"}
     ],
     "auto_bootable": false
   },
@@ -60,6 +60,7 @@
       "metric": "decode_per_stream",
       "value": 52,
       "unit": "tok/s",
+      "concurrency": 1,
       "provenance": "forum",
       "date": null,
       "n": null,
@@ -82,6 +83,7 @@
       "metric": "decode_chat",
       "value": 28.3,
       "unit": "tok/s",
+      "concurrency": 1,
       "provenance": "forum",
       "source": "https://forums.developer.nvidia.com/t/qwen3-5-122b-a10b-on-single-spark-up-to-51-tok-s-v2-1-patches-quick-start-benchmark/365639",
       "date": "2026-04-05",
@@ -108,9 +110,11 @@
       "method": "512-token code generation, hybrid+MTP, warm cache, run 2"
     },
     {
-      "metric": "decode_agg",
+      "metric": "decode_per_stream",
       "value": 51.58,
       "unit": "tok/s",
+      "concurrency": 1,
+      "stat": "mean",
       "provenance": "forum",
       "source": "https://github.com/albond/DGX_Spark_Qwen3.5-122B-A10B-AR-INT4",
       "date": "2026-05-09",
@@ -121,6 +125,8 @@
       "metric": "decode_code",
       "value": 54.9,
       "unit": "tok/s",
+      "concurrency": 1,
+      "stat": "peak",
       "provenance": "forum",
       "source": "https://github.com/albond/DGX_Spark_Qwen3.5-122B-A10B-AR-INT4",
       "date": "2026-05-09",
@@ -128,9 +134,11 @@
       "note": "LongCode 2048 prompt peak, the most decode-bound fixture (Q&A 256 51.3, Code 512 52.8, JSON 1024 51.1, Math 64 47.8)"
     },
     {
-      "metric": "decode_agg",
+      "metric": "decode_per_stream",
       "value": 39,
       "unit": "tok/s",
+      "concurrency": 1,
+      "stat": "mean",
       "provenance": "forum",
       "source": "https://github.com/albond/DGX_Spark_Qwen3.5-122B-A10B-AR-INT4",
       "date": "2026-05-09",
@@ -158,9 +166,11 @@
       "note": "output size of build-hybrid-checkpoint.py (~20 min to build) from the Intel AutoRound INT4 dir + Qwen FP8 donor"
     },
     {
-      "metric": "decode_agg",
+      "metric": "decode_per_stream",
       "value": 30.48,
       "unit": "tok/s",
+      "concurrency": 1,
+      "stat": "mean",
       "provenance": "forum",
       "source": "https://github.com/albond/DGX_Spark_Qwen3.5-122B-A10B-AR-INT4",
       "date": "2026-05-09",
@@ -200,6 +210,6 @@
       "note": "weights"
     }
   ],
-  "updated": "2026-09-05",
+  "updated": "2026-09-07",
   "builder": "albond"
 }

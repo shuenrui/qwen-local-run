@@ -46,8 +46,8 @@
     "repo": "https://huggingface.co/bartowski/Qwen_Qwen3.5-35B-A3B-GGUF",
     "command": null,
     "steps": [
-      "Download bartowski/Qwen_Qwen3.5-35B-A3B-GGUF",
-      "llama.cpp CUDA or Metal; Q4_K_M fits 24 GB with KV room"
+      {"kind": "do", "text": "Download bartowski/Qwen_Qwen3.5-35B-A3B-GGUF"},
+      {"kind": "do", "text": "llama.cpp CUDA or Metal; Q4_K_M fits 24 GB with KV room"}
     ]
   },
   "measurements": [],

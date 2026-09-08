@@ -46,8 +46,8 @@
     "repo": "https://huggingface.co/unsloth/Qwen3.6-27B-MTP-GGUF",
     "command": null,
     "steps": [
-      "Download unsloth/Qwen3.6-27B-MTP-GGUF",
-      "llama.cpp with --speculative-type or draft from the MTP head, per repo notes"
+      {"kind": "do", "text": "Download unsloth/Qwen3.6-27B-MTP-GGUF"},
+      {"kind": "do", "text": "llama.cpp with --speculative-type or draft from the MTP head, per repo notes"}
     ]
   },
   "measurements": [],

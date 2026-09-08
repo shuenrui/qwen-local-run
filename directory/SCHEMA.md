@@ -93,7 +93,11 @@ Required: `id`, `title`, `model`, `variation`, `engine`, `hardware`,
     "command": "./start-dflash.sh",
     "repo": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
     "profile": "profiles/qwen3.8-27b.env",   // local recipe card, if any
-    "steps": ["cp .env.sample .env", "./start-dflash.sh"],
+    "steps": [
+      {"kind": "cmd", "text": "cp .env.sample .env"},
+      {"kind": "cmd", "text": "./start-dflash.sh"},
+      {"kind": "do", "text": "Wait for the model endpoint to become ready"}
+    ],
     "auto_bootable": true                    // false = manual-only lane
   },
 
@@ -101,6 +105,8 @@ Required: `id`, `title`, `model`, `variation`, `engine`, `hardware`,
     {
       "metric": "decode_code",       // -> enums in validate.py
       "value": 50.9, "unit": "tok/s",
+      "concurrency": 1,               // optional positive integer; simultaneous streams/clients in this measurement
+      "stat": "median",               // optional: mean | median | peak
       "provenance": "box", "date": "2026-08-19", "n": 5,
       "method": "bench/ndec.py net-decode, median of 5, server completion_tokens",
       "range": [50.8, 51.1],
@@ -118,13 +124,20 @@ Required: `id`, `title`, `model`, `variation`, `engine`, `hardware`,
 }
 ```
 
+`run.steps` is an array of objects with exactly two fields: `kind` and `text`.
+Use `kind: "cmd"` only when `text` is a shell command that can be run as shown;
+use `kind: "do"` for prose instructions, UI actions, placeholders, or commands
+that still need the reader to supply or interpret details. `kind` must be `cmd`
+or `do`, and `text` must be a non-empty string. Legacy string entries are not
+valid.
+
 ### metric enum
 
 Speed and quality are kept in separate namespaces so the site can chart them
 without mixing units.
 
 - Speed: `decode_code`, `decode_essay`, `decode_chat`, `decode_agg`,
-  `ttft_ms`, `task_time_min`
+  `decode_per_stream`, `prefill_tok_s`, `ttft_ms`, `task_time_min`
 - Quality: `quality_index`, `bench_code`, `bench_toolcall`, `bench_mmlu`
 - Footprint: `memory_gb`, `disk_gb`
 
@@ -132,13 +145,27 @@ Anything not in the enum must be added to `validate.py` first. That friction is
 deliberate: it stops the dataset from drifting into fifty one-off metric names
 that cannot be compared.
 
+`decode_agg` is reserved for throughput summed across simultaneous streams and
+therefore requires `concurrency > 1`. A mean across sequential prompts or task
+categories is `decode_per_stream` with `concurrency: 1` and `stat: "mean"`.
+Use the optional `stat` field when a source distinguishes `mean`, `median`, or
+`peak`; headline selection prefers a non-peak value when both are available.
+
+Speed measurements may include `concurrency`, a positive integer recording the
+number of simultaneous streams or clients used for that measurement. Leave it
+unset when the source does not explicitly state measurement concurrency; do not
+derive it from request counts, prompt counts, capacity claims, or config names.
+`decode_agg` is total decode throughput across those parallel streams, while
+`prefill_tok_s` is prompt-processing/read throughput and is not decode speed.
+
 ## Adding an entry
 
 1. Copy `data/setups/_template.json`.
 2. Fill every field you can verify. Use `null` for unknown — never a guess.
 3. Every measurement gets a `source` unless `provenance` is `box`.
-4. `python3 directory/validate.py` — must pass.
-5. `python3 directory/build.py` — regenerates `site/index.html`.
+4. From the repository root, run `python3 directory/check.sh`. It validates the
+   data, fetches every source URL, rebuilds `site/index.html`, and runs the
+   browser suite. Every stage must pass.
 
 ## Conventions (added 2026-09-06, hygiene pass)
 

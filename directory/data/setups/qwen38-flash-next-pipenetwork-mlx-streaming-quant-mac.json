@@ -44,8 +44,8 @@
     "repo": "https://github.com/PipeNetwork/qwen38-flash-next-mlx",
     "command": null,
     "steps": [
-      "Build the mixed-4_8bit quant with the repo's streaming quantizer",
-      "Serve through the repo's MLX runtime (stock mlx-lm cannot load qwen4_exp)"
+      {"kind": "do", "text": "Build the mixed-4_8bit quant with the repo's streaming quantizer"},
+      {"kind": "do", "text": "Serve through the repo's MLX runtime (stock mlx-lm cannot load qwen4_exp)"}
     ]
   },
   "measurements": [
@@ -103,6 +103,7 @@
       "metric": "decode_chat",
       "value": 24,
       "unit": "tok/s",
+      "concurrency": 1,
       "provenance": "forum",
       "source": "https://github.com/PipeNetwork/qwen38-flash-next-mlx",
       "date": null,

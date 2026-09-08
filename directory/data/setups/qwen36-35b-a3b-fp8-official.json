@@ -50,7 +50,7 @@
     "repo": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
     "profile": null,
     "steps": [
-      "PROFILE=profiles/<card>.env ./start-model.sh"
+      {"kind": "do", "text": "PROFILE=profiles/<card>.env ./start-model.sh"}
     ],
     "auto_bootable": true
   },

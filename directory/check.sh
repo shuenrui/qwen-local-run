@@ -1,31 +1,66 @@
-#!/usr/bin/env bash
-# One-command check for the directory: validate, link-rot, build, and (if a
-# Playwright venv exists) browser verification against a local serve.
-set -euo pipefail
-cd "$(dirname "$0")/.."
+#!/usr/bin/env python3
+"""Run the publish gate: validate, check links, build, and verify in Chromium."""
 
-echo "== validate =="
-python3 validate.py
+from functools import partial
+from http.server import SimpleHTTPRequestHandler, ThreadingHTTPServer
+import os
+from pathlib import Path
+import subprocess
+import sys
+from threading import Thread
 
-echo "== link rot =="
-python3 check_links.py --quiet && echo "all source URLs reachable"
 
-echo "== build =="
-python3 build.py
+ROOT = Path(__file__).resolve().parent
 
-PW=/tmp/pwenv
-if [ ! -x "$PW/bin/python" ] && [ -x tools/.pwenv/bin/python ]; then
-  PW=tools/.pwenv
-fi
-if [ -x "$PW/bin/python" ]; then
-  echo "== browser verify (local serve) =="
-  python3 -m http.server 8849 --bind 127.0.0.1 --directory site &
-  SRV=$!
-  trap 'kill $SRV 2>/dev/null || true' EXIT
-  sleep 2
-  "$PW/bin/python" verify_browser.py http://127.0.0.1:8849/
-else
-  echo "== browser verify skipped: no Playwright venv (tools/install_verify_env.sh) =="
-fi
 
-echo "== done =="
+def run(label, *command):
+    print(f"== {label} ==", flush=True)
+    subprocess.run(command, cwd=ROOT, check=True)
+
+
+def main():
+    run("validate", sys.executable, "validate.py")
+
+    run("link rot", sys.executable, "check_links.py", "--quiet")
+    print("all source URLs reachable", flush=True)
+
+    run("build", sys.executable, "build.py")
+
+    candidates = [
+        Path("/tmp/pwenv/bin/python"),
+        ROOT / "tools/.pwenv/bin/python",
+    ]
+    playwright_python = next(
+        (path for path in candidates if path.is_file() and os.access(path, os.X_OK)),
+        None,
+    )
+    if playwright_python is None:
+        print(
+            "browser verification requires tools/install_verify_env.sh",
+            file=sys.stderr,
+        )
+        return 1
+
+    handler = partial(SimpleHTTPRequestHandler, directory=ROOT / "site")
+    server = ThreadingHTTPServer(("127.0.0.1", 0), handler)
+    thread = Thread(target=server.serve_forever, daemon=True)
+    thread.start()
+    try:
+        port = server.server_address[1]
+        run(
+            "browser verify (local serve)",
+            str(playwright_python),
+            "verify_browser.py",
+            f"http://127.0.0.1:{port}/",
+        )
+    finally:
+        server.shutdown()
+        server.server_close()
+        thread.join()
+
+    print("== done ==", flush=True)
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

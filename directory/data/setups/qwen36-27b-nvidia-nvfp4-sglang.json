@@ -45,8 +45,8 @@
     "repo": "https://huggingface.co/nvidia/Qwen3.6-27B-NVFP4",
     "command": null,
     "steps": [
-      "Download nvidia/Qwen3.6-27B-NVFP4",
-      "SGLang with the NVFP4 checkpoint on a DGX Spark"
+      {"kind": "do", "text": "Download nvidia/Qwen3.6-27B-NVFP4"},
+      {"kind": "do", "text": "SGLang with the NVFP4 checkpoint on a DGX Spark"}
     ]
   },
   "measurements": [],

@@ -46,9 +46,9 @@
     "repo": "https://lmstudio.ai/",
     "command": null,
     "steps": [
-      "Search 'Qwen3.8-27B' in LM Studio and download the Q4_K_M GGUF",
-      "Load it in the Chat or Developer tab",
-      "Start the local server; point any OpenAI client at http://localhost:1234/v1"
+      {"kind": "do", "text": "Search 'Qwen3.8-27B' in LM Studio and download the Q4_K_M GGUF"},
+      {"kind": "do", "text": "Load it in the Chat or Developer tab"},
+      {"kind": "do", "text": "Start the local server; point any OpenAI client at http://localhost:1234/v1"}
     ]
   },
   "measurements": [],

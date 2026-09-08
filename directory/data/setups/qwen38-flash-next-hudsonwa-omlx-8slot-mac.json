@@ -44,9 +44,9 @@
     "repo": "https://github.com/hudsonwa/Qwen3.8-Flash-Next-oMLX-Recipe",
     "command": null,
     "steps": [
-      "Follow the oMLX recipe in the repo",
-      "Keep the PLE tables on fast SSD; they page in and out",
-      "Enable MTP speculative decode for the quoted solo decode"
+      {"kind": "do", "text": "Follow the oMLX recipe in the repo"},
+      {"kind": "do", "text": "Keep the PLE tables on fast SSD; they page in and out"},
+      {"kind": "do", "text": "Enable MTP speculative decode for the quoted solo decode"}
     ]
   },
   "measurements": [
@@ -94,6 +94,7 @@
       "metric": "decode_chat",
       "value": 60.9,
       "unit": "tok/s",
+      "concurrency": 1,
       "provenance": "forum",
       "source": "https://github.com/hudsonwa/Qwen3.8-Flash-Next-oMLX-Recipe",
       "date": "2026-08-31",

@@ -46,9 +46,9 @@
     "repo": "https://github.com/szibis/mlx-flash",
     "profile": null,
     "steps": [
-      "Install mlx-flash from the repo",
-      "Point it at mlx-community/Qwen3.5-397B-A17B-4bit on fast NVMe SSD storage",
-      "Serve; cold experts stream from disk while hot experts stay resident"
+      {"kind": "do", "text": "Install mlx-flash from the repo"},
+      {"kind": "do", "text": "Point it at mlx-community/Qwen3.5-397B-A17B-4bit on fast NVMe SSD storage"},
+      {"kind": "do", "text": "Serve; cold experts stream from disk while hot experts stay resident"}
     ]
   },
   "measurements": [

@@ -46,9 +46,9 @@
     "repo": "https://huggingface.co/Baekpica",
     "profile": null,
     "steps": [
-      "Request access — the download is gated.",
-      "Install the builder's ds4-dfm-rs Rust engine fork.",
-      "A stock engine will not load these weights."
+      {"kind": "do", "text": "Request access — the download is gated."},
+      {"kind": "do", "text": "Install the builder's ds4-dfm-rs Rust engine fork."},
+      {"kind": "do", "text": "A stock engine will not load these weights."}
     ],
     "auto_bootable": false
   },
@@ -65,7 +65,7 @@
       "source": "https://huggingface.co/Baekpica"
     },
     {
-      "metric": "decode_agg",
+      "metric": "prefill_tok_s",
       "value": 489,
       "unit": "tok/s",
       "provenance": "forum",

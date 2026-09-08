@@ -46,7 +46,7 @@
     "repo": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
     "profile": null,
     "steps": [
-      "QUANT=bf16 ./start.sh"
+      {"kind": "cmd", "text": "QUANT=bf16 ./start.sh"}
     ],
     "auto_bootable": true
   },

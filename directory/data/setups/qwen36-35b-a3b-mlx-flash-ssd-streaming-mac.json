@@ -44,9 +44,9 @@
     "repo": "https://github.com/szibis/mlx-flash",
     "command": null,
     "steps": [
-      "Install mlx-flash from the repo",
-      "Point it at the 4-bit MLX build",
-      "Keep the model directory on fast SSD storage; cold experts stream from disk"
+      {"kind": "do", "text": "Install mlx-flash from the repo"},
+      {"kind": "do", "text": "Point it at the 4-bit MLX build"},
+      {"kind": "do", "text": "Keep the model directory on fast SSD storage; cold experts stream from disk"}
     ]
   },
   "measurements": [
@@ -54,6 +54,7 @@
       "metric": "decode_chat",
       "value": 101.0,
       "unit": "tok/s",
+      "concurrency": 1,
       "provenance": "forum",
       "source": "https://github.com/szibis/mlx-flash",
       "date": null,

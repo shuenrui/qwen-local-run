@@ -1,7 +1,7 @@
 {
   "id": "qwen35-9b-bf16-sglang",
   "title": "Qwen3.5-9B — BF16 on SGLang",
-  "slug_note": "Fits essentially anywhere: 24GB cards, 32GB Macs, and comfortably on a Spark. Vendor-reported MMLU-Pro 82.5.",
+  "slug_note": "Fits on a 24GB NVIDIA card and comfortably on a Spark. Vendor-reported MMLU-Pro 82.5.",
   "model": "qwen3-5-9b",
   "status": "untested",
   "variation": {
@@ -30,8 +30,7 @@
   },
   "hardware": [
     "dgx-spark",
-    "gpu-24gb",
-    "mac-128gb"
+    "gpu-24gb"
   ],
   "requirements": {
     "memory_gb": 23,
@@ -52,7 +51,7 @@
     "repo": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
     "profile": "profiles/qwen3.5-9b.env",
     "steps": [
-      "PROFILE=profiles/qwen3.5-9b.env ./start-model.sh"
+      {"kind": "cmd", "text": "PROFILE=profiles/qwen3.5-9b.env ./start-model.sh"}
     ],
     "auto_bootable": true
   },
@@ -75,5 +74,5 @@
       "note": "weights"
     }
   ],
-  "updated": "2026-09-05"
+  "updated": "2026-09-07"
 }

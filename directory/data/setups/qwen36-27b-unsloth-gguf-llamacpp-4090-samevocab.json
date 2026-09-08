@@ -1,7 +1,7 @@
 {
   "id": "qwen36-27b-unsloth-gguf-llamacpp-4090-samevocab",
   "title": "Qwen3.6-27B Q4 on one RTX 4090: mainline llama.cpp + same-vocab draft",
-  "slug_note": "The 24 GB-card lane with a quality gate: 43.2 tok/s aggregate with a Qwen3.5-4B same-vocab draft, and a documented warning that ik_llama.cpp cross-vocab spec-dec silently corrupts output here.",
+  "slug_note": "The 24 GB-card lane with a quality gate: 43.2 tok/s mean single-stream throughput with a Qwen3.5-4B same-vocab draft, and a documented warning that ik_llama.cpp cross-vocab spec-dec silently corrupts output here.",
   "model": "qwen3-6-27b",
   "status": "reported",
   "variation": {
@@ -44,16 +44,18 @@
     "repo": "https://github.com/outsourc-e/qwen36-4090-recipes",
     "command": null,
     "steps": [
-      "Build mainline llama.cpp with CUDA 12.8",
-      "Load the Q4_K_M target plus the Qwen3.5-4B same-vocab draft",
-      "Run the repo's bench-split.py quality gate before trusting any speed number"
+      {"kind": "do", "text": "Build mainline llama.cpp with CUDA 12.8"},
+      {"kind": "do", "text": "Load the Q4_K_M target plus the Qwen3.5-4B same-vocab draft"},
+      {"kind": "do", "text": "Run the repo's bench-split.py quality gate before trusting any speed number"}
     ]
   },
   "measurements": [
     {
-      "metric": "decode_agg",
+      "metric": "decode_per_stream",
       "value": 43.2,
       "unit": "tok/s",
+      "concurrency": 1,
+      "stat": "mean",
       "provenance": "forum",
       "source": "https://github.com/outsourc-e/qwen36-4090-recipes",
       "date": "2026-04-25",
@@ -61,9 +63,11 @@
       "note": "C1-agg: mainline llama.cpp, Qwen3.5-4B same-vocab draft, 8K ctx, q8 KV, mean across 6 quality categories on one RTX 4090"
     },
     {
-      "metric": "decode_agg",
+      "metric": "decode_per_stream",
       "value": 67.1,
       "unit": "tok/s",
+      "concurrency": 1,
+      "stat": "peak",
       "provenance": "forum",
       "source": "https://github.com/outsourc-e/qwen36-4090-recipes",
       "date": "2026-04-25",
@@ -71,9 +75,11 @@
       "note": "C1-agg peak tps, same config"
     },
     {
-      "metric": "decode_agg",
+      "metric": "decode_per_stream",
       "value": 41.6,
       "unit": "tok/s",
+      "concurrency": 1,
+      "stat": "mean",
       "provenance": "forum",
       "source": "https://github.com/outsourc-e/qwen36-4090-recipes",
       "date": "2026-04-25",
@@ -81,9 +87,11 @@
       "note": "C1-32K-dkv: 32K ctx with q4 KV on target and draft, mean (peak 61.9), 23 GB VRAM"
     },
     {
-      "metric": "decode_agg",
+      "metric": "decode_per_stream",
       "value": 38.6,
       "unit": "tok/s",
+      "concurrency": 1,
+      "stat": "mean",
       "provenance": "forum",
       "source": "https://github.com/outsourc-e/qwen36-4090-recipes",
       "date": "2026-04-25",
@@ -91,9 +99,11 @@
       "note": "C2-64K, no spec-dec, q4 KV, ~21 GB VRAM (peak 41.3)"
     },
     {
-      "metric": "decode_agg",
+      "metric": "decode_per_stream",
       "value": 38.2,
       "unit": "tok/s",
+      "concurrency": 1,
+      "stat": "mean",
       "provenance": "forum",
       "source": "https://github.com/outsourc-e/qwen36-4090-recipes",
       "date": "2026-04-25",
@@ -138,6 +148,6 @@
       "note": "weights"
     }
   ],
-  "updated": "2026-09-05",
+  "updated": "2026-09-07",
   "builder": "outsourc-e"
 }

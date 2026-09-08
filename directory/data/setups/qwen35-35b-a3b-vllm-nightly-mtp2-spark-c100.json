@@ -45,8 +45,8 @@
     "repo": "https://forums.developer.nvidia.com/t/does-qwen3-5-35b-a3b-on-gb10-leave-a-lot-of-performance-on-the-table/362200",
     "command": null,
     "steps": [
-      "Serve with vLLM nightly and the MTP speculative config from the thread",
-      "vllm bench serve, 1000 requests, max concurrency 100"
+      {"kind": "do", "text": "Serve with vLLM nightly and the MTP speculative config from the thread"},
+      {"kind": "do", "text": "vllm bench serve, 1000 requests, max concurrency 100"}
     ]
   },
   "measurements": [
@@ -54,6 +54,7 @@
       "metric": "decode_agg",
       "value": 431.42,
       "unit": "tok/s",
+      "concurrency": 100,
       "provenance": "forum",
       "source": "https://forums.developer.nvidia.com/t/does-qwen3-5-35b-a3b-on-gb10-leave-a-lot-of-performance-on-the-table/362200",
       "date": "2026-03-02",

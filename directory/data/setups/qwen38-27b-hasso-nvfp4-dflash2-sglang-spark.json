@@ -47,9 +47,9 @@
     "repo": "https://github.com/hasso5703/dgx-spark-qwen38",
     "command": null,
     "steps": [
-      "Follow the repo's one-command boot-persistent SGLang install",
-      "Select the 27B NVFP4 + DFlash2 target",
-      "./bench.sh to reproduce the decode numbers"
+      {"kind": "do", "text": "Follow the repo's one-command boot-persistent SGLang install"},
+      {"kind": "do", "text": "Select the 27B NVFP4 + DFlash2 target"},
+      {"kind": "do", "text": "./bench.sh to reproduce the decode numbers"}
     ]
   },
   "measurements": [
@@ -57,6 +57,8 @@
       "metric": "decode_chat",
       "value": 50,
       "unit": "tok/s",
+      "concurrency": 1,
+      "stat": "median",
       "provenance": "forum",
       "source": "https://raw.githubusercontent.com/hasso5703/dgx-spark-qwen38/main/README.md",
       "date": "2026-08-30",
@@ -67,6 +69,7 @@
       "metric": "decode_code",
       "value": 40,
       "unit": "tok/s",
+      "concurrency": 1,
       "provenance": "forum",
       "source": "https://raw.githubusercontent.com/hasso5703/dgx-spark-qwen38/main/README.md",
       "date": "2026-08-30",
@@ -81,6 +84,7 @@
       "metric": "decode_essay",
       "value": 22,
       "unit": "tok/s",
+      "concurrency": 1,
       "provenance": "forum",
       "source": "https://raw.githubusercontent.com/hasso5703/dgx-spark-qwen38/main/README.md",
       "date": "2026-08-30",
@@ -95,6 +99,7 @@
       "metric": "decode_agg",
       "value": 135,
       "unit": "tok/s",
+      "concurrency": 8,
       "provenance": "forum",
       "source": "https://raw.githubusercontent.com/hasso5703/dgx-spark-qwen38/main/README.md",
       "date": "2026-08-30",
@@ -109,6 +114,7 @@
       "metric": "decode_agg",
       "value": 258,
       "unit": "tok/s",
+      "concurrency": 32,
       "provenance": "forum",
       "source": "https://raw.githubusercontent.com/hasso5703/dgx-spark-qwen38/main/README.md",
       "date": "2026-08-30",

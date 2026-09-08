@@ -44,9 +44,9 @@
     "repo": "https://github.com/waybarrios/vllm-mlx",
     "command": null,
     "steps": [
-      "Install vllm-mlx from the repo",
-      "Serve the 4-bit MLX model",
-      "Optionally set --moe-top-k and --warm-prompts for the quoted gains"
+      {"kind": "do", "text": "Install vllm-mlx from the repo"},
+      {"kind": "do", "text": "Serve the 4-bit MLX model"},
+      {"kind": "do", "text": "Optionally set --moe-top-k and --warm-prompts for the quoted gains"}
     ]
   },
   "measurements": [
@@ -54,6 +54,7 @@
       "metric": "decode_chat",
       "value": 127.7,
       "unit": "tok/s",
+      "concurrency": 1,
       "provenance": "forum",
       "source": "https://github.com/waybarrios/vllm-mlx",
       "date": null,

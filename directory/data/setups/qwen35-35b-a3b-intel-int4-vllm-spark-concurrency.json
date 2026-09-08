@@ -48,9 +48,9 @@
     "repo": "https://forums.developer.nvidia.com/t/does-qwen3-5-35b-a3b-on-gb10-leave-a-lot-of-performance-on-the-table/362200",
     "command": null,
     "steps": [
-      "Serve the Intel INT4 checkpoint with vLLM on one Spark",
-      "Enable prefix caching and FP8 KV as in the thread",
-      "Run vllm bench serve at 5x and 10x concurrency"
+      {"kind": "do", "text": "Serve the Intel INT4 checkpoint with vLLM on one Spark"},
+      {"kind": "do", "text": "Enable prefix caching and FP8 KV as in the thread"},
+      {"kind": "do", "text": "Run vllm bench serve at 5x and 10x concurrency"}
     ]
   },
   "measurements": [
@@ -58,6 +58,7 @@
       "metric": "decode_agg",
       "value": 60.87,
       "unit": "tok/s",
+      "concurrency": 5,
       "provenance": "forum",
       "source": "https://forums.developer.nvidia.com/t/does-qwen3-5-35b-a3b-on-gb10-leave-a-lot-of-performance-on-the-table/362200",
       "date": "2026-03-02",
@@ -76,6 +77,7 @@
       "metric": "decode_agg",
       "value": 66.27,
       "unit": "tok/s",
+      "concurrency": 10,
       "provenance": "forum",
       "source": "https://forums.developer.nvidia.com/t/does-qwen3-5-35b-a3b-on-gb10-leave-a-lot-of-performance-on-the-table/362200",
       "date": "2026-03-02",

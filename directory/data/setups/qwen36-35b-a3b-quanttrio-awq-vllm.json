@@ -45,8 +45,8 @@
     "repo": "https://huggingface.co/QuantTrio/Qwen3.6-35B-A3B-AWQ",
     "command": null,
     "steps": [
-      "Download QuantTrio/Qwen3.6-35B-A3B-AWQ",
-      "vLLM with the AWQ checkpoint on a 24 GB card"
+      {"kind": "do", "text": "Download QuantTrio/Qwen3.6-35B-A3B-AWQ"},
+      {"kind": "do", "text": "vLLM with the AWQ checkpoint on a 24 GB card"}
     ]
   },
   "measurements": [],

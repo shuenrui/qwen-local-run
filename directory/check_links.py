@@ -17,11 +17,16 @@ import argparse
 import json
 import os
 import sys
+import time
+import urllib.error
 import urllib.request
 from collections import defaultdict
 from concurrent.futures import ThreadPoolExecutor
+from threading import Lock
+from urllib.parse import urlparse
 
 DATA = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
+HOST_LOCKS = defaultdict(Lock)
 
 
 def load_dir(rel):
@@ -34,14 +39,24 @@ def load_dir(rel):
 
 
 def status(url):
-    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0 directory-check-links"})
-    try:
-        with urllib.request.urlopen(req, timeout=15) as r:
-            return r.status
-    except urllib.error.HTTPError as e:
-        return e.code
-    except Exception as e:
-        return f"err:{type(e).__name__}"
+    with HOST_LOCKS[urlparse(url).netloc]:
+        result = None
+        for attempt in range(3):
+            req = urllib.request.Request(
+                url, headers={"User-Agent": "Mozilla/5.0 directory-check-links"}
+            )
+            try:
+                with urllib.request.urlopen(req, timeout=15) as r:
+                    return r.status
+            except urllib.error.HTTPError as e:
+                result = e.code
+                if e.code not in {500, 502, 503, 504}:
+                    return result
+            except (urllib.error.URLError, TimeoutError) as e:
+                result = f"err:{type(e).__name__}"
+            if attempt < 2:
+                time.sleep(0.5 * (attempt + 1))
+        return result
 
 
 def main():

@@ -50,7 +50,7 @@
     "repo": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
     "profile": "profiles/qwen3.0-32b-fp8.env",
     "steps": [
-      "PROFILE=profiles/qwen3.0-32b-fp8.env ./start-model.sh"
+      {"kind": "cmd", "text": "PROFILE=profiles/qwen3.0-32b-fp8.env ./start-model.sh"}
     ],
     "auto_bootable": true
   },

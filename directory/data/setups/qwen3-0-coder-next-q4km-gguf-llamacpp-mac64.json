@@ -51,8 +51,8 @@
     "repo": "https://github.com/petems/qwen-local-silicon-32to64gb-macbook-guide",
     "profile": null,
     "steps": [
-      "brew install llama.cpp",
-      "llama-server -hf Qwen/Qwen3-Coder-Next-GGUF:Q4_K_M --ctx-size 65536 --n-gpu-layers 99 --flash-attn on --jinja --port 8080"
+      {"kind": "cmd", "text": "brew install llama.cpp"},
+      {"kind": "cmd", "text": "llama-server -hf Qwen/Qwen3-Coder-Next-GGUF:Q4_K_M --ctx-size 65536 --n-gpu-layers 99 --flash-attn on --jinja --port 8080"}
     ]
   },
   "measurements": [],

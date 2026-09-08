@@ -44,8 +44,8 @@
     "repo": "https://github.com/OscarActual/gb10-llm-benchmark",
     "command": null,
     "steps": [
-      "ollama pull qwen3.6:35b-a3b",
-      "ollama run qwen3.6:35b-a3b"
+      {"kind": "cmd", "text": "ollama pull qwen3.6:35b-a3b"},
+      {"kind": "cmd", "text": "ollama run qwen3.6:35b-a3b"}
     ]
   },
   "measurements": [
@@ -53,6 +53,7 @@
       "metric": "decode_chat",
       "value": 60.2,
       "unit": "tok/s",
+      "concurrency": 1,
       "provenance": "forum",
       "source": "https://github.com/OscarActual/gb10-llm-benchmark",
       "date": "2026-06-30",

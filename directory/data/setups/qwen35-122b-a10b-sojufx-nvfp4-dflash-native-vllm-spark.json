@@ -44,9 +44,9 @@
     "repo": "https://github.com/sojufx/Qwen3.5-122B-A10B-DFlash-DGX-Spark-Recipe",
     "command": null,
     "steps": [
-      "Create the venv and install native vLLM 0.26.0 per the recipe",
-      "Export CUTE_DSL_ARCH=sm_121a before serving",
-      "Launch the NVFP4 checkpoint with the DFlash draft config from the recipe"
+      {"kind": "do", "text": "Create the venv and install native vLLM 0.26.0 per the recipe"},
+      {"kind": "do", "text": "Export CUTE_DSL_ARCH=sm_121a before serving"},
+      {"kind": "do", "text": "Launch the NVFP4 checkpoint with the DFlash draft config from the recipe"}
     ]
   },
   "measurements": [
@@ -54,6 +54,7 @@
       "metric": "decode_chat",
       "value": 36.0,
       "unit": "tok/s",
+      "concurrency": 1,
       "provenance": "forum",
       "source": "https://github.com/sojufx/Qwen3.5-122B-A10B-DFlash-DGX-Spark-Recipe",
       "date": null,
@@ -64,6 +65,7 @@
       "metric": "decode_code",
       "value": 27.0,
       "unit": "tok/s",
+      "concurrency": 1,
       "provenance": "forum",
       "source": "https://github.com/sojufx/Qwen3.5-122B-A10B-DFlash-DGX-Spark-Recipe",
       "date": null,
@@ -74,6 +76,7 @@
       "metric": "decode_agg",
       "value": 34.3,
       "unit": "tok/s",
+      "concurrency": 2,
       "provenance": "forum",
       "source": "https://github.com/sojufx/Qwen3.5-122B-A10B-DFlash-DGX-Spark-Recipe",
       "date": null,

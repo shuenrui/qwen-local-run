@@ -45,8 +45,8 @@
     "repo": "https://forums.developer.nvidia.com/t/qwen3-5-122b-a10b-on-single-spark-up-to-51-tok-s-v2-1-patches-quick-start-benchmark/365639",
     "command": null,
     "steps": [
-      "Serve the RedHatAI NVFP4 checkpoint with stock vLLM on one Spark",
-      "Expect FP4 kernels to fall back; measure before trusting the quant label"
+      {"kind": "do", "text": "Serve the RedHatAI NVFP4 checkpoint with stock vLLM on one Spark"},
+      {"kind": "do", "text": "Expect FP4 kernels to fall back; measure before trusting the quant label"}
     ]
   },
   "measurements": [
@@ -54,6 +54,7 @@
       "metric": "decode_chat",
       "value": 16.6,
       "unit": "tok/s",
+      "concurrency": 1,
       "provenance": "forum",
       "source": "https://forums.developer.nvidia.com/t/qwen3-5-122b-a10b-on-single-spark-up-to-51-tok-s-v2-1-patches-quick-start-benchmark/365639",
       "date": "2026-04-05",

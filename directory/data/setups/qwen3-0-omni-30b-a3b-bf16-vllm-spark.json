@@ -49,9 +49,9 @@
     "repo": "https://github.com/QwenLM/Qwen3-Omni",
     "profile": null,
     "steps": [
-      "pip install vllm",
-      "vllm serve Qwen/Qwen3-Omni-30B-A3B-Instruct --max-model-len 32768",
-      "Send audio/image/video inputs; responses stream as text and speech"
+      {"kind": "cmd", "text": "pip install vllm"},
+      {"kind": "cmd", "text": "vllm serve Qwen/Qwen3-Omni-30B-A3B-Instruct --max-model-len 32768"},
+      {"kind": "do", "text": "Send audio/image/video inputs; responses stream as text and speech"}
     ]
   },
   "measurements": [],

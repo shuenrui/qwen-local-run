@@ -45,9 +45,9 @@
     "repo": "https://huggingface.co/unsloth/Qwen3.5-122B-A10B-GGUF/discussions/3",
     "command": null,
     "steps": [
-      "Download the UD-Q3_K_XL GGUF",
-      "llama.cpp b8157 or newer with tensor-split over three cards",
-      "Load a 256K-token prompt and measure generation and prefill"
+      {"kind": "do", "text": "Download the UD-Q3_K_XL GGUF"},
+      {"kind": "do", "text": "llama.cpp b8157 or newer with tensor-split over three cards"},
+      {"kind": "do", "text": "Load a 256K-token prompt and measure generation and prefill"}
     ]
   },
   "measurements": [

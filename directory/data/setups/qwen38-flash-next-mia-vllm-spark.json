@@ -49,10 +49,10 @@
     "repo": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Single-DGX-Spark",
     "profile": "profiles/qwen3.8-flash-next-mia.env",
     "steps": [
-      "git clone the repo",
-      "cp .env.sample .env",
-      "./download.sh",
-      "./start.sh"
+      {"kind": "do", "text": "git clone the repo"},
+      {"kind": "cmd", "text": "cp .env.sample .env"},
+      {"kind": "cmd", "text": "./download.sh"},
+      {"kind": "cmd", "text": "./start.sh"}
     ],
     "auto_bootable": false
   },
@@ -61,6 +61,7 @@
       "metric": "decode_per_stream",
       "value": 37,
       "unit": "tok/s",
+      "concurrency": 1,
       "provenance": "forum",
       "date": "2026-09-04",
       "n": null,
@@ -72,6 +73,7 @@
       "metric": "decode_agg",
       "value": 86,
       "unit": "tok/s",
+      "concurrency": 4,
       "provenance": "forum",
       "date": "2026-09-04",
       "n": null,

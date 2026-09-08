@@ -51,8 +51,8 @@
     "repo": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
     "profile": "profiles/qwen3.8-27b.env",
     "steps": [
-      "cp .env.sample .env",
-      "./start-dflash.sh"
+      {"kind": "cmd", "text": "cp .env.sample .env"},
+      {"kind": "cmd", "text": "./start-dflash.sh"}
     ],
     "auto_bootable": true
   },
@@ -61,6 +61,7 @@
       "metric": "decode_per_stream",
       "value": 56.6,
       "unit": "tok/s",
+      "concurrency": 1,
       "provenance": "box",
       "date": "2026-08-19",
       "n": 1,
@@ -70,6 +71,7 @@
       "metric": "decode_agg",
       "value": 227.6,
       "unit": "tok/s",
+      "concurrency": 16,
       "provenance": "box",
       "date": "2026-08-19",
       "n": 1,

@@ -45,8 +45,8 @@
     "repo": "https://forums.developer.nvidia.com/t/whats-the-best-speed-we-can-get-with-qwen-3-6-27b-without-quantizing/367561",
     "command": null,
     "steps": [
-      "Serve Qwen3.6-27B-FP8 with stock vLLM on one Spark",
-      "Bench the two prompts below with and without the MTP speculative config"
+      {"kind": "do", "text": "Serve Qwen3.6-27B-FP8 with stock vLLM on one Spark"},
+      {"kind": "do", "text": "Bench the two prompts below with and without the MTP speculative config"}
     ]
   },
   "measurements": [

@@ -48,7 +48,7 @@
     "repo": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
     "profile": null,
     "steps": [
-      "QUANT=fp8 ./start.sh"
+      {"kind": "cmd", "text": "QUANT=fp8 ./start.sh"}
     ],
     "auto_bootable": true
   },
@@ -57,6 +57,7 @@
       "metric": "decode_agg",
       "value": 108,
       "unit": "tok/s",
+      "concurrency": 8,
       "provenance": "forum",
       "source": "https://raw.githubusercontent.com/hasso5703/dgx-spark-qwen38/main/README.md",
       "date": "2026-08-30",

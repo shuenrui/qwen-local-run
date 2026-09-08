@@ -55,8 +55,8 @@
     "repo": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
     "profile": "profiles/qwen3.8-27b.env",
     "steps": [
-      "cp .env.sample .env",
-      "./start.sh"
+      {"kind": "cmd", "text": "cp .env.sample .env"},
+      {"kind": "cmd", "text": "./start.sh"}
     ],
     "auto_bootable": true
   },
@@ -65,6 +65,7 @@
       "metric": "decode_code",
       "value": 34.5,
       "unit": "tok/s",
+      "stat": "median",
       "provenance": "box",
       "date": "2026-08-18",
       "n": 5,
@@ -78,6 +79,7 @@
       "metric": "decode_essay",
       "value": 24.1,
       "unit": "tok/s",
+      "stat": "median",
       "provenance": "box",
       "date": "2026-08-18",
       "n": 5,
@@ -92,6 +94,7 @@
       "metric": "decode_chat",
       "value": 21.0,
       "unit": "tok/s",
+      "stat": "median",
       "provenance": "box",
       "date": "2026-08-18",
       "n": 5,

@@ -45,8 +45,8 @@
     "repo": "https://huggingface.co/Qwen/Qwen3.5-122B-A10B-GPTQ-Int4",
     "command": null,
     "steps": [
-      "Download Qwen/Qwen3.5-122B-A10B-GPTQ-Int4",
-      "vLLM with the GPTQ checkpoint on a DGX Spark"
+      {"kind": "do", "text": "Download Qwen/Qwen3.5-122B-A10B-GPTQ-Int4"},
+      {"kind": "do", "text": "vLLM with the GPTQ checkpoint on a DGX Spark"}
     ]
   },
   "measurements": [],

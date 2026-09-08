@@ -44,8 +44,8 @@
     "repo": "https://github.com/r0b0tlab/qwen38-27b-nvfp4-sm121-sglang",
     "command": null,
     "steps": [
-      "./click_run_dflash2.sh (or dspark / eagle variants)",
-      "Scripts download and validate checkpoints and drafts automatically"
+      {"kind": "do", "text": "./click_run_dflash2.sh (or dspark / eagle variants)"},
+      {"kind": "do", "text": "Scripts download and validate checkpoints and drafts automatically"}
     ]
   },
   "measurements": [
@@ -53,6 +53,8 @@
       "metric": "decode_chat",
       "value": 27.88,
       "unit": "tok/s",
+      "concurrency": 1,
+      "stat": "median",
       "provenance": "forum",
       "source": "https://github.com/r0b0tlab/qwen38-27b-nvfp4-sm121-sglang",
       "date": "2026-08-19",
@@ -63,6 +65,7 @@
       "metric": "decode_agg",
       "value": 153.9,
       "unit": "tok/s",
+      "concurrency": 8,
       "provenance": "forum",
       "source": "https://github.com/r0b0tlab/qwen38-27b-nvfp4-sm121-sglang",
       "date": "2026-08-19",
@@ -73,6 +76,8 @@
       "metric": "decode_chat",
       "value": 28.38,
       "unit": "tok/s",
+      "concurrency": 1,
+      "stat": "median",
       "provenance": "forum",
       "source": "https://github.com/r0b0tlab/qwen38-27b-nvfp4-sm121-sglang",
       "date": "2026-08-19",
@@ -83,6 +88,7 @@
       "metric": "decode_agg",
       "value": 276.4,
       "unit": "tok/s",
+      "concurrency": 6,
       "provenance": "forum",
       "source": "https://github.com/r0b0tlab/qwen38-27b-nvfp4-sm121-sglang",
       "date": "2026-08-19",
@@ -93,6 +99,7 @@
       "metric": "decode_agg",
       "value": 178.9,
       "unit": "tok/s",
+      "concurrency": 16,
       "provenance": "forum",
       "source": "https://github.com/r0b0tlab/qwen38-27b-nvfp4-sm121-sglang",
       "date": "2026-08-19",
@@ -103,6 +110,8 @@
       "metric": "decode_chat",
       "value": 26.02,
       "unit": "tok/s",
+      "concurrency": 1,
+      "stat": "median",
       "provenance": "forum",
       "source": "https://github.com/r0b0tlab/qwen38-27b-nvfp4-sm121-sglang",
       "date": "2026-08-19",

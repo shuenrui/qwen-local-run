@@ -45,9 +45,9 @@
     "repo": "https://github.com/hasso5703/dgx-spark-qwen38",
     "command": null,
     "steps": [
-      "Follow the repo's one-command install",
-      "Select the flash-next NVFP4 + MTP target",
-      "Keep the PLE table on NVMe; it is mmap-served, not loaded"
+      {"kind": "do", "text": "Follow the repo's one-command install"},
+      {"kind": "do", "text": "Select the flash-next NVFP4 + MTP target"},
+      {"kind": "do", "text": "Keep the PLE table on NVMe; it is mmap-served, not loaded"}
     ]
   },
   "measurements": [
@@ -55,6 +55,7 @@
       "metric": "decode_chat",
       "value": 34.2,
       "unit": "tok/s",
+      "concurrency": 1,
       "provenance": "forum",
       "source": "https://raw.githubusercontent.com/hasso5703/dgx-spark-qwen38/main/README.md",
       "date": "2026-09-03",
@@ -65,6 +66,7 @@
       "metric": "decode_essay",
       "value": 20.3,
       "unit": "tok/s",
+      "concurrency": 1,
       "provenance": "forum",
       "source": "https://raw.githubusercontent.com/hasso5703/dgx-spark-qwen38/main/README.md",
       "date": "2026-09-03",

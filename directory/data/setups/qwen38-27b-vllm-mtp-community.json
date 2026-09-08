@@ -49,7 +49,7 @@
     "repo": "https://github.com/MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark",
     "profile": null,
     "steps": [
-      "Not a single recipe — see the linked community threads for the flags each builder used."
+      {"kind": "do", "text": "Not a single recipe — see the linked community threads for the flags each builder used."}
     ],
     "auto_bootable": false
   },

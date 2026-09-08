@@ -34,7 +34,7 @@ SPEC_DECODE = {"none", "mtp", "eagle", "dspark", "dflash2", "ngram", "other"}
 METRICS = {
     # speed
     "decode_code", "decode_essay", "decode_chat", "decode_agg",
-    "decode_per_stream", "ttft_ms", "task_time_min",
+    "decode_per_stream", "prefill_tok_s", "ttft_ms", "task_time_min",
     # quality
     "quality_index", "bench_code", "bench_toolcall", "bench_mmlu",
     "bench_gsm8k", "bench_humaneval", "bench_other",
@@ -43,6 +43,7 @@ METRICS = {
 }
 
 UNITS = {"tok/s", "ms", "s", "min", "%", "GB", "score"}
+STATS = {"mean", "median", "peak"}
 
 PROVENANCE = {"box", "forum", "vendor"}
 PROV_RANK = {"box": 3, "forum": 2, "vendor": 1, None: 0}
@@ -64,6 +65,8 @@ REQUIRED_SETUP = [
 REQUIRED_VARIATION = ["checkpoint", "publisher", "quant", "format", "url"]
 REQUIRED_ENGINE = ["id", "config"]
 REQUIRED_RUN = ["repo"]
+RUN_STEP_KINDS = {"cmd", "do"}
+RUN_STEP_FIELDS = {"kind", "text"}
 
 
 class Report:
@@ -248,6 +251,22 @@ def main() -> int:
         check_url(rep, w, "run.repo", run.get("repo"))
         if not run.get("command") and not run.get("steps"):
             rep.err(w, "run needs a command or steps — this is the 'how to run' directory")
+        steps = run.get("steps")
+        if steps is not None:
+            if not isinstance(steps, list):
+                rep.err(w, "run.steps must be a list")
+            else:
+                for i, step in enumerate(steps):
+                    sw = f"{w} run.steps[{i}]"
+                    if not isinstance(step, dict):
+                        rep.err(sw, "must be an object with exactly 'kind' and 'text'")
+                        continue
+                    if set(step) != RUN_STEP_FIELDS:
+                        rep.err(sw, "must contain exactly 'kind' and 'text'")
+                    if step.get("kind") not in RUN_STEP_KINDS:
+                        rep.err(sw, f"kind {step.get('kind')!r} not in {sorted(RUN_STEP_KINDS)}")
+                    if not isinstance(step.get("text"), str) or not step["text"].strip():
+                        rep.err(sw, "text must be a non-empty string")
 
         caps = s.get("capabilities", {})
         if caps.get("long_context") is not None and not isinstance(caps["long_context"], int):
@@ -260,6 +279,21 @@ def main() -> int:
                 rep.err(mw, f"metric {m.get('metric')!r} not in enum")
             if not isinstance(m.get("value"), (int, float)):
                 rep.err(mw, f"value must be a number, got {m.get('value')!r}")
+            concurrency = m.get("concurrency")
+            if concurrency is not None and (
+                isinstance(concurrency, bool)
+                or not isinstance(concurrency, int)
+                or concurrency <= 0
+            ):
+                rep.err(mw, f"concurrency must be a positive integer, got {concurrency!r}")
+            if m.get("metric") == "decode_agg" and (
+                not isinstance(concurrency, int)
+                or isinstance(concurrency, bool)
+                or concurrency <= 1
+            ):
+                rep.err(mw, "decode_agg requires concurrency > 1; use decode_per_stream for single-stream or cross-prompt summaries")
+            if m.get("stat") is not None and m["stat"] not in STATS:
+                rep.err(mw, f"stat {m.get('stat')!r} not in {sorted(STATS)}")
             if m.get("unit") not in UNITS:
                 rep.err(mw, f"unit {m.get('unit')!r} not in enum")
             prov = m.get("provenance")

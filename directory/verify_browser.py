@@ -91,7 +91,7 @@ def main():
             counts: document.getElementById('counts').textContent.replace(/\\s+/g,' ').trim(),
             gen: document.getElementById('gen').textContent.trim(),
             engine: opts('f-engine'), hw: opts('f-hw'), quant: opts('f-quant'),
-            tier: opts('f-tier'), fit: opts('f-fit'), sort: opts('sort'),
+            tier: opts('f-tier'), fit: opts('f-fit'), ready: opts('f-ready'), sort: opts('sort'),
             dataCounts: D.counts, generated: D.generated,
             badLinks: Array.from(document.querySelectorAll('#out a'))
               .filter(a => !/^https?:\\/\\//.test(a.getAttribute('href')||'')).length,
@@ -106,10 +106,148 @@ def main():
         print("   quant opts:", meta["quant"], flush=True)
         print("   tier opts:", meta["tier"], flush=True)
         print("   fit opts:", meta["fit"], flush=True)
+        print("   completeness opts:", meta["ready"], flush=True)
         print("   sort opts:", meta["sort"], flush=True)
         check("all links are http(s)", meta["badLinks"] == 0, f"{meta['badLinks']} bad")
         check("dataset counts match validator", meta["dataCounts"]["setups"] == TOTAL,
               json.dumps(meta["dataCounts"]))
+
+        print("\n--- newcomer truth and hierarchy ---", flush=True)
+        ux = page.evaluate("""() => {
+          const card = id => document.querySelector('.card[data-id="'+id+'"]');
+          const worst = card('qwen38-flash-next-blazux-vllm-hybrid-spark');
+          const sameVocab = card('qwen36-27b-unsloth-gguf-llamacpp-4090-samevocab');
+          const D = JSON.parse(document.getElementById('data').textContent);
+          const labels = {};
+          document.querySelectorAll('.card').forEach(c => {
+            labels[c.getAttribute('data-id')] = c.querySelector('.ready').textContent.trim();
+          });
+          const expected = {};
+          D.setups.forEach(s => {
+            const hasCmd = !!((s.run||{}).command || ((s.run||{}).steps||[]).some(x => x.kind === 'cmd'));
+            const hasSpeed = (s.measurements||[]).some(m => m.unit === 'tok/s' && /^decode_/.test(m.metric));
+            expected[s.id] = hasCmd && hasSpeed ? '✓ recipe + measured'
+              : hasCmd ? '◔ recipe, unmeasured'
+              : hasSpeed ? '◐ measured, no command yet'
+              : '○ lead only — no command or speed yet';
+          });
+          return {
+            h1: document.querySelector('h1').textContent.trim(),
+            howVisible: document.getElementById('how').open,
+            metricCategories: Array.from(document.querySelectorAll('#metric-guide [data-category] h3'))
+              .map(x => x.textContent.trim()),
+            metricGuide: document.getElementById('metric-guide').textContent.replace(/\\s+/g, ' ').trim(),
+            countsInFooter: !!document.querySelector('footer #counts'),
+            advancedVisible: getComputedStyle(document.getElementById('adv')).display !== 'none',
+            neutral: document.querySelectorAll('.v-unknown').length,
+            verdicts: document.querySelectorAll('.v-good,.v-tight,.v-no').length,
+            notes: document.querySelectorAll('.card .cnote').length,
+            readinessMismatch: Object.keys(expected).filter(id => labels[id] !== expected[id]),
+            readinessKinds: Array.from(new Set(Object.values(labels))).sort(),
+            worst: {
+              headline: worst.querySelector('.big').textContent.trim(),
+              label: worst.querySelector('.nmet').textContent.trim(),
+              aggregate: worst.querySelector('.nagg').textContent.replace(/\\s+/g, ' ').trim()
+            },
+            sameVocab: {
+              headline: sameVocab.querySelector('.big').textContent.trim(),
+              label: sameVocab.querySelector('.nmet').textContent.trim(),
+              aggregate: !!sameVocab.querySelector('.nagg')
+            },
+            badMacHardware: (D.setups.find(s => s.id === 'qwen35-9b-bf16-sglang').hardware||[])
+              .some(id => /^mac-/.test(id))
+          };
+        }""")
+        check("newcomer question is the page headline",
+              ux["h1"] == "Run Qwen on your own machine", ux["h1"])
+        check("local-hosting orientation starts open", ux["howVisible"])
+        check("performance guide separates speed, capacity, and intrinsic traits",
+              ux["metricCategories"] == ["Speed and responsiveness", "Capacity and scale", "Model and runtime traits"],
+              ux["metricCategories"])
+        check("performance guide names the correct primary hardware drivers",
+              "Main driver: memory bandwidth" in ux["metricGuide"]
+              and "Main driver: GPU/CPU compute" in ux["metricGuide"]
+              and "usable memory capacity" in ux["metricGuide"], ux["metricGuide"][:240])
+        check("device notes use exact Spark specs and do not claim MLX uses the Neural Engine",
+              "273 GB/s" in ux["metricGuide"]
+              and "not the Neural Engine" in ux["metricGuide"]
+              and "800+ GB/s" not in ux["metricGuide"], ux["metricGuide"][-300:])
+        check("advanced filters remain visible on desktop", ux["advancedVisible"])
+        check("vanity counts moved to the footer", ux["countsInFooter"])
+        check("every card exposes its plain-English slug note", ux["notes"] == TOTAL,
+              f"{ux['notes']}/{TOTAL}")
+        check("fit is neutral before a machine is chosen",
+              ux["neutral"] == TOTAL and ux["verdicts"] == 0,
+              f"neutral={ux['neutral']} verdicts={ux['verdicts']}")
+        check("all four completeness states render from data",
+              not ux["readinessMismatch"] and len(ux["readinessKinds"]) == 4,
+              f"kinds={ux['readinessKinds']} mismatches={ux['readinessMismatch'][:5]}")
+        check("single-stream speed beats aggregate on the worst offender",
+              ux["worst"]["headline"] == "32.5" and "chatting" in ux["worst"]["label"],
+              json.dumps(ux["worst"]))
+        check("aggregate context states concurrency and loaded per-stream speed",
+              "266.8 tok/s" in ux["worst"]["aggregate"]
+              and "48 streams" in ux["worst"]["aggregate"]
+              and "5.6 tok/s each" in ux["worst"]["aggregate"],
+              ux["worst"]["aggregate"])
+        check("same-vocabulary 4090 card headlines its single-stream mean, not peak",
+              ux["sameVocab"]["headline"] == "43.2"
+              and "one conversation" in ux["sameVocab"]["label"]
+              and "mean" in ux["sameVocab"]["label"]
+              and not ux["sameVocab"]["aggregate"],
+              json.dumps(ux["sameVocab"]))
+        check("SGLang setup is not advertised for unsupported Apple Silicon",
+              not ux["badMacHardware"])
+
+        print("\n--- machine picker and recommendation ---", flush=True)
+        recommendation_ids = []
+        defaults = {"mac": 32, "nvidia": 24, "multigpu": 72, "spark": 128}
+        for machine, memory in defaults.items():
+            page.click(f'[data-machine="{machine}"]')
+            picked = page.evaluate("""([machine, memory]) => {
+              const D = JSON.parse(document.getElementById('data').textContent);
+              const profile = JSON.parse(localStorage.getItem('qlr.profile'));
+              const shown = Array.from(document.querySelectorAll('.card')).map(c => c.dataset.id);
+              const recLink = document.querySelector('#rec .rlinks a');
+              const recId = recLink ? recLink.getAttribute('href').replace('#s-', '') : null;
+              const rec = D.setups.find(s => s.id === recId);
+              const maps = {
+                mac:['mac-64gb','mac-128gb'], nvidia:['gpu-24gb'],
+                multigpu:['gpu-multigpu-72gb','gpu-24gb'],
+                spark:['dgx-spark','thinkstation-pgx']
+              };
+              const invalid = shown.filter(id => {
+                const s=D.setups.find(x => x.id===id);
+                return !s.hardware.some(h => maps[machine].includes(h))
+                  || s.requirements.memory_gb > memory;
+              });
+              return {
+                profile, selected: Number(document.getElementById('p-mem').value),
+                recId, recFork: rec && rec.engine.requires_fork,
+                recNeed: rec && rec.requirements.memory_gb,
+                recText: document.getElementById('rec').textContent.replace(/\\s+/g,' ').trim(),
+                invalid, cards: shown.length
+              };
+            }""", [machine, memory])
+            check(f"{machine} picker uses its default memory",
+                  picked["selected"] == memory and picked["profile"] == {"machine": machine, "mem": memory},
+                  json.dumps(picked))
+            check(f"{machine} results match hardware and memory",
+                  picked["cards"] > 0 and not picked["invalid"], json.dumps(picked))
+            check(f"{machine} gets a fitting no-fork recommendation",
+                  bool(picked["recId"]) and not picked["recFork"] and picked["recNeed"] <= memory,
+                  json.dumps(picked))
+            recommendation_ids.append(picked["recId"])
+            if machine == "multigpu":
+                check("multi-GPU recommendation uses the 43.2 tok/s mean",
+                      picked["recId"] == "qwen36-27b-unsloth-gguf-llamacpp-4090-samevocab"
+                      and "43.2 tok/s" in picked["recText"] and "mean" in picked["recText"],
+                      json.dumps(picked))
+            page.click("#change-machine")
+        check("machine profiles produce distinct starting recommendations",
+              len(set(recommendation_ids)) == len(recommendation_ids), str(recommendation_ids))
+        st = dom_state(page)
+        check("leaving the picker restores the full directory", st["n"] == TOTAL, f"{st['n']}")
 
         print("\n--- search (typed, real keystrokes) ---", flush=True)
         page.fill("#q", "")
@@ -172,6 +310,11 @@ def main():
             if (sel === '#f-hw' && (s.hardware||[]).indexOf(val) < 0) bad.push(s.id+':hw='+s.hardware);
             if (sel === '#f-quant' && String(s.variation.quant).toLowerCase() !== val) bad.push(s.id+':quant='+s.variation.quant);
             if (sel === '#f-tier' && tier(s) !== val) bad.push(s.id+':tier='+tier(s));
+            if (sel === '#f-ready') {
+              const hasCmd=!!((s.run||{}).command || ((s.run||{}).steps||[]).some(x=>x.kind==='cmd'));
+              const measured=(s.measurements||[]).some(m=>m.unit==='tok/s' && /^decode_/.test(m.metric));
+              if ((val === 'run' && !hasCmd) || (val === 'measured' && !measured)) bad.push(s.id+':ready');
+            }
             if (sel === '#f-fit') { const need=(s.requirements||{}).memory_gb;
               if (need == null || need > Number(val)) bad.push(s.id+':mem='+need); }
             return bad;
@@ -180,7 +323,7 @@ def main():
         }"""
         select_map = [("#f-engine", meta["engine"]), ("#f-hw", meta["hw"]),
                       ("#f-quant", meta["quant"]), ("#f-tier", meta["tier"]),
-                      ("#f-fit", meta["fit"])]
+                      ("#f-fit", meta["fit"]), ("#f-ready", meta["ready"])]
         for sel, options in select_map:
             for val in [v for v in options if v]:
                 page.select_option(sel, val)
@@ -209,9 +352,9 @@ def main():
         st = dom_state(page)
         check(f"reset restores all {TOTAL}", st["n"] == TOTAL, f"{st['n']}")
         check("reset clears the search box", page.input_value("#q") == "", repr(page.input_value("#q")))
-        resets = page.evaluate("""() => ['f-engine','f-hw','f-quant','f-tier','f-fit','sort']
+        resets = page.evaluate("""() => ['f-engine','f-hw','f-quant','f-tier','f-fit','f-ready','sort']
               .map(id => document.getElementById(id).value)""")
-        check("reset restores every control", resets == ["", "", "", "", "", "default"], str(resets))
+        check("reset restores every control", resets == ["", "", "", "", "", "", "default"], str(resets))
 
         print("\n--- sorting ---", flush=True)
         for sv in ["speed", "small", "evidence", "fresh"]:
@@ -223,10 +366,7 @@ def main():
               const rank = {box:3, forum:2, vendor:1, none:0};
               const tier = s => (s.measurements||[]).reduce((b,m)=>{
                 const r = rank[m.provenance]||0; return r > (rank[b]||0) ? m.provenance : b; }, 'none');
-              const speed = s => Math.max(0, ...(s.measurements||[])
-                .filter(m => m.metric === 'decode_tok_s').map(m => m.value));
               let c = D.setups.slice();
-              if (mode === 'speed') c.sort((a,b) => (speed(b)||-1) - (speed(a)||-1));
               if (mode === 'small') c.sort((a,b) => (((a.requirements||{}).memory_gb)||1e9) - (((b.requirements||{}).memory_gb)||1e9));
               if (mode === 'evidence') c.sort((a,b) => (rank[tier(b)]||0) - (rank[tier(a)]||0));
               if (mode === 'fresh') c.sort((a,b) => String(b.updated||'').localeCompare(String(a.updated||'')));
@@ -241,8 +381,35 @@ def main():
                 check("sort=evidence puts box-tier first", st["tiers"][0] == "box",
                       f"first tier={st['tiers'][0]}")
             if sv == "speed":
+                expected_top = page.evaluate("""() => {
+                  const D=JSON.parse(document.getElementById('data').textContent);
+                  const pref=['decode_chat','decode_code','decode_essay','decode_per_stream'];
+                  const best=s => {
+                    const ms=(s.measurements||[]).filter(m=>m.unit==='tok/s' && /^decode_/.test(m.metric));
+                    for(const allowPeak of [false,true]){
+                      for(const metric of pref){
+                        const hits=ms.filter(m=>m.metric===metric
+                          && (m.concurrency==null || m.concurrency<=1)
+                          && (allowPeak || m.stat!=='peak'));
+                        if(hits.length) return {value:Math.max(...hits.map(m=>m.value)),agg:false};
+                      }
+                    }
+                    const agg=ms.filter(m=>m.metric==='decode_agg');
+                    return agg.length?{value:Math.max(...agg.map(m=>m.value)),agg:true}:null;
+                  };
+                  return D.setups.slice().sort((a,b)=>{
+                    const x=best(a),y=best(b);
+                    if(!!x!==!!y) return y?1:-1;
+                    if(!x) return 0;
+                    if(x.agg!==y.agg) return x.agg?1:-1;
+                    return y.value-x.value;
+                  })[0].id;
+                }""")
+                check("sort=speed starts with the fastest single-stream result",
+                      st["ids"][0] == expected_top,
+                      f"got {st['ids'][0]}, expected {expected_top}")
                 top_nums = page.evaluate("""() => Array.from(document.querySelectorAll('.card')).slice(0,3)
-                      .map(c => Array.from(c.querySelectorAll('.num')).map(n => n.textContent.trim()))""")
+                      .map(c => c.querySelector('.cnums').textContent.replace(/\\s+/g,' ').trim())""")
                 print("   top-3 by speed, numbers:", top_nums, flush=True)
         page.select_option("#sort", "default")
 
@@ -262,14 +429,20 @@ def main():
           const b = c.querySelector('.cbody');
           return {open: c.classList.contains('open'), h: b.getBoundingClientRect().height,
                   aria: c.querySelector('.chead').getAttribute('aria-expanded'),
-                  hasCmd: !!c.querySelector('.cmd'), hasKv: !!c.querySelector('.kv'),
+                  hasCmd: !!c.querySelector('.cmd'), hasNoRun: !!c.querySelector('.norun'),
+                  hasKv: !!c.querySelector('.kv'),
                   srcs: c.querySelectorAll('.srclist a').length,
                   measRows: c.querySelectorAll('.cbody table tr').length,
                   text: b.textContent.replace(/\\s+/g,' ').trim().slice(0,200)};
         }""")
         check("click expands the card", opened["open"] and opened["h"] > 0, str(opened["h"]))
         check("aria-expanded becomes true", opened["aria"] == "true", str(opened["aria"]))
-        check("expanded body shows the run command", opened["hasCmd"], "")
+        # A setup either has a real command (copyable .cmd block) or honestly
+        # says it has none. Prose in run.steps must never be dressed up as a
+        # pasteable command, so exactly one of these two must be present.
+        check("'How to run it' resolves to a command or an honest fallback",
+              opened["hasCmd"] != opened["hasNoRun"],
+              f"hasCmd={opened['hasCmd']} hasNoRun={opened['hasNoRun']}")
         check("expanded body shows details", opened["hasKv"], "")
         check("expanded body shows sources", opened["srcs"] > 0, f"{opened['srcs']} links")
         print("   body:", opened["text"], flush=True)
@@ -315,7 +488,10 @@ def main():
         check("Collapse all closes every card", ea2["open"] == 0, str(ea2))
 
         print("\n--- copy button ---", flush=True)
-        page.click(".card .chead")
+        # Only setups with a real command get a copy button; entries whose
+        # run.steps are prose render as plain text, so open the first card that
+        # actually has one rather than assuming it is card #1.
+        page.locator(".card:has(.copy)").first.locator(".chead").click()
         cp = page.evaluate("""() => {
           const pre = document.querySelector('.cmd');
           const btn = document.querySelector('.copy');
@@ -368,6 +544,11 @@ def main():
                      if (r["dataTier"] or "none") != (r["tier"] if r["tier"] != "?" else "none")]
         check("provenance pill matches the data tier", not tier_mism,
               json.dumps(tier_mism)[:300])
+        leaked_entities = page.locator(".spec").evaluate_all(
+            "els => els.map(e => e.textContent).filter(t => /&(?:rarr|larr|uarr|darr);/.test(t))"
+        )
+        check("metadata chips render arrows instead of HTML entities",
+              not leaked_entities, json.dumps(leaked_entities)[:300])
         for r in integ:
             if r["tier"] == "box":
                 print(f"   [box] {r['id']}: {r['nums']}", flush=True)
@@ -387,6 +568,7 @@ def main():
 
         print("\n--- mobile layout 390px ---", flush=True)
         page.set_viewport_size({"width": 390, "height": 844})
+        page.locator("#metric-guide").evaluate("el => el.open = true")
         page.wait_for_timeout(200)
         mob = page.evaluate("""() => {
           const de = document.documentElement;
@@ -404,7 +586,8 @@ def main():
           };
         }""")
         print("  ", mob, flush=True)
-        check("no horizontal overflow at 390px", not mob["overflowX"], str(mob))
+        check("no horizontal overflow at 390px with performance guide open",
+              not mob["overflowX"], str(mob))
         if mob["cmd"] and mob["cmd"]["ws"] == "pre" and mob["cmd"]["overflowX"] == "visible":
             note("long run commands do not wrap or scroll on mobile; they overflow the card")
         page.screenshot(path=f"{SHOT}/site_mobile.png")

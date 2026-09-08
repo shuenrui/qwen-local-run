@@ -50,8 +50,8 @@
     "repo": "https://github.com/vllm-project/vllm",
     "profile": null,
     "steps": [
-      "pip install vllm",
-      "vllm serve Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8 --max-model-len 262144"
+      {"kind": "cmd", "text": "pip install vllm"},
+      {"kind": "cmd", "text": "vllm serve Qwen/Qwen3-Coder-30B-A3B-Instruct-FP8 --max-model-len 262144"}
     ]
   },
   "measurements": [],
