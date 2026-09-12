@@ -18,7 +18,48 @@
     "100B+ MoE needs the disk-mapped embedding-table trick to fit at all.",
     "The box power-caps and drifts under sustained load: essay throughput fell 19.5 -> 18 tok/s over about an hour of heavy benching. Re-baseline in-session."
   ],
+  "device": {
+    "identity": {
+      "name": "NVIDIA DGX Spark",
+      "chip": "GB10 Grace Blackwell",
+      "manufacturer": "NVIDIA",
+      "os": "DGX OS (Ubuntu)",
+      "form_factor": "desktop",
+      "sku": "940-54242-0000"
+    },
+    "memory": {
+      "total_gb": 128,
+      "type": "LPDDR5X",
+      "bandwidth_gbs": 273,
+      "interface_bits": 256,
+      "unified": true,
+      "usable_gb": 119
+    },
+    "compute": {
+      "cpu_cores": "20-core Arm: 10x Cortex-X925 @ 3.9GHz + 10x Cortex-A725 @ 2.8GHz",
+      "fp4_sparse_pflops": 1.0,
+      "note": "NVIDIA publishes only the FP4-sparse theoretical peak (up to 1 PFLOP, using sparsity) for GB10; dense FP32/FP16/FP8 rates are not published, so they stay null. Decode on this box is bandwidth-bound: 273 GB/s sets the roofline."
+    },
+    "storage": {
+      "type": "NVMe M.2, self-encrypting",
+      "capacity_gb": 4096,
+      "read_gbs": null,
+      "note": "4 TB per the datasheet; sequential read rate not published"
+    },
+    "thermal": {
+      "tdp_watts": 140,
+      "psu_watts": 240,
+      "cooling": "active fan",
+      "note": "140 W is the GB10 chip TDP (CPU+GPU); 240 W is the system power supply rating"
+    },
+    "sources": [
+      {
+        "url": "https://www.nvidia.com/en-us/products/workstations/dgx-spark/",
+        "note": "official specifications: 128 GB LPDDR5x unified, 256-bit, 273 GB/s, 20-core Arm (10x Cortex-X925 + 10x Cortex-A725), up to 1 PFLOP FP4 (sparse), GB10 TDP 140 W, 240 W PSU, 4 TB NVMe M.2"
+      }
+    ]
+  },
   "measured_by_us": true,
   "url": "https://www.nvidia.com/en-us/products/workstations/dgx-spark/",
-  "updated": "2026-09-05"
+  "updated": "2026-09-10"
 }

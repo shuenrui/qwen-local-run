@@ -1,0 +1,16 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "directory/site_src/app.css"
+        ],
+        "createdAt": "2026-09-10T11:22:06.081Z"
+      }
+    ]
+  }
+}

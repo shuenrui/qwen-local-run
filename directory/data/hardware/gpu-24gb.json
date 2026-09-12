@@ -18,7 +18,66 @@
     "Nothing above ~24 GB resident fits without CPU offload. Qwen3.8-27B needs a 4-bit quant to stay on-card; BF16 does not fit.",
     "No unified memory, so the disk-mapped embedding-table trick used for 100B+ MoE on Spark has no equivalent path here."
   ],
+  "device": {
+    "identity": {
+      "name": "24 GB consumer GPU (RTX 3090 / 4090 class)",
+      "chip": "GA102 / AD102",
+      "manufacturer": "NVIDIA",
+      "os": null,
+      "form_factor": "discrete-gpu"
+    },
+    "memory": {
+      "total_gb": 24,
+      "type": "GDDR6X",
+      "bandwidth_gbs": null,
+      "unified": false,
+      "usable_gb": 23,
+      "note": "dedicated VRAM on the card; host system RAM is separate and matters only for offload lanes. Class bandwidth spans 936-1008 GB/s; each variant carries its own."
+    },
+    "compute": {
+      "fp32_tflops": 35.6,
+      "note": "fp32_tflops at class level is the RTX 3090 floor; the RTX 4090 is 83 TFLOPS (see variants). Ampere (30-series) tensor cores have no native FP8 path — FP8 quantized kernels emulate through FP16 and pay for it; Ada (40-series) has native FP8."
+    },
+    "thermal": {
+      "tdp_watts": 350,
+      "cooling": "varies by card model",
+      "note": "350 W is the RTX 3090 TGP; the RTX 4090 is 450 W (see variants)"
+    },
+    "variants": [
+      {
+        "id": "rtx-3090",
+        "name": "GeForce RTX 3090",
+        "chip": "GA102 (Ampere)",
+        "memory_configs": "24 GB GDDR6X, 384-bit",
+        "bandwidth_gbs": 936,
+        "fp32_tflops": 35.6,
+        "tdp_watts": 350,
+        "note": "no native FP8/FP4 tensor path (Ampere 2nd-gen tensor cores)"
+      },
+      {
+        "id": "rtx-4090",
+        "name": "GeForce RTX 4090",
+        "chip": "AD102 (Ada Lovelace)",
+        "memory_configs": "24 GB GDDR6X, 384-bit",
+        "bandwidth_gbs": 1008,
+        "fp32_tflops": 83,
+        "tensor_ai_tops": 1321,
+        "tdp_watts": 450,
+        "note": "1321 AI TOPS is NVIDIA's published tensor figure (FP8, with sparsity); dense FP8 TFLOPS not stated separately"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4090/",
+        "note": "RTX 4090 official specs: 83 TFLOPS shader, 1321 AI TOPS tensor, 24 GB GDDR6X 384-bit, 450 W TGP"
+      },
+      {
+        "url": "https://videocardz.net/nvidia-geforce-rtx-3090",
+        "note": "RTX 3090: 935.8 GB/s (marketing-rounded 936), 350 W, 35.6 TFLOPS FP32, 24 GB GDDR6X 384-bit"
+      }
+    ]
+  },
   "measured_by_us": false,
   "url": "https://www.nvidia.com/en-us/geforce/graphics-cards/40-series/rtx-4090/",
-  "updated": "2026-09-05"
+  "updated": "2026-09-10"
 }

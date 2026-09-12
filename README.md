@@ -13,13 +13,31 @@ directory does not collapse several incompatible recipes into one model row.
 
 ![The Qwen Local-Run Directory filtered to owner-measured setups](docs/dashboard-preview.png)
 
+## Three tabs
+
+| Tab | URL | What it answers |
+|---|---|---|
+| **Directory** | `/#/` | *What ways exist to run Qwen locally?* Every recipe, grouped into model-family shelves, with no machine selection and no personalization gate. |
+| **My Hardware** | `/#/hardware` | *What can this machine run, and how confident is that?* Every compatibility result states its own memory arithmetic, its assumptions, and whether the evidence came from that exact device or merely a similar one. There is no unconditional "fits" verdict. |
+| **Compare** | `/#/compare` | *How do these 2–4 recipes actually differ?* Seven sections, every axis of incomparability named explicitly, and no winner declared. |
+
+Recipes, model families and publishers have permanent, shareable URLs at
+`/#/recipes/<id>`, `/#/models/<id>` and `/#/publishers/<id>`, alongside
+`/#/methodology` and `/#/contribute`.
+
 ## What it answers
 
-1. **Will it fit my machine?** Filter by hardware and resident memory budget.
-2. **What performance has been observed?** Inspect decode speed, time to first
-   token, footprint, and task measurements with their original context.
-3. **How do I run it?** Open a setup for its command or steps, engine flags,
-   checkpoint, recipe repository, sources, and caveats.
+1. **What exists?** Browse all 65 recipes across 22 model families without
+   answering a single question first.
+2. **What performance has been observed?** Decode speed, time to first token,
+   footprint and task measurements, each rendered with its metric, its
+   concurrency, its statistic and its source. A single-stream figure always wins
+   the headline; aggregate throughput never masquerades as felt speed.
+3. **How much should I trust it?** Four independent confidence dimensions —
+   recipe, compatibility, performance, capability — instead of one badge doing
+   four jobs.
+4. **How do I run it?** Commands, ordered steps, engine flags, checkpoint,
+   repository, sources, caveats and known failures, on a permanent page.
 
 ## What is in the directory
 
@@ -39,11 +57,15 @@ consumer GPUs, mixed multi-GPU desktops, 32-64 GB and 128 GB Macs, DGX Spark,
 and ThinkStation PGX. Engines include SGLang, vLLM, llama.cpp, MLX, Ollama,
 LM Studio, and builder-specific forks.
 
-Use the dashboard to search across checkpoint and configuration details, then
-combine filters for hardware, memory, engine, quantization, and evidence. Sort
-by generation, reported decode speed, resident footprint, evidence strength,
-or freshness. Speed sorting is a discovery aid, not a cross-harness
-leaderboard.
+Search runs across model, family, checkpoint, publisher, builder, engine,
+configuration, quantization, command, step text, caveats and measurement
+methods. Seven filters stay on the surface — generation, architecture, engine,
+quantization, tested hardware, evidence and readiness — with eleven more behind
+an Advanced panel, including parameter range, capability, artifact format,
+stock-versus-fork, speculative-decoding path, setup complexity, publisher,
+maintenance freshness and known failures. Nine sort modes are offered. Sorting
+by decode speed carries a disclosure that cannot be dismissed: it is a discovery
+aid, not a cross-harness leaderboard.
 
 ## Worth exploring
 
@@ -92,8 +114,13 @@ python3 directory/check.sh
 
 The gate validates every setup, fetches all cited URLs, regenerates the site,
 and exercises the real interface in Chromium at desktop and mobile widths.
-`directory/site/index.html` is generated; change the data or `build.py`, never
-the HTML by hand.
+`directory/site/index.html` is generated; change the data, `directory/site_src/`,
+or `build.py` — never the HTML by hand.
+
+The design contract behind the current interface — information architecture,
+route map, design system, per-tab specifications, data-model implications and
+the verification plan — is in
+[`docs/redesign-2026-09-10/`](docs/redesign-2026-09-10/).
 
 ## Current limits
 

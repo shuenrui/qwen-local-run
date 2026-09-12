@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Qwen Local-Run Directory</title>
+<meta name="description" content="Choose a Qwen model, see its practical hardware floor, then inspect every source-backed local-run recipe.">
+<style>
+__CSS__
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="mast" role="banner">
+  <div class="mast-bar">
+    <a class="brand" href="#/" aria-label="Qwen Local-Run Directory, home">
+      <span class="brand-mark" aria-hidden="true">QLR</span>
+      <span class="brand-name">Qwen Local-Run Directory</span>
+    </a>
+    <nav class="tabs" id="tabs" aria-label="Primary">
+      <a class="tab" data-route="models-home" href="#/">Models</a>
+      <a class="tab" data-route="directory" href="#/recipes">Recipes</a>
+      <a class="tab" data-route="hardware" href="#/hardware">My Hardware</a>
+      <a class="tab" data-route="compare" href="#/compare">Compare<span class="tab-n" id="tab-compare-n" hidden></span></a>
+    </nav>
+    <div class="mast-util">
+      <a class="ulink" href="#/methodology">Methodology</a>
+      <a class="ulink" href="#/contribute">Contribute</a>
+      <button type="button" id="theme" class="icon-btn" aria-label="Switch colour theme">◐</button>
+    </div>
+  </div>
+  <p class="mast-sub" id="mast-sub"></p>
+</header>
+
+<div class="shell" id="shell">
+  <aside class="rail" id="rail" aria-label="Model family index"></aside>
+  <main id="main" class="main" tabindex="-1"></main>
+</div>
+
+<div id="rail-host"></div>
+<div id="compare-host"></div>
+<div id="pop" class="pop" hidden role="tooltip"></div>
+<div id="live" class="sr" role="status" aria-live="polite"></div>
+
+<footer class="foot">
+  <p>Generated <span id="gen"></span> · <a href="https://github.com/shuenrui/qwen-local-run">github.com/shuenrui/qwen-local-run</a> · Data is provenance-first: every number carries its source, and tiers are never blended.</p>
+</footer>
+
+<script id="data" type="application/json">__DATA__</script>
+<script>
+__APP__
+</script>
+</body>
+</html>

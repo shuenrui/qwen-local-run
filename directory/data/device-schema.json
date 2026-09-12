@@ -1,0 +1,114 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "device-schema.json",
+  "title": "Device specification block",
+  "description": "Hardware specs that determine local-inference performance. This block lives inside a hardware record (data/hardware/<id>.json) as the 'device' key — that is the single source of truth. A setup may carry the same block under data/setups/<id>.json 'device' only as a measurement-specific override (e.g. an overclocked card); it never re-describes the whole class. Rule of the dataset: bandwidth sets the decode roofline, memory capacity sets what fits, and any figure a vendor does not publish stays null with a note — never a guess.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["identity", "memory", "sources"],
+  "properties": {
+    "identity": {
+      "type": "object",
+      "description": "Who made it and what it is called. Required so a spec block is never anonymous.",
+      "additionalProperties": false,
+      "required": ["name", "chip", "manufacturer"],
+      "properties": {
+        "name": {"type": "string", "minLength": 1, "description": "Human-readable device or class name, e.g. 'NVIDIA DGX Spark'"},
+        "chip": {"type": "string", "minLength": 1, "description": "Processor architecture as the vendor names it, e.g. 'GB10 Grace Blackwell', 'Apple M4 Pro', 'AD102 (Ada Lovelace)'"},
+        "manufacturer": {"type": "string", "minLength": 1},
+        "os": {"type": ["string", "null"], "description": "Operating system the specs describe, e.g. 'DGX OS (Ubuntu)'. null when the class spans hosts (discrete-GPU records)."},
+        "form_factor": {"type": ["string", "null"], "description": "desktop | laptop | discrete-gpu | discrete-gpu-multi | other"},
+        "sku": {"type": ["string", "null"], "description": "Exact product code when the record is one SKU, e.g. NVIDIA '940-54242-0000'"}
+      }
+    },
+    "memory": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["total_gb", "type"],
+      "properties": {
+        "total_gb": {"type": "number", "exclusiveMinimum": 0, "description": "Total RAM/VRAM in GB. On class records this is the class ceiling, matching the hardware record's memory_gb."},
+        "type": {"type": "string", "minLength": 1, "description": "Memory technology: LPDDR5X, GDDR6X, LPDDR5 ..."},
+        "bandwidth_gbs": {"type": ["number", "null"], "exclusiveMinimum": 0, "description": "Memory bandwidth in GB/s — the strongest hardware predictor of low-concurrency decode speed. null on class records whose variants each carry their own bandwidth."},
+        "interface_bits": {"type": ["integer", "null"], "minimum": 16, "description": "Memory bus width, e.g. 256 for GB10, 384 for RTX 3090/4090"},
+        "channels": {"type": ["integer", "null"], "minimum": 1, "description": "Memory channel count. Only include when the vendor publishes it — GB10's 256-bit interface does not imply a channel count."},
+        "unified": {"type": ["boolean", "null"], "description": "true when CPU and GPU share one memory pool (Apple Silicon, GB10). false for discrete VRAM."},
+        "usable_gb": {"type": ["number", "null"], "description": "Practically usable capacity after OS/runtime reserves, matching the hardware record's memory_usable_gb"},
+        "note": {"type": ["string", "null"]}
+      }
+    },
+    "compute": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Vendor-published compute peaks. Every value here is a theoretical peak for the named precision; null means the vendor does not publish it — third-party estimates do not belong in the dataset. Tensor figures are NOT interchangeable across precisions: FP8 sparse ≠ FP16 dense.",
+      "properties": {
+        "cpu_cores": {"type": ["string", "null"], "description": "CPU description, e.g. '20-core Arm: 10x Cortex-X925 + 10x Cortex-A725'"},
+        "fp32_tflops": {"type": ["number", "null"], "minimum": 0, "description": "Shader/CUDA FP32 peak, e.g. RTX 3090 35.6, RTX 4090 83 (NVIDIA's published figure)"},
+        "fp16_dense_tflops": {"type": ["number", "null"], "minimum": 0},
+        "fp16_sparse_tflops": {"type": ["number", "null"], "minimum": 0, "description": "Structured-sparsity marketing figure; state the accumulation mode in the note when the vendor does"},
+        "fp8_dense_tflops": {"type": ["number", "null"], "minimum": 0, "description": "null when the architecture has no native FP8 tensor path (Ampere)"},
+        "fp8_sparse_tflops": {"type": ["number", "null"], "minimum": 0},
+        "fp4_sparse_pflops": {"type": ["number", "null"], "minimum": 0, "description": "Blackwell-era FP4 peak with sparsity, in PFLOPs, e.g. GB10 = 1.0"},
+        "tensor_ai_tops": {"type": ["number", "null"], "minimum": 0, "description": "Vendor 'AI TOPS' marketing figure when no clean TFLOPS is published, e.g. RTX 4090 = 1321 (FP8, sparse)"},
+        "neural_engine_tops": {"type": ["number", "null"], "minimum": 0, "description": "Apple Neural Engine, TOPS. Apple publishes 38 for the M4 family. Note honestly that current MLX and llama.cpp paths mostly drive the GPU, not the ANE."},
+        "note": {"type": ["string", "null"], "description": "Required context for every non-null figure here; also where 'unpublished' is explained"}
+      }
+    },
+    "storage": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Affects model load time and streamed-expert performance. Omit entirely on records where storage is host-dependent (discrete-GPU classes).",
+      "properties": {
+        "type": {"type": ["string", "null"], "description": "e.g. 'NVMe M.2, self-encrypting'"},
+        "capacity_gb": {"type": ["number", "null"], "minimum": 0},
+        "read_gbs": {"type": ["number", "null"], "minimum": 0, "description": "Sequential read, GB/s. null when the vendor does not publish it."},
+        "note": {"type": ["string", "null"]}
+      }
+    },
+    "thermal": {
+      "type": "object",
+      "additionalProperties": false,
+      "description": "Power and cooling context — sustained-load behavior is why two boxes with equal bandwidth can drift apart under load.",
+      "properties": {
+        "tdp_watts": {"type": ["number", "null"], "minimum": 0, "description": "Chip or board TDP/TGP as the vendor states it; say which in the note"},
+        "psu_watts": {"type": ["number", "null"], "minimum": 0, "description": "System power supply or max continuous system power"},
+        "cooling": {"type": ["string", "null"]},
+        "note": {"type": ["string", "null"]}
+      }
+    },
+    "variants": {
+      "type": "array",
+      "description": "For class records only: the exact SKUs the class covers, each with its own verified numbers. Every variant bandwidth must fall inside the hardware record's bandwidth_range_gbs. Unique ids.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "name", "chip", "bandwidth_gbs"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "name": {"type": "string", "minLength": 1},
+          "chip": {"type": "string", "minLength": 1},
+          "memory_configs": {"type": ["string", "null"], "description": "RAM configurations this SKU ships in, e.g. '24-64 GB'"},
+          "bandwidth_gbs": {"type": "number", "exclusiveMinimum": 0},
+          "fp32_tflops": {"type": ["number", "null"], "minimum": 0},
+          "tensor_ai_tops": {"type": ["number", "null"], "minimum": 0},
+          "neural_engine_tops": {"type": ["number", "null"], "minimum": 0},
+          "tdp_watts": {"type": ["number", "null"], "minimum": 0},
+          "note": {"type": ["string", "null"]}
+        }
+      }
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Provenance law applies to specs too: every published figure traces to the vendor page or datasheet cited here.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["url", "note"],
+        "properties": {
+          "url": {"type": "string", "pattern": "^https?://\\S+$"},
+          "note": {"type": "string", "minLength": 1, "description": "Which figures this source backs"}
+        }
+      }
+    }
+  }
+}

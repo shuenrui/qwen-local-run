@@ -20,7 +20,53 @@
     "The binding constraint is RAM, not bandwidth: a 35B MoE at Q4 needs ~22 GB, which a 32 GB Mac runs with almost nothing left for context.",
     "MoE expert streaming from SSD (mlx-flash style) is what makes over-RAM models possible here at a large speed cost."
   ],
+  "device": {
+    "identity": {
+      "name": "Apple Silicon Mac, 32-64 GB unified",
+      "chip": "Apple Silicon Pro/Max class",
+      "manufacturer": "Apple",
+      "os": "macOS",
+      "form_factor": "laptop/desktop"
+    },
+    "memory": {
+      "total_gb": 64,
+      "type": "LPDDR4x/LPDDR5 (per chip)",
+      "bandwidth_gbs": null,
+      "unified": true,
+      "usable_gb": 58,
+      "note": "bandwidth is a per-chip property, so the class value stays null here and every variant carries its own; the class spans 68-546 GB/s end to end"
+    },
+    "compute": {
+      "cpu_cores": "Apple Silicon; core counts vary by chip and SKU tier",
+      "note": "Apple publishes Neural Engine TOPS but no GPU FLOPS for any M-series chip, so GPU compute stays null. Honest caveat for the MLX lanes: MLX and llama.cpp/Metal primarily drive the GPU; the Neural Engine is largely unused by current local-LLM runtimes, so its TOPS figure must not be read as an inference-throughput promise."
+    },
+    "thermal": {
+      "tdp_watts": null,
+      "cooling": "active fan (laptops, desktops)",
+      "note": "Apple does not publish chip TDP; sustained-load behaviour differs between fanless and fan-cooled enclosures"
+    },
+    "variants": [
+      {"id": "m1-pro", "name": "M1 Pro", "chip": "Apple M1 Pro", "memory_configs": "16-32 GB", "bandwidth_gbs": 200, "note": "bandwidth floor of the Pro tier"},
+      {"id": "m2-pro", "name": "M2 Pro", "chip": "Apple M2 Pro", "memory_configs": "16-32 GB", "bandwidth_gbs": 204.8},
+      {"id": "m3-pro", "name": "M3 Pro", "chip": "Apple M3 Pro", "memory_configs": "18-36 GB", "bandwidth_gbs": 153.6},
+      {"id": "m4", "name": "M4 (base chip, 32 GB configs)", "chip": "Apple M4", "memory_configs": "16-32 GB", "bandwidth_gbs": 120, "neural_engine_tops": 38, "note": "Apple publishes 120 GB/s and a 16-core Neural Engine (38 TOPS) for the M4 family"},
+      {"id": "m4-pro", "name": "M4 Pro", "chip": "Apple M4 Pro", "memory_configs": "24-64 GB", "bandwidth_gbs": 273, "neural_engine_tops": 38},
+      {"id": "m1-max", "name": "M1 Max", "chip": "Apple M1 Max", "memory_configs": "32-64 GB", "bandwidth_gbs": 400},
+      {"id": "m2-max", "name": "M2 Max", "chip": "Apple M2 Max", "memory_configs": "32-96 GB", "bandwidth_gbs": 409.6},
+      {"id": "m3-max", "name": "M3 Max", "chip": "Apple M3 Max", "memory_configs": "36-128 GB", "bandwidth_gbs": 409.6}
+    ],
+    "sources": [
+      {
+        "url": "https://www.apple.com/newsroom/2024/10/apple-introduces-m4-pro-and-m4-max/",
+        "note": "M4: 120 GB/s, up to 32 GB; M4 Pro: 273 GB/s, up to 64 GB; M4 Max: up to 546 GB/s, up to 128 GB; 16-core Neural Engine, 38 TOPS (M4 announcement)"
+      },
+      {
+        "url": "https://arstechnica.com/apple/2024/10/apples-m4-m4-pro-and-m4-max-compared-to-past-generations-and-to-each-other/",
+        "note": "per-generation table: M2 Pro 204.8 GB/s, M3 Pro 153.6 GB/s, M2 Max / M3 Max 409.6 GB/s, M1 Max 400 GB/s"
+      }
+    ]
+  },
   "measured_by_us": false,
   "url": "https://github.com/petems/qwen-local-silicon-32to64gb-macbook-guide",
-  "updated": "2026-09-05"
+  "updated": "2026-09-10"
 }

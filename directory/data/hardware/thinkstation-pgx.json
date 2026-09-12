@@ -16,7 +16,50 @@
     "Kept as its own class because reported numbers name this box, and OEM firmware/power limits can differ from NVIDIA's reference board.",
     "Ollama and containerised SGLang/vLLM paths behave as on Spark; treat Spark numbers as comparable but not identical."
   ],
+  "device": {
+    "identity": {
+      "name": "Lenovo ThinkStation PGX",
+      "chip": "GB10 Grace Blackwell",
+      "manufacturer": "Lenovo",
+      "os": "DGX OS (Ubuntu)",
+      "form_factor": "desktop"
+    },
+    "memory": {
+      "total_gb": 128,
+      "type": "LPDDR5X",
+      "bandwidth_gbs": 273,
+      "interface_bits": 256,
+      "unified": true,
+      "usable_gb": 119
+    },
+    "compute": {
+      "cpu_cores": "20-core Arm, same GB10 silicon as DGX Spark (10x Cortex-X925-class + 10x Cortex-A725)",
+      "fp4_sparse_pflops": 1.0,
+      "note": "Same GB10 chip as the DGX Spark, so NVIDIA's published FP4-sparse peak applies; Lenovo does not publish separate compute figures for PGX."
+    },
+    "storage": {
+      "type": "NVMe SSD",
+      "read_gbs": null,
+      "note": "capacity and read rate not published by Lenovo"
+    },
+    "thermal": {
+      "tdp_watts": null,
+      "psu_watts": null,
+      "cooling": "active fan",
+      "note": "Lenovo does not publish chip-level TDP for PGX; OEM firmware/power limits may differ from NVIDIA's reference board, which is why this stays its own class"
+    },
+    "sources": [
+      {
+        "url": "https://www.nvidia.com/en-us/products/workstations/dgx-spark/",
+        "note": "GB10 chip specifications (shared silicon: 128 GB LPDDR5x, 273 GB/s, 1 PFLOP FP4 sparse)"
+      },
+      {
+        "url": "https://github.com/OscarActual/gb10-llm-benchmark",
+        "note": "box reference already cited by this record"
+      }
+    ]
+  },
   "measured_by_us": false,
   "url": "https://github.com/OscarActual/gb10-llm-benchmark",
-  "updated": "2026-09-05"
+  "updated": "2026-09-10"
 }

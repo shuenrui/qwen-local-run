@@ -16,9 +16,58 @@
     "A class entry, not one SKU: 400 GB/s is the M3 Max, 546 GB/s the M4 Max. Setups listed against this class were reported on either.",
     "Closest structural analogue to DGX Spark — unified memory, so capacity is generous and bandwidth is the limiter — but at roughly 1.5-2x the Spark's 273 GB/s.",
     "Serving path is MLX or llama.cpp/Metal, not SGLang or vLLM: the CUDA-specific forks (DSpark, DFlash2) have no port, so speculative-decoding setups are not comparable across this class and Spark.",
-    "Memory pressure is configurable (sysctl iogpu.wired_limit_mb); default GPU wired limit is well below 128 GB, so large MoE builds need it raised."
+    "Memory pressure is configurable (sysctl iogpu.wired_limit_mb); default GPU wired limit is well below 128 GB, so large MoE builds need it raised.",
+    "Ultra chips exist above this class's recorded range (M2 Ultra 800 GB/s, M3 Ultra 819 GB/s — there is no M4 Ultra). A setup naming an Ultra must say so in its measurement note; do not average Ultra bandwidth into this class."
   ],
+  "device": {
+    "identity": {
+      "name": "Apple Silicon Mac, 64-128 GB unified",
+      "chip": "M3 Max / M4 Max",
+      "manufacturer": "Apple",
+      "os": "macOS",
+      "form_factor": "laptop/desktop"
+    },
+    "memory": {
+      "total_gb": 128,
+      "type": "LPDDR5 (per chip)",
+      "bandwidth_gbs": null,
+      "unified": true,
+      "usable_gb": 121,
+      "note": "bandwidth is per-chip; this class spans 400-546 GB/s and each variant carries its own figure"
+    },
+    "compute": {
+      "cpu_cores": "Apple M3 Max / M4 Max",
+      "neural_engine_tops": 38,
+      "note": "Neural Engine 38 TOPS is published for the M4 family; earlier generations' NE rates are not restated here. MLX and llama.cpp/Metal primarily drive the GPU; the ANE is largely unused by current local-LLM runtimes."
+    },
+    "thermal": {
+      "tdp_watts": null,
+      "cooling": "active fan",
+      "note": "Apple does not publish chip TDP"
+    },
+    "variants": [
+      {"id": "m1-max-64", "name": "M1 Max (64 GB configs)", "chip": "Apple M1 Max", "memory_configs": "64 GB", "bandwidth_gbs": 400},
+      {"id": "m2-max", "name": "M2 Max", "chip": "Apple M2 Max", "memory_configs": "64-96 GB", "bandwidth_gbs": 409.6},
+      {"id": "m3-max", "name": "M3 Max", "chip": "Apple M3 Max", "memory_configs": "48-128 GB", "bandwidth_gbs": 409.6},
+      {"id": "m4-max-low", "name": "M4 Max (14-core CPU, 32-core GPU)", "chip": "Apple M4 Max", "memory_configs": "36-48 GB", "bandwidth_gbs": 410, "neural_engine_tops": 38},
+      {"id": "m4-max", "name": "M4 Max (16-core CPU, 40-core GPU)", "chip": "Apple M4 Max", "memory_configs": "48-128 GB", "bandwidth_gbs": 546, "neural_engine_tops": 38}
+    ],
+    "sources": [
+      {
+        "url": "https://www.apple.com/newsroom/2024/10/apple-introduces-m4-pro-and-m4-max/",
+        "note": "M4 Max: up to 546 GB/s, up to 128 GB unified"
+      },
+      {
+        "url": "https://support.apple.com/en-us/121553",
+        "note": "MacBook Pro (M4 Pro/M4 Max, 2024): M4 Max low variant 410 GB/s, high variant 546 GB/s; Neural Engine 16-core"
+      },
+      {
+        "url": "https://arstechnica.com/apple/2024/10/apples-m4-m4-pro-and-m4-max-compared-to-past-generations-and-to-each-other/",
+        "note": "M2 Max / M3 Max 409.6 GB/s, M1 Max 400 GB/s"
+      }
+    ]
+  },
   "measured_by_us": false,
   "url": "https://www.apple.com/macbook-pro/",
-  "updated": "2026-09-05"
+  "updated": "2026-09-10"
 }
