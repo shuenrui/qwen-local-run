@@ -26,5 +26,11 @@
   },
   "url": "https://huggingface.co/Qwen/Qwen3-8B",
   "summary": "Wave-1 dense 8B: 32K native context, 128K with YaRN, official FP8 export at 9.4GB.",
-  "updated": "2026-09-06"
+  "practical_baseline": {
+    "status": "not_verified",
+    "setup": null,
+    "reason": "No reported or measured stable 4-bit-or-better run is currently recorded.",
+    "reviewed": "2026-09-12"
+  },
+  "updated": "2026-09-12"
 }

@@ -33,5 +33,11 @@
   },
   "url": "https://huggingface.co/Qwen/Qwen3-Omni-30B-A3B-Instruct",
   "summary": "End-to-end omni-modal MoE: text, image, audio and video in, streaming text and speech out. Context length is not stated on the card, so it is left null here.",
-  "updated": "2026-09-06"
+  "practical_baseline": {
+    "status": "not_verified",
+    "setup": null,
+    "reason": "No reported or measured stable 4-bit-or-better run is currently recorded.",
+    "reviewed": "2026-09-12"
+  },
+  "updated": "2026-09-12"
 }

@@ -25,5 +25,11 @@
   },
   "url": "https://huggingface.co/Qwen/Qwen3-4B",
   "summary": "Wave-1 dense 4B: BF16 fits a 24GB card with room for a large KV pool.",
-  "updated": "2026-09-06"
+  "practical_baseline": {
+    "status": "not_verified",
+    "setup": null,
+    "reason": "No reported or measured stable 4-bit-or-better run is currently recorded.",
+    "reviewed": "2026-09-12"
+  },
+  "updated": "2026-09-12"
 }

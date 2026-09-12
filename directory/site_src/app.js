@@ -834,12 +834,15 @@ function viewDirectory() {
 /* ------------------------------------------------------ model-first home */
 function modelFloor(s) {
   if (!s) return "Not verified yet";
-  var req = s.requirements || {}, hw = HW[(s.hardware || [])[0]] || {};
+  var req = s.requirements || {}, hid = (s.hardware || [])[0], hw = HW[hid] || {};
   if (req.min_vram_gb != null) {
     return gb(req.min_vram_gb) + " VRAM" + (req.memory_gb != null && req.memory_gb > req.min_vram_gb
       ? " · " + gb(req.memory_gb) + " recorded memory" : "");
   }
-  return (hw.name ? String(hw.name).split(",")[0] + " · " : "") + (gb(req.memory_gb) || "memory not recorded");
+  var host = hid === "mac-128gb" ? "128 GB unified Mac" : hid === "mac-64gb" ? "32-64 GB unified Mac" :
+    hid === "dgx-spark" ? "128 GB DGX Spark" : hid === "thinkstation-pgx" ? "128 GB ThinkStation PGX" :
+    (hw.name ? String(hw.name).split(",")[0] : "hardware not recorded");
+  return host + " · " + (req.memory_gb != null ? gb(req.memory_gb) + " resident" : "memory not recorded");
 }
 function baselineSpeed(s) { return s ? repDecode(s) : null; }
 function modelMatches(m) {
@@ -1619,7 +1622,7 @@ function viewModel(id) {
   var h = '<div class="page wide"><p class="crumb"><a href="#/">Models</a> ' + esc("→ model family") + "</p>" +
     "<h1>" + esc(m.name) + "</h1>";
   if (m.summary) h += '<p class="lede">' + esc(m.summary) + "</p>";
-  h += '<div class="psec model-page-baseline">' + modelPreview(m) + '</div>';
+  h += '<div class="psec model-page-baseline"><h2>Practical baseline</h2>' + modelPreview(m) + '</div>';
   h += '<div class="psec"><h2>Architecture and limits</h2><div class="kv two">' +
     "<dt>Generation</dt><dd>" + esc(m.generation) + "</dd>" +
     "<dt>Architecture</dt><dd>" + esc(a.kind === "moe" ? "MoE" : a.kind || "") + (a.hybrid ? esc(" · hybrid") : "") + "</dd>" +

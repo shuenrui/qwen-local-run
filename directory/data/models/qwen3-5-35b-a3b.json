@@ -26,5 +26,11 @@
   "notes": [
     "MTP on this checkpoint is unverified; set SPEC_ENABLE=0 if boot rejects it."
   ],
-  "updated": "2026-09-05"
+  "practical_baseline": {
+    "status": "selected",
+    "setup": "qwen35-35b-a3b-petems-gguf-llamacpp-macbook-32-64",
+    "rationale": "The most accessible reported Q4 lane, demonstrated on a 32 GB Apple Silicon machine with a recorded memory floor.",
+    "reviewed": "2026-09-12"
+  },
+  "updated": "2026-09-12"
 }

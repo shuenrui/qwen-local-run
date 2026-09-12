@@ -84,7 +84,7 @@ fast it goes *according to whom*, and can run it from the copyable command.
     validate.py               schema/enum/provenance enforcement (runs in build)
     site_src/shell.html       page skeleton: __CSS__ / __DATA__ / __APP__ slots
     site_src/app.css          design system, layouts, breakpoints, both themes
-    site_src/app.js           hash router, three tabs, filters, compare, hardware
+    site_src/app.js           hash router, four tabs, filters, compare, hardware
     build.py                  stdlib generator: site_src + data -> site/index.html
     check_links.py            link-rot guard; exit 1 on any dead source URL
     import_bench.py           bench/ab.py results -> box measurements (+jsonl)

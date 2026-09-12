@@ -22,6 +22,44 @@ data/
 Everything is validated by `validate.py`. Unknown ids and missing required
 fields fail the build rather than silently rendering as blank.
 
+## models/<id>.json
+
+Model records hold architecture, context, modalities, publisher facts, and the
+homepage's curated practical baseline. The baseline is a reference to one exact
+setup; it never duplicates memory or performance numbers.
+
+```jsonc
+"practical_baseline": {
+  "status": "selected",                    // selected | not_verified
+  "setup": "qwen38-...-4090-hybrid",       // -> data/setups/, same model
+  "rationale": "Why this is the most accessible stable 4-bit-or-better lane",
+  "reviewed": "2026-09-12"
+}
+```
+
+`selected` requires a `reported` or `measured` setup, a stable 4-bit-or-better
+quantization, and reproducible run instructions. The selected setup's hardware,
+requirements, engine, context, capabilities, caveats, measurements, and sources
+remain the sole source of every value shown on the homepage.
+
+When no setup qualifies, record the gap rather than estimating:
+
+```jsonc
+"practical_baseline": {
+  "status": "not_verified",
+  "setup": null,
+  "reason": "No reported or measured stable 4-bit-or-better run is currently recorded.",
+  "reviewed": "2026-09-12"
+}
+```
+
+The selection policy prioritizes accessible hardware: a single consumer GPU or
+commonly available Mac, then a consumer GPU with host-RAM offload, then a 128 GB
+workstation/appliance, then a custom multi-GPU rig. RAM and SSD streaming are
+allowed only when their full requirement is recorded and displayed prominently.
+Speed appears only if the selected setup itself has a representative
+single-stream decode measurement.
+
 ## Provenance
 
 The single most important rule in this dataset. Every number carries a

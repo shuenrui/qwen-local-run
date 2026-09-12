@@ -28,5 +28,11 @@
   },
   "url": "https://huggingface.co/Qwen/Qwen3.5-397B-A17B",
   "summary": "Qwen3.5 flagship MoE with unified vision-language foundation: 397B total, 17B active, 256K native context. Hosted counterpart is Qwen3.5-Plus.",
-  "updated": "2026-09-06"
+  "practical_baseline": {
+    "status": "selected",
+    "setup": "qwen35-397b-a17b-szibis-mlx-flash-ssd-mac64",
+    "rationale": "The only reported stable 4-bit-or-better consumer-hardware lane; it depends on heavy SSD expert streaming and is labelled accordingly.",
+    "reviewed": "2026-09-12"
+  },
+  "updated": "2026-09-12"
 }

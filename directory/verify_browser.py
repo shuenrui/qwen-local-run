@@ -180,7 +180,7 @@ def main():
         check("selected and not-verified baselines cover every model",
               len(selected) + len(missing) == len(MODELS),
               f"{len(selected)} selected, {len(missing)} not verified")
-        landing = page.evaluate("""() => Array.from(document.querySelectorAll('[data-model-select]')).map(n => ({
+        landing = page.evaluate(r"""() => Array.from(document.querySelectorAll('[data-model-select]')).map(n => ({
           id:n.getAttribute('data-model-select'), text:n.innerText.replace(/\s+/g,' ').trim()
         }))""")
         landing_by_id = {x["id"]: x["text"] for x in landing}
@@ -266,6 +266,18 @@ def main():
                 nonpeak = [m for m in c if m.get("stat") != "peak"]
                 return sorted(nonpeak or c, key=lambda m: -m["value"])[0]
             return None
+
+        baseline_speed_wrong = []
+        for m in selected:
+            s = by_id[m["practical_baseline"]["setup"]]
+            r = rep(s)
+            shown = landing_by_id.get(m["id"], "")
+            if r and str(r["value"]) not in shown:
+                baseline_speed_wrong.append(m["id"] + " borrowed or missing speed")
+            if not r and "Not measured" not in shown:
+                baseline_speed_wrong.append(m["id"] + " missing empty speed state")
+        check("homepage speed comes only from each selected baseline setup",
+              not baseline_speed_wrong, str(baseline_speed_wrong))
 
         goto(page, "#/recipes")
         cells = page.evaluate("""() => {
@@ -838,7 +850,8 @@ def main():
               page.evaluate("document.querySelectorAll('#counts').length") == 0)
 
         # ---------------------------------------------------- accessibility
-        for h in ("#/", "#/recipes", "#/hardware", "#/compare", "#/methodology", f"#/recipes/{SET[0]['id']}"):
+        for h in ("#/", "#/recipes", "#/hardware", "#/compare", "#/methodology",
+                  f"#/models/{SET[0]['model']}", f"#/recipes/{SET[0]['id']}"):
             goto(page, h)
             a11y = page.evaluate("""() => {
               var hs = Array.from(document.querySelectorAll('h1,h2,h3,h4'))

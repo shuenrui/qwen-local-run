@@ -20,5 +20,11 @@
   "summary": "The flagship, and the reason single-box builds exist at all. Base weights are datacenter-only at 360GB BF16. Every single-Spark build shares one trick: the 51GB embedding lookup table stays on disk and is fetched line by line (mmap with MADV_RANDOM), so only about 72GB sits resident. Builders then differ in engine, whether vision survives, and how honest they are about the quality cost.",
   "fit_note": "About 15GB of headroom left on a 128GB Spark once resident. It sleeps by the edge: concurrency, context length and KV dtype all have to be tuned down, and a mis-set memory fraction can hard-reboot the box.",
   "known_regressions": [],
-  "updated": "2026-09-05"
+  "practical_baseline": {
+    "status": "selected",
+    "setup": "qwen38-flash-next-unsloth-gguf-llamacpp-4090-hybrid",
+    "rationale": "Most accessible sourced stable 4-bit lane: one consumer GPU with explicitly recorded host-RAM offload and single-stream decode.",
+    "reviewed": "2026-09-12"
+  },
+  "updated": "2026-09-12"
 }

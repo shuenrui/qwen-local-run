@@ -144,6 +144,6 @@
       "note": "llama.cpp architecture-support PR the build must come from"
     }
   ],
-  "updated": "2026-09-10",
+  "updated": "2026-09-12",
   "builder": "analogalok"
 }

@@ -25,5 +25,11 @@
   "notes": [
     "MTP head presence is unverified on this checkpoint. If boot rejects EAGLE speculative decoding, set SPEC_ENABLE=0 and relaunch."
   ],
-  "updated": "2026-09-05"
+  "practical_baseline": {
+    "status": "selected",
+    "setup": "qwen36-27b-unsloth-gguf-llamacpp-4090-samevocab",
+    "rationale": "A reported quality-gated Q4 lane that remains within one 24 GB consumer GPU.",
+    "reviewed": "2026-09-12"
+  },
+  "updated": "2026-09-12"
 }

@@ -26,5 +26,11 @@
   "notes": [
     "No MTP head, so speculative decoding is off. Any speed comparison against 3.8-27B is measuring the architecture change, not the quant."
   ],
-  "updated": "2026-09-05"
+  "practical_baseline": {
+    "status": "not_verified",
+    "setup": null,
+    "reason": "No reported or measured stable 4-bit-or-better run is currently recorded.",
+    "reviewed": "2026-09-12"
+  },
+  "updated": "2026-09-12"
 }

@@ -25,5 +25,11 @@
   "notes": [
     "MTP on this checkpoint is unverified; set SPEC_ENABLE=0 if boot rejects it."
   ],
-  "updated": "2026-09-05"
+  "practical_baseline": {
+    "status": "not_verified",
+    "setup": null,
+    "reason": "No reported or measured stable 4-bit-or-better run is currently recorded.",
+    "reviewed": "2026-09-12"
+  },
+  "updated": "2026-09-12"
 }

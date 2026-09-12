@@ -22,7 +22,7 @@ directory/
 ├── site_src/            the page source, inlined by build.py
 │   ├── shell.html            skeleton with __CSS__/__DATA__/__APP__ slots
 │   ├── app.css               design system, layouts, breakpoints, both themes
-│   └── app.js                hash router, three tabs, filters, compare, hardware
+│   └── app.js                hash router, four tabs, filters, compare, hardware
 ├── verify_browser.py    headless-Chromium checks against the built site
 ├── data/
 │   ├── models/<id>.json      architecture, context, modalities, license
@@ -33,14 +33,13 @@ directory/
 └── site/index.html      generated; commit or serve it, do not edit it
 ```
 
-The site is three tabs behind one self-contained file: the **Directory** at `#/`
-(every recipe, no personalization gate), **My Hardware** at `#/hardware` (every
-compatibility verdict, each stating its own arithmetic and assumptions), and
-**Compare** at `#/compare` (two to four recipes, with every axis of
-incomparability named and no winner declared). Recipes, model families and
-publishers have permanent URLs at `#/recipes/<id>`, `#/models/<id>` and
-`#/publishers/<id>`. Routing is hash-based because `ifhost publish` serves
-exactly one file at `/`; the design rationale is in
+The site is four tabs behind one self-contained file: **Models** at `#/`
+(model-first browsing with curated practical minimums), **Recipes** at
+`#/recipes` (the complete advanced index, with no personalization gate), **My
+Hardware** at `#/hardware`, and **Compare** at `#/compare`. Recipes, model
+families and publishers have permanent URLs at `#/recipes/<id>`,
+`#/models/<id>` and `#/publishers/<id>`. Routing is hash-based because `ifhost
+publish` serves exactly one file at `/`; the design rationale is in
 [`docs/redesign-2026-09-10/`](../docs/redesign-2026-09-10/).
 
 ## Workflow
@@ -78,19 +77,10 @@ enforces that.
 
 ## Current coverage
 
-65 setups, 22 model families, 6 hardware classes, 7 engines, 29 publishers. Provenance
-splits 4 `box` (measured on our DGX Spark), 28 `forum` (builder- or
-thread-reported, each with its URL and the quoted sentence), 1 `vendor`
-(unsloth's own claim), and 32 `untested` lanes that validate and provide run
-steps but carry no numbers yet.
-
-Hardware lanes: DGX Spark / GB10 (47 setups, plus 6 that also list the
-ThinkStation PGX as the same-silicon alternative), 24 GB consumer GPUs (13),
-128 GB Macs (11), 32-64 GB Macs (4), mixed multi-GPU ~72 GB rigs (4), and the
-Lenovo ThinkStation PGX. Engines: SGLang, vLLM, llama.cpp, MLX, Ollama,
-LM Studio, plus one custom-fork category. Model families span the 3.0, 3.5,
-3.6 and 3.8 lines including the VL and Omni branches; see the scope note below
-for what is deliberately absent.
+72 setups, 22 model families, 6 hardware classes, 8 engines, and 33 publishers.
+Eight model families currently have a curated practical baseline; fourteen are
+shown as `Not verified yet` rather than receiving an estimated requirement.
+Model families span the 3.0, 3.5, 3.6, and 3.8 lines including VL and Omni.
 
 Community entries came from three research passes (HuggingFace quant cards,
 GitHub run recipes, forum threads); every candidate was re-checked against the

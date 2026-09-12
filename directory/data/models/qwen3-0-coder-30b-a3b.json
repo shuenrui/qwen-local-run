@@ -26,5 +26,11 @@
   },
   "url": "https://huggingface.co/Qwen/Qwen3-Coder-30B-A3B-Instruct",
   "summary": "Wave-1 coder MoE: 30B total, 3B active, 256K native context, official FP8 export at 31.2GB.",
-  "updated": "2026-09-06"
+  "practical_baseline": {
+    "status": "not_verified",
+    "setup": null,
+    "reason": "No reported or measured stable 4-bit-or-better run is currently recorded.",
+    "reviewed": "2026-09-12"
+  },
+  "updated": "2026-09-12"
 }

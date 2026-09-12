@@ -27,5 +27,11 @@
   },
   "url": "https://huggingface.co/Qwen/Qwen3-Next-80B-A3B-Instruct",
   "summary": "First hybrid-attention Next MoE: 80B total, 3B active, 256K native context. FP8 (82.1GB) fits one 128GB unified-memory box.",
-  "updated": "2026-09-06"
+  "practical_baseline": {
+    "status": "not_verified",
+    "setup": null,
+    "reason": "No reported or measured stable 4-bit-or-better run is currently recorded.",
+    "reviewed": "2026-09-12"
+  },
+  "updated": "2026-09-12"
 }

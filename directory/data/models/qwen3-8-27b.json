@@ -40,5 +40,11 @@
     "Both are a deliberate agentic trade. The vendor's headline table (OSWorld 84.3, SWE-Pro 61.7) is all agentic and visual work; it says nothing about spreadsheets or long-form analysis."
   ],
   "sampler_guidance": "Thinking mode wants temperature=1.0, top_p=0.95, top_k=20, presence_penalty=0.0. Instruct/non-thinking wants temperature=0.7, top_p=0.8, top_k=20, presence_penalty=1.5. For agent work, community reports greedy (temperature 0) ties the thinking sampler on tool-calling at about 2.5x lower latency, and survived a fake-system-message injection the thinking setup fell for. Pull the reasoning_effort lever instead of temperature.",
-  "updated": "2026-09-05"
+  "practical_baseline": {
+    "status": "selected",
+    "setup": "qwen38-27b-unsloth-gguf-ollama-3090",
+    "rationale": "A reported Q4 lane on a single 24 GB consumer GPU using the simplest recorded runtime in this hardware tier.",
+    "reviewed": "2026-09-12"
+  },
+  "updated": "2026-09-12"
 }

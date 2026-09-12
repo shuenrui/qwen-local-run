@@ -26,5 +26,11 @@
   },
   "url": "https://huggingface.co/Qwen/Qwen3-14B",
   "summary": "Wave-1 dense 14B: BF16 (29.5GB) exceeds a 24GB card; the official FP8 export (16.3GB) fits.",
-  "updated": "2026-09-06"
+  "practical_baseline": {
+    "status": "not_verified",
+    "setup": null,
+    "reason": "No reported or measured stable 4-bit-or-better run is currently recorded.",
+    "reviewed": "2026-09-12"
+  },
+  "updated": "2026-09-12"
 }

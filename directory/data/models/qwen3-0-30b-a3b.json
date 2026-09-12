@@ -26,5 +26,11 @@
   "notes": [
     "No MTP head, so speculative decoding is off."
   ],
-  "updated": "2026-09-05"
+  "practical_baseline": {
+    "status": "selected",
+    "setup": "qwen3-30b-a3b-vllm-mlx-server-mac",
+    "rationale": "The only reported stable 4-bit-or-better lane, with a reproducible MLX server recipe and single-stream decode measurement.",
+    "reviewed": "2026-09-12"
+  },
+  "updated": "2026-09-12"
 }

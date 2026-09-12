@@ -13,11 +13,12 @@ directory does not collapse several incompatible recipes into one model row.
 
 ![The Qwen Local-Run Directory filtered to owner-measured setups](docs/dashboard-preview.png)
 
-## Three tabs
+## Four tabs
 
 | Tab | URL | What it answers |
 |---|---|---|
-| **Directory** | `/#/` | *What ways exist to run Qwen locally?* Every recipe, grouped into model-family shelves, with no machine selection and no personalization gate. |
+| **Models** | `/#/` | *Which Qwen model do I want, and what is its practical hardware floor?* Curated baselines reference exact sourced recipes; missing evidence says `Not verified yet`. |
+| **Recipes** | `/#/recipes` | *What ways exist to run Qwen locally?* Every recipe, grouped into model-family shelves, with no machine selection and no personalization gate. |
 | **My Hardware** | `/#/hardware` | *What can this machine run, and how confident is that?* Every compatibility result states its own memory arithmetic, its assumptions, and whether the evidence came from that exact device or merely a similar one. There is no unconditional "fits" verdict. |
 | **Compare** | `/#/compare` | *How do these 2–4 recipes actually differ?* Seven sections, every axis of incomparability named explicitly, and no winner declared. |
 
@@ -27,8 +28,8 @@ Recipes, model families and publishers have permanent, shareable URLs at
 
 ## What it answers
 
-1. **What exists?** Browse all 65 recipes across 22 model families without
-   answering a single question first.
+1. **What can I run?** Start from 22 model families, inspect a practical
+   hardware baseline, then open every recorded recipe for that model.
 2. **What performance has been observed?** Decode speed, time to first token,
    footprint and task measurements, each rendered with its metric, its
    concurrency, its statistic and its source. A single-stream figure always wins
@@ -45,11 +46,11 @@ The current snapshot contains:
 
 | | Coverage |
 |---|---:|
-| Runnable setups | 65 |
+| Runnable setups | 72 |
 | Model families | 22 |
 | Hardware classes | 6 |
-| Engines | 7 |
-| Publishers and builders | 29 |
+| Engines | 8 |
+| Publishers and builders | 33 |
 
 Coverage spans Qwen 3.0, 3.5, 3.6, and 3.8 families from 4B to 397B,
 including dense, MoE, vision, and Omni models. Hardware lanes include 24 GB
@@ -57,7 +58,9 @@ consumer GPUs, mixed multi-GPU desktops, 32-64 GB and 128 GB Macs, DGX Spark,
 and ThinkStation PGX. Engines include SGLang, vLLM, llama.cpp, MLX, Ollama,
 LM Studio, and builder-specific forks.
 
-Search runs across model, family, checkpoint, publisher, builder, engine,
+The homepage searches model names, generations, architectures, parameter
+counts, modalities, and summaries. The advanced Recipes search runs across
+model, family, checkpoint, publisher, builder, engine,
 configuration, quantization, command, step text, caveats and measurement
 methods. Seven filters stay on the surface — generation, architecture, engine,
 quantization, tested hardware, evidence and readiness — with eleven more behind
@@ -87,9 +90,9 @@ aid, not a cross-harness leaderboard.
 | Evidence | Meaning | Current setups |
 |---|---|---:|
 | `box` | Measured on the owner's DGX Spark, with date, sample count, and method | 4 |
-| `forum` | Reported by a community builder, with a resolving URL and quoted claim | 28 |
+| `forum` | Reported by a community builder, with a resolving URL and quoted claim | 34 |
 | `vendor` | Claimed by the artifact publisher | 1 |
-| `unverified` | Sourced runnable lane with no measurement yet | 32 |
+| `unverified` | Sourced runnable lane with no speed measurement yet | 34 |
 
 Evidence tiers are never blended. Negative results remain in the dataset, and
 quality measurements from different harnesses are never turned into a

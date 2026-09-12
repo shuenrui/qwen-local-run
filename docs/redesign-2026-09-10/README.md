@@ -1,5 +1,10 @@
 # Redesign — Qwen Local-Run Directory, 2026-09-10
 
+> **2026-09-12 model-first update:** the default route is now a model list with
+> a practical-baseline preview. The complete recipe directory described below
+> moved unchanged to `#/recipes`; see
+> [`../MODEL-FIRST-2026-09-12.md`](../MODEL-FIRST-2026-09-12.md).
+
 A ground-up redesign of the product's information architecture, interaction
 model, visual system, responsive behaviour and data presentation. The dataset's
 integrity and provenance rules are unchanged.

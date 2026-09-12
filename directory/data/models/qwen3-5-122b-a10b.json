@@ -26,5 +26,11 @@
     "Reported 52 tok/s and a 54.9 LongCode peak by the builder; not measured on our box.",
     "Runs under vLLM from the builder's repo, not from a stock engine launch."
   ],
-  "updated": "2026-09-05"
+  "practical_baseline": {
+    "status": "selected",
+    "setup": "qwen35-122b-a10b-albond-int4-vllm-spark",
+    "rationale": "The smallest well-documented reported 4-bit single-appliance lane, with substantial headroom and single-stream measurements.",
+    "reviewed": "2026-09-12"
+  },
+  "updated": "2026-09-12"
 }

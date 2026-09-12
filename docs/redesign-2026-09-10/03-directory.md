@@ -1,5 +1,9 @@
 # 03 — Tab 1: Directory
 
+> **Superseded on 2026-09-12 for the default route.** This advanced directory
+> now lives at `#/recipes`. The model-first homepage is specified in
+> [`../MODEL-FIRST-2026-09-12.md`](../MODEL-FIRST-2026-09-12.md).
+
 Route `#/`. The homepage, the default, and the only view that is never gated by
 anything. Every one of the 65 recipes is reachable here without selecting a
 machine, answering a question, or dismissing an overlay.

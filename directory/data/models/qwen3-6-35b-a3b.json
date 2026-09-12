@@ -31,5 +31,11 @@
     "SGLang mem-fraction 0.80-0.85 for this family, versus 0.95 on 3.8/MTP.",
     "If boot rejects the qwen3_5_moe arch, use lmsysorg/sglang:v0.5.15-cu130, the first release with native ModelOpt mixed-precision load and no patch needed."
   ],
-  "updated": "2026-09-05"
+  "practical_baseline": {
+    "status": "selected",
+    "setup": "qwen36-35b-a3b-mlx-flash-ssd-streaming-mac",
+    "rationale": "The most accessible reported 4-bit lane: a 32-64 GB Apple Silicon class with its SSD-streaming dependency stated.",
+    "reviewed": "2026-09-12"
+  },
+  "updated": "2026-09-12"
 }
