@@ -1,0 +1,149 @@
+{
+  "id": "qwen38-flash-next-unsloth-gguf-llamacpp-4090-cmoe",
+  "title": "Qwen3.8-Flash-Next 180B \u2014 one RTX 4090 + DDR4, full CPU-MoE offload (-cmoe) to 250k context",
+  "slug_note": "All 512 expert layers pinned to system RAM, attention on the GPU: VRAM drops 24GB -> 11.7GB with ~zero decode penalty, opening a 250k context window at ~21 tok/s.",
+  "model": "qwen3-8-flash-next",
+  "status": "reported",
+  "variation": {
+    "license": "Apache-2.0",
+    "downloads": null,
+    "checkpoint": "unsloth/Qwen3.8-Flash-Next-GGUF",
+    "publisher": "unsloth",
+    "quant": "gguf-q4",
+    "quant_detail": "UD-Q4_K_XL, 4 shards, 111.4GB total",
+    "format": "gguf",
+    "size_gb": 111.4,
+    "url": "https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF"
+  },
+  "engine": {
+    "id": "llama-cpp",
+    "config": "Same PR #27742 build as the hybrid lane; -cmoe pins every expert layer to DDR4, attention stays on the 4090. --fit off required; -b/-ub 4096.",
+    "image": null,
+    "requires_fork": true,
+    "draft_model": null,
+    "spec_decode": "none",
+    "flags": [
+      "-c 250000",
+      "--fit off",
+      "-b 4096",
+      "-ub 4096",
+      "-cmoe"
+    ]
+  },
+  "hardware": [
+    "gpu-24gb"
+  ],
+  "requirements": {
+    "memory_gb": 110,
+    "disk_gb": 112,
+    "min_vram_gb": 16,
+    "notes": "11.66GB VRAM at 80k rising to 18.3GB at the 250k window (~5.7GB headroom left on a 24GB card) + 110GB host RAM. 16GB cards should fit at reduced context (author claim, untested)."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 250000,
+    "max_context": 250000
+  },
+  "run": {
+    "repo": "https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF",
+    "command": "llama-server -m Qwen3.8-Flash-Next-UD-Q4_K_XL-00001-of-00004.gguf -c 250000 --fit off -b 4096 -ub 4096 -cmoe",
+    "steps": [
+      {
+        "kind": "do",
+        "text": "Download the 4 UD-Q4_K_XL shards from unsloth/Qwen3.8-Flash-Next-GGUF"
+      },
+      {
+        "kind": "cmd",
+        "text": "build llama.cpp from PR #27742 (see the hybrid lane)"
+      },
+      {
+        "kind": "cmd",
+        "text": "llama-server -m Qwen3.8-Flash-Next-UD-Q4_K_XL-00001-of-00004.gguf -c {80000|180000|250000} --fit off -b 4096 -ub 4096 -cmoe"
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "metric": "decode_per_stream",
+      "value": 20.84,
+      "unit": "tok/s",
+      "concurrency": 1,
+      "provenance": "forum",
+      "date": "2026-08-26",
+      "n": null,
+      "method": null,
+      "note": "-cmoe @80k ctx, 28k prompt; 11.66GB VRAM + 110GB RAM",
+      "source": "https://x.com/analogalok/status/2092697021790708148"
+    },
+    {
+      "metric": "decode_per_stream",
+      "value": 20.98,
+      "unit": "tok/s",
+      "concurrency": 1,
+      "provenance": "forum",
+      "date": "2026-08-26",
+      "n": null,
+      "method": null,
+      "note": "-cmoe @180k ctx; 15.6GB VRAM + 110GB RAM; prefill 357.75",
+      "source": "https://x.com/analogalok/status/2092697021790708148"
+    },
+    {
+      "metric": "decode_per_stream",
+      "value": 20.97,
+      "unit": "tok/s",
+      "concurrency": 1,
+      "provenance": "forum",
+      "date": "2026-08-26",
+      "n": null,
+      "method": null,
+      "note": "-cmoe @250k configured window, 28k prompt; 18.3GB VRAM (~5.7GB headroom); prefill 364.29",
+      "source": "https://x.com/analogalok/status/2092697021790708148"
+    },
+    {
+      "metric": "prefill_tok_s",
+      "value": 355.72,
+      "unit": "tok/s",
+      "concurrency": null,
+      "provenance": "forum",
+      "date": "2026-08-26",
+      "n": null,
+      "method": null,
+      "note": "@80k ctx (357.75 @180k, 364.29 @250k)",
+      "source": "https://x.com/analogalok/status/2092697021790708148"
+    }
+  ],
+  "caveats": [
+    "250k is the configured window; the benchmark prompt was 28k tokens at every context level \u2014 decode holds 20.8-21.0 tok/s across 80k->250k.",
+    "Prefill 355-364 tok/s across contexts with -b/-ub 4096.",
+    "Author's framing: a 4090 + ~100GB of cheap DDR4 serves 125B-class MoE inference; a 3090 + $1000 of DDR4 'would do the job' (untested).",
+    "Decode is ~1.6 tok/s slower than the hybrid -ncmoe lane at 80k; the trade buys 12GB of VRAM back and 3x the context."
+  ],
+  "provenance_tier": "forum",
+  "sources": [
+    {
+      "url": "https://x.com/analogalok/status/2092697021790708148#cmoe-full-offload",
+      "kind": "post",
+      "note": "second config from the same benchmark thread; rot-prone \u2014 raw payloads archived under tools/history/inputs/pass4-social/raw/"
+    },
+    {
+      "url": "https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF",
+      "kind": "model",
+      "note": "weights / quant card"
+    },
+    {
+      "url": "https://unsloth.ai/docs/models/qwen3.8-next",
+      "kind": "docs",
+      "note": "unsloth's Flash-Next run guide"
+    },
+    {
+      "url": "https://github.com/ggml-org/llama.cpp/pull/27742",
+      "kind": "repo",
+      "note": "llama.cpp architecture-support PR the build must come from"
+    }
+  ],
+  "updated": "2026-09-10",
+  "builder": "analogalok"
+}

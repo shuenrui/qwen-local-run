@@ -1,0 +1,1959 @@
+{
+ "via": "twitter-cli user-posts -n 50",
+ "user": "unslothAI",
+ "posts": [
+  {
+   "id": "2097319136468828664",
+   "text": "Qwen3.8-27B Unsloth GGUF is now the #1 most-liked GGUF of all time!\n\nThe model hit 10M downloads and 3.7K likes in just 24 days on Hugging Face - all thanks to you. 🤗🦥\n\nGGUF: https://t.co/xIdNwm7CLQ\nGuide: https://t.co/J2PwgMP6GZ https://t.co/X4yEQcafC6",
+   "author": {
+    "id": "1730159888402395136",
+    "name": "Unsloth AI",
+    "screenName": "UnslothAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036313340616777728/OLALWB2__normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1724,
+    "retweets": 125,
+    "replies": 70,
+    "quotes": 21,
+    "views": 86283,
+    "bookmarks": 487
+   },
+   "createdAt": "Tue Sep 08 13:40:23 +0000 2026",
+   "createdAtLocal": "2026-09-08 21:40",
+   "createdAtISO": "2026-09-08T13:40:23+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRsqm0xa0AIPvaW.jpg",
+     "width": 2424,
+     "height": 1877
+    }
+   ],
+   "urls": [
+    "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
+    "https://unsloth.ai/docs/models/qwen3.8"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2095935053440139737",
+   "text": "ICYMI, we're celebrating 1 BILLION+ downloads for @googlegemma 💎\n\nHow are developers actually using open models? @GoogleDeepMind’s @DynamicWebPaige caught up with devs and collaborators like @UnslothAI and @Qualcomm to hear how they’re building on-device tools, running local fine-tuning, and pushing multimodal breakthroughs.",
+   "author": {
+    "id": "50090898",
+    "name": "Google for Developers",
+    "screenName": "googledevs",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2042284161327648768/XHGnZShq_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 185,
+    "retweets": 18,
+    "replies": 10,
+    "quotes": 3,
+    "views": 54347,
+    "bookmarks": 22
+   },
+   "createdAt": "Fri Sep 04 18:00:31 +0000 2026",
+   "createdAtLocal": "2026-09-05 02:00",
+   "createdAtISO": "2026-09-04T18:00:31+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2095934931570425859/vid/avc1/1920x1080/FtgWUwkW_M-1okzh.mp4?tag=16",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "UnslothAI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2095897997619917074",
+   "text": "Local GGUF inference is now up to 3.3× faster at long context lengths",
+   "author": {
+    "id": "1896810733423493120",
+    "name": "Zixuan Li",
+    "screenName": "ZixuanLi_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2063659642111332353/jaPleXSN_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 270,
+    "retweets": 4,
+    "replies": 16,
+    "quotes": 3,
+    "views": 26264,
+    "bookmarks": 31
+   },
+   "createdAt": "Fri Sep 04 15:33:17 +0000 2026",
+   "createdAtLocal": "2026-09-04 23:33",
+   "createdAtISO": "2026-09-04T15:33:17+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "UnslothAI",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095852388888522890",
+    "text": "We made GLM-5.3-Flash run 3.3x faster locally!\n\nLocal GGUF inference is now 1.6–3.4× faster with optimized decoding and bonus multi-token prediction.\n\nRun 3-bit on 128GB setups via Unsloth Desktop or llama.cpp.\n\nGuide: https://t.co/axnDCrYeN7\nGGUF: https://t.co/E73FKC7IKM https://t.co/GDVn4IGCLi",
+    "author": {
+     "screenName": "UnslothAI",
+     "name": "Unsloth AI"
+    }
+   }
+  },
+  {
+   "id": "2095852388888522890",
+   "text": "We made GLM-5.3-Flash run 3.3x faster locally!\n\nLocal GGUF inference is now 1.6–3.4× faster with optimized decoding and bonus multi-token prediction.\n\nRun 3-bit on 128GB setups via Unsloth Desktop or llama.cpp.\n\nGuide: https://t.co/axnDCrYeN7\nGGUF: https://t.co/E73FKC7IKM https://t.co/GDVn4IGCLi",
+   "author": {
+    "id": "1730159888402395136",
+    "name": "Unsloth AI",
+    "screenName": "UnslothAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036313340616777728/OLALWB2__normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1475,
+    "retweets": 141,
+    "replies": 68,
+    "quotes": 31,
+    "views": 224807,
+    "bookmarks": 737
+   },
+   "createdAt": "Fri Sep 04 12:32:03 +0000 2026",
+   "createdAtLocal": "2026-09-04 20:32",
+   "createdAtISO": "2026-09-04T12:32:03+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRX2nQtasAIZDDQ.jpg",
+     "width": 3724,
+     "height": 4096
+    }
+   ],
+   "urls": [
+    "https://unsloth.ai/docs/models/glm-5.3-flash#faster-inference-and-mtp-support",
+    "https://huggingface.co/unsloth/GLM-5.3-Flash-GGUF"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2092616204787626030",
+    "text": "Introducing GLM-5.3-Flash\n\n- Leading capabilities at a highly competitive price\n- Natively multimodal with a 1M-token context window\n- A 320B-A18B model released under the MIT License\n- Previously previewed as Ox Alpha, running entirely on Chinese AI chips\n\nBlog: https://t.co/tzOmB7gdZP\n\nAvailable now across all official platforms:\n\nWeights: https://t.co/9LRMahY9Wa\nAPI: https://t.co/VcaQnzYmS9\nCoding Plan: https://t.co/Nk8Y98HNhU\nZCode: https://t.co/Peepqv4XSx\nChat: https://t.co/WCqWT0qCQb\nAutoClaw: https://t.co/aGEG5HqTTb",
+    "author": {
+     "screenName": "Zai_org",
+     "name": "Z.ai"
+    }
+   }
+  },
+  {
+   "id": "2095621641888055443",
+   "text": "You can now run Unsloth GGUFs locally in one-click via Hermes! ✨\n\nQwen3.8-27B, Qwen3.8-Flash, DeepSeek-V4-Flash and more are all supported. https://t.co/gK96v6oF3r",
+   "author": {
+    "id": "1730159888402395136",
+    "name": "Unsloth AI",
+    "screenName": "UnslothAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036313340616777728/OLALWB2__normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 887,
+    "retweets": 77,
+    "replies": 27,
+    "quotes": 16,
+    "views": 71050,
+    "bookmarks": 300
+   },
+   "createdAt": "Thu Sep 03 21:15:08 +0000 2026",
+   "createdAtLocal": "2026-09-04 05:15",
+   "createdAtISO": "2026-09-03T21:15:08+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRUkv5baAAAMJX6.jpg",
+     "width": 2458,
+     "height": 1262
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095602995874410664",
+    "text": "Hermes Desktop now sets up local models in one click.\n\nIt automatically reads your hardware, picks the best model for you, then downloads it and configures the runtime. https://t.co/LDw5x9xL5U",
+    "author": {
+     "screenName": "NousResearch",
+     "name": "Nous Research"
+    }
+   }
+  },
+  {
+   "id": "2095157074112164072",
+   "text": "Qwen3.8-Flash can now run 1.7× faster locally with MTP!⚡️\n\nGGUFs can reach 170 tokens/s on a RTX PRO 6000.\n\nMTP enables Qwen3.8-Flash-Next ~1.3–1.7× faster inference with no accuracy change.\n\nGGUFs: https://t.co/vXkjO3W0fj\nGuide: https://t.co/LLMclyJTeL https://t.co/KuWfuLOJBR",
+   "author": {
+    "id": "1730159888402395136",
+    "name": "Unsloth AI",
+    "screenName": "UnslothAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036313340616777728/OLALWB2__normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1190,
+    "retweets": 131,
+    "replies": 64,
+    "quotes": 16,
+    "views": 112764,
+    "bookmarks": 573
+   },
+   "createdAt": "Wed Sep 02 14:29:07 +0000 2026",
+   "createdAtLocal": "2026-09-02 22:29",
+   "createdAtISO": "2026-09-02T14:29:07+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRN9_L2bIAAi3yw.jpg",
+     "width": 3724,
+     "height": 4096
+    }
+   ],
+   "urls": [
+    "https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF",
+    "https://unsloth.ai/docs/models/qwen3.8-next"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2092639558815060281",
+    "text": "Qwen3.8-Flash can now be run locally! 🔥\n\nThe 125B MoE model outperforms Claude-Opus-4.6 (Max).\n\nRun on 75GB RAM via Unsloth GGUFs.\n\nQwen3.8-Flash-Next enables CPU RAM / unified mem setups to deliver near VRAM speeds.\n\nGuide: https://t.co/LLMclyJTeL\nGGUF: https://t.co/vXkjO3W0fj https://t.co/sPs8C2RJQw",
+    "author": {
+     "screenName": "UnslothAI",
+     "name": "Unsloth AI"
+    }
+   }
+  },
+  {
+   "id": "2094480283135316182",
+   "text": "⚡ Fine-tune and quantize AI models directly on NVIDIA Jetson.\n\nOur new Jetson AI Lab tutorial shows how to use Unsloth and memory-efficient QLoRA to customize models, export quantized GGUF files, and run them locally with llama.cpp.\n\nFollow hands-on examples for:\n🔹 NVIDIA Nemotron 3.5 Lightning on Jetson AGX Thor\n🔹 Qwen3.5-4B on Jetson Orin Nano\n\nStart optimizing: https://t.co/hDUCiNnQcW",
+   "author": {
+    "id": "92597440",
+    "name": "NVIDIA Robotics",
+    "screenName": "NVIDIARobotics",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1864439831335718915/WJ2VocNK_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 379,
+    "retweets": 53,
+    "replies": 12,
+    "quotes": 5,
+    "views": 23694,
+    "bookmarks": 161
+   },
+   "createdAt": "Mon Aug 31 17:39:47 +0000 2026",
+   "createdAtLocal": "2026-09-01 01:39",
+   "createdAtISO": "2026-08-31T17:39:47+00:00",
+   "media": [
+    {
+     "type": "animated_gif",
+     "url": "https://video.twimg.com/tweet_video/HREWsnWWIAAdLvR.mp4",
+     "width": 960,
+     "height": 540
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "UnslothAI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2093397494889890050",
+   "text": "GLM-5.3 can now be run locally!\n\nThe 2-bit model retains ~81% accuracy after we shrunk it from 1.51TB to 239GB (-83% size).\n\nRun on a 256GB Mac or RAM/VRAM setups.\n\nGLM-5.3 is the strongest open model to date.\n\nGuide: https://t.co/NLgb3CMB6A\nGGUF: https://t.co/Sqwq3xjgo5 https://t.co/n5lDUVM6ru",
+   "author": {
+    "id": "1730159888402395136",
+    "name": "Unsloth AI",
+    "screenName": "UnslothAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036313340616777728/OLALWB2__normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1905,
+    "retweets": 213,
+    "replies": 101,
+    "quotes": 44,
+    "views": 227950,
+    "bookmarks": 649
+   },
+   "createdAt": "Fri Aug 28 17:57:10 +0000 2026",
+   "createdAtLocal": "2026-08-29 01:57",
+   "createdAtISO": "2026-08-28T17:57:10+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQ09x_8boAAGke9.jpg",
+     "width": 3654,
+     "height": 4096
+    }
+   ],
+   "urls": [
+    "https://unsloth.ai/docs/models/glm-5.3",
+    "https://huggingface.co/unsloth/GLM-5.3-GGUF"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "UnslothAI",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2093354097122455713",
+    "text": "GLM-5.3 is now open-weight.\n\nOur most capable model for agentic coding and cyber defense is now available to download, run, and customize.\n\nWeights: https://t.co/v1IbWMXxg4\nTech blog: https://t.co/ekQkO83jCv https://t.co/f8XlJksKyf",
+    "author": {
+     "screenName": "Zai_org",
+     "name": "Z.ai"
+    }
+   }
+  },
+  {
+   "id": "2092986464196002094",
+   "text": "GLM-5.3-Flash can now be run locally! ✨\n\nRun 3-bit on 128GB RAM via Unsloth GGUF.\n\nGLM-5.3-Flash (ox-alpha) rivals Claude Opus 4.8 on DeepSWE, coding &amp; agentic benchmarks.\n\nGuide: https://t.co/oItBKYNrl9\nGGUF: https://t.co/E73FKC7IKM https://t.co/V1t8fDIUtp",
+   "author": {
+    "id": "1730159888402395136",
+    "name": "Unsloth AI",
+    "screenName": "UnslothAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036313340616777728/OLALWB2__normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1680,
+    "retweets": 200,
+    "replies": 106,
+    "quotes": 45,
+    "views": 304709,
+    "bookmarks": 674
+   },
+   "createdAt": "Thu Aug 27 14:43:53 +0000 2026",
+   "createdAtLocal": "2026-08-27 22:43",
+   "createdAtISO": "2026-08-27T14:43:53+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQvH_IVbsAATp_D.jpg",
+     "width": 3724,
+     "height": 4096
+    }
+   ],
+   "urls": [
+    "https://unsloth.ai/docs/models/glm-5.3-flash",
+    "https://huggingface.co/unsloth/GLM-5.3-Flash-GGUF"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2092616204787626030",
+    "text": "Introducing GLM-5.3-Flash\n\n- Leading capabilities at a highly competitive price\n- Natively multimodal with a 1M-token context window\n- A 320B-A18B model released under the MIT License\n- Previously previewed as Ox Alpha, running entirely on Chinese AI chips\n\nBlog: https://t.co/tzOmB7gdZP\n\nAvailable now across all official platforms:\n\nWeights: https://t.co/9LRMahY9Wa\nAPI: https://t.co/VcaQnzYmS9\nCoding Plan: https://t.co/Nk8Y98HNhU\nZCode: https://t.co/Peepqv4XSx\nChat: https://t.co/WCqWT0qCQb\nAutoClaw: https://t.co/aGEG5HqTTb",
+    "author": {
+     "screenName": "Zai_org",
+     "name": "Z.ai"
+    }
+   }
+  },
+  {
+   "id": "2092697021790708148",
+   "text": "The VRAM barrier is officially dead.\n\nI just ran Qwen 3.8 Flash Next (MoE) 125B A6B with a  250,000 context window on a single 24GB RTX 4090.\n\n21 tokens/sec decode. 364 t/s prefill. \n\nno mtp. no dflash. no kv cache quantization!\n\nWe are running datacenter models on consumer hardware.\n\nTested on Ubuntu 22 | CUDA 13.0 | PCIe 4.0 x16 | 110 GB DDR4 System RAM with a continuous 28k prompt across all runs.\n\n### The Benchmarks & Scaling\n\n# 1. Hybrid Offload (-ncmoe 40 @ 80k Context)\nOffloaded 40 expert layers to the GPU, pushing VRAM to the ceiling.\n\n./build/bin/llama-server -m Qwen3.8-Flash-Next-UD-Q4_K_XL-00001-of-00004.gguf -c 80000 --port 8080 -v --fit off -b 4096 -ub 4096 -ncmoe 40\n\nPrefill: 383.85 t/s | Decode: 22.52 t/s\nFootprint: 23.85 GB VRAM | 97 GB RAM\n\n# 2. Full CPU MoE Offload (-cmoe @ 80k Context)\n\nPinned all 512 expert layers to DDR4 RAM (-cmoe), keeping attention on the 4090.\n\nllama.cpp flags: (Same as above, replace -ncmoe 40 with -cmoe)\n\nPrefill: 355.72 t/s | Decode: 20.84 t/s\nFootprint: 11.66 GB VRAM (12GB+ VRAM freed up!) | 110 GB RAM\n\n# 3. The 180,000 Context Run\n\nPrefill: 357.75 t/s | Decode: 20.98 t/s | VRAM: 15.6 GB | RAM: 110 GB\n\n# 4. The 250,000 Context Absolute Ceiling\n\n./build/bin/llama-server -m Qwen3.8-Flash-Next-UD-Q4_K_XL-00001-of-00004.gguf -c 250000 --port 8080 -v --fit off -b 4096 -ub 4096 -cmoe\n\nPrefill: 364.29 t/s | Decode: 20.97 t/s\n\nFootprint: 18.3 GB VRAM (Still ~5.7 GB of VRAM headroom!) | 110 GB RAM\n\n### Key Insights:\n-b 4096 -ub 4096: doubles the prompt ingestion from ~150 to 364+ t/s.\n-cmoe Free Lunch: Shifting expert layers to DDR4 RAM slashes VRAM from 24GB to 11.6GB with virtually zero decode penalty (22.5 -> 20.9 t/s), enabling the 250k context ceiling.\n\nQwen 3.8 Flash-Next (UD-Q4_K_XL) is a massive 111.4 GB model split across 4 shards. To run this architecture, you must build from the experimental PR branch (#27742) by @danielhanchen:\n\ngit clone && cd llama.cpp \ngit fetch origin pull/27742/head:qwen-next && git checkout qwen-next \ncmake -B build -DGGML_CUDA=ON -DCMAKE_CUDA_ARCHITECTURES=native -DBUILD_SHARED_LIBS=OFF \ncmake --build build --config Release -j $(nproc) --target llama-server\n\nA single 4090 paired with 100 GB of cheap DDR4 RAM will comfortably serve production grade 125B inference.\n\nWhile Qwen 3.8 27B (dense) still holds the crown for single 3090/4090 rigs, Flash Next proves 125B hybrid models are officially viable on consumer hardware. \n\nHugging Face GGUF link and complete performance telemetry graphs are dropped in the replies below.\n\nGLM 5.3 Flash VS Qwen 3.8 Flash Next, which one takes the open weights crown this week?",
+   "author": {
+    "id": "2207203190",
+    "name": "Alok",
+    "screenName": "analogalok",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055727708261474304/tUAKpN50_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 4698,
+    "retweets": 455,
+    "replies": 161,
+    "quotes": 84,
+    "views": 1007896,
+    "bookmarks": 5153
+   },
+   "createdAt": "Wed Aug 26 19:33:45 +0000 2026",
+   "createdAtLocal": "2026-08-27 03:33",
+   "createdAtISO": "2026-08-26T19:33:45+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2092694542948659200/vid/avc1/1920x1080/nEbzUDFUT9OH2X2W.mp4?tag=29",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "UnslothAI",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2092639558815060281",
+    "text": "Qwen3.8-Flash can now be run locally! 🔥\n\nThe 125B MoE model outperforms Claude-Opus-4.6 (Max).\n\nRun on 75GB RAM via Unsloth GGUFs.\n\nQwen3.8-Flash-Next enables CPU RAM / unified mem setups to deliver near VRAM speeds.\n\nGuide: https://t.co/LLMclyJTeL\nGGUF: https://t.co/vXkjO3W0fj https://t.co/sPs8C2RJQw",
+    "author": {
+     "screenName": "UnslothAI",
+     "name": "Unsloth AI"
+    }
+   }
+  },
+  {
+   "id": "2092645926368403797",
+   "text": "A high-performance 125B model now running locally on just 75GB RAM! Thank you @UnslothAI for the day-0 support.🥳",
+   "author": {
+    "id": "1753339277386342400",
+    "name": "Qwen",
+    "screenName": "Alibaba_Qwen",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1548,
+    "retweets": 97,
+    "replies": 65,
+    "quotes": 15,
+    "views": 112268,
+    "bookmarks": 357
+   },
+   "createdAt": "Wed Aug 26 16:10:42 +0000 2026",
+   "createdAtLocal": "2026-08-27 00:10",
+   "createdAtISO": "2026-08-26T16:10:42+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "UnslothAI",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2092639558815060281",
+    "text": "Qwen3.8-Flash can now be run locally! 🔥\n\nThe 125B MoE model outperforms Claude-Opus-4.6 (Max).\n\nRun on 75GB RAM via Unsloth GGUFs.\n\nQwen3.8-Flash-Next enables CPU RAM / unified mem setups to deliver near VRAM speeds.\n\nGuide: https://t.co/LLMclyJTeL\nGGUF: https://t.co/vXkjO3W0fj https://t.co/sPs8C2RJQw",
+    "author": {
+     "screenName": "UnslothAI",
+     "name": "Unsloth AI"
+    }
+   }
+  },
+  {
+   "id": "2092639558815060281",
+   "text": "Qwen3.8-Flash can now be run locally! 🔥\n\nThe 125B MoE model outperforms Claude-Opus-4.6 (Max).\n\nRun on 75GB RAM via Unsloth GGUFs.\n\nQwen3.8-Flash-Next enables CPU RAM / unified mem setups to deliver near VRAM speeds.\n\nGuide: https://t.co/LLMclyJTeL\nGGUF: https://t.co/vXkjO3W0fj https://t.co/sPs8C2RJQw",
+   "author": {
+    "id": "1730159888402395136",
+    "name": "Unsloth AI",
+    "screenName": "UnslothAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036313340616777728/OLALWB2__normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2546,
+    "retweets": 320,
+    "replies": 165,
+    "quotes": 106,
+    "views": 1139582,
+    "bookmarks": 1528
+   },
+   "createdAt": "Wed Aug 26 15:45:24 +0000 2026",
+   "createdAtLocal": "2026-08-26 23:45",
+   "createdAtISO": "2026-08-26T15:45:24+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQqIwcDagAARhmp.jpg",
+     "width": 3724,
+     "height": 4096
+    }
+   ],
+   "urls": [
+    "https://unsloth.ai/docs/models/qwen3.8-next",
+    "https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2092591393424515114",
+    "text": "⚡Meet Qwen3.8-Flash, a multimodal MoE and an early preview of the Qwen4 architecture, now open-weight!\n\nThe production version Qwen3.8-Flash will be available soon via QwenCloud API at just $ 0.16/1M input tokens and $ 0.47/1M output tokens.\n\n125B parameters + 51B N-gram embeddings, with just 6B activated per token. Unmatched cost-efficiency.\n\nWhat's new: 🥳\n- Next architecture: GDN + QSA hybrid attention, Gated Residual, N-gram Embedding & Muon optimizer, serving as a precursor to the architecture used in Qwen4.\n- Dramatically lower training and inference costs: trained at just 1/9 the cost of Qwen3.7-Plus, while outperforming it across the board with especially strong gains in coding and office tasks.\n- Strong performance: scoring 58.7 on DeepSWE 1.1, 62.5 on SWE-bench Pro, 73.9 on CoWorkBench, 84.5 on AndroidWorld, and 95.7 on MathVision (with CI).\n- 262K native context, extensible to 1M with YaRN.\n\nWe’re also releasing the weights for Qwen3.8-Flash-Next, giving the community an early look at the new architecture we’re exploring for Qwen4.🚀\n\nWe can't wait to see what you build with Qwen3.8-Flash!👀👇\n- Blog: https://t.co/M5hYypFLgJ\n- Technical Report: https://t.co/IF0gObIkQO\n- Hugging Face: https://t.co/6ow8QVAABt\n- ModelScope: https://t.co/tDOn2jNuFG",
+    "author": {
+     "screenName": "Alibaba_Qwen",
+     "name": "Qwen"
+    }
+   }
+  },
+  {
+   "id": "2092255772214509698",
+   "text": "You can now fine-tune Qwen3.8-27B for free with our notebook! 🔥\n\nLocal training works on 24GB VRAM.\n\nUnsloth trains Qwen3.8-27B 1.5x faster with 50% less VRAM.\n\nGitHub: https://t.co/aZWYAtakBP\nQwen3.8-27B Notebooks + Guide: https://t.co/3GE3WVWIOY https://t.co/lKJj9547X8",
+   "author": {
+    "id": "1730159888402395136",
+    "name": "Unsloth AI",
+    "screenName": "UnslothAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036313340616777728/OLALWB2__normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2037,
+    "retweets": 243,
+    "replies": 66,
+    "quotes": 27,
+    "views": 157538,
+    "bookmarks": 1505
+   },
+   "createdAt": "Tue Aug 25 14:20:22 +0000 2026",
+   "createdAtLocal": "2026-08-25 22:20",
+   "createdAtISO": "2026-08-25T14:20:22+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQkvY-kbUAAJjic.jpg",
+     "width": 3739,
+     "height": 4096
+    }
+   ],
+   "urls": [
+    "https://github.com/unslothai/unsloth",
+    "https://unsloth.ai/docs/models/qwen3.8/train"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2090499172118241668",
+   "text": "We did a new Unsloth Desktop release!\n\n* Experimental auto compaction for any model\n* LAN &amp; Remote Access tabs\n* Faster &amp; smoother chatting\n* Over 200 PRs merged!\n\nFor compaction, we use a mix of RAG + forced 1st turn RAG + tail - let us know how it goes!\n\nhttps://t.co/QFoIMuzoVS",
+   "author": {
+    "id": "717359704226172928",
+    "name": "Daniel Han",
+    "screenName": "danielhanchen",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1624054272676532224/UNv4ONME_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 169,
+    "retweets": 16,
+    "replies": 14,
+    "quotes": 2,
+    "views": 13555,
+    "bookmarks": 40
+   },
+   "createdAt": "Thu Aug 20 18:00:16 +0000 2026",
+   "createdAtLocal": "2026-08-21 02:00",
+   "createdAtISO": "2026-08-20T18:00:16+00:00",
+   "media": [],
+   "urls": [
+    "https://github.com/unslothai/unsloth/releases/tag/v0.1.801-beta"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "UnslothAI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2090289279037821023",
+   "text": "Huge thanks to Unsloth for the great work. This is wonderful news for the community! 🥳Qwen3.8-27B, smaller and sharper than ever. Let's try it! @UnslothAI",
+   "author": {
+    "id": "1753339277386342400",
+    "name": "Qwen",
+    "screenName": "Alibaba_Qwen",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2068,
+    "retweets": 120,
+    "replies": 53,
+    "quotes": 11,
+    "views": 144698,
+    "bookmarks": 470
+   },
+   "createdAt": "Thu Aug 20 04:06:14 +0000 2026",
+   "createdAtLocal": "2026-08-20 12:06",
+   "createdAtISO": "2026-08-20T04:06:14+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "UnslothAI",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2090103470015828184",
+    "text": "We’re releasing new Qwen3.8-27B GGUFs with 10% higher accuracy.\n\nUnsloth Dynamic V3 outperforms others by &gt;10% on Div-300, KLD &amp; more benchmarks.\n\nWe also release 1-bit quants that retain 77% accuracy. Run on 8GB RAM.\n\nBlog: https://t.co/tHsBexyh2K\nGGUF: https://t.co/xIdNwm7CLQ https://t.co/vIh7sDFKyZ",
+    "author": {
+     "screenName": "UnslothAI",
+     "name": "Unsloth AI"
+    }
+   }
+  },
+  {
+   "id": "2090103470015828184",
+   "text": "We’re releasing new Qwen3.8-27B GGUFs with 10% higher accuracy.\n\nUnsloth Dynamic V3 outperforms others by &gt;10% on Div-300, KLD &amp; more benchmarks.\n\nWe also release 1-bit quants that retain 77% accuracy. Run on 8GB RAM.\n\nBlog: https://t.co/tHsBexyh2K\nGGUF: https://t.co/xIdNwm7CLQ https://t.co/vIh7sDFKyZ",
+   "author": {
+    "id": "1730159888402395136",
+    "name": "Unsloth AI",
+    "screenName": "UnslothAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036313340616777728/OLALWB2__normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 5217,
+    "retweets": 612,
+    "replies": 225,
+    "quotes": 167,
+    "views": 1168795,
+    "bookmarks": 3373
+   },
+   "createdAt": "Wed Aug 19 15:47:54 +0000 2026",
+   "createdAtLocal": "2026-08-19 23:47",
+   "createdAtISO": "2026-08-19T15:47:54+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQGJu-xaQAAs-Jg.jpg",
+     "width": 3724,
+     "height": 4096
+    }
+   ],
+   "urls": [
+    "https://unsloth.ai/docs/basics/dynamic-3.0-ggufs",
+    "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2088281537427235320",
+    "text": "Qwen3.8-27B can now be run locally! ✨\n\nRun on 17GB RAM via Unsloth Dynamic GGUFs.\n\nQwen3.8-27B is by far the strongest model for its size. We also uploaded NVFP4 quants.\n\nGGUF: https://t.co/xIdNwm7CLQ\nGuide: https://t.co/J2PwgMP6GZ https://t.co/NKFJuPXFyG",
+    "author": {
+     "screenName": "UnslothAI",
+     "name": "Unsloth AI"
+    }
+   }
+  },
+  {
+   "id": "2089541444466090064",
+   "text": "Qwen3.8-27B Unsloth GGUF is now the #2 trending model on Hugging Face with 2.7M downloads! 💗\n\nUnsloth also reached #3 trending on GitHub!\n\nThanks so much for the love!\n\nModel: https://t.co/xIdNwm7CLQ\nGitHub: https://t.co/aZWYAtakBP https://t.co/zXwguQ3aBi",
+   "author": {
+    "id": "1730159888402395136",
+    "name": "Unsloth AI",
+    "screenName": "UnslothAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036313340616777728/OLALWB2__normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1466,
+    "retweets": 79,
+    "replies": 55,
+    "quotes": 14,
+    "views": 130536,
+    "bookmarks": 272
+   },
+   "createdAt": "Tue Aug 18 02:34:36 +0000 2026",
+   "createdAtLocal": "2026-08-18 10:34",
+   "createdAtISO": "2026-08-18T02:34:36+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HP-KqytasAAFJDP.jpg",
+     "width": 2206,
+     "height": 1638
+    }
+   ],
+   "urls": [
+    "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
+    "https://github.com/unslothai/unsloth"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2089462656998551937",
+   "text": "Local AI just got a major upgrade.\n\nFine-tune and run AI models locally with @UnslothAI Desktop, plus get up to 20% faster llama.cpp performance (@ggerganov) with our new optimizations. https://t.co/KuJgEp2qtK",
+   "author": {
+    "id": "1853898859455348736",
+    "name": "NVIDIA RTX Spark",
+    "screenName": "NVIDIARTXSpark",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2061303426479431680/BDJQPK6Q_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 176,
+    "retweets": 22,
+    "replies": 15,
+    "quotes": 3,
+    "views": 17403,
+    "bookmarks": 54
+   },
+   "createdAt": "Mon Aug 17 21:21:32 +0000 2026",
+   "createdAtLocal": "2026-08-18 05:21",
+   "createdAtISO": "2026-08-17T21:21:32+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2089462625289535488/vid/avc1/720x1280/hofZ7fjphqKyra4j.mp4?tag=14",
+     "width": 1080,
+     "height": 1920
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "UnslothAI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2088627177655050362",
+   "text": "Qwen3.8-27B GGUF has reached 1,000 likes in less than 24 hours! ❤️\n\nIt's now the #3 trending model on Hugging Face with 1M overall downloads.\n\nRun on 17GB RAM/VRAM setups via Unsloth!\n\nModel: https://t.co/xIdNwm7CLQ\nGitHub: https://t.co/aZWYAtakBP https://t.co/uRl7rQmrpE",
+   "author": {
+    "id": "1730159888402395136",
+    "name": "Unsloth AI",
+    "screenName": "UnslothAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036313340616777728/OLALWB2__normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1473,
+    "retweets": 90,
+    "replies": 70,
+    "quotes": 11,
+    "views": 56174,
+    "bookmarks": 238
+   },
+   "createdAt": "Sat Aug 15 14:01:38 +0000 2026",
+   "createdAtLocal": "2026-08-15 22:01",
+   "createdAtISO": "2026-08-15T14:01:38+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HPxLA2yaQAA4htR.jpg",
+     "width": 2375,
+     "height": 1501
+    }
+   ],
+   "urls": [
+    "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
+    "https://github.com/unslothai/unsloth"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2088358716210811369",
+   "text": "Qwen3.8-27B + Unsloth is wow! Feels like having an Opus-level coding agent running fully locally it edits, sees, fixes, and more. Huge congratulations to Qwen for dropping a true Opus-class model that actually runs on local hardware, and to Unsloth for making it easy to play with!\n\n@Alibaba_Qwen @QwenDevs  @UnslothAI",
+   "author": {
+    "id": "1036524312",
+    "name": "Rey Josias Reinoso",
+    "screenName": "ReyReinoso",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1866932494559260672/spvF5j7O_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 314,
+    "retweets": 22,
+    "replies": 9,
+    "quotes": 5,
+    "views": 29965,
+    "bookmarks": 167
+   },
+   "createdAt": "Fri Aug 14 20:14:52 +0000 2026",
+   "createdAtLocal": "2026-08-15 04:14",
+   "createdAtISO": "2026-08-14T20:14:52+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2088357744193556480/vid/avc1/2560x1380/COE7Vc_32boaHe89.mp4?tag=29",
+     "width": 2560,
+     "height": 1380
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "UnslothAI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2088344959766392937",
+   "text": "Share your results from Qwen3.8-27B! 👇\n\nHere's 4-bit Qwen3.8-27B GGUF generating an interactive volcano simulation with geology, thermodynamics, fluid flow, buoyancy/drag, projectiles, cooling, groundwater interaction, and environmental effects in Unsloth Desktop.\n\nWhat’s your favorite prompt to test a new model with?\n\nGitHub: https://t.co/2kXqhhvLsb",
+   "author": {
+    "id": "1730159888402395136",
+    "name": "Unsloth AI",
+    "screenName": "UnslothAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036313340616777728/OLALWB2__normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 841,
+    "retweets": 75,
+    "replies": 45,
+    "quotes": 9,
+    "views": 70916,
+    "bookmarks": 184
+   },
+   "createdAt": "Fri Aug 14 19:20:12 +0000 2026",
+   "createdAtLocal": "2026-08-15 03:20",
+   "createdAtISO": "2026-08-14T19:20:12+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2088344541934055425/vid/avc1/1440x1080/-Tr-WKcX1ZT51vV8.mp4?tag=29",
+     "width": 1440,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2088281537427235320",
+    "text": "Qwen3.8-27B can now be run locally! ✨\n\nRun on 17GB RAM via Unsloth Dynamic GGUFs.\n\nQwen3.8-27B is by far the strongest model for its size. We also uploaded NVFP4 quants.\n\nGGUF: https://t.co/xIdNwm7CLQ\nGuide: https://t.co/J2PwgMP6GZ https://t.co/NKFJuPXFyG",
+    "author": {
+     "screenName": "UnslothAI",
+     "name": "Unsloth AI"
+    }
+   }
+  },
+  {
+   "id": "2088281537427235320",
+   "text": "Qwen3.8-27B can now be run locally! ✨\n\nRun on 17GB RAM via Unsloth Dynamic GGUFs.\n\nQwen3.8-27B is by far the strongest model for its size. We also uploaded NVFP4 quants.\n\nGGUF: https://t.co/xIdNwm7CLQ\nGuide: https://t.co/J2PwgMP6GZ https://t.co/NKFJuPXFyG",
+   "author": {
+    "id": "1730159888402395136",
+    "name": "Unsloth AI",
+    "screenName": "UnslothAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036313340616777728/OLALWB2__normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 5191,
+    "retweets": 623,
+    "replies": 204,
+    "quotes": 177,
+    "views": 1322390,
+    "bookmarks": 2747
+   },
+   "createdAt": "Fri Aug 14 15:08:11 +0000 2026",
+   "createdAtLocal": "2026-08-14 23:08",
+   "createdAtISO": "2026-08-14T15:08:11+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HPsQjSrbcAM41AY.jpg",
+     "width": 3654,
+     "height": 4096
+    }
+   ],
+   "urls": [
+    "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
+    "https://unsloth.ai/docs/models/qwen3.8"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2088280182356611304",
+    "text": "We promised open weights for Qwen3.8. Now, time to meet them! 🎉\n\n⚡ Qwen3.8-27B:\n- A native multimodal dense model. With just 27B parameters, it outperforms Qwen3.7-Plus overall and shines in real-world coding & office workflows.\n- 262K native context, easily extendable to 1M tokens via YaRN.\n- Built for builders. Highly efficient, high-quality, and licensed under Apache 2.0.\n\n🚀 The open weights for Qwen3.8-2.4T-A95B (Max-level) have also been released recently.\n\nWhether you're shipping lightweight applications with Qwen3.8-27B locally or building agents with Qwen3.8-2.4T-A95B, they're yours now!\n\nDownload, deploy, and build something we haven't imagined yet. 👀👇\n- Hugging Face：\nhttps://t.co/4kaAcqYEVj\n- ModelScope：\nhttps://t.co/eRIMZCGkhC",
+    "author": {
+     "screenName": "Alibaba_Qwen",
+     "name": "Qwen"
+    }
+   }
+  },
+  {
+   "id": "2088324431961821443",
+   "text": "@Alibaba_Qwen You can now run and train Qwen3.8-27B locally in Unsloth Desktop! 🦥\n\nWe also did a new release with a lot of new releases and performance improvements! https://t.co/aZWYAtakBP",
+   "author": {
+    "id": "1730159888402395136",
+    "name": "Unsloth AI",
+    "screenName": "UnslothAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036313340616777728/OLALWB2__normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 125,
+    "retweets": 8,
+    "replies": 5,
+    "quotes": 0,
+    "views": 17899,
+    "bookmarks": 91
+   },
+   "createdAt": "Fri Aug 14 17:58:38 +0000 2026",
+   "createdAtLocal": "2026-08-15 01:58",
+   "createdAtISO": "2026-08-14T17:58:38+00:00",
+   "media": [],
+   "urls": [
+    "https://github.com/unslothai/unsloth"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2088296583368781939",
+   "text": "27B on 17GB RAM. Are you ready to create something incredible? 😎\nThanks for highlighting it! @UnslothAI",
+   "author": {
+    "id": "1753339277386342400",
+    "name": "Qwen",
+    "screenName": "Alibaba_Qwen",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 5672,
+    "retweets": 402,
+    "replies": 112,
+    "quotes": 46,
+    "views": 475746,
+    "bookmarks": 2076
+   },
+   "createdAt": "Fri Aug 14 16:07:58 +0000 2026",
+   "createdAtLocal": "2026-08-15 00:07",
+   "createdAtISO": "2026-08-14T16:07:58+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "UnslothAI",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2088281537427235320",
+    "text": "Qwen3.8-27B can now be run locally! ✨\n\nRun on 17GB RAM via Unsloth Dynamic GGUFs.\n\nQwen3.8-27B is by far the strongest model for its size. We also uploaded NVFP4 quants.\n\nGGUF: https://t.co/xIdNwm7CLQ\nGuide: https://t.co/J2PwgMP6GZ https://t.co/NKFJuPXFyG",
+    "author": {
+     "screenName": "UnslothAI",
+     "name": "Unsloth AI"
+    }
+   }
+  },
+  {
+   "id": "2087930141217607798",
+   "text": "You can now fine-tune Meta Muse Glimmer 30B for free! 🔥\n\nOur free notebook also supports GRPO RL training.\n\nUnsloth trains Muse Glimmer 1.5× faster with 50% less VRAM vs FA2 setups. Train locally with 24GB VRAM.\n\nGuide: https://t.co/gEykiA7ygY\nNotebooks: https://t.co/LX1RWMo7V5 https://t.co/au5xaspsg9",
+   "author": {
+    "id": "1730159888402395136",
+    "name": "Unsloth AI",
+    "screenName": "UnslothAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036313340616777728/OLALWB2__normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 632,
+    "retweets": 66,
+    "replies": 22,
+    "quotes": 8,
+    "views": 36080,
+    "bookmarks": 297
+   },
+   "createdAt": "Thu Aug 13 15:51:52 +0000 2026",
+   "createdAtLocal": "2026-08-13 23:51",
+   "createdAtISO": "2026-08-13T15:51:52+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HPnRTMCboAASb1c.jpg",
+     "width": 3523,
+     "height": 4096
+    }
+   ],
+   "urls": [
+    "https://unsloth.ai/docs/models/muse-glimmer/train",
+    "https://unsloth.ai/docs/models/muse-glimmer/train#free-fine-tuning-notebooks"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2087598047589196052",
+   "text": "2-bit NVIDIA Nemotron 3.5 Lightning ran tool calls nonstop for 10 minutes on just 22GB of VRAM. 🤯\n\nIt cited 80+ websites, executed code &amp; searched for 10 real-world locations.\n\nRun and train via Unsloth Desktop.\n\nGGUF: https://t.co/PAr0nqR1CN\nGuide: https://t.co/TbNdgO7qPf https://t.co/REnED1LPqy",
+   "author": {
+    "id": "1730159888402395136",
+    "name": "Unsloth AI",
+    "screenName": "UnslothAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036313340616777728/OLALWB2__normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 718,
+    "retweets": 69,
+    "replies": 26,
+    "quotes": 6,
+    "views": 84603,
+    "bookmarks": 329
+   },
+   "createdAt": "Wed Aug 12 17:52:14 +0000 2026",
+   "createdAtLocal": "2026-08-13 01:52",
+   "createdAtISO": "2026-08-12T17:52:14+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2087597811881910272/vid/avc1/1440x1080/nBXlrSaM-G2LT-7s.mp4?tag=29",
+     "width": 1440,
+     "height": 1080
+    }
+   ],
+   "urls": [
+    "https://huggingface.co/unsloth/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-GGUF",
+    "https://unsloth.ai/docs/models/nemotron-3.5"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2087162151995629926",
+    "text": "Introducing NVIDIA Nemotron 3.5 Lightning⚡\n\nAn open 30B MoE model with 3B active parameters, built for always-on agents to complete high-volume, specialized tasks faster.\n\nIt delivers up to 4x the output speed of similar-sized models. https://t.co/ENWrZe76pU",
+    "author": {
+     "screenName": "NVIDIAAI",
+     "name": "NVIDIA AI"
+    }
+   }
+  },
+  {
+   "id": "2087569665652580797",
+   "text": "Qwen3.8 can now be run locally! 🔥\n\nWe shrank Qwen3.8-2.4T-A95B from 4.9TB to 397GB (-91% size) via Dynamic 1-bit by selectively quantizing layers\n\nRun on 410GB+ RAM/VRAM via Unsloth Desktop\n\nQwen3.8 rivals GPT-5.6 Sol\n\nGuide: https://t.co/J2PwgMP6GZ\nGGUF: https://t.co/7K1KdtnO2I https://t.co/e3lQDdkkI1",
+   "author": {
+    "id": "1730159888402395136",
+    "name": "Unsloth AI",
+    "screenName": "UnslothAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036313340616777728/OLALWB2__normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 3350,
+    "retweets": 385,
+    "replies": 173,
+    "quotes": 120,
+    "views": 360364,
+    "bookmarks": 1099
+   },
+   "createdAt": "Wed Aug 12 15:59:28 +0000 2026",
+   "createdAtLocal": "2026-08-12 23:59",
+   "createdAtISO": "2026-08-12T15:59:28+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HPiJheraIAAA-WN.jpg",
+     "width": 3654,
+     "height": 4096
+    }
+   ],
+   "urls": [
+    "https://unsloth.ai/docs/models/qwen3.8",
+    "https://huggingface.co/unsloth/Qwen3.8-2.4T-A95B-GGUF"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2087193276147466385",
+   "text": "You can now be a sloth because Unsloth is coming to your desktop! 🦥🦥",
+   "author": {
+    "id": "761086481821634560",
+    "name": "Hemant Mohapatra",
+    "screenName": "MohapatraHemant",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1636967753704951811/Cn6f8Atm_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 66,
+    "retweets": 5,
+    "replies": 3,
+    "quotes": 0,
+    "views": 29748,
+    "bookmarks": 24
+   },
+   "createdAt": "Tue Aug 11 15:03:49 +0000 2026",
+   "createdAtLocal": "2026-08-11 23:03",
+   "createdAtISO": "2026-08-11T15:03:49+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "UnslothAI",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2087177146662072546",
+    "text": "Introducing Unsloth Desktop 🦥\nThe first desktop app to run and train models locally.\n\n• Open-source. Runs on Mac, Windows and Linux\n• Supports MLX, diffusion image/video, audio, GGUF\n• Connect Claude Code and Codex to local LLMs\n• 50% more accurate, self-healing tool calls + sandboxed code exec\n• Works for CPU + multiGPU setups - NVIDIA, AMD, Intel, Mac\n• Train models 2× faster with 70% less VRAM\n• Private web search, deep research, RAG, MCP and exports (NVFP4, GGUF)\n• Use Unsloth’s OpenAI-compatible API and cloud models\n• Securely deploy LLMs remotely and access anywhere\n\nUnsloth Desktop is now available on https://t.co/xxBDOI9ApK and GitHub.\n\nGitHub: https://t.co/2kXqhhvLsb\nBlog and Guide: https://t.co/CYosNAQHva",
+    "author": {
+     "screenName": "UnslothAI",
+     "name": "Unsloth AI"
+    }
+   }
+  },
+  {
+   "id": "2087414081762537722",
+   "text": "Unsloth just turned local AI into a desktop app.\n\nRun or fine-tune models on your own machine, then connect them to Claude Code or Codex through an OpenAI-compatible API.",
+   "author": {
+    "id": "1260921",
+    "name": "Kai",
+    "screenName": "hqmank",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2001227557765832707/XG7mxw62_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 46,
+    "retweets": 2,
+    "replies": 2,
+    "quotes": 0,
+    "views": 8135,
+    "bookmarks": 17
+   },
+   "createdAt": "Wed Aug 12 05:41:14 +0000 2026",
+   "createdAtLocal": "2026-08-12 13:41",
+   "createdAtISO": "2026-08-12T05:41:14+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "UnslothAI",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2087177146662072546",
+    "text": "Introducing Unsloth Desktop 🦥\nThe first desktop app to run and train models locally.\n\n• Open-source. Runs on Mac, Windows and Linux\n• Supports MLX, diffusion image/video, audio, GGUF\n• Connect Claude Code and Codex to local LLMs\n• 50% more accurate, self-healing tool calls + sandboxed code exec\n• Works for CPU + multiGPU setups - NVIDIA, AMD, Intel, Mac\n• Train models 2× faster with 70% less VRAM\n• Private web search, deep research, RAG, MCP and exports (NVFP4, GGUF)\n• Use Unsloth’s OpenAI-compatible API and cloud models\n• Securely deploy LLMs remotely and access anywhere\n\nUnsloth Desktop is now available on https://t.co/xxBDOI9ApK and GitHub.\n\nGitHub: https://t.co/2kXqhhvLsb\nBlog and Guide: https://t.co/CYosNAQHva",
+    "author": {
+     "screenName": "UnslothAI",
+     "name": "Unsloth AI"
+    }
+   }
+  },
+  {
+   "id": "2087290273416057310",
+   "text": "And it supports Linux, because they're just cool like that.",
+   "author": {
+    "id": "2018360760984875009",
+    "name": "Lynn Cole",
+    "screenName": "priestessofdada",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2058519822225301504/ZxTGqZoI_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 50,
+    "retweets": 2,
+    "replies": 1,
+    "quotes": 0,
+    "views": 5251,
+    "bookmarks": 5
+   },
+   "createdAt": "Tue Aug 11 21:29:15 +0000 2026",
+   "createdAtLocal": "2026-08-12 05:29",
+   "createdAtISO": "2026-08-11T21:29:15+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "UnslothAI",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2087177146662072546",
+    "text": "Introducing Unsloth Desktop 🦥\nThe first desktop app to run and train models locally.\n\n• Open-source. Runs on Mac, Windows and Linux\n• Supports MLX, diffusion image/video, audio, GGUF\n• Connect Claude Code and Codex to local LLMs\n• 50% more accurate, self-healing tool calls + sandboxed code exec\n• Works for CPU + multiGPU setups - NVIDIA, AMD, Intel, Mac\n• Train models 2× faster with 70% less VRAM\n• Private web search, deep research, RAG, MCP and exports (NVFP4, GGUF)\n• Use Unsloth’s OpenAI-compatible API and cloud models\n• Securely deploy LLMs remotely and access anywhere\n\nUnsloth Desktop is now available on https://t.co/xxBDOI9ApK and GitHub.\n\nGitHub: https://t.co/2kXqhhvLsb\nBlog and Guide: https://t.co/CYosNAQHva",
+    "author": {
+     "screenName": "UnslothAI",
+     "name": "Unsloth AI"
+    }
+   }
+  },
+  {
+   "id": "2087201849870864702",
+   "text": "Run and train AI models locally 🦥",
+   "author": {
+    "id": "915614943797551104",
+    "name": "Alex Cheema",
+    "screenName": "alexocheema",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1671532231687282689/vlbc3Ytw_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 138,
+    "retweets": 10,
+    "replies": 2,
+    "quotes": 0,
+    "views": 17815,
+    "bookmarks": 52
+   },
+   "createdAt": "Tue Aug 11 15:37:54 +0000 2026",
+   "createdAtLocal": "2026-08-11 23:37",
+   "createdAtISO": "2026-08-11T15:37:54+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "UnslothAI",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2087177146662072546",
+    "text": "Introducing Unsloth Desktop 🦥\nThe first desktop app to run and train models locally.\n\n• Open-source. Runs on Mac, Windows and Linux\n• Supports MLX, diffusion image/video, audio, GGUF\n• Connect Claude Code and Codex to local LLMs\n• 50% more accurate, self-healing tool calls + sandboxed code exec\n• Works for CPU + multiGPU setups - NVIDIA, AMD, Intel, Mac\n• Train models 2× faster with 70% less VRAM\n• Private web search, deep research, RAG, MCP and exports (NVFP4, GGUF)\n• Use Unsloth’s OpenAI-compatible API and cloud models\n• Securely deploy LLMs remotely and access anywhere\n\nUnsloth Desktop is now available on https://t.co/xxBDOI9ApK and GitHub.\n\nGitHub: https://t.co/2kXqhhvLsb\nBlog and Guide: https://t.co/CYosNAQHva",
+    "author": {
+     "screenName": "UnslothAI",
+     "name": "Unsloth AI"
+    }
+   }
+  },
+  {
+   "id": "2087230328146698259",
+   "text": "Training AND running AI models locally from the same desktop app? Yes please. 🔥\n\nSuper cool to see @UnslothAI Desktop bringing training, fine-tuning, inference, agents and more together locally in one fully open-source app.\n\nTry it out today on your favorite NVIDIA hardware.",
+   "author": {
+    "id": "1853898859455348736",
+    "name": "NVIDIA RTX Spark",
+    "screenName": "NVIDIARTXSpark",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2061303426479431680/BDJQPK6Q_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 191,
+    "retweets": 13,
+    "replies": 7,
+    "quotes": 1,
+    "views": 15915,
+    "bookmarks": 45
+   },
+   "createdAt": "Tue Aug 11 17:31:03 +0000 2026",
+   "createdAtLocal": "2026-08-12 01:31",
+   "createdAtISO": "2026-08-11T17:31:03+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "UnslothAI",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2087177146662072546",
+    "text": "Introducing Unsloth Desktop 🦥\nThe first desktop app to run and train models locally.\n\n• Open-source. Runs on Mac, Windows and Linux\n• Supports MLX, diffusion image/video, audio, GGUF\n• Connect Claude Code and Codex to local LLMs\n• 50% more accurate, self-healing tool calls + sandboxed code exec\n• Works for CPU + multiGPU setups - NVIDIA, AMD, Intel, Mac\n• Train models 2× faster with 70% less VRAM\n• Private web search, deep research, RAG, MCP and exports (NVFP4, GGUF)\n• Use Unsloth’s OpenAI-compatible API and cloud models\n• Securely deploy LLMs remotely and access anywhere\n\nUnsloth Desktop is now available on https://t.co/xxBDOI9ApK and GitHub.\n\nGitHub: https://t.co/2kXqhhvLsb\nBlog and Guide: https://t.co/CYosNAQHva",
+    "author": {
+     "screenName": "UnslothAI",
+     "name": "Unsloth AI"
+    }
+   }
+  },
+  {
+   "id": "2087178147426935047",
+   "text": "Unsloth Desktop to run and train local models! 🔥\n\nDefinitely gonna try it",
+   "author": {
+    "id": "1550009227493752834",
+    "name": "Mia",
+    "screenName": "MiaAI_lab",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2063908041691484160/5XsJBn7I_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 281,
+    "retweets": 12,
+    "replies": 8,
+    "quotes": 1,
+    "views": 33647,
+    "bookmarks": 142
+   },
+   "createdAt": "Tue Aug 11 14:03:42 +0000 2026",
+   "createdAtLocal": "2026-08-11 22:03",
+   "createdAtISO": "2026-08-11T14:03:42+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "UnslothAI",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2087177146662072546",
+    "text": "Introducing Unsloth Desktop 🦥\nThe first desktop app to run and train models locally.\n\n• Open-source. Runs on Mac, Windows and Linux\n• Supports MLX, diffusion image/video, audio, GGUF\n• Connect Claude Code and Codex to local LLMs\n• 50% more accurate, self-healing tool calls + sandboxed code exec\n• Works for CPU + multiGPU setups - NVIDIA, AMD, Intel, Mac\n• Train models 2× faster with 70% less VRAM\n• Private web search, deep research, RAG, MCP and exports (NVFP4, GGUF)\n• Use Unsloth’s OpenAI-compatible API and cloud models\n• Securely deploy LLMs remotely and access anywhere\n\nUnsloth Desktop is now available on https://t.co/xxBDOI9ApK and GitHub.\n\nGitHub: https://t.co/2kXqhhvLsb\nBlog and Guide: https://t.co/CYosNAQHva",
+    "author": {
+     "screenName": "UnslothAI",
+     "name": "Unsloth AI"
+    }
+   }
+  },
+  {
+   "id": "2087177146662072546",
+   "text": "Introducing Unsloth Desktop 🦥\nThe first desktop app to run and train models locally.\n\n• Open-source. Runs on Mac, Windows and Linux\n• Supports MLX, diffusion image/video, audio, GGUF\n• Connect Claude Code and Codex to local LLMs\n• 50% more accurate, self-healing tool calls + sandboxed code exec\n• Works for CPU + multiGPU setups - NVIDIA, AMD, Intel, Mac\n• Train models 2× faster with 70% less VRAM\n• Private web search, deep research, RAG, MCP and exports (NVFP4, GGUF)\n• Use Unsloth’s OpenAI-compatible API and cloud models\n• Securely deploy LLMs remotely and access anywhere\n\nUnsloth Desktop is now available on https://t.co/xxBDOI9ApK and GitHub.\n\nGitHub: https://t.co/2kXqhhvLsb\nBlog and Guide: https://t.co/CYosNAQHva",
+   "author": {
+    "id": "1730159888402395136",
+    "name": "Unsloth AI",
+    "screenName": "UnslothAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036313340616777728/OLALWB2__normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 4765,
+    "retweets": 638,
+    "replies": 276,
+    "quotes": 184,
+    "views": 810096,
+    "bookmarks": 3299
+   },
+   "createdAt": "Tue Aug 11 13:59:44 +0000 2026",
+   "createdAtLocal": "2026-08-11 21:59",
+   "createdAtISO": "2026-08-11T13:59:44+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2087174761277538304/vid/avc1/3840x2160/G9D_hqKshFiR5ERW.mp4?tag=29",
+     "width": 3840,
+     "height": 2160
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2087209239932764471",
+   "text": "You can download Unsloth Desktop via GitHub or our main site: https://t.co/aZWYAtakBP\n\nCPU and Mac setups are supported, yes.\nThank you for the support! 🥰",
+   "author": {
+    "id": "1730159888402395136",
+    "name": "Unsloth AI",
+    "screenName": "UnslothAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036313340616777728/OLALWB2__normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 116,
+    "retweets": 8,
+    "replies": 6,
+    "quotes": 0,
+    "views": 10575,
+    "bookmarks": 66
+   },
+   "createdAt": "Tue Aug 11 16:07:15 +0000 2026",
+   "createdAtLocal": "2026-08-12 00:07",
+   "createdAtISO": "2026-08-11T16:07:15+00:00",
+   "media": [],
+   "urls": [
+    "https://github.com/unslothai/unsloth"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2086814102484398290",
+   "text": "2-bit Muse Glimmer GGUF managed to call 100+ tools on just 14GB RAM. 🔥\n\nMuse Glimmer did a complete repo bug hunt for 5 mins nonstop with: evidence, repro, fix, tests and a PR writeup.\n\nRun and train it in Unsloth.\n\nGitHub repo: https://t.co/aZWYAtakBP https://t.co/ELquwFTeNk",
+   "author": {
+    "id": "1730159888402395136",
+    "name": "Unsloth AI",
+    "screenName": "UnslothAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036313340616777728/OLALWB2__normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1581,
+    "retweets": 136,
+    "replies": 52,
+    "quotes": 18,
+    "views": 122858,
+    "bookmarks": 747
+   },
+   "createdAt": "Mon Aug 10 13:57:07 +0000 2026",
+   "createdAtLocal": "2026-08-10 21:57",
+   "createdAtISO": "2026-08-10T13:57:07+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2086813802662887424/vid/avc1/1440x1080/9I6POZDhlsgOBHqz.mp4?tag=29",
+     "width": 1440,
+     "height": 1080
+    }
+   ],
+   "urls": [
+    "https://github.com/unslothai/unsloth"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2086761998268928157",
+    "text": "Meta releases Muse Glimmer, a new 30B open model that runs on 18GB RAM.\n\nMuse Glimmer is Apache 2.0 licensed, supports vision and is the strongest agentic model for its size.\n\nRun and train the model via Unsloth.\nGGUF: https://t.co/AoVKEDmcxI\nGuide: https://t.co/uBwdINO0PS https://t.co/wCYQEAuQ7H",
+    "author": {
+     "screenName": "UnslothAI",
+     "name": "Unsloth AI"
+    }
+   }
+  },
+  {
+   "id": "2086761998268928157",
+   "text": "Meta releases Muse Glimmer, a new 30B open model that runs on 18GB RAM.\n\nMuse Glimmer is Apache 2.0 licensed, supports vision and is the strongest agentic model for its size.\n\nRun and train the model via Unsloth.\nGGUF: https://t.co/AoVKEDmcxI\nGuide: https://t.co/uBwdINO0PS https://t.co/wCYQEAuQ7H",
+   "author": {
+    "id": "1730159888402395136",
+    "name": "Unsloth AI",
+    "screenName": "UnslothAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036313340616777728/OLALWB2__normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2808,
+    "retweets": 317,
+    "replies": 90,
+    "quotes": 85,
+    "views": 420428,
+    "bookmarks": 1049
+   },
+   "createdAt": "Mon Aug 10 10:30:05 +0000 2026",
+   "createdAtLocal": "2026-08-10 18:30",
+   "createdAtISO": "2026-08-10T10:30:05+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HPWqovTa0AAwhsw.jpg",
+     "width": 3690,
+     "height": 4096
+    }
+   ],
+   "urls": [
+    "https://huggingface.co/unsloth/Muse-Glimmer-30B-GGUF",
+    "https://unsloth.ai/docs/models/muse-glimmer"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2086755195535413696",
+    "text": "Today we're also opening the weights for Muse Glimmer, a great 30B parameter dense model that can run locally. Soon we'll also release the weights for Muse Spark 1.2, our latest foundation model. Meta is a strong supporter of open source and I'm proud of these releases. Congrats to @alexandr_wang and the MSL team for all your great work on these models.",
+    "author": {
+     "screenName": "finkd",
+     "name": "Mark Zuckerberg"
+    }
+   }
+  },
+  {
+   "id": "2085368138393329703",
+   "text": "DeepSeek-V4-Flash can now run 2× faster locally with DSpark! ⚡️\n\nDSpark enables V4-Flash-0731 GGUFs to generate ~1.4–2× faster with no accuracy change.\n\nDeepSeek-V4-Flash-0731 can reach at 120 tokens/s.\n\nGGUFs: https://t.co/ac6uOI8mZA\nGuide: https://t.co/mCZZkpa95X https://t.co/sLMmNBsku0",
+   "author": {
+    "id": "1730159888402395136",
+    "name": "Unsloth AI",
+    "screenName": "UnslothAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036313340616777728/OLALWB2__normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2539,
+    "retweets": 219,
+    "replies": 83,
+    "quotes": 48,
+    "views": 260938,
+    "bookmarks": 1146
+   },
+   "createdAt": "Thu Aug 06 14:11:23 +0000 2026",
+   "createdAtLocal": "2026-08-06 22:11",
+   "createdAtISO": "2026-08-06T14:11:23+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HPC2xLaaEAA174a.jpg",
+     "width": 3724,
+     "height": 4096
+    }
+   ],
+   "urls": [
+    "https://huggingface.co/unsloth/DeepSeek-V4-Flash-0731-GGUF",
+    "https://unsloth.ai/docs/models/deepseek-v4"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2084110664789024769",
+   "text": "Qwen3.8-27B is coming! 🔥\n\nWill run locally on 17GB RAM/VRAM setups.",
+   "author": {
+    "id": "1730159888402395136",
+    "name": "Unsloth AI",
+    "screenName": "UnslothAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036313340616777728/OLALWB2__normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 7734,
+    "retweets": 593,
+    "replies": 268,
+    "quotes": 192,
+    "views": 992493,
+    "bookmarks": 1862
+   },
+   "createdAt": "Mon Aug 03 02:54:38 +0000 2026",
+   "createdAtLocal": "2026-08-03 10:54",
+   "createdAtISO": "2026-08-03T02:54:38+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2084100707423289643",
+    "text": "📢Meet Qwen3.8-Max — our most capable model to date. \n\nNext week, the open weights of Qwen3.8-Max will be released, and Qwen3.8-27B is also going open-weights to meet you all!🎉\n\nQwen3.8-Max, a new bar for coding and cowork at 2.4T parameters:\n\n- Autonomous coding: 10+ days of self-evolving development, from empty folder to production without hand-holding, complete project trace in the GitHub：https://t.co/iVHZWQoeSo\n- Real work, real results: Production-quality deliverables across hundreds of professions.\n- Long-horizon mastery: System-level autonomous planning with closed-loop adaptive learning, driving 500+ turns of chip design optimization and 365 days of e-commerce strategy.\n- Native multimodal intelligence: Vision isn't just input — it's a continuous feedback loop for planning, execution, and self-correction.\n\n💰Pricing:\nInput: $2.0 / M tokens\nOutput: $6.0 / M tokens\nImplicit Caching: $0.25 / M tokens\n\nStart building with Qwen3.8-Max! 🚀\n\n📖 Blog: https://t.co/iwjmQxLBof\n✅ Qwen Studio: https://t.co/4V2pFvDovG\n⚡ API: https://t.co/gAGqaLQGbN",
+    "author": {
+     "screenName": "Alibaba_Qwen",
+     "name": "Qwen"
+    }
+   }
+  },
+  {
+   "id": "2084167785350123975",
+   "text": "Unsloth will have day zero training and inference support for Qwen3.8.\n\nOur GitHub: https://t.co/aZWYAtakBP",
+   "author": {
+    "id": "1730159888402395136",
+    "name": "Unsloth AI",
+    "screenName": "UnslothAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036313340616777728/OLALWB2__normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 294,
+    "retweets": 10,
+    "replies": 7,
+    "quotes": 0,
+    "views": 29045,
+    "bookmarks": 57
+   },
+   "createdAt": "Mon Aug 03 06:41:36 +0000 2026",
+   "createdAtLocal": "2026-08-03 14:41",
+   "createdAtISO": "2026-08-03T06:41:36+00:00",
+   "media": [],
+   "urls": [
+    "https://github.com/unslothai/unsloth"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2083755811365613996",
+   "text": "This model is really perfectly timed to the availability of 192GB unified memory machines. https://t.co/OJBHLykdNb",
+   "author": {
+    "id": "1213630315643621377",
+    "name": "Framework",
+    "screenName": "FrameworkPuter",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1419497369733787649/UBazL0SE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1579,
+    "retweets": 40,
+    "replies": 80,
+    "quotes": 12,
+    "views": 186861,
+    "bookmarks": 283
+   },
+   "createdAt": "Sun Aug 02 03:24:34 +0000 2026",
+   "createdAtLocal": "2026-08-02 11:24",
+   "createdAtISO": "2026-08-02T03:24:34+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HOr82DVbcAAu7bd.jpg",
+     "width": 4081,
+     "height": 4096
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "UnslothAI",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2083231049434435596",
+    "text": "DeepSeek V4 Flash 0731 can now be run locally! 🐳\n\nRun DeepSeek V4 Flash lossless 4-bit on 168GB RAM and 3-bit on 110GB RAM.\n\nV4 Flash 0731 outperforms V4 Pro. Run via Unsloth or llama.cpp. Smaller quants coming today.\n\nGuide: https://t.co/mCZZkpa95X\nGGUF: https://t.co/ac6uOI8mZA https://t.co/7Zl6jgfPTN",
+    "author": {
+     "screenName": "UnslothAI",
+     "name": "Unsloth AI"
+    }
+   }
+  },
+  {
+   "id": "2083329441787531551",
+   "text": "Congratulations @deepseek_ai on the launch of DeepSeek V4 Flash 0731!\n\nGet started today by running the model locally via the @UnslothAI GGUF. 👇",
+   "author": {
+    "id": "1853898859455348736",
+    "name": "NVIDIA RTX Spark",
+    "screenName": "NVIDIARTXSpark",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2061303426479431680/BDJQPK6Q_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 579,
+    "retweets": 34,
+    "replies": 13,
+    "quotes": 3,
+    "views": 78589,
+    "bookmarks": 128
+   },
+   "createdAt": "Fri Jul 31 23:10:19 +0000 2026",
+   "createdAtLocal": "2026-08-01 07:10",
+   "createdAtISO": "2026-07-31T23:10:19+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "UnslothAI",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2083231049434435596",
+    "text": "DeepSeek V4 Flash 0731 can now be run locally! 🐳\n\nRun DeepSeek V4 Flash lossless 4-bit on 168GB RAM and 3-bit on 110GB RAM.\n\nV4 Flash 0731 outperforms V4 Pro. Run via Unsloth or llama.cpp. Smaller quants coming today.\n\nGuide: https://t.co/mCZZkpa95X\nGGUF: https://t.co/ac6uOI8mZA https://t.co/7Zl6jgfPTN",
+    "author": {
+     "screenName": "UnslothAI",
+     "name": "Unsloth AI"
+    }
+   }
+  },
+  {
+   "id": "2083231049434435596",
+   "text": "DeepSeek V4 Flash 0731 can now be run locally! 🐳\n\nRun DeepSeek V4 Flash lossless 4-bit on 168GB RAM and 3-bit on 110GB RAM.\n\nV4 Flash 0731 outperforms V4 Pro. Run via Unsloth or llama.cpp. Smaller quants coming today.\n\nGuide: https://t.co/mCZZkpa95X\nGGUF: https://t.co/ac6uOI8mZA https://t.co/7Zl6jgfPTN",
+   "author": {
+    "id": "1730159888402395136",
+    "name": "Unsloth AI",
+    "screenName": "UnslothAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036313340616777728/OLALWB2__normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 3619,
+    "retweets": 450,
+    "replies": 155,
+    "quotes": 111,
+    "views": 694967,
+    "bookmarks": 1200
+   },
+   "createdAt": "Fri Jul 31 16:39:21 +0000 2026",
+   "createdAtLocal": "2026-08-01 00:39",
+   "createdAtISO": "2026-07-31T16:39:21+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HOkfiGraYAAxGnW.jpg",
+     "width": 3724,
+     "height": 4096
+    }
+   ],
+   "urls": [
+    "https://unsloth.ai/docs/models/deepseek-v4",
+    "https://huggingface.co/unsloth/DeepSeek-V4-Flash-0731-GGUF"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2083084415157022911",
+    "text": "🚀 DeepSeek-V4-Flash Official API is now LIVE in public beta!\n\n🔷 We’ve massively upgraded its Agent capabilities—benchmark scores are now far surpassing the V4-Pro-Preview. Check out the massive performance leap below! 👇\n🔷 The official V4-Flash now natively supports the Responses API format and is fully adapted for Codex!\n\nCheck out the configuration details in our official API docs: https://t.co/smCwQZMeiq",
+    "author": {
+     "screenName": "deepseek_ai",
+     "name": "DeepSeek"
+    }
+   }
+  },
+  {
+   "id": "2083314105101046106",
+   "text": "Smaller DeepSeek-V4-Flash quants are now available to run from 1-bit to 4-bit. Run 3-bit on 128GB RAM, 1-bit on 96GB RAM.\n\nRemember full precision is mostly FP4 (4-bit) so 1 to 3-bit are not that quantized. Even more variants are coming soon: https://t.co/ac6uOI8mZA",
+   "author": {
+    "id": "1730159888402395136",
+    "name": "Unsloth AI",
+    "screenName": "UnslothAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036313340616777728/OLALWB2__normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 200,
+    "retweets": 29,
+    "replies": 11,
+    "quotes": 4,
+    "views": 31245,
+    "bookmarks": 70
+   },
+   "createdAt": "Fri Jul 31 22:09:23 +0000 2026",
+   "createdAtLocal": "2026-08-01 06:09",
+   "createdAtISO": "2026-07-31T22:09:23+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/unsloth/DeepSeek-V4-Flash-0731-GGUF"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2082899798047563984",
+   "text": "You can now run Inkling-Small, a new 276B model by Thinking Machines.\n\nInkling-Small is the strongest open model for its size and runs local on 128GB RAM.\n\nApache-2.0 Licensed, it has image, audio + 1M context support.\n\nGuide: https://t.co/mwyyMtrtA9\nGGUF: https://t.co/Mrh0giFSTH https://t.co/p8ChQ3Hp95",
+   "author": {
+    "id": "1730159888402395136",
+    "name": "Unsloth AI",
+    "screenName": "UnslothAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036313340616777728/OLALWB2__normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 834,
+    "retweets": 96,
+    "replies": 43,
+    "quotes": 14,
+    "views": 106441,
+    "bookmarks": 398
+   },
+   "createdAt": "Thu Jul 30 18:43:04 +0000 2026",
+   "createdAtLocal": "2026-07-31 02:43",
+   "createdAtISO": "2026-07-30T18:43:04+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HOfxm7CaUAACyOO.jpg",
+     "width": 3737,
+     "height": 4096
+    }
+   ],
+   "urls": [
+    "https://unsloth.ai/docs/models/inkling",
+    "https://huggingface.co/unsloth/Inkling-Small-GGUF"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2082885869426631032",
+    "text": "Today, we are releasing Inkling-Small.\n\nInkling-Small achieves comparable performance to Inkling at a quarter of its size. It features 276B total parameters, 12B active. We are making the full weights available.\n\nhttps://t.co/BtYNcpkDRA\n\nFine-tune it on Tinker today, or chat with it in text, image, and audio on Tinker Playground.",
+    "author": {
+     "screenName": "thinkymachines",
+     "name": "Thinking Machines"
+    }
+   }
+  },
+  {
+   "id": "2082463988953367031",
+   "text": "Kimi K3 can now be run locally! ✨\n\nThe 1-bit model retains ~78.9% accuracy after we shrunk it from 1.56TB to 594GB (-62% size).\n\nRun on a Mac Studio + 128GB RAM device.\n\nKimi K3 is the strongest open model to date.\n\nGuide: https://t.co/1mVwOMLpDW\nGGUF: https://t.co/bt1c1ADdCZ https://t.co/rdvVlDIitX",
+   "author": {
+    "id": "1730159888402395136",
+    "name": "Unsloth AI",
+    "screenName": "UnslothAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036313340616777728/OLALWB2__normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 11820,
+    "retweets": 1546,
+    "replies": 488,
+    "quotes": 448,
+    "views": 2617119,
+    "bookmarks": 6462
+   },
+   "createdAt": "Wed Jul 29 13:51:19 +0000 2026",
+   "createdAtLocal": "2026-07-29 21:51",
+   "createdAtISO": "2026-07-29T13:51:19+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HOZlxdGaQAAxMkg.jpg",
+     "width": 3654,
+     "height": 4096
+    }
+   ],
+   "urls": [
+    "https://unsloth.ai/docs/models/kimi-k3",
+    "https://huggingface.co/unsloth/Kimi-K3-GGUF"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2077830229968683203",
+    "text": "Introducing Kimi K3: Open Frontier Intelligence\n\n🔹 2.8 Trillion Parameters, 1 Million Context, Native Multimodal\n🔹 Kimi Delta Attention enables up to 6.3x faster decoding in million-token contexts\n🔹 Attention Residuals deliver ~25% higher training efficiency at <2% additional cost\n🔹 Built for long-horizon agentic coding and self-evolving workflows\n\nKimi K3 is now live on on https://t.co/zrk6zZxZUo, Kimi Work, Kimi Code, and the Kimi API.\nOpen Weights by July 27, 2026.\n\n🔗 API: https://t.co/XCrgjXAqMw\n🔗 Tech blog: https://t.co/YTfiMSNM1f",
+    "author": {
+     "screenName": "Kimi_Moonshot",
+     "name": "Kimi.ai"
+    }
+   }
+  },
+  {
+   "id": "2082543571522220404",
+   "text": "To see how 1-bit Kimi K3 performs, we did some tests.\n\nThe 1-bit Kimi models are powerful and quite resistant to quantization. They can one-shot many tasks without any intervention and can perform tool-calls very reliably.\n\nYou can run Kimi K3 in Unsloth. https://t.co/0hNT7H8SkU",
+   "author": {
+    "id": "1730159888402395136",
+    "name": "Unsloth AI",
+    "screenName": "UnslothAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036313340616777728/OLALWB2__normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 209,
+    "retweets": 17,
+    "replies": 7,
+    "quotes": 3,
+    "views": 55910,
+    "bookmarks": 91
+   },
+   "createdAt": "Wed Jul 29 19:07:33 +0000 2026",
+   "createdAtLocal": "2026-07-30 03:07",
+   "createdAtISO": "2026-07-29T19:07:33+00:00",
+   "media": [],
+   "urls": [
+    "https://x.com/i/status/2082528683747873194"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2082528683747873194",
+    "text": "We compared 1-bit Kimi K3 to Claude Opus 5 and GPT 5.6.\n\nWe gave 4 models the same prompt:\nCreate a glass aquarium whose side panel develops a visible crack and then bursts.\n\n1-bit Kimi K3 GGUF ran locally on 4x B200s at 36 tok/s.\n\nGitHub repo: https://t.co/aZWYAtakBP https://t.co/sGjouOoDkU",
+    "author": {
+     "screenName": "UnslothAI",
+     "name": "Unsloth AI"
+    }
+   }
+  },
+  {
+   "id": "2082528683747873194",
+   "text": "We compared 1-bit Kimi K3 to Claude Opus 5 and GPT 5.6.\n\nWe gave 4 models the same prompt:\nCreate a glass aquarium whose side panel develops a visible crack and then bursts.\n\n1-bit Kimi K3 GGUF ran locally on 4x B200s at 36 tok/s.\n\nGitHub repo: https://t.co/aZWYAtakBP https://t.co/sGjouOoDkU",
+   "author": {
+    "id": "1730159888402395136",
+    "name": "Unsloth AI",
+    "screenName": "UnslothAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036313340616777728/OLALWB2__normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2075,
+    "retweets": 188,
+    "replies": 99,
+    "quotes": 41,
+    "views": 415224,
+    "bookmarks": 824
+   },
+   "createdAt": "Wed Jul 29 18:08:24 +0000 2026",
+   "createdAtLocal": "2026-07-30 02:08",
+   "createdAtISO": "2026-07-29T18:08:24+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2082527997303889920/vid/avc1/1440x1440/2GntaHtid94Z05Tn.mp4?tag=29",
+     "width": 1440,
+     "height": 1440
+    }
+   ],
+   "urls": [
+    "https://github.com/unslothai/unsloth"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2082463988953367031",
+    "text": "Kimi K3 can now be run locally! ✨\n\nThe 1-bit model retains ~78.9% accuracy after we shrunk it from 1.56TB to 594GB (-62% size).\n\nRun on a Mac Studio + 128GB RAM device.\n\nKimi K3 is the strongest open model to date.\n\nGuide: https://t.co/1mVwOMLpDW\nGGUF: https://t.co/bt1c1ADdCZ https://t.co/rdvVlDIitX",
+    "author": {
+     "screenName": "UnslothAI",
+     "name": "Unsloth AI"
+    }
+   }
+  },
+  {
+   "id": "2081698818794676367",
+   "text": "We signed the Open Weights letter because we believe the future of AI should be shaped by everyone, not controlled by a select few.\n\nThat belief has always been at the heart of Unsloth: everyone should be able to train and run models on their own local device. https://t.co/QgAjyWVVnR",
+   "author": {
+    "id": "1730159888402395136",
+    "name": "Unsloth AI",
+    "screenName": "UnslothAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036313340616777728/OLALWB2__normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1560,
+    "retweets": 115,
+    "replies": 47,
+    "quotes": 17,
+    "views": 76343,
+    "bookmarks": 98
+   },
+   "createdAt": "Mon Jul 27 11:10:49 +0000 2026",
+   "createdAtLocal": "2026-07-27 19:10",
+   "createdAtISO": "2026-07-27T11:10:49+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HOOt0dCbgAEy7GF.jpg",
+     "width": 1804,
+     "height": 1870
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2080643682408321103",
+    "text": "For my first post, I’m sharing a letter @NVIDIA signed on why open models matter.\n\nAI will transform every industry, power every company, and be built by every country.\n\nOpen models strengthen safety and cybersecurity, accelerate innovation and diffusion, and enable sovereignty.\n\nThe world needs both frontier closed models and frontier open models.\n\nhttps://t.co/AUKzoQ5Ikb",
+    "author": {
+     "screenName": "JensenHuang",
+     "name": "Jensen Huang"
+    }
+   }
+  },
+  {
+   "id": "2079982305448202246",
+   "text": "Two days ago Unsloth Studio added support for AMD!\n30 commits in the last 2 days. This repo is pushing hard! https://t.co/t36OloggEB",
+   "author": {
+    "id": "43874767",
+    "name": "Ivan Fioravanti ᯅ",
+    "screenName": "ivanfioravanti",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2084888225986826240/-XeooHyq_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 65,
+    "retweets": 4,
+    "replies": 3,
+    "quotes": 0,
+    "views": 7154,
+    "bookmarks": 5
+   },
+   "createdAt": "Wed Jul 22 17:30:00 +0000 2026",
+   "createdAtLocal": "2026-07-23 01:30",
+   "createdAtISO": "2026-07-22T17:30:00+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HN2Nd7CWwAEr8_g.jpg",
+     "width": 2520,
+     "height": 1850
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "UnslothAI",
+   "lang": "en",
+   "score": null
+  }
+ ]
+}

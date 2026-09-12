@@ -3,16 +3,36 @@
   "name": "llama.cpp",
   "kind": "runtime",
   "url": "https://github.com/ggml-org/llama.cpp",
-  "api": ["openai"],
+  "api": [
+    "openai"
+  ],
   "qwen_support": "GGUF quants of every Qwen generation, including MoE and VL via projector files.",
-  "spec_decode": ["none"],
-  "features": ["gguf", "cpu-gpu-split-offload", "metal", "cuda", "vulkan", "vision-via-projector", "mmap"],
-  "notable_flags": ["-ngl (layers on GPU)", "--ctx-size", "-fa (flash attention)", "--mmproj (vision projector)"],
+  "spec_decode": [
+    "none"
+  ],
+  "features": [
+    "gguf",
+    "cpu-gpu-split-offload",
+    "metal",
+    "cuda",
+    "vulkan",
+    "vision-via-projector",
+    "mmap"
+  ],
+  "notable_flags": [
+    "-ngl (layers on GPU)",
+    "--ctx-size",
+    "-fa (flash attention)",
+    "--mmproj (vision projector)"
+  ],
   "gotchas": [
     "Vision needs a separate mmproj file; it is not in the main GGUF.",
     "No speculative decoding without a separate draft model and --model-draft.",
     "The widest hardware reach of any engine: runs on CPU-only, 24GB cards, and Apple Silicon alike."
   ],
   "arm64": true,
-  "updated": "2026-09-05"
+  "updated": "2026-09-05",
+  "caveats": [
+    "Qwen3.8-27B on CUDA: builds around commit 221f0f6 (shallow clones reporting 'build 1') produce corrupted garbage completions at full speed with normal VRAM usage \u2014 silent corruption, no OOM or crash. Fixed by ece963f41 (~b10450): rebuild with -DGGML_CUDA=ON -DCMAKE_CUDA_ARCHITECTURES=<arch> and Flash Attention on. (Forum report, WSL + RTX 3090, 2026-09.)"
+  ]
 }

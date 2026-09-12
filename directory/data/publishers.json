@@ -173,6 +173,31 @@
       "kind": "individual",
       "url": "https://github.com/petems/qwen-local-silicon-32to64gb-macbook-guide",
       "note": "Decision-tree runbook for Qwen on 32-64 GB Apple Silicon MacBooks."
+    },
+    "atomicchat": {
+      "name": "Atomic Chat",
+      "kind": "quant-shop",
+      "url": "https://huggingface.co/AtomicChat",
+      "role": "Atomic Chat app vendor (Jan fork; atomic-llama-cpp-turboquant engine). 'Atomic Dynamic' GGUF/MLX quants with own imatrix, held-out perplexity vs BF16 published per quant.",
+      "note": "Not yet on the law-11 Scenario B whitelist \u2014 lanes recorded from forum/vendor measurements pending owner whitelist decision. Qwen3.8-27B-GGUF: 305k+ downloads."
+    },
+    "shennguyen": {
+      "name": "shennguyen (Huihui)",
+      "kind": "individual",
+      "url": "https://huggingface.co/shennguyen",
+      "note": "Abliterated (refusal-removed) GGUF distills; Huihui-Qwen3.6-35B-A3B-Claude-4.7-Opus-abliterated. Not on the law-11 whitelist \u2014 advice lane only."
+    },
+    "ggml-org": {
+      "name": "ggml-org",
+      "kind": "community-org",
+      "url": "https://huggingface.co/ggml-org",
+      "role": "Official llama.cpp project org: the engine itself plus reference GGUF quants (incl. mtp-* draft files) and the full-cuda container."
+    },
+    "analogalok": {
+      "name": "analogalok",
+      "kind": "individual",
+      "url": "https://x.com/analogalok",
+      "note": "Community builder: RTX 4090 benchmark runs for Qwen3.8-Flash-Next (hybrid/full CPU-MoE offload, 250k ctx) and Qwen3.8-27B AD-Q4_K (KV/MTP context ladders) with exact repro commands."
     }
   }
 }

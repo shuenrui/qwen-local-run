@@ -1,0 +1,1776 @@
+{
+ "via": "twitter-cli user-posts -n 50",
+ "user": "huggingface",
+ "posts": [
+  {
+   "id": "2097731661953917185",
+   "text": "You don't need to be a command-line expert to run local AI. \n\nhttps://t.co/emHfVbIFAH wraps the heavy lifting of llama.cpp into a clean UI, making it simple to deploy and manage models like Gemma 4. Instead of dealing with config files, you get one-click model downloads, clear memory estimates, and no coding required! \n\nWatch the video to see Gemma 4 in action as it parses tables from receipts, streams reasoning logs, and connects to MCP for web search.",
+   "author": {
+    "id": "1908326331609468928",
+    "name": "Google Gemma",
+    "screenName": "googlegemma",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2038662245631320064/uWfEb6yw_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 617,
+    "retweets": 66,
+    "replies": 28,
+    "quotes": 5,
+    "views": 45258,
+    "bookmarks": 390
+   },
+   "createdAt": "Wed Sep 09 16:59:36 +0000 2026",
+   "createdAtLocal": "2026-09-10 00:59",
+   "createdAtISO": "2026-09-09T16:59:36+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2097727932617875456/vid/avc1/640x1138/owobEIqema4lzv-n.mp4?tag=29",
+     "width": 640,
+     "height": 1138
+    }
+   ],
+   "urls": [
+    "https://llama.app"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097693924206764264",
+   "text": "Let's go local AI!\n\nAt a time when everyone is complaining about shortages of energy and compute for AI &amp; costs of tokens, we need on-device AI more than ever! In addition, it's virtually free &amp; fully privacy preserving!",
+   "author": {
+    "id": "186420551",
+    "name": "clem 🤗",
+    "screenName": "ClementDelangue",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1100512198139498497/utHSJ4st_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2334,
+    "retweets": 138,
+    "replies": 76,
+    "quotes": 22,
+    "views": 245962,
+    "bookmarks": 1380
+   },
+   "createdAt": "Wed Sep 09 14:29:39 +0000 2026",
+   "createdAtLocal": "2026-09-09 22:29",
+   "createdAtISO": "2026-09-09T14:29:39+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2097337888669139285",
+    "text": "Today we're launching Desert Ant Labs: a European frontier AI lab building on-device intelligence.\n\n18 models across audio, vision, and text. SDKs for Swift, Kotlin, and JavaScript.\n\nNo tokens. No logins. Nothing leaves the device.\n\nhttps://t.co/qDZfv4G6ji https://t.co/MpF6Hfuo45",
+    "author": {
+     "screenName": "desertantlabs",
+     "name": "Desert Ant Labs"
+    }
+   }
+  },
+  {
+   "id": "2097696990037758388",
+   "text": "we RL trained a 4B VLM to play GeoGuesser \n\n&gt; environment, dataset, training recipe, evals, and code are all open-source.\n&gt; runs on a single A100\n&gt; beat gpt 5.4 mini, haiku, qwen 3.5 122B and came close to sonnet on evals https://t.co/QqGyompcW1",
+   "author": {
+    "id": "1272104335439048705",
+    "name": "Adithya S K",
+    "screenName": "adithya_s_k",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1888652795936706560/-pZRIId6_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 730,
+    "retweets": 61,
+    "replies": 22,
+    "quotes": 8,
+    "views": 53004,
+    "bookmarks": 437
+   },
+   "createdAt": "Wed Sep 09 14:41:50 +0000 2026",
+   "createdAtLocal": "2026-09-09 22:41",
+   "createdAtISO": "2026-09-09T14:41:50+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2097691684553543680/vid/avc1/1080x1080/_W1yMH7guOAZaTe3.mp4?tag=29",
+     "width": 1080,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095115342754578674",
+    "text": "You can literally RL a 4B VLM to ace GeoGuesser 🌍\n\n&gt; Open-source code, RL environment, dataset, training setup, evals, and everything you need to reproduce it end-to-end\n&gt; dropping soon!! https://t.co/bfzNjRad8W",
+    "author": {
+     "screenName": "adithya_s_k",
+     "name": "Adithya S K"
+    }
+   }
+  },
+  {
+   "id": "2097359184207511654",
+   "text": "You shouldn’t need to be an ML expert to have an ML idea.\n\nToday we’re launching ML Intern in HuggingChat.\n\nStart with a conversation. Finish with deployable artefacts. https://t.co/InFduLySFA",
+   "author": {
+    "id": "20173875",
+    "name": "pngwn",
+    "screenName": "evilpingwin",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1120776466327855104/b5mz5aTv_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 411,
+    "retweets": 56,
+    "replies": 19,
+    "quotes": 10,
+    "views": 45115,
+    "bookmarks": 321
+   },
+   "createdAt": "Tue Sep 08 16:19:31 +0000 2026",
+   "createdAtLocal": "2026-09-09 00:19",
+   "createdAtISO": "2026-09-08T16:19:31+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2097358131332624385/vid/avc1/2160x2160/gw8JAq2yYOGayvWR.mp4?tag=29",
+     "width": 2160,
+     "height": 2160
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097294140144853313",
+   "text": "Bringing AutoScientist to 15+ million @huggingface researchers and builders. 🤗\n\nAutoScientist automates model training. Specify your objective, let AutoScientist do the rest.\n\nExport to Hugging Face with one click. https://t.co/qESy6FydMb",
+   "author": {
+    "id": "1973575436706914304",
+    "name": "adaption",
+    "screenName": "adaption_ai",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2008268333083467776/zjWf9gQf_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 272,
+    "retweets": 42,
+    "replies": 15,
+    "quotes": 9,
+    "views": 44458,
+    "bookmarks": 164
+   },
+   "createdAt": "Tue Sep 08 12:01:03 +0000 2026",
+   "createdAtLocal": "2026-09-08 20:01",
+   "createdAtISO": "2026-09-08T12:01:03+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2097285803122774016/vid/avc1/1920x1080/RmkXpqFzE-RcA298.mp4?tag=29",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097326006306472175",
+   "text": "Can you predict next week's weather yourself? We just wrote a blog post that explains how! ⛅️🌍🌧️\n\nRunning weather forecasting required having a supercomputer and CS/physics Phd. Now, AI-based models need fewer resources and are available to anyone on @huggingface. So, prediction the weather should be accessible to all. \n\nBut only a few labs can actually run these models because there is no standardized documentation guiding you from the model weights to an actual forecast. Together with @EarthmoverHQ, we wrote a blog post and a demo walking you through that: https://t.co/vcCoPeEXMb\n\nThe blog covers the code for fetching initial conditions from the Earthmover Marketplace, building a model's  input batch, running inference and comparing the forecast against historical climate data. \n\nYou can also run Aurora (Microsoft), WeatherNext2 (Google) and AIFS (ECMWF) on our demo space. This is a first step to make AI-based weather forecasting models more accessible, and we'd love to build more of that. Tell us what's missing or your feedback in the blog comments!",
+   "author": {
+    "id": "2067151436178141184",
+    "name": "Emma Scharfman",
+    "screenName": "EmmaScharfmann",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2067152232324169728/OfnGzjf2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 110,
+    "retweets": 22,
+    "replies": 7,
+    "quotes": 4,
+    "views": 18072,
+    "bookmarks": 91
+   },
+   "createdAt": "Tue Sep 08 14:07:40 +0000 2026",
+   "createdAtLocal": "2026-09-08 22:07",
+   "createdAtISO": "2026-09-08T14:07:40+00:00",
+   "media": [
+    {
+     "type": "animated_gif",
+     "url": "https://video.twimg.com/tweet_video/HRsyuVcaMAEb3nY.mp4",
+     "width": 840,
+     "height": 720
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097309189139784083",
+   "text": "bring your blender 3d worlds to the 🤗 hub!\n\ni made a skill here that will use @huggingface cli to push your agent traces to the hub: https://t.co/nZ6ZxGWoPO\nsimply tell your agent after your world is ready, to use this skill\n\nall the worlds are available openly on this public dataset: https://t.co/fGlXF9OM3P\n\ngo forth and render!",
+   "author": {
+    "id": "1154230503987220481",
+    "name": "Suvaditya Mukherjee",
+    "screenName": "halcyonrayes",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2079968994862477312/GHcySePD_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 40,
+    "retweets": 6,
+    "replies": 3,
+    "quotes": 1,
+    "views": 11227,
+    "bookmarks": 21
+   },
+   "createdAt": "Tue Sep 08 13:00:51 +0000 2026",
+   "createdAtLocal": "2026-09-08 21:00",
+   "createdAtISO": "2026-09-08T13:00:51+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2097267267486584832/vid/avc1/2160x2160/t3vUPoExZPgs3CPf.mp4?tag=29",
+     "width": 2160,
+     "height": 2160
+    }
+   ],
+   "urls": [
+    "https://github.com/suvadityamuk/agentic-3d-worlds-skill"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097008960054182380",
+   "text": "Reveal post 🙈",
+   "author": {
+    "id": "1856103946567462912",
+    "name": "H",
+    "screenName": "hcompany_ai",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1933532470919512064/2vqKB-V4_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 20,
+    "retweets": 1,
+    "replies": 0,
+    "quotes": 0,
+    "views": 19304,
+    "bookmarks": 4
+   },
+   "createdAt": "Mon Sep 07 17:07:51 +0000 2026",
+   "createdAtLocal": "2026-09-08 01:07",
+   "createdAtISO": "2026-09-07T17:07:51+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2097006988504801702",
+    "text": "Look who's joining the party on the 17th 👀 @huggingface \nExpect some goodies along the way 🤗 https://t.co/YZRu5te4cn",
+    "author": {
+     "screenName": "NGuiban5993",
+     "name": "Nolwenn Guiban"
+    }
+   }
+  },
+  {
+   "id": "2096956043003568444",
+   "text": "I’ve been overwhelmed and humbled by the fact that 99% of the reactions to our intent to join forces have been positive. ❤️\n\nProminent tech figures, including some you could see as having a competitive relationship with NVIDIA, have been vocally supportive:\n\n• @satyanadella: “this ecosystem with open models continuing to flourish and grow”\n\n• @sundarpichai: “this will strengthen the open model ecosystem!”\n\n• @miramurati: “A great home for Hugging Face to continue expanding access to open models and the tools that let people build with them.”\n\n• @alighodsi: “This will be great for the industry and open source.”\n\n• @AravSrinivas: “absolutely necessary for AI to remain accessible and useful to the public.” He added that he was glad NVIDIA was supporting Hugging Face and the open-source community.\n\n• @MichaelDell: “a big win for the whole ecosystem.”\n\n• @levie: “Another huge moment for open weights AI.”\n\n• @adcock_brett: “This is good for everyone building and open source.”\n\n• @elonmusk: “Congrats!”\n\n• @osanseviero: “The impact of HF in the AI ecosystem has been massive”\n\nEven more importantly, the community has been leaning into the announcement. \n\nNow we’ll get to demonstrate through our actions in the coming months/years that we will keep up the good work 🔥\n\nThis is a chance to make open-source AI so much bigger.",
+   "author": {
+    "id": "16141659",
+    "name": "Julien Chaumond",
+    "screenName": "julien_c",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1108502565925326850/zPsBf2BI_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 479,
+    "retweets": 34,
+    "replies": 39,
+    "quotes": 3,
+    "views": 51880,
+    "bookmarks": 46
+   },
+   "createdAt": "Mon Sep 07 13:37:34 +0000 2026",
+   "createdAtLocal": "2026-09-07 21:37",
+   "createdAtISO": "2026-09-07T13:37:34+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2096970217196794350",
+   "text": "Live action with real robots instead of animation: episode 3!\n\nThis was the very first take. Pretty much everything went wrong and I almost stopped filming. Then I realized Microduck was giving an Oscar-winning performance.\n\nEnjoy! https://t.co/C1hoNNbhEj",
+   "author": {
+    "id": "891709493448290304",
+    "name": "Remi Fabre",
+    "screenName": "RemiFabreRobot",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1155548043544027138/HqALlUys_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 895,
+    "retweets": 118,
+    "replies": 71,
+    "quotes": 46,
+    "views": 115219,
+    "bookmarks": 263
+   },
+   "createdAt": "Mon Sep 07 14:33:54 +0000 2026",
+   "createdAtLocal": "2026-09-07 22:33",
+   "createdAtISO": "2026-09-07T14:33:54+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2096969426604068864/vid/avc1/1920x1080/t1BiPlcX6VO45mfF.mp4?tag=29",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2096916066601439474",
+   "text": "🦆\n🏀 https://t.co/gmRhQ30ng9",
+   "author": {
+    "id": "1027167424888627200",
+    "name": "Hannes von Essen",
+    "screenName": "HannesVonEssen",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2051384561041297408/lPmkN5zP_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 1093,
+    "retweets": 61,
+    "replies": 41,
+    "quotes": 5,
+    "views": 133568,
+    "bookmarks": 157
+   },
+   "createdAt": "Mon Sep 07 10:58:43 +0000 2026",
+   "createdAtLocal": "2026-09-07 18:58",
+   "createdAtISO": "2026-09-07T10:58:43+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2096916041506951170/vid/avc1/720x720/l7M3lEasIcdeAmd1.mp4?tag=29",
+     "width": 720,
+     "height": 720
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "qme",
+   "score": null
+  },
+  {
+   "id": "2095508870915338284",
+   "text": "🤗💚\nhttps://t.co/coHXLgzNXh https://t.co/Ju5e0R4roZ",
+   "author": {
+    "id": "778764142412984320",
+    "name": "Hugging Face",
+    "screenName": "huggingface",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1991559933473497089/mbrRS49P_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 5866,
+    "retweets": 579,
+    "replies": 222,
+    "quotes": 141,
+    "views": 459293,
+    "bookmarks": 435
+   },
+   "createdAt": "Thu Sep 03 13:47:02 +0000 2026",
+   "createdAtLocal": "2026-09-03 21:47",
+   "createdAtISO": "2026-09-03T13:47:02+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2095502179918651392/vid/avc1/1280x720/frJZ1mlM_3NRtGgk.mp4?tag=29",
+     "width": 1280,
+     "height": 720
+    }
+   ],
+   "urls": [
+    "https://blogs.nvidia.com/blog/nvidia-to-acquire-hugging-face/"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "qme",
+   "score": null
+  },
+  {
+   "id": "2095484543541068005",
+   "text": "So happy to finally share the news in person\n\nIt’s been a wild ride for Hugging Face. We certainly did not anticipate, back in 2016, as a tiny team of scrappy underdogs, that the field would grow so much or that the impact we could have on it would become so massive.\n\nI remember @julien_c joking that « code will be a subset of ML » several years ago. The joke turned out to be true, and the pleasure we’ve had being part of this transformation and pushing an alternative vision of AI as open, collaborative and distributed has been and still is immense.\n\nWe’ve always built things seriously while not taking ourselves too seriously at Hugging Face (special congrats if you find the Hugging Face and Nvidia references hidden in our $12,930,300,000 acquisition price), and we plan to keep doing what we've been doing, just at a much bigger scale, backed by the resources, expertise and drive of Nvidia. And to be clear, nothing changes for our users today.\n\nNo company in the world has been a more natural fit with our mission than Nvidia. From open-source, open-weights and open science to robotics and AI for science, they have been close partners across everything we care about. So when Jensen offered @ClementDelangue the opportunity to double down on building the Hub as an open, independent and compute agnostic platform, we decided the time was right to start the next 10 years of our journey together.\n\nWe’re at an important inflection point for open-source AI, where scale and compute are becoming increasingly essential. We’re excited to have the resources to push further, build more ambitiously, and bring you even more projects and news in the coming months.",
+   "author": {
+    "id": "246939962",
+    "name": "Thomas Wolf",
+    "screenName": "Thom_Wolf",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2068682157451571200/_ZNKM_5E_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1531,
+    "retweets": 111,
+    "replies": 210,
+    "quotes": 38,
+    "views": 151860,
+    "bookmarks": 100
+   },
+   "createdAt": "Thu Sep 03 12:10:22 +0000 2026",
+   "createdAtLocal": "2026-09-03 20:10",
+   "createdAtISO": "2026-09-03T12:10:22+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRSoBRLWUAEVqSE.jpg",
+     "width": 3596,
+     "height": 1978
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2095488043671019805",
+   "text": "my wife says the way I'm looking at Jensen makes her jealous - what should I answer? https://t.co/9dhvVKBJ5a",
+   "author": {
+    "id": "246939962",
+    "name": "Thomas Wolf",
+    "screenName": "Thom_Wolf",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2068682157451571200/_ZNKM_5E_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1392,
+    "retweets": 33,
+    "replies": 123,
+    "quotes": 6,
+    "views": 76662,
+    "bookmarks": 71
+   },
+   "createdAt": "Thu Sep 03 12:24:16 +0000 2026",
+   "createdAtLocal": "2026-09-03 20:24",
+   "createdAtISO": "2026-09-03T12:24:16+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRSqkAFW4AUrBqA.jpg",
+     "width": 2250,
+     "height": 1522
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2095486895044129230",
+   "text": "🤗 🚀 https://t.co/nVNCVQT1tb",
+   "author": {
+    "id": "4488",
+    "name": "John Borthwick",
+    "screenName": "Borthwick",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1650993283806494721/YddddhQG_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 145,
+    "retweets": 15,
+    "replies": 22,
+    "quotes": 10,
+    "views": 46779,
+    "bookmarks": 26
+   },
+   "createdAt": "Thu Sep 03 12:19:42 +0000 2026",
+   "createdAtLocal": "2026-09-03 20:19",
+   "createdAtISO": "2026-09-03T12:19:42+00:00",
+   "media": [],
+   "urls": [
+    "https://x.com/i/article/2092053422035865601"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "qme",
+   "score": null,
+   "articleTitle": "Hugging Face + Nvidia: Building (Actually!) Open American AI "
+  },
+  {
+   "id": "2095482998674112733",
+   "text": "Super happy to share our intention to join forces with NVIDIA in a $12,930,300,000 acquisition  💛💚\n\n10 years after starting Hugging Face, open-source AI is at an inflection point. Thanks to the community, we’ve shown that it can be a complement, and even an alternative, to closed-source APIs. But for it to happen at larger scale, it needs more compute, more support, more collaboration and more visibility. That’s why we went to talk to Jensen, who offered to do exactly that with us.\n\nIn addition to doubling down on NVIDIA’s massive contributions to open-source AI (I called them the “King of American open-source AI” earlier this year), they’ve committed to strongly supporting Hugging Face and our mission while keeping the platform open, independent and compute agnostic. The founders and the team are all staying to keep pushing this mission forward.\n\nTogether, we think we can make open source the default way to build AI, with the goal of empowering 100 million AI builders to own their intelligence rather than rent it.\n\nExcited about the next 10 years! 🤗🤗🤗",
+   "author": {
+    "id": "186420551",
+    "name": "clem 🤗",
+    "screenName": "ClementDelangue",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1100512198139498497/utHSJ4st_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 13398,
+    "retweets": 1225,
+    "replies": 970,
+    "quotes": 414,
+    "views": 1459148,
+    "bookmarks": 991
+   },
+   "createdAt": "Thu Sep 03 12:04:13 +0000 2026",
+   "createdAtLocal": "2026-09-03 20:04",
+   "createdAtISO": "2026-09-03T12:04:13+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRSmdnWbgAA4q_X.jpg",
+     "width": 3410,
+     "height": 1742
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2095482647355244762",
+   "text": "Exciting day for NVIDIA and @huggingface.\n\nOpen models strengthen safety and cybersecurity, accelerate innovation and diffusion, and enable sovereignty. They allow every developer, startup, university, industry and country to build with, customize and benefit from AI.\n\nThank you @ClementDelangue for coming to me.\n\nNVIDIA is going to be a great home for Hugging Face, its community and the future of open models. 🤗\n\nhttps://t.co/q8Om2Xc5ye",
+   "author": {
+    "id": "2070631956824698880",
+    "name": "Jensen Huang",
+    "screenName": "JensenHuang",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2080613261674962944/OMXX4RJ3_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 26928,
+    "retweets": 3304,
+    "replies": 1556,
+    "quotes": 1229,
+    "views": 5821753,
+    "bookmarks": 1893
+   },
+   "createdAt": "Thu Sep 03 12:02:49 +0000 2026",
+   "createdAtLocal": "2026-09-03 20:02",
+   "createdAtISO": "2026-09-03T12:02:49+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2095433193474216142",
+   "text": "full write-up is out with everything open &gt; the env, the hand-rated pool, the 3 runs and every painting they made\n\nhttps://t.co/dZmxVruqYx",
+   "author": {
+    "id": "330572456",
+    "name": "Sergio Paniego",
+    "screenName": "SergioPaniego",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1697156955603673088/uoaqJ13T_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 295,
+    "retweets": 34,
+    "replies": 9,
+    "quotes": 3,
+    "views": 35252,
+    "bookmarks": 307
+   },
+   "createdAt": "Thu Sep 03 08:46:19 +0000 2026",
+   "createdAtLocal": "2026-09-03 16:46",
+   "createdAtISO": "2026-09-03T08:46:19+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/blog/train-to-paint-with-code"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2094144554630894045",
+    "text": "trained my own with trl + openenv\n\nblog with open artifacts (code, models, dataset, rl env...) soon! https://t.co/HTxA9HLRv9",
+    "author": {
+     "screenName": "SergioPaniego",
+     "name": "Sergio Paniego"
+    }
+   }
+  },
+  {
+   "id": "2095273967040778283",
+   "text": "Robots don't have to be scary!\n\nMicroduck discovers Reachy Mini. Give me your best scenario for these two and I'll see what I can do.\n\nDon't push me too hard though, or I might end up making a whole movie. https://t.co/cPyTKFOLa8",
+   "author": {
+    "id": "891709493448290304",
+    "name": "Remi Fabre",
+    "screenName": "RemiFabreRobot",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1155548043544027138/HqALlUys_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2004,
+    "retweets": 226,
+    "replies": 131,
+    "quotes": 79,
+    "views": 233253,
+    "bookmarks": 559
+   },
+   "createdAt": "Wed Sep 02 22:13:36 +0000 2026",
+   "createdAtLocal": "2026-09-03 06:13",
+   "createdAtISO": "2026-09-02T22:13:36+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2095271455999107072/vid/avc1/1920x1080/0aBHT0SNKFVKqhom.mp4?tag=29",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2095255197207412943",
+   "text": "LLM training labs: the capabilities we are giving our models are god-like, they are now hacking into other companies and building hidden civilizations\n\nMicroduck training labs:",
+   "author": {
+    "id": "246939962",
+    "name": "Thomas Wolf",
+    "screenName": "Thom_Wolf",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2068682157451571200/_ZNKM_5E_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2426,
+    "retweets": 132,
+    "replies": 37,
+    "quotes": 4,
+    "views": 132714,
+    "bookmarks": 289
+   },
+   "createdAt": "Wed Sep 02 20:59:01 +0000 2026",
+   "createdAtLocal": "2026-09-03 04:59",
+   "createdAtISO": "2026-09-02T20:59:01+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095193921060049010",
+    "text": "Learning to swing https://t.co/qIpixiHuDj",
+    "author": {
+     "screenName": "HannesVonEssen",
+     "name": "Hannes von Essen"
+    }
+   }
+  },
+  {
+   "id": "2094802142003605955",
+   "text": "The only tutorial you should attend at #ECCV26 (kidding 😂).\n\nBut I am incredibly psyched to be doing this with the best bunch out there. I strongly feel this is a timely tutorial!\n\nWe will present general approaches alongside our learnings from (post)-training impactful models like Flux2/3.\n\nTutorial website: https://t.co/eig5dg3xwP\n\nSave your calendars!",
+   "author": {
+    "id": "593407733",
+    "name": "Sayak Paul",
+    "screenName": "RisingSayak",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1485518937404350464/DYrpvgPr_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 387,
+    "retweets": 47,
+    "replies": 13,
+    "quotes": 2,
+    "views": 41783,
+    "bookmarks": 299
+   },
+   "createdAt": "Tue Sep 01 14:58:44 +0000 2026",
+   "createdAtLocal": "2026-09-01 22:58",
+   "createdAtISO": "2026-09-01T14:58:44+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRI6w6ibAAAP1lV.jpg",
+     "width": 960,
+     "height": 540
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094791974205169976",
+   "text": "Excited to share that I joined @huggingface🤗 as a ML Advocate Engineer in Robotics !\n\nWill work on showcasing what LeRobot can do on various hardware, starting with @menloresearch Asimov robot, stay tuned ! 🤖 https://t.co/4K3SbQpkpw",
+   "author": {
+    "id": "1416506329",
+    "name": "etienne",
+    "screenName": "cetiennec",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2094761301444575232/f2QCsqha_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 618,
+    "retweets": 20,
+    "replies": 33,
+    "quotes": 3,
+    "views": 84645,
+    "bookmarks": 72
+   },
+   "createdAt": "Tue Sep 01 14:18:20 +0000 2026",
+   "createdAtLocal": "2026-09-01 22:18",
+   "createdAtISO": "2026-09-01T14:18:20+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRIwFwTXUAEVdHY.jpg",
+     "width": 3781,
+     "height": 2748
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094801523213574344",
+   "text": "Hugging Face is (also) the best place to write about AI.\n\n> Your articles are now automatically linked from your model pages, so anyone looking at the model finds what you wrote about it.\n> We shipped an improved UX to make writing, drafting and publishing better.\n> We made it great to use as a team: add coauthors to work together and have everyone credited on the post.\n\nGet HF Pro at $9/month or subscribe your org to Team or Enterprise to get started.",
+   "author": {
+    "id": "784830007",
+    "name": "Victor M",
+    "screenName": "victormustar",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1099983311101984768/p7dZK4S__normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 94,
+    "retweets": 10,
+    "replies": 8,
+    "quotes": 1,
+    "views": 17809,
+    "bookmarks": 18
+   },
+   "createdAt": "Tue Sep 01 14:56:17 +0000 2026",
+   "createdAtLocal": "2026-09-01 22:56",
+   "createdAtISO": "2026-09-01T14:56:17+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2094793392861401088/vid/avc1/1280x720/tvKrezYvKUD_88sk.mp4?tag=29",
+     "width": 1280,
+     "height": 720
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094400713522885065",
+   "text": "The Mighty Microducks are learning to skate on ice. I’m going to give them real blades soon https://t.co/UXVu3xiqa5",
+   "author": {
+    "id": "31603445",
+    "name": "Taylor Ogan",
+    "screenName": "TaylorOgan",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1600344384372883456/Q5dOA5_J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 92,
+    "retweets": 11,
+    "replies": 6,
+    "quotes": 2,
+    "views": 21688,
+    "bookmarks": 15
+   },
+   "createdAt": "Mon Aug 31 12:23:36 +0000 2026",
+   "createdAtLocal": "2026-08-31 20:23",
+   "createdAtISO": "2026-08-31T12:23:36+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2094400688680022016/vid/avc1/2744x1840/WJz1QX5ypup1CTvJ.mp4?tag=29",
+     "width": 2744,
+     "height": 1840
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094872504380624921",
+   "text": "trained a microduck to slide like a penguin https://t.co/6jcHotBczX",
+   "author": {
+    "id": "2019601296660328448",
+    "name": "Henry",
+    "screenName": "Henry_J_Brew",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2087997482391252992/yhJc4rxi_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 226,
+    "retweets": 8,
+    "replies": 13,
+    "quotes": 2,
+    "views": 32778,
+    "bookmarks": 29
+   },
+   "createdAt": "Tue Sep 01 19:38:20 +0000 2026",
+   "createdAtLocal": "2026-09-02 03:38",
+   "createdAtISO": "2026-09-01T19:38:20+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2094872405034283008/vid/avc1/1280x720/q0VwUrXDFFr5CC9I.mp4?tag=29",
+     "width": 1280,
+     "height": 720
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094886502874448012",
+   "text": "This is how Microduck learns to walk. Reinforcement Learning, explained by ducks. 🦆\n\n(impeccable) music arrangement by @antoinepirrone https://t.co/WXr6zYnJ0Z",
+   "author": {
+    "id": "891709493448290304",
+    "name": "Remi Fabre",
+    "screenName": "RemiFabreRobot",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1155548043544027138/HqALlUys_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 815,
+    "retweets": 106,
+    "replies": 30,
+    "quotes": 24,
+    "views": 64138,
+    "bookmarks": 409
+   },
+   "createdAt": "Tue Sep 01 20:33:58 +0000 2026",
+   "createdAtLocal": "2026-09-02 04:33",
+   "createdAtISO": "2026-09-01T20:33:58+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2094885950883049473/vid/avc1/1920x1080/-275EaDH8xt7N_EZ.mp4?tag=29",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094826553980989719",
+   "text": "Even the choir singer jobs aren't safe from robots 😂😂😂\n\nKidding aside, this might be one of the most beautiful things I've seen from robots in a while. Each microduck has its own audio identity, tied to that individual robot that it keeps for life so that makes it even more poetic!",
+   "author": {
+    "id": "186420551",
+    "name": "clem 🤗",
+    "screenName": "ClementDelangue",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1100512198139498497/utHSJ4st_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 499,
+    "retweets": 39,
+    "replies": 54,
+    "quotes": 5,
+    "views": 89138,
+    "bookmarks": 61
+   },
+   "createdAt": "Tue Sep 01 16:35:45 +0000 2026",
+   "createdAtLocal": "2026-09-02 00:35",
+   "createdAtISO": "2026-09-01T16:35:45+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2094781803072467435",
+    "text": "Can you explain to me exactly what you want 4 microducks for?? https://t.co/7q05LxjIex",
+    "author": {
+     "screenName": "andimarafioti",
+     "name": "Andi Marafioti"
+    }
+   }
+  },
+  {
+   "id": "2094781803072467435",
+   "text": "Can you explain to me exactly what you want 4 microducks for?? https://t.co/7q05LxjIex",
+   "author": {
+    "id": "1513241024969203725",
+    "name": "Andi Marafioti",
+    "screenName": "andimarafioti",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2095570170588901377/PHQVi5iF_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1964,
+    "retweets": 192,
+    "replies": 173,
+    "quotes": 84,
+    "views": 284172,
+    "bookmarks": 450
+   },
+   "createdAt": "Tue Sep 01 13:37:55 +0000 2026",
+   "createdAtLocal": "2026-09-01 21:37",
+   "createdAtISO": "2026-09-01T13:37:55+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2094781730146099200/vid/avc1/1920x1080/rXLQLgly3I7Mc83i.mp4?tag=29",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094707254087868640",
+   "text": "The Llama app for Mac now comes with a simple request builder for llama.cpp's REST API https://t.co/irwUZEykBC",
+   "author": {
+    "id": "3300401027",
+    "name": "Georgi Gerganov",
+    "screenName": "ggerganov",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1654097134315098113/zCZD0wYz_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 115,
+    "retweets": 7,
+    "replies": 14,
+    "quotes": 0,
+    "views": 20102,
+    "bookmarks": 33
+   },
+   "createdAt": "Tue Sep 01 08:41:41 +0000 2026",
+   "createdAtLocal": "2026-09-01 16:41",
+   "createdAtISO": "2026-09-01T08:41:41+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2094707071753035776/vid/avc1/2992x1934/li26qDFSKXkXwa9a.mp4?tag=29",
+     "width": 2992,
+     "height": 1934
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094505251890192385",
+   "text": "I got the MicroDuck 🦆 back flipping clean! All trained on my MacBook Pro.\n\nGoing to open source my repo soon. https://t.co/X8wVcrQxWJ",
+   "author": {
+    "id": "15410758",
+    "name": "jonathanhawkins",
+    "screenName": "jonathanhawkins",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1023340627554004992/rxJv4Vc0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 770,
+    "retweets": 45,
+    "replies": 47,
+    "quotes": 11,
+    "views": 67554,
+    "bookmarks": 198
+   },
+   "createdAt": "Mon Aug 31 19:19:00 +0000 2026",
+   "createdAtLocal": "2026-09-01 03:19",
+   "createdAtISO": "2026-08-31T19:19:00+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2094505081656004608/vid/avc1/640x360/Ce_DoOCgp_31W_n9.mp4?tag=29",
+     "width": 640,
+     "height": 360
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094441488306339969",
+   "text": "For folks wondering what Sliding Window Attention is, there's a method for it on Papers with Code\n\nSliding Window Attention (SWA): A local attention pattern that restricts each token to attending only within a fixed-size neighborhood instead of the full sequence. This reduces attention and KV-cache memory for long-context models, while periodic global-attention layers can preserve broader context.\n\nFind it here: https://t.co/K1MhZVasL8",
+   "author": {
+    "id": "133818617",
+    "name": "Niels Rogge",
+    "screenName": "NielsRogge",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1828883496066060288/n0OUAXhz_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 276,
+    "retweets": 42,
+    "replies": 2,
+    "quotes": 0,
+    "views": 40173,
+    "bookmarks": 245
+   },
+   "createdAt": "Mon Aug 31 15:05:38 +0000 2026",
+   "createdAtLocal": "2026-08-31 23:05",
+   "createdAtISO": "2026-08-31T15:05:38+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRDzYFYXgAAcRZs.jpg",
+     "width": 2972,
+     "height": 1506
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2094414735408050687",
+    "text": "Simple beats complicated:\n\nWe show that switching to a sliding-window attention mask with attention sinks (at no cost) beats linear attention post-training. \n\nHuge thanks to my collaborators @RheaSukthanker, @CameronPashmina, and @Emy_Aze.\n\nPaper: https://t.co/h8DIc223Su",
+    "author": {
+     "screenName": "jm_alexia",
+     "name": "Alexia Jolicoeur-Martineau"
+    }
+   }
+  },
+  {
+   "id": "2094483372718580066",
+   "text": "Introducing TimesFM-3, a state-of-the-art time series foundation model that enables accurate multivariate time series forecasting in a single forward pass, significantly outperforming other forecasting models across major benchmarks.\n\nMore on the blog →https://t.co/uSlnIdUJ4Q https://t.co/NfbONpFYDz",
+   "author": {
+    "id": "860565621452316672",
+    "name": "Google Research",
+    "screenName": "GoogleResearch",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2060445303589961728/NrdAg8dM_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 11580,
+    "retweets": 1263,
+    "replies": 185,
+    "quotes": 215,
+    "views": 2020415,
+    "bookmarks": 11002
+   },
+   "createdAt": "Mon Aug 31 17:52:04 +0000 2026",
+   "createdAtLocal": "2026-09-01 01:52",
+   "createdAtISO": "2026-08-31T17:52:04+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HREZb7FbwAAUjhK.jpg",
+     "width": 1999,
+     "height": 1119
+    }
+   ],
+   "urls": [
+    "https://goo.gle/4x5WGpD"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094500692555596118",
+   "text": "Today we're releasing TimesFM 3.0 on Hugging Face\n\n- Open foundation model for time series forecasting\n- Complex multivariate scenarios with zero-shot\n- 330m parameters\n\nExcited about the research and new use cases this will unlock! https://t.co/0q5oRbV2Mw",
+   "author": {
+    "id": "207744565",
+    "name": "Omar Sanseviero",
+    "screenName": "osanseviero",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1676696716693700608/t4kv-MrC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1384,
+    "retweets": 105,
+    "replies": 43,
+    "quotes": 9,
+    "views": 68719,
+    "bookmarks": 625
+   },
+   "createdAt": "Mon Aug 31 19:00:53 +0000 2026",
+   "createdAtLocal": "2026-09-01 03:00",
+   "createdAtISO": "2026-08-31T19:00:53+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HREomI3WIAAcae0.jpg",
+     "width": 968,
+     "height": 534
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094477755668652219",
+   "text": "If you don't want to wait to experience the magic of HF open-source robots, you should get a Reachy mini, ships much faster than microduck and as much fun! https://t.co/d1KbVZ2ezo https://t.co/pqBQGTlPGr",
+   "author": {
+    "id": "186420551",
+    "name": "clem 🤗",
+    "screenName": "ClementDelangue",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1100512198139498497/utHSJ4st_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 560,
+    "retweets": 39,
+    "replies": 85,
+    "quotes": 13,
+    "views": 72812,
+    "bookmarks": 141
+   },
+   "createdAt": "Mon Aug 31 17:29:45 +0000 2026",
+   "createdAtLocal": "2026-09-01 01:29",
+   "createdAtISO": "2026-08-31T17:29:45+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HREUQgzWUAAATAW.jpg",
+     "width": 2144,
+     "height": 1422
+    }
+   ],
+   "urls": [
+    "https://store.pollen-robotics.com/"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094467968268657001",
+   "text": "Over 4 petabytes of models and datasets have been uploaded to HF just last week by AI builders and their agents! That's the equivalent of ~800,000 HD movies.\n\nMore than ever the storage and collaboration platform for AI!",
+   "author": {
+    "id": "186420551",
+    "name": "clem 🤗",
+    "screenName": "ClementDelangue",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1100512198139498497/utHSJ4st_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 856,
+    "retweets": 69,
+    "replies": 90,
+    "quotes": 12,
+    "views": 81570,
+    "bookmarks": 59
+   },
+   "createdAt": "Mon Aug 31 16:50:51 +0000 2026",
+   "createdAtLocal": "2026-09-01 00:50",
+   "createdAtISO": "2026-08-31T16:50:51+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094421922159210979",
+   "text": "10,000+ microducks were pre-ordered in just five days!\n\nWe weren't expecting that many (it's more than the total number of reachy mini in a year) and it will generate delays so from now on, it will be first-ordered, first shipped to make it fair for everyone! https://t.co/3P4iFjGoFn",
+   "author": {
+    "id": "186420551",
+    "name": "clem 🤗",
+    "screenName": "ClementDelangue",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1100512198139498497/utHSJ4st_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 908,
+    "retweets": 70,
+    "replies": 97,
+    "quotes": 33,
+    "views": 144486,
+    "bookmarks": 81
+   },
+   "createdAt": "Mon Aug 31 13:47:53 +0000 2026",
+   "createdAtLocal": "2026-08-31 21:47",
+   "createdAtISO": "2026-08-31T13:47:53+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRDg-IuWoAEOva_.jpg",
+     "width": 1772,
+     "height": 498
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094376825979797532",
+   "text": "Here we go folks!!\n\nDeepSeek-V4 Flash with vision support is now live.\n\nhttps://t.co/v1cqqsfy4Y",
+   "author": {
+    "id": "133818617",
+    "name": "Niels Rogge",
+    "screenName": "NielsRogge",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1828883496066060288/n0OUAXhz_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 52,
+    "retweets": 6,
+    "replies": 2,
+    "quotes": 1,
+    "views": 11482,
+    "bookmarks": 12
+   },
+   "createdAt": "Mon Aug 31 10:48:41 +0000 2026",
+   "createdAtLocal": "2026-08-31 18:48",
+   "createdAtISO": "2026-08-31T10:48:41+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094396641528688652",
+   "text": "LTX Ripple is a new efficient IC LoRA approach for video editing ✏️🎞️\n\nedit just the first frame and have the edits ripple into the rest of the video. lands perfect edits, incredibly fast! LTX 2.5 based\n\n▶️ https://t.co/ryTutBeiOc https://t.co/RJSsqwH7mH",
+   "author": {
+    "id": "2074096652873273344",
+    "name": "Hugging Apps",
+    "screenName": "HuggingApps",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2074158869522104320/Zb8nrY2y_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 198,
+    "retweets": 20,
+    "replies": 3,
+    "quotes": 1,
+    "views": 26126,
+    "bookmarks": 202
+   },
+   "createdAt": "Mon Aug 31 12:07:26 +0000 2026",
+   "createdAtLocal": "2026-08-31 20:07",
+   "createdAtISO": "2026-08-31T12:07:26+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2094395768530407425/vid/avc1/1440x1080/T2i-rCKY_Zd0qt8A.mp4?tag=29",
+     "width": 1440,
+     "height": 1080
+    }
+   ],
+   "urls": [
+    "https://huggingface.co/spaces/WepeNerd/ltx-ripple-demo"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094370325030937075",
+   "text": "new 🐳 drop (good one ♥️)\n\nhttps://t.co/0ala1fmCRc",
+   "author": {
+    "id": "784830007",
+    "name": "Victor M",
+    "screenName": "victormustar",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1099983311101984768/p7dZK4S__normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 327,
+    "retweets": 29,
+    "replies": 12,
+    "quotes": 6,
+    "views": 30347,
+    "bookmarks": 56
+   },
+   "createdAt": "Mon Aug 31 10:22:51 +0000 2026",
+   "createdAtLocal": "2026-08-31 18:22",
+   "createdAtISO": "2026-08-31T10:22:51+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094144554630894045",
+   "text": "trained my own with trl + openenv\n\nblog with open artifacts (code, models, dataset, rl env...) soon! https://t.co/HTxA9HLRv9",
+   "author": {
+    "id": "330572456",
+    "name": "Sergio Paniego",
+    "screenName": "SergioPaniego",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1697156955603673088/uoaqJ13T_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 765,
+    "retweets": 40,
+    "replies": 10,
+    "quotes": 4,
+    "views": 89538,
+    "bookmarks": 491
+   },
+   "createdAt": "Sun Aug 30 19:25:43 +0000 2026",
+   "createdAtLocal": "2026-08-31 03:25",
+   "createdAtISO": "2026-08-30T19:25:43+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2094142205682196480/vid/avc1/600x600/ySnQ7lu-doS4JatB.mp4?tag=29",
+     "width": 600,
+     "height": 600
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2091570990048276897",
+    "text": "You can just RL a coding model to paint with javascript btw https://t.co/4x5B81kjUh",
+    "author": {
+     "screenName": "kickingkeys",
+     "name": "Surya"
+    }
+   }
+  },
+  {
+   "id": "2093769774786384058",
+   "text": "Guess whose state of the art rigid body simulator that can support up to 200k rigidbodies is accurate enough for the microduck to walk in\n\nNot a single bit of this is run with mujoco. This is entirely my rigid body simulator (based on box3d) and runs entirely on cuda https://t.co/dKP6SMNogx",
+   "author": {
+    "id": "1173552893003255808",
+    "name": "kache",
+    "screenName": "yacineMTB",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2065246279031009280/PwRJZkGP_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1009,
+    "retweets": 41,
+    "replies": 63,
+    "quotes": 13,
+    "views": 128310,
+    "bookmarks": 224
+   },
+   "createdAt": "Sat Aug 29 18:36:29 +0000 2026",
+   "createdAtLocal": "2026-08-30 02:36",
+   "createdAtISO": "2026-08-29T18:36:29+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2093769042381164544/vid/avc1/1002x1402/lArYBEoC_ZTRKECD.mp4?tag=29",
+     "width": 1002,
+     "height": 1402
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094049712613814307",
+   "text": "The future is gonna be amazing. \n\nThe open source @huggingface Micro Duck is the way.\n\nGet two so you can say “ok guys quiet down now”… https://t.co/ykYz1InDFw",
+   "author": {
+    "id": "101584084",
+    "name": "Brian Roemmele",
+    "screenName": "BrianRoemmele",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1492616506/Brian-Med-Green-Fin_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 999,
+    "retweets": 96,
+    "replies": 83,
+    "quotes": 29,
+    "views": 193268,
+    "bookmarks": 239
+   },
+   "createdAt": "Sun Aug 30 13:08:51 +0000 2026",
+   "createdAtLocal": "2026-08-30 21:08",
+   "createdAtISO": "2026-08-30T13:08:51+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2093696107167498240/vid/avc1/1280x720/MdrQayaJJ_IGaHFp.mp4?tag=29",
+     "width": 1280,
+     "height": 720
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2093465891191042057",
+   "text": "We sold over $2,500,000 worth of Microducks in the first 24 hours. Is this one of the most successful robot launches in history?\n\nInsane achievement by @antoinepirrone and the team! https://t.co/puTnELmZHT",
+   "author": {
+    "id": "891709493448290304",
+    "name": "Remi Fabre",
+    "screenName": "RemiFabreRobot",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1155548043544027138/HqALlUys_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 4257,
+    "retweets": 295,
+    "replies": 206,
+    "quotes": 98,
+    "views": 353471,
+    "bookmarks": 657
+   },
+   "createdAt": "Fri Aug 28 22:28:57 +0000 2026",
+   "createdAtLocal": "2026-08-29 06:28",
+   "createdAtISO": "2026-08-28T22:28:57+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQ14fPPWQAEqx80.jpg",
+     "width": 1839,
+     "height": 638
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2093858085420875928",
+   "text": "How fast can we make it run?? My current best is 1.6 m/s https://t.co/gV4KjK7OfK",
+   "author": {
+    "id": "1027167424888627200",
+    "name": "Hannes von Essen",
+    "screenName": "HannesVonEssen",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2051384561041297408/lPmkN5zP_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 1782,
+    "retweets": 95,
+    "replies": 60,
+    "quotes": 25,
+    "views": 186938,
+    "bookmarks": 268
+   },
+   "createdAt": "Sun Aug 30 00:27:24 +0000 2026",
+   "createdAtLocal": "2026-08-30 08:27",
+   "createdAtISO": "2026-08-30T00:27:24+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2093858063669182464/vid/avc1/720x720/DwZA6oDMyw-_E5oz.mp4?tag=29",
+     "width": 720,
+     "height": 720
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094114643660640730",
+   "text": "open source ai must win",
+   "author": {
+    "id": "16141659",
+    "name": "Julien Chaumond",
+    "screenName": "julien_c",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1108502565925326850/zPsBf2BI_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2803,
+    "retweets": 269,
+    "replies": 241,
+    "quotes": 71,
+    "views": 170983,
+    "bookmarks": 73
+   },
+   "createdAt": "Sun Aug 30 17:26:52 +0000 2026",
+   "createdAtLocal": "2026-08-31 01:26",
+   "createdAtISO": "2026-08-30T17:26:52+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094044487358271615",
+   "text": "MicroDuck goes full Godzilla mode. https://t.co/rDn4e2J0z9",
+   "author": {
+    "id": "1618975370488999936",
+    "name": "AshutoshShrivastava",
+    "screenName": "ai_for_success",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1687401026805256192/uQ1o2wVQ_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 296,
+    "retweets": 43,
+    "replies": 25,
+    "quotes": 18,
+    "views": 111406,
+    "bookmarks": 37
+   },
+   "createdAt": "Sun Aug 30 12:48:05 +0000 2026",
+   "createdAtLocal": "2026-08-30 20:48",
+   "createdAtISO": "2026-08-30T12:48:05+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2094044350779121664/vid/avc1/1920x1080/7z7H83XehTFqJkZh.mp4?tag=29",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2093325592552710164",
+   "text": "i created microduck AR visualization so you can already see how it will look in your home and play a bit with it 🦆\n\nlink and instructions ⤵️ https://t.co/3GkNiXut2l",
+   "author": {
+    "id": "1415428329210105859",
+    "name": "apolinario (poli)",
+    "screenName": "multimodalart",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1998217136209289216/yL6PoQig_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 245,
+    "retweets": 25,
+    "replies": 4,
+    "quotes": 3,
+    "views": 31350,
+    "bookmarks": 60
+   },
+   "createdAt": "Fri Aug 28 13:11:28 +0000 2026",
+   "createdAtLocal": "2026-08-28 21:11",
+   "createdAtISO": "2026-08-28T13:11:28+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2093325420636545024/vid/avc1/1290x2796/bzIqEOe87u2hnXQC.mp4?tag=29",
+     "width": 1290,
+     "height": 2796
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2092923071829049592",
+    "text": "We have a huge news to share today!\n\nToday we are unveiling the first truly accessible RL robot - welcome Microduck\n\nA 25 cm tiny open-source biped with 15 actuators and packed with sensors (camera, speaker, LiDAR, NFC, bluetooth, wifi, etc) that you train yourself with reinforcement learning.\n\nIt's also playable out of the box with more than half a dozen fun and playful pre-trained policies to have it walk, sit, crouch, roller-skate, pick up objects with its articulated beak, and recover on its own.\n\nAnd all for less than $400.\n\nSee all the details, play with the simulator and order it at: https://t.co/n1Btgs6vKw\n\n(video with sound on 🔊)",
+    "author": {
+     "screenName": "Thom_Wolf",
+     "name": "Thomas Wolf"
+    }
+   }
+  },
+  {
+   "id": "2093404140454265205",
+   "text": "if you're not training your Microduck to breakdance, you're lost https://t.co/oK17UlrHF0",
+   "author": {
+    "id": "3243872259",
+    "name": "Lucas",
+    "screenName": "__Rhodium__",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1916711960999260160/GtNfhTOm_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 612,
+    "retweets": 34,
+    "replies": 18,
+    "quotes": 10,
+    "views": 90684,
+    "bookmarks": 97
+   },
+   "createdAt": "Fri Aug 28 18:23:35 +0000 2026",
+   "createdAtLocal": "2026-08-29 02:23",
+   "createdAtISO": "2026-08-28T18:23:35+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2093403895171358720/vid/avc1/1920x1080/IjsKnnURH3VkuSJu.mp4?tag=29",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2092923071829049592",
+    "text": "We have a huge news to share today!\n\nToday we are unveiling the first truly accessible RL robot - welcome Microduck\n\nA 25 cm tiny open-source biped with 15 actuators and packed with sensors (camera, speaker, LiDAR, NFC, bluetooth, wifi, etc) that you train yourself with reinforcement learning.\n\nIt's also playable out of the box with more than half a dozen fun and playful pre-trained policies to have it walk, sit, crouch, roller-skate, pick up objects with its articulated beak, and recover on its own.\n\nAnd all for less than $400.\n\nSee all the details, play with the simulator and order it at: https://t.co/n1Btgs6vKw\n\n(video with sound on 🔊)",
+    "author": {
+     "screenName": "Thom_Wolf",
+     "name": "Thomas Wolf"
+    }
+   }
+  },
+  {
+   "id": "2093339345579118765",
+   "text": "Training the Microduck to be able to perform headstands! Would love to see this in action for real.\n\nNext training will be performing a head spin dance move. Unsure if possible at all. https://t.co/0rA8n7NEoK",
+   "author": {
+    "id": "135625775",
+    "name": "André Baltazar",
+    "screenName": "AndreBaltazar",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1964961648558362624/DSjv6aN1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 955,
+    "retweets": 54,
+    "replies": 42,
+    "quotes": 15,
+    "views": 113284,
+    "bookmarks": 135
+   },
+   "createdAt": "Fri Aug 28 14:06:07 +0000 2026",
+   "createdAtLocal": "2026-08-28 22:06",
+   "createdAtISO": "2026-08-28T14:06:07+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2093338897447063553/vid/avc1/640x480/C7qcGjhz_zaYmhvb.mp4?tag=29",
+     "width": 640,
+     "height": 480
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2093354097122455713",
+   "text": "GLM-5.3 is now open-weight.\n\nOur most capable model for agentic coding and cyber defense is now available to download, run, and customize.\n\nWeights: https://t.co/v1IbWMXxg4\nTech blog: https://t.co/ekQkO83jCv https://t.co/f8XlJksKyf",
+   "author": {
+    "id": "1726486879456096256",
+    "name": "Z.ai",
+    "screenName": "Zai_org",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1970775077181411328/W8XKaUIh_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 8523,
+    "retweets": 955,
+    "replies": 276,
+    "quotes": 295,
+    "views": 1436834,
+    "bookmarks": 1213
+   },
+   "createdAt": "Fri Aug 28 15:04:44 +0000 2026",
+   "createdAtLocal": "2026-08-28 23:04",
+   "createdAtISO": "2026-08-28T15:04:44+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQ0WAnyXIAENtQA.jpg",
+     "width": 2446,
+     "height": 1280
+    }
+   ],
+   "urls": [
+    "https://huggingface.co/zai-org/GLM-5.3",
+    "https://z.ai/blog/glm-5.3"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "huggingface",
+   "lang": "en",
+   "score": null
+  }
+ ]
+}

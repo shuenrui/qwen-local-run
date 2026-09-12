@@ -1,0 +1,1471 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2089847417571365269",
+      "text": "As expected DGX Station absolutely crushes serving Qwen3.8-27B at BF16 (full weight)\n\n2,713+ tok/s peak aggregate\n88 tok/s single stream\n\nLike a datacenter in my living room",
+      "author": {
+        "id": "994096004",
+        "name": "Alec Fong",
+        "screenName": "alecqfong",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 842,
+        "retweets": 30,
+        "replies": 68,
+        "quotes": 19,
+        "views": 93197,
+        "bookmarks": 232
+      },
+      "createdAt": "Tue Aug 18 22:50:26 +0000 2026",
+      "createdAtLocal": "2026-08-19 06:50",
+      "createdAtISO": "2026-08-18T22:50:26+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HQCdHA0aUAA48kE.jpg",
+          "width": 3330,
+          "height": 1782
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HQCg4ggaYAAdbmq.jpg",
+          "width": 3072,
+          "height": 4096
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2089877287155994653",
+      "text": "@alecqfong it goes way way faster than that. Deepseek v4-flash is like ~420tok/s",
+      "author": {
+        "id": "676573",
+        "name": "tobi lutke",
+        "screenName": "tobi",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1999293930936909824/_HWYanot_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 82,
+        "retweets": 0,
+        "replies": 5,
+        "quotes": 0,
+        "views": 10388,
+        "bookmarks": 10
+      },
+      "createdAt": "Wed Aug 19 00:49:07 +0000 2026",
+      "createdAtLocal": "2026-08-19 08:49",
+      "createdAtISO": "2026-08-19T00:49:07+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2089880610785665503",
+      "text": "@tobi 420 single stream?! I got it up to 300. What was your config?\n\nhttps://t.co/S0ogVDVrEn\n\nStill need to tune some params. it was tripping my power strip breaker at higher concurrencies haha",
+      "author": {
+        "id": "994096004",
+        "name": "Alec Fong",
+        "screenName": "alecqfong",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 19,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 8806,
+        "bookmarks": 12
+      },
+      "createdAt": "Wed Aug 19 01:02:20 +0000 2026",
+      "createdAtLocal": "2026-08-19 09:02",
+      "createdAtISO": "2026-08-19T01:02:20+00:00",
+      "media": [],
+      "urls": [
+        "https://x.com/alecqfong/status/2085484123855155295?s=20"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2085484123855155295",
+        "text": "The DGX Station is a beast at serving DeepSeekV4 Flash\n\nOn a single GB300 Station I’m getting\n\nPeak aggregate 1875 tok/sec\nSingle stream 300 tok/sec\nTTFT 5s for 128k context https://t.co/vB4GZrdWxa",
+        "author": {
+          "screenName": "alecqfong",
+          "name": "Alec Fong"
+        }
+      }
+    },
+    {
+      "id": "2089858133661487398",
+      "text": "@alecqfong Thank you for the api key 🫶",
+      "author": {
+        "id": "825885658635841536",
+        "name": "Nader Khalil🍊",
+        "screenName": "NaderLikeLadder",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1512288394516185090/1hse2F3__normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 12,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 4583,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Aug 18 23:33:01 +0000 2026",
+      "createdAtLocal": "2026-08-19 07:33",
+      "createdAtISO": "2026-08-18T23:33:01+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2089880745997377947",
+      "text": "@NaderLikeLadder All the homies get keys 🔑",
+      "author": {
+        "id": "994096004",
+        "name": "Alec Fong",
+        "screenName": "alecqfong",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 11,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 3724,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 19 01:02:52 +0000 2026",
+      "createdAtLocal": "2026-08-19 09:02",
+      "createdAtISO": "2026-08-19T01:02:52+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2090065958098682162",
+      "text": "@alecqfong Mine is old, the OG DGX Station but at TG it's not too bad 61 tok/s at Q8_0 (should be minimal lost) at a fraction of the cost.  https://t.co/Wy8szfwAgj",
+      "author": {
+        "id": "591674669",
+        "name": "Jun Yamog",
+        "screenName": "jkyamog",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2080481754893455360/Dhjjx0Mb_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 7,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 2621,
+        "bookmarks": 1
+      },
+      "createdAt": "Wed Aug 19 13:18:50 +0000 2026",
+      "createdAtLocal": "2026-08-19 21:18",
+      "createdAtISO": "2026-08-19T13:18:50+00:00",
+      "media": [],
+      "urls": [
+        "https://x.com/jkyamog/status/2090049519836885154?s=20"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2090049519836885154",
+        "text": "This is now my fastest @Alibaba_Qwen 27B runner. Just using MTP at higher quant Q8_0 it’s 61 tok/sec beating my 5090 Q6_K 58 tok/sec\n\nNot bad for a 8 year old hardware, Volta V100 Nvlink-ed. PP is slower though at 725 tok/sec but this is almost 2x my DGX spark. https://t.co/i7kOz4WOLN",
+        "author": {
+          "screenName": "jkyamog",
+          "name": "Jun Yamog"
+        }
+      }
+    },
+    {
+      "id": "2090105544761831603",
+      "text": "@jkyamog Epic! How much do these go for these days?",
+      "author": {
+        "id": "994096004",
+        "name": "Alec Fong",
+        "screenName": "alecqfong",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 983,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 19 15:56:08 +0000 2026",
+      "createdAtLocal": "2026-08-19 23:56",
+      "createdAtISO": "2026-08-19T15:56:08+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2089864793280729171",
+      "text": "@alecqfong Good stuff.  I’d wager that most people miss the full weight note on that headline (I did at first).  That’s ~54GB of read per token.  At Q4 this would be like 352 tokens per second.",
+      "author": {
+        "id": "1609174021299441666",
+        "name": "Mike Bradley",
+        "screenName": "MikeBradleyAI",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2078945926677254144/23wTf03F_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 6,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 941,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Aug 18 23:59:29 +0000 2026",
+      "createdAtLocal": "2026-08-19 07:59",
+      "createdAtISO": "2026-08-18T23:59:29+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2089867214123847835",
+      "text": "@alecqfong bro has cerebras at home",
+      "author": {
+        "id": "2004675530935926784",
+        "name": "am.will",
+        "screenName": "LLMJunky",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2089432764214816768/3MwccN6a_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1239,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 19 00:09:06 +0000 2026",
+      "createdAtLocal": "2026-08-19 08:09",
+      "createdAtISO": "2026-08-19T00:09:06+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2089861441914605791",
+      "text": "@alecqfong Holy FS. Must. Resist. Draining. 401k.",
+      "author": {
+        "id": "529492776",
+        "name": "David Nix",
+        "screenName": "david_nix",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1737486447161081856/jI05IRKW_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 636,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Aug 18 23:46:10 +0000 2026",
+      "createdAtLocal": "2026-08-19 07:46",
+      "createdAtISO": "2026-08-18T23:46:10+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2089962943064551518",
+      "text": "@alecqfong It is like a data center though :)",
+      "author": {
+        "id": "133797694",
+        "name": "Everlier",
+        "screenName": "Everlier",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2025251904146608128/5WAFsIQq_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 1239,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 19 06:29:29 +0000 2026",
+      "createdAtLocal": "2026-08-19 14:29",
+      "createdAtISO": "2026-08-19T06:29:29+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2089867159375679723",
+      "text": "@alecqfong wow. i did not expect that.",
+      "author": {
+        "id": "2004675530935926784",
+        "name": "am.will",
+        "screenName": "LLMJunky",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2089432764214816768/3MwccN6a_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 1474,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 19 00:08:53 +0000 2026",
+      "createdAtLocal": "2026-08-19 08:08",
+      "createdAtISO": "2026-08-19T00:08:53+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2089887818973921672",
+      "text": "@alecqfong Where's my key sir",
+      "author": {
+        "id": "43670165",
+        "name": "Kevin Chandra (Agent Led Growth Guy)",
+        "screenName": "kvnchandra",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1986572383269146624/8JcPPP-d_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 144,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 19 01:30:58 +0000 2026",
+      "createdAtLocal": "2026-08-19 09:30",
+      "createdAtISO": "2026-08-19T01:30:58+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2090277589273178560",
+      "text": "@alecqfong send me one ill hit 9,000+ https://t.co/lj6hqrQexq",
+      "author": {
+        "id": "3091337981",
+        "name": "Eric ⚡️ Building...",
+        "screenName": "outsource_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2032704843954139137/_wI5Qy43_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 57,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Aug 20 03:19:47 +0000 2026",
+      "createdAtLocal": "2026-08-20 11:19",
+      "createdAtISO": "2026-08-20T03:19:47+00:00",
+      "media": [
+        {
+          "type": "animated_gif",
+          "url": "https://video.twimg.com/tweet_video/HQIoYw9X0AArWne.mp4",
+          "width": 352,
+          "height": 288
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2090277500932776212",
+      "text": "@alecqfong send me one ill hit 3,000+",
+      "author": {
+        "id": "3091337981",
+        "name": "Eric ⚡️ Building...",
+        "screenName": "outsource_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2032704843954139137/_wI5Qy43_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 40,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Aug 20 03:19:26 +0000 2026",
+      "createdAtLocal": "2026-08-20 11:19",
+      "createdAtISO": "2026-08-20T03:19:26+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2090072816561369537",
+      "text": "@alecqfong so jealous.",
+      "author": {
+        "id": "10997",
+        "name": "humblelifeskills",
+        "screenName": "philcampbell",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2074236593724964864/np9RpDEK_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 96,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 19 13:46:05 +0000 2026",
+      "createdAtLocal": "2026-08-19 21:46",
+      "createdAtISO": "2026-08-19T13:46:05+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2089867731843649895",
+      "text": "@alecqfong I mean for what it costs",
+      "author": {
+        "id": "6409802",
+        "name": "alexintosh",
+        "screenName": "Alexintosh",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2022733129694269440/OeBnGWU6_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 687,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 19 00:11:09 +0000 2026",
+      "createdAtLocal": "2026-08-19 08:11",
+      "createdAtISO": "2026-08-19T00:11:09+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2089861823910858781",
+      "text": "@alecqfong where would one go to procure such a machine (asking for a friend)",
+      "author": {
+        "id": "16367415",
+        "name": "Idan Beck",
+        "screenName": "idanbeck",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1409215041161752580/dPLKr16y_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 624,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Aug 18 23:47:41 +0000 2026",
+      "createdAtLocal": "2026-08-19 07:47",
+      "createdAtISO": "2026-08-18T23:47:41+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2089855052269621343",
+      "text": "@alecqfong 2,700 tok/s https://t.co/NNMVpf6lI7",
+      "author": {
+        "id": "1732414985676943360",
+        "name": "BilbroSwagginz",
+        "screenName": "BilbroSwagginzX",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2097317832275193856/v_aihEs-_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 12,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 1848,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Aug 18 23:20:46 +0000 2026",
+      "createdAtLocal": "2026-08-19 07:20",
+      "createdAtISO": "2026-08-18T23:20:46+00:00",
+      "media": [
+        {
+          "type": "animated_gif",
+          "url": "https://video.twimg.com/tweet_video/HQCoF4cXoAAzJRr.mp4",
+          "width": 200,
+          "height": 150
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "in",
+      "score": null
+    },
+    {
+      "id": "2089933413058809878",
+      "text": "@alecqfong Honestly those are completely pathetic numbers for a $100,000 machine.",
+      "author": {
+        "id": "920308045036576768",
+        "name": "JMB 🧙‍♂️",
+        "screenName": "jmbollenbacher",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1993177860085874688/COYSRtcf_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 9,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 376,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 19 04:32:09 +0000 2026",
+      "createdAtLocal": "2026-08-19 12:32",
+      "createdAtISO": "2026-08-19T04:32:09+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2089916986524418411",
+      "text": "@alecqfong $1,136 per tok/s 💀\n$100K / 88 tok/s",
+      "author": {
+        "id": "2064770002083885056",
+        "name": "Ben McMahon",
+        "screenName": "Pontifex_ben",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2064772858828525568/gvKtvcAY_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 6,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1182,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 19 03:26:53 +0000 2026",
+      "createdAtLocal": "2026-08-19 11:26",
+      "createdAtISO": "2026-08-19T03:26:53+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2089883921551098087",
+      "text": "@alecqfong @TechMDAI How the heck are you guys affording the Dgx station?????  It’s the price of a new truck.  Lol",
+      "author": {
+        "id": "1601436434615119872",
+        "name": "Spenc61",
+        "screenName": "baguley61",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2020908610239463426/gYA-Q6zp_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 6,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1240,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 19 01:15:29 +0000 2026",
+      "createdAtLocal": "2026-08-19 09:15",
+      "createdAtISO": "2026-08-19T01:15:29+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2090549797946372349",
+      "text": "@alecqfong If you want the best team on the planet to test something like this for cap markets and the rest... @nixos_org CUDA team is around ;)\n@GaetanLepage_ https://t.co/rshoyvPrkH",
+      "author": {
+        "id": "902523433132707845",
+        "name": "Ron Efroni",
+        "screenName": "ronefroni",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1608869535251333120/UUPGDC4H_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 1,
+        "replies": 0,
+        "quotes": 0,
+        "views": 67,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Aug 20 21:21:27 +0000 2026",
+      "createdAtLocal": "2026-08-21 05:21",
+      "createdAtISO": "2026-08-20T21:21:27+00:00",
+      "media": [
+        {
+          "type": "animated_gif",
+          "url": "https://video.twimg.com/tweet_video/HQMf9b5agAAg6Ew.mp4",
+          "width": 296,
+          "height": 296
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2089896904377201135",
+      "text": "@alecqfong Over $100k for a pc that just runs Qwen-3.8-27b 😭😭 Ill stick to my dual titan rtx than get 25 t/s for less than $1000",
+      "author": {
+        "id": "1648048595294121984",
+        "name": "RomboDawg",
+        "screenName": "dudeman6790",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1785897584717955072/VQCV-bdD_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 168,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 19 02:07:05 +0000 2026",
+      "createdAtLocal": "2026-08-19 10:07",
+      "createdAtISO": "2026-08-19T02:07:05+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2089875433806553345",
+      "text": "@alecqfong @TechMDAI I was working on vllm concurrency earlier and by adding more tokens to the graphs you can get a flatter decode? Mine was hitting a clif at 16 tokens. Look like you might be just getting normal fall off.",
+      "author": {
+        "id": "2006791794013736960",
+        "name": "Sean Highness",
+        "screenName": "seanhighness",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2081080748283764737/ABWkcXIn_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 409,
+        "bookmarks": 1
+      },
+      "createdAt": "Wed Aug 19 00:41:46 +0000 2026",
+      "createdAtLocal": "2026-08-19 08:41",
+      "createdAtISO": "2026-08-19T00:41:46+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2089871884670103631",
+      "text": "@alecqfong How the F do people afford this thing? isn't it like 200K?",
+      "author": {
+        "id": "743943387204620289",
+        "name": "Leroy",
+        "screenName": "randomname2165",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1970085976929103872/r3o5oAmv_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 4,
+        "quotes": 0,
+        "views": 1831,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 19 00:27:39 +0000 2026",
+      "createdAtLocal": "2026-08-19 08:27",
+      "createdAtISO": "2026-08-19T00:27:39+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2089872813905834268",
+      "text": "@alecqfong I'm confused, you can do this on a single RTX 6000, using NVFP4, yes, I know not BF16 but still, that's insane hardware for the results.",
+      "author": {
+        "id": "1253020940",
+        "name": "Grant Mucha",
+        "screenName": "grantmucha",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2027769587593277440/fog7arMb_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 865,
+        "bookmarks": 1
+      },
+      "createdAt": "Wed Aug 19 00:31:21 +0000 2026",
+      "createdAtLocal": "2026-08-19 08:31",
+      "createdAtISO": "2026-08-19T00:31:21+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2090042419802669303",
+      "text": "@alecqfong All for the small price of a rural house and still no RGB 😂😜🖖",
+      "author": {
+        "id": "2019829518152654848",
+        "name": "moe moeseph",
+        "screenName": "MrxMoex",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2058642144307335170/dYkcDEjU_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 703,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 19 11:45:18 +0000 2026",
+      "createdAtLocal": "2026-08-19 19:45",
+      "createdAtISO": "2026-08-19T11:45:18+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2089866949333307790",
+      "text": "@alecqfong I hate this. I read dgx and assumed spark cause i have one and its all over my feed. Then i saw BF16 and reread the first sentence😭. One day ill have something close",
+      "author": {
+        "id": "1681300417194639365",
+        "name": "Dreamweaver",
+        "screenName": "Anthonyo432",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1755613343426179072/u83lUlgS_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1442,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 19 00:08:03 +0000 2026",
+      "createdAtLocal": "2026-08-19 08:08",
+      "createdAtISO": "2026-08-19T00:08:03+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2089863687939248508",
+      "text": "@alecqfong The aggregate is cool, but 1 stream speed seems terribly slow for a Station 🤔 No DD?",
+      "author": {
+        "id": "1564704509007663104",
+        "name": "yoshiyoshi",
+        "screenName": "yy00shi",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1848052125840154624/8Sr_v_XS_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 666,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Aug 18 23:55:05 +0000 2026",
+      "createdAtLocal": "2026-08-19 07:55",
+      "createdAtISO": "2026-08-18T23:55:05+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2089869974391095801",
+      "text": "@alecqfong can i borrow it 😅 https://t.co/Y2pvbLmntH",
+      "author": {
+        "id": "381719760",
+        "name": "Andre Buckingham 🧙‍♂️",
+        "screenName": "AndreBuckingham",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1855241556589989888/Ug2sLf23_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 539,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 19 00:20:04 +0000 2026",
+      "createdAtLocal": "2026-08-19 08:20",
+      "createdAtISO": "2026-08-19T00:20:04+00:00",
+      "media": [
+        {
+          "type": "animated_gif",
+          "url": "https://video.twimg.com/tweet_video/HQC1qi3XoAE8K-b.mp4",
+          "width": 500,
+          "height": 400
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2089853207316959726",
+      "text": "@alecqfong Are you not doing spec decode? I’m getting 130/s",
+      "author": {
+        "id": "1579186235863597059",
+        "name": "Bill",
+        "screenName": "BillQueens",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1804298243032952832/cNsqRUbm_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 445,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Aug 18 23:13:26 +0000 2026",
+      "createdAtLocal": "2026-08-19 07:13",
+      "createdAtISO": "2026-08-18T23:13:26+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2090063810430198135",
+      "text": "@alecqfong Like a data center in my living room - that's the best way to describe the DGX Station. 😄\n\nAn aggregate of 2.7k tokens/second at full weight is truly impressive. 🔥",
+      "author": {
+        "id": "1631943482616029184",
+        "name": "Shesaidmewakeup",
+        "screenName": "shesaidmewakeup",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2084221748984078336/BwklPnbz_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 84,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 19 13:10:18 +0000 2026",
+      "createdAtLocal": "2026-08-19 21:10",
+      "createdAtISO": "2026-08-19T13:10:18+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2089910483499253916",
+      "text": "@alecqfong What did it cost?",
+      "author": {
+        "id": "2067673842814988288",
+        "name": "Continuum",
+        "screenName": "ContinuumCode",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2067678891632934912/NX8ZnzDJ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1894,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 19 03:01:02 +0000 2026",
+      "createdAtLocal": "2026-08-19 11:01",
+      "createdAtISO": "2026-08-19T03:01:02+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2090043799095378253",
+      "text": "@alecqfong yeah, you can do better. should hop on the blackwell performance discord. https://t.co/p4RwrPo7Ms",
+      "author": {
+        "id": "2069896949906432000",
+        "name": "Jason",
+        "screenName": "original_el8",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2094402449842810880/wRPIdKq2_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 0,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 19 11:50:47 +0000 2026",
+      "createdAtLocal": "2026-08-19 19:50",
+      "createdAtISO": "2026-08-19T11:50:47+00:00",
+      "media": [],
+      "urls": [
+        "https://discord.gg/8eUAJa94"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2089893604538073500",
+      "text": "@alecqfong How much does it cost in IDR? @grok how can I buy it",
+      "author": {
+        "id": "2057743172961234946",
+        "name": "Faiz Hadiyan",
+        "screenName": "faizhadiyanx",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2091783316332834816/JkX1sEh4_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 141,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 19 01:53:58 +0000 2026",
+      "createdAtLocal": "2026-08-19 09:53",
+      "createdAtISO": "2026-08-19T01:53:58+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2096866983359005105",
+      "text": "The 10th Joint RFA Research Seminar is coming to Singapore! \n\nTheme: A New Era of Financial Digitalization in a Geo-Fragmented World. \nDates: Sep 14-15\n\nRegister now!",
+      "author": {
+        "id": "1245979460240674816",
+        "name": "AMRO (ASEAN+3 Macroeconomic Research Office)",
+        "screenName": "amro_asia",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2020701868092231680/5-GDfQ4x_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 79,
+        "retweets": 19,
+        "replies": 8,
+        "quotes": 0,
+        "views": 1176329,
+        "bookmarks": 13
+      },
+      "createdAt": "Mon Sep 07 07:43:41 +0000 2026",
+      "createdAtLocal": "2026-09-07 15:43",
+      "createdAtISO": "2026-09-07T07:43:41+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2090079280738775060",
+      "text": "@alecqfong - Looks at speed - wow I should get a DGX Spark. \n- Read the post again\n- DGX Station 👀\n- Looks at price, $100k",
+      "author": {
+        "id": "2034716620070035457",
+        "name": "Ivan Zhang",
+        "screenName": "izzycodev",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2034717922589896704/jXnZg0oW_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 120,
+        "bookmarks": 1
+      },
+      "createdAt": "Wed Aug 19 14:11:46 +0000 2026",
+      "createdAtLocal": "2026-08-19 22:11",
+      "createdAtISO": "2026-08-19T14:11:46+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2089879417334235449",
+      "text": "@alecqfong Single stream is a little disappointing? People are getting more than that on single consumer GPUs.",
+      "author": {
+        "id": "2085354252671860736",
+        "name": "Finely Tuned",
+        "screenName": "finelytunedai",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2085357015451463682/ws_wWQ5q_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 534,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 19 00:57:35 +0000 2026",
+      "createdAtLocal": "2026-08-19 08:57",
+      "createdAtISO": "2026-08-19T00:57:35+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2089882787587453369",
+      "text": "@alecqfong Owning your inference will be big, and the one who provides it at scale would be bigger.",
+      "author": {
+        "id": "144245892",
+        "name": "Geno Jose",
+        "screenName": "genojose",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2085419111484657664/jhsvdsGU_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 554,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 19 01:10:59 +0000 2026",
+      "createdAtLocal": "2026-08-19 09:10",
+      "createdAtISO": "2026-08-19T01:10:59+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2096913723093033099",
+      "text": "The flexible neck lets you aim the projection toward the ceiling, wall or whichever corner needs the effect most.\nBend it into place and turn unused space into part of the room’s atmosphere.",
+      "author": {
+        "id": "796013836855812097",
+        "name": "Linenvio",
+        "screenName": "Linenvio",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2083442573545488384/qF71dgLP_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4477,
+        "retweets": 200,
+        "replies": 0,
+        "quotes": 19,
+        "views": 3643024,
+        "bookmarks": 1799
+      },
+      "createdAt": "Mon Sep 07 10:49:25 +0000 2026",
+      "createdAtLocal": "2026-09-07 18:49",
+      "createdAtISO": "2026-09-07T10:49:25+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2089972831236841713",
+      "text": "@alecqfong Insane, how much does something like this cost?",
+      "author": {
+        "id": "2011761134232354819",
+        "name": "Lev | AI App Builder",
+        "screenName": "thatlevco",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2079652049826816000/RTGpEIg9_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 967,
+        "bookmarks": 1
+      },
+      "createdAt": "Wed Aug 19 07:08:47 +0000 2026",
+      "createdAtLocal": "2026-08-19 15:08",
+      "createdAtISO": "2026-08-19T07:08:47+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2090016545254617350",
+      "text": "@alecqfong Can you show its performance as a function of the context size as well? That is, if you have a chat session, it noticeably gets slower with more request/response pairs.",
+      "author": {
+        "id": "2012800482679422976",
+        "name": "Name",
+        "screenName": "canonicalmodel",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2012898715527180288/FvONbQ7T_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 213,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 19 10:02:29 +0000 2026",
+      "createdAtLocal": "2026-08-19 18:02",
+      "createdAtISO": "2026-08-19T10:02:29+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2089885914206269706",
+      "text": "@alecqfong @TechMDAI For a second, I was like how the hell did you get a DGX station then realized you founded https://t.co/GldC0M3iSS 😭",
+      "author": {
+        "id": "2059868840004403200",
+        "name": "Ty",
+        "screenName": "tysn_dev",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2060421140619948032/FVpzGkUM_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 367,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 19 01:23:24 +0000 2026",
+      "createdAtLocal": "2026-08-19 09:23",
+      "createdAtISO": "2026-08-19T01:23:24+00:00",
+      "media": [],
+      "urls": [
+        "https://Brev.dev"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2090026907186151707",
+      "text": "@alecqfong 88 Tokens/S for a single stream, is that all?\n\nRTX 5090 with 32GB can manage over 150/s.",
+      "author": {
+        "id": "1888861648171229184",
+        "name": "Peter Morris",
+        "screenName": "MrPeterLMorris",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1888861819508498432/_cJNXG8y_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 146,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 19 10:43:40 +0000 2026",
+      "createdAtLocal": "2026-08-19 18:43",
+      "createdAtISO": "2026-08-19T10:43:40+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2090052803058188760",
+      "text": "@alecqfong Cost?",
+      "author": {
+        "id": "1145862192442556416",
+        "name": "Jonathan Malkin 🦊",
+        "screenName": "builtwithjon",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2095504413523898368/_-zT7pVG_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 424,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 19 12:26:34 +0000 2026",
+      "createdAtLocal": "2026-08-19 20:26",
+      "createdAtISO": "2026-08-19T12:26:34+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2089884687883714933",
+      "text": "@alecqfong Specs?",
+      "author": {
+        "id": "1899026425195216896",
+        "name": "kay",
+        "screenName": "BlessSee_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2087352547455422464/DUKwT_O3_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 406,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 19 01:18:32 +0000 2026",
+      "createdAtLocal": "2026-08-19 09:18",
+      "createdAtISO": "2026-08-19T01:18:32+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2089998121002479992",
+      "text": "@alecqfong Insane piece of gear !",
+      "author": {
+        "id": "144745594",
+        "name": "Petar",
+        "screenName": "spale777",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1622720857318604801/FZEzHemB_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 889,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 19 08:49:16 +0000 2026",
+      "createdAtLocal": "2026-08-19 16:49",
+      "createdAtISO": "2026-08-19T08:49:16+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2089880302793466129",
+      "text": "@alecqfong I know a way you could easily connect to that data center. 😁",
+      "author": {
+        "id": "21374056",
+        "name": "Remy G.",
+        "screenName": "remyguercio",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/681159213893091328/xC1gGI8G_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 1431,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 19 01:01:06 +0000 2026",
+      "createdAtLocal": "2026-08-19 09:01",
+      "createdAtISO": "2026-08-19T01:01:06+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2089996716057714985",
+      "text": "@alecqfong 곧 나의 애플실리콘 맥북프로 M5 Max 128g 가 따라잡을거 같습니다",
+      "author": {
+        "id": "197623596",
+        "name": "KimSunIl",
+        "screenName": "ksuniri",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2086683266040594432/he1jsaVb_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 56,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 19 08:43:42 +0000 2026",
+      "createdAtLocal": "2026-08-19 16:43",
+      "createdAtISO": "2026-08-19T08:43:42+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "ko",
+      "score": null
+    }
+  ]
+}

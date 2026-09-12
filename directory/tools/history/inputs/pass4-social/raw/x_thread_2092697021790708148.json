@@ -1,0 +1,1442 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2092697021790708148",
+      "text": "The VRAM barrier is officially dead.\n\nI just ran Qwen 3.8 Flash Next (MoE) 125B A6B with a  250,000 context window on a single 24GB RTX 4090.\n\n21 tokens/sec decode. 364 t/s prefill. \n\nno mtp. no dflash. no kv cache quantization!\n\nWe are running datacenter models on consumer hardware.\n\nTested on Ubuntu 22 | CUDA 13.0 | PCIe 4.0 x16 | 110 GB DDR4 System RAM with a continuous 28k prompt across all runs.\n\n### The Benchmarks & Scaling\n\n# 1. Hybrid Offload (-ncmoe 40 @ 80k Context)\nOffloaded 40 expert layers to the GPU, pushing VRAM to the ceiling.\n\n./build/bin/llama-server -m Qwen3.8-Flash-Next-UD-Q4_K_XL-00001-of-00004.gguf -c 80000 --port 8080 -v --fit off -b 4096 -ub 4096 -ncmoe 40\n\nPrefill: 383.85 t/s | Decode: 22.52 t/s\nFootprint: 23.85 GB VRAM | 97 GB RAM\n\n# 2. Full CPU MoE Offload (-cmoe @ 80k Context)\n\nPinned all 512 expert layers to DDR4 RAM (-cmoe), keeping attention on the 4090.\n\nllama.cpp flags: (Same as above, replace -ncmoe 40 with -cmoe)\n\nPrefill: 355.72 t/s | Decode: 20.84 t/s\nFootprint: 11.66 GB VRAM (12GB+ VRAM freed up!) | 110 GB RAM\n\n# 3. The 180,000 Context Run\n\nPrefill: 357.75 t/s | Decode: 20.98 t/s | VRAM: 15.6 GB | RAM: 110 GB\n\n# 4. The 250,000 Context Absolute Ceiling\n\n./build/bin/llama-server -m Qwen3.8-Flash-Next-UD-Q4_K_XL-00001-of-00004.gguf -c 250000 --port 8080 -v --fit off -b 4096 -ub 4096 -cmoe\n\nPrefill: 364.29 t/s | Decode: 20.97 t/s\n\nFootprint: 18.3 GB VRAM (Still ~5.7 GB of VRAM headroom!) | 110 GB RAM\n\n### Key Insights:\n-b 4096 -ub 4096: doubles the prompt ingestion from ~150 to 364+ t/s.\n-cmoe Free Lunch: Shifting expert layers to DDR4 RAM slashes VRAM from 24GB to 11.6GB with virtually zero decode penalty (22.5 -> 20.9 t/s), enabling the 250k context ceiling.\n\nQwen 3.8 Flash-Next (UD-Q4_K_XL) is a massive 111.4 GB model split across 4 shards. To run this architecture, you must build from the experimental PR branch (#27742) by @danielhanchen:\n\ngit clone && cd llama.cpp \ngit fetch origin pull/27742/head:qwen-next && git checkout qwen-next \ncmake -B build -DGGML_CUDA=ON -DCMAKE_CUDA_ARCHITECTURES=native -DBUILD_SHARED_LIBS=OFF \ncmake --build build --config Release -j $(nproc) --target llama-server\n\nA single 4090 paired with 100 GB of cheap DDR4 RAM will comfortably serve production grade 125B inference.\n\nWhile Qwen 3.8 27B (dense) still holds the crown for single 3090/4090 rigs, Flash Next proves 125B hybrid models are officially viable on consumer hardware. \n\nHugging Face GGUF link and complete performance telemetry graphs are dropped in the replies below.\n\nGLM 5.3 Flash VS Qwen 3.8 Flash Next, which one takes the open weights crown this week?",
+      "author": {
+        "id": "2207203190",
+        "name": "Alok",
+        "screenName": "analogalok",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055727708261474304/tUAKpN50_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4698,
+        "retweets": 455,
+        "replies": 161,
+        "quotes": 84,
+        "views": 1007904,
+        "bookmarks": 5153
+      },
+      "createdAt": "Wed Aug 26 19:33:45 +0000 2026",
+      "createdAtLocal": "2026-08-27 03:33",
+      "createdAtISO": "2026-08-26T19:33:45+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2092694542948659200/vid/avc1/1920x1080/nEbzUDFUT9OH2X2W.mp4?tag=29",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2092639558815060281",
+        "text": "Qwen3.8-Flash can now be run locally! 🔥\n\nThe 125B MoE model outperforms Claude-Opus-4.6 (Max).\n\nRun on 75GB RAM via Unsloth GGUFs.\n\nQwen3.8-Flash-Next enables CPU RAM / unified mem setups to deliver near VRAM speeds.\n\nGuide: https://t.co/LLMclyJTeL\nGGUF: https://t.co/vXkjO3W0fj https://t.co/sPs8C2RJQw",
+        "author": {
+          "screenName": "UnslothAI",
+          "name": "Unsloth AI"
+        }
+      }
+    },
+    {
+      "id": "2092697196793847858",
+      "text": "unsloth/Qwen3.8-Flash-Next-GGUF · Hugging Face\nhttps://t.co/oYRXpETqR4",
+      "author": {
+        "id": "2207203190",
+        "name": "Alok",
+        "screenName": "analogalok",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055727708261474304/tUAKpN50_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 54,
+        "retweets": 3,
+        "replies": 0,
+        "quotes": 0,
+        "views": 17433,
+        "bookmarks": 53
+      },
+      "createdAt": "Wed Aug 26 19:34:26 +0000 2026",
+      "createdAtLocal": "2026-08-27 03:34",
+      "createdAtISO": "2026-08-26T19:34:26+00:00",
+      "media": [],
+      "urls": [
+        "https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092697329933688872",
+      "text": "https://t.co/GLICG4LU9o",
+      "author": {
+        "id": "2207203190",
+        "name": "Alok",
+        "screenName": "analogalok",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055727708261474304/tUAKpN50_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 23,
+        "retweets": 1,
+        "replies": 2,
+        "quotes": 0,
+        "views": 14493,
+        "bookmarks": 17
+      },
+      "createdAt": "Wed Aug 26 19:34:58 +0000 2026",
+      "createdAtLocal": "2026-08-27 03:34",
+      "createdAtISO": "2026-08-26T19:34:58+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HQrBHjwbUAA9niV.jpg",
+          "width": 1407,
+          "height": 870
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "zxx",
+      "score": null
+    },
+    {
+      "id": "2092697440847909048",
+      "text": "Unsloth's official guide to run this model \nhttps://t.co/vUnHvqAUKE",
+      "author": {
+        "id": "2207203190",
+        "name": "Alok",
+        "screenName": "analogalok",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055727708261474304/tUAKpN50_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 25,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 12330,
+        "bookmarks": 43
+      },
+      "createdAt": "Wed Aug 26 19:35:24 +0000 2026",
+      "createdAtLocal": "2026-08-27 03:35",
+      "createdAtISO": "2026-08-26T19:35:24+00:00",
+      "media": [],
+      "urls": [
+        "https://unsloth.ai/docs/models/qwen3.8-next"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2097772695685591466",
+      "text": "Introducing iPhone Duo, iPhone 18 Pro, Apple Watch Series 12, Apple Watch Ultra 4 and AirPods 5.",
+      "author": {
+        "id": "380749300",
+        "name": "Apple",
+        "screenName": "Apple",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1892248257516224513/SzZdRSkx_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 565,
+        "retweets": 54,
+        "replies": 3,
+        "quotes": 9,
+        "views": 1157002,
+        "bookmarks": 52
+      },
+      "createdAt": "Wed Sep 09 19:42:40 +0000 2026",
+      "createdAtLocal": "2026-09-10 03:42",
+      "createdAtISO": "2026-09-09T19:42:40+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092725865738023006",
+      "text": "@analogalok so my 5090 gonna crush this right? can someone obliterate this model please?",
+      "author": {
+        "id": "1279059150438367233",
+        "name": "Andrew",
+        "screenName": "Tradesdontlie",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2088343698157326336/u_DBXGVa_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1357,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 21:28:22 +0000 2026",
+      "createdAtLocal": "2026-08-27 05:28",
+      "createdAtISO": "2026-08-26T21:28:22+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092757289270944245",
+      "text": "@Tradesdontlie absolutely without a doubt! m sure the community would already be at work",
+      "author": {
+        "id": "2207203190",
+        "name": "Alok",
+        "screenName": "analogalok",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055727708261474304/tUAKpN50_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 1045,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 23:33:13 +0000 2026",
+      "createdAtLocal": "2026-08-27 07:33",
+      "createdAtISO": "2026-08-26T23:33:13+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092711836294516834",
+      "text": "@analogalok you're close to being worth following, but your hyperbole makes you look more like a dancing clown than a serious person",
+      "author": {
+        "id": "1160223221037305856",
+        "name": "ᛗᚨᚱᚴᚢᛋ",
+        "screenName": "guitaripod",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2006864016761565184/iovRtxfv_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 63,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 4297,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 20:32:37 +0000 2026",
+      "createdAtLocal": "2026-08-27 04:32",
+      "createdAtISO": "2026-08-26T20:32:37+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092714021472571520",
+      "text": "@guitaripod Fair critique. The enthusiasm is free, but the benchmarks are real. Stick around I might just earn that follow eventually",
+      "author": {
+        "id": "2207203190",
+        "name": "Alok",
+        "screenName": "analogalok",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055727708261474304/tUAKpN50_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 11,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 0,
+        "views": 3981,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 20:41:18 +0000 2026",
+      "createdAtLocal": "2026-08-27 04:41",
+      "createdAtISO": "2026-08-26T20:41:18+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092725378657800213",
+      "text": "@analogalok It is not dead. MoE makes, and allows to run it fast, and it is amazing model, and community efforts are amazing, but if you sell it like VRAM barrier is dead then you are overselling it.",
+      "author": {
+        "id": "1976667925647077376",
+        "name": "Earth Dono",
+        "screenName": "earthdono",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2089477688863989760/aG2Htw0d_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 30,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 6926,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 21:26:25 +0000 2026",
+      "createdAtLocal": "2026-08-27 05:26",
+      "createdAtISO": "2026-08-26T21:26:25+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092749793416327299",
+      "text": "i remember running deepseek v4 flash q4 on the same hardware. it delivered about 12 tps. same for Poolside Laguna S 2.1 (118B MoE) Q4 quant 12 tps. This one is doing almost double. qwen 3.8 flash next should also work with 12gb vram and 16 gb vram at 80k and 120k context without kv cache quantization if u have the ram to offload. If the architectural improvements continue with same pace, we should be able to run pretty smart models on ram alone",
+      "author": {
+        "id": "2207203190",
+        "name": "Alok",
+        "screenName": "analogalok",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055727708261474304/tUAKpN50_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 11,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 0,
+        "views": 6490,
+        "bookmarks": 3
+      },
+      "createdAt": "Wed Aug 26 23:03:26 +0000 2026",
+      "createdAtLocal": "2026-08-27 07:03",
+      "createdAtISO": "2026-08-26T23:03:26+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092131192711876889",
+      "text": "PLAY NOW in BCGAME！TRY YOUR LUCK！",
+      "author": {
+        "id": "1306070606056546305",
+        "name": "BC.GAME",
+        "screenName": "bcgame",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2077567954913533952/S7LsMKoJ_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4646,
+        "retweets": 710,
+        "replies": 0,
+        "quotes": 27,
+        "views": 10946490,
+        "bookmarks": 324
+      },
+      "createdAt": "Tue Aug 25 06:05:20 +0000 2026",
+      "createdAtLocal": "2026-08-25 14:05",
+      "createdAtISO": "2026-08-25T06:05:20+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092700864377241917",
+      "text": "@analogalok Awesome!  Now I need to find 78gb DDR4",
+      "author": {
+        "id": "224313111",
+        "name": "Brandon",
+        "screenName": "brandon_lutz",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1944625329563181056/Y6cnZnRL_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 13,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 3131,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 19:49:01 +0000 2026",
+      "createdAtLocal": "2026-08-27 03:49",
+      "createdAtISO": "2026-08-26T19:49:01+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092703818735841465",
+      "text": "@brandon_lutz 😂😂 until then qwen 3.8 27b is your friend",
+      "author": {
+        "id": "2207203190",
+        "name": "Alok",
+        "screenName": "analogalok",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055727708261474304/tUAKpN50_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 7,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 2994,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 20:00:45 +0000 2026",
+      "createdAtLocal": "2026-08-27 04:00",
+      "createdAtISO": "2026-08-26T20:00:45+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092709950594453513",
+      "text": "@analogalok Datacenter model is a bit of a stretch lol\n\nBtw am getting better numbers than yours on a single 3090\n\nhttps://t.co/nnnQkx1qtU",
+      "author": {
+        "id": "1401231534024278016",
+        "name": "Vieirowski",
+        "screenName": "joaosump",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1411577458575425539/oMti6BYX_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 13,
+        "retweets": 0,
+        "replies": 5,
+        "quotes": 1,
+        "views": 7799,
+        "bookmarks": 8
+      },
+      "createdAt": "Wed Aug 26 20:25:07 +0000 2026",
+      "createdAtLocal": "2026-08-27 04:25",
+      "createdAtISO": "2026-08-26T20:25:07+00:00",
+      "media": [],
+      "urls": [
+        "https://x.com/joaosump/status/2092696031133684153"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2092696031133684153",
+        "text": "not bad at all https://t.co/0Rs4AGGe4O",
+        "author": {
+          "screenName": "joaosump",
+          "name": "Vieirowski"
+        }
+      }
+    },
+    {
+      "id": "2092711964976066816",
+      "text": "@joaosump flags and ram please",
+      "author": {
+        "id": "2207203190",
+        "name": "Alok",
+        "screenName": "analogalok",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055727708261474304/tUAKpN50_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 9,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 3756,
+        "bookmarks": 1
+      },
+      "createdAt": "Wed Aug 26 20:33:07 +0000 2026",
+      "createdAtLocal": "2026-08-27 04:33",
+      "createdAtISO": "2026-08-26T20:33:07+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092707829601759540",
+      "text": "@analogalok Thanks for sharing,  very impressive. Should do well on mine when I get the opportunity. Threadripper 3995wx, 512gb ddr4 3200 8ch, rtx 5090 or 3090. :)",
+      "author": {
+        "id": "1905900669678039040",
+        "name": "Ixel",
+        "screenName": "Ixel111",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2049419070588764162/D8waoJPK_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 9,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 5772,
+        "bookmarks": 1
+      },
+      "createdAt": "Wed Aug 26 20:16:41 +0000 2026",
+      "createdAtLocal": "2026-08-27 04:16",
+      "createdAtISO": "2026-08-26T20:16:41+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092711170826523072",
+      "text": "@Ixel111 Bro casually dropped a national lab spec sheet into the replies. 😂\n\nA 3995WX with 512GB RAM isn't just going to \"do well\", it’s going to absolutely fly. with that much memory and an RTX 5090 i think u should also be able to run GLM 5.3 flash as well.",
+      "author": {
+        "id": "2207203190",
+        "name": "Alok",
+        "screenName": "analogalok",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055727708261474304/tUAKpN50_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 27,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 5301,
+        "bookmarks": 1
+      },
+      "createdAt": "Wed Aug 26 20:29:58 +0000 2026",
+      "createdAtLocal": "2026-08-27 04:29",
+      "createdAtISO": "2026-08-26T20:29:58+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092737589039997292",
+      "text": "@analogalok Data centre models, you say? \nNot even close. imho!",
+      "author": {
+        "id": "1638689587001262080",
+        "name": "Lee Hayward",
+        "screenName": "vibedcoder",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2093299340014178304/YLV4OY6k_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 11,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 1658,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 22:14:57 +0000 2026",
+      "createdAtLocal": "2026-08-27 06:14",
+      "createdAtISO": "2026-08-26T22:14:57+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092755249769615392",
+      "text": "@vibedcoder i know its a bit exaggerated. what's your bar for a model to be called a data center tier though",
+      "author": {
+        "id": "2207203190",
+        "name": "Alok",
+        "screenName": "analogalok",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055727708261474304/tUAKpN50_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 1494,
+        "bookmarks": 1
+      },
+      "createdAt": "Wed Aug 26 23:25:07 +0000 2026",
+      "createdAtLocal": "2026-08-27 07:25",
+      "createdAtISO": "2026-08-26T23:25:07+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092722362978345180",
+      "text": "@analogalok i know this is gonna be difficult to understand for an ai bro, but 24gb vram and 98gb ram is not consumer hardware, that is bordering on 6000$ in hardware for just those two currently, the average consumer does not have 6000$ lying around waiting to be spent on local AI",
+      "author": {
+        "id": "984905522469113859",
+        "name": "honichi",
+        "screenName": "malavolence_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1397532705944911875/fMtewfZc_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 3,
+        "quotes": 0,
+        "views": 1123,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 21:14:26 +0000 2026",
+      "createdAtLocal": "2026-08-27 05:14",
+      "createdAtISO": "2026-08-26T21:14:26+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092754458019340795",
+      "text": "@malavolence_ about $1000 worth of ddr4 ram and a used 3090 for $1000 would do the job",
+      "author": {
+        "id": "2207203190",
+        "name": "Alok",
+        "screenName": "analogalok",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055727708261474304/tUAKpN50_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 898,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 23:21:58 +0000 2026",
+      "createdAtLocal": "2026-08-27 07:21",
+      "createdAtISO": "2026-08-26T23:21:58+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092731633271243218",
+      "text": "@analogalok At this rate we'll have Fable 5 on 24GB by the end of the year.\n\nThose who can should really stock up on compute in the meantime.",
+      "author": {
+        "id": "1887475992144265216",
+        "name": "Neuralease",
+        "screenName": "neuralease",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1961332953159802880/bFEmzyqw_normal.png",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1261,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 21:51:17 +0000 2026",
+      "createdAtLocal": "2026-08-27 05:51",
+      "createdAtISO": "2026-08-26T21:51:17+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092732114970308723",
+      "text": "@neuralease I wouldn't be surprised if that happens",
+      "author": {
+        "id": "2207203190",
+        "name": "Alok",
+        "screenName": "analogalok",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055727708261474304/tUAKpN50_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 1157,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 21:53:11 +0000 2026",
+      "createdAtLocal": "2026-08-27 05:53",
+      "createdAtISO": "2026-08-26T21:53:11+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092720876315652230",
+      "text": "@analogalok Try Q3_XL - I'm seeing 26-30 decode. At the cost of context, the more expert layers you get to vram, the faster it goes. No kv cache quantization. 22122MiB vram allocated. Only 12/48 experts are on the GPU but ~40% speed boost.\n\n-n-cpu-moe 36 --ctx-size 40000",
+      "author": {
+        "id": "352738653",
+        "name": "Jason - looking for work",
+        "screenName": "foley2k2",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1797609900832366592/9bXJh7B7_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 2665,
+        "bookmarks": 1
+      },
+      "createdAt": "Wed Aug 26 21:08:32 +0000 2026",
+      "createdAtLocal": "2026-08-27 05:08",
+      "createdAtISO": "2026-08-26T21:08:32+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092741421589844197",
+      "text": "@foley2k2 ill try it out but its intelligence vs speed tradeoff. i think i can get higher numbers on 4090 with q4_k_xl itself with some more optimizations",
+      "author": {
+        "id": "2207203190",
+        "name": "Alok",
+        "screenName": "analogalok",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055727708261474304/tUAKpN50_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 2252,
+        "bookmarks": 1
+      },
+      "createdAt": "Wed Aug 26 22:30:10 +0000 2026",
+      "createdAtLocal": "2026-08-27 06:30",
+      "createdAtISO": "2026-08-26T22:30:10+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092723284181754354",
+      "text": "@analogalok En MoE el truco está en dejar solo los expertos activos en VRAM y mandar el resto a RAM con --n-cpu-moe de llama.cpp.",
+      "author": {
+        "id": "2058824892238209024",
+        "name": "Buswe",
+        "screenName": "buswe_com",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2090474961840250880/EOiY3l6G_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1431,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 21:18:06 +0000 2026",
+      "createdAtLocal": "2026-08-27 05:18",
+      "createdAtISO": "2026-08-26T21:18:06+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "es",
+      "score": null
+    },
+    {
+      "id": "2092866306852950511",
+      "text": "@buswe_com That's right",
+      "author": {
+        "id": "2207203190",
+        "name": "Alok",
+        "screenName": "analogalok",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055727708261474304/tUAKpN50_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 995,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Aug 27 06:46:25 +0000 2026",
+      "createdAtLocal": "2026-08-27 14:46",
+      "createdAtISO": "2026-08-27T06:46:25+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2096163374224511275",
+      "text": "Build strength and achieve your goals with a personalized calisthenics plan.\n\n1. Set your goals and target areas\n2. Get a custom bodyweight training plan\n3. Train consistently and track every session\n\nTake the test to get started.",
+      "author": {
+        "id": "2029924024667754497",
+        "name": "musclebooster",
+        "screenName": "musclebooster_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2029924184717971457/YB-o6zXv_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 6099,
+        "retweets": 610,
+        "replies": 50,
+        "quotes": 6,
+        "views": 8435331,
+        "bookmarks": 2255
+      },
+      "createdAt": "Sat Sep 05 09:07:47 +0000 2026",
+      "createdAtLocal": "2026-09-05 17:07",
+      "createdAtISO": "2026-09-05T09:07:47+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092738928172241346",
+      "text": "@analogalok anything good to run on 16gb?",
+      "author": {
+        "id": "60768920",
+        "name": "Hescar Zambrano Ψ",
+        "screenName": "Hescarz",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1863436612819890176/xBPXXL0i_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1410,
+        "bookmarks": 1
+      },
+      "createdAt": "Wed Aug 26 22:20:16 +0000 2026",
+      "createdAtLocal": "2026-08-27 06:20",
+      "createdAtISO": "2026-08-26T22:20:16+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092743041761345921",
+      "text": "@Hescarz how much ram ? if u have about 100 gb this model will work. &lt;=32 GB better to stick to qwen 3.6 35b. kat coder v2.5 pro and ornith 1.5 35b are also worth trying. have u tried qwen 3.8 27b dense? i think u should get upwards of 10tps with mtp with that model",
+      "author": {
+        "id": "2207203190",
+        "name": "Alok",
+        "screenName": "analogalok",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055727708261474304/tUAKpN50_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 1396,
+        "bookmarks": 2
+      },
+      "createdAt": "Wed Aug 26 22:36:37 +0000 2026",
+      "createdAtLocal": "2026-08-27 06:36",
+      "createdAtISO": "2026-08-26T22:36:37+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092700457781403977",
+      "text": "This is pure fire 🔥\n\nHuge work, Alok.",
+      "author": {
+        "id": "141232156",
+        "name": "Mohamed El-Refaie",
+        "screenName": "morefaie92",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2072415812149714944/RDnjSUfx_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 2534,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 19:47:24 +0000 2026",
+      "createdAtLocal": "2026-08-27 03:47",
+      "createdAtISO": "2026-08-26T19:47:24+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092700697099985381",
+      "text": "@morefaie92 Excellent architecture by @Alibaba_Qwen ! thanks Mohamed",
+      "author": {
+        "id": "2207203190",
+        "name": "Alok",
+        "screenName": "analogalok",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055727708261474304/tUAKpN50_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 2370,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 19:48:21 +0000 2026",
+      "createdAtLocal": "2026-08-27 03:48",
+      "createdAtISO": "2026-08-26T19:48:21+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092714871129285029",
+      "text": "@analogalok @MGHenrichsen @spiritbuun Are one of you gonna push this to 80-100t/s on a 3090 😅",
+      "author": {
+        "id": "1036685505545547776",
+        "name": "blanks",
+        "screenName": "theyknowitstrue",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1085526693643776000/758aJboe_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 4658,
+        "bookmarks": 1
+      },
+      "createdAt": "Wed Aug 26 20:44:40 +0000 2026",
+      "createdAtLocal": "2026-08-27 04:44",
+      "createdAtISO": "2026-08-26T20:44:40+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092719861290209439",
+      "text": "@theyknowitstrue @MGHenrichsen @spiritbuun @spiritbuun is that true??? 🤔",
+      "author": {
+        "id": "2207203190",
+        "name": "Alok",
+        "screenName": "analogalok",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055727708261474304/tUAKpN50_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 4298,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 21:04:30 +0000 2026",
+      "createdAtLocal": "2026-08-27 05:04",
+      "createdAtISO": "2026-08-26T21:04:30+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092749319283646473",
+      "text": "@analogalok was the 21 tok/s decode measured with the full 250k-token context already populated, or is 250k just the configured window?",
+      "author": {
+        "id": "1549055479875342336",
+        "name": "basedcapital",
+        "screenName": "thebasedcapital",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2038276727496142848/2x4dxfVC_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1533,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 23:01:33 +0000 2026",
+      "createdAtLocal": "2026-08-27 07:01",
+      "createdAtISO": "2026-08-26T23:01:33+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092868499274391907",
+      "text": "@thebasedcapital 250k is configured window. Prompt was 28k tokens for each run",
+      "author": {
+        "id": "2207203190",
+        "name": "Alok",
+        "screenName": "analogalok",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055727708261474304/tUAKpN50_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1393,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Aug 27 06:55:08 +0000 2026",
+      "createdAtLocal": "2026-08-27 14:55",
+      "createdAtISO": "2026-08-27T06:55:08+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092726302952260080",
+      "text": "@analogalok Any word on speculative decode recipes yet? We can more than double that tps.",
+      "author": {
+        "id": "1841124134220144645",
+        "name": "stop saying bitter lesson and jevons paradox",
+        "screenName": "localoptimiser",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2065912048697946113/Qbacq6f6_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1182,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 21:30:06 +0000 2026",
+      "createdAtLocal": "2026-08-27 05:30",
+      "createdAtISO": "2026-08-26T21:30:06+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092868290687488028",
+      "text": "@localoptimiser Not yet.  I doubt it world double with ram offload though. I'll update as soon as it lands",
+      "author": {
+        "id": "2207203190",
+        "name": "Alok",
+        "screenName": "analogalok",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055727708261474304/tUAKpN50_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 1003,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Aug 27 06:54:18 +0000 2026",
+      "createdAtLocal": "2026-08-27 14:54",
+      "createdAtISO": "2026-08-27T06:54:18+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092722350152151346",
+      "text": "@analogalok “Consumer hardware” states 110GB of extra RAM LUL",
+      "author": {
+        "id": "495274459",
+        "name": "GeOhDoubleT",
+        "screenName": "GeOhDoubleT",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1081227520077369344/BOcNOIW1_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 933,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 21:14:23 +0000 2026",
+      "createdAtLocal": "2026-08-27 05:14",
+      "createdAtISO": "2026-08-26T21:14:23+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092756842720133314",
+      "text": "@GeOhDoubleT 😂😂 still not data center territory",
+      "author": {
+        "id": "2207203190",
+        "name": "Alok",
+        "screenName": "analogalok",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055727708261474304/tUAKpN50_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 719,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 23:31:27 +0000 2026",
+      "createdAtLocal": "2026-08-27 07:31",
+      "createdAtISO": "2026-08-26T23:31:27+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092716804913438957",
+      "text": "@analogalok Yes!!! And also, WTF?!!!!",
+      "author": {
+        "id": "28155905",
+        "name": "Whimsicali",
+        "screenName": "Whimsicali",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/887375327600623616/EjM-PEap_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1401,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 20:52:21 +0000 2026",
+      "createdAtLocal": "2026-08-27 04:52",
+      "createdAtISO": "2026-08-26T20:52:21+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092735306659455098",
+      "text": "@Whimsicali ikr looks super impressive.",
+      "author": {
+        "id": "2207203190",
+        "name": "Alok",
+        "screenName": "analogalok",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055727708261474304/tUAKpN50_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 1164,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 22:05:52 +0000 2026",
+      "createdAtLocal": "2026-08-27 06:05",
+      "createdAtISO": "2026-08-26T22:05:52+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092720346277335385",
+      "text": "@analogalok ive got a ton of ddr4, hopefully this works well, would love to sell it for max price",
+      "author": {
+        "id": "941792893638987776",
+        "name": "Unparalleled Tangent",
+        "screenName": "Felunk007",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1481681682235228160/lavUnzuJ_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 761,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 21:06:26 +0000 2026",
+      "createdAtLocal": "2026-08-27 05:06",
+      "createdAtISO": "2026-08-26T21:06:26+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092734834888286438",
+      "text": "@Felunk007 ddr4 is your gold. which card though?",
+      "author": {
+        "id": "2207203190",
+        "name": "Alok",
+        "screenName": "analogalok",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055727708261474304/tUAKpN50_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 633,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 22:04:00 +0000 2026",
+      "createdAtLocal": "2026-08-27 06:04",
+      "createdAtISO": "2026-08-26T22:04:00+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2093027738240377210",
+      "text": "@analogalok Another step closer to mixture of diverse sized expert system. Running in cloud and locally.",
+      "author": {
+        "id": "2256775454",
+        "name": "teromee",
+        "screenName": "teromee",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1482537604507529217/ab2S191Q_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 256,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Aug 27 17:27:54 +0000 2026",
+      "createdAtLocal": "2026-08-28 01:27",
+      "createdAtISO": "2026-08-27T17:27:54+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2093028477113188547",
+      "text": "@teromee Absolutely. I like the term. Mixture of diverse sized expert system",
+      "author": {
+        "id": "2207203190",
+        "name": "Alok",
+        "screenName": "analogalok",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055727708261474304/tUAKpN50_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 255,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Aug 27 17:30:50 +0000 2026",
+      "createdAtLocal": "2026-08-28 01:30",
+      "createdAtISO": "2026-08-27T17:30:50+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092778385705677025",
+      "text": "@analogalok From what I can tell, you need a fair bit of technical comprehension to do this. Even if someone has the hardware, figuring out how to do this is still the barrier",
+      "author": {
+        "id": "934811853263269890",
+        "name": "Cern",
+        "screenName": "CernuunosSg",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1665723123277377536/HzgGbFkd_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1107,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Aug 27 00:57:03 +0000 2026",
+      "createdAtLocal": "2026-08-27 08:57",
+      "createdAtISO": "2026-08-27T00:57:03+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092818639632343531",
+      "text": "@CernuunosSg not much of a problem if u have an ai agent running. you can simply hand it this post and ask it to set it up for u if u have the hardware",
+      "author": {
+        "id": "2207203190",
+        "name": "Alok",
+        "screenName": "analogalok",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055727708261474304/tUAKpN50_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 1015,
+        "bookmarks": 1
+      },
+      "createdAt": "Thu Aug 27 03:37:01 +0000 2026",
+      "createdAtLocal": "2026-08-27 11:37",
+      "createdAtISO": "2026-08-27T03:37:01+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092725174458110202",
+      "text": "@analogalok Jesus Christ",
+      "author": {
+        "id": "836056251935166465",
+        "name": "txl",
+        "screenName": "txl420",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2052686877354803200/moDeSiVG_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 662,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 21:25:37 +0000 2026",
+      "createdAtLocal": "2026-08-27 05:25",
+      "createdAtISO": "2026-08-26T21:25:37+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "da",
+      "score": null
+    }
+  ]
+}

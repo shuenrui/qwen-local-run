@@ -1,0 +1,364 @@
+{
+ "code": 200,
+ "message": "OK",
+ "tweet": {
+  "url": "https://x.com/sgl_project/status/2088281320422322413",
+  "id": "2088281320422322413",
+  "text": "The king of small models is back! Qwen3.8-27B from @Alibaba_Qwen is open source, and Day-0 support is live in SGLang:\n- 206.1 tok/s decode on a single RTX 5090, with our NVFP4 plus DSpark\n- 38.28 tok/s decode on DGX Spark\nQwen3.8-27B raises the bar again for what a small model can do on agentic planning and long-horizon tasks.\n\nLong live the (small model) king! Run it locally with SGLang 👇",
+  "raw_text": {
+   "text": "The king of small models is back! Qwen3.8-27B from @Alibaba_Qwen is open source, and Day-0 support is live in SGLang:\n- 206.1 tok/s decode on a single RTX 5090, with our NVFP4 plus DSpark\n- 38.28 tok/s decode on DGX Spark\nQwen3.8-27B raises the bar again for what a small model can do on agentic planning and long-horizon tasks.\n\nLong live the (small model) king! Run it locally with SGLang 👇",
+   "display_text_range": [
+    0,
+    393
+   ],
+   "facets": [
+    {
+     "type": "mention",
+     "indices": [
+      51,
+      64
+     ],
+     "original": "Alibaba_Qwen",
+     "id": "1753339277386342400"
+    },
+    {
+     "type": "media",
+     "indices": [
+      278,
+      301
+     ],
+     "id": "2088281035536744449",
+     "display": "pic.x.com/q6yax5Z5nR",
+     "original": "https://t.co/q6yax5Z5nR",
+     "replacement": "https://x.com/sgl_project/status/2088281320422322413/video/1"
+    }
+   ]
+  },
+  "author": {
+   "screen_name": "sgl_project",
+   "url": "https://x.com/sgl_project",
+   "id": "1923440305703092226",
+   "followers": 8670,
+   "following": 52,
+   "likes": 333,
+   "media_count": 50,
+   "name": "SGLang",
+   "description": "Run LLMs fast at any scale 🔗 https://github.com/sgl-project/sglang\nJoin our community https://slack.sglang.io\nFor AI tech blogs & deep-dives 👉 @lmsysorg",
+   "raw_description": {
+    "text": "Run LLMs fast at any scale 🔗 https://t.co/F3u6wYESL0\nJoin our community https://t.co/fmlOfTOEec\nFor AI tech blogs & deep-dives 👉 @lmsysorg",
+    "facets": [
+     {
+      "type": "url",
+      "indices": [
+       29,
+       52
+      ],
+      "original": "https://t.co/F3u6wYESL0",
+      "replacement": "https://github.com/sgl-project/sglang",
+      "display": "github.com/sgl-project/sg…"
+     },
+     {
+      "type": "url",
+      "indices": [
+       72,
+       95
+      ],
+      "original": "https://t.co/fmlOfTOEec",
+      "replacement": "https://slack.sglang.io",
+      "display": "slack.sglang.io"
+     }
+    ]
+   },
+   "location": "Palo Alto",
+   "banner_url": "",
+   "avatar_url": "https://pbs.twimg.com/profile_images/1923445139319685126/pyjcWZU7_200x200.jpg",
+   "joined": "Fri May 16 18:08:28 +0000 2025",
+   "protected": false,
+   "website": {
+    "url": "https://www.sglang.io/",
+    "display_url": "sglang.io"
+   },
+   "verification": {
+    "verified": true,
+    "verified_at": null,
+    "type": "individual"
+   },
+   "avatar_color": null
+  },
+  "replies": 64,
+  "retweets": 128,
+  "likes": 1127,
+  "bookmarks": 763,
+  "quotes": 86,
+  "created_at": "Fri Aug 14 15:07:19 +0000 2026",
+  "created_timestamp": 1786720039,
+  "possibly_sensitive": false,
+  "views": 709727,
+  "is_note_tweet": true,
+  "community_note": null,
+  "lang": "en",
+  "replying_to": null,
+  "replying_to_status": null,
+  "media": {
+   "all": [
+    {
+     "id": "2088281035536744449",
+     "url": "https://video.twimg.com/amplify_video/2088281035536744449/vid/avc1/1920x1080/UwOIAEQhnhMbqY1o.mp4?tag=29",
+     "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2088281035536744449/img/jaxp5tj6wGxioFLO.jpg",
+     "duration": 10,
+     "width": 1920,
+     "height": 1080,
+     "format": "video/mp4",
+     "type": "video",
+     "formats": [
+      {
+       "url": "https://video.twimg.com/amplify_video/2088281035536744449/pl/58lRPwdHdd8S-PaC.m3u8?tag=29&v=cfc",
+       "container": "m3u8"
+      },
+      {
+       "url": "https://video.twimg.com/amplify_video/2088281035536744449/vid/avc1/480x270/ymcZXZ1_mQNEV4F9.mp4?tag=29",
+       "bitrate": 256000,
+       "container": "mp4",
+       "codec": "h264"
+      },
+      {
+       "url": "https://video.twimg.com/amplify_video/2088281035536744449/vid/avc1/640x360/9LcSC0xDpheRIdrh.mp4?tag=29",
+       "bitrate": 832000,
+       "container": "mp4",
+       "codec": "h264"
+      },
+      {
+       "url": "https://video.twimg.com/amplify_video/2088281035536744449/vid/avc1/1280x720/KUGTiIx236bGa42n.mp4?tag=29",
+       "bitrate": 2176000,
+       "container": "mp4",
+       "codec": "h264"
+      },
+      {
+       "url": "https://video.twimg.com/amplify_video/2088281035536744449/vid/avc1/1920x1080/UwOIAEQhnhMbqY1o.mp4?tag=29",
+       "bitrate": 10368000,
+       "container": "mp4",
+       "codec": "h264"
+      }
+     ],
+     "publisher": null,
+     "variants": [
+      {
+       "url": "https://video.twimg.com/amplify_video/2088281035536744449/pl/58lRPwdHdd8S-PaC.m3u8?tag=29&v=cfc",
+       "bitrate": 0,
+       "content_type": "application/x-mpegURL"
+      },
+      {
+       "url": "https://video.twimg.com/amplify_video/2088281035536744449/vid/avc1/480x270/ymcZXZ1_mQNEV4F9.mp4?tag=29",
+       "bitrate": 256000,
+       "content_type": "video/mp4"
+      },
+      {
+       "url": "https://video.twimg.com/amplify_video/2088281035536744449/vid/avc1/640x360/9LcSC0xDpheRIdrh.mp4?tag=29",
+       "bitrate": 832000,
+       "content_type": "video/mp4"
+      },
+      {
+       "url": "https://video.twimg.com/amplify_video/2088281035536744449/vid/avc1/1280x720/KUGTiIx236bGa42n.mp4?tag=29",
+       "bitrate": 2176000,
+       "content_type": "video/mp4"
+      },
+      {
+       "url": "https://video.twimg.com/amplify_video/2088281035536744449/vid/avc1/1920x1080/UwOIAEQhnhMbqY1o.mp4?tag=29",
+       "bitrate": 10368000,
+       "content_type": "video/mp4"
+      }
+     ]
+    }
+   ],
+   "videos": [
+    {
+     "id": "2088281035536744449",
+     "url": "https://video.twimg.com/amplify_video/2088281035536744449/vid/avc1/1920x1080/UwOIAEQhnhMbqY1o.mp4?tag=29",
+     "thumbnail_url": "https://pbs.twimg.com/amplify_video_thumb/2088281035536744449/img/jaxp5tj6wGxioFLO.jpg",
+     "duration": 10,
+     "width": 1920,
+     "height": 1080,
+     "format": "video/mp4",
+     "type": "video",
+     "formats": [
+      {
+       "url": "https://video.twimg.com/amplify_video/2088281035536744449/pl/58lRPwdHdd8S-PaC.m3u8?tag=29&v=cfc",
+       "container": "m3u8"
+      },
+      {
+       "url": "https://video.twimg.com/amplify_video/2088281035536744449/vid/avc1/480x270/ymcZXZ1_mQNEV4F9.mp4?tag=29",
+       "bitrate": 256000,
+       "container": "mp4",
+       "codec": "h264"
+      },
+      {
+       "url": "https://video.twimg.com/amplify_video/2088281035536744449/vid/avc1/640x360/9LcSC0xDpheRIdrh.mp4?tag=29",
+       "bitrate": 832000,
+       "container": "mp4",
+       "codec": "h264"
+      },
+      {
+       "url": "https://video.twimg.com/amplify_video/2088281035536744449/vid/avc1/1280x720/KUGTiIx236bGa42n.mp4?tag=29",
+       "bitrate": 2176000,
+       "container": "mp4",
+       "codec": "h264"
+      },
+      {
+       "url": "https://video.twimg.com/amplify_video/2088281035536744449/vid/avc1/1920x1080/UwOIAEQhnhMbqY1o.mp4?tag=29",
+       "bitrate": 10368000,
+       "container": "mp4",
+       "codec": "h264"
+      }
+     ],
+     "publisher": null,
+     "variants": [
+      {
+       "url": "https://video.twimg.com/amplify_video/2088281035536744449/pl/58lRPwdHdd8S-PaC.m3u8?tag=29&v=cfc",
+       "bitrate": 0,
+       "content_type": "application/x-mpegURL"
+      },
+      {
+       "url": "https://video.twimg.com/amplify_video/2088281035536744449/vid/avc1/480x270/ymcZXZ1_mQNEV4F9.mp4?tag=29",
+       "bitrate": 256000,
+       "content_type": "video/mp4"
+      },
+      {
+       "url": "https://video.twimg.com/amplify_video/2088281035536744449/vid/avc1/640x360/9LcSC0xDpheRIdrh.mp4?tag=29",
+       "bitrate": 832000,
+       "content_type": "video/mp4"
+      },
+      {
+       "url": "https://video.twimg.com/amplify_video/2088281035536744449/vid/avc1/1280x720/KUGTiIx236bGa42n.mp4?tag=29",
+       "bitrate": 2176000,
+       "content_type": "video/mp4"
+      },
+      {
+       "url": "https://video.twimg.com/amplify_video/2088281035536744449/vid/avc1/1920x1080/UwOIAEQhnhMbqY1o.mp4?tag=29",
+       "bitrate": 10368000,
+       "content_type": "video/mp4"
+      }
+     ]
+    }
+   ]
+  },
+  "quote": {
+   "url": "https://x.com/Alibaba_Qwen/status/2088280182356611304",
+   "id": "2088280182356611304",
+   "text": "We promised open weights for Qwen3.8. Now, time to meet them! 🎉\n\n⚡ Qwen3.8-27B:\n- A native multimodal dense model. With just 27B parameters, it outperforms Qwen3.7-Plus overall and shines in real-world coding & office workflows.\n- 262K native context, easily extendable to 1M tokens via YaRN.\n- Built for builders. Highly efficient, high-quality, and licensed under Apache 2.0.\n\n🚀 The open weights for Qwen3.8-2.4T-A95B (Max-level) have also been released recently.\n\nWhether you're shipping lightweight applications with Qwen3.8-27B locally or building agents with Qwen3.8-2.4T-A95B, they're yours now!\n\nDownload, deploy, and build something we haven't imagined yet. 👀👇\n- Hugging Face：\nhttps://huggingface.co/collections/Qwen/qwen38\n- ModelScope：\nhttps://www.modelscope.cn/collections/Qwen/Qwen38",
+   "raw_text": {
+    "text": "We promised open weights for Qwen3.8. Now, time to meet them! 🎉\n\n⚡ Qwen3.8-27B:\n- A native multimodal dense model. With just 27B parameters, it outperforms Qwen3.7-Plus overall and shines in real-world coding & office workflows.\n- 262K native context, easily extendable to 1M tokens via YaRN.\n- Built for builders. Highly efficient, high-quality, and licensed under Apache 2.0.\n\n🚀 The open weights for Qwen3.8-2.4T-A95B (Max-level) have also been released recently.\n\nWhether you're shipping lightweight applications with Qwen3.8-27B locally or building agents with Qwen3.8-2.4T-A95B, they're yours now!\n\nDownload, deploy, and build something we haven't imagined yet. 👀👇\n- Hugging Face：\nhttps://t.co/4kaAcqYEVj\n- ModelScope：\nhttps://t.co/eRIMZCGkhC",
+    "display_text_range": [
+     0,
+     751
+    ],
+    "facets": [
+     {
+      "type": "media",
+      "indices": [
+       280,
+       303
+      ],
+      "id": "2088274703022768128",
+      "display": "pic.x.com/QuN8oWkG4C",
+      "original": "https://t.co/QuN8oWkG4C",
+      "replacement": "https://x.com/Alibaba_Qwen/status/2088280182356611304/photo/1"
+     },
+     {
+      "type": "url",
+      "indices": [
+       686,
+       709
+      ],
+      "original": "https://t.co/4kaAcqYEVj",
+      "replacement": "https://huggingface.co/collections/Qwen/qwen38",
+      "display": "huggingface.co/collections/Qw…"
+     },
+     {
+      "type": "url",
+      "indices": [
+       724,
+       747
+      ],
+      "original": "https://t.co/eRIMZCGkhC",
+      "replacement": "https://www.modelscope.cn/collections/Qwen/Qwen38",
+      "display": "modelscope.cn/collections/Qw…"
+     }
+    ]
+   },
+   "author": {
+    "screen_name": "Alibaba_Qwen",
+    "url": "https://x.com/Alibaba_Qwen",
+    "id": "1753339277386342400",
+    "followers": 284118,
+    "following": 3,
+    "likes": 519,
+    "media_count": 528,
+    "name": "Qwen",
+    "description": "Open foundation models for AGI.",
+    "raw_description": {
+     "text": "Open foundation models for AGI.",
+     "facets": []
+    },
+    "location": "",
+    "banner_url": "https://pbs.twimg.com/profile_banners/1753339277386342400/1780986224",
+    "avatar_url": "https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_200x200.jpg",
+    "joined": "Fri Feb 02 08:47:32 +0000 2024",
+    "protected": false,
+    "website": {
+     "url": "https://qwen.ai/",
+     "display_url": "qwen.ai"
+    },
+    "verification": {
+     "verified": true,
+     "verified_at": null,
+     "type": "organization"
+    },
+    "avatar_color": null
+   },
+   "replies": 854,
+   "retweets": 2144,
+   "likes": 16026,
+   "bookmarks": 4873,
+   "quotes": 976,
+   "created_at": "Fri Aug 14 15:02:48 +0000 2026",
+   "created_timestamp": 1786719768,
+   "possibly_sensitive": false,
+   "views": 6012963,
+   "is_note_tweet": true,
+   "community_note": null,
+   "lang": "en",
+   "replying_to": null,
+   "replying_to_status": null,
+   "media": {
+    "all": [
+     {
+      "type": "photo",
+      "id": "2088274703022768128",
+      "url": "https://pbs.twimg.com/media/HPsKxzsbQAAJa4d.jpg?name=orig",
+      "width": 2048,
+      "height": 1152
+     }
+    ],
+    "photos": [
+     {
+      "type": "photo",
+      "id": "2088274703022768128",
+      "url": "https://pbs.twimg.com/media/HPsKxzsbQAAJa4d.jpg?name=orig",
+      "width": 2048,
+      "height": 1152
+     }
+    ]
+   },
+   "source": "Twitter Web App",
+   "twitter_card": "summary_large_image",
+   "color": null,
+   "provider": "twitter",
+   "reposted_by": null
+  },
+  "source": "Twitter Web App",
+  "twitter_card": "player",
+  "color": null,
+  "provider": "twitter",
+  "reposted_by": null
+ }
+}

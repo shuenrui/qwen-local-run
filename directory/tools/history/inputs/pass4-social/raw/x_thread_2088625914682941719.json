@@ -1,0 +1,564 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2088625914682941719",
+      "text": "AtomicChat just broke the 24GB VRAM context ceiling for Qwen 3.8 27B.\n\nBy shaving 800MB off the base weights (15.9GB vs Unsloth's 16.7GB) using their new AD layer allocation layout, we just unlocked an extra +20,000 to +30,000 tokens of raw context headroom on a single RTX 4090. Low KL divergence, small footprint.\n\nUnsloths UD-Q4_K_XL (benchmarked yesterday link in replies) has slightly lower kl divergence while having slightly larger mem footprint. check out the replies for kl divergence comparison chart. Unsloth's Q4_K_M has same mem footprint as atomic chat's Q4_K (benchmarked in this post)\n\nThat extra 800MB of VRAM pushes Q8 KV cache context to 190k, and native MTP speculative decoding to 160k context @ 60 t/s decode. 100% native. 0 system RAM offload.\n\nHere is the exact VRAM and throughput matrix. Old Unsloth ceilings vs New Atomic Chat ceilings:\n\nModel: Qwen3.8-27B-AD-Q4_K.gguf (15.9 GB) Hardware: Single RTX 4090 / 24GB VRAM\n\n### PART 1: The Context Scaling Matrix (Pure Throughput)\n\n# 1. Standard FP16 KV Cache (Unquantized):\n- Unsloth Q4_K_XL Ceiling: 100k context \n- Atomic Q4_K Ceiling: 110k context\n↳ 2,559.7 prefill | 41.99 tps decode | 23.50 GB VRAM\n\n# 2. Q8 Quantized KV Cache (Agentic Sweet-spot):\n- Unsloth Q4_K_XL Ceiling: 170k context\n- Atomic Q4_K Ceiling: 190k context\n↳ 2,515.3 prefill | 42.23 tps decode | 23.72 GB VRAM\n\n# 3. Q4 Quantized KV Cache (Max Native Context):\n\n260k context now only takes 22.35 GB VRAM for Atomic Q4_K (down from 23.0 GB for unsloth).\n↳ 2,528.3 prefill | 41.88 tps decode\n\n(At 22.35 GB, we have enough headroom to likely breach 300k native context on a 24GB card, but 260k is perfectly flat and stable).\n\n### PART 2: MTP Overdrive (Native Speculative Decoding)\n\nSince MTP state buffers eat memory, trading some context for raw speed gives us near 60 tps decode with zero external draft models.\n\n# 1. MTP + Q8 KV Cache:\n- Unsloth Q4_K_XL Ceiling: 80k context \n- Atomic Q4_K Ceiling: 100k context\n↳ 2,249.9 prefill | 58.88 tps decode | 23.53 GB VRAM\n\n# 2. MTP + Q4 KV Cache:\n- Unsloth Q4_K_XL Ceiling: 130k context (Unsloth Q4_K_XL)\n- Atomic Q4_K Ceiling: 160k context\n↳ 2,232.6 prefill | 59.65 tps decode | 23.60 GB VRAM\n\n### THE REPRODUCTION STACK (llama.cpp flags)\n\nTo hit the 190,000 Context Q8 Ceiling:\n./build/bin/llama-server -m Qwen3.8-27B-AD-Q4_K.gguf -c 190000 -ngl 99 --port 8080 -ctv q8_0 -ctk q8_0\n\nTo hit the 160,000 Context MTP Speed Overdrive (60 tps):\n\n./build/bin/llama-server -m Qwen3.8-27B-AD-Q4_K.gguf -c 160000 -ngl 99 --port 8080 -ctv q4_0 -ctk q4_0 --spec-type draft-mtp --spec-draft-n-max 4 --spec-draft-p-min 0.7\n\nWe are running frontier tier AI with a 190k context window entirely locally on consumer gaming GPUs.\n\nIf you own a single rtx 3090/4090 with qwen 3.6 27b, upgrade to the new qwen 3.8 27b now!\n\nAtomic's Hugging Face GGUF links, intelligence/agentic benchmark details, and kl divergence comparison charts are posted in the replies.\n\nThe API cartel should be terrified. What are you building with this?",
+      "author": {
+        "id": "2207203190",
+        "name": "Alok",
+        "screenName": "analogalok",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055727708261474304/tUAKpN50_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 189,
+        "retweets": 13,
+        "replies": 15,
+        "quotes": 2,
+        "views": 22264,
+        "bookmarks": 176
+      },
+      "createdAt": "Sat Aug 15 13:56:37 +0000 2026",
+      "createdAtLocal": "2026-08-15 21:56",
+      "createdAtISO": "2026-08-15T13:56:37+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HPxJqL4aEAA3R7T.jpg",
+          "width": 2650,
+          "height": 1500
+        },
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HPxJ_sGakAAkuwN.jpg",
+          "width": 2375,
+          "height": 1350
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2088380082780074236",
+        "text": "Run Qwen3.8 27B locally via Atomic Chat💥\n\nWe released Atomic Dynamic GGUF quants, from 8-bit (28.9 GB) down to 1-bit (8.5 GB), and measured all other Qwen3.8 GGUFs in the community\n\nAD-IQ3_S runs on a 16GB MacBook Air and picks the same next token as the BF16 original 92.4% of the time",
+        "author": {
+          "screenName": "atomic_chat_hq",
+          "name": "atomic.chat"
+        }
+      }
+    },
+    {
+      "id": "2088626098418614458",
+      "text": "AtomicChat/Qwen3.8-27B-GGUF · Hugging Face\nhttps://t.co/G49nUGvLtV",
+      "author": {
+        "id": "2207203190",
+        "name": "Alok",
+        "screenName": "analogalok",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055727708261474304/tUAKpN50_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 5,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 523,
+        "bookmarks": 4
+      },
+      "createdAt": "Sat Aug 15 13:57:21 +0000 2026",
+      "createdAtLocal": "2026-08-15 21:57",
+      "createdAtISO": "2026-08-15T13:57:21+00:00",
+      "media": [],
+      "urls": [
+        "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "in",
+      "score": null
+    },
+    {
+      "id": "2088626201795670248",
+      "text": "the kl divergence comparison chart https://t.co/VyDLxCpeNB",
+      "author": {
+        "id": "2207203190",
+        "name": "Alok",
+        "screenName": "analogalok",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055727708261474304/tUAKpN50_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 361,
+        "bookmarks": 1
+      },
+      "createdAt": "Sat Aug 15 13:57:45 +0000 2026",
+      "createdAtLocal": "2026-08-15 21:57",
+      "createdAtISO": "2026-08-15T13:57:45+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HPxKc8Pb0AAIst3.png",
+          "width": 900,
+          "height": 900
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2088626394469466115",
+      "text": "intelligence benchmark comparison:\n\nqwen 3.8 27b vs qwen 3.6 27b vs qwen 3.7 plus vs muse glimmer 30b vs claude opus 4.5 max https://t.co/8H0lXryYE2",
+      "author": {
+        "id": "2207203190",
+        "name": "Alok",
+        "screenName": "analogalok",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055727708261474304/tUAKpN50_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 357,
+        "bookmarks": 1
+      },
+      "createdAt": "Sat Aug 15 13:58:31 +0000 2026",
+      "createdAtLocal": "2026-08-15 21:58",
+      "createdAtISO": "2026-08-15T13:58:31+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HPxKoiOakAEaWJR.png",
+          "width": 680,
+          "height": 651
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2088626924323307974",
+      "text": "Unsloth's UD-Q4_K_XL benchmarks post \nhttps://t.co/dYZRLvrXBL",
+      "author": {
+        "id": "2207203190",
+        "name": "Alok",
+        "screenName": "analogalok",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055727708261474304/tUAKpN50_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 413,
+        "bookmarks": 2
+      },
+      "createdAt": "Sat Aug 15 14:00:38 +0000 2026",
+      "createdAtLocal": "2026-08-15 22:00",
+      "createdAtISO": "2026-08-15T14:00:38+00:00",
+      "media": [],
+      "urls": [
+        "https://x.com/analogalok/status/2088326480669667699"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "da",
+      "score": null,
+      "quotedTweet": {
+        "id": "2088326480669667699",
+        "text": "Qwen 3.8 27B (dense) running on a single RTX 4090 (24GB VRAM) at 65 tokens/sec decode with MTP!\n\n260,000 context window or 65 tokens/sec decode with native MTP. The API cartel should be terrified.\n\nWe are officially running frontier tier agentic AI (benchmarks comparable to claude opus 4.6 max) on a single consumer gaming GPU. \n\nI benchmarked Qwen3.8-27B on a single NVIDIA RTX 4090 (24GB VRAM, Ubuntu 22) using Unsloth’s Dynamic Q4_K_XL GGUF on the latest llama.cpp.\n\nHere is the complete benchmark breakdown across both Context Scaling and MTP Overdrive (28k prompt baseline):\n\n### PART 1: The Context Scaling Matrix (Pure Throughput)\n\n# 1. Standard FP16 KV Cache (Unquantized):\n\n- 80k Context:  2,664.7 t/s prefill | 40.68 t/s decode | 22.36 GB VRAM\n- 100k Context: 2,678.7 t/s prefill | 40.89 t/s decode | 23.59 GB VRAM\n\n(100k is the hard ceiling for unquantized f16 KV in 24GB VRAM)\n\n# 2. Q8 Quantized KV Cache (-ctv q8_0 -ctk q8_0):\n\n- 130k Context: 2,639.1 t/s prefill | 40.96 t/s decode | 22.18 GB VRAM\n- 170k Context: 2,653.9 t/s prefill | 40.70 t/s decode | 23.68 GB VRAM\n\n(170k is the sweet spot for heavy agentic coding workflows)\n\n# 3. Q4 Quantized KV Cache (-ctv q4_0 -ctk q4_0):\n\n- 260k Context: 2,659.8 t/s prefill | 40.70 t/s decode | 23.00 GB VRAM\n\nFull 262k native context residing entirely in 24GB VRAM. Zero system RAM offload.\n\nStress test with a monster 142k real-world prompt (-c 170000, Q8 KV):\n\n- Prefill: 1,829.50 tokens/s\n- Decode: 31.3 tokens/s\n- VRAM: 23.7 GB rock solid\n\n### PART 2: Native MTP Overdrive (Trading Context for Speed)\n\nSince MTP heads are baked into the architecture, enabling native speculative drafting pushes decode speeds straight to 60 t/s with zero external draft model:\n\n# 1. MTP + Q8 KV Cache:\n\n- 80k Context: 2,370.66 t/s prefill | 59.25 t/s decode | 23.4 GB VRAM\n\n(MTP state buffers eat slightly more memory, making 80k the ceiling for Q8)\n\n# 2. MTP + Q4 KV Cache:\n\n- 130k Context: 2,391.09 t/s prefill | 60.10 t/s decode | 23.5 GB VRAM\n\n(Sweet spot: 130,000 context running at a screaming 60 tps decode)\n\n### Qwen3.8-27B vs Muse Glimmer 30B\n\nTwo days ago I benched Meta's Muse Glimmer 30B hitting 130k context unquantized (19.3 GB VRAM) pulling 50-75 t/s decode. \n\nIf you own a single RTX 3090 or RTX 4090, you have zero excuse to burn API credits.\n\n### The Reproduction llama.cpp flags:\n\n1. Max Context Stack (260,000 Context @ 41 tps):\n\n./build/bin/llama-server -m Qwen3.8-27B-UD-Q4_K_XL.gguf -c 260000 -ngl 99 --port 8080 -ctv q4_0 -ctk q4_0\n\n2. MTP Overdrive Stack (130,000 Context @ 60 tps):\n\n./build/bin/llama-server -m Qwen3.8-27B-UD-Q4_K_XL.gguf -c 130000 -ngl 99 --port 8080 -ctv q4_0 -ctk q4_0 --spec-type draft-mtp --spec-draft-n-max 4 --spec-draft-p-min 0.7\n\nUnsloth's Hugging Face GGUF links, intelligence/agentic benchmark details, and performance charts are posted in the replies.\n\nLocal compute is eating the cloud alive. How much monthly API spend does a 24GB setup like this actually replace for you?",
+        "author": {
+          "screenName": "analogalok",
+          "name": "Alok"
+        }
+      }
+    },
+    {
+      "id": "2088684955832295683",
+      "text": "@analogalok yee, the greatest research &amp; announcement! \n\nthanks for your support ❤️",
+      "author": {
+        "id": "2037196634489077761",
+        "name": "atomic.chat",
+        "screenName": "atomic_chat_hq",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 191,
+        "bookmarks": 0
+      },
+      "createdAt": "Sat Aug 15 17:51:14 +0000 2026",
+      "createdAtLocal": "2026-08-16 01:51",
+      "createdAtISO": "2026-08-15T17:51:14+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2088918718248370446",
+      "text": "@atomic_chat_hq thanks for the great quality quants",
+      "author": {
+        "id": "2207203190",
+        "name": "Alok",
+        "screenName": "analogalok",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055727708261474304/tUAKpN50_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 70,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Aug 16 09:20:07 +0000 2026",
+      "createdAtLocal": "2026-08-16 17:20",
+      "createdAtISO": "2026-08-16T09:20:07+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2088802352849694854",
+      "text": "@analogalok So cool.\n\nInstead of quant why not distill it down to 20B or 18B dense model \n\nI think you Atomic guys could do it and with kimi k3 and deepseek v4 as teacher\n- Probably could beat upcoming 35B A3B",
+      "author": {
+        "id": "51118507",
+        "name": "Ashish",
+        "screenName": "inqusit",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1969012578924859392/40nhptx5_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 119,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Aug 16 01:37:43 +0000 2026",
+      "createdAtLocal": "2026-08-16 09:37",
+      "createdAtISO": "2026-08-16T01:37:43+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2088920375640150225",
+      "text": "@inqusit a 20b dense is a great idea. leaves plenty of vram room for context. but making one that beats the 35b a3b would be challenging. the new qwen 3.8 35b a3b would be comparable to the qwen 3.8 27b dense, only slightly lower on the benchmarks",
+      "author": {
+        "id": "2207203190",
+        "name": "Alok",
+        "screenName": "analogalok",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055727708261474304/tUAKpN50_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 165,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Aug 16 09:26:42 +0000 2026",
+      "createdAtLocal": "2026-08-16 17:26",
+      "createdAtISO": "2026-08-16T09:26:42+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2088652540506472706",
+      "text": "@analogalok does the 800mb win still hold once the kv cache is full?",
+      "author": {
+        "id": "1587671413590478848",
+        "name": "krishna Benna",
+        "screenName": "krishnabenna",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2097993161016811520/sxSRSvVV_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 104,
+        "bookmarks": 0
+      },
+      "createdAt": "Sat Aug 15 15:42:25 +0000 2026",
+      "createdAtLocal": "2026-08-15 23:42",
+      "createdAtISO": "2026-08-15T15:42:25+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2088920613620785229",
+      "text": "@krishnabenna i think the performance should be practically similar for both the quants",
+      "author": {
+        "id": "2207203190",
+        "name": "Alok",
+        "screenName": "analogalok",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055727708261474304/tUAKpN50_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 29,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Aug 16 09:27:39 +0000 2026",
+      "createdAtLocal": "2026-08-16 17:27",
+      "createdAtISO": "2026-08-16T09:27:39+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2088801290604421378",
+      "text": "@analogalok Sure, make that 5090 $2k again, then we'll talk",
+      "author": {
+        "id": "993933140749115392",
+        "name": "Diamon33",
+        "screenName": "DmitriiDunin",
+        "profileImageUrl": "https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 44,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Aug 16 01:33:30 +0000 2026",
+      "createdAtLocal": "2026-08-16 09:33",
+      "createdAtISO": "2026-08-16T01:33:30+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2088918997622468767",
+      "text": "@DmitriiDunin it works on a used 3090 $1000",
+      "author": {
+        "id": "2207203190",
+        "name": "Alok",
+        "screenName": "analogalok",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055727708261474304/tUAKpN50_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 31,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Aug 16 09:21:13 +0000 2026",
+      "createdAtLocal": "2026-08-16 17:21",
+      "createdAtISO": "2026-08-16T09:21:13+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2082658840236224838",
+      "text": "🚀 Deploy your next project on LightNode. Global VPS hosting from $7.71, plus a random first top-up bonus up to $15.",
+      "author": {
+        "id": "1392374756800753665",
+        "name": "LightNode",
+        "screenName": "LightNodeVPS",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1939973414397071360/ekB0BNdX_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 504,
+        "retweets": 87,
+        "replies": 68,
+        "quotes": 3,
+        "views": 5057452,
+        "bookmarks": 74
+      },
+      "createdAt": "Thu Jul 30 02:45:36 +0000 2026",
+      "createdAtLocal": "2026-07-30 10:45",
+      "createdAtISO": "2026-07-30T02:45:36+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2088653364665946366",
+      "text": "@analogalok The flat decode rate matters most, 42.23 tps for 190k context is a good day",
+      "author": {
+        "id": "1513438573747486721",
+        "name": "netrunner",
+        "screenName": "plotarmordev",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1985163971159101440/HrbwwJz-_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 117,
+        "bookmarks": 1
+      },
+      "createdAt": "Sat Aug 15 15:45:42 +0000 2026",
+      "createdAtLocal": "2026-08-15 23:45",
+      "createdAtISO": "2026-08-15T15:45:42+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2088965448570433931",
+      "text": "@analogalok squeezing an extra 20-30k tokens out of a single 4090 by shaving 800MB off the weights is the kind of VRAM Tetris that turns 'you need H100s' into 'you need patience'. AtomicChat's layer layout is the real unlock.",
+      "author": {
+        "id": "2028308162382901248",
+        "name": "Loong🐉",
+        "screenName": "LoongUp",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2067111367770071040/0yAZBhOI_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 17,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Aug 16 12:25:48 +0000 2026",
+      "createdAtLocal": "2026-08-16 20:25",
+      "createdAtISO": "2026-08-16T12:25:48+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2088636125510340749",
+      "text": "@analogalok Alledgedly i have not read the entire post but where do you see the AtomicChat Q4_K_M at 15.9GB? https://t.co/mtBScAEJrR",
+      "author": {
+        "id": "2645516504",
+        "name": "Eth",
+        "screenName": "EtherCoins",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2037181498504486912/xl3RrVv5_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 129,
+        "bookmarks": 0
+      },
+      "createdAt": "Sat Aug 15 14:37:11 +0000 2026",
+      "createdAtLocal": "2026-08-15 22:37",
+      "createdAtISO": "2026-08-15T14:37:11+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HPxTb55WYAADhPO.jpg",
+          "width": 1038,
+          "height": 56
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2088957070095888516",
+      "text": "@analogalok When 1GB",
+      "author": {
+        "id": "370824887",
+        "name": "Sokhna V.✧˚",
+        "screenName": "SokhnaSV",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1738935102279962624/mo1raoIi_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 13,
+        "bookmarks": 0
+      },
+      "createdAt": "Sun Aug 16 11:52:31 +0000 2026",
+      "createdAtLocal": "2026-08-16 19:52",
+      "createdAtISO": "2026-08-16T11:52:31+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    }
+  ]
+}

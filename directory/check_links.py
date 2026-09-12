@@ -27,6 +27,14 @@ from urllib.parse import urlparse
 
 DATA = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
 HOST_LOCKS = defaultdict(Lock)
+LAST_REQUEST = defaultdict(float)
+
+# Pacing keeps repeated gate runs from tripping host-side rate limiters
+# (HuggingFace in particular starts serving 429 after a burst of sweeps).
+MIN_HOST_INTERVAL_S = 0.25
+RETRY_5XX = [0.5, 1.0]
+RETRY_429 = [2.0, 6.0, 14.0]
+RETRY_AFTER_CAP_S = 20.0
 
 
 def load_dir(rel):
@@ -38,10 +46,20 @@ def load_dir(rel):
     return out
 
 
+def _pace(netloc):
+    last = LAST_REQUEST[netloc]
+    wait = MIN_HOST_INTERVAL_S - (time.monotonic() - last)
+    if wait > 0:
+        time.sleep(wait)
+    LAST_REQUEST[netloc] = time.monotonic()
+
+
 def status(url):
-    with HOST_LOCKS[urlparse(url).netloc]:
+    netloc = urlparse(url).netloc
+    with HOST_LOCKS[netloc]:
         result = None
-        for attempt in range(3):
+        for attempt in range(max(len(RETRY_5XX), len(RETRY_429)) + 1):
+            _pace(netloc)
             req = urllib.request.Request(
                 url, headers={"User-Agent": "Mozilla/5.0 directory-check-links"}
             )
@@ -50,12 +68,27 @@ def status(url):
                     return r.status
             except urllib.error.HTTPError as e:
                 result = e.code
-                if e.code not in {500, 502, 503, 504}:
+                if e.code == 429:
+                    sleeps = RETRY_429
+                    if attempt < len(sleeps):
+                        retry_after = e.headers.get("Retry-After") if e.headers else None
+                        try:
+                            delay = min(float(retry_after), RETRY_AFTER_CAP_S)
+                        except (TypeError, ValueError):
+                            delay = sleeps[attempt]
+                        time.sleep(max(delay, 0.0))
+                        continue
                     return result
+                if e.code in {500, 502, 503, 504} and attempt < len(RETRY_5XX):
+                    time.sleep(RETRY_5XX[attempt])
+                    continue
+                return result
             except (urllib.error.URLError, TimeoutError) as e:
                 result = f"err:{type(e).__name__}"
-            if attempt < 2:
-                time.sleep(0.5 * (attempt + 1))
+                if attempt < len(RETRY_5XX):
+                    time.sleep(RETRY_5XX[attempt])
+                    continue
+                return result
         return result
 
 
@@ -63,6 +96,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--quiet", action="store_true")
     ap.add_argument("--workers", type=int, default=8)
+    ap.add_argument("--strict", action="store_true",
+                    help="treat persistent rate-limits (429) as failures")
     args = ap.parse_args()
 
     setups = load_dir("setups")
@@ -74,7 +109,14 @@ def main():
     urls = defaultdict(list)
     for sid, s in setups.items():
         for src in s.get("sources", []):
-            urls[src["url"]].append(f"setups/{sid}")
+            u = src["url"]
+            m = src.get("mirror_url")
+            if m and urlparse(u).netloc.endswith("reddit.com"):
+                # Reddit hard-403s this environment (AGENTS law 10): the mirror
+                # is the verifiable evidence, the permalink the human citation.
+                urls[m].append(f"setups/{sid} (mirror of {u})")
+            else:
+                urls[u].append(f"setups/{sid}")
         for m in s.get("measurements", []):
             if m.get("source"):
                 urls[m["source"]].append(f"setups/{sid}:measurement")
@@ -94,12 +136,24 @@ def main():
         print(f"checking {len(urls)} distinct URLs with {args.workers} workers")
     with ThreadPoolExecutor(max_workers=args.workers) as ex:
         codes = list(ex.map(status, urls))
-    dead = [(u, c, urls[u]) for u, c in zip(urls, codes) if c != 200]
+    dead = [(u, c, urls[u]) for u, c in zip(urls, codes)
+            if c != 200 and c != 429]
+    limited = [(u, urls[u]) for u, c in zip(urls, codes) if c == 429]
+    for u, where in limited:
+        print(f"RATE-LIMITED 429  {u}\n     cited by: {', '.join(where[:4])}\n"
+              f"     not dead; re-run later or fetch manually to confirm")
     for u, c, where in dead:
         print(f"DEAD {c}  {u}\n     cited by: {', '.join(where[:4])}")
     if not args.quiet:
-        print(f"{len(urls) - len(dead)}/{len(urls)} reachable")
-    return 1 if dead else 0
+        state = f"{len(urls) - len(dead) - len(limited)}/{len(urls)} reachable"
+        if limited:
+            state += f", {len(limited)} rate-limited"
+        print(state)
+    if dead:
+        return 1
+    if limited and args.strict:
+        return 1
+    return 0
 
 
 if __name__ == "__main__":

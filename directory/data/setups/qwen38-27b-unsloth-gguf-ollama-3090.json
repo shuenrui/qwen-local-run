@@ -1,0 +1,97 @@
+{
+  "id": "qwen38-27b-unsloth-gguf-ollama-3090",
+  "title": "Qwen3.8-27B Q4_K_M via Ollama on a power-limited RTX 3090",
+  "slug_note": "ollama pull of the unsloth GGUF, fully GPU-resident (23GB, 96% GPU / 4% CPU) on a downclocked 3090 at 90% power limit: ~40 tok/s by wall clock.",
+  "model": "qwen3-8-27b",
+  "status": "reported",
+  "variation": {
+    "license": "Apache-2.0",
+    "downloads": null,
+    "checkpoint": "unsloth/Qwen3.8-27B-GGUF",
+    "publisher": "unsloth",
+    "quant": "gguf-q4",
+    "quant_detail": "Q4_K_M pulled through Ollama's HF bridge (hf.co/unsloth/Qwen3.8-27B-GGUF:Q4_K_M)",
+    "format": "gguf",
+    "size_gb": 17.4,
+    "url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF"
+  },
+  "engine": {
+    "id": "ollama",
+    "config": "ollama pull hf.co/unsloth/Qwen3.8-27B-GGUF:Q4_K_M; context capped at 131072 via a local 'qwen-capped-128k' tag; blobs 16.5GB + 928MB projector on a secondary drive; load ~19.5s.",
+    "image": null,
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "none",
+    "flags": []
+  },
+  "hardware": [
+    "gpu-24gb"
+  ],
+  "requirements": {
+    "memory_gb": 24,
+    "disk_gb": 18,
+    "min_vram_gb": 24,
+    "notes": "23GB resident at 96% GPU / 4% CPU per ollama ps; host RAM is not the constraint \u2014 24GB floor. GPU downclocked at a 90% power limit; a stock-clocked card should beat this number. Load ~19.5s."
+  },
+  "capabilities": {
+    "vision": true,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 131072,
+    "max_context": 131072
+  },
+  "run": {
+    "repo": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
+    "command": "ollama pull hf.co/unsloth/Qwen3.8-27B-GGUF:Q4_K_M",
+    "steps": [
+      {
+        "kind": "cmd",
+        "text": "ollama pull hf.co/unsloth/Qwen3.8-27B-GGUF:Q4_K_M"
+      },
+      {
+        "kind": "do",
+        "text": "cap context via a Modelfile tag (num_ctx 131072) if you need the long window"
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "metric": "decode_per_stream",
+      "value": 40.2,
+      "unit": "tok/s",
+      "concurrency": 1,
+      "provenance": "forum",
+      "date": "2026-08-25",
+      "n": null,
+      "method": "wall-clock division (482 tokens / ~12s) \u2014 NOT ollama eval_duration",
+      "note": "482 tokens in ~12s wall-clock on the Q4_K_M pull; corroborated in-thread by John6666 against crowd-sourced llamabench.ai RTX 3090 non-speculative runs of 38.2 / 40.0 / 41.1 / 45.6 tok/s (llama.cpp, differing quant/cache settings \u2014 sanity range, not a reproduction)",
+      "source": "https://discuss.huggingface.co/t/179251"
+    }
+  ],
+  "caveats": [
+    "WEAK METHOD, kept deliberately: 40.2 tok/s is wall-clock division, not Ollama's eval_duration; a thread reply is a full decision tree for verifying it properly.",
+    "Card was downclocked at a 90% power limit \u2014 treat 40.2 as a floor for a stock 3090.",
+    "Corroborated in-thread against crowd-sourced llamabench.ai RTX 3090 numbers.",
+    "27B loads fully GPU-resident through Ollama's HF bridge with the 928MB vision projector alongside."
+  ],
+  "provenance_tier": "forum",
+  "sources": [
+    {
+      "url": "https://discuss.huggingface.co/t/179251",
+      "kind": "thread",
+      "note": "the run report + verification replies"
+    },
+    {
+      "url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
+      "kind": "model",
+      "note": "weights / quant card"
+    },
+    {
+      "url": "https://llamabench.ai/browse/rtx3090/qwen3-8-27b",
+      "kind": "benchmark",
+      "note": "crowd-sourced comparison point cited in-thread"
+    }
+  ],
+  "updated": "2026-09-10"
+}

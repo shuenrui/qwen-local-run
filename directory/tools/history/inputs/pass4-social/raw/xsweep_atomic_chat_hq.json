@@ -1,0 +1,1917 @@
+{
+ "via": "twitter-cli user-posts -n 50",
+ "user": "atomic_chat_hq",
+ "posts": [
+  {
+   "id": "2098054229273227462",
+   "text": "DeepSeek V4.1 Flash made DOOM in Atomic Chat 🐳\n\n@deepseek_ai dropped a new architecture for the flash model so we tested it by making Doom in an html file and it built a real raycasting shooter with gun mechanics and enemy waves\n\nRun AI models locally -&gt; https://t.co/RbcCOIgVkj https://t.co/en2Q8Agp2U",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 47,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu Sep 10 14:21:22 +0000 2026",
+   "createdAtLocal": "2026-09-10 22:21",
+   "createdAtISO": "2026-09-10T14:21:22+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2098053190000279559/vid/avc1/3292x2160/YnBD0817WcgUkNV4.mp4?tag=29",
+     "width": 3292,
+     "height": 2160
+    }
+   ],
+   "urls": [
+    "https://atomic.chat"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2097930608790167907",
+    "text": "🚀 Introducing DeepSeek-V4.1-Flash: smarter, faster, more efficient.\n\n🔹 Introducing the smallest model in our new architecture family, with native visual understanding.\n🔹 Designed for greater capability, faster inference, higher throughput, and scaling to larger models.\n\n1/6",
+    "author": {
+     "screenName": "deepseek_ai",
+     "name": "DeepSeek"
+    }
+   }
+  },
+  {
+   "id": "2097639898266116377",
+   "text": "MiniCPM5-2B beats Qwen3.5-4B in 34% less time 👾\n\nWe gave three models the same real-world tasks and compared their attempts using Q4_K_M quants\n\nTests:\n• Build a playlist within strict timing rules\n• Trace a checkout failure through server logs\n• Check stock and draft a replacement with tool calls\n\nOutputs:\n• MiniCPM5-2B: 3/3 tasks, 23.0s total\n• Qwen3.5-4B: 3/3 tasks, 35.0s total\n• Gemma 4 E2B: 2/3 tasks, 29.5s total\n\nMiniCPM and Qwen cleared all three, but MiniCPM finished faster, meanwhile Gemma found the failure’s cause but broke the JSON-only rule",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 274,
+    "retweets": 25,
+    "replies": 9,
+    "quotes": 5,
+    "views": 17620,
+    "bookmarks": 165
+   },
+   "createdAt": "Wed Sep 09 10:54:58 +0000 2026",
+   "createdAtLocal": "2026-09-09 18:54",
+   "createdAtISO": "2026-09-09T10:54:58+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2097639767961702400/vid/avc1/1920x1080/0Ch7qVqy2VXaI4qy.mp4?tag=29",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2096970974247956501",
+    "text": "🚀 Meet MiniCPM5-2B, a 2B-parameter language model bringing high intelligence density to the edge, now open source!\n\nIt ranks #1 among open-source models under 4B parameters on the\n@ArtificialAnlys Intelligence Index, with a score of 23.\n\nIt also scores 20 on the Agentic Index, bringing an early form of general-purpose agent capability to the edge.\n\nAcross 34 benchmarks, MiniCPM5-2B achieves an average score of 53.9, covering coding, math, long-context understanding, tool use, and agentic tasks.\n\nAnd this release goes beyond the model itself.\n\nWe’re opening up the data, training recipes, and RL stack behind MiniCPM5-2B.\n\n🤗 Hugging Face: https://t.co/FZOMTZhBjq\n💻 GitHub: https://t.co/2L0I8bYv8f\nModelscope: https://t.co/WRlPNEAzgu\nWeb: https://t.co/gRSu65FeZL",
+    "author": {
+     "screenName": "OpenBMB",
+     "name": "OpenBMB"
+    }
+   }
+  },
+  {
+   "id": "2097659580079616359",
+   "text": "Run AI models locally -&gt; https://t.co/RbcCOIgVkj",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 593,
+    "bookmarks": 1
+   },
+   "createdAt": "Wed Sep 09 12:13:11 +0000 2026",
+   "createdAtLocal": "2026-09-09 20:13",
+   "createdAtISO": "2026-09-09T12:13:11+00:00",
+   "media": [],
+   "urls": [
+    "https://atomic.chat"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097404367259255290",
+   "text": "Run Ling 3.0 flash VL Atomic Quants via Atomic Chat 🌀\n\n@AntLingAGI gave ling 3.0 flash a vision upgrade, now it can view and analyze images, so we passed it a flappy bird picture to re-create the game\n\nGGUF: https://t.co/1GHnMTkiSX\nRun AI models locally: https://t.co/RbcCOIgVkj https://t.co/1bBAnwsyJ9",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 24,
+    "retweets": 1,
+    "replies": 3,
+    "quotes": 2,
+    "views": 7305,
+    "bookmarks": 10
+   },
+   "createdAt": "Tue Sep 08 19:19:03 +0000 2026",
+   "createdAtLocal": "2026-09-09 03:19",
+   "createdAtISO": "2026-09-08T19:19:03+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2097393542880518145/vid/avc1/3336x2160/n8B-ovvJP_XNM4ur.mp4?tag=29",
+     "width": 3336,
+     "height": 2160
+    }
+   ],
+   "urls": [
+    "https://huggingface.co/AtomicChat/Ling-3.0-flash-VL-GGUF",
+    "https://atomic.chat"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2097359640233439299",
+    "text": "Today, we're open-sourcing Ling-3.0-flash-VL in BF16 and FP8. FP4 and INT4 are coming soon.\n\nBeyond visual recognition, it follows visual cues to:\n- Understand images, video, docs &amp; UIs\n- Reason, search &amp; verify\n- Use tools, check results &amp; deliver https://t.co/kImBAjbdV9",
+    "author": {
+     "screenName": "AntLingAGI",
+     "name": "Ant Ling"
+    }
+   }
+  },
+  {
+   "id": "2097075857265201285",
+   "text": "Running MiniCPM5-2B locally on a 16GB MacBook  💻  \n\nIt beats Qwen3.5-4B on benchmarks, so we asked it to find recent AI news, it called web search, pulled back 10 results and summarized the key developments inside Atomic Chat  \n\nRun local models via https://t.co/RbcCOIgVkj https://t.co/ODWz7Xfl8B",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 425,
+    "retweets": 30,
+    "replies": 17,
+    "quotes": 7,
+    "views": 59397,
+    "bookmarks": 428
+   },
+   "createdAt": "Mon Sep 07 21:33:40 +0000 2026",
+   "createdAtLocal": "2026-09-08 05:33",
+   "createdAtISO": "2026-09-07T21:33:40+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2097075597797412864/vid/avc1/3176x2160/n3b4Lrz5We2HE1P5.mp4?tag=29",
+     "width": 3176,
+     "height": 2160
+    }
+   ],
+   "urls": [
+    "https://atomic.chat"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2096970974247956501",
+    "text": "🚀 Meet MiniCPM5-2B, a 2B-parameter language model bringing high intelligence density to the edge, now open source!\n\nIt ranks #1 among open-source models under 4B parameters on the\n@ArtificialAnlys Intelligence Index, with a score of 23.\n\nIt also scores 20 on the Agentic Index, bringing an early form of general-purpose agent capability to the edge.\n\nAcross 34 benchmarks, MiniCPM5-2B achieves an average score of 53.9, covering coding, math, long-context understanding, tool use, and agentic tasks.\n\nAnd this release goes beyond the model itself.\n\nWe’re opening up the data, training recipes, and RL stack behind MiniCPM5-2B.\n\n🤗 Hugging Face: https://t.co/FZOMTZhBjq\n💻 GitHub: https://t.co/2L0I8bYv8f\nModelscope: https://t.co/WRlPNEAzgu\nWeb: https://t.co/gRSu65FeZL",
+    "author": {
+     "screenName": "OpenBMB",
+     "name": "OpenBMB"
+    }
+   }
+  },
+  {
+   "id": "2096926260278558745",
+   "text": "GPT-6 Astra smokes Claude Fable 5.1 in Blender 💨\n\nWe compared GPT-6 Astra and Fable 5.1 on a Porsche 911 GT3 RS build and the difference is visible from the very first shot \n\nOutput:\nAstra: $132.03 • 2.58 hours \nFable: $114.41 • 2.56 hours\n\nAstra's model is not only more detailed in every aspect, but also far closer to the original car, costing almost the same as Fable's blocky funny looking model, the difference is astonishing",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 258,
+    "retweets": 13,
+    "replies": 18,
+    "quotes": 7,
+    "views": 129392,
+    "bookmarks": 60
+   },
+   "createdAt": "Mon Sep 07 11:39:14 +0000 2026",
+   "createdAtLocal": "2026-09-07 19:39",
+   "createdAtISO": "2026-09-07T11:39:14+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2096919511865974784/vid/avc1/2072x2268/DAzF3R2NY1CmO7WX.mp4?tag=29",
+     "width": 2072,
+     "height": 2268
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095595741528125780",
+    "text": "This is GPT-6 Astra.\n\nAnything you can do on a computer, Astra can do for you. Fast. https://t.co/gDd0IsewJw",
+    "author": {
+     "screenName": "OpenAI",
+     "name": "OpenAI"
+    }
+   }
+  },
+  {
+   "id": "2096926377437954261",
+   "text": "Run AI models locally: https://t.co/RbcCOIgVkj",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 4,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 1,
+    "views": 1235,
+    "bookmarks": 1
+   },
+   "createdAt": "Mon Sep 07 11:39:42 +0000 2026",
+   "createdAtLocal": "2026-09-07 19:39",
+   "createdAtISO": "2026-09-07T11:39:42+00:00",
+   "media": [],
+   "urls": [
+    "https://atomic.chat"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2095621124486799400",
+   "text": "Running Ling 3.0 flash Fin AD quants via Atomic Chat 🌀  \n\nIt analyzed an .xlsx expenses report and built a markdown table which contains a short per-month summary of all spendings, everything locally\n\nGGUF quants: https://t.co/V0WqR3Ql5N https://t.co/SQI3aGxMX0",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 24,
+    "retweets": 2,
+    "replies": 5,
+    "quotes": 4,
+    "views": 8596,
+    "bookmarks": 9
+   },
+   "createdAt": "Thu Sep 03 21:13:05 +0000 2026",
+   "createdAtLocal": "2026-09-04 05:13",
+   "createdAtISO": "2026-09-03T21:13:05+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2095620427791867911/vid/avc1/3440x2160/bgt3Yt3U7YYTIx-i.mp4?tag=29",
+     "width": 3440,
+     "height": 2160
+    }
+   ],
+   "urls": [
+    "https://huggingface.co/AtomicChat/Ling-3.0-flash-Fin-GGUF"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095533696808051001",
+    "text": "We’re open-sourcing Ling-3.0-flash-Fin, a finance-enhanced model for real-world workflows, and FinFIRST, an expert-built benchmark for financial search agents.\nTwo open releases, one goal: making financial AI more accessible and verifiable. https://t.co/VL1FqGuhiq",
+    "author": {
+     "screenName": "AntLingAGI",
+     "name": "Ant Ling"
+    }
+   }
+  },
+  {
+   "id": "2095239885657374862",
+   "text": "GLM 5.3 Flash running locally makes a @Minecraft black hole mod\n\nWe ran GLM 5.3 Flash Q4 locally on a rented 4x RTX PRO 6000 box and asked it to make a lightning gun mod for the real game using the Fabric API\n\nOutput:\n-7.6M tokens\n-Time: ~9 hours\n-Decode: ~96 tok/s\n\nThe mod adds a black hole rifle, when shot it spawns a black hole that pulls in blocks, with light rings that shrink all the way into the singularity, then collapses into an explosion crater that wipes out several chunks\n\nRun GLM 5.3 Flash locally in https://t.co/lW9A0SLtWj",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 234,
+    "retweets": 8,
+    "replies": 6,
+    "quotes": 2,
+    "views": 32143,
+    "bookmarks": 90
+   },
+   "createdAt": "Wed Sep 02 19:58:11 +0000 2026",
+   "createdAtLocal": "2026-09-03 03:58",
+   "createdAtISO": "2026-09-02T19:58:11+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2095239767759949824/vid/avc1/1440x1440/T4mDfslWFSy5mO6i.mp4?tag=29",
+     "width": 1440,
+     "height": 1440
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2092616204787626030",
+    "text": "Introducing GLM-5.3-Flash\n\n- Leading capabilities at a highly competitive price\n- Natively multimodal with a 1M-token context window\n- A 320B-A18B model released under the MIT License\n- Previously previewed as Ox Alpha, running entirely on Chinese AI chips\n\nBlog: https://t.co/tzOmB7gdZP\n\nAvailable now across all official platforms:\n\nWeights: https://t.co/9LRMahY9Wa\nAPI: https://t.co/VcaQnzYmS9\nCoding Plan: https://t.co/Nk8Y98HNhU\nZCode: https://t.co/Peepqv4XSx\nChat: https://t.co/WCqWT0qCQb\nAutoClaw: https://t.co/aGEG5HqTTb",
+    "author": {
+     "screenName": "Zai_org",
+     "name": "Z.ai"
+    }
+   }
+  },
+  {
+   "id": "2094925359372284022",
+   "text": "New Fable 5.1 absolutely crushed Fable 5 at making a racing game👾🔥\n\n@claudeai just dropped Fable 5.1, so we gave both models the same prompt to build a playable racing game from scratch in Godot with BlenderMCP\n\nTasks:\n- Make car and environment models using BlenderMCP\n- A big map for long driving sessions\n- Realistic car handling\n- Simple HUD for speed and controls\n\nOutputs:\nFable 5.1: 1.2M tokens, 123.98$, 59.8 minutes\nFable 5: 897K tokens, 95.87, 57.3 minutes\n\nFable 5.1's models are far more detailed and the game runs smooth, the world feels alive while you drive. Fable 5 finished all three tasks and its HUD and controls work, but its models are plain and the game feels stiff",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 145,
+    "retweets": 7,
+    "replies": 8,
+    "quotes": 2,
+    "views": 21255,
+    "bookmarks": 44
+   },
+   "createdAt": "Tue Sep 01 23:08:22 +0000 2026",
+   "createdAtLocal": "2026-09-02 07:08",
+   "createdAtISO": "2026-09-01T23:08:22+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2094924986083430400/vid/avc1/1920x784/YT8ReDZl0z2LXGrs.mp4?tag=29",
+     "width": 1920,
+     "height": 784
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2094848572143407483",
+    "text": "We’re introducing Claude Fable 5.1 and Claude Mythos 5.1.\n\nThey're the world’s most advanced models for coding and knowledge work. https://t.co/8P9PSrWPi3",
+    "author": {
+     "screenName": "claudeai",
+     "name": "Claude"
+    }
+   }
+  },
+  {
+   "id": "2094926927031111883",
+   "text": "@claudeai Run AI models locally: https://t.co/RbcCOIgVkj",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 846,
+    "bookmarks": 1
+   },
+   "createdAt": "Tue Sep 01 23:14:35 +0000 2026",
+   "createdAtLocal": "2026-09-02 07:14",
+   "createdAtISO": "2026-09-01T23:14:35+00:00",
+   "media": [],
+   "urls": [
+    "https://atomic.chat"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094633792761672073",
+   "text": "Run OpenClaw 2.0 through Atomic Chat local LLM server on a 16GB MacBook 💻🦞\n\nWe gave OpenClaw a task to edit a video using Gemma 4 E4B, it successfully created a welcome video in two minutes by writing custom React code \n\nLoad the model in https://t.co/lW9A0SLtWj, start the LLM server and OpenClaw 2.0 picks it right up",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 306,
+    "retweets": 21,
+    "replies": 8,
+    "quotes": 4,
+    "views": 44033,
+    "bookmarks": 228
+   },
+   "createdAt": "Tue Sep 01 03:49:47 +0000 2026",
+   "createdAtLocal": "2026-09-01 11:49",
+   "createdAtISO": "2026-09-01T03:49:47+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2094631968864362496/vid/avc1/2940x1912/bxpWlzI7vzhz4fKr.mp4?tag=29",
+     "width": 2940,
+     "height": 1912
+    }
+   ],
+   "urls": [
+    "https://atomic.chat"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2094266903204434431",
+    "text": "OpenClaw 2.0 has arrived\nhttps://t.co/52iWXJQvCy",
+    "author": {
+     "screenName": "openclaw",
+     "name": "OpenClaw🦞"
+    }
+   }
+  },
+  {
+   "id": "2093433913238552712",
+   "text": "GLM 5.3 Flash performs at GLM 5.3 level in Blender for 17x cheaper!\n\nWe gave both models a live Blender over MCP and one prompt: a 2,800 sq ft duplex penthouse, double-height living room, mezzanine, floating stair, curtain wall, terrace, furnished, real PBR materials\n\nOutputs:\nGLM 5.3 Flash: 811 objects, 38m 52s, $0.0526\nGLM 5.3: 847 objects, 40m 43s, $0.8807\n\nGLM 5.3's prompt following was worse and it ended up making the penthouse smaller in depth, meanwhile GLM 5.3 Flash followed the prompt without any issues, along with that the flash model can be run on a 128GB MacBook 💻",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 736,
+    "retweets": 53,
+    "replies": 34,
+    "quotes": 12,
+    "views": 107432,
+    "bookmarks": 437
+   },
+   "createdAt": "Fri Aug 28 20:21:53 +0000 2026",
+   "createdAtLocal": "2026-08-29 04:21",
+   "createdAtISO": "2026-08-28T20:21:53+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2093433792144789505/vid/avc1/1800x1980/YmYw-vRI0aDUkLvD.mp4?tag=29",
+     "width": 1800,
+     "height": 1980
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2093354097122455713",
+    "text": "GLM-5.3 is now open-weight.\n\nOur most capable model for agentic coding and cyber defense is now available to download, run, and customize.\n\nWeights: https://t.co/v1IbWMXxg4\nTech blog: https://t.co/ekQkO83jCv https://t.co/f8XlJksKyf",
+    "author": {
+     "screenName": "Zai_org",
+     "name": "Z.ai"
+    }
+   }
+  },
+  {
+   "id": "2093433916719792214",
+   "text": "Run AI models locally: https://t.co/RbcCOIgVkj",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 10,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 2493,
+    "bookmarks": 4
+   },
+   "createdAt": "Fri Aug 28 20:21:54 +0000 2026",
+   "createdAtLocal": "2026-08-29 04:21",
+   "createdAtISO": "2026-08-28T20:21:54+00:00",
+   "media": [],
+   "urls": [
+    "https://atomic.chat"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2092404345958433051",
+   "text": "Run Qwen 3.8 27B MLX locally on a 16GB Mac 💻 \n\nWe released vision MLX quants on Hugging Face from 29.5GB down to 11.8GB  \n\nAD 3.50bpw DWQ is 12.7GB and picks the same next token as the bf16 original 79.6% of the time https://t.co/82KRhRzrkj",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 801,
+    "retweets": 63,
+    "replies": 36,
+    "quotes": 9,
+    "views": 106785,
+    "bookmarks": 878
+   },
+   "createdAt": "Wed Aug 26 00:10:45 +0000 2026",
+   "createdAtLocal": "2026-08-26 08:10",
+   "createdAtISO": "2026-08-26T00:10:45+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQm2jJbWQAEUcfw.jpg",
+     "width": 1200,
+     "height": 1200
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2088280182356611304",
+    "text": "We promised open weights for Qwen3.8. Now, time to meet them! 🎉\n\n⚡ Qwen3.8-27B:\n- A native multimodal dense model. With just 27B parameters, it outperforms Qwen3.7-Plus overall and shines in real-world coding & office workflows.\n- 262K native context, easily extendable to 1M tokens via YaRN.\n- Built for builders. Highly efficient, high-quality, and licensed under Apache 2.0.\n\n🚀 The open weights for Qwen3.8-2.4T-A95B (Max-level) have also been released recently.\n\nWhether you're shipping lightweight applications with Qwen3.8-27B locally or building agents with Qwen3.8-2.4T-A95B, they're yours now!\n\nDownload, deploy, and build something we haven't imagined yet. 👀👇\n- Hugging Face：\nhttps://t.co/4kaAcqYEVj\n- ModelScope：\nhttps://t.co/eRIMZCGkhC",
+    "author": {
+     "screenName": "Alibaba_Qwen",
+     "name": "Qwen"
+    }
+   }
+  },
+  {
+   "id": "2092404349016130023",
+   "text": "Atomic Dynamic Qwen3.8 27B MLX quants: https://t.co/SulmZZ7jVg\n\nRun AI models locally: https://t.co/RbcCOIgVkj\n\nLinkedIn: https://t.co/aaEmAw5g2f",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 33,
+    "retweets": 3,
+    "replies": 0,
+    "quotes": 0,
+    "views": 4875,
+    "bookmarks": 38
+   },
+   "createdAt": "Wed Aug 26 00:10:46 +0000 2026",
+   "createdAtLocal": "2026-08-26 08:10",
+   "createdAtISO": "2026-08-26T00:10:46+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/collections/AtomicChat/qwen-38-27b-6a7c86fe00e317b78f572767",
+    "https://atomic.chat",
+    "https://www.linkedin.com/company/atomicchat"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "ca",
+   "score": null
+  },
+  {
+   "id": "2092276124982067471",
+   "text": "We officially surpassed 1M model downloads on @huggingface 🔥\n\nYour 5 most downloaded models:\n\n1. Qwen3.8 27B — 261K\n2. Ling 3.0 flash — 158K\n3. Ornith 1.5 35B A3B — 50K\n4. Qwen3.5 4B DFlash — 49K\n5. Gemma 4 26B A4B assistant — 48K\n\nA big thanks to all of you guys for using our quants, we will keep working hard to improve them even further!",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 219,
+    "retweets": 18,
+    "replies": 19,
+    "quotes": 2,
+    "views": 19090,
+    "bookmarks": 54
+   },
+   "createdAt": "Tue Aug 25 15:41:15 +0000 2026",
+   "createdAtLocal": "2026-08-25 23:41",
+   "createdAtISO": "2026-08-25T15:41:15+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQlBTFHWwAAYSYa.jpg",
+     "width": 1200,
+     "height": 1200
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2092276128111010250",
+   "text": "Our Hugging Face: https://t.co/0Wynp4Nlyg\nRun AI models locally: https://t.co/RbcCOIgVkj",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 6,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 1203,
+    "bookmarks": 0
+   },
+   "createdAt": "Tue Aug 25 15:41:16 +0000 2026",
+   "createdAtLocal": "2026-08-25 23:41",
+   "createdAtISO": "2026-08-25T15:41:16+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/AtomicChat",
+    "https://atomic.chat"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2091896352787612095",
+   "text": "Qwen 3.8 27B Q4 quant destroyed Q8 at voxel island creation ⛏️\n\nWe gave our Atomic Dynamic Q4, Q5, Q6 and Q8 quants the same voxel island tasks:\n\n- Cliffside Hamlet\n- Autumn Road\n- Winter Cabin\n- Jurassic Volcano Isle\n- Pirate Cove Sunset\n- Overgrown Ruins\n- Steampunk Sky Island\n\nQ8 wasn’t always the best, with Q4 often times producing a comparable or better result, which shows that lower quants are also a viable and more accessible option. AD-Q5_K_M is our top-pick, it fits on a 32GB MacBook Air with 32K content and picks the same next token as the BF16 original 97.3% of the time",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 162,
+    "retweets": 15,
+    "replies": 11,
+    "quotes": 4,
+    "views": 29557,
+    "bookmarks": 93
+   },
+   "createdAt": "Mon Aug 24 14:32:10 +0000 2026",
+   "createdAtLocal": "2026-08-24 22:32",
+   "createdAtISO": "2026-08-24T14:32:10+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2091895671133540352/vid/avc1/1080x1080/ENwLn6mjO9bkJiu5.mp4?tag=29",
+     "width": 1080,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2088380082780074236",
+    "text": "Run Qwen3.8 27B locally via Atomic Chat💥\n\nWe released Atomic Dynamic GGUF quants, from 8-bit (28.9 GB) down to 1-bit (8.5 GB), and measured all other Qwen3.8 GGUFs in the community\n\nAD-IQ3_S runs on a 16GB MacBook Air and picks the same next token as the BF16 original 92.4% of the time",
+    "author": {
+     "screenName": "atomic_chat_hq",
+     "name": "atomic.chat"
+    }
+   }
+  },
+  {
+   "id": "2091896356428283974",
+   "text": "Explore Atomic Dynamic Qwen 3.8 27B GGUF quants: https://t.co/iTSRZcCEzE\n\nRun them locally in Atomic Chat: https://t.co/RbcCOIgVkj",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 5,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 1072,
+    "bookmarks": 3
+   },
+   "createdAt": "Mon Aug 24 14:32:11 +0000 2026",
+   "createdAtLocal": "2026-08-24 22:32",
+   "createdAtISO": "2026-08-24T14:32:11+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/collections/AtomicChat/qwen-38-27b",
+    "https://atomic.chat"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2090859865476415547",
+   "text": "Open-weight Qwen 3.8 2.4T built a Call of Duty clone in one prompt 🪖\n\n@Alibaba_Qwen released the 2.4T Max weights, so we rented a B200 cluster and asked the model to make a Call of Duty clone\n\nOutput: ~1.1M tokens · 5 hours · one prompt\n\nAlmost no one can run 2.4T at home, luckily there is a 27B version that runs on a 16GB MacBook Air with our Atomic Dynamic quants",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 411,
+    "retweets": 35,
+    "replies": 21,
+    "quotes": 4,
+    "views": 46072,
+    "bookmarks": 134
+   },
+   "createdAt": "Fri Aug 21 17:53:32 +0000 2026",
+   "createdAtLocal": "2026-08-22 01:53",
+   "createdAtISO": "2026-08-21T17:53:32+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2090859762988523520/vid/avc1/1080x1080/I3RW0nLZD3VvEpHT.mp4?tag=29",
+     "width": 1080,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2088280182356611304",
+    "text": "We promised open weights for Qwen3.8. Now, time to meet them! 🎉\n\n⚡ Qwen3.8-27B:\n- A native multimodal dense model. With just 27B parameters, it outperforms Qwen3.7-Plus overall and shines in real-world coding & office workflows.\n- 262K native context, easily extendable to 1M tokens via YaRN.\n- Built for builders. Highly efficient, high-quality, and licensed under Apache 2.0.\n\n🚀 The open weights for Qwen3.8-2.4T-A95B (Max-level) have also been released recently.\n\nWhether you're shipping lightweight applications with Qwen3.8-27B locally or building agents with Qwen3.8-2.4T-A95B, they're yours now!\n\nDownload, deploy, and build something we haven't imagined yet. 👀👇\n- Hugging Face：\nhttps://t.co/4kaAcqYEVj\n- ModelScope：\nhttps://t.co/eRIMZCGkhC",
+    "author": {
+     "screenName": "Alibaba_Qwen",
+     "name": "Qwen"
+    }
+   }
+  },
+  {
+   "id": "2090859868735316257",
+   "text": "Explore our Qwen 3.8 27B quants: https://t.co/iBkEP1rJ7S\n\nRun Qwen 3.8 27B locally: https://t.co/RbcCOIgVkj",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 10,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1534,
+    "bookmarks": 12
+   },
+   "createdAt": "Fri Aug 21 17:53:33 +0000 2026",
+   "createdAtLocal": "2026-08-22 01:53",
+   "createdAtISO": "2026-08-21T17:53:33+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF",
+    "https://atomic.chat"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2090436652363665614",
+   "text": "DFlash2 makes Qwen3.8 27B up to 4x faster⚡️\n\nWe rented one RTX 6000 and ran the same Qwen3.8-27B four ways: baseline, MTP, DFlash, DFlash2. We picked 4 different tasks for the test: a music library as JSON, a Python rate limiter, a seating puzzle, a heist story.\n\nOutputs:\n\nBaseline: 47.4 tok/s\nMTP: 114.7 tok/s · 52% accepted\nDFlash: 99.3 tok/s · 34% accepted\nDFlash2: 140.6 tok/s · 56% accepted\n\nThe diff between DFlash and DFlash2 is essentially this: DFlash only looks at the current token, makes one guess and sends it, which often results in poor acceptance rates. DFlash2 on the other hand looks at the previous and current tokens, creates 16 candidates and ranks each guess on two criteria: 1. how well it fits as the next token 2. does it connect with the previous token. After ranking, it picks the best candidate and submits it as the guess. \n\nThis is how DFlash2 achieves much higher acceptance rates and as a result is often much faster than DFlash",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 214,
+    "retweets": 16,
+    "replies": 13,
+    "quotes": 3,
+    "views": 28463,
+    "bookmarks": 149
+   },
+   "createdAt": "Thu Aug 20 13:51:51 +0000 2026",
+   "createdAtLocal": "2026-08-20 21:51",
+   "createdAtISO": "2026-08-20T13:51:51+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2090434237337870336/vid/avc1/1920x1080/H7enLz5hLSNT4TZ7.mp4?tag=29",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2089836737132650504",
+    "text": "DFlash 2 is here! Qwen3.8-27B at 70 tok/s on an M5 Max MacBook Pro.\n\n⚡ Up to 4.6× the speed of autoregressive decoding, with the same output.\n\nThis is the next generation of DFlash, seeded at Z Lab and upgraded at Inco AI. Get one more accepted token on every pass, for free!\n\nhttps://t.co/We0lwYPSBl",
+    "author": {
+     "screenName": "zhijianliu_",
+     "name": "Zhijian Liu"
+    }
+   }
+  },
+  {
+   "id": "2090436880781197598",
+   "text": "Run AI locally: https://t.co/RbcCOIgVkj",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 6,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 1193,
+    "bookmarks": 1
+   },
+   "createdAt": "Thu Aug 20 13:52:45 +0000 2026",
+   "createdAtLocal": "2026-08-20 21:52",
+   "createdAtISO": "2026-08-20T13:52:45+00:00",
+   "media": [],
+   "urls": [
+    "https://atomic.chat"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2090144132647772259",
+   "text": "Run Ornith 1.5 9B and 35B A3B locally via Atomic Chat 🐦‍🔥\n\nWe shipped the full 9B GGUF ladder on Hugging Face, from lossless BF16 (17.9 GB) down to 2-bit (2.8 GB) and measured all against stock quants\n\nAD-Q4_K runs on a 16GB MacBook Air with 64k context and picks the same next token as the BF16 original 91.9% of the time",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 133,
+    "retweets": 11,
+    "replies": 12,
+    "quotes": 6,
+    "views": 32290,
+    "bookmarks": 61
+   },
+   "createdAt": "Wed Aug 19 18:29:28 +0000 2026",
+   "createdAtLocal": "2026-08-20 02:29",
+   "createdAtISO": "2026-08-19T18:29:28+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQGu2B7XUAAAdBL.jpg",
+     "width": 2400,
+     "height": 2400
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2090074077084127302",
+    "text": "Aloha! 🌺Introducing Ornith-1.5, a family of open-source LLMs spanning 9B Dense, 35B MoE, and 397B MoE, trained with self-improving strategies.\n\nIt achieves state-of-the-art performance among open-source models of comparable size and delivers performance comparable to Claude Opus 4.8 across reasoning, agentic, and coding tasks:\n✅Terminal-Bench 2.1 (86.1)\n✅SWE-Bench (86 on verified, 65.1 on pro, 79.6 on Multilingual)\n✅DeepSWE (56)\n✅HLE (44.6)\n✅ClawEval (81.4)\n✅Tool Decathlon (71.2)\n\nOrnith-1.5 takes a major step toward training foundation models through end-to-end self-improvement, extending the self-scaffolding strategies introduced in Ornith-1.0 into a more complete self-improvement loop: the model proposes new tasks, generates task-specific scaffolds, and produces solution rollouts for reinforcement learning, continuously creating new learning experiences from which it can improve.\n\nAll models, along with their quantized versions (FP8, GGUF, MLX, and NVFP4), have been released under the MIT License, enabling unrestricted commercial and research use.\n📘Tech Blog: https://t.co/OZ63scRWLB\n🤗Huggingface: https://t.co/mGJLwhrQOM",
+    "author": {
+     "screenName": "ornith_",
+     "name": "Ornith"
+    }
+   }
+  },
+  {
+   "id": "2090144381462290812",
+   "text": "Ornith 1.5 9B quants: https://t.co/d5lXIflsrH\n\nOrnith 1.5 35B A3B quants: https://t.co/ezQO0uS7Ap\n\nRun AI models locally: https://t.co/RbcCOIgVkj",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 13,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 849,
+    "bookmarks": 5
+   },
+   "createdAt": "Wed Aug 19 18:30:28 +0000 2026",
+   "createdAtLocal": "2026-08-20 02:30",
+   "createdAtISO": "2026-08-19T18:30:28+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/AtomicChat/Ornith-1.5-9B-GGUF",
+    "https://huggingface.co/AtomicChat/Ornith-1.5-35B-A3B-GGUF",
+    "https://atomic.chat"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2090144137416724508",
+   "text": "The 35B A3B is live too 🐦‍🔥\n\nOnly 3B of its 35B weights run per token, so a 12GB card can serve the 22GB build with the experts kept in RAM\n\nAD-Q5_K picks the same next token as the BF16 original 93.5% of the time https://t.co/5xyMai3aYM",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 22,
+    "retweets": 2,
+    "replies": 0,
+    "quotes": 0,
+    "views": 1100,
+    "bookmarks": 7
+   },
+   "createdAt": "Wed Aug 19 18:29:30 +0000 2026",
+   "createdAtLocal": "2026-08-20 02:29",
+   "createdAtISO": "2026-08-19T18:29:30+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQGu9sSXsAAtRNL.jpg",
+     "width": 2400,
+     "height": 2400
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2088897649038467263",
+   "text": "It’s a great honor for us to have the support of such a strong partner as @Alibaba_Qwen 🫡",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 82,
+    "retweets": 3,
+    "replies": 4,
+    "quotes": 0,
+    "views": 8076,
+    "bookmarks": 4
+   },
+   "createdAt": "Sun Aug 16 07:56:24 +0000 2026",
+   "createdAtLocal": "2026-08-16 15:56",
+   "createdAtISO": "2026-08-16T07:56:24+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2088891548507492646",
+    "text": "🚀Qwen3.8-27B flies on a laptop, becoming part of our work and daily lives. Thanks for the shoutout! @atomic_chat_hq",
+    "author": {
+     "screenName": "Alibaba_Qwen",
+     "name": "Qwen"
+    }
+   }
+  },
+  {
+   "id": "2088625914682941719",
+   "text": "AtomicChat just broke the 24GB VRAM context ceiling for Qwen 3.8 27B.\n\nBy shaving 800MB off the base weights (15.9GB vs Unsloth's 16.7GB) using their new AD layer allocation layout, we just unlocked an extra +20,000 to +30,000 tokens of raw context headroom on a single RTX 4090. Low KL divergence, small footprint.\n\nUnsloths UD-Q4_K_XL (benchmarked yesterday link in replies) has slightly lower kl divergence while having slightly larger mem footprint. check out the replies for kl divergence comparison chart. Unsloth's Q4_K_M has same mem footprint as atomic chat's Q4_K (benchmarked in this post)\n\nThat extra 800MB of VRAM pushes Q8 KV cache context to 190k, and native MTP speculative decoding to 160k context @ 60 t/s decode. 100% native. 0 system RAM offload.\n\nHere is the exact VRAM and throughput matrix. Old Unsloth ceilings vs New Atomic Chat ceilings:\n\nModel: Qwen3.8-27B-AD-Q4_K.gguf (15.9 GB) Hardware: Single RTX 4090 / 24GB VRAM\n\n### PART 1: The Context Scaling Matrix (Pure Throughput)\n\n# 1. Standard FP16 KV Cache (Unquantized):\n- Unsloth Q4_K_XL Ceiling: 100k context \n- Atomic Q4_K Ceiling: 110k context\n↳ 2,559.7 prefill | 41.99 tps decode | 23.50 GB VRAM\n\n# 2. Q8 Quantized KV Cache (Agentic Sweet-spot):\n- Unsloth Q4_K_XL Ceiling: 170k context\n- Atomic Q4_K Ceiling: 190k context\n↳ 2,515.3 prefill | 42.23 tps decode | 23.72 GB VRAM\n\n# 3. Q4 Quantized KV Cache (Max Native Context):\n\n260k context now only takes 22.35 GB VRAM for Atomic Q4_K (down from 23.0 GB for unsloth).\n↳ 2,528.3 prefill | 41.88 tps decode\n\n(At 22.35 GB, we have enough headroom to likely breach 300k native context on a 24GB card, but 260k is perfectly flat and stable).\n\n### PART 2: MTP Overdrive (Native Speculative Decoding)\n\nSince MTP state buffers eat memory, trading some context for raw speed gives us near 60 tps decode with zero external draft models.\n\n# 1. MTP + Q8 KV Cache:\n- Unsloth Q4_K_XL Ceiling: 80k context \n- Atomic Q4_K Ceiling: 100k context\n↳ 2,249.9 prefill | 58.88 tps decode | 23.53 GB VRAM\n\n# 2. MTP + Q4 KV Cache:\n- Unsloth Q4_K_XL Ceiling: 130k context (Unsloth Q4_K_XL)\n- Atomic Q4_K Ceiling: 160k context\n↳ 2,232.6 prefill | 59.65 tps decode | 23.60 GB VRAM\n\n### THE REPRODUCTION STACK (llama.cpp flags)\n\nTo hit the 190,000 Context Q8 Ceiling:\n./build/bin/llama-server -m Qwen3.8-27B-AD-Q4_K.gguf -c 190000 -ngl 99 --port 8080 -ctv q8_0 -ctk q8_0\n\nTo hit the 160,000 Context MTP Speed Overdrive (60 tps):\n\n./build/bin/llama-server -m Qwen3.8-27B-AD-Q4_K.gguf -c 160000 -ngl 99 --port 8080 -ctv q4_0 -ctk q4_0 --spec-type draft-mtp --spec-draft-n-max 4 --spec-draft-p-min 0.7\n\nWe are running frontier tier AI with a 190k context window entirely locally on consumer gaming GPUs.\n\nIf you own a single rtx 3090/4090 with qwen 3.6 27b, upgrade to the new qwen 3.8 27b now!\n\nAtomic's Hugging Face GGUF links, intelligence/agentic benchmark details, and kl divergence comparison charts are posted in the replies.\n\nThe API cartel should be terrified. What are you building with this?",
+   "author": {
+    "id": "2207203190",
+    "name": "Alok",
+    "screenName": "analogalok",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055727708261474304/tUAKpN50_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 189,
+    "retweets": 13,
+    "replies": 15,
+    "quotes": 2,
+    "views": 22264,
+    "bookmarks": 176
+   },
+   "createdAt": "Sat Aug 15 13:56:37 +0000 2026",
+   "createdAtLocal": "2026-08-15 21:56",
+   "createdAtISO": "2026-08-15T13:56:37+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HPxJqL4aEAA3R7T.jpg",
+     "width": 2650,
+     "height": 1500
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HPxJ_sGakAAkuwN.jpg",
+     "width": 2375,
+     "height": 1350
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "atomic_chat_hq",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2088380082780074236",
+    "text": "Run Qwen3.8 27B locally via Atomic Chat💥\n\nWe released Atomic Dynamic GGUF quants, from 8-bit (28.9 GB) down to 1-bit (8.5 GB), and measured all other Qwen3.8 GGUFs in the community\n\nAD-IQ3_S runs on a 16GB MacBook Air and picks the same next token as the BF16 original 92.4% of the time",
+    "author": {
+     "screenName": "atomic_chat_hq",
+     "name": "atomic.chat"
+    }
+   }
+  },
+  {
+   "id": "2088380082780074236",
+   "text": "Run Qwen3.8 27B locally via Atomic Chat💥\n\nWe released Atomic Dynamic GGUF quants, from 8-bit (28.9 GB) down to 1-bit (8.5 GB), and measured all other Qwen3.8 GGUFs in the community\n\nAD-IQ3_S runs on a 16GB MacBook Air and picks the same next token as the BF16 original 92.4% of the time",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1229,
+    "retweets": 146,
+    "replies": 61,
+    "quotes": 53,
+    "views": 517223,
+    "bookmarks": 1062
+   },
+   "createdAt": "Fri Aug 14 21:39:46 +0000 2026",
+   "createdAtLocal": "2026-08-15 05:39",
+   "createdAtISO": "2026-08-14T21:39:46+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HPtotbxWcAAjfko.jpg",
+     "width": 2400,
+     "height": 2400
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2088280182356611304",
+    "text": "We promised open weights for Qwen3.8. Now, time to meet them! 🎉\n\n⚡ Qwen3.8-27B:\n- A native multimodal dense model. With just 27B parameters, it outperforms Qwen3.7-Plus overall and shines in real-world coding & office workflows.\n- 262K native context, easily extendable to 1M tokens via YaRN.\n- Built for builders. Highly efficient, high-quality, and licensed under Apache 2.0.\n\n🚀 The open weights for Qwen3.8-2.4T-A95B (Max-level) have also been released recently.\n\nWhether you're shipping lightweight applications with Qwen3.8-27B locally or building agents with Qwen3.8-2.4T-A95B, they're yours now!\n\nDownload, deploy, and build something we haven't imagined yet. 👀👇\n- Hugging Face：\nhttps://t.co/4kaAcqYEVj\n- ModelScope：\nhttps://t.co/eRIMZCGkhC",
+    "author": {
+     "screenName": "Alibaba_Qwen",
+     "name": "Qwen"
+    }
+   }
+  },
+  {
+   "id": "2088380186488189435",
+   "text": "@Alibaba_Qwen @QwenDevs @Ali_TongyiLab Explore Atomic's Qwen3.8 27B quants:\nhttps://t.co/iBkEP1rJ7S\nRun AI Models locally: https://t.co/RbcCOIgVkj",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 109,
+    "retweets": 8,
+    "replies": 1,
+    "quotes": 0,
+    "views": 11903,
+    "bookmarks": 112
+   },
+   "createdAt": "Fri Aug 14 21:40:11 +0000 2026",
+   "createdAtLocal": "2026-08-15 05:40",
+   "createdAtISO": "2026-08-14T21:40:11+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF",
+    "https://atomic.chat"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "ca",
+   "score": null
+  },
+  {
+   "id": "2087960730997756236",
+   "text": "LFM2.5-VL-3B recognized Minecraft Steve running locally on an iPhone in Atomic Chat!\n\n@liquidai released a new 3B vision model. We gave it one photo of a small Steve toy and it named the character correctly. At Q4 it takes roughly 2.3 GB.\n\nAvailable now on iPhone and Android! https://t.co/TFLleW2b8d",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 116,
+    "retweets": 13,
+    "replies": 4,
+    "quotes": 1,
+    "views": 10900,
+    "bookmarks": 49
+   },
+   "createdAt": "Thu Aug 13 17:53:25 +0000 2026",
+   "createdAtLocal": "2026-08-14 01:53",
+   "createdAtISO": "2026-08-13T17:53:25+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2087960259776110592/vid/avc1/1080x1920/m1YIFe73X0Pvwmmp.mp4?tag=29",
+     "width": 1080,
+     "height": 1920
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2087539876929441983",
+    "text": "Today, we release LFM2.5-VL-3B, a lightweight vision-language model that reads screens, documents, and the physical world. It handles digital screens across mobile, web, and desktop, grounds objects to coordinates, reads text and charts, and calls tools from either text or image input.\n\nBuilt on LFM2.5-2.6B base, with a SigLIP2 400M NaFlex vision encoder\n\n> Pre-trained on ~34T tokens\n> Vocab size: 128K\nComparable or better scores compared to models up to 2.6x its size:\n> ScreenSpot-v2 80.7, ahead of Gemma-4-E4B at 51.2\n> RealWorldQA 73.1, ahead of InternVL-3.5-4B at 67.7\n> TextVQA 84.3, ahead of Qwen3.5-4B at 81.2\n> RefCOCO-avg 87.9, up from 57.1 on LFM2-VL-3B\n> ToolSandbox 59.5, up from 26.4 on LFM2-VL-3B\n\n🧵",
+    "author": {
+     "screenName": "liquidai",
+     "name": "Liquid AI"
+    }
+   }
+  },
+  {
+   "id": "2087961216610193581",
+   "text": "Run LFM2.5-VL-3B locally via https://t.co/RbcCOIgVkj app",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 6,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 654,
+    "bookmarks": 2
+   },
+   "createdAt": "Thu Aug 13 17:55:21 +0000 2026",
+   "createdAtLocal": "2026-08-14 01:55",
+   "createdAtISO": "2026-08-13T17:55:21+00:00",
+   "media": [],
+   "urls": [
+    "https://atomic.chat"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "ht",
+   "score": null
+  },
+  {
+   "id": "2087629260861112457",
+   "text": "running lfm2.5-vl-3b locally in atomic chat on m3 pro 18gb! i tested function calling - gave it a photo of an english breakfast and asked how to cook it. it recognized the dish and called web search for the recipe. the @liquidai model handles text and images, good at ui understanding, ocr and tool calling",
+   "author": {
+    "id": "1947183977955270656",
+    "name": "Daniel Yurkin",
+    "screenName": "danyurkin",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2053361409400983557/lKMnIj95_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 68,
+    "retweets": 10,
+    "replies": 4,
+    "quotes": 2,
+    "views": 8155,
+    "bookmarks": 26
+   },
+   "createdAt": "Wed Aug 12 19:56:16 +0000 2026",
+   "createdAtLocal": "2026-08-13 03:56",
+   "createdAtISO": "2026-08-12T19:56:16+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2087627763905703936/vid/avc1/3512x2160/EeqPoSV-0Vc1oXAT.mp4?tag=29",
+     "width": 3512,
+     "height": 2160
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "atomic_chat_hq",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2087539876929441983",
+    "text": "Today, we release LFM2.5-VL-3B, a lightweight vision-language model that reads screens, documents, and the physical world. It handles digital screens across mobile, web, and desktop, grounds objects to coordinates, reads text and charts, and calls tools from either text or image input.\n\nBuilt on LFM2.5-2.6B base, with a SigLIP2 400M NaFlex vision encoder\n\n> Pre-trained on ~34T tokens\n> Vocab size: 128K\nComparable or better scores compared to models up to 2.6x its size:\n> ScreenSpot-v2 80.7, ahead of Gemma-4-E4B at 51.2\n> RealWorldQA 73.1, ahead of InternVL-3.5-4B at 67.7\n> TextVQA 84.3, ahead of Qwen3.5-4B at 81.2\n> RefCOCO-avg 87.9, up from 57.1 on LFM2-VL-3B\n> ToolSandbox 59.5, up from 26.4 on LFM2-VL-3B\n\n🧵",
+    "author": {
+     "screenName": "liquidai",
+     "name": "Liquid AI"
+    }
+   }
+  },
+  {
+   "id": "2087551190754103417",
+   "text": "Run NVIDIA Nemotron 3.5 Lightning locally 🟩\n\nWe released GGUF quants on Hugging Face, from lossless BF16 down to 19.7 GB, with built-in MTP and DFlash speculative decoding!\n\nAD-IQ4_NL is the best fit for 24GB hardware (tested on RTX 5090). It generates 326 tok/s and matches the reference's token choice 93.5% of the time",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 73,
+    "retweets": 9,
+    "replies": 8,
+    "quotes": 6,
+    "views": 18901,
+    "bookmarks": 36
+   },
+   "createdAt": "Wed Aug 12 14:46:03 +0000 2026",
+   "createdAtLocal": "2026-08-12 22:46",
+   "createdAtISO": "2026-08-12T14:46:03+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HPh4ZzSWoAA4NeI.jpg",
+     "width": 2400,
+     "height": 2400
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2087162151995629926",
+    "text": "Introducing NVIDIA Nemotron 3.5 Lightning⚡\n\nAn open 30B MoE model with 3B active parameters, built for always-on agents to complete high-volume, specialized tasks faster.\n\nIt delivers up to 4x the output speed of similar-sized models. https://t.co/ENWrZe76pU",
+    "author": {
+     "screenName": "NVIDIAAI",
+     "name": "NVIDIA AI"
+    }
+   }
+  },
+  {
+   "id": "2087552306308853926",
+   "text": "GGUF Quants: https://t.co/Pks9TlfBOL \n\nLocal AI App: https://t.co/RbcCOIgVkj",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 11,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 848,
+    "bookmarks": 11
+   },
+   "createdAt": "Wed Aug 12 14:50:29 +0000 2026",
+   "createdAtLocal": "2026-08-12 22:50",
+   "createdAtISO": "2026-08-12T14:50:29+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/AtomicChat/NVIDIA-Nemotron-3.5-Lightning-30B-A3B-GGUF",
+    "https://atomic.chat"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "fr",
+   "score": null
+  },
+  {
+   "id": "2087243596961317126",
+   "text": "Run Meta's new Muse Glimmer 30B♾locally with 16GB VRAM!\n\nWe ship our own GGUF quants. AD-IQ3_XXS does 62 tokens/s on a single RTX 4080 with vision and DFlash, and picks the same next token as the BF16 original 90% of the time!\n\nRun the model via Atomic Chat https://t.co/3IcSsjB48W",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 58,
+    "retweets": 6,
+    "replies": 5,
+    "quotes": 4,
+    "views": 12501,
+    "bookmarks": 31
+   },
+   "createdAt": "Tue Aug 11 18:23:47 +0000 2026",
+   "createdAtLocal": "2026-08-12 02:23",
+   "createdAtISO": "2026-08-11T18:23:47+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HPdg4SbWEAAdURg.jpg",
+     "width": 1089,
+     "height": 1280
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2086755195535413696",
+    "text": "Today we're also opening the weights for Muse Glimmer, a great 30B parameter dense model that can run locally. Soon we'll also release the weights for Muse Spark 1.2, our latest foundation model. Meta is a strong supporter of open source and I'm proud of these releases. Congrats to @alexandr_wang and the MSL team for all your great work on these models.",
+    "author": {
+     "screenName": "finkd",
+     "name": "Mark Zuckerberg"
+    }
+   }
+  },
+  {
+   "id": "2087243854063792499",
+   "text": "GGUF Quants: https://t.co/7SatVb8YEa\n\nLocal AI App: https://t.co/8dXwcTiJbo",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 10,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 689,
+    "bookmarks": 1
+   },
+   "createdAt": "Tue Aug 11 18:24:48 +0000 2026",
+   "createdAtLocal": "2026-08-12 02:24",
+   "createdAtISO": "2026-08-11T18:24:48+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/AtomicChat/Muse-Glimmer-30B-GGUF",
+    "http://atomic.chat"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "fr",
+   "score": null
+  },
+  {
+   "id": "2086969743559344581",
+   "text": "New Muse Glimmer 30B destroyed Gemma 4 31B at making retro arcade games!  \n\nWe gave three models the same task and compared one-shot outputs. Muse Glimmer 30B, Gemma 4 31B and Qwen3.6 27B each ran locally on its own RTX 5090 with 32GB VRAM \n\n Tasks: \n- Space Invaders \n- Tetris \n- Arkanoid with multiball  \n\nOutputs: \nMuse Glimmer 30B: 83.4K tokens, 17.7 min \nQwen3.6 27B: 23.7K tokens, 5.4 min \nGemma 4 31B: 17.8K tokens, 4.5 min  \n\nGlimmer's games play like the originals. The alien fleet speeds up with every kill, the blocks lock and lines clear, the bricks break. Nothing froze or crashed. Gemma broke on Tetris, its bot piles every piece against the left wall until the stack hits the ceiling with half the well empty. Qwen finished all three but some of its Arkanoid balls phase straight through the paddle.  \n\nRun Muse Glimmer yourself in Atomic Chat from day 0!",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 197,
+    "retweets": 27,
+    "replies": 8,
+    "quotes": 5,
+    "views": 39208,
+    "bookmarks": 59
+   },
+   "createdAt": "Tue Aug 11 00:15:35 +0000 2026",
+   "createdAtLocal": "2026-08-11 08:15",
+   "createdAtISO": "2026-08-11T00:15:35+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2086964933112000512/vid/avc1/1920x1080/2Q7HT4zJkLeqM6Ha.mp4?tag=29",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2086757844544811485",
+    "text": "Introducing Muse Glimmer, an open-weight 30B-parameter model optimized for local, always-on agent workflows.\n\nMuse Glimmer delivers strong performance on key agentic use cases and benchmarks compared with leading models in its size category, and is designed to run entirely on consumer hardware like a Mac or PCs with performant GPUs.\n\nIn keeping with our long tradition of sharing fundamental AI research, we’re releasing model weights under a permissive Apache 2.0 license.\n\n🧵👇",
+    "author": {
+     "screenName": "AIatMeta",
+     "name": "AI at Meta"
+    }
+   }
+  },
+  {
+   "id": "2086970901505999056",
+   "text": "Explore Atomic’s Muse Glimmer GGUF quants: https://t.co/7SatVb8YEa\n\nRun AI Models locally: https://t.co/8dXwcTiJbo",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 5,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 879,
+    "bookmarks": 2
+   },
+   "createdAt": "Tue Aug 11 00:20:11 +0000 2026",
+   "createdAtLocal": "2026-08-11 08:20",
+   "createdAtISO": "2026-08-11T00:20:11+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/AtomicChat/Muse-Glimmer-30B-GGUF",
+    "http://atomic.chat"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "fr",
+   "score": null
+  },
+  {
+   "id": "2085384226510389543",
+   "text": "Ling-3.0-flash-Q4_K_M (GGUF by @atomic_chat_hq) benchmark result\n\nRTX 3060 12GB + 64GB RAM.\n\nRunning with Atomic TurboQuant llama.cpp, F16 KV, NCMOE 39.\n\nMax context: 110,848 tokens, while the benchmark itself was run up to 64K context.\n\nPeak PP: 154.38 t/s\nPeak TG: 33.00 t/s\n\nPretty nice numbers for a 12GB card.",
+   "author": {
+    "id": "776101768392355840",
+    "name": "AJ",
+    "screenName": "ItsmeAjayKV",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1878020673521532928/eKvhmxYy_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 59,
+    "retweets": 12,
+    "replies": 5,
+    "quotes": 1,
+    "views": 5417,
+    "bookmarks": 44
+   },
+   "createdAt": "Thu Aug 06 15:15:18 +0000 2026",
+   "createdAtLocal": "2026-08-06 23:15",
+   "createdAtISO": "2026-08-06T15:15:18+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HPDFXMnb0AA523G.jpg",
+     "width": 1216,
+     "height": 1294
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "atomic_chat_hq",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2085330116473934159",
+    "text": "New day, testing another big MoE model on my 3060\n\nThis time it's Ling-3.0-flash-Q4_K_M \n\nIt's loaded, time for some benchmark and then evals. https://t.co/v35tlH2Ule",
+    "author": {
+     "screenName": "ItsmeAjayKV",
+     "name": "AJ"
+    }
+   }
+  },
+  {
+   "id": "2085405031474343963",
+   "text": "New LFM2.5-2.6B hits DeepSeek-V4 level on tool calling and runs 3.7x faster!\n\nWe ran @liquidai 's new LFM2.5-2.6B against DeepSeek-V4-Flash on one box with 4x RTX 5090. Both got the same three jobs, and each one only completes if the model fires every tool call\n\nTopics:\n-weather and local time in six cities\n-one budget into six currencies\n-four hotels checked and booked for one date\n\nOutputs:\nLFM2.5-2.6B: 35/35 tool-calls, 366 tok/s, 19s\nDeepSeek-V4-Flash: 35/35 tool-calls, 77 tok/s, 70s\n\nBoth models made all 35 calls, and both fired twelve of them in one turn. LFM was trained for agents, and tool calling is where that shows. Strong result for a model you can run right on your phone",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 390,
+    "retweets": 34,
+    "replies": 26,
+    "quotes": 16,
+    "views": 113062,
+    "bookmarks": 257
+   },
+   "createdAt": "Thu Aug 06 16:37:59 +0000 2026",
+   "createdAtLocal": "2026-08-07 00:37",
+   "createdAtISO": "2026-08-06T16:37:59+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2085404715739742209/vid/avc1/1920x1080/pFfuQLF4tttNFDqa.mp4?tag=29",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2084640701669613906",
+    "text": "Today we release LFM2.5-2.6B, an agentic model that runs entirely on-device. It plans, calls tools, and works through multi-step tasks on phones, laptops, PCs, and robots. Data never leaves the device, and the marginal cost of each run is essentially zero.\n\n> Pre-trained on ~34T tokens\n> LFM2.5 flagship hybrid architecture\n> Context length: 128K\n> Vocab size: 128K\n> balanced intelligence per watt\n> customizable on a single GPU for any specialized task\n> LFM2 open-weight license\n\nComparable or better scores compared to models up to nearly 4x its size:\n> ToolSandbox 77.83, ahead of Qwen3.5-9B at 76.44\n> Multi-IF 80.07, ahead of Gemma-4-E4B-it at 77.35\n> IFStruct 85.49, ahead of Qwen3.5-9B at 78.50\n\n🧵",
+    "author": {
+     "screenName": "liquidai",
+     "name": "Liquid AI"
+    }
+   }
+  },
+  {
+   "id": "2085408035732685287",
+   "text": "@liquidai Run LFM2.5-2.6B locally on desktop and mobile with Atomic Chat: https://t.co/8dXwcTiJbo",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 17,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 2376,
+    "bookmarks": 11
+   },
+   "createdAt": "Thu Aug 06 16:49:55 +0000 2026",
+   "createdAtLocal": "2026-08-07 00:49",
+   "createdAtISO": "2026-08-06T16:49:55+00:00",
+   "media": [],
+   "urls": [
+    "http://atomic.chat"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2085042273319026793",
+   "text": "Ling-3.0-Flash NVFP4 by @atomic_chat_hq \n\nInference performance test across 3 systems:\n&gt; DGX Spark, 31.97 tok/s, 397ms TTFT\n&gt; 4× RTX 5090, 123.59 tok/s, 624ms TTFT\n&gt; RTX PRO 6000 96GB, 125.93 tok/s, 524ms TTFT https://t.co/hQgvsruQcc",
+   "author": {
+    "id": "56969965",
+    "name": "stevibe",
+    "screenName": "stevibe",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1476819230557614081/dIp-8a5r_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 39,
+    "retweets": 7,
+    "replies": 4,
+    "quotes": 1,
+    "views": 7273,
+    "bookmarks": 13
+   },
+   "createdAt": "Wed Aug 05 16:36:30 +0000 2026",
+   "createdAtLocal": "2026-08-06 00:36",
+   "createdAtISO": "2026-08-05T16:36:30+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2085041416133349378/vid/avc1/2460x2160/tBZeYAiNU9YGj91e.mp4?tag=29",
+     "width": 2460,
+     "height": 2160
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "atomic_chat_hq",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2084656533489754475",
+    "text": "Today, we’re releasing the open weights for Ling-3.0-flash. 🎉\n\nOfficial BF16 and FP8-quantized versions are now available, so you can choose the option that best fits your hardware, performance requirements, and deployment needs. https://t.co/o2eQRZdupH",
+    "author": {
+     "screenName": "AntLingAGI",
+     "name": "Ant Ling"
+    }
+   }
+  },
+  {
+   "id": "2085037578491723829",
+   "text": "Run Ling 3.0 Flash locally 🌀\n\nWe released GGUF quants on Hugging Face, from lossless BF16 to 1-bit, plus NVFP4!\n\nAD-Q5_K_M is the best fit for 128GB hardware (tested on DGX Spark). It matches the original's token choice 97.5% of the time and drifts 31% less than the llama.cpp default quant of the same size.",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 148,
+    "retweets": 16,
+    "replies": 6,
+    "quotes": 9,
+    "views": 43951,
+    "bookmarks": 78
+   },
+   "createdAt": "Wed Aug 05 16:17:51 +0000 2026",
+   "createdAtLocal": "2026-08-06 00:17",
+   "createdAtISO": "2026-08-05T16:17:51+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HO-KcWwW8AA65f5.jpg",
+     "width": 2400,
+     "height": 2400
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2085024077434196211",
+    "text": "🚀 Today, we’re releasing INT4 and FP4 (MXFP4) variants of Ling-3.0-flash.\n\nBoth run end to end on a single NVIDIA DGX Spark via our Spark-adapted SGLang path.\n\nFor FP4, W4A16 is the stable default, while W4A8 is tuned for higher throughput.\n\nThe efficiency and accuracy of the quantized models are still evolving. We will continue updating the inference implementation and quantized weights over time.",
+    "author": {
+     "screenName": "AntLingAGI",
+     "name": "Ant Ling"
+    }
+   }
+  },
+  {
+   "id": "2085038381604454544",
+   "text": "@AntLingAGI Explore Atomic's Ling 3.0 Flash quants:\nhttps://t.co/ksDZBmJMrm\nRun AI Models locally: https://t.co/8dXwcTiJbo",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 9,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 1,
+    "views": 2775,
+    "bookmarks": 2
+   },
+   "createdAt": "Wed Aug 05 16:21:02 +0000 2026",
+   "createdAtLocal": "2026-08-06 00:21",
+   "createdAtISO": "2026-08-05T16:21:02+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/collections/AtomicChat/ling-30-flash",
+    "http://atomic.chat"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2084387072672948558",
+   "text": "Run DeepSeek V4 Flash 0731 locally 🐳\n\nWe released 14 quants on Hugging Face, from lossless BF16 to 1-bit\n\nAD-IQ2_M is the best fit for 128GB hardware. It matches the original's token choice 83.6% of the time, measured against all other V4 Flash GGUFs in the community https://t.co/sRxkD42isC",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 472,
+    "retweets": 58,
+    "replies": 27,
+    "quotes": 15,
+    "views": 104832,
+    "bookmarks": 290
+   },
+   "createdAt": "Mon Aug 03 21:12:58 +0000 2026",
+   "createdAtLocal": "2026-08-04 05:12",
+   "createdAtISO": "2026-08-03T21:12:58+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HO064y3WUAAZHZn.jpg",
+     "width": 2400,
+     "height": 2400
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2083084415157022911",
+    "text": "🚀 DeepSeek-V4-Flash Official API is now LIVE in public beta!\n\n🔷 We’ve massively upgraded its Agent capabilities—benchmark scores are now far surpassing the V4-Pro-Preview. Check out the massive performance leap below! 👇\n🔷 The official V4-Flash now natively supports the Responses API format and is fully adapted for Codex!\n\nCheck out the configuration details in our official API docs: https://t.co/smCwQZMeiq",
+    "author": {
+     "screenName": "deepseek_ai",
+     "name": "DeepSeek"
+    }
+   }
+  },
+  {
+   "id": "2084388745088762128",
+   "text": "@deepseek_ai Explore Atomic's Deepseek v4 Flash 0731 quants: https://t.co/aq25DL2g4R\nRun AI Models locally: https://t.co/8dXwcTiJbo",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 22,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 1,
+    "views": 3442,
+    "bookmarks": 25
+   },
+   "createdAt": "Mon Aug 03 21:19:37 +0000 2026",
+   "createdAtLocal": "2026-08-04 05:19",
+   "createdAtISO": "2026-08-03T21:19:37+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/AtomicChat/DeepSeek-V4-Flash-0731-GGUF",
+    "http://atomic.chat"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2084231644597162201",
+   "text": "Qwen 3.8 Max beat Fable 5 at building 3D physics scenes for 7x cheaper!\n\nWe gave two models the same task. Build three self-contained 3D scenes, each one HTML file with real physics that runs itself.\n\nPrompts:\n- A marble machine that lifts marbles up a wheel and drops them on a loop\n- A car factory assembly line\n- A sawmill cutting logs into planks\n\nOutputs:\nQwen 3.8 Max: 46.6K tokens, $0.28\nFable 5: 38.7K tokens, $1.93\n\nQwen worked much harder on the details. Its textures and shadows look real. Fable 5 built a fast prototype that works and left it there. In the marble machine, Fable's marbles show up from nowhere at the top of the wheel. In Qwen's, you can see them go up. On the car line, Qwen's cars look much better and more real. Fable's sawmill is very strange. The saw looks wrong, and the log goes right through a beam before the saw cuts it.\n\nAtomic Chat will have day zero support to run Qwen 3.8 Max locally!",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1644,
+    "retweets": 137,
+    "replies": 44,
+    "quotes": 42,
+    "views": 210961,
+    "bookmarks": 553
+   },
+   "createdAt": "Mon Aug 03 10:55:21 +0000 2026",
+   "createdAtLocal": "2026-08-03 18:55",
+   "createdAtISO": "2026-08-03T10:55:21+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2084231452204421120/vid/avc1/1600x900/V7qX3w9TCAh1vzKy.mp4?tag=29",
+     "width": 1600,
+     "height": 900
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2084100707423289643",
+    "text": "📢Meet Qwen3.8-Max — our most capable model to date. \n\nNext week, the open weights of Qwen3.8-Max will be released, and Qwen3.8-27B is also going open-weights to meet you all!🎉\n\nQwen3.8-Max, a new bar for coding and cowork at 2.4T parameters:\n\n- Autonomous coding: 10+ days of self-evolving development, from empty folder to production without hand-holding, complete project trace in the GitHub：https://t.co/iVHZWQoeSo\n- Real work, real results: Production-quality deliverables across hundreds of professions.\n- Long-horizon mastery: System-level autonomous planning with closed-loop adaptive learning, driving 500+ turns of chip design optimization and 365 days of e-commerce strategy.\n- Native multimodal intelligence: Vision isn't just input — it's a continuous feedback loop for planning, execution, and self-correction.\n\n💰Pricing:\nInput: $2.0 / M tokens\nOutput: $6.0 / M tokens\nImplicit Caching: $0.25 / M tokens\n\nStart building with Qwen3.8-Max! 🚀\n\n📖 Blog: https://t.co/iwjmQxLBof\n✅ Qwen Studio: https://t.co/4V2pFvDovG\n⚡ API: https://t.co/gAGqaLQGbN",
+    "author": {
+     "screenName": "Alibaba_Qwen",
+     "name": "Qwen"
+    }
+   }
+  },
+  {
+   "id": "2084234601531166862",
+   "text": "Run Qwen 3.8 Max locally from day zero: https://t.co/8dXwcTiJbo\nFollow our HF for Qwen 3.8 quants: https://t.co/h0KSGxIbTl",
+   "author": {
+    "id": "2037196634489077761",
+    "name": "atomic.chat",
+    "screenName": "atomic_chat_hq",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2037454994899959808/L7uqgUfL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 12,
+    "retweets": 1,
+    "replies": 0,
+    "quotes": 0,
+    "views": 2895,
+    "bookmarks": 11
+   },
+   "createdAt": "Mon Aug 03 11:07:06 +0000 2026",
+   "createdAtLocal": "2026-08-03 19:07",
+   "createdAtISO": "2026-08-03T11:07:06+00:00",
+   "media": [],
+   "urls": [
+    "http://atomic.chat",
+    "http://huggingface.co/AtomicChat"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  }
+ ]
+}

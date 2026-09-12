@@ -35,8 +35,9 @@ fast it goes *according to whom*, and can run it from the copyable command.
    perplexity) come from different harnesses; ranking across them would be
    false precision. Record canaries per setup; never aggregate them into a
    score.
-5. **`site/index.html` is generated.** Never edit it by hand; change `build.py`
-   or the data and rebuild.
+5. **`site/index.html` is generated.** Never edit it by hand; change the page
+   source in `site_src/` (`shell.html`, `app.css`, `app.js`), `build.py`, or the
+   data, and rebuild.
 6. **Never push to `origin`.** `origin` is the public
    `MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark` repo — a third party's serving
    stack that this project measures against and credits, not an upstream.
@@ -47,6 +48,30 @@ fast it goes *according to whom*, and can run it from the copyable command.
    0 for LFS files; a size of 0 or null is invalid.
 8. **`variation.license` is the weights' license** in SPDX display form;
    builder/runtime terms that differ go in `caveats`.
+9. **Social posts are a discovery layer, never load-bearing.** Every setup's
+   primary source is a durable artifact: a GitHub repo (pinned via
+   `run.repo_commit`), a HuggingFace model card, or a resolvable forum thread.
+   X / YouTube / Reddit links ride along as extra `post`/`video` sources;
+   rot-prone ones carry an archive or mirror URL. A number that exists only in
+   a post or video follows the eligibility ladder in SCHEMA.md — no repo and
+   no fully-stated method means no number in the dataset, only an `untested`
+   or `reported` recipe.
+10. **Reddit numbers require a mirror** (owner decision 2026-09-10). Reddit
+    hard-403s this environment, so a Reddit-sourced number is recorded with
+    the permalink as `url`, the pullpush/arctic-shift mirror as `mirror_url`,
+    and the verbatim quote lifted from the mirror payload. `check_links.py`
+    verifies the mirror instead of the permalink.
+11. **Scenario B prunes the quant matrix** (owner decision 2026-09-10). Quant
+    artifacts come from whitelisted publishers only (Qwen, unsloth, bartowski,
+    ggml-org, lmstudio-community, mlx-community, QuantTrio, mradermacher,
+    RedHatAI, NVIDIA, AMD; engine-registry lanes carry their registry as
+    publisher, e.g. `ollama` for Ollama library tags); one canonical publisher
+    per format+quant level;
+    ladder is GGUF Q2/Q4/Q6/Q8 (Q3/Q5 only when measured or at a memory-fit
+    boundary), MLX 4/6/8, one lane each of AWQ/GPTQ/FP8/NVFP4/BF16; Ollama /
+    LM Studio entries only where the registry actually ships the model; a
+    hardware lane exists only when fit math passes or someone actually ran it.
+    `tools/vet_candidates.py` flags violations; the owner reviews each batch.
 
 ## Repo map
 
@@ -57,12 +82,17 @@ fast it goes *according to whom*, and can run it from the copyable command.
     data/publishers.json      attribution registry (quant shops, builders, labs)
     data/bench_map.json       experiment-model@engine -> setup id, for imports
     validate.py               schema/enum/provenance enforcement (runs in build)
-    build.py                  stdlib generator -> site/index.html
+    site_src/shell.html       page skeleton: __CSS__ / __DATA__ / __APP__ slots
+    site_src/app.css          design system, layouts, breakpoints, both themes
+    site_src/app.js           hash router, three tabs, filters, compare, hardware
+    build.py                  stdlib generator: site_src + data -> site/index.html
     check_links.py            link-rot guard; exit 1 on any dead source URL
     import_bench.py           bench/ab.py results -> box measurements (+jsonl)
     verify_browser.py         headless-Chromium behaviour checks, any URL
     check.sh                  the gate: validate -> links -> build -> verify
     tools/vet_candidates.py   pre-merge vetting for research-pass output
+    tools/social_candidates.py  pass-4 collector: X/YouTube/Reddit/forums -> ledger
+    tools/coverage.py         facet coverage tables from current data
     tools/install_verify_env.sh  Playwright venv at tools/.pwenv (gitignored)
     tools/history/            one-time authoring scripts + their raw inputs
 
@@ -81,7 +111,11 @@ dies holding everything in memory loses everything); then
 `tools/vet_candidates.py` checks enums, re-fetches every URL and flags
 duplicates against the current dataset; only vetted candidates get merged.
 `tools/history/inputs/` holds previous passes' raw output as examples —
-including numbers that were later dropped with caveats.
+including numbers that were later dropped with caveats. Pass 4 (social
+channels: X, YouTube, Reddit-via-mirror, GitHub discussions, vendor forums)
+uses `tools/social_candidates.py`, which fetches raw payloads into
+`tools/history/inputs/pass4-social/raw/` and appends ledger entries to
+`tools/history/inputs/pass4-social/candidates.json` incrementally.
 
 **Box measurements:** run `bench/ab.py` in the serving checkout, then
 `python3 directory/import_bench.py <results-dir> --engine <eng> --apply`.
@@ -97,8 +131,10 @@ the Playwright venv (`tools/install_verify_env.sh`). Publishing needs the
 
 ## Known gotchas
 
-- Reddit hard-403s this environment; no Reddit-sourced number can be verified
-  here, so none is recorded. Say so rather than importing one.
+- Reddit hard-403s this environment; per law 10 a Reddit number enters only
+  via a pullpush/arctic-shift mirror recorded in `mirror_url`, quote lifted
+  from the mirror payload. Use `tools/social_candidates.py fetch-reddit`,
+  never a direct reddit.com fetch.
 - Duplicate identity is checkpoint + engine + hardware + **config string**; two
   setups may share the first three when the config differs.
 - `generation` must be numeric (3.0/3.5/3.6/3.8) or the shelf sorts wrong;
@@ -107,6 +143,17 @@ the Playwright venv (`tools/install_verify_env.sh`). Publishing needs the
   id; truncated slugs 404. Run `check_links.py` after adding any.
 - Prose style: plain, specific, no marketing voice. Caveats say what a number
   does *not* mean. Dates ISO. Sizes one decimal, GB.
+- **Routing is hash-based on purpose.** `ifhost publish` accepts exactly one HTML
+  file served at `/`, so a real sub-path would 404. `#/`, `#/hardware`,
+  `#/compare`, `#/recipes/<id>` are the canonical, shareable URLs; a path shim
+  keeps the documented paths working if the site ever moves to a host with
+  directory rewrites.
+- The product is four tabs. Models is the homepage; the complete advanced recipe
+  directory lives at `#/recipes` and is never gated by personalization. Every
+  compatibility verdict lives on `#/hardware` and there is no unconditional
+  "fits" verdict anywhere. Trust is four independent confidence dimensions
+  computed from the provenance data — they never blend it.
+  The design contract is `docs/redesign-2026-09-10/`.
 
 ## Open decisions (owner's call — do not resolve these unilaterally)
 
@@ -114,5 +161,9 @@ the Playwright venv (`tools/install_verify_env.sh`). Publishing needs the
 2. Whether to vendor a copy of the serving/bench harness for self-contained
    reproducibility, or keep crediting the external checkout.
 3. CI: a GitHub Action running `check.sh` on push.
-4. Family-scope expansion (sub-4B edge models, cluster-scale models, VL/Omni
-   beyond current entries) and the next community-research pass.
+4. Family-scope expansion beyond the owner-approved Scenario B matrix:
+   sub-4B edge models and the hardware classes they would need, new consumer
+   hardware classes the pass-4 leads imply (e.g. Strix Halo, RDNA3 desktop),
+   cluster-scale models, VL/Omni beyond current entries. The first pass-4
+   candidate batch goes to the owner before any new hardware class is added
+   to `data/`.

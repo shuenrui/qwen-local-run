@@ -1,0 +1,1425 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2092670516964270101",
+      "text": "Run Qwen3.8-Flash-Next on your @NVIDIAAI 2x DGX Sparks with ease ✨\n\n- 900k context with Vision\n- SGLang, MTP, SM121 kernel patch\n- Stress tested with 300k tokens prefill\n\n~64 tok/s single stream (structural)\n~115 tok/s for 2-4 concurrent sessions\n\nConservative settings. Can probably be pushed further. Full decode numbers in the post below.\n\nGet it here:\nhttps://t.co/e4WwEShocx",
+      "author": {
+        "id": "1550009227493752834",
+        "name": "Mia",
+        "screenName": "MiaAI_lab",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2063908041691484160/5XsJBn7I_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 400,
+        "retweets": 44,
+        "replies": 50,
+        "quotes": 15,
+        "views": 66751,
+        "bookmarks": 250
+      },
+      "createdAt": "Wed Aug 26 17:48:25 +0000 2026",
+      "createdAtLocal": "2026-08-27 01:48",
+      "createdAtISO": "2026-08-26T17:48:25+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092670520340713851",
+      "text": "Full picture on decode tok/s (structural) https://t.co/ze8ly8a84R",
+      "author": {
+        "id": "1550009227493752834",
+        "name": "Mia",
+        "screenName": "MiaAI_lab",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2063908041691484160/5XsJBn7I_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 18,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 4312,
+        "bookmarks": 1
+      },
+      "createdAt": "Wed Aug 26 17:48:26 +0000 2026",
+      "createdAtLocal": "2026-08-27 01:48",
+      "createdAtISO": "2026-08-26T17:48:26+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HQqiMtdWkAAdgnE.jpg",
+          "width": 1083,
+          "height": 654
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092674760396226919",
+      "text": "@MiaAI_lab @NVIDIAAI Great work as usual!",
+      "author": {
+        "id": "706910608663453698",
+        "name": "Alex Ellis",
+        "screenName": "alexellisuk",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1134783444079259648/lP1sBvo1_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 831,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 18:05:17 +0000 2026",
+      "createdAtLocal": "2026-08-27 02:05",
+      "createdAtISO": "2026-08-26T18:05:17+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092675012125704238",
+      "text": "@alexellisuk @NVIDIAAI Ty 🙏🙏🙏",
+      "author": {
+        "id": "1550009227493752834",
+        "name": "Mia",
+        "screenName": "MiaAI_lab",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2063908041691484160/5XsJBn7I_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 717,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 18:06:17 +0000 2026",
+      "createdAtLocal": "2026-08-27 02:06",
+      "createdAtISO": "2026-08-26T18:06:17+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "und",
+      "score": null
+    },
+    {
+      "id": "2096935966200177097",
+      "text": "Reliable AFM measurement starts with precise wafer handling. NX-Wafer automates transfer, alignment, target positioning and probe exchange. Its EFEM supports warped wafers, while the tip exchanger stores up to 24 pre-mounted probes. See the workflow.",
+      "author": {
+        "id": "414456691",
+        "name": "Park Systems",
+        "screenName": "Park_Systems",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1609948302509854720/REt06aSC_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 25,
+        "retweets": 3,
+        "replies": 1,
+        "quotes": 0,
+        "views": 273740,
+        "bookmarks": 12
+      },
+      "createdAt": "Mon Sep 07 12:17:48 +0000 2026",
+      "createdAtLocal": "2026-09-07 20:17",
+      "createdAtISO": "2026-09-07T12:17:48+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092677784518701496",
+      "text": "@MiaAI_lab @NVIDIAAI Love it, going to give this a test and see how it feels compared to dsv4f shortly!",
+      "author": {
+        "id": "291490266",
+        "name": "Seth For Privacy",
+        "screenName": "sethforprivacy",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1507020330954489862/MNnJ320U_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 866,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 18:17:18 +0000 2026",
+      "createdAtLocal": "2026-08-27 02:17",
+      "createdAtISO": "2026-08-26T18:17:18+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092677971958026687",
+      "text": "@sethforprivacy @NVIDIAAI it's very fast\n\nI can probably make it go to 80 tok/s eventually",
+      "author": {
+        "id": "1550009227493752834",
+        "name": "Mia",
+        "screenName": "MiaAI_lab",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2063908041691484160/5XsJBn7I_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 9,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 698,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 18:18:03 +0000 2026",
+      "createdAtLocal": "2026-08-27 02:18",
+      "createdAtISO": "2026-08-26T18:18:03+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092674601201336517",
+      "text": "@MiaAI_lab @NVIDIAAI This is great. Anything for us poor One-Spark-people? 😅",
+      "author": {
+        "id": "3319106213",
+        "name": "Chris",
+        "screenName": "ChrisXFRA",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2094856276723314689/wzNkL5b3_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 711,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 18:04:39 +0000 2026",
+      "createdAtLocal": "2026-08-27 02:04",
+      "createdAtISO": "2026-08-26T18:04:39+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092707247189029107",
+      "text": "@ChrisXFRA @NVIDIAAI will come due in time",
+      "author": {
+        "id": "1550009227493752834",
+        "name": "Mia",
+        "screenName": "MiaAI_lab",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2063908041691484160/5XsJBn7I_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 508,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 20:14:23 +0000 2026",
+      "createdAtLocal": "2026-08-27 04:14",
+      "createdAtISO": "2026-08-26T20:14:23+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092672173693345954",
+      "text": "@MiaAI_lab @NVIDIAAI Is this better than DeepSeek-v4-Flash?",
+      "author": {
+        "id": "235749745",
+        "name": "Sun Tzu",
+        "screenName": "ysundfw_jerry",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1743801785242841088/EsoUmvXt_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1138,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 17:55:00 +0000 2026",
+      "createdAtLocal": "2026-08-27 01:55",
+      "createdAtISO": "2026-08-26T17:55:00+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092672862343528799",
+      "text": "@ysundfw_jerry @NVIDIAAI Haven't compared yet, priority is to get recipes out first",
+      "author": {
+        "id": "1550009227493752834",
+        "name": "Mia",
+        "screenName": "MiaAI_lab",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2063908041691484160/5XsJBn7I_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 12,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 1082,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 17:57:45 +0000 2026",
+      "createdAtLocal": "2026-08-27 01:57",
+      "createdAtISO": "2026-08-26T17:57:45+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092673389202981147",
+      "text": "@MiaAI_lab @NVIDIAAI wait for glm flash",
+      "author": {
+        "id": "1913256730676666368",
+        "name": "ybluea",
+        "screenName": "ybluea154605",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1913256968401330176/TABwcbMn_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 674,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 17:59:50 +0000 2026",
+      "createdAtLocal": "2026-08-27 01:59",
+      "createdAtISO": "2026-08-26T17:59:50+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092673817487311236",
+      "text": "@ybluea154605 @NVIDIAAI soon",
+      "author": {
+        "id": "1550009227493752834",
+        "name": "Mia",
+        "screenName": "MiaAI_lab",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2063908041691484160/5XsJBn7I_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 4,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 645,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 18:01:32 +0000 2026",
+      "createdAtLocal": "2026-08-27 02:01",
+      "createdAtISO": "2026-08-26T18:01:32+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092696475083886927",
+      "text": "@MiaAI_lab @NVIDIAAI Do you sleep",
+      "author": {
+        "id": "2043805668180713472",
+        "name": "Soveryn Intelligence",
+        "screenName": "Soveryn_AI",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2088246334826434560/JH3c9-QC_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 571,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 19:31:34 +0000 2026",
+      "createdAtLocal": "2026-08-27 03:31",
+      "createdAtISO": "2026-08-26T19:31:34+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092696585167647022",
+      "text": "@Soveryn_AI @NVIDIAAI Ofc",
+      "author": {
+        "id": "1550009227493752834",
+        "name": "Mia",
+        "screenName": "MiaAI_lab",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2063908041691484160/5XsJBn7I_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 548,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 19:32:00 +0000 2026",
+      "createdAtLocal": "2026-08-27 03:32",
+      "createdAtISO": "2026-08-26T19:32:00+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "und",
+      "score": null
+    },
+    {
+      "id": "2092695208714448959",
+      "text": "@MiaAI_lab @NVIDIAAI downloading rn !",
+      "author": {
+        "id": "1900903494334164992",
+        "name": "Vilmer Rose",
+        "screenName": "VilmerRose",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2080611524624760832/_fG65lg1_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 466,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 19:26:32 +0000 2026",
+      "createdAtLocal": "2026-08-27 03:26",
+      "createdAtISO": "2026-08-26T19:26:32+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092734482331676710",
+      "text": "@VilmerRose @NVIDIAAI Enjoy 🙏",
+      "author": {
+        "id": "1550009227493752834",
+        "name": "Mia",
+        "screenName": "MiaAI_lab",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2063908041691484160/5XsJBn7I_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 386,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 22:02:36 +0000 2026",
+      "createdAtLocal": "2026-08-27 06:02",
+      "createdAtISO": "2026-08-26T22:02:36+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092724812066202015",
+      "text": "@MiaAI_lab @NVIDIAAI Thank you for sharing!",
+      "author": {
+        "id": "1678461645453156352",
+        "name": "Kai",
+        "screenName": "unseenmars_",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 566,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 21:24:10 +0000 2026",
+      "createdAtLocal": "2026-08-27 05:24",
+      "createdAtISO": "2026-08-26T21:24:10+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092725106459975765",
+      "text": "@unseenmars_ @NVIDIAAI 🫶🫶🫶",
+      "author": {
+        "id": "1550009227493752834",
+        "name": "Mia",
+        "screenName": "MiaAI_lab",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2063908041691484160/5XsJBn7I_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 537,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 21:25:20 +0000 2026",
+      "createdAtLocal": "2026-08-27 05:25",
+      "createdAtISO": "2026-08-26T21:25:20+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "qme",
+      "score": null
+    },
+    {
+      "id": "2092741244825080282",
+      "text": "@MiaAI_lab @NVIDIAAI Why did you go with sglang instead of vllm?",
+      "author": {
+        "id": "13608762",
+        "name": "Javier ⚛ priv/acc",
+        "screenName": "jvr0x",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1975640489236779008/OxwyV_rT_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 114,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 22:29:28 +0000 2026",
+      "createdAtLocal": "2026-08-27 06:29",
+      "createdAtISO": "2026-08-26T22:29:28+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092680713896185993",
+      "text": "@MiaAI_lab @NVIDIAAI We need 1x DGX Mia!",
+      "author": {
+        "id": "1992444969835999232",
+        "name": "Kutluk",
+        "screenName": "__kutluk",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2090267580674068480/EADcZwcy_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 308,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 18:28:56 +0000 2026",
+      "createdAtLocal": "2026-08-27 02:28",
+      "createdAtISO": "2026-08-26T18:28:56+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "in",
+      "score": null
+    },
+    {
+      "id": "2092671985973404036",
+      "text": "@MiaAI_lab @NVIDIAAI Qwen3.8-Flash-Next on 2x Sparks: the MoE version runs well",
+      "author": {
+        "id": "1557017737423212545",
+        "name": "Aryans",
+        "screenName": "haalkidda",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2085081793468960768/MuE7alaM_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 453,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 17:54:16 +0000 2026",
+      "createdAtLocal": "2026-08-27 01:54",
+      "createdAtISO": "2026-08-26T17:54:16+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092671650265481296",
+      "text": "@MiaAI_lab @NVIDIAAI Thank you, love your work!",
+      "author": {
+        "id": "94041030",
+        "name": "Dead Bandit",
+        "screenName": "deadbandit",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1503612838455111680/FQZZHfDi_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 434,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 17:52:56 +0000 2026",
+      "createdAtLocal": "2026-08-27 01:52",
+      "createdAtISO": "2026-08-26T17:52:56+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092679503868834057",
+      "text": "@MiaAI_lab @sethforprivacy @NVIDIAAI Wao first class multimodal. Let’s go. Thanks  @MiaAI_lab",
+      "author": {
+        "id": "196819313",
+        "name": "Luis Mata",
+        "screenName": "luisantoniomata",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1831724324593500162/IQAW91bn_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 246,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 18:24:08 +0000 2026",
+      "createdAtLocal": "2026-08-27 02:24",
+      "createdAtISO": "2026-08-26T18:24:08+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2095374049367261343",
+      "text": "@MiaAI_lab @NVIDIAAI Any abliterated versions? 🤗",
+      "author": {
+        "id": "1392271296713560072",
+        "name": "Ruixion",
+        "screenName": "ruixion",
+        "profileImageUrl": "https://abs.twimg.com/sticky/default_profile_images/default_profile_normal.png",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 6,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Sep 03 04:51:18 +0000 2026",
+      "createdAtLocal": "2026-09-03 12:51",
+      "createdAtISO": "2026-09-03T04:51:18+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092745161159721027",
+      "text": "@MiaAI_lab @NVIDIAAI Sweet!!! Thank you",
+      "author": {
+        "id": "1984740119086342144",
+        "name": "Dizzzank",
+        "screenName": "dank0296",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2092800596508106753/GyGZnQv6_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 103,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 22:45:02 +0000 2026",
+      "createdAtLocal": "2026-08-27 06:45",
+      "createdAtISO": "2026-08-26T22:45:02+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092853218384495041",
+      "text": "@MiaAI_lab @NVIDIAAI The numbers are amazing, thanks!",
+      "author": {
+        "id": "302416836",
+        "name": "Michael Kerkhoff",
+        "screenName": "michaelker_ki",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2084219402619076608/beQAv4Vs_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 49,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Aug 27 05:54:25 +0000 2026",
+      "createdAtLocal": "2026-08-27 13:54",
+      "createdAtISO": "2026-08-27T05:54:25+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092690310329475365",
+      "text": "@MiaAI_lab @NVIDIAAI any plans for 2xDGX NVFP4, but with vllm?",
+      "author": {
+        "id": "17830173",
+        "name": "AlchemicRaker",
+        "screenName": "AlchemicRaker",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/66183330/last-exile_avy_normal.png",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 149,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 19:07:04 +0000 2026",
+      "createdAtLocal": "2026-08-27 03:07",
+      "createdAtISO": "2026-08-26T19:07:04+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092709161951707331",
+      "text": "@MiaAI_lab @NVIDIAAI HELL YES!",
+      "author": {
+        "id": "1407013794832957448",
+        "name": "Zeno",
+        "screenName": "veilgnostic",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055645630249246720/hxvzpc5r_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 132,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 20:21:59 +0000 2026",
+      "createdAtLocal": "2026-08-27 04:21",
+      "createdAtISO": "2026-08-26T20:21:59+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092696982636601469",
+      "text": "@MiaAI_lab @NVIDIAAI I wish these labs would release versions without vision. Bloat for loads of people that they’ll never use and removing it would really help make things people actually use on local hardware",
+      "author": {
+        "id": "792375330245865477",
+        "name": "Tom Talks Cars",
+        "screenName": "TomTalksCars",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/812791285559992322/RFPI2OVx_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 157,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 19:33:35 +0000 2026",
+      "createdAtLocal": "2026-08-27 03:33",
+      "createdAtISO": "2026-08-26T19:33:35+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092671103936418012",
+      "text": "@MiaAI_lab @NVIDIAAI Consider offloading 51B embeddings to SSD not RAM",
+      "author": {
+        "id": "2089037211656187904",
+        "name": "VectorWeft",
+        "screenName": "vectorweft",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2089043213260595200/_aLuZ7Pd_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 21,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 17:50:45 +0000 2026",
+      "createdAtLocal": "2026-08-27 01:50",
+      "createdAtISO": "2026-08-26T17:50:45+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092709371058766039",
+      "text": "@MiaAI_lab @NVIDIAAI Chef Mia sparking up another fire recipe 🔥",
+      "author": {
+        "id": "720659978",
+        "name": "Scott McPherson",
+        "screenName": "scottmcpherson",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1657090938307477504/cJIV6S2i_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 160,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 20:22:49 +0000 2026",
+      "createdAtLocal": "2026-08-27 04:22",
+      "createdAtISO": "2026-08-26T20:22:49+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2093040717211811946",
+      "text": "@MiaAI_lab @NVIDIAAI What about 1 spark ?",
+      "author": {
+        "id": "1644169348980826113",
+        "name": "Islam Bassuni",
+        "screenName": "bassuniz",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2010892399371866112/EuETc5WZ_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 17,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Aug 27 18:19:28 +0000 2026",
+      "createdAtLocal": "2026-08-28 02:19",
+      "createdAtISO": "2026-08-27T18:19:28+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092685278607560854",
+      "text": "@MiaAI_lab @NVIDIAAI how it goes? makes sense to try ? i am stucked at glm5.2 now",
+      "author": {
+        "id": "1919984249370710016",
+        "name": "Rafałek.",
+        "screenName": "DabrowaRaf60604",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1929107761234604032/Oxtc24TC_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 8,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 18:47:05 +0000 2026",
+      "createdAtLocal": "2026-08-27 02:47",
+      "createdAtISO": "2026-08-26T18:47:05+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092757423756878309",
+      "text": "@MiaAI_lab @NVIDIAAI I’m very much on the fence.\nDo i bother to get this running, or do i just wait for glm to settle",
+      "author": {
+        "id": "1511168715043352578",
+        "name": "Akshobya",
+        "screenName": "albustime",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2067124122652422145/xKYkNg-F_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 77,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 23:33:46 +0000 2026",
+      "createdAtLocal": "2026-08-27 07:33",
+      "createdAtISO": "2026-08-26T23:33:46+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092719827345350932",
+      "text": "@MiaAI_lab @NVIDIAAI https://t.co/QmSrgpermr",
+      "author": {
+        "id": "24600942",
+        "name": "Steven Martin",
+        "screenName": "StevenM_42",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/297539918/DSC00297_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 160,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 21:04:22 +0000 2026",
+      "createdAtLocal": "2026-08-27 05:04",
+      "createdAtISO": "2026-08-26T21:04:22+00:00",
+      "media": [],
+      "urls": [
+        "https://github.com/OsakaTX/qwen3.8-flash-next-vllm-dgx-spark"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "qme",
+      "score": null
+    },
+    {
+      "id": "2092675661601165645",
+      "text": "@MiaAI_lab @NVIDIAAI &gt; Can probably be pushed further.\n\nprobably a lot further, this thing has some new architecture no one has fully optimized for yet",
+      "author": {
+        "id": "1866572413145956352",
+        "name": "Andrew I. Christianson",
+        "screenName": "ai_christianson",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2082294498814541825/zX1XpFLN_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 308,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 18:08:52 +0000 2026",
+      "createdAtLocal": "2026-08-27 02:08",
+      "createdAtISO": "2026-08-26T18:08:52+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092672738812936415",
+      "text": "@MiaAI_lab @NVIDIAAI Thank you 🙏",
+      "author": {
+        "id": "1825162980905852928",
+        "name": "gQ",
+        "screenName": "skyzie101",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1956649975854546945/MQwoSWWh_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 292,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 17:57:15 +0000 2026",
+      "createdAtLocal": "2026-08-27 01:57",
+      "createdAtISO": "2026-08-26T17:57:15+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092684712603259369",
+      "text": "@MiaAI_lab @NVIDIAAI Thank you for sharing! Very impressive",
+      "author": {
+        "id": "923266214",
+        "name": "John Song",
+        "screenName": "JJJOOOHN",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2055450757735088128/AqpsWcWf_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 177,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 18:44:50 +0000 2026",
+      "createdAtLocal": "2026-08-27 02:44",
+      "createdAtISO": "2026-08-26T18:44:50+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092744341265818020",
+      "text": "@MiaAI_lab @NVIDIAAI How does the SM121 patch impact latency for those concurrent sessions?",
+      "author": {
+        "id": "104805570",
+        "name": "Steven Cheng",
+        "screenName": "stevencheng",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1979955200992358400/PQXyZVzS_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 62,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 22:41:46 +0000 2026",
+      "createdAtLocal": "2026-08-27 06:41",
+      "createdAtISO": "2026-08-26T22:41:46+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092969537507344674",
+      "text": "@MiaAI_lab @NVIDIAAI 64 tok/s matters less if 300k prefill takes minutes, what's time to first token",
+      "author": {
+        "id": "1803494630366785536",
+        "name": "Sebastian Buzdugan",
+        "screenName": "sebuzdugan",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2046175959401857025/9mSVXlTr_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 21,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Aug 27 13:36:37 +0000 2026",
+      "createdAtLocal": "2026-08-27 21:36",
+      "createdAtISO": "2026-08-27T13:36:37+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092673291366633825",
+      "text": "@MiaAI_lab @NVIDIAAI currently downloading the UD-Q3_K_XL quant for a single dgx spark, fingers crossed",
+      "author": {
+        "id": "3260048814",
+        "name": "dr bosconovitch",
+        "screenName": "drrbosconovitch",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1654932091669446657/bYzAsojh_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 260,
+        "bookmarks": 1
+      },
+      "createdAt": "Wed Aug 26 17:59:27 +0000 2026",
+      "createdAtLocal": "2026-08-27 01:59",
+      "createdAtISO": "2026-08-26T17:59:27+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2082658840223584665",
+      "text": "🎁 First top-up? Get a random bonus up to $15 and launch your VPS from just $7.71. LightNode: Fast, flexible, and ready when you are.",
+      "author": {
+        "id": "1392374756800753665",
+        "name": "LightNode",
+        "screenName": "LightNodeVPS",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1939973414397071360/ekB0BNdX_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 703,
+        "retweets": 113,
+        "replies": 128,
+        "quotes": 3,
+        "views": 5859008,
+        "bookmarks": 98
+      },
+      "createdAt": "Thu Jul 30 02:45:36 +0000 2026",
+      "createdAtLocal": "2026-07-30 10:45",
+      "createdAtISO": "2026-07-30T02:45:36+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092671682368643484",
+      "text": "@MiaAI_lab @NVIDIAAI cool",
+      "author": {
+        "id": "1652005044370264064",
+        "name": "星痕",
+        "screenName": "xinghen14671484",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2097503718396821504/DMA8EPLy_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 248,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 17:53:03 +0000 2026",
+      "createdAtLocal": "2026-08-27 01:53",
+      "createdAtISO": "2026-08-26T17:53:03+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092679459929555259",
+      "text": "@MiaAI_lab @NVIDIAAI This totally makes the case for local Ai and agents 24/7. Exactly why I am holding for a Mac Studio M5 512GB of ram.",
+      "author": {
+        "id": "935020294636367874",
+        "name": "Stephane",
+        "screenName": "SFourdrinier",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2060054569489772544/yAGyiuRL_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 214,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 18:23:58 +0000 2026",
+      "createdAtLocal": "2026-08-27 02:23",
+      "createdAtISO": "2026-08-26T18:23:58+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2093004553692098839",
+      "text": "@MiaAI_lab @NVIDIAAI Do you think this mmap patch will work? RadixArk/Qwen3.8-Flash-Next-NVFP4",
+      "author": {
+        "id": "2235299774",
+        "name": "Ryan Hammang",
+        "screenName": "ryanhammang",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/809953742342606848/E_sic7Zp_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 31,
+        "bookmarks": 0
+      },
+      "createdAt": "Thu Aug 27 15:55:46 +0000 2026",
+      "createdAtLocal": "2026-08-27 23:55",
+      "createdAtISO": "2026-08-27T15:55:46+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092676790045044972",
+      "text": "@MiaAI_lab @NVIDIAAI I am so excited for the day when you do this for 128GB Mac Studios as well.",
+      "author": {
+        "id": "816616142626291712",
+        "name": "Neuralwerk",
+        "screenName": "Neuralwerk",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1834194246603010048/yrT9wpSp_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 207,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 18:13:21 +0000 2026",
+      "createdAtLocal": "2026-08-27 02:13",
+      "createdAtISO": "2026-08-26T18:13:21+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092671191525769710",
+      "text": "@MiaAI_lab @NVIDIAAI Me and my Sparks have been waiting for exactly that post. Lets try it out!",
+      "author": {
+        "id": "2069012523873878016",
+        "name": "Niklas Lenz",
+        "screenName": "niklaslenz_ai",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2095544108265656322/PC0oPFhA_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 359,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 17:51:06 +0000 2026",
+      "createdAtLocal": "2026-08-27 01:51",
+      "createdAtISO": "2026-08-26T17:51:06+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092726612215148685",
+      "text": "@MiaAI_lab @NVIDIAAI &gt; 900k context with Vision\nNice! I'm really happy to have vision again. Also, 60+ tok/s is great.",
+      "author": {
+        "id": "1961064102555492352",
+        "name": "Bear",
+        "screenName": "BearHuddleston",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2078264397303042048/Xj2E748g_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 69,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 21:31:19 +0000 2026",
+      "createdAtLocal": "2026-08-27 05:31",
+      "createdAtISO": "2026-08-26T21:31:19+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2092739496966262832",
+      "text": "@MiaAI_lab @NVIDIAAI I have dual Sparks too, but making it run on 4x V100 is more fun.  My V100 is running Qwen only in layer split w/o spec decode yet... its already 1/2 the speed of 2 Sparks.  https://t.co/dcTeuoa5Hb",
+      "author": {
+        "id": "591674669",
+        "name": "Jun Yamog",
+        "screenName": "jkyamog",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2080481754893455360/Dhjjx0Mb_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 109,
+        "bookmarks": 0
+      },
+      "createdAt": "Wed Aug 26 22:22:31 +0000 2026",
+      "createdAtLocal": "2026-08-27 06:22",
+      "createdAtISO": "2026-08-26T22:22:31+00:00",
+      "media": [],
+      "urls": [
+        "https://x.com/jkyamog/status/2092738290789368023?s=20"
+      ],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2092738290789368023",
+        "text": "Old 2017 GPUs running a 2026 frontier model. Qwen3.8-Flash-Next runs on 4× Tesla V100 (32GB, SM70, NVLink). Volta lives on...⚡️\n                                                                                                                                                                                                                                 • Unsloth UD-IQ4_XS GGUF, ~88GB                                                                                                                 • llama.cpp Flash-Next support (draft PR)\n• 4×32GB NVLink = 128GB VRAM, ~72GB used                                                                                                        • Generation ~30–32 tok/s                                                                                                                       • Prompt proc ~295 tok/s\n• 131K context (q8_0 KV)\n\nI (local bots) patched the draft PR so it runs on Q4.  I will get the bots to do proper tensor parallelism, this is only using layer splitting. https://t.co/oDhjAftC6y",
+        "author": {
+          "screenName": "jkyamog",
+          "name": "Jun Yamog"
+        }
+      }
+    }
+  ]
+}

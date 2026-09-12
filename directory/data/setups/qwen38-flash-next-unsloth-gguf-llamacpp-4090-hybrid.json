@@ -1,0 +1,137 @@
+{
+  "id": "qwen38-flash-next-unsloth-gguf-llamacpp-4090-hybrid",
+  "title": "Qwen3.8-Flash-Next 180B \u2014 unsloth UD-Q4_K_XL on one RTX 4090 (hybrid MoE offload)",
+  "slug_note": "40 expert layers on the GPU, the rest streamed from 110GB of DDR4: 22.5 tok/s decode and 384 tok/s prefill at 80k context from a single 24GB card.",
+  "model": "qwen3-8-flash-next",
+  "status": "reported",
+  "variation": {
+    "license": "Apache-2.0",
+    "downloads": null,
+    "checkpoint": "unsloth/Qwen3.8-Flash-Next-GGUF",
+    "publisher": "unsloth",
+    "quant": "gguf-q4",
+    "quant_detail": "UD-Q4_K_XL, 4 shards, 111.4GB total",
+    "format": "gguf",
+    "size_gb": 111.4,
+    "url": "https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF"
+  },
+  "engine": {
+    "id": "llama-cpp",
+    "config": "llama.cpp built from PR #27742 (danielhanchen qwen-next branch \u2014 required for this architecture), CUDA, sm_86. -ncmoe 40 keeps 40 expert MoE layers on the GPU and streams the rest from system RAM; --fit off is required (auto-fitting mis-sizes this architecture); -b/-ub 4096 roughly doubles prompt ingestion.",
+    "image": null,
+    "requires_fork": true,
+    "draft_model": null,
+    "spec_decode": "none",
+    "flags": [
+      "-c 80000",
+      "--fit off",
+      "-b 4096",
+      "-ub 4096",
+      "-ncmoe 40"
+    ]
+  },
+  "hardware": [
+    "gpu-24gb"
+  ],
+  "requirements": {
+    "memory_gb": 110,
+    "disk_gb": 112,
+    "min_vram_gb": 24,
+    "notes": "23.85GB VRAM + ~97GB host RAM resident at 80k ctx. Host: Ubuntu 22, CUDA 13.0, PCIe 4.0 x16, 110GB DDR4."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 80000,
+    "max_context": 80000
+  },
+  "run": {
+    "repo": "https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF",
+    "command": "llama-server -m Qwen3.8-Flash-Next-UD-Q4_K_XL-00001-of-00004.gguf -c 80000 --fit off -b 4096 -ub 4096 -ncmoe 40",
+    "steps": [
+      {
+        "kind": "do",
+        "text": "Download the 4 UD-Q4_K_XL shards from unsloth/Qwen3.8-Flash-Next-GGUF"
+      },
+      {
+        "kind": "cmd",
+        "text": "build llama.cpp from PR #27742: cmake -DGGML_CUDA=ON -DCMAKE_CUDA_ARCHITECTURES=native -DBUILD_SHARED_LIBS=OFF"
+      },
+      {
+        "kind": "cmd",
+        "text": "llama-server -m Qwen3.8-Flash-Next-UD-Q4_K_XL-00001-of-00004.gguf -c 80000 --fit off -b 4096 -ub 4096 -ncmoe 40"
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "metric": "decode_per_stream",
+      "value": 22.52,
+      "unit": "tok/s",
+      "concurrency": 1,
+      "provenance": "forum",
+      "date": "2026-08-26",
+      "n": null,
+      "method": null,
+      "note": "-ncmoe 40 @80k ctx, 28k continuous prompt, no MTP/no dflash/no KV quant; 23.85GB VRAM + 97GB RAM",
+      "source": "https://x.com/analogalok/status/2092697021790708148"
+    },
+    {
+      "metric": "prefill_tok_s",
+      "value": 383.85,
+      "unit": "tok/s",
+      "concurrency": null,
+      "provenance": "forum",
+      "date": "2026-08-26",
+      "n": null,
+      "method": null,
+      "note": "-b 4096 -ub 4096 doubles ingestion from ~150 to 364+ t/s per author",
+      "source": "https://x.com/analogalok/status/2092697021790708148"
+    },
+    {
+      "metric": "memory_gb",
+      "value": 23.85,
+      "unit": "GB",
+      "concurrency": null,
+      "provenance": "forum",
+      "date": "2026-08-26",
+      "n": null,
+      "method": null,
+      "note": "VRAM footprint; host RAM 97GB",
+      "source": "https://x.com/analogalok/status/2092697021790708148"
+    }
+  ],
+  "caveats": [
+    "Method: continuous 28k-token prompt per run; 250k figures elsewhere in the thread are a configured window, not prompt length.",
+    "No MTP/dflash/KV-quant in these runs \u2014 author: spec-decode recipes 'not yet', and doubts they would double throughput with RAM offload.",
+    "Third-party reply (@foley2k2) gets 26-30 tok/s on Q3_XL \u2014 smaller quant trades context headroom for speed.",
+    "Author's same-hardware comparisons: DeepSeek V4 Flash Q4 ~12 tps, Poolside Laguna S 2.1 (118B MoE) Q4 ~12 tps \u2014 this lane is roughly double."
+  ],
+  "provenance_tier": "forum",
+  "sources": [
+    {
+      "url": "https://x.com/analogalok/status/2092697021790708148",
+      "kind": "post",
+      "note": "builder's benchmark thread with method clarifications in replies; rot-prone \u2014 raw payloads archived under tools/history/inputs/pass4-social/raw/"
+    },
+    {
+      "url": "https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF",
+      "kind": "model",
+      "note": "weights / quant card"
+    },
+    {
+      "url": "https://unsloth.ai/docs/models/qwen3.8-next",
+      "kind": "docs",
+      "note": "unsloth's Flash-Next run guide"
+    },
+    {
+      "url": "https://github.com/ggml-org/llama.cpp/pull/27742",
+      "kind": "repo",
+      "note": "llama.cpp architecture-support PR the build must come from"
+    }
+  ],
+  "updated": "2026-09-10",
+  "builder": "analogalok"
+}

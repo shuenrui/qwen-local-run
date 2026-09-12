@@ -1,0 +1,1698 @@
+{
+ "via": "twitter-cli user-posts -n 50",
+ "user": "ggerganov",
+ "posts": [
+  {
+   "id": "2097731661953917185",
+   "text": "You don't need to be a command-line expert to run local AI. \n\nhttps://t.co/emHfVbIFAH wraps the heavy lifting of llama.cpp into a clean UI, making it simple to deploy and manage models like Gemma 4. Instead of dealing with config files, you get one-click model downloads, clear memory estimates, and no coding required! \n\nWatch the video to see Gemma 4 in action as it parses tables from receipts, streams reasoning logs, and connects to MCP for web search.",
+   "author": {
+    "id": "1908326331609468928",
+    "name": "Google Gemma",
+    "screenName": "googlegemma",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2038662245631320064/uWfEb6yw_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 617,
+    "retweets": 66,
+    "replies": 28,
+    "quotes": 5,
+    "views": 45242,
+    "bookmarks": 390
+   },
+   "createdAt": "Wed Sep 09 16:59:36 +0000 2026",
+   "createdAtLocal": "2026-09-10 00:59",
+   "createdAtISO": "2026-09-09T16:59:36+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2097727932617875456/vid/avc1/640x1138/owobEIqema4lzv-n.mp4?tag=29",
+     "width": 640,
+     "height": 1138
+    }
+   ],
+   "urls": [
+    "https://llama.app"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "ggerganov",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097339465811272153",
+   "text": "Just made a quick tutorial on running local models in Pi with llama.cpp step by step\n\n0:00 Why local models in Pi\n0:59 Install llama.cpp\n1:49 Choose and load a model\n\nWritten version in 🧵 https://t.co/lGxTymDgo5",
+   "author": {
+    "id": "1591022713744855045",
+    "name": "Alejandro AO 🤗",
+    "screenName": "_alejandroao",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1954112266615349248/9XbLVrTn_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 50,
+    "retweets": 7,
+    "replies": 2,
+    "quotes": 1,
+    "views": 6812,
+    "bookmarks": 36
+   },
+   "createdAt": "Tue Sep 08 15:01:09 +0000 2026",
+   "createdAtLocal": "2026-09-08 23:01",
+   "createdAtISO": "2026-09-08T15:01:09+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2097332569465397249/vid/avc1/1920x1080/rdav5blUu8FVrF9P.mp4?tag=29",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "ggerganov",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2095897173376618881",
+   "text": "Hugging Face has been acquired by NVIDIA\n\nIt is quite exciting to be a part of this journey! NVIDIA has been an active supporter of the llama.cpp project. For more than a year now, their engineers have actively contributed to the codebase, collaborated with the community and provisioned hardware for development and testing purposes. The local AI ecosystem has largely benefited from our joint efforts.\n\nGoing forward, llama.cpp/ggml will stick to its founding principles. One of the most important  qualities of the project is to be hardware-agnostic. Therefore the development and support of all backends will continue to be done as usual - driven and shaped by the community. Open to everyone who is willing to participate. The existence of such an independent software platform is crucial for the rapid adoption of AI locally and for bringing it closer to the user.\n\nNow, with such a significant partner as NVIDIA supporting us, in addition to the wider Hugging Face team, I believe that our long-term goals will be easier to achieve. We will remain focused on building one of the most exciting projects based on the most exciting technology of our lifetime and making it truly available to everyone in the most accessible and efficient way possible.",
+   "author": {
+    "id": "3300401027",
+    "name": "Georgi Gerganov",
+    "screenName": "ggerganov",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1654097134315098113/zCZD0wYz_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 585,
+    "retweets": 49,
+    "replies": 31,
+    "quotes": 12,
+    "views": 54350,
+    "bookmarks": 42
+   },
+   "createdAt": "Fri Sep 04 15:30:00 +0000 2026",
+   "createdAtLocal": "2026-09-04 23:30",
+   "createdAtISO": "2026-09-04T15:30:00+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2095487938909876366",
+   "text": "Super happy to officially announce that we are a̶c̶q̶u̶i̶r̶i̶n̶g̶ joining forces with @nvidia 🔥\n\nHere is a more personal take:\n\nAI is at an inflection point. Open source AI can become less relevant in the coming years if the big closed labs run away with it, OR it can become the foundational fabric of the next phase of human civilization.\n\nThose are vastly different outcomes, and we need the critical mass to ensure we give our collective best shot to the second outcome. Given @JensenHuang's stance on open source AI and how he stepped up to defend it when it was under threat earlier in the summer, NVIDIA was the only partner we truly considered.\n\nHF will remain an independently run, neutral platform.\n\nThis gives fuel to our long-term vision and mission of unlocking the community's progress to ensure that AI, which is the greatest breakthrough of our lifetime, is accessible to as many people as possible.",
+   "author": {
+    "id": "16141659",
+    "name": "Julien Chaumond",
+    "screenName": "julien_c",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1108502565925326850/zPsBf2BI_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2911,
+    "retweets": 261,
+    "replies": 193,
+    "quotes": 41,
+    "views": 154366,
+    "bookmarks": 242
+   },
+   "createdAt": "Thu Sep 03 12:23:51 +0000 2026",
+   "createdAtLocal": "2026-09-03 20:23",
+   "createdAtISO": "2026-09-03T12:23:51+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRSqyfhWEAYnKvr.jpg",
+     "width": 1672,
+     "height": 941
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "ggerganov",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094813465852490057",
+   "text": "Introducing Fleet: GPU benchmarking entirely in your browser.\n\nRun WebGPU compute kernels drawn from real AI workloads directly on your hardware and earn a personalized card built for your device.\n\nRate your GPU. Join the Fleet.\nhttps://t.co/fwIPTYAYlj https://t.co/ra2o284cg5",
+   "author": {
+    "id": "4560264219",
+    "name": "Xenova",
+    "screenName": "xenovacom",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1628854727218798593/sWLzdtJ1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 55,
+    "retweets": 6,
+    "replies": 10,
+    "quotes": 4,
+    "views": 8917,
+    "bookmarks": 28
+   },
+   "createdAt": "Tue Sep 01 15:43:44 +0000 2026",
+   "createdAtLocal": "2026-09-01 23:43",
+   "createdAtISO": "2026-09-01T15:43:44+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2094789031422783488/vid/avc1/3300x2156/FJbbrc-vot0ysSMK.mp4?tag=29",
+     "width": 3300,
+     "height": 2156
+    }
+   ],
+   "urls": [
+    "https://webgpu-kernels-fleet.hf.space/"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "ggerganov",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094707254087868640",
+   "text": "The Llama app for Mac now comes with a simple request builder for llama.cpp's REST API https://t.co/irwUZEykBC",
+   "author": {
+    "id": "3300401027",
+    "name": "Georgi Gerganov",
+    "screenName": "ggerganov",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1654097134315098113/zCZD0wYz_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 115,
+    "retweets": 7,
+    "replies": 14,
+    "quotes": 0,
+    "views": 20102,
+    "bookmarks": 33
+   },
+   "createdAt": "Tue Sep 01 08:41:41 +0000 2026",
+   "createdAtLocal": "2026-09-01 16:41",
+   "createdAtISO": "2026-09-01T08:41:41+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2094707071753035776/vid/avc1/2992x1934/li26qDFSKXkXwa9a.mp4?tag=29",
+     "width": 2992,
+     "height": 1934
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2091892738832703781",
+   "text": "llama.cpp docs now have a new home, shipped with ❤️ \n\nupcoming: speculative decoding in detail, quantization (k-quant, i-quant), coding agents\n\nwhat do you want to see next? 🤗\n📖 https://t.co/g96cTPR24g @llama_cpp",
+   "author": {
+    "id": "1202267633049100291",
+    "name": "merve",
+    "screenName": "mervenoyann",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2097392151068090368/BONVOT2t_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 291,
+    "retweets": 26,
+    "replies": 18,
+    "quotes": 2,
+    "views": 27699,
+    "bookmarks": 55
+   },
+   "createdAt": "Mon Aug 24 14:17:49 +0000 2026",
+   "createdAtLocal": "2026-08-24 22:17",
+   "createdAtISO": "2026-08-24T14:17:49+00:00",
+   "media": [],
+   "urls": [
+    "http://llama.app/docs"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "ggerganov",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2089409881858089102",
+   "text": "let that sink in https://t.co/rCficQYZB7",
+   "author": {
+    "id": "3300401027",
+    "name": "Georgi Gerganov",
+    "screenName": "ggerganov",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1654097134315098113/zCZD0wYz_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2774,
+    "retweets": 249,
+    "replies": 120,
+    "quotes": 97,
+    "views": 743819,
+    "bookmarks": 562
+   },
+   "createdAt": "Mon Aug 17 17:51:49 +0000 2026",
+   "createdAtLocal": "2026-08-18 01:51",
+   "createdAtISO": "2026-08-17T17:51:49+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HP8TMV7XsAA0FYY.jpg",
+     "width": 2626,
+     "height": 1672
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2089214161884414147",
+   "text": "I find the \"inception\" pattern to be very useful in many agentic use cases. You can force the model to take an action when it thinks for too long by injecting a thought after a specified reasoning budget.\n\nHelps dealing with underspecified tasks which make the model reason for way too long.",
+   "author": {
+    "id": "3300401027",
+    "name": "Georgi Gerganov",
+    "screenName": "ggerganov",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1654097134315098113/zCZD0wYz_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 487,
+    "retweets": 36,
+    "replies": 27,
+    "quotes": 8,
+    "views": 110561,
+    "bookmarks": 379
+   },
+   "createdAt": "Mon Aug 17 04:54:06 +0000 2026",
+   "createdAtLocal": "2026-08-17 12:54",
+   "createdAtISO": "2026-08-17T04:54:06+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2089213234762981487",
+    "text": "to limit the max reasoning length, add:\n\n... \\\n--reasoning-budget 4096 \\\n--reasoning-budget-message \"... I am thinking for too -- let me gather more info about the task.\"\n\nadjust to your needs",
+    "author": {
+     "screenName": "ggerganov",
+     "name": "Georgi Gerganov"
+    }
+   }
+  },
+  {
+   "id": "2088312667253391546",
+   "text": "simple:\n\nllama serve -hf ggml-org/Qwen3.8-27B-GGUF --spec-type draft-mtp",
+   "author": {
+    "id": "3300401027",
+    "name": "Georgi Gerganov",
+    "screenName": "ggerganov",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1654097134315098113/zCZD0wYz_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1975,
+    "retweets": 131,
+    "replies": 34,
+    "quotes": 14,
+    "views": 459701,
+    "bookmarks": 2264
+   },
+   "createdAt": "Fri Aug 14 17:11:53 +0000 2026",
+   "createdAtLocal": "2026-08-15 01:11",
+   "createdAtISO": "2026-08-14T17:11:53+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "und",
+   "score": null
+  },
+  {
+   "id": "2088340681701925253",
+   "text": "on DGX Spark:\n\nllama serve \\\n -hf  ggml-org/Qwen3.8-27B-GGUF:Q4_K_M \\\n -hfd ggml-org/Qwen3.8-27B-GGUF:Q4_0 \\\n --spec-default \\\n --spec-type draft-mtp \\\n --reasoning-preserve --agent",
+   "author": {
+    "id": "3300401027",
+    "name": "Georgi Gerganov",
+    "screenName": "ggerganov",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1654097134315098113/zCZD0wYz_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 132,
+    "retweets": 3,
+    "replies": 5,
+    "quotes": 0,
+    "views": 24087,
+    "bookmarks": 138
+   },
+   "createdAt": "Fri Aug 14 19:03:12 +0000 2026",
+   "createdAtLocal": "2026-08-15 03:03",
+   "createdAtISO": "2026-08-14T19:03:12+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "und",
+   "score": null
+  },
+  {
+   "id": "2089213234762981487",
+   "text": "to limit the max reasoning length, add:\n\n... \\\n--reasoning-budget 4096 \\\n--reasoning-budget-message \"... I am thinking for too -- let me gather more info about the task.\"\n\nadjust to your needs",
+   "author": {
+    "id": "3300401027",
+    "name": "Georgi Gerganov",
+    "screenName": "ggerganov",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1654097134315098113/zCZD0wYz_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 217,
+    "retweets": 13,
+    "replies": 7,
+    "quotes": 8,
+    "views": 60720,
+    "bookmarks": 222
+   },
+   "createdAt": "Mon Aug 17 04:50:25 +0000 2026",
+   "createdAtLocal": "2026-08-17 12:50",
+   "createdAtISO": "2026-08-17T04:50:25+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2086779164716143017",
+   "text": "We are happy to announce that Muse Glimmer is day-0 supported on llama.cpp. Meta also provides an official GGUF quant: https://t.co/7uDSddzqKZ",
+   "author": {
+    "id": "1293105854389133312",
+    "name": "Xuan-Son Nguyen",
+    "screenName": "ngxson",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1823412255280472064/VoZb_cia_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 86,
+    "retweets": 7,
+    "replies": 12,
+    "quotes": 0,
+    "views": 6308,
+    "bookmarks": 12
+   },
+   "createdAt": "Mon Aug 10 11:38:18 +0000 2026",
+   "createdAtLocal": "2026-08-10 19:38",
+   "createdAtISO": "2026-08-10T11:38:18+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HPW6by_WgAAbNYx.jpg",
+     "width": 1668,
+     "height": 1052
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "ggerganov",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2086755195535413696",
+    "text": "Today we're also opening the weights for Muse Glimmer, a great 30B parameter dense model that can run locally. Soon we'll also release the weights for Muse Spark 1.2, our latest foundation model. Meta is a strong supporter of open source and I'm proud of these releases. Congrats to @alexandr_wang and the MSL team for all your great work on these models.",
+    "author": {
+     "screenName": "finkd",
+     "name": "Mark Zuckerberg"
+    }
+   }
+  },
+  {
+   "id": "2086768482926957055",
+   "text": "Meta released Muse Glimmer 30B: multimodal model for your Claw/Pi setups 🔥\n\nwe tested and fine-tuned the model for you, and shipped day-0 support in transformers and llama.cpp, including DFlash for 2-4x speed-ups 🥵 \n\nread our blog https://t.co/u04QfXk1m2",
+   "author": {
+    "id": "1202267633049100291",
+    "name": "merve",
+    "screenName": "mervenoyann",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2097392151068090368/BONVOT2t_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 397,
+    "retweets": 47,
+    "replies": 32,
+    "quotes": 9,
+    "views": 80791,
+    "bookmarks": 123
+   },
+   "createdAt": "Mon Aug 10 10:55:51 +0000 2026",
+   "createdAtLocal": "2026-08-10 18:55",
+   "createdAtISO": "2026-08-10T10:55:51+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/blog/muse-glimmer"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "ggerganov",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2086755195535413696",
+   "text": "Today we're also opening the weights for Muse Glimmer, a great 30B parameter dense model that can run locally. Soon we'll also release the weights for Muse Spark 1.2, our latest foundation model. Meta is a strong supporter of open source and I'm proud of these releases. Congrats to @alexandr_wang and the MSL team for all your great work on these models.",
+   "author": {
+    "id": "20749410",
+    "name": "Mark Zuckerberg",
+    "screenName": "finkd",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/77846223/profile_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 30448,
+    "retweets": 2550,
+    "replies": 1857,
+    "quotes": 1241,
+    "views": 5219912,
+    "bookmarks": 3252
+   },
+   "createdAt": "Mon Aug 10 10:03:03 +0000 2026",
+   "createdAtLocal": "2026-08-10 18:03",
+   "createdAtISO": "2026-08-10T10:03:03+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "ggerganov",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2084231598799458583",
+   "text": "if you have a mac/book and don't use llama-macos you're ngmi \n\nthis beautiful piece of widget \n&gt; gets your mac + your desired context window to recommend models\n&gt; kicks off llama server + webui\n&gt; easy switch between open models\n\n$ brew install --cask llama-app https://t.co/fO56mgyhBD",
+   "author": {
+    "id": "1202267633049100291",
+    "name": "merve",
+    "screenName": "mervenoyann",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2097392151068090368/BONVOT2t_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 202,
+    "retweets": 18,
+    "replies": 17,
+    "quotes": 5,
+    "views": 33168,
+    "bookmarks": 226
+   },
+   "createdAt": "Mon Aug 03 10:55:10 +0000 2026",
+   "createdAtLocal": "2026-08-03 18:55",
+   "createdAtISO": "2026-08-03T10:55:10+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2084230863437312000/vid/avc1/1668x1080/jcasfutlrZQamuge.mp4?tag=29",
+     "width": 1668,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "ggerganov",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2079561783912575217",
+   "text": "Hi kids, gramps here, taking over for the intern. Just released pi 0.81.0 which features first class integration with @ggerganov wonderful llama.cpp server. \n\nProfessional video demo recorded in an echo-y Austrian office below.\n\nShout out to our friends at @huggingface. https://t.co/WX3895x2Kh",
+   "author": {
+    "id": "2056719344202141696",
+    "name": "Pi",
+    "screenName": "pidotdev",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2056719506785927168/ol1lqm8b_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 642,
+    "retweets": 50,
+    "replies": 35,
+    "quotes": 18,
+    "views": 109346,
+    "bookmarks": 178
+   },
+   "createdAt": "Tue Jul 21 13:39:00 +0000 2026",
+   "createdAtLocal": "2026-07-21 21:39",
+   "createdAtISO": "2026-07-21T13:39:00+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2079559106818449408/vid/avc1/1668x1080/1_51pSn-3IZWOllI.mp4?tag=29",
+     "width": 1668,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "ggerganov",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2077843323826434186",
+   "text": "Run upgraded Gemma 4 with llama.cpp (QAT + MTP) https://t.co/8uoQNPjlHr",
+   "author": {
+    "id": "3300401027",
+    "name": "Georgi Gerganov",
+    "screenName": "ggerganov",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1654097134315098113/zCZD0wYz_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 473,
+    "retweets": 36,
+    "replies": 9,
+    "quotes": 1,
+    "views": 45621,
+    "bookmarks": 204
+   },
+   "createdAt": "Thu Jul 16 19:50:27 +0000 2026",
+   "createdAtLocal": "2026-07-17 03:50",
+   "createdAtISO": "2026-07-16T19:50:27+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HNX7Ln8XwAEfFDe.jpg",
+     "width": 1600,
+     "height": 576
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2077449152062247219",
+    "text": "We’re rolling out some big improvements to Gemma 4, fueled by incredible community feedback and contributions! \n\nHere is a breakdown of what’s being fixed and updated in this release: 🧵👇 https://t.co/SMIGbJaUZg",
+    "author": {
+     "screenName": "googlegemma",
+     "name": "Google Gemma"
+    }
+   }
+  },
+  {
+   "id": "2077003281344135260",
+   "text": "the 10000th release of llama.cpp 🥳 https://t.co/CmmAgylQO9",
+   "author": {
+    "id": "3300401027",
+    "name": "Georgi Gerganov",
+    "screenName": "ggerganov",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1654097134315098113/zCZD0wYz_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 664,
+    "retweets": 47,
+    "replies": 30,
+    "quotes": 7,
+    "views": 33708,
+    "bookmarks": 12
+   },
+   "createdAt": "Tue Jul 14 12:12:25 +0000 2026",
+   "createdAtLocal": "2026-07-14 20:12",
+   "createdAtISO": "2026-07-14T12:12:25+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HNL_TizXgAAYKw5.png",
+     "width": 348,
+     "height": 136
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2077003283101593886",
+   "text": "https://t.co/wx9p0xcphU",
+   "author": {
+    "id": "3300401027",
+    "name": "Georgi Gerganov",
+    "screenName": "ggerganov",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1654097134315098113/zCZD0wYz_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 21,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 4257,
+    "bookmarks": 1
+   },
+   "createdAt": "Tue Jul 14 12:12:26 +0000 2026",
+   "createdAtLocal": "2026-07-14 20:12",
+   "createdAtISO": "2026-07-14T12:12:26+00:00",
+   "media": [],
+   "urls": [
+    "https://github.com/ggml-org/llama.cpp/releases/tag/b10000"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "zxx",
+   "score": null
+  },
+  {
+   "id": "2075230046357225769",
+   "text": "Checkout the latest version of Zed, adding proper support for llama.cpp as a model provider",
+   "author": {
+    "id": "3300401027",
+    "name": "Georgi Gerganov",
+    "screenName": "ggerganov",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1654097134315098113/zCZD0wYz_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 145,
+    "retweets": 6,
+    "replies": 8,
+    "quotes": 1,
+    "views": 18728,
+    "bookmarks": 14
+   },
+   "createdAt": "Thu Jul 09 14:46:13 +0000 2026",
+   "createdAtLocal": "2026-07-09 22:46",
+   "createdAtISO": "2026-07-09T14:46:13+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2074931938171752606",
+    "text": "🚀 Zed v1.10 is out! \n\nThanks to our friends at @huggingface we finally have support for llama.cpp in Zed. https://t.co/jR2pa6elU8",
+    "author": {
+     "screenName": "zeddotdev",
+     "name": "Zed"
+    }
+   }
+  },
+  {
+   "id": "2075230048466964689",
+   "text": "Thanks to @hanouticelina for the PR:\n\nhttps://t.co/kUE6W8aMxp",
+   "author": {
+    "id": "3300401027",
+    "name": "Georgi Gerganov",
+    "screenName": "ggerganov",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1654097134315098113/zCZD0wYz_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 13,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 3445,
+    "bookmarks": 2
+   },
+   "createdAt": "Thu Jul 09 14:46:14 +0000 2026",
+   "createdAtLocal": "2026-07-09 22:46",
+   "createdAtISO": "2026-07-09T14:46:14+00:00",
+   "media": [],
+   "urls": [
+    "https://github.com/zed-industries/zed/pull/59964"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2074869767689662643",
+   "text": "llama.cpp recently added DFlash support to its speculative decoding arsenal. Along with MTP, Eagle3 and various ngram-based techniques, the local model performance takes another step up.\n\nSpecial thanks to NVIDIA team and Ruixiang Wang specifically for leading this effort!\n\nhttps://t.co/JKRKjZDgyW",
+   "author": {
+    "id": "3300401027",
+    "name": "Georgi Gerganov",
+    "screenName": "ggerganov",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1654097134315098113/zCZD0wYz_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 403,
+    "retweets": 48,
+    "replies": 18,
+    "quotes": 5,
+    "views": 84954,
+    "bookmarks": 122
+   },
+   "createdAt": "Wed Jul 08 14:54:36 +0000 2026",
+   "createdAtLocal": "2026-07-08 22:54",
+   "createdAtISO": "2026-07-08T14:54:36+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2074870009684238400",
+   "text": "More info about speculative decoding with llama.cpp:\n\nhttps://t.co/gWRqDoylAQ",
+   "author": {
+    "id": "3300401027",
+    "name": "Georgi Gerganov",
+    "screenName": "ggerganov",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1654097134315098113/zCZD0wYz_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 40,
+    "retweets": 5,
+    "replies": 0,
+    "quotes": 0,
+    "views": 5322,
+    "bookmarks": 20
+   },
+   "createdAt": "Wed Jul 08 14:55:34 +0000 2026",
+   "createdAtLocal": "2026-07-08 22:55",
+   "createdAtISO": "2026-07-08T14:55:34+00:00",
+   "media": [],
+   "urls": [
+    "https://github.com/ggml-org/llama.cpp/blob/master/docs/speculative.md"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2070143864522887280",
+   "text": "In HF GGUF section of models, we are emphasizing MTP heads with its own sign 𝗠𝗧𝗣 https://t.co/1enzHigdAC",
+   "author": {
+    "id": "100818387",
+    "name": "Mishig ᠮᠢᠰᠾᠢᠭ",
+    "screenName": "mishig25",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2094507225079234560/TwKcCRBy_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 220,
+    "retweets": 20,
+    "replies": 11,
+    "quotes": 2,
+    "views": 34596,
+    "bookmarks": 56
+   },
+   "createdAt": "Thu Jun 25 13:55:33 +0000 2026",
+   "createdAtLocal": "2026-06-25 21:55",
+   "createdAtISO": "2026-06-25T13:55:33+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HLqgQ81XIAEdnqC.jpg",
+     "width": 872,
+     "height": 960
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "ggerganov",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2056391115469689330",
+    "text": "llama.cpp adds MTP for the Qwen3.6 family\n\nThis is a significant milestone for the local AI ecosystem. The performance jump with these changes is massive and elevates local inference on commodity hardware further.\n\nSpecial thanks to Aman Gupta for leading this development!\n\nhttps://t.co/vjaMwEpIaR",
+    "author": {
+     "screenName": "ggerganov",
+     "name": "Georgi Gerganov"
+    }
+   }
+  },
+  {
+   "id": "2070104323481104674",
+   "text": "We just crossed $100M annual run-rate. I know many AI companies are capturing much more $$$ these days, but still proud of the milestone!\n\nMaximizing short-term revenue has never been our priority. In fact, we're proud to manage to store and serve hundreds of petabytes of models and datasets while keeping HF free and open-source for 97% of our users. As a platform, we’re happy to hopefully create orders of magnitude more value for the community than what we capture. To me, that’s the very definition of a platform. \n\nAnd it has helped us build one of the most loved platform in tech, with network effects, a defensible position and a sustainable business which is quite unique in AI.\n\nMany many thanks to all the community members for building with us, we wouldn't be anywhere without you! Can’t wait for what’s next, especially as more companies start to see the value of open and local AI! Next milestone $1B?",
+   "author": {
+    "id": "186420551",
+    "name": "clem 🤗",
+    "screenName": "ClementDelangue",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1100512198139498497/utHSJ4st_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2380,
+    "retweets": 117,
+    "replies": 233,
+    "quotes": 46,
+    "views": 196244,
+    "bookmarks": 193
+   },
+   "createdAt": "Thu Jun 25 11:18:26 +0000 2026",
+   "createdAtLocal": "2026-06-25 19:18",
+   "createdAtISO": "2026-06-25T11:18:26+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "ggerganov",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2067318628563767635",
+   "text": "Llama.cpp has a new branding + official website. \n\nRun local models today! Now more than ever, open source must win. 🙏\n\nBy @alekgrygier and @ggerganov at ggml/hf https://t.co/a0tCZ3EKDF",
+   "author": {
+    "id": "16141659",
+    "name": "Julien Chaumond",
+    "screenName": "julien_c",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1108502565925326850/zPsBf2BI_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 234,
+    "retweets": 28,
+    "replies": 15,
+    "quotes": 1,
+    "views": 18896,
+    "bookmarks": 50
+   },
+   "createdAt": "Wed Jun 17 18:49:04 +0000 2026",
+   "createdAtLocal": "2026-06-18 02:49",
+   "createdAtISO": "2026-06-17T18:49:04+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HLCXJHZWMAAuIca.jpg",
+     "width": 2656,
+     "height": 1806
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "ggerganov",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2066918222142566498",
+   "text": "Check out our new logo and website on https://t.co/ph1RENmEgT ;) https://t.co/CtGJpEZCeL",
+   "author": {
+    "id": "1847376076861034499",
+    "name": "Alek 🤗🦙",
+    "screenName": "alekgrygier",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1847376145198759936/yWcBBfy8_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 59,
+    "retweets": 5,
+    "replies": 4,
+    "quotes": 0,
+    "views": 5332,
+    "bookmarks": 10
+   },
+   "createdAt": "Tue Jun 16 16:18:00 +0000 2026",
+   "createdAtLocal": "2026-06-17 00:18",
+   "createdAtISO": "2026-06-16T16:18:00+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HK8rDJCW4AAHuOK.jpg",
+     "width": 1206,
+     "height": 1659
+    }
+   ],
+   "urls": [
+    "http://llama.app"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "ggerganov",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2065447087311917459",
+   "text": "Some cool ggml-based work by @mudler_it recently - make sure to check it out.",
+   "author": {
+    "id": "3300401027",
+    "name": "Georgi Gerganov",
+    "screenName": "ggerganov",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1654097134315098113/zCZD0wYz_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 55,
+    "retweets": 3,
+    "replies": 9,
+    "quotes": 0,
+    "views": 10321,
+    "bookmarks": 21
+   },
+   "createdAt": "Fri Jun 12 14:52:14 +0000 2026",
+   "createdAtLocal": "2026-06-12 22:52",
+   "createdAtISO": "2026-06-12T14:52:14+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2065443709043212776",
+    "text": "locate-anything.cpp: native C++/ggml (@ggml_org) inference for @NVIDIA's LocateAnything-3B, open-vocabulary object detection / visual grounding, one of the neat detection VLMs out there, from the @LocalAI_API team.\n\nSame detections as the official model, now running anywhere with no Python and faster, on CPU and GPU.\n\nQuantized GGUF on @huggingface 🤗\n\nHuge thanks to @ggerganov for ggml and to @NVIDIAAI for releasing LocateAnything! 🧵",
+    "author": {
+     "screenName": "mudler_it",
+     "name": "Ettore Di Giacinto"
+    }
+   }
+  },
+  {
+   "id": "2064030477628182814",
+   "text": "Building super fast experiences with Gemma just got easier.\n\nGemma 4 MTP is now officially merged into llama.cpp. Developers can now pair MTP with Gemma 4 QAT for a fast, lightweight setup. https://t.co/CIynVMYuZm",
+   "author": {
+    "id": "1908326331609468928",
+    "name": "Google Gemma",
+    "screenName": "googlegemma",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2038662245631320064/uWfEb6yw_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2061,
+    "retweets": 182,
+    "replies": 56,
+    "quotes": 22,
+    "views": 108480,
+    "bookmarks": 677
+   },
+   "createdAt": "Mon Jun 08 17:03:08 +0000 2026",
+   "createdAtLocal": "2026-06-09 01:03",
+   "createdAtISO": "2026-06-08T17:03:08+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HKTor1QbkAAer10.jpg",
+     "width": 2096,
+     "height": 1182
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "ggerganov",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2062443065214702027",
+   "text": "Highlighting recent advances in multi-GPU and tensor parallel support in llama.cpp \n\nOver the last few months llama.cpp maintainers and engineers from NVIDIA collaborated to improve the multi-GPU performance in ggml. This resulted in significant performance gains on RTX systems and laid the groundwork for hardware-agnostic tensor parallelism in ggml.\n\nFor more information on this and other advancements in the low-level inference engine of llama.cpp, check the technical blog by @NVIDIARTXSpark below",
+   "author": {
+    "id": "3300401027",
+    "name": "Georgi Gerganov",
+    "screenName": "ggerganov",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1654097134315098113/zCZD0wYz_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 443,
+    "retweets": 54,
+    "replies": 19,
+    "quotes": 10,
+    "views": 44368,
+    "bookmarks": 93
+   },
+   "createdAt": "Thu Jun 04 07:55:19 +0000 2026",
+   "createdAtLocal": "2026-06-04 15:55",
+   "createdAtISO": "2026-06-04T07:55:19+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HJ9C49HXgAAdTR1.jpg",
+     "width": 1999,
+     "height": 867
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "ggerganov",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2061893113463906809",
+    "text": "Build on-device personal AI agents on Windows PCs with new tools from NVIDIA and Microsoft, including secure sandboxing, faster local inference, multi-GPU support, and RTX acceleration for Windows AI APIs.\n\nRead the technical blog: https://t.co/vNIsEded46 https://t.co/4bPWPDERJO",
+    "author": {
+     "screenName": "NVIDIARTXSpark",
+     "name": "NVIDIA RTX Spark"
+    }
+   }
+  },
+  {
+   "id": "2062193382605111386",
+   "text": "Strong signal for local AI on this year's Computex. Big players like NVIDIA and Microsoft are embracing and discussing local AI workloads. Dedicated consumer hardware and models are on the way.",
+   "author": {
+    "id": "3300401027",
+    "name": "Georgi Gerganov",
+    "screenName": "ggerganov",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1654097134315098113/zCZD0wYz_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 260,
+    "retweets": 26,
+    "replies": 20,
+    "quotes": 4,
+    "views": 18197,
+    "bookmarks": 15
+   },
+   "createdAt": "Wed Jun 03 15:23:10 +0000 2026",
+   "createdAtLocal": "2026-06-03 23:23",
+   "createdAtISO": "2026-06-03T15:23:10+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2061111969105449180",
+   "text": "These are some of my LLM assisted contributions from the past month. Nothing amazing, but I'm slowly getting better at it. Atm, using Qwen3.6 27B exclusively. For hardware - switching between M2 Ultra and RTX 5090. Both are good options, though after using the RTX and going back to the Mac, it always feels like a snail. Yet for most tasks, I feel like both hardware can do the job comfortably.",
+   "author": {
+    "id": "3300401027",
+    "name": "Georgi Gerganov",
+    "screenName": "ggerganov",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1654097134315098113/zCZD0wYz_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 525,
+    "retweets": 28,
+    "replies": 35,
+    "quotes": 4,
+    "views": 32480,
+    "bookmarks": 129
+   },
+   "createdAt": "Sun May 31 15:46:01 +0000 2026",
+   "createdAtLocal": "2026-05-31 23:46",
+   "createdAtISO": "2026-05-31T15:46:01+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HJqJPuxXQAY5GPY.png",
+     "width": 3264,
+     "height": 938
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2060394400237109567",
+   "text": "llama.cpp now has an official website: https://t.co/vztdUpdBWL\n\nOur goal is to make local AI accessible to everyone, and improving the user experience is a big part of that. On the new landing page you’ll find a single-line cross-platform installer. The installation provides a single unified `llama` entrypoint which you can use to run/serve models and interface with 3rd-party agentic applications.\n\nWhile oriented towards simplified user experience, the new `llama` application also provides all the advanced functionality of the existing llama.cpp tooling with which experienced users are already familiar. Also note that all GGUF models that you might have already downloaded with llama.cpp in the past will be automatically available to use without downloading again (they are stored in the common HF cache on your machine).\n\nWe have many improvements in the pipeline both at the UX and at the engine level and we plan to iteratively ship new things over the coming months. One of the main focuses will be seamless integration with local-friendly 3rd-party agents (such as Pi). In the meantime, we’ll continue to listen for feedback from the community and adjust accordingly, so keep letting us know what you think and need.",
+   "author": {
+    "id": "3300401027",
+    "name": "Georgi Gerganov",
+    "screenName": "ggerganov",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1654097134315098113/zCZD0wYz_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2962,
+    "retweets": 476,
+    "replies": 99,
+    "quotes": 42,
+    "views": 168703,
+    "bookmarks": 1025
+   },
+   "createdAt": "Fri May 29 16:14:39 +0000 2026",
+   "createdAtLocal": "2026-05-30 00:14",
+   "createdAtISO": "2026-05-29T16:14:39+00:00",
+   "media": [],
+   "urls": [
+    "https://llama.app"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "ggerganov",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2060396142337139083",
+   "text": "More info and discussion:\n\nhttps://t.co/w9rujz5SOY",
+   "author": {
+    "id": "3300401027",
+    "name": "Georgi Gerganov",
+    "screenName": "ggerganov",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1654097134315098113/zCZD0wYz_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 63,
+    "retweets": 4,
+    "replies": 4,
+    "quotes": 1,
+    "views": 7884,
+    "bookmarks": 21
+   },
+   "createdAt": "Fri May 29 16:21:35 +0000 2026",
+   "createdAtLocal": "2026-05-30 00:21",
+   "createdAtISO": "2026-05-29T16:21:35+00:00",
+   "media": [],
+   "urls": [
+    "https://github.com/ggml-org/llama.cpp/discussions/23875"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2058672394865111544",
+   "text": "llama.cpp with MTP support makes local models fast enough to use as daily drivers 🚀 \n\nQwen3.6-27B dense generation below on A10G:  From 25 tok/st to 45 tok/s (+78%)! https://t.co/rLjBVa3Yzh",
+   "author": {
+    "id": "186420551",
+    "name": "clem 🤗",
+    "screenName": "ClementDelangue",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1100512198139498497/utHSJ4st_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1332,
+    "retweets": 112,
+    "replies": 82,
+    "quotes": 18,
+    "views": 139731,
+    "bookmarks": 863
+   },
+   "createdAt": "Sun May 24 22:12:01 +0000 2026",
+   "createdAtLocal": "2026-05-25 06:12",
+   "createdAtISO": "2026-05-24T22:12:01+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2058672138706391040/vid/avc1/1380x1080/HS9FGLNWIZxsYkK-.mp4?tag=27",
+     "width": 1380,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "ggerganov",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2057668450076520811",
+   "text": "Highlighting the new WebGPU backend in llama.cpp/ggml\n\nThe work to bring full-fledged WebGPU support in llama.cpp started about an year and a half ago. It has been lead by @reeselevine and team at USCS.\n\nFor more information, checkout the interactive blog and paper in the quoted post. Here are 2 excerpts from the paper, summarizing the implemented software architecture.",
+   "author": {
+    "id": "3300401027",
+    "name": "Georgi Gerganov",
+    "screenName": "ggerganov",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1654097134315098113/zCZD0wYz_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 613,
+    "retweets": 107,
+    "replies": 13,
+    "quotes": 12,
+    "views": 92806,
+    "bookmarks": 313
+   },
+   "createdAt": "Fri May 22 03:42:42 +0000 2026",
+   "createdAtLocal": "2026-05-22 11:42",
+   "createdAtISO": "2026-05-22T03:42:42+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HI5MLKlXwAABSPd.jpg",
+     "width": 1356,
+     "height": 668
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HI5MR4KXIAAqkGq.jpg",
+     "width": 1430,
+     "height": 1350
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "ggerganov",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2057539380341039343",
+    "text": "WebGPU support in llama.cpp is here! Check out our blog post introducing it: https://t.co/3OUusMYqIY\n\nRun local models in your browser, with GPU acceleration. No data leaves your computer!\n\nThanks to everyone who's made this possible, especially @ggerganov",
+    "author": {
+     "screenName": "reeselevine",
+     "name": "Reese Levine"
+    }
+   }
+  },
+  {
+   "id": "2057539382857605178",
+   "text": "We have an arxiv paper up describing the work in more detail here: https://t.co/aay4YmjBR2.\n\nAlso want to call out that there is even more room for improvement, some recent updates to wllama by @ngxson mean it's even more memory efficient than what we describe in the paper! https://t.co/HPRQVXlVbW",
+   "author": {
+    "id": "15544007",
+    "name": "Reese Levine",
+    "screenName": "reeselevine",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1334970725724160000/Vf-5Hw-O_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 32,
+    "retweets": 4,
+    "replies": 1,
+    "quotes": 1,
+    "views": 6119,
+    "bookmarks": 13
+   },
+   "createdAt": "Thu May 21 19:09:50 +0000 2026",
+   "createdAtLocal": "2026-05-22 03:09",
+   "createdAtISO": "2026-05-21T19:09:50+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HI3Yeg3bgAAaMp1.jpg",
+     "width": 1177,
+     "height": 913
+    }
+   ],
+   "urls": [
+    "https://arxiv.org/abs/2605.20706"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "ggerganov",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2057084823097794772",
+   "text": "What hardware actually powers open-source AI?\n\nNot benchmarks.\nNot vendor marketing.\nReal-world community usage.\n\nWe’re launching @huggingface Hardware:\n→ trending GPUs &amp; CPUs\n→ VRAM distribution\n→ inference hardware trends\n→ what the OSS AI ecosystem really runs on https://t.co/aVZDRQdAf1",
+   "author": {
+    "id": "16141659",
+    "name": "Julien Chaumond",
+    "screenName": "julien_c",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1108502565925326850/zPsBf2BI_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 412,
+    "retweets": 69,
+    "replies": 41,
+    "quotes": 16,
+    "views": 81538,
+    "bookmarks": 166
+   },
+   "createdAt": "Wed May 20 13:03:35 +0000 2026",
+   "createdAtLocal": "2026-05-20 21:03",
+   "createdAtISO": "2026-05-20T13:03:35+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HIw7rF8WkAAmNcU.jpg",
+     "width": 2370,
+     "height": 2040
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "ggerganov",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2056391115469689330",
+   "text": "llama.cpp adds MTP for the Qwen3.6 family\n\nThis is a significant milestone for the local AI ecosystem. The performance jump with these changes is massive and elevates local inference on commodity hardware further.\n\nSpecial thanks to Aman Gupta for leading this development!\n\nhttps://t.co/vjaMwEpIaR",
+   "author": {
+    "id": "3300401027",
+    "name": "Georgi Gerganov",
+    "screenName": "ggerganov",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1654097134315098113/zCZD0wYz_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1224,
+    "retweets": 181,
+    "replies": 48,
+    "quotes": 33,
+    "views": 305948,
+    "bookmarks": 541
+   },
+   "createdAt": "Mon May 18 15:07:02 +0000 2026",
+   "createdAtLocal": "2026-05-18 23:07",
+   "createdAtISO": "2026-05-18T15:07:02+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2054495700822478943",
+   "text": "Quite excited about llama-eval, a proposed eval tool for llama.cpp. Could be a nice step toward more comparable community evals 🎉\n\nhttps://t.co/sfOMyU0naY",
+   "author": {
+    "id": "784830007",
+    "name": "Victor M",
+    "screenName": "victormustar",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1099983311101984768/p7dZK4S__normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 67,
+    "retweets": 8,
+    "replies": 4,
+    "quotes": 1,
+    "views": 20117,
+    "bookmarks": 19
+   },
+   "createdAt": "Wed May 13 09:35:20 +0000 2026",
+   "createdAtLocal": "2026-05-13 17:35",
+   "createdAtISO": "2026-05-13T09:35:20+00:00",
+   "media": [],
+   "urls": [
+    "https://github.com/ggml-org/llama.cpp/pull/21152"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "ggerganov",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2054122568643121333",
+   "text": "@BereznevKi20669 @ggerganov Yes I believe the real llama.cpp revolution is yet to happen at its full scale. As computers will have more RAM and models will improve, and *if* China will continue shipping large strong models with open weights, what will happen will have huge effects.",
+   "author": {
+    "id": "5813712",
+    "name": "antirez",
+    "screenName": "antirez",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1779914746159882240/v6h2w9g0_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 118,
+    "retweets": 10,
+    "replies": 11,
+    "quotes": 2,
+    "views": 9692,
+    "bookmarks": 15
+   },
+   "createdAt": "Tue May 12 08:52:38 +0000 2026",
+   "createdAtLocal": "2026-05-12 16:52",
+   "createdAtISO": "2026-05-12T08:52:38+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "ggerganov",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2053536106143261106",
+   "text": "Local AI is having its moment!\n\nBelow is the number of new GGUF models created each month over the past 8 months & insights from our HF internal agent (May is partial):\n\n- 176,000 total public GGUF models on HF\n\n- Two distinct regimes: Oct–Feb averaged ~5.1K new GGUF models/month. Then March–April jumped to ~9.2K/month — nearly double the previous rate.\n\n- March was the inflection point (+55% MoM) — likely driven by a wave of new open-weight model releases being quantized to GGUF.\n\n- April sustained the momentum at 9.7K, suggesting this isn't a one-off spike but a new baseline.\n\n- The GGUF ecosystem is accelerating — the community is quantizing models faster than ever, likely thanks to better tooling (llama.cpp improvements, automated quantization pipelines, and more models supporting GGUF natively).\n\nLet's go!",
+   "author": {
+    "id": "186420551",
+    "name": "clem 🤗",
+    "screenName": "ClementDelangue",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1100512198139498497/utHSJ4st_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 356,
+    "retweets": 51,
+    "replies": 67,
+    "quotes": 16,
+    "views": 51688,
+    "bookmarks": 72
+   },
+   "createdAt": "Sun May 10 18:02:15 +0000 2026",
+   "createdAtLocal": "2026-05-11 02:02",
+   "createdAtISO": "2026-05-10T18:02:15+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HH-fmERXcAI2aZb.png",
+     "width": 614,
+     "height": 422
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "ggerganov",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2048728436722614386",
+   "text": "Running Qwen3.5-397B-A17B (4bit quants, 177 GB) on two DGX Sparks using llama.cpp with RPC and RDMA: https://t.co/84mKfc5yvP",
+   "author": {
+    "id": "256383692",
+    "name": "Radoslav Gerganov",
+    "screenName": "rgerganov",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1842521302734622720/HSAHINEZ_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 170,
+    "retweets": 18,
+    "replies": 11,
+    "quotes": 1,
+    "views": 25986,
+    "bookmarks": 82
+   },
+   "createdAt": "Mon Apr 27 11:38:17 +0000 2026",
+   "createdAtLocal": "2026-04-27 19:38",
+   "createdAtISO": "2026-04-27T11:38:17+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2048727882445516801/vid/avc1/864x720/HMY7xmhBwePyyPgM.mp4?tag=14",
+     "width": 1466,
+     "height": 1220
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "ggerganov",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2047647522173104145",
+   "text": "This is where we are right now. And i’m not gonna lie it feels pretty magical 🧚‍♀️\n\nQwen3.6 27B running inside of Pi coding agent via Llama.cpp on the MacBook Pro\n\nFor non-trivial tasks on the @huggingface  codebases, this feels very, very close to hitting the latest Opus in Claude Code, or whatever shiny monopolistic closed source API of the day is. \n\nIn full airplane mode.\n\nMost people haven’t realized this yet. \n\nIf you have, it means you have a huge headstart to what I call the second revolution of AI.\n\nPowerful local models for efficiency, security, privacy, sovereignty 🔥",
+   "author": {
+    "id": "16141659",
+    "name": "Julien Chaumond",
+    "screenName": "julien_c",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1108502565925326850/zPsBf2BI_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 5250,
+    "retweets": 446,
+    "replies": 264,
+    "quotes": 103,
+    "views": 664519,
+    "bookmarks": 3427
+   },
+   "createdAt": "Fri Apr 24 12:03:07 +0000 2026",
+   "createdAtLocal": "2026-04-24 20:03",
+   "createdAtISO": "2026-04-24T12:03:07+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HGq0jZlXUAARx6P.jpg",
+     "width": 2048,
+     "height": 1536
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "ggerganov",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2046988075302064209",
+   "text": "llama-server -hf ggml-org/Qwen3.6-27B-GGUF --spec-default",
+   "author": {
+    "id": "3300401027",
+    "name": "Georgi Gerganov",
+    "screenName": "ggerganov",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1654097134315098113/zCZD0wYz_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 659,
+    "retweets": 54,
+    "replies": 20,
+    "quotes": 8,
+    "views": 75828,
+    "bookmarks": 328
+   },
+   "createdAt": "Wed Apr 22 16:22:43 +0000 2026",
+   "createdAtLocal": "2026-04-23 00:22",
+   "createdAtISO": "2026-04-22T16:22:43+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "und",
+   "score": null
+  },
+  {
+   "id": "2042631708650963344",
+   "text": "llama.cpp now supports various small OCR models that can run on low-end devices. These models are small enough to run on GPU with 4GB VRAM, and some of them can even run on CPU with decent performance.\n\nIn this post, I will show you how to use these OCR models with llama.cpp 👇",
+   "author": {
+    "id": "1293105854389133312",
+    "name": "Xuan-Son Nguyen",
+    "screenName": "ngxson",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1823412255280472064/VoZb_cia_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 255,
+    "retweets": 24,
+    "replies": 10,
+    "quotes": 0,
+    "views": 24788,
+    "bookmarks": 268
+   },
+   "createdAt": "Fri Apr 10 15:52:04 +0000 2026",
+   "createdAtLocal": "2026-04-10 23:52",
+   "createdAtISO": "2026-04-10T15:52:04+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "ggerganov",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2041878732189679874",
+   "text": "sam3.cpp - Meta's SAM 3 in pure C++ with @ggerganov's ggml\n\n- Supports SAM 3.1, 3, 2.1, 2 and EdgeTAM\n- FP16, 4-bit quant (EdgeTAM in 15 MB)\n- Apple Metal GPU, CUDA, CPU\n- Text-prompted: \"peach\" → every peach\n- Single-file C++14\n\nPerformance-wise:\n- 100ms object detection, segmentation\n- Video object segmentation @ 20FPS on M4 Pro with EdgeTAM\n\nhttps://t.co/XHC7ipyQtI",
+   "author": {
+    "id": "556281450",
+    "name": "Pierre-Antoine Bannier",
+    "screenName": "el_PA_B",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055461345336938496/NW4Xp_Gg_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 882,
+    "retweets": 120,
+    "replies": 13,
+    "quotes": 6,
+    "views": 64479,
+    "bookmarks": 890
+   },
+   "createdAt": "Wed Apr 08 14:00:00 +0000 2026",
+   "createdAtLocal": "2026-04-08 22:00",
+   "createdAtISO": "2026-04-08T14:00:00+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2041813925143138304/vid/avc1/3760x2160/LyzaqcgQCX_HSkMo.mp4?tag=21",
+     "width": 3760,
+     "height": 2160
+    },
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2041813943698780164/vid/avc1/3760x2160/bhcT6JnpEr97FmmG.mp4?tag=21",
+     "width": 3760,
+     "height": 2160
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "ggerganov",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2040514840687514037",
+   "text": "The example below is using prompt-based speculative decoding. Specifically, ngram hashing is utilized to suggest drafts of up to 64 tokens. The hasher keeps track of ngrams in the observed contexts, so mostly effective for coding tasks. Here is another demo: https://t.co/LXkWNO3GaR",
+   "author": {
+    "id": "3300401027",
+    "name": "Georgi Gerganov",
+    "screenName": "ggerganov",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1654097134315098113/zCZD0wYz_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 224,
+    "retweets": 17,
+    "replies": 8,
+    "quotes": 6,
+    "views": 30405,
+    "bookmarks": 130
+   },
+   "createdAt": "Sat Apr 04 19:40:23 +0000 2026",
+   "createdAtLocal": "2026-04-05 03:40",
+   "createdAtISO": "2026-04-04T19:40:23+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2040512961962201088/vid/avc1/2180x2160/6RueGNwEUN_YQQ6c.mp4?tag=21",
+     "width": 2542,
+     "height": 2518
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2039752638384709661",
+    "text": "Let me demonstrate the true power of llama.cpp:\n\n- Running on Mac Studio M2 Ultra (3 years old)\n- Gemma 4 26B A4B Q8_0 (full quality)\n- Built-in WebUI (ships with llama.cpp)\n- MCP support out of the box (web-search, HF, github, etc.)\n- Prompt speculative decoding\n\nThe result: 300t/s\n\n(realtime video)",
+    "author": {
+     "screenName": "ggerganov",
+     "name": "Georgi Gerganov"
+    }
+   }
+  },
+  {
+   "id": "2040514847696167259",
+   "text": "The parameters that I used are the same as in the PR that introduced this functionality in llama.cpp:\n\nhttps://t.co/PGNQsIjG1V",
+   "author": {
+    "id": "3300401027",
+    "name": "Georgi Gerganov",
+    "screenName": "ggerganov",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1654097134315098113/zCZD0wYz_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 21,
+    "retweets": 1,
+    "replies": 2,
+    "quotes": 1,
+    "views": 4745,
+    "bookmarks": 10
+   },
+   "createdAt": "Sat Apr 04 19:40:25 +0000 2026",
+   "createdAtLocal": "2026-04-05 03:40",
+   "createdAtISO": "2026-04-04T19:40:25+00:00",
+   "media": [],
+   "urls": [
+    "https://github.com/ggml-org/llama.cpp/pull/19164"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  }
+ ]
+}

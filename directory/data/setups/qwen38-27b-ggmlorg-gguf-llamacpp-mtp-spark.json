@@ -1,0 +1,115 @@
+{
+  "id": "qwen38-27b-ggmlorg-gguf-llamacpp-mtp-spark",
+  "title": "Qwen3.8-27B on DGX Spark \u2014 ggerganov's llama.cpp MTP recipe in the official container",
+  "slug_note": "Q4_K_M main + Q4_0 MTP draft straight from ggml-org, run in ghcr.io/ggml-org/llama.cpp:full-cuda: 18.08 tok/s decode over a 22k-token generation, 488 tok/s prefill.",
+  "model": "qwen3-8-27b",
+  "status": "reported",
+  "variation": {
+    "license": "Apache-2.0",
+    "downloads": null,
+    "checkpoint": "ggml-org/Qwen3.8-27B-GGUF",
+    "publisher": "ggml-org",
+    "quant": "gguf-q4",
+    "quant_detail": "Q4_K_M main (18.97GB) + mtp-Q4_0 draft (1.68GB) from the same ggml-org repo",
+    "format": "gguf",
+    "size_gb": 18.97,
+    "url": "https://huggingface.co/ggml-org/Qwen3.8-27B-GGUF"
+  },
+  "engine": {
+    "id": "llama-cpp",
+    "config": "Official full-cuda container on the Spark; HF-repo pull flags, MTP draft enabled by default, reasoning preserved.",
+    "image": "ghcr.io/ggml-org/llama.cpp:full-cuda",
+    "requires_fork": false,
+    "draft_model": "ggml-org/Qwen3.8-27B-GGUF:Q4_0 (MTP draft)",
+    "spec_decode": "mtp",
+    "flags": [
+      "-hf ggml-org/Qwen3.8-27B-GGUF:Q4_K_M",
+      "-hfd ggml-org/Qwen3.8-27B-GGUF:Q4_0",
+      "--spec-default",
+      "--spec-type draft-mtp",
+      "--reasoning-preserve"
+    ]
+  },
+  "hardware": [
+    "dgx-spark"
+  ],
+  "requirements": {
+    "memory_gb": 32,
+    "disk_gb": 21,
+    "min_vram_gb": null,
+    "notes": "Spark 128GB unified; ~19GB Q4_K_M + 1.7GB MTP draft + KV \u2014 32GB is a generous floor. Runs inside the full-cuda container."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "repo": "https://huggingface.co/ggml-org/Qwen3.8-27B-GGUF",
+    "command": "llama-server -hf ggml-org/Qwen3.8-27B-GGUF:Q4_K_M -hfd ggml-org/Qwen3.8-27B-GGUF:Q4_0 --spec-default --spec-type draft-mtp --reasoning-preserve",
+    "steps": [
+      {
+        "kind": "cmd",
+        "text": "docker run ghcr.io/ggml-org/llama.cpp:full-cuda"
+      },
+      {
+        "kind": "cmd",
+        "text": "llama-server -hf ggml-org/Qwen3.8-27B-GGUF:Q4_K_M -hfd ggml-org/Qwen3.8-27B-GGUF:Q4_0 --spec-default --spec-type draft-mtp --reasoning-preserve"
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "metric": "decode_per_stream",
+      "value": 18.08,
+      "unit": "tok/s",
+      "concurrency": 1,
+      "provenance": "forum",
+      "date": "2026-08-14",
+      "n": null,
+      "method": "server print_timing over the full generation",
+      "note": "tg over a 22,373-token generation, server print_timing; tg_3s window range 14.02-21.77; draft acceptance 0.45567 (13020/28573)",
+      "source": "https://github.com/ggml-org/llama.cpp/discussions/27080"
+    },
+    {
+      "metric": "prefill_tok_s",
+      "value": 488.55,
+      "unit": "tok/s",
+      "concurrency": null,
+      "provenance": "forum",
+      "date": "2026-08-14",
+      "n": null,
+      "method": "server print_timing over the full generation",
+      "note": "6,231-token prompt eval, 2.05 ms/token",
+      "source": "https://github.com/ggml-org/llama.cpp/discussions/27080"
+    }
+  ],
+  "caveats": [
+    "18.08 tok/s is the mean over a 22,373-token generation; the 3-second window rate ranged 14.02-21.77 tok/s.",
+    "A 'small increase' over the thread OP's unsloth UD-Q4_K_XL config on the same box (~15 -> 18.08 tok/s).",
+    "ggerganov posted the identical command line on X (https://x.com/ggerganov/status/2088340681701925253) \u2014 cited as corroboration; rot-prone.",
+    "Full command lines and raw server logs are in the discussion thread."
+  ],
+  "provenance_tier": "forum",
+  "sources": [
+    {
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/27080",
+      "kind": "thread",
+      "note": "release discussion; recipe + re-run logs (anchor: #ggerganov-recipe comment)"
+    },
+    {
+      "url": "https://huggingface.co/ggml-org/Qwen3.8-27B-GGUF",
+      "kind": "model",
+      "note": "weights / quant card"
+    },
+    {
+      "url": "https://x.com/ggerganov/status/2088340681701925253",
+      "kind": "post",
+      "note": "corroborating post of the same command line"
+    }
+  ],
+  "updated": "2026-09-10"
+}

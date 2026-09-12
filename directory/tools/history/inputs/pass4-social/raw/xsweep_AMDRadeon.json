@@ -1,0 +1,1692 @@
+{
+ "via": "twitter-cli user-posts -n 50",
+ "user": "AMDRadeon",
+ "posts": [
+  {
+   "id": "2086764712574763512",
+   "text": "Build with Meta's new open-weight model on AMD.\n \nAMD is enabling day-zero support for Muse Glimmer, the new open-weight model from Meta Superintelligence Labs on AMD Ryzen™ AI Max+ systems and Radeon™ AI PRO R9700 GPUs. With @lmstudio making local AI accessible and Lemonade helping integrate AI into applications, developers can turn powerful local AI models into practical agentic applications.\n \nRun @AiatMeta's Muse Glimmer locally on AMD: https://t.co/n7jBJJrSwM",
+   "author": {
+    "id": "14861876",
+    "name": "AMD",
+    "screenName": "AMD",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1534988679076368384/In8IVKDB_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 432,
+    "retweets": 58,
+    "replies": 22,
+    "quotes": 10,
+    "views": 52326,
+    "bookmarks": 38
+   },
+   "createdAt": "Mon Aug 10 10:40:52 +0000 2026",
+   "createdAtLocal": "2026-08-10 18:40",
+   "createdAtISO": "2026-08-10T10:40:52+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HPWtbkfXwAEe-ul.jpg",
+     "width": 1024,
+     "height": 1280
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "AMDRadeon",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2069832051742613816",
+   "text": "Windows 10 users, we're sorry for the inconvenience.\n \nWhile bringing FSR 4.1 support to RDNA 3 users, we missed an issue that prevented AMD Software: Adrenalin Edition 26.6.2 from installing on some Windows 10 systems.\n \nA fix is available now, and we'll release a WHQL Recommended version of AMD Software: Adrenalin Edition next week.\n \nFor details on the issue and how to resolve it, please visit: https://t.co/KlbgBzLzke",
+   "author": {
+    "id": "23127272",
+    "name": "AMD Radeon",
+    "screenName": "AMDRadeon",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1901650786637238272/F-KPTt2O_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 905,
+    "retweets": 155,
+    "replies": 60,
+    "quotes": 26,
+    "views": 128377,
+    "bookmarks": 67
+   },
+   "createdAt": "Wed Jun 24 17:16:31 +0000 2026",
+   "createdAtLocal": "2026-06-25 01:16",
+   "createdAtISO": "2026-06-24T17:16:31+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2069059207383720091",
+   "text": "We power over 1 billion gaming devices worldwide.\n\nThat scale comes with responsibility: push innovation forward and bring it to more gamers everywhere.\n\nToday, we're bringing @AMD FSR Upscaling 4.1 to Radeon RX 7000 Series graphics cards, extending our latest machine learning powered gaming experience to millions more players across more than 300 games.\n\n💡 For RDNA 3 APU players, we're developing lightweight machine learning models to bring FSR 4.1 to even more devices.\n\nMore to come.\n\nThe future of gaming belongs to everyone.\n\nEnjoy. 🎮",
+   "author": {
+    "id": "1298728835131871232",
+    "name": "Jack Huynh",
+    "screenName": "jackhuynh",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1908377847145656320/s0qqUHYC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 936,
+    "retweets": 154,
+    "replies": 107,
+    "quotes": 35,
+    "views": 186096,
+    "bookmarks": 70
+   },
+   "createdAt": "Mon Jun 22 14:05:30 +0000 2026",
+   "createdAtLocal": "2026-06-22 22:05",
+   "createdAtISO": "2026-06-22T14:05:30+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2069048648516898816/vid/avc1/3840x2160/VL3Bo_sZjq3wm6_a.mp4?tag=28",
+     "width": 3840,
+     "height": 2160
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "AMDRadeon",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2066917979594326274",
+   "text": "“A great 1440p GPU” and “a rare treat of value for money.” 🎮\n\n@tomsguide highlights the AMD Radeon RX 9070 GRE for fantastic 1440p gaming, solid ray tracing performance, and strong value at its $549 SEP — calling it a top option for gamers focused on performance per dollar. \n\nRead more: https://t.co/8Ggsc6wb6E",
+   "author": {
+    "id": "23127272",
+    "name": "AMD Radeon",
+    "screenName": "AMDRadeon",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1901650786637238272/F-KPTt2O_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 128,
+    "retweets": 17,
+    "replies": 30,
+    "quotes": 4,
+    "views": 23181,
+    "bookmarks": 11
+   },
+   "createdAt": "Tue Jun 16 16:17:02 +0000 2026",
+   "createdAtLocal": "2026-06-17 00:17",
+   "createdAtISO": "2026-06-16T16:17:02+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2066535958703431831",
+   "text": "Compact card. Big 1440p energy. \n\n@thefpsreview gives the SAPPHIRE PULSE AMD Radeon RX 9070 GRE GAMING OC a 9.5/10, highlighting its factory OC performance, 12GB of memory and mainstream 1440p gaming value.\n\nhttps://t.co/QIXsRdlRse",
+   "author": {
+    "id": "23127272",
+    "name": "AMD Radeon",
+    "screenName": "AMDRadeon",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1901650786637238272/F-KPTt2O_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 82,
+    "retweets": 3,
+    "replies": 11,
+    "quotes": 1,
+    "views": 13448,
+    "bookmarks": 3
+   },
+   "createdAt": "Mon Jun 15 14:59:01 +0000 2026",
+   "createdAtLocal": "2026-06-15 22:59",
+   "createdAtISO": "2026-06-15T14:59:01+00:00",
+   "media": [],
+   "urls": [
+    "https://bit.ly/4vBRzx5"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2065468794923843658",
+   "text": "The latest update to Microsoft Advanced Shader Delivery now supports even more AMD Gaming Devices.\n\n⚡️Now enabled on AMD RDNA™ Powered Graphics with AMD Software 26.6.1\n⚡️Reduce shader stutter &amp; load times by up to 95%\n\nLearn more: https://t.co/bUchIFRzYY",
+   "author": {
+    "id": "23127272",
+    "name": "AMD Radeon",
+    "screenName": "AMDRadeon",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1901650786637238272/F-KPTt2O_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 572,
+    "retweets": 59,
+    "replies": 12,
+    "quotes": 2,
+    "views": 70367,
+    "bookmarks": 89
+   },
+   "createdAt": "Fri Jun 12 16:18:29 +0000 2026",
+   "createdAtLocal": "2026-06-13 00:18",
+   "createdAtISO": "2026-06-12T16:18:29+00:00",
+   "media": [],
+   "urls": [
+    "https://devblogs.microsoft.com/directx/advanced-shader-delivery-expands-public-preview-with-amd/"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2065464146750271816",
+    "text": "Advanced Shader Delivery is now generally available in the Xbox PC app — no Xbox Insider signup required! AMD has also expanded ASD support to RDNA 1 through RDNA 4, and Forza Horizon 6 showcases 95% faster load times on day one. See here for more: https://t.co/FriSEXHTfc",
+    "author": {
+     "screenName": "DirectX12",
+     "name": "DirectX 12"
+    }
+   }
+  },
+  {
+   "id": "2060086222194663757",
+   "text": "Running Qwen-Image locally on a system powered by an AMD Radeon™ AI PRO R9700 GPU and AMD Ryzen™ Threadripper™ processor, exploring fast image workflows that turn ideas into visuals right on the desktop.\n\nHuman-directed. Locally powered. Radeon ready.\n\nhttps://t.co/uZxAfT2GhT",
+   "author": {
+    "id": "23127272",
+    "name": "AMD Radeon",
+    "screenName": "AMDRadeon",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1901650786637238272/F-KPTt2O_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 48,
+    "retweets": 5,
+    "replies": 8,
+    "quotes": 0,
+    "views": 16616,
+    "bookmarks": 3
+   },
+   "createdAt": "Thu May 28 19:50:04 +0000 2026",
+   "createdAtLocal": "2026-05-29 03:50",
+   "createdAtISO": "2026-05-28T19:50:04+00:00",
+   "media": [],
+   "urls": [
+    "https://www.youtube.com/shorts/gphudkn85N8"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2038720440114270658",
+   "text": "Developers running Linux AI/HPC workloads on Windows just got a major upgrade.\n\nWith AMD Software: Adrenalin Edition 26.2.2 + ROCm 7.2.1, AMD is introducing production support for the open‑source ROCDXG (librocdxg) solution on WSL.\n\n✨ What’s new?\n- GPU‑accelerated Linux workloads on WSL using an open, decoupled user‑mode library\n- Designed to evolve independently from ROCm releases and Windows display drivers\n- First‑ever AMD support for AMD Ryzen AI 300 Series and AMD Ryzen AI Max Series processors under WSL\n\nWhether you're working on AI, HPC, or GPU‑heavy development workflows, this update unlocks a more flexible and future-ready path for running ROCm inside WSL.\n\nGet Started: https://t.co/qTWTvIeBNt",
+   "author": {
+    "id": "23127272",
+    "name": "AMD Radeon",
+    "screenName": "AMDRadeon",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1901650786637238272/F-KPTt2O_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 153,
+    "retweets": 25,
+    "replies": 49,
+    "quotes": 3,
+    "views": 31197,
+    "bookmarks": 21
+   },
+   "createdAt": "Mon Mar 30 20:50:05 +0000 2026",
+   "createdAtLocal": "2026-03-31 04:50",
+   "createdAtISO": "2026-03-30T20:50:05+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2013997668742095079",
+   "text": "Now available!\n\nThe AMD Software: Adrenalin Edition™ AI Bundle.\n\nAI Made Simple\n\nInstall everything you need to start building and running AI workloads, with just one click, including ROCm 7.2 built-in or also available as a separate release. Learn more: \nhttps://t.co/uCpxoZKMSu https://t.co/airiyh63OZ",
+   "author": {
+    "id": "23127272",
+    "name": "AMD Radeon",
+    "screenName": "AMDRadeon",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1901650786637238272/F-KPTt2O_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 234,
+    "retweets": 36,
+    "replies": 91,
+    "quotes": 7,
+    "views": 32988,
+    "bookmarks": 22
+   },
+   "createdAt": "Wed Jan 21 15:30:37 +0000 2026",
+   "createdAtLocal": "2026-01-21 23:30",
+   "createdAtISO": "2026-01-21T15:30:37+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2013997562957594624/vid/avc1/1080x1920/vO2nbxKO54OgbMA0.mp4?tag=16",
+     "width": 1080,
+     "height": 1920
+    }
+   ],
+   "urls": [
+    "https://www.amd.com/en/blogs/2026/amd-software-adrenalin-edition-ai-bundle-ai-made-si.html"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2011523214589972697",
+   "text": "Coming January 21st: AMD Software: Adrenalin Edition™ AI Bundle \n\nAI Made Simple.  \n\nAI Bundle is a streamlined installer that equips your AMD-powered system with the essential tools for AI development and creative workflows.",
+   "author": {
+    "id": "23127272",
+    "name": "AMD Radeon",
+    "screenName": "AMDRadeon",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1901650786637238272/F-KPTt2O_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 351,
+    "retweets": 39,
+    "replies": 281,
+    "quotes": 47,
+    "views": 94262,
+    "bookmarks": 35
+   },
+   "createdAt": "Wed Jan 14 19:38:01 +0000 2026",
+   "createdAtLocal": "2026-01-15 03:38",
+   "createdAtISO": "2026-01-14T19:38:01+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2008384996571320642",
+   "text": "Official AMD ROCm™ support for ComfyUI is now available, starting with Windows ComfyUI Desktop v0.7.0!\n\nFrom now on, users will be able to tap into @AMD Radeon™ GPUs &amp; Ryzen™ AI with:\n\n⚙️ Desktop / Portable / Git\n🚀 Built on ROCm 7.1.1",
+   "author": {
+    "id": "1672990618526846976",
+    "name": "ComfyUI",
+    "screenName": "ComfyUI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2047708517570887680/vasvAmZR_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 209,
+    "retweets": 37,
+    "replies": 18,
+    "quotes": 10,
+    "views": 41276,
+    "bookmarks": 46
+   },
+   "createdAt": "Tue Jan 06 03:47:51 +0000 2026",
+   "createdAtLocal": "2026-01-06 11:47",
+   "createdAtISO": "2026-01-06T03:47:51+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "AMDRadeon",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1953093968935145613",
+   "text": "Cloud gaming on another level. @Boosteroid_main now powers 27 data centers across Europe and the Americas using AMD EPYC CPUs and Radeon GPUs, delivering high‑fps, high‑res gaming to over 6 million players. Ready to play without limits? See the future of gaming in action below! 👇",
+   "author": {
+    "id": "23127272",
+    "name": "AMD Radeon",
+    "screenName": "AMDRadeon",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1901650786637238272/F-KPTt2O_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 115,
+    "retweets": 18,
+    "replies": 86,
+    "quotes": 1,
+    "views": 43778,
+    "bookmarks": 11
+   },
+   "createdAt": "Wed Aug 06 14:01:03 +0000 2025",
+   "createdAtLocal": "2025-08-06 22:01",
+   "createdAtISO": "2025-08-06T14:01:03+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/1953093863146409984/vid/avc1/1080x1080/oOHm4pZokFjadP3G.mp4?tag=16",
+     "width": 1080,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1930745784661635408",
+   "text": "AMD Radeon™ RX 9060 XT graphics card powered by AMD RDNA™ 4 enhance the gaming and streaming experience. This is your upgrade. https://t.co/2tOT5GEzk4",
+   "author": {
+    "id": "23127272",
+    "name": "AMD Radeon",
+    "screenName": "AMDRadeon",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1901650786637238272/F-KPTt2O_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 263,
+    "retweets": 26,
+    "replies": 84,
+    "quotes": 1,
+    "views": 46149,
+    "bookmarks": 7
+   },
+   "createdAt": "Thu Jun 05 21:57:21 +0000 2025",
+   "createdAtLocal": "2025-06-06 05:57",
+   "createdAtISO": "2025-06-05T21:57:21+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/1930745699596984322/vid/avc1/1080x1080/-gC9wWkh1J08YGyo.mp4?tag=16",
+     "width": 1080,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1930664070903926856",
+   "text": "Weekend plans ✍️ \n1) AMD Radeon™ RX 9060 XT graphics card. \n2) Dominate every game. \n3) Make every play count. \n\nPaired with the supercharged performance of FidelityFX Super Resolution 4 technology, you’re not just playing games—you’re in them. https://t.co/fN2TTT1LEw",
+   "author": {
+    "id": "23127272",
+    "name": "AMD Radeon",
+    "screenName": "AMDRadeon",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1901650786637238272/F-KPTt2O_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 227,
+    "retweets": 18,
+    "replies": 31,
+    "quotes": 2,
+    "views": 32349,
+    "bookmarks": 6
+   },
+   "createdAt": "Thu Jun 05 16:32:39 +0000 2025",
+   "createdAtLocal": "2025-06-06 00:32",
+   "createdAtISO": "2025-06-05T16:32:39+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/GssYuXGWsAA-brJ.jpg",
+     "width": 1080,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1927815433891074399",
+   "text": "The new Radeon RX 9060 XT GPUs is here. Powered by AMD RDNA 4, experience ultra-smooth 1440p gaming, lightning-fast ray tracing, and FSR 4 ML-enhanced upscaling. Available June 5th, 2025. https://t.co/NAgToMuUSc",
+   "author": {
+    "id": "23127272",
+    "name": "AMD Radeon",
+    "screenName": "AMDRadeon",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1901650786637238272/F-KPTt2O_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 460,
+    "retweets": 53,
+    "replies": 65,
+    "quotes": 4,
+    "views": 41706,
+    "bookmarks": 14
+   },
+   "createdAt": "Wed May 28 19:53:11 +0000 2025",
+   "createdAtLocal": "2025-05-29 03:53",
+   "createdAtISO": "2025-05-28T19:53:11+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/1927815391188836352/vid/avc1/1080x1350/er4r5oFcmFqKUgKO.mp4?tag=16",
+     "width": 1080,
+     "height": 1350
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1926378442297094632",
+   "text": "“Our commitment to ROCm is really to accelerate the development, ensuring readiness for future hardware launches from day one.” Starting this week, we have expanded ROCm support for AMD Ryzen AI MAX and Radeon RX 9000 Series. https://t.co/rAVKa9FN3n",
+   "author": {
+    "id": "23127272",
+    "name": "AMD Radeon",
+    "screenName": "AMDRadeon",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1901650786637238272/F-KPTt2O_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 246,
+    "retweets": 34,
+    "replies": 19,
+    "quotes": 6,
+    "views": 35979,
+    "bookmarks": 6
+   },
+   "createdAt": "Sat May 24 20:43:05 +0000 2025",
+   "createdAtLocal": "2025-05-25 04:43",
+   "createdAtISO": "2025-05-24T20:43:05+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/Grve99SWoAI64Jt.jpg",
+     "width": 1080,
+     "height": 1350
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1925610917632307361",
+   "text": "Get to know the Radeon RX 9060 XT, the fastest graphics card available under $350. https://t.co/QdfZ5QcrKx",
+   "author": {
+    "id": "23127272",
+    "name": "AMD Radeon",
+    "screenName": "AMDRadeon",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1901650786637238272/F-KPTt2O_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 829,
+    "retweets": 84,
+    "replies": 78,
+    "quotes": 11,
+    "views": 62569,
+    "bookmarks": 36
+   },
+   "createdAt": "Thu May 22 17:53:13 +0000 2025",
+   "createdAtLocal": "2025-05-23 01:53",
+   "createdAtISO": "2025-05-22T17:53:13+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/Grkk46hW4AEIaEi.jpg",
+     "width": 1080,
+     "height": 1350
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/Grkk6IPXcAAtFQX.jpg",
+     "width": 1080,
+     "height": 1350
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1925579420292551109",
+   "text": "How does the new Radeon RX 9060 XT stack up? @PCGamesN shares the details: https://t.co/QuLirtC6MJ",
+   "author": {
+    "id": "23127272",
+    "name": "AMD Radeon",
+    "screenName": "AMDRadeon",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1901650786637238272/F-KPTt2O_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 111,
+    "retweets": 15,
+    "replies": 7,
+    "quotes": 0,
+    "views": 18399,
+    "bookmarks": 1
+   },
+   "createdAt": "Thu May 22 15:48:03 +0000 2025",
+   "createdAtLocal": "2025-05-22 23:48",
+   "createdAtISO": "2025-05-22T15:48:03+00:00",
+   "media": [],
+   "urls": [
+    "https://bit.ly/4jePAIr"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1925535113997078994",
+   "text": "\"AMD has officially unveiled its Radeon RX 9060 XT at Computex, promising gamers the best price/performance levels in the sub-$350 GPU market.\" \n\nRead more from @OC3D: https://t.co/p7VG73nf49",
+   "author": {
+    "id": "23127272",
+    "name": "AMD Radeon",
+    "screenName": "AMDRadeon",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1901650786637238272/F-KPTt2O_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 525,
+    "retweets": 58,
+    "replies": 27,
+    "quotes": 0,
+    "views": 25711,
+    "bookmarks": 13
+   },
+   "createdAt": "Thu May 22 12:52:00 +0000 2025",
+   "createdAtLocal": "2025-05-22 20:52",
+   "createdAtISO": "2025-05-22T12:52:00+00:00",
+   "media": [],
+   "urls": [
+    "https://bit.ly/43gIHAg"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1925312187532267888",
+   "text": "Introducing the Radeon AI PRO R9700, bringing the performance and AI capabilities of RDNA 4 to workstations and gamers all around the world. https://t.co/203kbp50Ph",
+   "author": {
+    "id": "23127272",
+    "name": "AMD Radeon",
+    "screenName": "AMDRadeon",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1901650786637238272/F-KPTt2O_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 529,
+    "retweets": 59,
+    "replies": 26,
+    "quotes": 6,
+    "views": 35400,
+    "bookmarks": 31
+   },
+   "createdAt": "Wed May 21 22:06:10 +0000 2025",
+   "createdAtLocal": "2025-05-22 06:06",
+   "createdAtISO": "2025-05-21T22:06:10+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/GrgVMikXsAAvddC.jpg",
+     "width": 1080,
+     "height": 1350
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/GrgVNwhWcAAJ7g3.jpg",
+     "width": 1080,
+     "height": 1350
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1925281442793177516",
+   "text": "\"A value-packed GPU with a lot of promise\" \n\n@TechRadar breaks down the new Radeon RX 9060 XT: https://t.co/ZpNBnoQuSN",
+   "author": {
+    "id": "23127272",
+    "name": "AMD Radeon",
+    "screenName": "AMDRadeon",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1901650786637238272/F-KPTt2O_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 119,
+    "retweets": 9,
+    "replies": 6,
+    "quotes": 2,
+    "views": 14632,
+    "bookmarks": 2
+   },
+   "createdAt": "Wed May 21 20:04:00 +0000 2025",
+   "createdAtLocal": "2025-05-22 04:04",
+   "createdAtISO": "2025-05-21T20:04:00+00:00",
+   "media": [],
+   "urls": [
+    "https://bit.ly/4dp6IKc"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1925211800099852574",
+   "text": "Make every play count. Experience the new Radeon RX 9060 XT, available June 5th 2025. https://t.co/rdluNP27aN",
+   "author": {
+    "id": "23127272",
+    "name": "AMD Radeon",
+    "screenName": "AMDRadeon",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1901650786637238272/F-KPTt2O_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1472,
+    "retweets": 160,
+    "replies": 104,
+    "quotes": 27,
+    "views": 73252,
+    "bookmarks": 72
+   },
+   "createdAt": "Wed May 21 15:27:16 +0000 2025",
+   "createdAtLocal": "2025-05-21 23:27",
+   "createdAtISO": "2025-05-21T15:27:16+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/1925211736367386624/vid/avc1/1080x1350/SsEUPL55nf6r7SuM.mp4?tag=16",
+     "width": 1080,
+     "height": 1350
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1925175197532872735",
+   "text": "At Computex 2025, we shared some exciting updates on how AMD is driving the next wave of performance and efficiency, empowering creators, gamers and professionals to push boundaries and drive creativity.\n\nCatch the replay: https://t.co/LI3l7VGMsP https://t.co/Zw94uaaOzN",
+   "author": {
+    "id": "14861876",
+    "name": "AMD",
+    "screenName": "AMD",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1534988679076368384/In8IVKDB_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 411,
+    "retweets": 81,
+    "replies": 22,
+    "quotes": 7,
+    "views": 59719,
+    "bookmarks": 16
+   },
+   "createdAt": "Wed May 21 13:01:49 +0000 2025",
+   "createdAtLocal": "2025-05-21 21:01",
+   "createdAtISO": "2025-05-21T13:01:49+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/GreYGrpXsAANxSH.jpg",
+     "width": 1080,
+     "height": 1350
+    }
+   ],
+   "urls": [
+    "https://youtu.be/n9ERjuXXJ_0"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "AMDRadeon",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1925066422935327077",
+   "text": "We’re sorry for the interruption during our Computex livestream. The full, uninterrupted presentation is now live on YouTube — thanks for bearing with us! \n\nWatch now: https://t.co/LI3l7VGMsP",
+   "author": {
+    "id": "14861876",
+    "name": "AMD",
+    "screenName": "AMD",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1534988679076368384/In8IVKDB_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 289,
+    "retweets": 45,
+    "replies": 11,
+    "quotes": 1,
+    "views": 75019,
+    "bookmarks": 19
+   },
+   "createdAt": "Wed May 21 05:49:35 +0000 2025",
+   "createdAtLocal": "2025-05-21 13:49",
+   "createdAtISO": "2025-05-21T05:49:35+00:00",
+   "media": [],
+   "urls": [
+    "https://youtu.be/n9ERjuXXJ_0"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "AMDRadeon",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1925008689401884895",
+   "text": "Join us in 1 hour as @JackMHuynh, SVP and GM of the Computing and Graphics Group, takes the stage at Computex 2025!  \n\n📺: https://t.co/EMO0049wK6 https://t.co/qG83EOqgZJ",
+   "author": {
+    "id": "14861876",
+    "name": "AMD",
+    "screenName": "AMD",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1534988679076368384/In8IVKDB_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 146,
+    "retweets": 25,
+    "replies": 6,
+    "quotes": 2,
+    "views": 30243,
+    "bookmarks": 3
+   },
+   "createdAt": "Wed May 21 02:00:11 +0000 2025",
+   "createdAtLocal": "2025-05-21 10:00",
+   "createdAtISO": "2025-05-21T02:00:11+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/GrcBL1MXkAAZ0Pp.jpg",
+     "width": 1080,
+     "height": 1080
+    }
+   ],
+   "urls": [
+    "https://bit.ly/4dlkD40"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "AMDRadeon",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1924872864223687090",
+   "text": "AI innovation starts with developers. AMD and @Microsoft are collaborating to help you build without limits from Cloud-to-Client. With ROCm, ONNX, and Windows ML, build once and run across platforms—from Azure to AI PCs. Learn more: https://t.co/COliw5MIYh https://t.co/NXEgQc3zUd",
+   "author": {
+    "id": "14861876",
+    "name": "AMD",
+    "screenName": "AMD",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1534988679076368384/In8IVKDB_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 207,
+    "retweets": 32,
+    "replies": 6,
+    "quotes": 0,
+    "views": 22092,
+    "bookmarks": 5
+   },
+   "createdAt": "Tue May 20 17:00:27 +0000 2025",
+   "createdAtLocal": "2025-05-21 01:00",
+   "createdAtISO": "2025-05-20T17:00:27+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/GraFpyOW8AAAUy-.jpg",
+     "width": 1080,
+     "height": 1080
+    }
+   ],
+   "urls": [
+    "https://bit.ly/3SP21je"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "AMDRadeon",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1924480305999581644",
+   "text": "Join AMD on May 21st as we reveal what's next in gaming, AI PCs, and more. \n\n@jackhuynh, SVP and GM of the Computing and Graphics Group, along with industry leaders and partners, will announce key products and technology advancements across gaming, AI PC, and enterprise. \n\n📺 https://t.co/dMRngABhyI",
+   "author": {
+    "id": "14861876",
+    "name": "AMD",
+    "screenName": "AMD",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1534988679076368384/In8IVKDB_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 239,
+    "retweets": 54,
+    "replies": 13,
+    "quotes": 2,
+    "views": 31316,
+    "bookmarks": 5
+   },
+   "createdAt": "Mon May 19 15:00:34 +0000 2025",
+   "createdAtLocal": "2025-05-19 23:00",
+   "createdAtISO": "2025-05-19T15:00:34+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/GrUgn3hWkAACdKN.jpg",
+     "width": 1080,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "AMDRadeon",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1922670145748578715",
+   "text": "Reminder! Join AMD on May 21 as we reveal what’s next in gaming, AI PCs, and more. @JackMHuynh, SVP and GM of Computing and Graphics Group, along with industry leaders and partners showcase what is built to power the next level.\n \n📺 https://t.co/pm4j6pSYEg https://t.co/94LdU29mAz",
+   "author": {
+    "id": "360196369",
+    "name": "AMD Gaming",
+    "screenName": "AMDGaming",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1952816051818758144/sgm0zP8A_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 231,
+    "retweets": 53,
+    "replies": 23,
+    "quotes": 7,
+    "views": 38778,
+    "bookmarks": 5
+   },
+   "createdAt": "Wed May 14 15:07:38 +0000 2025",
+   "createdAtLocal": "2025-05-14 23:07",
+   "createdAtISO": "2025-05-14T15:07:38+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/Gq6ySrLWoAAv3NX.jpg",
+     "width": 1080,
+     "height": 1080
+    }
+   ],
+   "urls": [
+    "https://youtube.com/live/ht92sDJiMP0"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "AMDRadeon",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1915029454143070590",
+   "text": "Save the date 🗓️​\n ​\nJoin us for the @AMD Press Conference at @computex_taipei on Wednesday, May 21 at 11 AM UTC+8. ​\n ​\nI’m so excited to return to Computex and share the stage with some incredible industry leaders and partners as we unveil groundbreaking AI advancements that are redefining gaming, PCs, and professional workloads!​\n​\nDon't miss it - catch the livestream at https://t.co/nA12rjszHZ with replay available post-event.",
+   "author": {
+    "id": "1298728835131871232",
+    "name": "Jack Huynh",
+    "screenName": "jackhuynh",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1908377847145656320/s0qqUHYC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 186,
+    "retweets": 45,
+    "replies": 33,
+    "quotes": 7,
+    "views": 41582,
+    "bookmarks": 16
+   },
+   "createdAt": "Wed Apr 23 13:06:16 +0000 2025",
+   "createdAtLocal": "2025-04-23 21:06",
+   "createdAtISO": "2025-04-23T13:06:16+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/GpOK5nGaEAAGvBq.jpg",
+     "width": 1080,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "AMDRadeon",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1902453109999464803",
+   "text": "Our celebration of the launch of the Radeon RX 9000 Series isn’t over yet, and we're giving 4 lucky winners another chance to win 4 GPUs!\n\nAnd yes, two of the winners will be surprised with a signed GPU by AMD CEO, Lisa Su!\n\nWant in? Enter here: https://t.co/KC8m76Jwm7\n\nEntries close on March 24th.",
+   "author": {
+    "id": "23127272",
+    "name": "AMD Radeon",
+    "screenName": "AMDRadeon",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1901650786637238272/F-KPTt2O_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 576,
+    "retweets": 79,
+    "replies": 126,
+    "quotes": 1,
+    "views": 48835,
+    "bookmarks": 47
+   },
+   "createdAt": "Wed Mar 19 20:12:21 +0000 2025",
+   "createdAtLocal": "2025-03-20 04:12",
+   "createdAtISO": "2025-03-19T20:12:21+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/GmbfASkWQAA_SgP.jpg",
+     "width": 971,
+     "height": 974
+    }
+   ],
+   "urls": [
+    "https://bit.ly/4bXUlnG"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1900244978405896371",
+   "text": "Ryzen 9 9950X3D &amp; Radeon RX 9070 Chat LIVE With AMD's David McAfee! https://t.co/dIwYuFi3q2",
+   "author": {
+    "id": "14669269",
+    "name": "HotHardware",
+    "screenName": "HotHardware",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1351621839622180864/PwQWJArz_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 83,
+    "retweets": 13,
+    "replies": 7,
+    "quotes": 1,
+    "views": 33153,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu Mar 13 17:58:02 +0000 2025",
+   "createdAtLocal": "2025-03-14 01:58",
+   "createdAtISO": "2025-03-13T17:58:02+00:00",
+   "media": [],
+   "urls": [
+    "https://x.com/i/broadcasts/1BRJjmOVbnvGw"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "AMDRadeon",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1900205339095486551",
+   "text": "A single @AMD Radeon PRO W7800 48GB or W7900 48GB has enough VRAM to run with great performance even the largest DeepSeek R1 Distill (or higher precision for 32B). https://t.co/4uNTO6XAYG",
+   "author": {
+    "id": "1546147140367532037",
+    "name": "David McAfee",
+    "screenName": "McAfeeDavid_AMD",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1546479808313532416/ao-95V0S_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 245,
+    "retweets": 29,
+    "replies": 28,
+    "quotes": 4,
+    "views": 37162,
+    "bookmarks": 16
+   },
+   "createdAt": "Thu Mar 13 15:20:31 +0000 2025",
+   "createdAtLocal": "2025-03-13 23:20",
+   "createdAtISO": "2025-03-13T15:20:31+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/Gl7ioThWIAAGb8A.jpg",
+     "width": 2554,
+     "height": 2048
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "AMDRadeon",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1899891448943649270",
+   "text": "Join us LIVE tomorrow at 2PM ET with @AMD's @McAfeeDavid_AMD! \nRyzen 9 9950X3D &amp; Radeon RX 9070 Chat LIVE With AMD's David McAfee! #Livestream  https://t.co/yLxFqAkptl via @YouTube",
+   "author": {
+    "id": "14669269",
+    "name": "HotHardware",
+    "screenName": "HotHardware",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1351621839622180864/PwQWJArz_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 45,
+    "retweets": 11,
+    "replies": 6,
+    "quotes": 0,
+    "views": 44758,
+    "bookmarks": 1
+   },
+   "createdAt": "Wed Mar 12 18:33:14 +0000 2025",
+   "createdAtLocal": "2025-03-13 02:33",
+   "createdAtISO": "2025-03-12T18:33:14+00:00",
+   "media": [],
+   "urls": [
+    "https://www.youtube.com/live/zadqT5W0UQ0?si=HSg2vsmSDhHXLkQC"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "AMDRadeon",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1899822577213645148",
+   "text": "🚀 FSR 4 is here — we listened and built it for YOU. \n After countless hours of innovation and collaboration, including our exciting co-development with Sony Interactive Entertainment on the models used for the FSR 4 upscaler, we’re proud to collaborate with @PlayStation on Project Amethyst!\n\nReviews are clear: sharper, faster, and more immersive than ever.  FSR 4 lets gamers maximize performance while delivering incredible visuals and blazing-fast speed.\n\n@AMD's first advanced machine learning technology for gaming is now integrated with FSR 4.  Because gaming isn’t just about winning.  It’s about those unforgettable moments:\n\n✨ The perfect explosion.\n✨ The sunset you couldn’t look away from.\n✨ The final boss fight you swore you’d never conquer.\n\nYour game. Your moments. Supercharged.\n\nAMD FSR 4 Upscaling Tested vs DLSS 3/4 - A Big Leap Forward - RDNA 4 Del... https://t.co/pwRreAIUZe via @YouTube",
+   "author": {
+    "id": "1298728835131871232",
+    "name": "Jack Huynh",
+    "screenName": "jackhuynh",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1908377847145656320/s0qqUHYC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1449,
+    "retweets": 202,
+    "replies": 95,
+    "quotes": 26,
+    "views": 238013,
+    "bookmarks": 111
+   },
+   "createdAt": "Wed Mar 12 13:59:34 +0000 2025",
+   "createdAtLocal": "2025-03-12 21:59",
+   "createdAtISO": "2025-03-12T13:59:34+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "AMDRadeon",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1899147564701679751",
+   "text": "What's better than a new AMD Radeon RX 9000 Series GPU? One personally signed by AMD CEO, Lisa Su. \n\nTo celebrate the launch of the Radeon RX 9000 Series, we're giving away 5 GPUs to 5 lucky winners. Two of the winners will be surprised with a signed GPU.\n\nWant in? Enter here: https://t.co/s8S0rQ1YqU\n \nEntries close on March 13th.",
+   "author": {
+    "id": "23127272",
+    "name": "AMD Radeon",
+    "screenName": "AMDRadeon",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1901650786637238272/F-KPTt2O_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1279,
+    "retweets": 116,
+    "replies": 155,
+    "quotes": 17,
+    "views": 84423,
+    "bookmarks": 70
+   },
+   "createdAt": "Mon Mar 10 17:17:18 +0000 2025",
+   "createdAtLocal": "2025-03-11 01:17",
+   "createdAtISO": "2025-03-10T17:17:18+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/GlsgoPWWsAAt3BC.jpg",
+     "width": 800,
+     "height": 800
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1898749617623171481",
+   "text": "\"Given its performance class, it's power draw, its heat output, and most of all, it's price, the RX 9070 XT is easily the best value of any graphics card playing at 4K.\"\n\nRead more from @TechRadar here: https://t.co/Z8cdCnxOmC",
+   "author": {
+    "id": "23127272",
+    "name": "AMD Radeon",
+    "screenName": "AMDRadeon",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1901650786637238272/F-KPTt2O_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 559,
+    "retweets": 41,
+    "replies": 101,
+    "quotes": 2,
+    "views": 38178,
+    "bookmarks": 8
+   },
+   "createdAt": "Sun Mar 09 14:56:00 +0000 2025",
+   "createdAtLocal": "2025-03-09 22:56",
+   "createdAtISO": "2025-03-09T14:56:00+00:00",
+   "media": [],
+   "urls": [
+    "https://bit.ly/3F7iQTh"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1898525895251354016",
+   "text": "\"The Radeon RX 9070 XT, ably demonstrated by this Asus Prime version, is a great price/performance card\"\n\n@PCGamer breaks down the performance of the AMD Radeon RX 9070 XT (Asus Prime OC): https://t.co/ERBIQKHuzj",
+   "author": {
+    "id": "23127272",
+    "name": "AMD Radeon",
+    "screenName": "AMDRadeon",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1901650786637238272/F-KPTt2O_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 476,
+    "retweets": 33,
+    "replies": 55,
+    "quotes": 2,
+    "views": 37277,
+    "bookmarks": 12
+   },
+   "createdAt": "Sun Mar 09 00:07:00 +0000 2025",
+   "createdAtLocal": "2025-03-09 08:07",
+   "createdAtISO": "2025-03-09T00:07:00+00:00",
+   "media": [],
+   "urls": [
+    "https://bit.ly/4ia44cK"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1898436307489042514",
+   "text": "\"AMD's Radeon RX 9070 XT is the most exciting GPU to launch in years.\"\n\nRead more from @XDADevelopers: https://t.co/nCTgkEGRdQ",
+   "author": {
+    "id": "23127272",
+    "name": "AMD Radeon",
+    "screenName": "AMDRadeon",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1901650786637238272/F-KPTt2O_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 889,
+    "retweets": 51,
+    "replies": 86,
+    "quotes": 5,
+    "views": 46357,
+    "bookmarks": 12
+   },
+   "createdAt": "Sat Mar 08 18:11:01 +0000 2025",
+   "createdAtLocal": "2025-03-09 02:11",
+   "createdAtISO": "2025-03-08T18:11:01+00:00",
+   "media": [],
+   "urls": [
+    "https://bit.ly/3XB4T6b"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1898089925356253416",
+   "text": "I’m beyond excited about the launch of the @amdradeon RX 9070 XT graphics card!  As a special thank you to our amazing community of gamers, creators, and innovators — who continue to inspire us every day — we’re giving away FIVE of these beasts!🚀​\n\n2 ARE LEGENDARY: Signed by the one-and-only @LisaSu herself! 🐐​\n\nEnter here for a chance to win: https://t.co/NY4HuopY8H",
+   "author": {
+    "id": "1298728835131871232",
+    "name": "Jack Huynh",
+    "screenName": "jackhuynh",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1908377847145656320/s0qqUHYC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 311,
+    "retweets": 36,
+    "replies": 57,
+    "quotes": 2,
+    "views": 45526,
+    "bookmarks": 27
+   },
+   "createdAt": "Fri Mar 07 19:14:37 +0000 2025",
+   "createdAtLocal": "2025-03-08 03:14",
+   "createdAtISO": "2025-03-07T19:14:37+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "AMDRadeon",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1897800242143084628",
+   "text": "Are you ready for the fight? 💥\n \n@PlayFragPunk is HERE and FSR 4 is ready to go with the new Radeon RX 9000 series.\n \nPlay now: https://t.co/o7W8wLEcY4 https://t.co/FIgp4xlCbn",
+   "author": {
+    "id": "23127272",
+    "name": "AMD Radeon",
+    "screenName": "AMDRadeon",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1901650786637238272/F-KPTt2O_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 128,
+    "retweets": 5,
+    "replies": 37,
+    "quotes": 0,
+    "views": 26419,
+    "bookmarks": 5
+   },
+   "createdAt": "Fri Mar 07 00:03:31 +0000 2025",
+   "createdAtLocal": "2025-03-07 08:03",
+   "createdAtISO": "2025-03-07T00:03:31+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/1897800114749513728/vid/avc1/1920x1080/zCCLmVYBgwU2ddKJ.mp4?tag=16",
+     "width": 3840,
+     "height": 2160
+    }
+   ],
+   "urls": [
+    "https://bit.ly/41KIlCL"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1897781758386487417",
+   "text": "A very proud day for both Radeon and Ryzen!  Your response to the 9070 series has been absolutely incredible.  Stay tuned for restocks as we get more cards into the market as quickly as possible. https://t.co/QYK0RIn6NO",
+   "author": {
+    "id": "1546147140367532037",
+    "name": "David McAfee",
+    "screenName": "McAfeeDavid_AMD",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1546479808313532416/ao-95V0S_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 747,
+    "retweets": 56,
+    "replies": 105,
+    "quotes": 10,
+    "views": 52770,
+    "bookmarks": 25
+   },
+   "createdAt": "Thu Mar 06 22:50:04 +0000 2025",
+   "createdAtLocal": "2025-03-07 06:50",
+   "createdAtISO": "2025-03-06T22:50:04+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/GlZFS8eWAAAXKXH.jpg",
+     "width": 1338,
+     "height": 728
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/GlZFUQuXUAAfEJz.jpg",
+     "width": 1344,
+     "height": 722
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "AMDRadeon",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1897746462253216020",
+   "text": "Incredible to witness the global excitement around the @amdradeon RX 9070 Series launch!  From packed lines at retailers to gamers everywhere eagerly lining up, the energy is truly electrifying ⚡\n\nIt’s already flying off the shelves — stay tuned for restocks!  Let the next chapter begin! 🎮",
+   "author": {
+    "id": "1298728835131871232",
+    "name": "Jack Huynh",
+    "screenName": "jackhuynh",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1908377847145656320/s0qqUHYC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 328,
+    "retweets": 29,
+    "replies": 36,
+    "quotes": 5,
+    "views": 29117,
+    "bookmarks": 7
+   },
+   "createdAt": "Thu Mar 06 20:29:49 +0000 2025",
+   "createdAtLocal": "2025-03-07 04:29",
+   "createdAtISO": "2025-03-06T20:29:49+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/GlYauB9WsAAwkVD.jpg",
+     "width": 1200,
+     "height": 627
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "AMDRadeon",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1897741520200962308",
+   "text": "Happy Radeon Day!  We’re proud to collaborate with @PlayStation on Project Amethyst! 🔥\n\nFSR 4 is looking fantastic! Excited for the co-development with Sony Interactive Entertainment on the models used for the FSR 4 upscaler.\n\nThis is just the beginning. Stay tuned for what’s next! 🎮",
+   "author": {
+    "id": "23127272",
+    "name": "AMD Radeon",
+    "screenName": "AMDRadeon",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1901650786637238272/F-KPTt2O_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2944,
+    "retweets": 456,
+    "replies": 190,
+    "quotes": 121,
+    "views": 294510,
+    "bookmarks": 209
+   },
+   "createdAt": "Thu Mar 06 20:10:11 +0000 2025",
+   "createdAtLocal": "2025-03-07 04:10",
+   "createdAtISO": "2025-03-06T20:10:11+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/GlYh1tbXoAAr-Dp.jpg",
+     "width": 2560,
+     "height": 1440
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1897693933032923537",
+   "text": "A split-second can be the difference between victory and defeat. Make\nevery play count with AMD Radeon™ RX 9000 Series Graphics Cards. https://t.co/1xVG3O6y7h",
+   "author": {
+    "id": "23127272",
+    "name": "AMD Radeon",
+    "screenName": "AMDRadeon",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1901650786637238272/F-KPTt2O_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 293,
+    "retweets": 29,
+    "replies": 36,
+    "quotes": 4,
+    "views": 21446,
+    "bookmarks": 7
+   },
+   "createdAt": "Thu Mar 06 17:01:05 +0000 2025",
+   "createdAtLocal": "2025-03-07 01:01",
+   "createdAtISO": "2025-03-06T17:01:05+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/1897693806562078720/vid/avc1/1080x1080/q-7gxZqvD-sNwrkU.mp4?tag=16",
+     "width": 1080,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1897655228490490366",
+   "text": "This month, we at AMD celebrate two milestones in the Radeon story - the 25th anniversary of Radeon, and our next step forward with the RDNA 4 based Radeon RX 9070 XT and RX 9070 cards, available starting today. We know what matters when you choose your next GPU: raw performance to conquer your favorite titles, tech that’s ready for tomorrow’s blockbusters, and value that respects your investment. That’s precisely what RDNA 4 delivers.\n\nCompared to our last gen, RDNA 4 boosts raster perf for crisper, smoother visuals. Ray tracing throughput doubles, and an 8x uplift in ML perf unlocks new capabilities. Like FSR 4 ML-based upscaling with 3x to 4x higher frame rates and near-native quality, launching with 30+ supported titles and 75+ by year-end.\n\nWe designed the RX 9070 XT (starting at $599) and RX 9070 (starting at $549) to hit the sweet spot — each with 16 GB of memory, next-level ray tracing, and awesome performance-per-dollar. These aren’t just graphics cards; they’re your ticket to owning battlegrounds, from competitive esports to cinematic RPGs, without breaking the bank.\n\nReflecting on the past 25 years, we’re humbled by how far gaming has come—and how you’ve shaped it. RDNA 4 is our way of saying thank you: a GPU lineup that powers your victories, secures your future playtime, and fits your budget. Here’s to the next 25 years of Radeon—and to every clutch moment, epic raid, and immersive story we’ll share along the way!",
+   "author": {
+    "id": "1546147140367532037",
+    "name": "David McAfee",
+    "screenName": "McAfeeDavid_AMD",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1546479808313532416/ao-95V0S_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 359,
+    "retweets": 35,
+    "replies": 75,
+    "quotes": 5,
+    "views": 68046,
+    "bookmarks": 9
+   },
+   "createdAt": "Thu Mar 06 14:27:17 +0000 2025",
+   "createdAtLocal": "2025-03-06 22:27",
+   "createdAtISO": "2025-03-06T14:27:17+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "AMDRadeon",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1897648480761389229",
+   "text": "When the game is on the line, make every play count with the instant\nperformance of AMD Radeon™ RX 9000 Series Graphics Cards. https://t.co/YRuWELJNtj",
+   "author": {
+    "id": "23127272",
+    "name": "AMD Radeon",
+    "screenName": "AMDRadeon",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1901650786637238272/F-KPTt2O_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 533,
+    "retweets": 32,
+    "replies": 91,
+    "quotes": 3,
+    "views": 41199,
+    "bookmarks": 6
+   },
+   "createdAt": "Thu Mar 06 14:00:29 +0000 2025",
+   "createdAtLocal": "2025-03-06 22:00",
+   "createdAtISO": "2025-03-06T14:00:29+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/GlXNOFdXkAA5sYS.jpg",
+     "width": 1080,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1897627262498799910",
+   "text": "Each new architecture release is very special.  Our new @AMD Radeon RX 9000 series with RDNA4 is available on-shelf globally today!  Had fun signing a few cards for special fans… 😀 https://t.co/h8qVFvKVnK",
+   "author": {
+    "id": "836224570013138944",
+    "name": "Lisa Su",
+    "screenName": "LisaSu",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/836654735553777664/gWyrS-2a_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 6459,
+    "retweets": 502,
+    "replies": 275,
+    "quotes": 86,
+    "views": 309060,
+    "bookmarks": 149
+   },
+   "createdAt": "Thu Mar 06 12:36:10 +0000 2025",
+   "createdAtLocal": "2025-03-06 20:36",
+   "createdAtISO": "2025-03-06T12:36:10+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/GlW574AXMAAn7tj.jpg",
+     "width": 1080,
+     "height": 1080
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/GlW574BWIAAoh34.jpg",
+     "width": 1080,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "AMDRadeon",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1897413671006945304",
+   "text": "Sharper, faster, better: FidelityFX Super Resolution 4 combines AI innovation and RDNA 4 to deliver breathtaking detail and performance in 4k. https://t.co/NawO5epUNR",
+   "author": {
+    "id": "23127272",
+    "name": "AMD Radeon",
+    "screenName": "AMDRadeon",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1901650786637238272/F-KPTt2O_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 775,
+    "retweets": 62,
+    "replies": 66,
+    "quotes": 3,
+    "views": 32939,
+    "bookmarks": 15
+   },
+   "createdAt": "Wed Mar 05 22:27:26 +0000 2025",
+   "createdAtLocal": "2025-03-06 06:27",
+   "createdAtISO": "2025-03-05T22:27:26+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/1897413565679550464/vid/avc1/1080x1920/pSFpn4LyxIoaZTz2.mp4?tag=16",
+     "width": 1080,
+     "height": 1920
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1897384093920137591",
+   "text": "On the eve of the @amdradeon RX 9070 Series launch, I couldn’t be more excited about the next-gen of enthusiast-level graphics.  This launch not only represents a significant boost in performance and the introduction of an advanced machine learning based FSR 4, but also our commitment to making high-quality gaming experiences more accessible to players worldwide.\n\nA big thank you to our amazing graphics partners @Asus, @Acer, @ASRockInfo, @GIGABYTEUSA, @XFX_PlayHard, @SapphireTech, @PowerColor, Vastarmor, and @YestonOfficial for being instrumental in bringing this vision to life.\n\nAnd to the gaming community, thank you for your passion and continued support.  We’re just getting started! 🎮",
+   "author": {
+    "id": "1298728835131871232",
+    "name": "Jack Huynh",
+    "screenName": "jackhuynh",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1908377847145656320/s0qqUHYC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 368,
+    "retweets": 26,
+    "replies": 28,
+    "quotes": 0,
+    "views": 26512,
+    "bookmarks": 15
+   },
+   "createdAt": "Wed Mar 05 20:29:54 +0000 2025",
+   "createdAtLocal": "2025-03-06 04:29",
+   "createdAtISO": "2025-03-05T20:29:54+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/GlTbo2-XcAApFIf.jpg",
+     "width": 2865,
+     "height": 1910
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/GlTbt9-W0AA5Djg.jpg",
+     "width": 3105,
+     "height": 2070
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "AMDRadeon",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1897375921750876524",
+   "text": "RDNA 4 is coming! 🔥 Prepare for stunning realism and faster #performance than last gen with next-level raytracing and #AI-powered enhancements that will redefine your gaming experience! https://t.co/tvUmu5mdp3",
+   "author": {
+    "id": "23127272",
+    "name": "AMD Radeon",
+    "screenName": "AMDRadeon",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1901650786637238272/F-KPTt2O_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 635,
+    "retweets": 52,
+    "replies": 32,
+    "quotes": 0,
+    "views": 20142,
+    "bookmarks": 12
+   },
+   "createdAt": "Wed Mar 05 19:57:25 +0000 2025",
+   "createdAtLocal": "2025-03-06 03:57",
+   "createdAtISO": "2025-03-05T19:57:25+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/1897375816515719168/vid/avc1/1080x1920/C9j6srV9O73su7tk.mp4?tag=16",
+     "width": 1080,
+     "height": 1920
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  }
+ ]
+}

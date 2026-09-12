@@ -1,0 +1,27 @@
+{
+ "title": "Qwen3.8-27B and DGX Spark ( GB10 )",
+ "body": "Hello,\r\n\r\nI’m using the latest available llama.cpp Docker image and trying to run the latest Qwen3.8 model with MTP. I’m seeing an average generation speed of approximately 15 tokens/s.\r\n\r\nI also checked the NVIDIA forum for DGX Spark / GB10, where users reported similar performance with vLLM. That seemed consistent. Until I saw an official SGLang post reporting 38 tokens/s decode throughput on DGX Spark ( https://x.com/sgl_project/status/2088281320422322413 ).\r\n\r\nAm I missing a configuration or optimization that could explain this difference? Or is this model/platform not yet fully optimized in llama.cpp?\r\n\r\nFor reference, here is my Docker command. It is essentially the same configuration I use for Qwen3.5 122B:\r\n```\r\ndocker run -d --name llama-cpp-qwen38-27b-MTP \\\r\n\t--gpus all -p 8000:8080 \\\r\n\t-v /config/llamacpp/models:/models \\\r\n\t-e LLAMA_CACHE=/models \\\r\n\tghcr.io/ggml-org/llama.cpp:full-cuda -s  -hf unsloth/Qwen3.8-27B-GGUF:UD-Q4_K_XL \\\r\n\t\t--host 0.0.0.0 --port 8080 \\\r\n\t\t--no-mmap \\\r\n\t\t-ngl 99 \\\r\n\t\t-fa on \\\r\n\t\t-t 8 \\\r\n\t\t--cache-type-k q8_0 --cache-type-v q8_0 \\\r\n\t\t-b 4096 -ub 2048 \\\r\n\t\t-np 1 \\\r\n\t\t--spec-type draft-mtp \\\r\n\t\t--spec-draft-n-max 2\r\n```",
+ "url": "https://github.com/ggml-org/llama.cpp/discussions/27080",
+ "createdAt": "2026-08-14T18:34:41Z",
+ "author": {
+  "login": "phr0gz"
+ },
+ "comments": {
+  "nodes": [
+   {
+    "body": "Try this on the DGX Spark:\r\n\r\n```bash\r\nllama serve \\\r\n -hf  ggml-org/Qwen3.8-27B-GGUF:Q4_K_M \\\r\n -hfd ggml-org/Qwen3.8-27B-GGUF:Q4_0 \\\r\n --spec-default \\\r\n --spec-type draft-mtp \\\r\n --reasoning-preserve\r\n```",
+    "author": {
+     "login": "ggerganov"
+    },
+    "createdAt": "2026-08-14T18:54:38Z"
+   },
+   {
+    "body": "Thanks for the feedback, I ran another with this:\r\n```\r\ndocker run -d --name llama-cpp-qwen38-27b-test \\\r\n\t--gpus all -p 8000:8080 \\\r\n\t-v /config/llamacpp/models:/models \\\r\n\t-e LLAMA_CACHE=/models \\\r\n\tghcr.io/ggml-org/llama.cpp:full-cuda -s \\\r\n\t\t-hf  ggml-org/Qwen3.8-27B-GGUF:Q4_K_M \\\r\n\t\t-hfd ggml-org/Qwen3.8-27B-GGUF:Q4_0 \\\r\n\t\t--host 0.0.0.0 --port 8080 \\\r\n\t\t--spec-default \\\r\n\t\t--spec-type draft-mtp \\\r\n\t\t--reasoning-preserve\r\n```\r\n\r\nI have a small increase:\r\n```\r\n22.12.854.508 I slot print_timing: id  2 | task 2 | n_gen =  22141, tg =  18.07 t/s, tg_3s =  14.02 t/s\r\n22.15.873.882 I slot print_timing: id  2 | task 2 | n_gen =  22202, tg =  18.07 t/s, tg_3s =  20.20 t/s\r\n22.18.998.030 I slot print_timing: id  2 | task 2 | n_gen =  22270, tg =  18.08 t/s, tg_3s =  21.77 t/s\r\n22.22.131.568 I slot print_timing: id  2 | task 2 | n_gen =  22338, tg =  18.09 t/s, tg_3s =  21.70 t/s\r\n22.24.806.445 I slot print_timing: id  2 | task 2 | prompt eval time =   12753.97 ms /  6231 tokens (    2.05 ms per token,   488.55 tokens per second)\r\n22.24.806.448 I slot print_timing: id  2 | task 2 |        eval time = 1237284.46 ms / 22373 tokens (   55.31 ms per token,    18.08 tokens per second)\r\n22.24.806.448 I slot print_timing: id  2 | task 2 |       total time = 1250038.43 ms / 28604 tokens\r\n22.24.806.450 I slot print_timing: id  2 | task 2 |    graphs reused =       9239\r\n22.24.806.462 I slot print_timing: id  2 | task 2 | draft acceptance = 0.45567 (13020 accepted / 28573 generated), mean len =  2.39\r\n22.24.806.799 I slot      release: id  2 | task 2 | stop processing: n_tokens = 28605, truncated = 0\r\n```\r\n\r\n\r\n",
+    "author": {
+     "login": "phr0gz"
+    },
+    "createdAt": "2026-08-14T21:10:15Z"
+   }
+  ]
+ }
+}

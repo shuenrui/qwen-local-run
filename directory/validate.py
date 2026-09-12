@@ -49,6 +49,12 @@ PROVENANCE = {"box", "forum", "vendor"}
 PROV_RANK = {"box": 3, "forum": 2, "vendor": 1, None: 0}
 
 STATUS = {"measured", "reported", "claimed", "untested", "broken"}
+PRACTICAL_STATUS = {"selected", "not_verified"}
+PRACTICAL_QUANTS = {
+    "bf16", "fp16", "fp8", "nvfp4", "mxfp4", "int8", "int4", "int4-hybrid",
+    "awq", "gptq", "autoround", "gguf-q8", "gguf-q6", "gguf-q5", "gguf-q4",
+    "mlx-8", "mlx-6", "mlx-4",
+}
 
 SOURCE_KINDS = {
     "repo", "model", "thread", "post", "video", "docs", "paper", "blog",
@@ -57,6 +63,43 @@ SOURCE_KINDS = {
 
 URL_RE = re.compile(r"^https?://\S+$")
 ID_RE = re.compile(r"^[a-z0-9][a-z0-9._-]*$")
+
+# device spec (data/device-schema.json): field shape per section. Numbers accept
+# null ("vendor does not publish") but never strings; strings must be non-empty.
+DEVICE_SECTIONS = {
+    "identity": {
+        "required": ("name", "chip", "manufacturer"),
+        "strings": ("name", "chip", "manufacturer", "os", "form_factor", "sku"),
+        "numbers": (),
+    },
+    "memory": {
+        "required": ("total_gb", "type"),
+        "strings": ("type", "note"),
+        "numbers": ("total_gb", "usable_gb", "bandwidth_gbs", "interface_bits", "channels"),
+        "bools": ("unified",),
+    },
+    "compute": {
+        "required": (),
+        "strings": ("cpu_cores", "note"),
+        "numbers": ("fp32_tflops", "fp16_dense_tflops", "fp16_sparse_tflops",
+                    "fp8_dense_tflops", "fp8_sparse_tflops", "fp4_sparse_pflops",
+                    "tensor_ai_tops", "neural_engine_tops"),
+    },
+    "storage": {
+        "required": (),
+        "strings": ("type", "note"),
+        "numbers": ("read_gbs", "capacity_gb"),
+    },
+    "thermal": {
+        "required": (),
+        "strings": ("cooling", "note"),
+        "numbers": ("tdp_watts", "psu_watts"),
+    },
+}
+DEVICE_TOP_KEYS = set(DEVICE_SECTIONS) | {"variants", "sources"}
+DEVICE_VARIANT_KEYS = {"id", "name", "chip", "memory_configs", "bandwidth_gbs",
+                       "fp32_tflops", "tensor_ai_tops", "neural_engine_tops",
+                       "tdp_watts", "note"}
 
 REQUIRED_SETUP = [
     "id", "title", "model", "variation", "engine", "hardware",
@@ -116,6 +159,122 @@ def check_url(rep: Report, where: str, field: str, value) -> None:
         rep.err(where, f"{field} {value!r} is not an http(s) URL")
 
 
+def check_device(rep: Report, where: str, dev, hw=None) -> None:
+    """Validate a device spec block (data/device-schema.json).
+
+    `hw` is the enclosing hardware record, when the block sits in one; it
+    enables the cross-checks that keep the block and the record's top-level
+    numbers from drifting apart. `hw=None` for per-setup override blocks.
+    """
+    if not isinstance(dev, dict):
+        rep.err(where, f"device must be an object, got {type(dev).__name__}")
+        return
+    unknown = set(dev) - DEVICE_TOP_KEYS
+    if unknown:
+        rep.err(where, f"device has unknown keys {sorted(unknown)}; allowed: {sorted(DEVICE_TOP_KEYS)}")
+
+    for section, spec in DEVICE_SECTIONS.items():
+        if section not in dev:
+            if spec["required"]:
+                rep.err(where, f"device.{section} missing (requires {list(spec['required'])})")
+            continue
+        sec = dev[section]
+        if sec is None:
+            continue
+        if not isinstance(sec, dict):
+            rep.err(where, f"device.{section} must be an object")
+            continue
+        sw = f"{where}.device.{section}"
+        unknown = set(sec) - set(spec["strings"]) - set(spec["numbers"]) - set(spec.get("bools", ()))
+        if unknown:
+            rep.err(sw, f"unknown keys {sorted(unknown)}")
+        num_fields, str_fields = set(spec["numbers"]), set(spec["strings"])
+        bool_fields = set(spec.get("bools", ()))
+        for f in spec["required"]:
+            val = sec.get(f)
+            if f in num_fields:
+                if isinstance(val, bool) or not isinstance(val, (int, float)):
+                    rep.err(sw, f"{f} must be a number, got {val!r}")
+            elif not isinstance(val, str) or not val.strip():
+                rep.err(sw, f"{f} must be a non-empty string, got {val!r}")
+        for f in spec["strings"]:
+            if f in sec and sec[f] is not None and (not isinstance(sec[f], str) or not sec[f].strip()):
+                rep.err(sw, f"{f} must be a non-empty string or null, got {sec[f]!r}")
+        for f in spec["numbers"]:
+            val = sec.get(f)
+            if val is None:
+                continue
+            if isinstance(val, bool) or not isinstance(val, (int, float)):
+                rep.err(sw, f"{f} must be a number or null, got {val!r}")
+            elif val < 0:
+                rep.err(sw, f"{f} must be >= 0, got {val!r}")
+        for f in bool_fields:
+            val = sec.get(f)
+            if val is not None and not isinstance(val, bool):
+                rep.err(sw, f"{f} must be a boolean or null, got {val!r}")
+
+    mem = dev.get("memory") or {}
+    if isinstance(mem.get("total_gb"), (int, float)) and not isinstance(mem["total_gb"], bool) \
+            and mem["total_gb"] <= 0:
+        rep.err(f"{where}.device.memory", f"total_gb must be positive, got {mem['total_gb']!r}")
+    bw = mem.get("bandwidth_gbs")
+    if isinstance(bw, (int, float)) and not isinstance(bw, bool) and bw <= 0:
+        rep.err(f"{where}.device.memory", f"bandwidth_gbs must be positive, got {bw!r}")
+
+    variants = dev.get("variants")
+    if variants is not None:
+        if not isinstance(variants, list):
+            rep.err(f"{where}.device.variants", "must be a list")
+        else:
+            seen = set()
+            for i, var in enumerate(variants):
+                vw = f"{where}.device.variants[{i}]"
+                if not isinstance(var, dict):
+                    rep.err(vw, "must be an object")
+                    continue
+                unknown = set(var) - DEVICE_VARIANT_KEYS
+                if unknown:
+                    rep.err(vw, f"unknown keys {sorted(unknown)}")
+                for f in ("id", "name", "chip"):
+                    if not isinstance(var.get(f), str) or not var[f].strip():
+                        rep.err(vw, f"{f} must be a non-empty string, got {var.get(f)!r}")
+                if isinstance(var.get("id"), str) and var["id"] in seen:
+                    rep.err(vw, f"duplicate variant id {var['id']!r}")
+                seen.add(var.get("id"))
+                vbw = var.get("bandwidth_gbs")
+                if isinstance(vbw, bool) or not isinstance(vbw, (int, float)) or vbw <= 0:
+                    rep.err(vw, f"bandwidth_gbs must be a positive number, got {vbw!r}")
+                elif hw and isinstance(hw.get("bandwidth_range_gbs"), list) and len(hw["bandwidth_range_gbs"]) == 2:
+                    lo, hi = hw["bandwidth_range_gbs"]
+                    if not (lo <= vbw <= hi):
+                        rep.err(vw, f"bandwidth {vbw} outside the class range [{lo}, {hi}]; "
+                                    f"widen the range or move the SKU to another class")
+
+    srcs = dev.get("sources")
+    if not isinstance(srcs, list) or not srcs:
+        rep.err(f"{where}.device.sources", "must be a non-empty list of {url, note}")
+    else:
+        for i, src in enumerate(srcs):
+            if not isinstance(src, dict):
+                rep.err(f"{where}.device.sources[{i}]", "must be an object with url and note")
+                continue
+            u = src.get("url")
+            if not isinstance(u, str) or not URL_RE.match(u):
+                rep.err(f"{where}.device.sources[{i}]", f"url {u!r} is not an http(s) URL")
+            if not isinstance(src.get("note"), str) or not src["note"].strip():
+                rep.err(f"{where}.device.sources[{i}]", "note must state which figures this source backs")
+
+    if hw:
+        if hw.get("vendor") == "Apple" and mem.get("unified") is not True:
+            rep.warn(f"{where}.device.memory",
+                     "Apple hardware should state memory.unified: true (CPU and GPU share one pool)")
+        if not hw.get("bandwidth_range_gbs") and hw.get("bandwidth_gbs") is not None \
+                and bw is not None and bw != hw["bandwidth_gbs"]:
+            rep.err(f"{where}.device.memory",
+                    f"bandwidth_gbs {bw} != hardware record's bandwidth_gbs {hw['bandwidth_gbs']} — "
+                    f"an exact-SKU device block must match its record")
+
+
 def main() -> int:
     strict = "--strict" in sys.argv
 
@@ -148,6 +307,39 @@ def main() -> int:
             rep.err(w, f"architecture.kind {arch.get('kind')!r} not dense|moe")
         if arch.get("kind") == "moe" and not arch.get("params_active_b"):
             rep.warn(w, "MoE model without params_active_b")
+        baseline = m.get("practical_baseline")
+        if not isinstance(baseline, dict):
+            rep.err(w, "practical_baseline must be an object")
+        else:
+            bstatus = baseline.get("status")
+            if bstatus not in PRACTICAL_STATUS:
+                rep.err(w, f"practical_baseline.status {bstatus!r} not in {sorted(PRACTICAL_STATUS)}")
+            reviewed = baseline.get("reviewed")
+            if not isinstance(reviewed, str) or not re.match(r"^\d{4}-\d{2}-\d{2}$", reviewed):
+                rep.err(w, "practical_baseline.reviewed must be YYYY-MM-DD")
+            target = baseline.get("setup")
+            if bstatus == "not_verified":
+                if target is not None:
+                    rep.err(w, "not_verified practical baseline must set setup to null")
+                if not isinstance(baseline.get("reason"), str) or not baseline["reason"].strip():
+                    rep.err(w, "not_verified practical baseline requires a reason")
+            elif bstatus == "selected":
+                if not isinstance(baseline.get("rationale"), str) or not baseline["rationale"].strip():
+                    rep.err(w, "selected practical baseline requires a rationale")
+                setup = setups.get(target)
+                if setup is None:
+                    rep.err(w, f"practical_baseline.setup {target!r} is not a setup id")
+                else:
+                    if setup.get("model") != mid:
+                        rep.err(w, f"practical baseline setup belongs to {setup.get('model')!r}, not {mid!r}")
+                    quant = setup.get("variation", {}).get("quant")
+                    if quant not in PRACTICAL_QUANTS:
+                        rep.err(w, f"practical baseline quant {quant!r} is below the stable 4-bit-or-better policy")
+                    if setup.get("status") not in {"measured", "reported"}:
+                        rep.err(w, "practical baseline setup must be measured or reported")
+                    run = setup.get("run", {})
+                    if not run.get("command") and len(run.get("steps") or []) < 2:
+                        rep.err(w, "practical baseline setup needs a command or at least two run steps")
 
     for hid, h in hardware.items():
         w = f"hardware/{hid}"
@@ -159,6 +351,11 @@ def main() -> int:
                 rep.err(w, f"missing {f}")
         if not isinstance(h.get("memory_gb"), (int, float)):
             rep.err(w, f"memory_gb must be a number, got {h.get('memory_gb')!r}")
+        if "device" in h:
+            check_device(rep, w, h["device"], hw=h)
+        else:
+            rep.warn(w, "no device spec — readers cannot see the bandwidth/compute behind "
+                        "this hardware's numbers (see data/device-schema.json)")
 
     for eid, e in engines.items():
         w = f"engines/{eid}"
@@ -235,6 +432,11 @@ def main() -> int:
             for h in hw:
                 if h not in hardware:
                     rep.err(w, f"unknown hardware id {h!r}")
+        # Optional per-setup device override: a measurement-specific hardware
+        # delta (e.g. an overclocked card). Same shape as the hardware block's
+        # device spec, without the record cross-checks.
+        if s.get("device") is not None:
+            check_device(rep, f"{w} device", s["device"])
 
         req = s.get("requirements", {})
         for f in ("memory_gb", "disk_gb"):
@@ -249,6 +451,9 @@ def main() -> int:
             if f not in run or run[f] is None:
                 rep.err(w, f"run.{f} missing or null")
         check_url(rep, w, "run.repo", run.get("repo"))
+        rc = run.get("repo_commit")
+        if rc is not None and (not isinstance(rc, str) or not rc.strip()):
+            rep.err(w, "run.repo_commit must be a non-empty string (commit sha or tag)")
         if not run.get("command") and not run.get("steps"):
             rep.err(w, "run needs a command or steps — this is the 'how to run' directory")
         steps = run.get("steps")
@@ -329,6 +534,11 @@ def main() -> int:
         for i, src in enumerate(srcs):
             sw = f"{w} sources[{i}]"
             check_url(rep, sw, "url", src.get("url"))
+            if src.get("mirror_url") is not None:
+                check_url(rep, sw, "mirror_url", src.get("mirror_url"))
+            if isinstance(src.get("url"), str) and "reddit.com" in src["url"] \
+                    and not src.get("mirror_url"):
+                rep.err(sw, "reddit.com source requires mirror_url (AGENTS law 10)")
             if src.get("kind") not in SOURCE_KINDS:
                 rep.err(sw, f"kind {src.get('kind')!r} not in enum")
 

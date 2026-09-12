@@ -1,0 +1,1732 @@
+{
+ "via": "twitter-cli user-posts -n 50",
+ "user": "NVIDIAAI",
+ "posts": [
+  {
+   "id": "2097780125295403513",
+   "text": "Commodore 64 🤝 Nemotron 3.5 Lightning",
+   "author": {
+    "id": "740238495952736256",
+    "name": "NVIDIA AI",
+    "screenName": "NVIDIAAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055340743552831488/me-KUIug_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 78,
+    "retweets": 6,
+    "replies": 9,
+    "quotes": 1,
+    "views": 10543,
+    "bookmarks": 4
+   },
+   "createdAt": "Wed Sep 09 20:12:11 +0000 2026",
+   "createdAtLocal": "2026-09-10 04:12",
+   "createdAtISO": "2026-09-09T20:12:11+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2097278228926710045",
+    "text": "Here I am chatting with @NVIDIAAIDev Nemotron 3.5 Lightening from my Commodore 64! Who says you can’t teach an old dog new tricks? https://t.co/BUixVxEMg0",
+    "author": {
+     "screenName": "duncsand",
+     "name": "Duncan Anderson 🍃🔋⚡️🤖"
+    }
+   }
+  },
+  {
+   "id": "2097697109466091647",
+   "text": "Looking for reasons to enter the @NVIDIAGTC Berlin Golden Ticket Contest? 🎫 Here are three.\n\nTomorrow is your last chance to enter. Share a short video or link to your open model project, tag the judge you heard about the contest from, and include #NVIDIAGTC for a chance to win.\n\nContest details: https://t.co/TnDmtkhOx3",
+   "author": {
+    "id": "740238495952736256",
+    "name": "NVIDIA AI",
+    "screenName": "NVIDIAAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055340743552831488/me-KUIug_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 68,
+    "retweets": 10,
+    "replies": 6,
+    "quotes": 2,
+    "views": 9554,
+    "bookmarks": 5
+   },
+   "createdAt": "Wed Sep 09 14:42:18 +0000 2026",
+   "createdAtLocal": "2026-09-09 22:42",
+   "createdAtISO": "2026-09-09T14:42:18+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2097697075253202944/vid/avc1/576x1024/xkuebSWVlJ3yfiYc.mp4?tag=16",
+     "width": 576,
+     "height": 1024
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097409504728269183",
+   "text": "Visual AI needs to recognize a scene, understand what happened and predict what could happen next.\n\nFor the AI City Challenge at #ECCV2026, teams built systems to do just that. Four of the top five video solutions used NVIDIA Cosmos ⬇️ https://t.co/TaMgIwbgI3",
+   "author": {
+    "id": "740238495952736256",
+    "name": "NVIDIA AI",
+    "screenName": "NVIDIAAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055340743552831488/me-KUIug_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 187,
+    "retweets": 38,
+    "replies": 22,
+    "quotes": 5,
+    "views": 15032,
+    "bookmarks": 45
+   },
+   "createdAt": "Tue Sep 08 19:39:28 +0000 2026",
+   "createdAtLocal": "2026-09-09 03:39",
+   "createdAtISO": "2026-09-08T19:39:28+00:00",
+   "media": [],
+   "urls": [
+    "https://x.com/i/article/2097403260382666752"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "articleTitle": "Building Robust Visual AI Systems: Winners from the AI City Challenge  "
+  },
+  {
+   "id": "2097369213669441565",
+   "text": "Ask the Experts: How NVIDIA OpenShell Secures Autonomous Agents | Nemotron Labs https://t.co/avs8j8i5vu",
+   "author": {
+    "id": "740238495952736256",
+    "name": "NVIDIA AI",
+    "screenName": "NVIDIAAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055340743552831488/me-KUIug_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 76,
+    "retweets": 6,
+    "replies": 7,
+    "quotes": 1,
+    "views": 11256,
+    "bookmarks": 13
+   },
+   "createdAt": "Tue Sep 08 16:59:22 +0000 2026",
+   "createdAtLocal": "2026-09-09 00:59",
+   "createdAtISO": "2026-09-08T16:59:22+00:00",
+   "media": [],
+   "urls": [
+    "https://x.com/i/broadcasts/1rxmqpAwVkvxy"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097098034601693302",
+   "text": "We're adding a few Qwen3.8-Flash-Next recipes to the SGLang cookbook, each verified on the hardware:\n\n- 1x RTX PRO 6000, PLE table in system RAM\n- 1x DGX Spark, PLE table on local NVMe\n- 2x DGX Spark, TP=2\n- NVFP4 support for both the RadixArk export and @NVIDIAAI's ModelOpt export\n\nCookbook: https://t.co/XtdY5WidJz\n\nThanks to everyone who has been testing and sharing feedback. We've been following the community reports closely and fixed a number of issues that came with this new architecture.\n\nMore performance work is on the way, and we want to be ready for what comes next from the Qwen family!",
+   "author": {
+    "id": "1923440305703092226",
+    "name": "SGLang",
+    "screenName": "sgl_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1923445139319685126/pyjcWZU7_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 264,
+    "retweets": 31,
+    "replies": 15,
+    "quotes": 7,
+    "views": 35830,
+    "bookmarks": 198
+   },
+   "createdAt": "Mon Sep 07 23:01:48 +0000 2026",
+   "createdAtLocal": "2026-09-08 07:01",
+   "createdAtISO": "2026-09-07T23:01:48+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRpjd64bgAA8OJ1.jpg",
+     "width": 1360,
+     "height": 1848
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "NVIDIAAI",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2092593561258897700",
+    "text": "Congrats to @Alibaba_Qwen on launching Qwen3.8-Flash! SGLang is proud to be a day-0 partner supporting the new architecture preview for Qwen4.\n\nIt's a 125B main model with 51B of N-gram embeddings and 6B activated per token.\n\nThe 51B N-gram embeddings scale model capacity with almost no extra compute per token, and can sit in host memory with async prefetch instead of occupying GPU memory.\n\nThe GDN + QSA hybrid attention gives you efficient memory and precise retrieval at the same time on long-horizon tasks, while Gated Residual gives the model 4 lanes instead of 1 to pass information between layers. And it's trained with Muon!\n\nWe're excited for what's next with Qwen4, and we already have plenty of ideas for how to use the N-gram embeddings in new deployment setups. Stay tuned!\n\nBlog and cookbook in the comments👇",
+    "author": {
+     "screenName": "sgl_project",
+     "name": "SGLang"
+    }
+   }
+  },
+  {
+   "id": "2097278805564170463",
+   "text": "Specializing AI for Regulated Industries - How Domyn Uses NVIDIA Nemotron https://t.co/Zw8i7qU4gV",
+   "author": {
+    "id": "740238495952736256",
+    "name": "NVIDIA AI",
+    "screenName": "NVIDIAAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055340743552831488/me-KUIug_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 88,
+    "retweets": 8,
+    "replies": 14,
+    "quotes": 4,
+    "views": 11363,
+    "bookmarks": 18
+   },
+   "createdAt": "Tue Sep 08 11:00:07 +0000 2026",
+   "createdAtLocal": "2026-09-08 19:00",
+   "createdAtISO": "2026-09-08T11:00:07+00:00",
+   "media": [],
+   "urls": [
+    "https://x.com/i/broadcasts/1RKZzBROErwKB"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2096700264569090384",
+   "text": "@ChaseLochmiller @OpenAI GPT-6 Astra, trained on ~100K+ NVIDIA Grace Blackwell NVLink72. From ChatGPT to o1 to Astra in 4 years.\n\nAGI has arrived. Congratulations @OpenAI team.\n\n400K GPUs coming online next.",
+   "author": {
+    "id": "2070631956824698880",
+    "name": "Jensen Huang",
+    "screenName": "JensenHuang",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2080613261674962944/OMXX4RJ3_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 41710,
+    "retweets": 4741,
+    "replies": 1855,
+    "quotes": 2774,
+    "views": 11889102,
+    "bookmarks": 6572
+   },
+   "createdAt": "Sun Sep 06 20:41:12 +0000 2026",
+   "createdAtLocal": "2026-09-07 04:41",
+   "createdAtISO": "2026-09-06T20:41:12+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "NVIDIAAI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2096032566310789528",
+   "text": "Congrats to our researchers for exceeding the gold medal threshold on the International Olympiad in Informatics (IOI) 2026 problem set 🥇\n\nOur fine-tuned Nemotron model scored 535.4 out of 600, as graded by the IOI team — higher than the top-scoring human participant.\n\nThe team competed unofficially in Uzbekistan, where the International Technical Committee supervised the human contestants. The model had no internet access and faced the same time limits and submission constraints, using the same platform in parallel with the official competition.\n\nRead more in the technical report: https://t.co/4paFvrIV2B",
+   "author": {
+    "id": "740238495952736256",
+    "name": "NVIDIA AI",
+    "screenName": "NVIDIAAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055340743552831488/me-KUIug_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 602,
+    "retweets": 83,
+    "replies": 49,
+    "quotes": 26,
+    "views": 60164,
+    "bookmarks": 135
+   },
+   "createdAt": "Sat Sep 05 00:28:00 +0000 2026",
+   "createdAtLocal": "2026-09-05 08:28",
+   "createdAtISO": "2026-09-05T00:28:00+00:00",
+   "media": [
+    {
+     "type": "animated_gif",
+     "url": "https://video.twimg.com/tweet_video/HRaZxAMbEAAKSlR.mp4",
+     "width": 720,
+     "height": 720
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2095916654081487339",
+   "text": "Need faster LLM inference without sacrificing accuracy? Speculative decoding can help.\n\nChoosing the right draft length and drafting method depends on your model, workload and hardware. We break down five practical guidelines for balancing throughput and latency. https://t.co/k6yqH8p9ig",
+   "author": {
+    "id": "740238495952736256",
+    "name": "NVIDIA AI",
+    "screenName": "NVIDIAAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055340743552831488/me-KUIug_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 436,
+    "retweets": 51,
+    "replies": 32,
+    "quotes": 9,
+    "views": 35977,
+    "bookmarks": 126
+   },
+   "createdAt": "Fri Sep 04 16:47:25 +0000 2026",
+   "createdAtLocal": "2026-09-05 00:47",
+   "createdAtISO": "2026-09-04T16:47:25+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2095913966115721216/vid/avc1/1920x1080/uZFNEX0zTTvaqWDf.mp4?tag=29",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2095927174025118129",
+   "text": "Read the technical blog for the five guidelines: https://t.co/HaXwdiTYYB",
+   "author": {
+    "id": "740238495952736256",
+    "name": "NVIDIA AI",
+    "screenName": "NVIDIAAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055340743552831488/me-KUIug_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 35,
+    "retweets": 3,
+    "replies": 3,
+    "quotes": 2,
+    "views": 11146,
+    "bookmarks": 51
+   },
+   "createdAt": "Fri Sep 04 17:29:13 +0000 2026",
+   "createdAtLocal": "2026-09-05 01:29",
+   "createdAtISO": "2026-09-04T17:29:13+00:00",
+   "media": [],
+   "urls": [
+    "https://nvda.ws/3SSYxA7"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2095518531693806017",
+   "text": "Open models are essential to expanding access to AI and accelerating innovation around the world.\n\nWe're excited to help @huggingface scale its platform and community while preserving the openness, neutrality, and choice that have made it a trusted home for AI builders.\n\n🤗💚",
+   "author": {
+    "id": "61559439",
+    "name": "NVIDIA",
+    "screenName": "nvidia",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1828904711124078593/SRvCZSfQ_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1733,
+    "retweets": 223,
+    "replies": 131,
+    "quotes": 49,
+    "views": 165729,
+    "bookmarks": 104
+   },
+   "createdAt": "Thu Sep 03 14:25:25 +0000 2026",
+   "createdAtLocal": "2026-09-03 22:25",
+   "createdAtISO": "2026-09-03T14:25:25+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "NVIDIAAI",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095508870915338284",
+    "text": "🤗💚\nhttps://t.co/coHXLgzNXh https://t.co/Ju5e0R4roZ",
+    "author": {
+     "screenName": "huggingface",
+     "name": "Hugging Face"
+    }
+   }
+  },
+  {
+   "id": "2095482998674112733",
+   "text": "Super happy to share our intention to join forces with NVIDIA in a $12,930,300,000 acquisition  💛💚\n\n10 years after starting Hugging Face, open-source AI is at an inflection point. Thanks to the community, we’ve shown that it can be a complement, and even an alternative, to closed-source APIs. But for it to happen at larger scale, it needs more compute, more support, more collaboration and more visibility. That’s why we went to talk to Jensen, who offered to do exactly that with us.\n\nIn addition to doubling down on NVIDIA’s massive contributions to open-source AI (I called them the “King of American open-source AI” earlier this year), they’ve committed to strongly supporting Hugging Face and our mission while keeping the platform open, independent and compute agnostic. The founders and the team are all staying to keep pushing this mission forward.\n\nTogether, we think we can make open source the default way to build AI, with the goal of empowering 100 million AI builders to own their intelligence rather than rent it.\n\nExcited about the next 10 years! 🤗🤗🤗",
+   "author": {
+    "id": "186420551",
+    "name": "clem 🤗",
+    "screenName": "ClementDelangue",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1100512198139498497/utHSJ4st_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 13398,
+    "retweets": 1225,
+    "replies": 970,
+    "quotes": 414,
+    "views": 1459151,
+    "bookmarks": 991
+   },
+   "createdAt": "Thu Sep 03 12:04:13 +0000 2026",
+   "createdAtLocal": "2026-09-03 20:04",
+   "createdAtISO": "2026-09-03T12:04:13+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRSmdnWbgAA4q_X.jpg",
+     "width": 3410,
+     "height": 1742
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "NVIDIAAI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2095482647355244762",
+   "text": "Exciting day for NVIDIA and @huggingface.\n\nOpen models strengthen safety and cybersecurity, accelerate innovation and diffusion, and enable sovereignty. They allow every developer, startup, university, industry and country to build with, customize and benefit from AI.\n\nThank you @ClementDelangue for coming to me.\n\nNVIDIA is going to be a great home for Hugging Face, its community and the future of open models. 🤗\n\nhttps://t.co/q8Om2Xc5ye",
+   "author": {
+    "id": "2070631956824698880",
+    "name": "Jensen Huang",
+    "screenName": "JensenHuang",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2080613261674962944/OMXX4RJ3_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 26928,
+    "retweets": 3304,
+    "replies": 1556,
+    "quotes": 1229,
+    "views": 5821753,
+    "bookmarks": 1893
+   },
+   "createdAt": "Thu Sep 03 12:02:49 +0000 2026",
+   "createdAtLocal": "2026-09-03 20:02",
+   "createdAtISO": "2026-09-03T12:02:49+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "NVIDIAAI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2095182800366256253",
+   "text": "@nvidia is now the leading company in the number of open-source AI repositories on @huggingface.\n\nThis chart tracks major Hugging Face repositories - models, datasets and spaces - over the past 12 months.\n\nA year ago, NVIDIA was one of several large contributors. It has since pulled away, adding more than 500 repositories, ahead of Alibaba Cloud, Hugging Face and Tencent since September 2025. These include its own Nemotron model family, Cosmos world models and GR00T data and models for robotics, as well as widely used robotics datasets and optimized versions of other models. This reflects a broader strategy recently articulated by @JensenHuang, who has increasingly positioned open models as central to NVIDIA’s role in AI.\n\nThis massive acceleration is part of a broader shift in the AI ecosystem. Large technology companies are becoming central players in open-source AI. Leading figures such as @ylecun have long argued that open models could become a form of shared infrastructure, allowing companies, countries and researchers to build without depending entirely on a handful of proprietary models.\n\nWhat very few saw coming, even a year ago, was how quickly that view would become mainstream. The recent open letter signed by NVIDIA, Meta, Microsoft, Amazon, Google, and OpenAI and dozens of other leading AI organizations made the case explicitly - the AI ecosystem needs a strong open frontier.\n\nIn 2026, open-source has moved to the very core of the AI ecosystem by pretty much every metric. Usage is perhaps the clearest signal. On OpenRouter, open models accounted for roughly a quarter of routed tokens through much of 2025. They crossed 50% in spring 2026 and have held a majority since May - meaning that, on the platform, more tokens now flow through open models than closed ones.\n\nAt the same time, the performance gap with proprietary models has collapsed from years to just a few months. On most benchmarks, the best open-weight models score similar to the best closed-source ones. The leading open-source models are now Kimi K3, GLM 5.3, Qwen 3.8 Max and DeepSeek v4 Pro.\n\nQwen and DeepSeek also lead in downloads on Hugging Face, while models from https://t.co/IXn3KHYkgy, Tencent, Xiaomi and NVIDIA are among the most used on OpenRouter. The center of gravity of open-source AI is clearly shifting, with Chinese labs - as we have noted for some time - now playing a defining role in both the technological frontier and global adoption.\n\nThe more capable and accessible the open ecosystem becomes, the easier it is for companies to build agents, robots and specialized AI systems. That opens new possibilities for where value is created, who gets to participate in the AI economy, and how countries and companies think about technological sovereignty.\n\n*Note: We consider only repositories published by companies, with at least 500 downloads and 10 likes for spaces. Major non-company publishers, such as the nonprofit Allen Institute for AI (AI2), are therefore excluded.",
+   "author": {
+    "id": "1042525811494928384",
+    "name": "Pierre-Alexandre Balland",
+    "screenName": "pa_balland",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1394641011725541382/PGO-KhOJ_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 45,
+    "retweets": 10,
+    "replies": 4,
+    "quotes": 4,
+    "views": 21115,
+    "bookmarks": 17
+   },
+   "createdAt": "Wed Sep 02 16:11:20 +0000 2026",
+   "createdAtLocal": "2026-09-03 00:11",
+   "createdAtISO": "2026-09-02T16:11:20+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HROVJ5LXEAIz1-K.jpg",
+     "width": 4096,
+     "height": 2846
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "NVIDIAAI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2095232821912912328",
+   "text": "DGX Spark Live: Perplexity Portable Computer Goes Local https://t.co/jYwLOCtKly",
+   "author": {
+    "id": "740238495952736256",
+    "name": "NVIDIA AI",
+    "screenName": "NVIDIAAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055340743552831488/me-KUIug_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 188,
+    "retweets": 20,
+    "replies": 10,
+    "quotes": 4,
+    "views": 73385,
+    "bookmarks": 92
+   },
+   "createdAt": "Wed Sep 02 19:30:06 +0000 2026",
+   "createdAtLocal": "2026-09-03 03:30",
+   "createdAtISO": "2026-09-02T19:30:06+00:00",
+   "media": [],
+   "urls": [
+    "https://x.com/i/broadcasts/1jGXgBXzpOXKZ"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2095187846462054455",
+   "text": "Across Europe, AI communities have been moving the field forward for years. This October, Berlin becomes a meeting point for the people building what comes next. 🤝\n\nJoin researchers, developers, engineers, and industry leaders at #NVIDIAGTC Berlin, October 20-22.\n\nRegister today: https://t.co/k08Luxgg8k",
+   "author": {
+    "id": "61559439",
+    "name": "NVIDIA",
+    "screenName": "nvidia",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1828904711124078593/SRvCZSfQ_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 299,
+    "retweets": 50,
+    "replies": 33,
+    "quotes": 3,
+    "views": 81319,
+    "bookmarks": 15
+   },
+   "createdAt": "Wed Sep 02 16:31:23 +0000 2026",
+   "createdAtLocal": "2026-09-03 00:31",
+   "createdAtISO": "2026-09-02T16:31:23+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2095187807803236356/vid/avc1/720x720/C_RM956jYJBs00AW.mp4?tag=14",
+     "width": 1024,
+     "height": 1024
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "NVIDIAAI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2095217259610550730",
+   "text": "The Open Secure AI Alliance is beginning its next chapter with the Linux Foundation.\n\nWe helped form the alliance to bring organizations together around open, practical ways to secure AI systems. Great to see that work continue with the Linux Foundation.",
+   "author": {
+    "id": "740238495952736256",
+    "name": "NVIDIA AI",
+    "screenName": "NVIDIAAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055340743552831488/me-KUIug_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 406,
+    "retweets": 56,
+    "replies": 24,
+    "quotes": 5,
+    "views": 35686,
+    "bookmarks": 81
+   },
+   "createdAt": "Wed Sep 02 18:28:16 +0000 2026",
+   "createdAtLocal": "2026-09-03 02:28",
+   "createdAtISO": "2026-09-02T18:28:16+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095211915408761156",
+    "text": "The Open Secure AI Alliance is now part of the Linux Foundation. \n\nOriginally founded by @nvidia, the Open Secure AI Alliance will develop open source tools, shared standards, and defensive practices that help organizations inspect, audit, and secure AI systems.\n\nLearn more: https://t.co/RoUtj3L0S2",
+    "author": {
+     "screenName": "linuxfoundation",
+     "name": "The Linux Foundation"
+    }
+   }
+  },
+  {
+   "id": "2095210177687654880",
+   "text": "AITX Austin Hackathon Winners Spotlight https://t.co/JHdIq4f7GV",
+   "author": {
+    "id": "740238495952736256",
+    "name": "NVIDIA AI",
+    "screenName": "NVIDIAAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055340743552831488/me-KUIug_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 58,
+    "retweets": 5,
+    "replies": 5,
+    "quotes": 0,
+    "views": 11820,
+    "bookmarks": 11
+   },
+   "createdAt": "Wed Sep 02 18:00:08 +0000 2026",
+   "createdAtLocal": "2026-09-03 02:00",
+   "createdAtISO": "2026-09-02T18:00:08+00:00",
+   "media": [],
+   "urls": [
+    "https://x.com/i/broadcasts/1dGYlaVzALyKX"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094849929487552663",
+   "text": "🎬Video generation faster than playback!\n\n🚀MiniMax H3 on vLLM-Omni + FastVideo's FastH3: a complete 10.1s MP4 - video AND synchronized audio - rendered in 8.7s!⚡️\n\nThanks to @MiniMax_AI for the great Minimax H3 release, the FastVideo team @haoailab for open-sourcing FastH3 and helping on the serving integration, and @NVIDIAAI for the continued sponsorship and joint optimization efforts!",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 606,
+    "retweets": 79,
+    "replies": 27,
+    "quotes": 19,
+    "views": 86532,
+    "bookmarks": 513
+   },
+   "createdAt": "Tue Sep 01 18:08:38 +0000 2026",
+   "createdAtLocal": "2026-09-02 02:08",
+   "createdAtISO": "2026-09-01T18:08:38+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRJm6M5aMAAA9zI.jpg",
+     "width": 1199,
+     "height": 609
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "NVIDIAAI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094842432475304374",
+   "text": "Can a security defense catch an attack it hasn’t seen before?\n\nWe teamed with @CrowdStrike to evaluate an offensive-defensive system built on its SafeMind agentic system, where AI agents simulate controlled attacks, turn telemetry into detection rules, then test them against new attack paths.\n\nHere’s how it works 🧵",
+   "author": {
+    "id": "740238495952736256",
+    "name": "NVIDIA AI",
+    "screenName": "NVIDIAAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055340743552831488/me-KUIug_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 609,
+    "retweets": 90,
+    "replies": 36,
+    "quotes": 20,
+    "views": 69689,
+    "bookmarks": 377
+   },
+   "createdAt": "Tue Sep 01 17:38:50 +0000 2026",
+   "createdAtLocal": "2026-09-02 01:38",
+   "createdAtISO": "2026-09-01T17:38:50+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRJfUE5akAA1-y3.jpg",
+     "width": 2174,
+     "height": 1166
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094842434949874116",
+   "text": "When tested against the original recorded attack, the optimized open pipeline improved mean backtest detection from 16.5% to 41.9% across independently seeded sessions.\n\nIt brought together domain context, specialized models, tools and validation. https://t.co/GHWUZ2ta90",
+   "author": {
+    "id": "740238495952736256",
+    "name": "NVIDIA AI",
+    "screenName": "NVIDIAAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055340743552831488/me-KUIug_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 30,
+    "retweets": 2,
+    "replies": 1,
+    "quotes": 0,
+    "views": 6020,
+    "bookmarks": 6
+   },
+   "createdAt": "Tue Sep 01 17:38:51 +0000 2026",
+   "createdAtLocal": "2026-09-02 01:38",
+   "createdAtISO": "2026-09-01T17:38:51+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRJfaqBaYAAmvCD.jpg",
+     "width": 1936,
+     "height": 958
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094842437068026262",
+   "text": "The detection rules were tested against eight new attacks not used to create them.\n\nThree rules met all quality gates and caught all eight.\n\nThe setup paired Nemotron 3 Ultra for orchestration with a fine-tuned Nemotron 3 Super for detection writing and repair.\n\nRead the technical breakdown: https://t.co/d6LFfJWE0J",
+   "author": {
+    "id": "740238495952736256",
+    "name": "NVIDIA AI",
+    "screenName": "NVIDIAAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055340743552831488/me-KUIug_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 28,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 1,
+    "views": 4447,
+    "bookmarks": 8
+   },
+   "createdAt": "Tue Sep 01 17:38:51 +0000 2026",
+   "createdAtLocal": "2026-09-02 01:38",
+   "createdAtISO": "2026-09-01T17:38:51+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRJfjWmaEAAqZDN.jpg",
+     "width": 2072,
+     "height": 1342
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094832623302656372",
+   "text": "Ask the Experts: NVIDIA NeMo Switchyard | Nemotron Labs https://t.co/tqm3KDQfHa",
+   "author": {
+    "id": "740238495952736256",
+    "name": "NVIDIA AI",
+    "screenName": "NVIDIAAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055340743552831488/me-KUIug_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 71,
+    "retweets": 11,
+    "replies": 7,
+    "quotes": 1,
+    "views": 11742,
+    "bookmarks": 13
+   },
+   "createdAt": "Tue Sep 01 16:59:52 +0000 2026",
+   "createdAtLocal": "2026-09-02 00:59",
+   "createdAtISO": "2026-09-01T16:59:52+00:00",
+   "media": [],
+   "urls": [
+    "https://x.com/i/broadcasts/1qJVmypLNAPGB"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094376289037689104",
+   "text": "2 DGX Sparks. Qwen3.8 Flash Next NVFP4.\n\n64 users, independent prompts + KV caches.  \n32,768 output tokens in 78.82s:\n\n415.7 tok/s\n\nVideo: 1K stress. Usable-context test passed 64K/user at C16, zero leakage. Testing Spark limits, not a production recipe.\n\n@NVIDIAAI https://t.co/2UY113o8nf",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 327,
+    "retweets": 30,
+    "replies": 18,
+    "quotes": 9,
+    "views": 40379,
+    "bookmarks": 158
+   },
+   "createdAt": "Mon Aug 31 10:46:33 +0000 2026",
+   "createdAtLocal": "2026-08-31 18:46",
+   "createdAtISO": "2026-08-31T10:46:33+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2094375273739272192/vid/avc1/1920x1080/jrVrceVaMINlgFZ2.mp4?tag=29",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "NVIDIAAI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2093444391797158049",
+   "text": "Already running an inference engine? So where does NVIDIA Dynamo fit in?\n\nIn five minutes, we break down how Dynamo sits around engines like @sgl_project, @vllm_project and TensorRT-LLM to scale inference across GPUs and nodes.\n\nFull video in the comments 🔽 https://t.co/BA093Ab3gJ",
+   "author": {
+    "id": "740238495952736256",
+    "name": "NVIDIA AI",
+    "screenName": "NVIDIAAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055340743552831488/me-KUIug_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 325,
+    "retweets": 41,
+    "replies": 52,
+    "quotes": 8,
+    "views": 30577,
+    "bookmarks": 122
+   },
+   "createdAt": "Fri Aug 28 21:03:31 +0000 2026",
+   "createdAtLocal": "2026-08-29 05:03",
+   "createdAtISO": "2026-08-28T21:03:31+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2093442877464735744/vid/avc1/1920x1080/zvLbigrrssvxxryc.mp4?tag=29",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2093444394502496368",
+   "text": "NVIDIA Dynamo in 5 Minutes by our very own @Vishakha2394:\nhttps://t.co/FhS1FS6n81",
+   "author": {
+    "id": "740238495952736256",
+    "name": "NVIDIA AI",
+    "screenName": "NVIDIAAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055340743552831488/me-KUIug_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 19,
+    "retweets": 3,
+    "replies": 1,
+    "quotes": 1,
+    "views": 9085,
+    "bookmarks": 7
+   },
+   "createdAt": "Fri Aug 28 21:03:32 +0000 2026",
+   "createdAtLocal": "2026-08-29 05:03",
+   "createdAtISO": "2026-08-28T21:03:32+00:00",
+   "media": [],
+   "urls": [
+    "https://www.youtube.com/watch?v=mXYFcz27eDw&feature=youtu.be"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2093360947608113363",
+   "text": "10 million downloads for NVIDIA Warp 🎉\n\nWarp started with a simple idea: you shouldn’t have to leave Python to get real GPU performance for physics and simulation.\n\nSince then, developers have used it to accelerate work across physics simulation, computational engineering, geometry processing and robotics.\n\nThank you to everyone who downloaded it, broke it, filed an issue or sent a PR. On to the next 10M!",
+   "author": {
+    "id": "740238495952736256",
+    "name": "NVIDIA AI",
+    "screenName": "NVIDIAAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055340743552831488/me-KUIug_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 489,
+    "retweets": 63,
+    "replies": 23,
+    "quotes": 8,
+    "views": 27239,
+    "bookmarks": 104
+   },
+   "createdAt": "Fri Aug 28 15:31:57 +0000 2026",
+   "createdAtLocal": "2026-08-28 23:31",
+   "createdAtISO": "2026-08-28T15:31:57+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQ0cfFAaQAAMPTw.jpg",
+     "width": 1200,
+     "height": 675
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2093360950149784034",
+   "text": "📺 Tune into next week's livestream to learn how to accelerate computational engineering and robotics with NVIDIA Warp: https://t.co/jY1i6F6tv3",
+   "author": {
+    "id": "740238495952736256",
+    "name": "NVIDIA AI",
+    "screenName": "NVIDIAAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055340743552831488/me-KUIug_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 10,
+    "retweets": 1,
+    "replies": 0,
+    "quotes": 0,
+    "views": 3237,
+    "bookmarks": 2
+   },
+   "createdAt": "Fri Aug 28 15:31:57 +0000 2026",
+   "createdAtLocal": "2026-08-28 23:31",
+   "createdAtISO": "2026-08-28T15:31:57+00:00",
+   "media": [],
+   "urls": [
+    "https://www.addevent.com/event/l123h7yl5qrz"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2093338311289139429",
+   "text": "Run Your Polars Code on Multiple GPUs | Live with cuDF Polars https://t.co/QiZpoYAZ7l",
+   "author": {
+    "id": "740238495952736256",
+    "name": "NVIDIA AI",
+    "screenName": "NVIDIAAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055340743552831488/me-KUIug_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 75,
+    "retweets": 5,
+    "replies": 12,
+    "quotes": 2,
+    "views": 12954,
+    "bookmarks": 10
+   },
+   "createdAt": "Fri Aug 28 14:02:00 +0000 2026",
+   "createdAtLocal": "2026-08-28 22:02",
+   "createdAtISO": "2026-08-28T14:02:00+00:00",
+   "media": [],
+   "urls": [
+    "https://x.com/i/broadcasts/1XxygwbyrYRGM"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2092738896459411574",
+   "text": "GLM 5.3 Flash will likely be my teams new daily driver\n\nUntuned I'm getting on 2xDGX Station TP=2\n881 tok/s C=64\n232 tok/s C= 1\n\nAt long context realistically can have 4-8 simultaneous users.\n\n+ it supports vision!",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 967,
+    "retweets": 31,
+    "replies": 61,
+    "quotes": 13,
+    "views": 131460,
+    "bookmarks": 297
+   },
+   "createdAt": "Wed Aug 26 22:20:08 +0000 2026",
+   "createdAtLocal": "2026-08-27 06:20",
+   "createdAtISO": "2026-08-26T22:20:08+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQrmREGacAA0OtW.jpg",
+     "width": 3672,
+     "height": 3672
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQrmTdWbQAAZeRy.jpg",
+     "width": 1610,
+     "height": 1380
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "NVIDIAAI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2092695996262449567",
+   "text": "Hardware like DGX Spark, with a local agentic computer, will become the gateway for consuming frontier tokens. https://t.co/BCXk48GhaJ",
+   "author": {
+    "id": "759894532649545732",
+    "name": "Aravind Srinivas",
+    "screenName": "AravSrinivas",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2097934672420384774/peq4weFE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 209,
+    "retweets": 17,
+    "replies": 29,
+    "quotes": 2,
+    "views": 38467,
+    "bookmarks": 30
+   },
+   "createdAt": "Wed Aug 26 19:29:40 +0000 2026",
+   "createdAtLocal": "2026-08-27 03:29",
+   "createdAtISO": "2026-08-26T19:29:40+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQq_t-yasAA59xi.jpg",
+     "width": 3556,
+     "height": 1670
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "NVIDIAAI",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2092694456495718741",
+    "text": "at perplexity we are really excited about multi-agent collaboration! we recently explored a simple instantiation of this with advisor escalation from a local model to a remote frontier model, where we showed it can significantly boost the local model's performance.\n\nan alternative way i like to think about this: the local model becomes a **gateway** to remote models. its main job is to preprocess all the raw tokens, package them into fewer, more information-dense tokens, and send only those to the server. this preprocessing has several advantages: it reduces cost and latency, enables personalization, and allows privacy controls. already such approaches can save 50% of tokens, but imagine a future where 90%+ of tokens are processed locally and only 10% are sent to the server for the last-mile hardest reasoning. that is a 10x cost reduction and a much more pleasant UX due to low latency.\n\ntraining such a multi-agent system is not an easy problem and still requires a lot of research in multi-agent RL, but we are making good progress and actively hiring for this. if this sounds interesting please DM me",
+    "author": {
+     "screenName": "denisyarats",
+     "name": "Denis Yarats"
+    }
+   }
+  },
+  {
+   "id": "2092670516964270101",
+   "text": "Run Qwen3.8-Flash-Next on your @NVIDIAAI 2x DGX Sparks with ease ✨\n\n- 900k context with Vision\n- SGLang, MTP, SM121 kernel patch\n- Stress tested with 300k tokens prefill\n\n~64 tok/s single stream (structural)\n~115 tok/s for 2-4 concurrent sessions\n\nConservative settings. Can probably be pushed further. Full decode numbers in the post below.\n\nGet it here:\nhttps://t.co/e4WwEShocx",
+   "author": {
+    "id": "1550009227493752834",
+    "name": "Mia",
+    "screenName": "MiaAI_lab",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2063908041691484160/5XsJBn7I_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 400,
+    "retweets": 44,
+    "replies": 50,
+    "quotes": 15,
+    "views": 66751,
+    "bookmarks": 250
+   },
+   "createdAt": "Wed Aug 26 17:48:25 +0000 2026",
+   "createdAtLocal": "2026-08-27 01:48",
+   "createdAtISO": "2026-08-26T17:48:25+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "NVIDIAAI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2092662629785575913",
+   "text": "Congrats to @Alibaba_Qwen on releasing Qwen3.8-Flash-Next, an experimental open-weight model that previews the Qwen4 architecture.\n\nWe’ve got Day 0 support to fine-tune with NVIDIA NeMo AutoModel and NeMo RL, plus recipes to run it with @sgl_project, @vllm_project and @lightseekorg TokenSpeed.\n\nGet started: https://t.co/qsFWpRIHEK",
+   "author": {
+    "id": "740238495952736256",
+    "name": "NVIDIA AI",
+    "screenName": "NVIDIAAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055340743552831488/me-KUIug_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 612,
+    "retweets": 53,
+    "replies": 29,
+    "quotes": 8,
+    "views": 121932,
+    "bookmarks": 69
+   },
+   "createdAt": "Wed Aug 26 17:17:05 +0000 2026",
+   "createdAtLocal": "2026-08-27 01:17",
+   "createdAtISO": "2026-08-26T17:17:05+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2092591393424515114",
+    "text": "⚡Meet Qwen3.8-Flash, a multimodal MoE and an early preview of the Qwen4 architecture, now open-weight!\n\nThe production version Qwen3.8-Flash will be available soon via QwenCloud API at just $ 0.16/1M input tokens and $ 0.47/1M output tokens.\n\n125B parameters + 51B N-gram embeddings, with just 6B activated per token. Unmatched cost-efficiency.\n\nWhat's new: 🥳\n- Next architecture: GDN + QSA hybrid attention, Gated Residual, N-gram Embedding & Muon optimizer, serving as a precursor to the architecture used in Qwen4.\n- Dramatically lower training and inference costs: trained at just 1/9 the cost of Qwen3.7-Plus, while outperforming it across the board with especially strong gains in coding and office tasks.\n- Strong performance: scoring 58.7 on DeepSWE 1.1, 62.5 on SWE-bench Pro, 73.9 on CoWorkBench, 84.5 on AndroidWorld, and 95.7 on MathVision (with CI).\n- 262K native context, extensible to 1M with YaRN.\n\nWe’re also releasing the weights for Qwen3.8-Flash-Next, giving the community an early look at the new architecture we’re exploring for Qwen4.🚀\n\nWe can't wait to see what you build with Qwen3.8-Flash!👀👇\n- Blog: https://t.co/M5hYypFLgJ\n- Technical Report: https://t.co/IF0gObIkQO\n- Hugging Face: https://t.co/6ow8QVAABt\n- ModelScope: https://t.co/tDOn2jNuFG",
+    "author": {
+     "screenName": "Alibaba_Qwen",
+     "name": "Qwen"
+    }
+   }
+  },
+  {
+   "id": "2092371238635307116",
+   "text": "When an LLM engine crashes, a cold restart can mean minutes of lost capacity.\n\nShadow engine recovery, a new preview feature in NVIDIA Dynamo, keeps a standby engine warmed up and ready to take over.\n\nIn our GLM-5.2 test, it restored capacity in 7.3 seconds, nearly 39x faster than a cold restart.\n\nRead all about it: https://t.co/dUVzW731vc",
+   "author": {
+    "id": "740238495952736256",
+    "name": "NVIDIA AI",
+    "screenName": "NVIDIAAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055340743552831488/me-KUIug_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 647,
+    "retweets": 54,
+    "replies": 37,
+    "quotes": 15,
+    "views": 62974,
+    "bookmarks": 153
+   },
+   "createdAt": "Tue Aug 25 21:59:12 +0000 2026",
+   "createdAtLocal": "2026-08-26 05:59",
+   "createdAtISO": "2026-08-25T21:59:12+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQmYg2WboAAtSra.jpg",
+     "width": 1600,
+     "height": 900
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2092267694565249127",
+   "text": "Introducing NVIDIA Jetson Orin Nano 2 👏\n\nBuilt to bring frontier intelligence to entry-level edge AI, this robotics computer will deliver:\n\n• 2x the inference performance of Jetson Orin Nano Super\n• 40% lower power consumption at the same performance in 15W mode\n• The same compact form factor\n\nRead the press release 👉 https://t.co/d3nGTlFPBD",
+   "author": {
+    "id": "92597440",
+    "name": "NVIDIA Robotics",
+    "screenName": "NVIDIARobotics",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1864439831335718915/WJ2VocNK_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1643,
+    "retweets": 183,
+    "replies": 94,
+    "quotes": 57,
+    "views": 153453,
+    "bookmarks": 433
+   },
+   "createdAt": "Tue Aug 25 15:07:45 +0000 2026",
+   "createdAtLocal": "2026-08-25 23:07",
+   "createdAtISO": "2026-08-25T15:07:45+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQk6YUBWgAEVuJ1.jpg",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "NVIDIAAI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2092310989249314872",
+   "text": "Get Started with Open Model Routing | Nemotron Labs https://t.co/9Escn0IiWu",
+   "author": {
+    "id": "740238495952736256",
+    "name": "NVIDIA AI",
+    "screenName": "NVIDIAAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055340743552831488/me-KUIug_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 99,
+    "retweets": 15,
+    "replies": 12,
+    "quotes": 1,
+    "views": 11765,
+    "bookmarks": 16
+   },
+   "createdAt": "Tue Aug 25 17:59:47 +0000 2026",
+   "createdAtLocal": "2026-08-26 01:59",
+   "createdAtISO": "2026-08-25T17:59:47+00:00",
+   "media": [],
+   "urls": [
+    "https://x.com/i/broadcasts/1RKZzByzYPgKB"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2092269109086126575",
+   "text": "Meet Portable Computer, Perplexity's new local-first agent stack on NVIDIA DGX Spark.\n\nWhen running locally, Portable Computer offers one-click local inference setup and an optimized agentic experience for DGX Spark.\n\nLearn more and get started today: https://t.co/0UElxhCnkY https://t.co/W07ZafKYdC",
+   "author": {
+    "id": "61559439",
+    "name": "NVIDIA",
+    "screenName": "nvidia",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1828904711124078593/SRvCZSfQ_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1221,
+    "retweets": 148,
+    "replies": 64,
+    "quotes": 42,
+    "views": 285724,
+    "bookmarks": 293
+   },
+   "createdAt": "Tue Aug 25 15:13:22 +0000 2026",
+   "createdAtLocal": "2026-08-25 23:13",
+   "createdAtISO": "2026-08-25T15:13:22+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQk7nQZbgAAQ55o.jpg",
+     "width": 1104,
+     "height": 736
+    }
+   ],
+   "urls": [
+    "https://blogs.nvidia.com/blog/local-ai-open-source-models-agents-nemotron/#perplexity-spark"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "NVIDIAAI",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2092268362386780270",
+    "text": "Today we’re launching Portable Computer on @NVIDIA DGX Spark.\n\nPortable Computer is a fully local version of Perplexity Computer, where the entire runtime: orchestrator LLM, subagent LLM, agent harness all run on your local hardware. No cloud dependency. https://t.co/plVWz5PaAw",
+    "author": {
+     "screenName": "perplexity_ai",
+     "name": "Perplexity"
+    }
+   }
+  },
+  {
+   "id": "2090851072617377977",
+   "text": "🚀 MiniMax H3 Super Acceleration in Sol-Engine🤩\n\nWe pushed H3 far beyond our previous 3–4× optimization regime — reaching 22.2× speedup for 5s video and 27.7× for 10s video vs. the published SGLang baseline.\n\nOn a single NVIDIA GB200:\n• 5s 768p: 152.3s → 6.85s (22.2×)\n• 10s 768p: 414.1s → 14.93s (27.7×)\n\nBut the more interesting part may be what this means economically.\n\nUsing MiniMax’s published H3 API price as a reference, we translate inference speed directly into production economics. Under an ideal fully utilized GB200 scenario, Sol-Super can serve about 525 five-second videos/hour, corresponding to roughly $210/hour of output value at the reference API price.\n\nAssuming $5.50/GPU-hour, that implies a 97%+ GPU-only gross margin in the idealized model.\n\nAt full utilization, one GB200 could produce:\n• 12.6K 5s videos/day\n• 378K videos/month\n• equivalent to 525 hours of finished video per month\n\nFor us, this is the bigger point of inference optimization: a 20×+ speedup does not just reduce latency — it can fundamentally change the unit economics, serving capacity, and viable business models of video generation.\n\n🔗 https://t.co/dI7uBD1dSo",
+   "author": {
+    "id": "1723702194380427264",
+    "name": "Enze Xie",
+    "screenName": "xieenze_jr",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1961177617966796804/YUIEHfrb_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 655,
+    "retweets": 84,
+    "replies": 47,
+    "quotes": 24,
+    "views": 121563,
+    "bookmarks": 788
+   },
+   "createdAt": "Fri Aug 21 17:18:36 +0000 2026",
+   "createdAtLocal": "2026-08-22 01:18",
+   "createdAtISO": "2026-08-21T17:18:36+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQQx4I5akAAsiXW.jpg",
+     "width": 2404,
+     "height": 1262
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQQx6lGbwAE2-Ek.jpg",
+     "width": 2494,
+     "height": 1132
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "NVIDIAAI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2091971982867022139",
+   "text": "Love seeing Nemotron 3.5 Lightning land in the top 4 open-weight models on @pinchbench with an 86.4% avg success rate on standardized @OpenClaw agent tests 🦞\n\nAnd Nemotron 3 Ultra is still holding down the #1 spot. https://t.co/w1RGTYUPGI",
+   "author": {
+    "id": "740238495952736256",
+    "name": "NVIDIA AI",
+    "screenName": "NVIDIAAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055340743552831488/me-KUIug_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 222,
+    "retweets": 24,
+    "replies": 18,
+    "quotes": 2,
+    "views": 16093,
+    "bookmarks": 18
+   },
+   "createdAt": "Mon Aug 24 19:32:42 +0000 2026",
+   "createdAtLocal": "2026-08-25 03:32",
+   "createdAtISO": "2026-08-24T19:32:42+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQgstH4awAA9Y4m.jpg",
+     "width": 1600,
+     "height": 900
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2090786258981466231",
+   "text": "Our general-purpose coding agent just scored 100% on the ARC-AGI-3 interactive reasoning benchmark.\n\nNVIDIA AVO completed all 183 levels across all 25 public environments, figuring out what to do with no instructions, explicit rules, or stated goals. https://t.co/UgROuDrMtn",
+   "author": {
+    "id": "740238495952736256",
+    "name": "NVIDIA AI",
+    "screenName": "NVIDIAAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055340743552831488/me-KUIug_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 6181,
+    "retweets": 702,
+    "replies": 339,
+    "quotes": 440,
+    "views": 1066365,
+    "bookmarks": 1940
+   },
+   "createdAt": "Fri Aug 21 13:01:03 +0000 2026",
+   "createdAtLocal": "2026-08-21 21:01",
+   "createdAtISO": "2026-08-21T13:01:03+00:00",
+   "media": [
+    {
+     "type": "animated_gif",
+     "url": "https://video.twimg.com/tweet_video/HQPz88kaUAAge0S.mp4",
+     "width": 1280,
+     "height": 720
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2090787290306228541",
+   "text": "NVIDIA AVO continuously inspects, plans, implements, and evaluates, using memory, tools, and execution feedback to build on what it learns along the way. This allows the system to sustain progress across long-running tasks rather than starting over with each model context.\n\nRead about AVO and how we built it for long-horizon autonomous agents: https://t.co/XF3Ng8zvTu",
+   "author": {
+    "id": "740238495952736256",
+    "name": "NVIDIA AI",
+    "screenName": "NVIDIAAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055340743552831488/me-KUIug_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 839,
+    "retweets": 65,
+    "replies": 34,
+    "quotes": 17,
+    "views": 150272,
+    "bookmarks": 445
+   },
+   "createdAt": "Fri Aug 21 13:05:09 +0000 2026",
+   "createdAtLocal": "2026-08-21 21:05",
+   "createdAtISO": "2026-08-21T13:05:09+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQP36bJbUAARrRm.jpg",
+     "width": 1672,
+     "height": 941
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2090851839411655058",
+   "text": "https://t.co/3GN1Mz1j7M",
+   "author": {
+    "id": "740238495952736256",
+    "name": "NVIDIA AI",
+    "screenName": "NVIDIAAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055340743552831488/me-KUIug_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 101,
+    "retweets": 4,
+    "replies": 1,
+    "quotes": 0,
+    "views": 27351,
+    "bookmarks": 17
+   },
+   "createdAt": "Fri Aug 21 17:21:39 +0000 2026",
+   "createdAtLocal": "2026-08-22 01:21",
+   "createdAtISO": "2026-08-21T17:21:39+00:00",
+   "media": [],
+   "urls": [
+    "https://x.com/NVIDIAAI/status/2090842341196407089"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "zxx",
+   "score": null,
+   "quotedTweet": {
+    "id": "2090842341196407089",
+    "text": "As AI agents take on more complex work, where should security live?\n\nThe harness guides what an agent tries to do. Infrastructure controls what it can actually do.\n\nOur AI safety and security teams share how they’re thinking about security across the agent stack. 👇 https://t.co/rAAi4FUZZC",
+    "author": {
+     "screenName": "NVIDIAAI",
+     "name": "NVIDIA AI"
+    }
+   }
+  },
+  {
+   "id": "2090842341196407089",
+   "text": "As AI agents take on more complex work, where should security live?\n\nThe harness guides what an agent tries to do. Infrastructure controls what it can actually do.\n\nOur AI safety and security teams share how they’re thinking about security across the agent stack. 👇 https://t.co/rAAi4FUZZC",
+   "author": {
+    "id": "740238495952736256",
+    "name": "NVIDIA AI",
+    "screenName": "NVIDIAAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055340743552831488/me-KUIug_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 419,
+    "retweets": 56,
+    "replies": 55,
+    "quotes": 12,
+    "views": 76570,
+    "bookmarks": 81
+   },
+   "createdAt": "Fri Aug 21 16:43:54 +0000 2026",
+   "createdAtLocal": "2026-08-22 00:43",
+   "createdAtISO": "2026-08-21T16:43:54+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQQpLlDboAM--_2.jpg",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2090842343092232243",
+   "text": "A closer look at how the stack fits together, from the components that guide an agent’s behavior to the infrastructure that enforces its security boundaries.\n\nRead the deep dive: https://t.co/QfuHliLg2O https://t.co/idG79d41Vo",
+   "author": {
+    "id": "740238495952736256",
+    "name": "NVIDIA AI",
+    "screenName": "NVIDIAAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055340743552831488/me-KUIug_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 56,
+    "retweets": 9,
+    "replies": 5,
+    "quotes": 0,
+    "views": 7007,
+    "bookmarks": 25
+   },
+   "createdAt": "Fri Aug 21 16:43:55 +0000 2026",
+   "createdAtLocal": "2026-08-22 00:43",
+   "createdAtISO": "2026-08-21T16:43:55+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQQpW1wboAMn5m3.jpg",
+     "width": 1406,
+     "height": 1048
+    }
+   ],
+   "urls": [
+    "https://nvda.ws/4zyvjHm"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2090587015272403373",
+   "text": "https://t.co/lpXNR8BhIS",
+   "author": {
+    "id": "740238495952736256",
+    "name": "NVIDIA AI",
+    "screenName": "NVIDIAAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055340743552831488/me-KUIug_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 124,
+    "retweets": 14,
+    "replies": 18,
+    "quotes": 2,
+    "views": 16112,
+    "bookmarks": 32
+   },
+   "createdAt": "Thu Aug 20 23:49:20 +0000 2026",
+   "createdAtLocal": "2026-08-21 07:49",
+   "createdAtISO": "2026-08-20T23:49:20+00:00",
+   "media": [],
+   "urls": [
+    "https://x.com/i/article/2090566017517064192"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "zxx",
+   "score": null,
+   "articleTitle": "What can you build with Spark in a weekend? "
+  },
+  {
+   "id": "2090469297097433394",
+   "text": "Cosmos 3 Post-Training in Action With Aigen and Linker Vision | Cosmos Labs https://t.co/9pl5eAfX5M",
+   "author": {
+    "id": "740238495952736256",
+    "name": "NVIDIA AI",
+    "screenName": "NVIDIAAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055340743552831488/me-KUIug_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 55,
+    "retweets": 10,
+    "replies": 10,
+    "quotes": 2,
+    "views": 13452,
+    "bookmarks": 18
+   },
+   "createdAt": "Thu Aug 20 16:01:34 +0000 2026",
+   "createdAtLocal": "2026-08-21 00:01",
+   "createdAtISO": "2026-08-20T16:01:34+00:00",
+   "media": [],
+   "urls": [
+    "https://x.com/i/broadcasts/1oKMvNQVkYnGQ"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2089847417571365269",
+   "text": "As expected DGX Station absolutely crushes serving Qwen3.8-27B at BF16 (full weight)\n\n2,713+ tok/s peak aggregate\n88 tok/s single stream\n\nLike a datacenter in my living room",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 842,
+    "retweets": 30,
+    "replies": 68,
+    "quotes": 19,
+    "views": 93197,
+    "bookmarks": 232
+   },
+   "createdAt": "Tue Aug 18 22:50:26 +0000 2026",
+   "createdAtLocal": "2026-08-19 06:50",
+   "createdAtISO": "2026-08-18T22:50:26+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQCdHA0aUAA48kE.jpg",
+     "width": 3330,
+     "height": 1782
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQCg4ggaYAAdbmq.jpg",
+     "width": 3072,
+     "height": 4096
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "NVIDIAAI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2090193774643446117",
+   "text": "NVIDIA cuOpt is the fastest open source solver on Hans Mittelmann benchmarks across three optimization problem classes. https://t.co/xqO7bY6gyh",
+   "author": {
+    "id": "740238495952736256",
+    "name": "NVIDIA AI",
+    "screenName": "NVIDIAAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055340743552831488/me-KUIug_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 142,
+    "retweets": 24,
+    "replies": 12,
+    "quotes": 1,
+    "views": 14778,
+    "bookmarks": 18
+   },
+   "createdAt": "Wed Aug 19 21:46:44 +0000 2026",
+   "createdAtLocal": "2026-08-20 05:46",
+   "createdAtISO": "2026-08-19T21:46:44+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQHYq9UbYAA1g_V.jpg",
+     "width": 3302,
+     "height": 1830
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQHYq9fbwAAkr__.jpg",
+     "width": 3410,
+     "height": 1710
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQHY7JFbUAAZTmZ.jpg",
+     "width": 3364,
+     "height": 1806
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2090195315517436403",
+   "text": "Check out NVIDIA cuOpt on GitHub and let us know what you build with it: https://t.co/T8DbCZeY91",
+   "author": {
+    "id": "740238495952736256",
+    "name": "NVIDIA AI",
+    "screenName": "NVIDIAAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055340743552831488/me-KUIug_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 11,
+    "retweets": 2,
+    "replies": 1,
+    "quotes": 0,
+    "views": 4707,
+    "bookmarks": 5
+   },
+   "createdAt": "Wed Aug 19 21:52:51 +0000 2026",
+   "createdAtLocal": "2026-08-20 05:52",
+   "createdAtISO": "2026-08-19T21:52:51+00:00",
+   "media": [],
+   "urls": [
+    "https://github.com/NVIDIA/cuopt"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2090113635683340622",
+   "text": "We benchmarked 300+ NVIDIA verified skills to see how much they actually help agents on real tasks.\n\nSame task, same model, same setup. The only difference was whether the agent had the skill.\n\nAcross the benchmarks, skills improved correctness by 41 points, effectiveness by 39, and efficiency by 35.\n\nSkillEvaluator is open source if you want to test your own skills before you ship them.",
+   "author": {
+    "id": "740238495952736256",
+    "name": "NVIDIA AI",
+    "screenName": "NVIDIAAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055340743552831488/me-KUIug_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1052,
+    "retweets": 122,
+    "replies": 32,
+    "quotes": 26,
+    "views": 306239,
+    "bookmarks": 969
+   },
+   "createdAt": "Wed Aug 19 16:28:17 +0000 2026",
+   "createdAtLocal": "2026-08-20 00:28",
+   "createdAtISO": "2026-08-19T16:28:17+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQGQwa2bEAE0QNn.jpg",
+     "width": 4096,
+     "height": 1182
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  }
+ ]
+}

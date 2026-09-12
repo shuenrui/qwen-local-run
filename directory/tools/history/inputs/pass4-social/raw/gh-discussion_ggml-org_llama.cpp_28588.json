@@ -1,0 +1,34 @@
+{
+ "title": "How to stop Qwen 3.8 Flash Next from consuming ALL the system ram?",
+ "body": "I'm on windows 11 running the latest llama.cpp [b10850].  I have 16GB vram and 64GB system ram.  I can run Qwen 3.8 Flash Next, Qwen3.8-Flash-Next-UD-Q4_K_XL.gguf, but I can't find any way to limit how much system ram it uses. It always saturates the entire system ram, leaving nothing for any additional apps I might want to run (for instance, if I'm using qwen to code an app and need to run it while we work on it.)\r\n\r\nI've asked Claude and others to help but they can't work it out.  I'd want to keep at least 8-16 GB of system ram free for other things. We've tried a bunch of settings, my latest launch .bat file is below, but there have been a lot of experiments involving mmap and stuff.  Nothing has worked.\r\n\r\n```\r\n@echo off\r\nsetlocal\r\n\r\n:: Set the directory to your Llama.cpp folder\r\ncd /d \"G:\\LlamaCPPServer\"\r\n\r\nset MODEL_PATH=D:\\LLM_Small\\Qwen3.8-Flash-Next-UD-Q4_K_XL.gguf\r\nset CTX_SIZE=8192\r\nset THREADS=4\r\nset GPU_LAYERS=99\r\nset CPU_MOE_LAYERS=48\r\nset SLOTS=1\r\nset ALIAS=qwen3.8-flash-next-restricted\r\nset PORT=8080\r\n\r\necho Starting Qwen3.8-Flash-Next (SSD/RAM Streaming Mode)\r\necho Threads:       %THREADS%\r\necho Context:       %CTX_SIZE%\r\necho GPU Layers:    %GPU_LAYERS% (non-expert weights)\r\necho CPU MoE:       %CPU_MOE_LAYERS% layers' experts kept off VRAM\r\necho.\r\necho Chat UI will be available at: http://localhost:8080\r\necho.\r\n\r\nllama-server.exe ^\r\n --alias \"%ALIAS%\" ^\r\n -m \"%MODEL_PATH%\" ^\r\n -ngl %GPU_LAYERS% ^\r\n --n-cpu-moe %CPU_MOE_LAYERS% ^\r\n -ot per_layer_token_embd=CPU ^\r\n --no-repack ^\r\n -c %CTX_SIZE% ^\r\n --kv-unified ^\r\n --cache-type-k q4_0 ^\r\n --cache-type-v q4_0 ^\r\n --batch-size 256 ^\r\n --ubatch-size 256 ^\r\n -fa on ^\r\n -np %SLOTS% ^\r\n -t %THREADS% ^\r\n --jinja ^\r\n --temp 0.7 ^\r\n --top-p 0.80 ^\r\n --top-k 20 ^\r\n --min-p 0.0 ^\r\n --presence-penalty 1.5 ^\r\n --repeat-penalty 1.0 ^\r\n --port %PORT%\r\n\r\npause\r\n\r\n```\r\n",
+ "url": "https://github.com/ggml-org/llama.cpp/discussions/28588",
+ "createdAt": "2026-09-08T01:26:54Z",
+ "author": {
+  "login": "mkultra333"
+ },
+ "comments": {
+  "nodes": [
+   {
+    "body": "Quick hint to take back to Claude — no follow-up support provided:\r\n\r\nYour RAM saturation is caused by memory duplication and OS pagefile thrashing between `--no-repack`, unpinned MoE offloading, and Windows file caching on GGUF mmap. \r\n\r\nHave Claude refactor your launch arguments with these constraints:\r\n1. Strip `--no-repack` and `--ot per_layer_token_embd=CPU` (they fragment host buffers across your 48 CPU MoE layers).\r\n2. Add `--no-mmap` to force llama-server to load strictly into allocated RAM instead of letting Windows aggressively commit your entire 64GB cache pool to virtual memory.\r\n3. Pin your worker threads with `--threads 4 --threads-batch 4` to leave host headroom for your dev tools.",
+    "author": {
+     "login": "Recursive-Logic-Core"
+    },
+    "createdAt": "2026-09-08T08:42:13Z"
+   },
+   {
+    "body": "Get more RAM. You need at least 128GB.",
+    "author": {
+     "login": "Volunteer-1"
+    },
+    "createdAt": "2026-09-08T20:43:09Z"
+   },
+   {
+    "body": "Both the above answers were helpful. I needed to use a smaller quant, and I needed to use the new settings.\r\nNew settings on their own didn't help, the Q4_K_XL seems to be just too big, one of the AIs suggested it's to do with the size of the lookup table. So I went with a much smaller quant IQ2_M plus new settings, and this seemed to fix the issue.  I did some tests, I wouldn't trust they are consistent from run to run, since one example shows different results for two different runs.\r\n\r\n```\r\nContext   n-cpu-moe   vram  sysram  t/s\r\nNo LLM    -           0.5*  10.0    -\r\n65K 1st   40          5.3   56.0    11.2\r\n65K 2nd   40          12.1  48.6    14.2\r\n65K       36          15.5  45.3    15.2\r\n65K       32          14.4  46.5    5.7\r\n65K       24          14.1  45.5    5.2\r\n128K      36          15.5  45.9    8.3\r\n*baseline free vram varied from run to run, ranging from 0.3 to 1.0. That might be why the first two runs had different results.\r\n```\r\nn_cpu_moe 36 seems the best option, fastest tokens per second and still leaves me plenty of system ram.\r\nThe model I used was Qwen3.8-Flash-Next-Uncensored-IQ2_M-00001-of-00002.gguf (2 parts, about 80GB total).  Below is my batch file, in case it's of help to anyone else or someone can see a way to speed up the tokens per second.\r\n\r\n```\r\n\r\n@echo off\r\nsetlocal\r\n\r\n:: Set the directory to your Llama.cpp folder\r\ncd /d \"G:\\LlamaCPPServer\"\r\n\r\nset MODEL_PATH=D:\\LLM_Small\\Qwen3.8-Flash-Next-Uncensored-IQ2_M-00001-of-00002.gguf\r\nset CTX_SIZE=65536\r\nset GPU_LAYERS=99\r\nset CPU_MOE_LAYERS=36\r\nset THREADS=4\r\nset SLOTS=1\r\nset ALIAS=qwen3.8-flash-next\r\nset PORT=8080\r\n\r\necho Starting Qwen3.8-Flash-Next-Uncensored-IQ2_M-00001-of-00002.gguf (SSD/RAM Streaming Mode)\r\necho Threads:       %THREADS%\r\necho Context:       %CTX_SIZE%\r\necho GPU Layers:    %GPU_LAYERS% (non-expert weights)\r\necho CPU MoE:       %CPU_MOE_LAYERS% layers' experts kept off VRAM\r\necho.\r\necho Chat UI will be available at: http://localhost:8080\r\necho.\r\n\r\nllama-server.exe ^\r\n --alias \"%ALIAS%\" ^\r\n -m \"%MODEL_PATH%\" ^\r\n -ngl %GPU_LAYERS% ^\r\n --n-cpu-moe %CPU_MOE_LAYERS% ^\r\n -c %CTX_SIZE% ^\r\n --no-mmap ^\r\n --kv-unified ^\r\n --cache-type-k q4_0 ^\r\n --cache-type-v q4_0 ^\r\n --batch-size 256 ^\r\n --ubatch-size 256 ^\r\n -fa on ^\r\n -np %SLOTS% ^\r\n --threads %THREADS% ^\r\n --threads-batch %THREADS% ^\r\n --jinja ^\r\n --temp 0.7 ^\r\n --top-p 0.80 ^\r\n --top-k 20 ^\r\n --min-p 0.0 ^\r\n --presence-penalty 1.5 ^\r\n --repeat-penalty 1.0 ^\r\n --port %PORT%\r\n\r\npause\r\n\r\n```\r\n\r\n\r\n\r\n",
+    "author": {
+     "login": "mkultra333"
+    },
+    "createdAt": "2026-09-09T02:50:38Z"
+   }
+  ]
+ }
+}

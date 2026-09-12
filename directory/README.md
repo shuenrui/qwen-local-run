@@ -19,6 +19,10 @@ directory/
 ├── SCHEMA.md            the data-model contract (read this before adding data)
 ├── validate.py          stdlib validator; fails the build on bad data
 ├── build.py             stdlib generator -> site/index.html (self-contained)
+├── site_src/            the page source, inlined by build.py
+│   ├── shell.html            skeleton with __CSS__/__DATA__/__APP__ slots
+│   ├── app.css               design system, layouts, breakpoints, both themes
+│   └── app.js                hash router, three tabs, filters, compare, hardware
 ├── verify_browser.py    headless-Chromium checks against the built site
 ├── data/
 │   ├── models/<id>.json      architecture, context, modalities, license
@@ -28,6 +32,16 @@ directory/
 │   └── setups/<id>.json      one runnable setup  <- the main entity
 └── site/index.html      generated; commit or serve it, do not edit it
 ```
+
+The site is three tabs behind one self-contained file: the **Directory** at `#/`
+(every recipe, no personalization gate), **My Hardware** at `#/hardware` (every
+compatibility verdict, each stating its own arithmetic and assumptions), and
+**Compare** at `#/compare` (two to four recipes, with every axis of
+incomparability named and no winner declared). Recipes, model families and
+publishers have permanent URLs at `#/recipes/<id>`, `#/models/<id>` and
+`#/publishers/<id>`. Routing is hash-based because `ifhost publish` serves
+exactly one file at `/`; the design rationale is in
+[`docs/redesign-2026-09-10/`](../docs/redesign-2026-09-10/).
 
 ## Workflow
 
@@ -80,9 +94,13 @@ for what is deliberately absent.
 
 Community entries came from three research passes (HuggingFace quant cards,
 GitHub run recipes, forum threads); every candidate was re-checked against the
-validator's enums and every URL re-fetched before merging. Reddit is
-unreachable from this environment (hard 403), so no Reddit-sourced number is
-recorded anywhere in the dataset.
+validator's enums and every URL re-fetched before merging. A fourth pass
+(social channels: X, YouTube, Reddit, GitHub discussions, vendor forums) is
+governed by AGENTS laws 9–11 and collected with `tools/social_candidates.py`.
+Reddit hard-403s this environment, so per the owner's mirror-accepted decision
+(2026-09-10) Reddit-sourced numbers enter only via a pullpush/arctic-shift
+mirror recorded in `mirror_url`, with the quote lifted from the mirror
+payload; `check_links.py` verifies the mirror.
 
 Scope of the family list, from an audit of the Qwen org on HuggingFace:
 there is **no Qwen 4 series** — 3.8 is the newest line. Deliberately excluded
@@ -101,8 +119,9 @@ lane exists.
   builder-specific forks with no single canonical upstream. The validator
   accepts a null URL only for `kind: "fork"`.
 - Community research (HuggingFace quants, GitHub recipes, forum-reported
-  numbers) is merged as of 2026-09-05. What remains uncovered: Reddit-sourced
-  numbers (platform blocks this environment), Mac lanes for the 27B dense
+  numbers) is merged as of 2026-09-05; the social-channels pass (law 9–11,
+  `tools/history/inputs/pass4-social/`) is collected but unmerged pending
+  owner review. What remains uncovered: Mac lanes for the 27B dense
   model beyond MLX/llama.cpp defaults, and any true fine-tunes — everything
   here so far is a quant, a build, or a weight-edited derivative.
 - `bench/` results are not wired in yet. Once they are, `box` rows should be
@@ -128,12 +147,27 @@ still needs a booted model, which is a separate decision.
 ## Verification
 
 `verify_browser.py` drives the built page in headless Chromium (real clicks,
-typing, and selection) and checks: rendering counts, every filter option
-against the inlined dataset, multi-term search, all four sort modes,
-expand/collapse (mouse and keyboard), expand-all, reset, the copy button and
-clipboard contents, provenance pills versus data, and horizontal overflow at
-1440px and 390px. It exits non-zero on any failure. See its docstring for the
-Playwright setup. Pass a URL as the first argument to verify a deployed copy:
+typing, selection and navigation) and runs ~170 behavioural checks: every route
+resolving and an unknown route rendering a 404; the first-viewport contract; all
+65 recipes rendering with no filter and no profile; shelf headers carrying every
+required field with `not recorded` where the data is null; the single-stream
+headline rule recomputed against the raw dataset for every row; the four
+confidence dimensions recomputed cell by cell; every filter option checked
+against the inlined data; all nine sort modes and the non-dismissible speed
+disclosure; expand/collapse by mouse and keyboard; the copy button and clipboard
+contents, and prose steps carrying no copy affordance; the compare rail's absence
+at zero, its four-recipe cap, cross-tab persistence, the seven workspace
+sections, incomparability detection and the absence of any winner marker; My
+Hardware's five groups, the full memory breakdown, the KV line being derived only
+where bytes-per-token is recorded, and the absence of any unconditional "fits"
+verdict anywhere; detection degrading honestly with the APIs stubbed out; blocked
+site storage not breaking the page; zero network requests after load; landmarks,
+heading order, accessible names, live regions and reduced motion; entity leakage;
+and horizontal overflow at 320, 390, 834, 1440 and 1920 in both themes. It exits
+non-zero on any failure. See its docstring for the Playwright setup, and
+`docs/redesign-2026-09-10/08-implementation-and-verification.md` for the
+check-by-check mapping from the previous suite. Pass a URL as the first argument
+to verify a deployed copy:
 
     directory/tools/.pwenv/bin/python directory/verify_browser.py https://local.host.impossibuild.ai/
 

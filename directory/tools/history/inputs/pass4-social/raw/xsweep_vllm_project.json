@@ -1,0 +1,1817 @@
+{
+ "via": "twitter-cli user-posts -n 50",
+ "user": "vllm_project",
+ "posts": [
+  {
+   "id": "2097940813242405272",
+   "text": "🐳 DeepSeek-V4.1-Flash is out, and vLLM serves it from day 0, verified on NVIDIA and AMD GPUs! 🎉\n\n552B MoE backbone, native vision, 1M context. Built for agents: 8B active while it reads your prompt, 16B while it writes. If you already run DeepSeek-V4 on vLLM, most of this stack will feel familiar: the hyper-connections, the sliding-window plus compressed sparse attention, DSpark drafting, MXFP4 experts. vLLM has carried all of it since V4 landed.\n\nTwo things are new, and both are worth a look:\n✨ Engram: a quarter of the checkpoint is n-gram memory the model looks up instead of computes. 197B parameters of it.\n✨ Only four layers write compressed KV now. The rest of the model shares it.\n\nSpin it up 👇\n🔗 https://t.co/fDyke2Y7Sz",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 236,
+    "retweets": 37,
+    "replies": 11,
+    "quotes": 13,
+    "views": 27780,
+    "bookmarks": 33
+   },
+   "createdAt": "Thu Sep 10 06:50:42 +0000 2026",
+   "createdAtLocal": "2026-09-10 14:50",
+   "createdAtISO": "2026-09-10T06:50:42+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2097930608790167907",
+    "text": "🚀 Introducing DeepSeek-V4.1-Flash: smarter, faster, more efficient.\n\n🔹 Introducing the smallest model in our new architecture family, with native visual understanding.\n🔹 Designed for greater capability, faster inference, higher throughput, and scaling to larger models.\n\n1/6",
+    "author": {
+     "screenName": "deepseek_ai",
+     "name": "DeepSeek"
+    }
+   }
+  },
+  {
+   "id": "2097940817373786505",
+   "text": "vLLM ships full support for DeepSeek-V4.1-Flash's new architecture:\n✨ Various parallelisms: TP/SP/DP/EP\n✨ DSpark speculative decoding with adaptive verification\n✨ Agentic first: Prefix caching + KV cache offloading + PD disaggregation\n✨ Engram CPU offloading + DP-aware sharding\n✨ Compute and KV cache efficient: SWA bounded replay\nMore kernel integration from DeepGeMM and FlashMLA will also land soon 🚀",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 18,
+    "retweets": 1,
+    "replies": 2,
+    "quotes": 0,
+    "views": 1293,
+    "bookmarks": 1
+   },
+   "createdAt": "Thu Sep 10 06:50:43 +0000 2026",
+   "createdAtLocal": "2026-09-10 14:50",
+   "createdAtISO": "2026-09-10T06:50:43+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097427730983776758",
+   "text": "https://t.co/OhdmKTt57r",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 319,
+    "retweets": 37,
+    "replies": 6,
+    "quotes": 2,
+    "views": 36836,
+    "bookmarks": 313
+   },
+   "createdAt": "Tue Sep 08 20:51:54 +0000 2026",
+   "createdAtLocal": "2026-09-09 04:51",
+   "createdAtISO": "2026-09-08T20:51:54+00:00",
+   "media": [],
+   "urls": [
+    "https://x.com/i/article/2097417044840869888"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "zxx",
+   "score": null,
+   "articleTitle": "vLLM x AgentX: Optimizing for Real-World Agentic Serving "
+  },
+  {
+   "id": "2097427310513426721",
+   "text": "New blog is out: vLLM x AgentX: Optimizing for Real-World Agentic Serving.\n\nAgent traffic stresses every layer of the serving stack at once. This post walks the full-stack work for optimizing vLLM on Agentic workloads, including the architecture, framework, and runtime optimizations, measured on AgentX, @SemiAnalysis_'s public agentic benchmark.\n\n🧵1/6",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 185,
+    "retweets": 37,
+    "replies": 8,
+    "quotes": 11,
+    "views": 25004,
+    "bookmarks": 108
+   },
+   "createdAt": "Tue Sep 08 20:50:13 +0000 2026",
+   "createdAtLocal": "2026-09-09 04:50",
+   "createdAtISO": "2026-09-08T20:50:13+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2097427283460214784/vid/avc1/1920x1080/rHaK5Es0eaVem7vi.mp4?tag=16",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097427391820029973",
+   "text": "Lessons learned, the hard way:\n🔷 Pipeline parallelism is great on cold, long prompts. On warm agent turns that add a few hundred tokens, the bubbles eat the gain.\n🔷 Decode context parallelism won on Kimi K3 but only matched DEP on DeepSeek V4. Parallelism has to follow the model's attention stack.\n🔷 Load balancing doesn’t always beat simple session-sticky routing: for workloads with short inter-turn delays, preserving a warm KV cache can matter more than balancing the queue.\n\n5/6",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1142,
+    "bookmarks": 0
+   },
+   "createdAt": "Tue Sep 08 20:50:33 +0000 2026",
+   "createdAtLocal": "2026-09-09 04:50",
+   "createdAtISO": "2026-09-08T20:50:33+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097427403891195977",
+   "text": "Everything is on a live public dashboard: tokens per dollar or tokens per GPU against interactivity, across GB300 NVL72 and B300, with public configs to reproduce each point.\n\nOur blog covers each of the above sections in detail, from optimizations to performance, along with what did not work.\n\nRead more at the full blog post below:\n🔗 https://t.co/pJMsENhHM8\n\n6/6",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 11,
+    "retweets": 1,
+    "replies": 2,
+    "quotes": 0,
+    "views": 1209,
+    "bookmarks": 6
+   },
+   "createdAt": "Tue Sep 08 20:50:36 +0000 2026",
+   "createdAtLocal": "2026-09-09 04:50",
+   "createdAtISO": "2026-09-08T20:50:36+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097397769338282222",
+   "text": "Sparse MLA only attends to the top-K tokens, so the rest of the KV need not live on the GPU. Hybrid HiSparse in vLLM builds on that, and a request keeps decoding after its KV stops fitting in HBM.\n\nIt keeps KV on the GPU while there is room. Under pressure a request releases its coldest pages to host memory, keeps a small hot buffer of what the indexer asks for, and keeps decoding instead of being preempted.\n\n📊 Demonstrated on GLM 5.3, one 8× H200 node, full 1M context. Same host memory, configured concurrency 32: KV offloading kept 5-6 requests running. Hybrid HiSparse kept 19-25.\n\n🔹 Hot pages are ordinary KV blocks from the same pool (Hybrid Memory Allocator)\n🔹 One fused kernel resolves resident, hot and missing rows, CUDA-graph capturable\n🔹 Prefix caching, OffloadingConnector, P/D imports and MTP keep working\n\nBuilt by @RedHat_AI and @PrimeIntellect with the vLLM community. Planned for v0.30; pinned commit, flags and calculator are in the post👇\n🔗 https://t.co/6y7u5Hfc8c",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 165,
+    "retweets": 27,
+    "replies": 8,
+    "quotes": 2,
+    "views": 27350,
+    "bookmarks": 95
+   },
+   "createdAt": "Tue Sep 08 18:52:50 +0000 2026",
+   "createdAtLocal": "2026-09-09 02:52",
+   "createdAtISO": "2026-09-08T18:52:50+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRtz683bwAAxvDo.jpg",
+     "width": 1355,
+     "height": 985
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097319174661955934",
+   "text": "Speculators v0.8.0 is out. Training spec decoders just got even cleaner:\n\n🔌 Mooncake hidden-state connectors, now on PyPI, for multi-node runs\n🧪 Experimental DFlash2\n🧰 Unified `speculators` CLI for regen, preprocessing, and training\n⚡️ One fused Triton online-softmax kernel across all losses, lower-memory training\n\nhttps://t.co/2pIMWqP4eo",
+   "author": {
+    "id": "997536616481722369",
+    "name": "Red Hat AI",
+    "screenName": "RedHat_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1904876402425421824/sN9mSDTt_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 58,
+    "retweets": 9,
+    "replies": 9,
+    "quotes": 2,
+    "views": 4718,
+    "bookmarks": 22
+   },
+   "createdAt": "Tue Sep 08 13:40:32 +0000 2026",
+   "createdAtLocal": "2026-09-08 21:40",
+   "createdAtISO": "2026-09-08T13:40:32+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRssl8qaEAArG7K.png",
+     "width": 1200,
+     "height": 1020
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "vllm_project",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097222490443624487",
+   "text": "A stronger open AI ecosystem is built by communities 🌏\n\nGreat to see @PyTorch bringing the community together and the open AI ecosystem continuing to grow across China ❤️",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 70,
+    "retweets": 7,
+    "replies": 3,
+    "quotes": 0,
+    "views": 8159,
+    "bookmarks": 9
+   },
+   "createdAt": "Tue Sep 08 07:16:20 +0000 2026",
+   "createdAtLocal": "2026-09-08 15:16",
+   "createdAtISO": "2026-09-08T07:16:20+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2097204175364833531",
+    "text": "More than 250 organizations across China contribute to PyTorch Foundation projects, including @DeepSpeedAI, Helion, PyTorch, @raydistributed, Safetensors, and @vllm_project.\n\n“Open source has become the default way the world builds AI, and the PyTorch Foundation is a leading hub for this innovation,” said @sparkycollier, Executive Director of the PyTorch Foundation. \n\n“Welcoming @alibaba_cloud, Cambricon, and @AntGroup as members alongside @Huawei further strengthens the global open source AI ecosystem and community building the open source intelligence layer developers rely on for training, optimizing, serving, distributing, and running models. PyTorch Conference China brings that community together in Shanghai to continue learning from one another.”\n\nAlibaba Cloud and Cambricon have joined the PyTorch Foundation as Platinum members, and Ant Group has joined as a Gold member.\n\nRepresentatives from the three new member companies and Huawei are delivering keynotes at PyTorch Conference China on advancing the open AI stack, covering hardware, models, and infrastructure throughout the conference.\n\nAlibaba Cloud’s Qwen infrastructure team is walking through how they serve Qwen at massive scale. Huawei will explore hardware-software co-design and the interoperability needed between Chinese and global AI technology stacks. \n\nCambricon is detailing how the company is hardening PyTorch’s device-agnostic foundation so any backend can offer broader reach and richer native capabilities. Ant Group is showing how existing cloud native building blocks can be assembled into a secure, on-demand runtime for AI agents.\n\nTaken together, these keynotes move from silicon to software to deployment, giving conference attendees a full-stack view of how open source is being built into every layer of AI in China.\n\n🔗 Read the press release: https://t.co/xdwXDJu9I1",
+    "author": {
+     "screenName": "PyTorch",
+     "name": "PyTorch"
+    }
+   }
+  },
+  {
+   "id": "2096956274428772654",
+   "text": "🤝 Day-0 support for MiniCPM5-2B on stable vLLM.\n\n⚡ Dense 2.6B model with 131K native context\n🧠 Think / No-Think from the same checkpoint\n🔧 Tool Calling support via vLLM’s minicpm5 parser\n\nCongrats @OpenBMB on the release, and thanks for keeping it on stock LlamaForCausalLM and opening the training data alongside the weights! 🙌\n\n🔗 https://t.co/eZyYwNAPcM",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 22,
+    "retweets": 1,
+    "replies": 10,
+    "quotes": 2,
+    "views": 6884,
+    "bookmarks": 3
+   },
+   "createdAt": "Mon Sep 07 13:38:30 +0000 2026",
+   "createdAtLocal": "2026-09-07 21:38",
+   "createdAtISO": "2026-09-07T13:38:30+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRnieIzaIAAzo9d.jpg",
+     "width": 2370,
+     "height": 814
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2095936759133540403",
+   "text": "⚡ New RTX local-agent optimizations include a vLLM speedup on Blackwell.\n\n@NVIDIARTXSpark reports:\n🛠️ 1.2x vLLM performance on RTX PRO 6000 Blackwell\n⚡ Up to 1.4x on a two-system DGX Spark cluster\n\nGreat to see the local serving path getting faster across RTX and DGX Spark.",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 89,
+    "retweets": 8,
+    "replies": 6,
+    "quotes": 4,
+    "views": 15905,
+    "bookmarks": 40
+   },
+   "createdAt": "Fri Sep 04 18:07:18 +0000 2026",
+   "createdAtLocal": "2026-09-05 02:07",
+   "createdAtISO": "2026-09-04T18:07:18+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2095679113990435325",
+   "text": "🎉 Congrats to @AntLingAGI on open-sourcing Ling-3.0-flash-Fin and FinFIRST!\n\nOpen models and expert-built benchmarks are a great step toward more accessible and verifiable financial AI. Looking forward to seeing these workflows run at scale with vLLM. 🚀",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 41,
+    "retweets": 3,
+    "replies": 3,
+    "quotes": 2,
+    "views": 9281,
+    "bookmarks": 6
+   },
+   "createdAt": "Fri Sep 04 01:03:31 +0000 2026",
+   "createdAtLocal": "2026-09-04 09:03",
+   "createdAtISO": "2026-09-04T01:03:31+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095533696808051001",
+    "text": "We’re open-sourcing Ling-3.0-flash-Fin, a finance-enhanced model for real-world workflows, and FinFIRST, an expert-built benchmark for financial search agents.\nTwo open releases, one goal: making financial AI more accessible and verifiable. https://t.co/VL1FqGuhiq",
+    "author": {
+     "screenName": "AntLingAGI",
+     "name": "Ant Ling"
+    }
+   }
+  },
+  {
+   "id": "2095674903987159358",
+   "text": "Love seeing @lightseekorg use TorchSpec + vLLM to train three different K3 draft models, with the recipes open sourced too.\n\nExactly the kind of training-serving collaboration we love to see 🚀",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 59,
+    "retweets": 8,
+    "replies": 2,
+    "quotes": 0,
+    "views": 6308,
+    "bookmarks": 7
+   },
+   "createdAt": "Fri Sep 04 00:46:47 +0000 2026",
+   "createdAtLocal": "2026-09-04 08:46",
+   "createdAtISO": "2026-09-04T00:46:47+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095535393257226562",
+    "text": "Releasing the @Kimi_Moonshot K3 Draft Collection — 3 draft models (EAGLE-3, DFlash2, DSpark) trained with TorchSpec and @vllm_project on @NVIDIAAI GB200. 🚀\n\nWe also shared the data recipes. More on the blog → https://t.co/5FdWfvYNm0 https://t.co/WjaJzEcBLp",
+    "author": {
+     "screenName": "lightseekorg",
+     "name": "LightSeek Foundation"
+    }
+   }
+  },
+  {
+   "id": "2095604126474547443",
+   "text": "Our RL stack now supports NIXL weight transfer, reducing trainer-to-inference transfer time 9x compared with NCCL: from 86 seconds down to single-digit seconds for an 800B-parameter model, and even <4 seconds in our experiments.\n\nFor prime-rl users, this means over 25% more throughput end-to-end compared with our previous speed. It also clears the way for fault-tolerant, elastic inference scaling that NCCL's rigid process groups made difficult.",
+   "author": {
+    "id": "1274287728167915522",
+    "name": "Prime Intellect",
+    "screenName": "PrimeIntellect",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1837605403359633411/Stj4eLIH_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 185,
+    "retweets": 27,
+    "replies": 7,
+    "quotes": 6,
+    "views": 32638,
+    "bookmarks": 68
+   },
+   "createdAt": "Thu Sep 03 20:05:32 +0000 2026",
+   "createdAtLocal": "2026-09-04 04:05",
+   "createdAtISO": "2026-09-03T20:05:32+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRUUqPMaoAAwRWi.png",
+     "width": 1920,
+     "height": 1100
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "vllm_project",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2095606378983461357",
+   "text": "Thank you to the @SemiAnalysis_ team for the shoutout and for the collaboration on AgentX 🙏 Benchmarks are only useful when they measure the workloads people actually run, and AgentX measures the real thing: multi-turn, long-context agent traffic.\n\nvLLM is the engine for production agentic workloads. For teams serving tokens at scale, revenue depends on optimized inference over long multi-turn contexts.\n\nOur AgentX deep dive blog is coming soon! Stay tuned 📖",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 32,
+    "retweets": 8,
+    "replies": 4,
+    "quotes": 0,
+    "views": 5151,
+    "bookmarks": 4
+   },
+   "createdAt": "Thu Sep 03 20:14:29 +0000 2026",
+   "createdAtLocal": "2026-09-04 04:14",
+   "createdAtISO": "2026-09-03T20:14:29+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095595233064972516",
+    "text": "Shoutout to the cracked team at @vllm_project that implemented recent agentic workload optimizations. (1/5)🧵 https://t.co/BsXCtLBwvU",
+    "author": {
+     "screenName": "SemiAnalysis_",
+     "name": "SemiAnalysis"
+    }
+   }
+  },
+  {
+   "id": "2095523883688587288",
+   "text": "K2-Horizon has day-0 support in vLLM, and IFM released intermediate checkpoints, detailed data-construction recipes, the training code, and fine-grained logs alongside the weights. 📷\n\n512K context and Apache-2.0 from 3.7B up, with reasoning and tool calling in the checkpoints for agents and long documents.\n\nvLLM runs the whole family, from local to large-scale data centers. Prototype on the small end, scale up without changing the stack.\n\nThanks @IFM_AI for opening all six and every stage that led to them, not just the last checkpoint! 📷\n\n📷 https://t.co/JgteusHkLp",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 112,
+    "retweets": 20,
+    "replies": 5,
+    "quotes": 4,
+    "views": 10449,
+    "bookmarks": 13
+   },
+   "createdAt": "Thu Sep 03 14:46:41 +0000 2026",
+   "createdAtLocal": "2026-09-03 22:46",
+   "createdAtISO": "2026-09-03T14:46:41+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095497035806113861",
+    "text": "Introducing K2 Horizon: a connected fleet of six foundation models ranging from 0.9 billion to 375 billion parameters.\n\n- Frontier performance: Across coding and agentic tasks, K2 Horizon delivers top-tier performance in every size class—with the 0.9B, 3.7B and 7B models setting new state of the art at their respective scales.\n- Radical openness: K2 Horizon represents the largest fully open-source model launch in AI history. The fully open code, training data and recipes are a significant step forward in transparency.\n\nLaunch page: https://t.co/gg0k803SbL\nTech blog: https://t.co/g35L5xMGdS\nHugging Face: https://t.co/3Lb28JhyG9",
+    "author": {
+     "screenName": "IFM_AI",
+     "name": "Institute of Foundation Models"
+    }
+   }
+  },
+  {
+   "id": "2094926136333787512",
+   "text": "This is what open-source intelligence is for.\n\nBuilt on vLLM-Omni and @haoailab's FastH3, with @NVIDIAAI hardware support - all public.\n\nReal-time generation makes interactive video possible; an open baseline makes it improvable for everyone. Take it and go faster! 🚀",
+   "author": {
+    "id": "1875078099538423808",
+    "name": "MiniMax (official)",
+    "screenName": "MiniMax_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1875100548535574529/VxHk9HyU_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 368,
+    "retweets": 30,
+    "replies": 23,
+    "quotes": 2,
+    "views": 36582,
+    "bookmarks": 186
+   },
+   "createdAt": "Tue Sep 01 23:11:27 +0000 2026",
+   "createdAtLocal": "2026-09-02 07:11",
+   "createdAtISO": "2026-09-01T23:11:27+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "vllm_project",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2094849929487552663",
+    "text": "🎬Video generation faster than playback!\n\n🚀MiniMax H3 on vLLM-Omni + FastVideo's FastH3: a complete 10.1s MP4 - video AND synchronized audio - rendered in 8.7s!⚡️\n\nThanks to @MiniMax_AI for the great Minimax H3 release, the FastVideo team @haoailab for open-sourcing FastH3 and helping on the serving integration, and @NVIDIAAI for the continued sponsorship and joint optimization efforts!",
+    "author": {
+     "screenName": "vllm_project",
+     "name": "vLLM"
+    }
+   }
+  },
+  {
+   "id": "2094855898804187253",
+   "text": "Checkout FastVideo's FastH3 Dense served on @vllm_project vLLM-Omni! This is the power of open source! We must win!\n\nThank you guys for the continued support and sponsorship for FastVideo!",
+   "author": {
+    "id": "1768529398448492544",
+    "name": "Hao AI Lab",
+    "screenName": "haoailab",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1768567902129807360/paum8hpu_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 60,
+    "retweets": 12,
+    "replies": 2,
+    "quotes": 1,
+    "views": 5216,
+    "bookmarks": 21
+   },
+   "createdAt": "Tue Sep 01 18:32:21 +0000 2026",
+   "createdAtLocal": "2026-09-02 02:32",
+   "createdAtISO": "2026-09-01T18:32:21+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "vllm_project",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2094849929487552663",
+    "text": "🎬Video generation faster than playback!\n\n🚀MiniMax H3 on vLLM-Omni + FastVideo's FastH3: a complete 10.1s MP4 - video AND synchronized audio - rendered in 8.7s!⚡️\n\nThanks to @MiniMax_AI for the great Minimax H3 release, the FastVideo team @haoailab for open-sourcing FastH3 and helping on the serving integration, and @NVIDIAAI for the continued sponsorship and joint optimization efforts!",
+    "author": {
+     "screenName": "vllm_project",
+     "name": "vLLM"
+    }
+   }
+  },
+  {
+   "id": "2094849929487552663",
+   "text": "🎬Video generation faster than playback!\n\n🚀MiniMax H3 on vLLM-Omni + FastVideo's FastH3: a complete 10.1s MP4 - video AND synchronized audio - rendered in 8.7s!⚡️\n\nThanks to @MiniMax_AI for the great Minimax H3 release, the FastVideo team @haoailab for open-sourcing FastH3 and helping on the serving integration, and @NVIDIAAI for the continued sponsorship and joint optimization efforts!",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 606,
+    "retweets": 79,
+    "replies": 27,
+    "quotes": 19,
+    "views": 86532,
+    "bookmarks": 513
+   },
+   "createdAt": "Tue Sep 01 18:08:38 +0000 2026",
+   "createdAtLocal": "2026-09-02 02:08",
+   "createdAtISO": "2026-09-01T18:08:38+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRJm6M5aMAAA9zI.jpg",
+     "width": 1199,
+     "height": 609
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094849933832843640",
+   "text": "vLLM-Omni treats MiniMax H3 serving as a systems problem:\n🔹 Long-context attention + Fast Ulysses comms (NCCL SymmetricMemory)\n🔹 Fully fused DiT ops (RMSNorm+RoPE, SwiGLU, modulation)\n🔹 Parallel video/audio VAE decode across 8 GPUs\n🔹 75% payload cut before D2H, parallel H.264/AAC muxing\n🔹 FastVideo (https://t.co/FGFaXvYQlz) 4-step FastH3 distillation kills the remaining bottleneck \n\nCheck out all the technical details from the collaboration blogpost👇\n🔗 https://t.co/ebnloxtTE0",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 28,
+    "retweets": 1,
+    "replies": 4,
+    "quotes": 0,
+    "views": 5420,
+    "bookmarks": 20
+   },
+   "createdAt": "Tue Sep 01 18:08:39 +0000 2026",
+   "createdAtLocal": "2026-09-02 02:08",
+   "createdAtISO": "2026-09-01T18:08:39+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRJm6dLbAAArQVl.jpg",
+     "width": 1199,
+     "height": 609
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094850278944362885",
+   "text": "https://t.co/5nXlTLETfS",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 20,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 3899,
+    "bookmarks": 30
+   },
+   "createdAt": "Tue Sep 01 18:10:01 +0000 2026",
+   "createdAtLocal": "2026-09-02 02:10",
+   "createdAtISO": "2026-09-01T18:10:01+00:00",
+   "media": [],
+   "urls": [
+    "https://vllm.ai/blog/2026-09-01-minimax-h3-production-serving"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "zxx",
+   "score": null
+  },
+  {
+   "id": "2094711861472350343",
+   "text": "🎉 Congrats to @deepseek_ai on DeepSeek-V4-Flash-Vision-Exp, the first multimodal model in the V4 family! vLLM serves it now.\n\nA vision encoder and aligner on the 285B/13B V4-Flash MoE backbone, with text-agent scores holding steady. 🚀\n\n🔗 https://t.co/sxl7k5w9rs https://t.co/X162SYzoW2",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 254,
+    "retweets": 27,
+    "replies": 17,
+    "quotes": 1,
+    "views": 19518,
+    "bookmarks": 48
+   },
+   "createdAt": "Tue Sep 01 09:00:00 +0000 2026",
+   "createdAtLocal": "2026-09-01 17:00",
+   "createdAtISO": "2026-09-01T09:00:00+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRHnBf2b0AAIVFR.jpg",
+     "width": 2354,
+     "height": 1236
+    }
+   ],
+   "urls": [
+    "https://recipes.vllm.ai/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2090730032574631962",
+    "text": "DeepSeek-V4-Flash-Vision-Exp is now live on the DeepSeek API Platform! 🚀\n\n🔹 This experimental multimodal model matches DeepSeek-V4-Flash on text capabilities—including agents, reasoning, and world knowledge.\n🔹 On multimodal agent benchmarks, V4-Flash-Vision-Exp makes a major leap over V4-Flash, bringing multimodal agent performance close to Opus-4.8.\n\nTry it with model='deepseek-v4-flash-vision-exp'. DeepSeek Harness 0.1.1 was released today with out-of-the-box support for the new model.\n\n1/n",
+    "author": {
+     "screenName": "deepseek_ai",
+     "name": "DeepSeek"
+    }
+   }
+  },
+  {
+   "id": "2094674692133298363",
+   "text": "🎉 Congrats to @SparkLLM on releasing Spark-X2.5-4B and 1.7B! Compact on-device agent models: 200+ languages, native 1M context.\n\nBoth have day-0 vLLM support via Spark's out-of-tree general plugin.",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 318,
+    "retweets": 16,
+    "replies": 10,
+    "quotes": 1,
+    "views": 33961,
+    "bookmarks": 149
+   },
+   "createdAt": "Tue Sep 01 06:32:18 +0000 2026",
+   "createdAtLocal": "2026-09-01 14:32",
+   "createdAtISO": "2026-09-01T06:32:18+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2094626725803995495",
+    "text": "🚀 SparkLLM open-sources Spark X2.5-4B &amp; X2.5-1.7B — the only on-device models with native context up to 1,000,000 tokens. Hybrid-attention architecture, tuned for agents, code, math &amp; instruction following. 🧵👇",
+    "author": {
+     "screenName": "SparkLLM",
+     "name": "SparkLLM"
+    }
+   }
+  },
+  {
+   "id": "2094480529529663824",
+   "text": "vLLM (@vllm_project) sessions at #PyTorchCon NA 2026 show how teams are optimizing inference, working on PyTorch release validation and compatibility, and using vLLM in broader serving and application workflows.\n\nSpeakers will cover CUTLASS, Triton, and Helion; faster model loading with fastsafetensors; quantization and HiFloat; autonomous kernel bring-up and Intel GPU optimization; PyTorch release validation, enterprise agentic inference, stable ABI, and dynamic shapes; vision-language serving; cloud-to-edge workflows; high-speed storage; a serving stack for a physics-constrained generative model; and contributor onboarding and first-PR workflows.\n\nFeatured speakers include:\n\n@nvidia: Michael Goldfarb, Guray Ozen, Aastha Jhunjhunwala, and @MarkMoyou\n\n@Meta: Andrey Talman, @janeyx99, and Laith Sakka\n\n@Arm: Kavya Sri Chennoju\n\n@IBM: Takeshi Yoshimura and Nili Guy\n\n@RedHat: Markell Rawls, Joseph Groenenboom, Tyler Michael Smith, Sean McGovern, Christopher Leonard, and Maroon Ayoub\n\n@Google: Ankita Luthra and Trinadh Kotturu\n\n@intel: Xiaogang Gu, Qun Yang, Whitney Tsang, and Artur Fierka\n\n@Huawei: Yun Zhao and Haonan Zhang\n\n@IBMResearch: Burkhard Ringlein\n\n@UMNews: @arunshar08\n\nRegister by September 4 to save: https://t.co/GIZUAha5wA\n\nRead the vLLM session guide: https://t.co/d2ozJTwa2G",
+   "author": {
+    "id": "776585502606721024",
+    "name": "PyTorch",
+    "screenName": "PyTorch",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1813965160702451712/yXV1vRhr_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 119,
+    "retweets": 12,
+    "replies": 2,
+    "quotes": 0,
+    "views": 16207,
+    "bookmarks": 39
+   },
+   "createdAt": "Mon Aug 31 17:40:46 +0000 2026",
+   "createdAtLocal": "2026-09-01 01:40",
+   "createdAtISO": "2026-08-31T17:40:46+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HREW7P0WwAAzqhC.jpg",
+     "width": 1672,
+     "height": 941
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "vllm_project",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2093901485172285804",
+   "text": "We worked alongside @inferact and @FireworksAI_HQ on the investigation. 🔍\n\nWe share that bar for consistency. Credit to @FireworksAI_HQ for taking the extra time to verify, and to @Zai_org for the quick API update. 🎉",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 135,
+    "retweets": 19,
+    "replies": 15,
+    "quotes": 1,
+    "views": 15537,
+    "bookmarks": 18
+   },
+   "createdAt": "Sun Aug 30 03:19:51 +0000 2026",
+   "createdAtLocal": "2026-08-30 11:19",
+   "createdAtISO": "2026-08-30T03:19:51+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2093739346423947644",
+    "text": "GLM-5.3-Flash is live on Fireworks on day… 2\n\nWhy? Because we take quality very seriously. We found a benchmark discrepancy we couldn’t explain, so we delayed the launch to investigate.\n\nDay 0 (Wed): we saw 2x longer thinking on reasoning-heavy benchmarks (AIME & GPQA) for open source engines compared with @Zai_org  API. Same scores, worse token efficiency. Agentic benchmarks looked good.\n\nWe decided to investigate further, as overthinking might become a quality problem if max_tokens are reached\n\nDay 1 (Thu): as other non-official providers launched, their APIs had thinking in the range of open-source engines: longer than https://t.co/uYD5faZSKs.\n\nWe launched a private preview endpoint with disclaimers to a few customers and worked with them to assess quality\n\nDay 2 (Fri): the official https://t.co/uYD5faZSKs API updates. We rerun benchmarks: reasoning is now similarly long, consistent with vllm/sglang. Rest of the benchmarks, both public and internal, check out too.\n\nWe launched GLM-5.3-Flash publicly: https://t.co/zvS4ugxbT6\n\nMore details below",
+    "author": {
+     "screenName": "dzhulgakov",
+     "name": "Dmytro Dzhulgakov"
+    }
+   }
+  },
+  {
+   "id": "2093499518197305801",
+   "text": "On Tuesday, capping off a full day of speakers at the first vLLM Conference, the vLLM community gathered for a rooftop happy hour at sunset. The event hit capacity, and sunset over the city was a great backdrop.\n\nThank you to @AMD and @inferact for co-hosting! More meetups to come soon.",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 65,
+    "retweets": 7,
+    "replies": 9,
+    "quotes": 0,
+    "views": 6239,
+    "bookmarks": 7
+   },
+   "createdAt": "Sat Aug 29 00:42:35 +0000 2026",
+   "createdAtLocal": "2026-08-29 08:42",
+   "createdAtISO": "2026-08-29T00:42:35+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQ2akDHaEAAttra.jpg",
+     "width": 3072,
+     "height": 4096
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQ2amGCa4AEWYFG.jpg",
+     "width": 3072,
+     "height": 4096
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQ2anSPawAAnA2C.jpg",
+     "width": 3072,
+     "height": 4096
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQ2ao5ga8AAu_7u.jpg",
+     "width": 3072,
+     "height": 4096
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2093473506860413221",
+   "text": "vLLM core maintainer and Inferact CEO @simon_mo_ is featured in the new PyTorch Conference promo video, talking about the goal for vLLM: the easiest to use and most efficient inference engine. \n\nCome meet fellow vLLM community members in San Jose on October 20-21!",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 51,
+    "retweets": 8,
+    "replies": 6,
+    "quotes": 0,
+    "views": 7629,
+    "bookmarks": 7
+   },
+   "createdAt": "Fri Aug 28 22:59:13 +0000 2026",
+   "createdAtLocal": "2026-08-29 06:59",
+   "createdAtISO": "2026-08-28T22:59:13+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2093411642138890697",
+    "text": "At PyTorch Conference North America 2026, hear directly from and connect with the people working on PyTorch, @vllm_project, @DeepSpeedAI, @raydistributed, Helion, and Safetensors, alongside experts working across the AI stack.\n\nKeynote speaker @simon_mo_ (@vllm_project, @inferact) says vLLM’s goal is to become “the easiest to use and most efficient inference engine.” At #PyTorchCon NA 2025, he spoke about the difficulty and cost of using large language models and continuing to push inference efficiency forward.\n\nPyTorch conferences are the open source AI community’s town square, where what’s next gets decided.\n\nRegister by September 4 to save on your conference pass: https://t.co/GIZUAhaDm8",
+    "author": {
+     "screenName": "PyTorch",
+     "name": "PyTorch"
+    }
+   }
+  },
+  {
+   "id": "2093430388391825797",
+   "text": "🚀 Huge congrats to the FastVideo team at @haoailab on the FastH3 release! 🎉\n\nWe're proud to sponsor this effort and are working hand-in-hand with the team to bring FastH3 into vLLM-Omni - stay tuned! 👀🔥",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 128,
+    "retweets": 16,
+    "replies": 0,
+    "quotes": 1,
+    "views": 18383,
+    "bookmarks": 40
+   },
+   "createdAt": "Fri Aug 28 20:07:53 +0000 2026",
+   "createdAtLocal": "2026-08-29 04:07",
+   "createdAtISO": "2026-08-28T20:07:53+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2093391548289540596",
+    "text": "(1/6) Open Weight @MiniMax_AI FastH3 v1: Generate 15s 768p video in 13s 🚀\n- FastVideo collab w/ @nuvalab  + FastGen - Up to 14x speedup on @NVIDIAAI  Blackwell GPU \n- Fully open so community can run and improve the acceleration recipe. The era of open weight video models just started, that calls for post training. \n\nWith great community effort such as Minimax H3 Max based on @MiniMax_AI  , we have more to share about how post training can improve speed, quality and most importantly, how it’s done, with open weights and recipes.",
+    "author": {
+     "screenName": "haoailab",
+     "name": "Hao AI Lab"
+    }
+   }
+  },
+  {
+   "id": "2093337819356004765",
+   "text": "Closed out Ray Summit with a happy hour our team co-hosted with @nvidia, @inferact, and @NousResearch.\n\nGave a talk on how @digitalocean & @vllm_project topped the Artificial Analysis leaderboard for model performance, and later Balaji demoed our Inference Router live!\n\nThanks to everyone who stopped by.",
+   "author": {
+    "id": "150199610",
+    "name": "Debarshi",
+    "screenName": "DebarshiRaha",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2679045604/ccc7b0ff1676692b37e76efc427755e8_normal.jpeg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 6,
+    "retweets": 3,
+    "replies": 1,
+    "quotes": 0,
+    "views": 2401,
+    "bookmarks": 0
+   },
+   "createdAt": "Fri Aug 28 14:00:03 +0000 2026",
+   "createdAtLocal": "2026-08-28 22:00",
+   "createdAtISO": "2026-08-28T14:00:03+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQyblB5a0AA6Q-A.jpg",
+     "width": 4096,
+     "height": 2731
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQybs2tagAAbW95.jpg",
+     "width": 3072,
+     "height": 4096
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQyb67tb0AA4Rrw.jpg",
+     "width": 4096,
+     "height": 2731
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQycAAAbMAAtZTE.jpg",
+     "width": 4055,
+     "height": 4096
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "vllm_project",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2093363721599098934",
+   "text": "Does splitting LLM prefill from decode actually pay off?\n\nI built an open-source benchmark on gpt-oss (MoE) with vLLM + NIXL and measured it end-to-end:\n\n → 5.5× worse time-to-first-token when split across GPUs with no fast link\n → ~100× slower to prefill on CPU vs GPU\n → the whole study cost $9.60 to run\n\nOn commodity hardware, don't split. At frontier-lab scale (NVLink/RDMA + heavy concurrency), the same split likely wins — and I explain exactly why.\n\n Full write-up 👇\nhttps://t.co/VColoN5I7z\n\n@vllm_project  @OpenAI @NVIDIAAIDev @runpod_io",
+   "author": {
+    "id": "28816583",
+    "name": "Anshu Bansal",
+    "screenName": "ItsAnshuB",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/861037580363513857/CMYCvPtr_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 29,
+    "retweets": 4,
+    "replies": 4,
+    "quotes": 0,
+    "views": 18852,
+    "bookmarks": 37
+   },
+   "createdAt": "Fri Aug 28 15:42:58 +0000 2026",
+   "createdAtLocal": "2026-08-28 23:42",
+   "createdAtISO": "2026-08-28T15:42:58+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQ0etC0agAArKVD.jpg",
+     "width": 1600,
+     "height": 900
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "vllm_project",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2093354756244992383",
+   "text": "🎉 Congrats to @Zai_org on opening the GLM-5.3 weights, the largest model in the GLM-5.3 line. Day-0 support in vLLM.\n\n744B total, 40B active, 1M context, 128K max output. @Zai_org kept the GLM-5.2 base and scaled post-training instead, so nothing under the model changed.\n\nvLLM serves it on the GLM-5.2 path, unchanged: same glm47 and glm45 parsers, same MTP out of the checkpoint, same FP8 KV cache to the full 1M.\n\nvllm serve zai-org/GLM-5.3 -tp 8\n\n🔗 https://t.co/pVrP62ZCRR",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 161,
+    "retweets": 22,
+    "replies": 7,
+    "quotes": 0,
+    "views": 11764,
+    "bookmarks": 13
+   },
+   "createdAt": "Fri Aug 28 15:07:21 +0000 2026",
+   "createdAtLocal": "2026-08-28 23:07",
+   "createdAtISO": "2026-08-28T15:07:21+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2093354097122455713",
+    "text": "GLM-5.3 is now open-weight.\n\nOur most capable model for agentic coding and cyber defense is now available to download, run, and customize.\n\nWeights: https://t.co/v1IbWMXxg4\nTech blog: https://t.co/ekQkO83jCv https://t.co/f8XlJksKyf",
+    "author": {
+     "screenName": "Zai_org",
+     "name": "Z.ai"
+    }
+   }
+  },
+  {
+   "id": "2093360949743026525",
+   "text": "@Zai_org An NVFP4 build from @inferact ships alongside on day 0: Inferact/GLM-5.3-NVFP4,\n465 GB of weights against 756 for the FP8 checkpoint.\n\n🔗 https://t.co/E2tADcCVXR",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 8,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 1,
+    "views": 1594,
+    "bookmarks": 3
+   },
+   "createdAt": "Fri Aug 28 15:31:57 +0000 2026",
+   "createdAtLocal": "2026-08-28 23:31",
+   "createdAtISO": "2026-08-28T15:31:57+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/Inferact/GLM-5.3-NVFP4"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2093148358143795254",
+   "text": "New blog! 🚀 MTP, EAGLE-3, DFlash or DSpark, which speculative decoding method should you actually use?\n\nThere’s no universal winner. The best choice changes with the model, workload, and speculation depth.\n\nWe break down how 5 methods work, how to enable and tune them in vLLM, and benchmark them across Gemma, Qwen, Kimi and MiniMax on @AMD Instinct MI300X & MI355X.\n\nDeep dive 👇\nhttps://t.co/CsTx2MvoPx",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 493,
+    "retweets": 65,
+    "replies": 22,
+    "quotes": 6,
+    "views": 28625,
+    "bookmarks": 322
+   },
+   "createdAt": "Fri Aug 28 01:27:12 +0000 2026",
+   "createdAtLocal": "2026-08-28 09:27",
+   "createdAtISO": "2026-08-28T01:27:12+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2093147978366435328/vid/avc1/1920x1080/OCkVCea6qYDYjcG0.mp4?tag=29",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2092789782464315594",
+   "text": "vLLM v0.28.0 is out! 584 commits from 270 contributors (76 new). 🎉\n\nHighlights:\n\n🌙 A stack-wide optimization push for Kimi-K3\n🐳 DeepSeek-V4 sparse MLA now works end to end for plain decode, MTP and DSpark\n⚡ Speculative decoding adds DFlash2 and DSpark confidence-scheduled verification\n🛠️ Model Runner V2 picks up E/P/D disaggregation and weight offloading\n🗄️ Tiered KV offloading gains a disk tier and out-of-tree secondary tiers\n🆕 New models: Muse Glimmer, Ling 3.0 Flash, Dots3 NOTE, Interns2mobius\n\nThread 👇",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 334,
+    "retweets": 34,
+    "replies": 21,
+    "quotes": 7,
+    "views": 22741,
+    "bookmarks": 54
+   },
+   "createdAt": "Thu Aug 27 01:42:20 +0000 2026",
+   "createdAtLocal": "2026-08-27 09:42",
+   "createdAtISO": "2026-08-27T01:42:20+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQsUuF6awAAu5he.jpg",
+     "width": 1600,
+     "height": 900
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2092789785417130014",
+   "text": "Performance and hardware:\n\n⚡ An adaptive speculative token budget: 55~65% better E2E TTFT\n🔗 Combined all-gathers for sequence parallelism: 1.5~3x at the kernel level\n💾 Optional shared-expert sharding on Kimi-K3 saves ~17 GiB per GPU\n🟢 NVIDIA: FlashInfer XQA decode on SM12x, and the native DSA path for MTP=3 on SM90\n🔴 AMD ROCm: torch 2.12 / triton 3.7, plus a fused Kimi-K3 KDA decode kernel\n🔵 Intel XPU: a torch linear backend with blockwise GEMM, and an XPU wheel in the release pipeline\n💻 CPU: an MLA backend so DeepSeek-V2/V3 run on CPU",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 17,
+    "retweets": 0,
+    "replies": 2,
+    "quotes": 0,
+    "views": 3260,
+    "bookmarks": 2
+   },
+   "createdAt": "Thu Aug 27 01:42:21 +0000 2026",
+   "createdAtLocal": "2026-08-27 09:42",
+   "createdAtISO": "2026-08-27T01:42:21+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2092789787891736992",
+   "text": "Serving, frontend, and what to know before upgrading:\n\n🔗 E/P/D: duplicate image preprocessing removed, and preprocessing moves to the GPU\n🦀 Rust frontend adds a standalone renderer and image inference over gRPC\n🔢 Online MXFP4 quantization, plus batch-invariant NVFP4 MoE via CUTLASS\n🌐 Request priority can now come from an HTTP header\n🔒 A DoS via audio sample-rate forgery is fixed\n\n⚠️ Before you upgrade:\n• New defaults: max_num_batched_tokens 8192 -> 16384, prefix caching on for Mamba models\n• bitsandbytes is now an out-of-tree plugin; calculate_kv_scales and override_attention_dtype are removed\n• Transformers 5.15.0, and the runtime image moves to Ubuntu 24.04\n• KV offload tiering metrics renamed from ..._block_... to ..._chunk_...\n\n🙏 Thanks to all 270 contributors this cycle (76 first-timers).\n\n📖 Full release notes → https://t.co/O2UlX8GPDY",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 15,
+    "retweets": 3,
+    "replies": 0,
+    "quotes": 1,
+    "views": 2753,
+    "bookmarks": 3
+   },
+   "createdAt": "Thu Aug 27 01:42:22 +0000 2026",
+   "createdAtLocal": "2026-08-27 09:42",
+   "createdAtISO": "2026-08-27T01:42:22+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2092742793328492735",
+   "text": "Monday afternoon we hosted a a vLLM x @googlecloud x @anyscalecompute happy hour in San Francisco 🥂, featuring core maintainers of vLLM and the builders of TPU. There were drinks, food, and a room full of people working on inference.\n\nThe timing works well because the vLLM team has been working to make TPUs a first-class backend in vLLM, and we see the progress with each PR: https://t.co/mPk0KCEa9g.\n\nThank you to @googlecloud, @anyscalecompute, and @inferact for co-hosting!",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 45,
+    "retweets": 7,
+    "replies": 0,
+    "quotes": 0,
+    "views": 4719,
+    "bookmarks": 4
+   },
+   "createdAt": "Wed Aug 26 22:35:37 +0000 2026",
+   "createdAtLocal": "2026-08-27 06:35",
+   "createdAtISO": "2026-08-26T22:35:37+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQrqd1DaIAAsm2o.jpg",
+     "width": 5712,
+     "height": 4284
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQrqeT0a8AAdEOc.jpg",
+     "width": 4284,
+     "height": 5712
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQrqetLawAAeFx8.jpg",
+     "width": 1461,
+     "height": 1948
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2092736832752795790",
+   "text": "On Monday before the vLLM Conference, we co-hosted the vLLM x NVIDIA Dynamo meetup. We had room for 300 people and got 1,600 signups. Incredible turnout from this community. 🎉\n\nTalks:\n🔷 Zachary Xi and Zijing Liu (Inferact) talked about the State of vLLM and agentic serving in production\n🔷 Harry Kim, Akshatha Kamath, and Anish Maddipoti (NVIDIA) talked about Dynamo and distributed serving\n\nThere were great conversations over food and drinks with people building across the inference stack, and a special focus on the vLLM and Dynamo relationship for production inference.\n\nThank you to @inferact and @NVIDIAAI for organizing! More meetups to come soon.",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 44,
+    "retweets": 5,
+    "replies": 1,
+    "quotes": 1,
+    "views": 5088,
+    "bookmarks": 4
+   },
+   "createdAt": "Wed Aug 26 22:11:56 +0000 2026",
+   "createdAtLocal": "2026-08-27 06:11",
+   "createdAtISO": "2026-08-26T22:11:56+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQrlCoRaIAAa8IQ.jpg",
+     "width": 4000,
+     "height": 3000
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQrlC8Ha0AAnfvL.jpg",
+     "width": 5712,
+     "height": 4284
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQrlDRhaMAAZMpD.jpg",
+     "width": 5712,
+     "height": 4284
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQrlDsob0AAeRra.jpg",
+     "width": 4000,
+     "height": 3000
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2092618480554332446",
+   "text": "🎉 Congrats to @Zai_org on GLM-5.3-Flash, the first natively multimodal model in the GLM-5 series, and their first hybrid of sparse and linear attention.\n\n320B total, 18B active, 45 layers where GLM-4.5 had 92. Linear attention carries local dependencies as state, sparse attention pulls global context back through a lightweight indexer, and IndexPool weights four indexer key vectors into one to keep that indexer cheap at 1M tokens. mHC on top, for scaling.\n\nvLLM already had each half of that mix. This is the first model to ask for both at once, and it has day-0 support, verified on @NVIDIA and @AMD GPUs.\n\n🔗 https://t.co/RKaHPa7KAG",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 301,
+    "retweets": 26,
+    "replies": 11,
+    "quotes": 3,
+    "views": 19725,
+    "bookmarks": 35
+   },
+   "createdAt": "Wed Aug 26 14:21:39 +0000 2026",
+   "createdAtLocal": "2026-08-26 22:21",
+   "createdAtISO": "2026-08-26T14:21:39+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQp4pd0a0AAwphI.jpg",
+     "width": 2346,
+     "height": 1070
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2092616204787626030",
+    "text": "Introducing GLM-5.3-Flash\n\n- Leading capabilities at a highly competitive price\n- Natively multimodal with a 1M-token context window\n- A 320B-A18B model released under the MIT License\n- Previously previewed as Ox Alpha, running entirely on Chinese AI chips\n\nBlog: https://t.co/tzOmB7gdZP\n\nAvailable now across all official platforms:\n\nWeights: https://t.co/9LRMahY9Wa\nAPI: https://t.co/VcaQnzYmS9\nCoding Plan: https://t.co/Nk8Y98HNhU\nZCode: https://t.co/Peepqv4XSx\nChat: https://t.co/WCqWT0qCQb\nAutoClaw: https://t.co/aGEG5HqTTb",
+    "author": {
+     "screenName": "Zai_org",
+     "name": "Z.ai"
+    }
+   }
+  },
+  {
+   "id": "2092600887873286157",
+   "text": "Qwen3.8-Flash-Next from @Alibaba_Qwen has day-0 support in vLLM, verified on NVIDIA and AMD GPUs. 🎉\n\nUltra-sparse multimodal MoE: 125B params, 6B active, 262K native, 1M via YaRN. On top of those sits a separate 51B N-gram table you can offload.\n\nMost of it will look familiar. The Gated DeltaNet layers reuse the KV path vLLM has had since Qwen3-Next: only a quarter of the layers hold a growing KV cache. Keep the 51B table in host RAM instead of HBM with VLLM_PLE_CPU_OFFLOAD=1. Qwen Sparse Attention is where the new engine work went. For now the model runs from vllm/vllm-openai:qwen38-flash-next.\n\nThanks to @Alibaba_Qwen for the weights, and for opening them this early! 🙌\n\n🔗 https://t.co/NPnI6LNrGA",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 375,
+    "retweets": 53,
+    "replies": 36,
+    "quotes": 8,
+    "views": 76984,
+    "bookmarks": 94
+   },
+   "createdAt": "Wed Aug 26 13:11:44 +0000 2026",
+   "createdAtLocal": "2026-08-26 21:11",
+   "createdAtISO": "2026-08-26T13:11:44+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQppJ43agAAZsMz.jpg",
+     "width": 2348,
+     "height": 1152
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2092591393424515114",
+    "text": "⚡Meet Qwen3.8-Flash, a multimodal MoE and an early preview of the Qwen4 architecture, now open-weight!\n\nThe production version Qwen3.8-Flash will be available soon via QwenCloud API at just $ 0.16/1M input tokens and $ 0.47/1M output tokens.\n\n125B parameters + 51B N-gram embeddings, with just 6B activated per token. Unmatched cost-efficiency.\n\nWhat's new: 🥳\n- Next architecture: GDN + QSA hybrid attention, Gated Residual, N-gram Embedding & Muon optimizer, serving as a precursor to the architecture used in Qwen4.\n- Dramatically lower training and inference costs: trained at just 1/9 the cost of Qwen3.7-Plus, while outperforming it across the board with especially strong gains in coding and office tasks.\n- Strong performance: scoring 58.7 on DeepSWE 1.1, 62.5 on SWE-bench Pro, 73.9 on CoWorkBench, 84.5 on AndroidWorld, and 95.7 on MathVision (with CI).\n- 262K native context, extensible to 1M with YaRN.\n\nWe’re also releasing the weights for Qwen3.8-Flash-Next, giving the community an early look at the new architecture we’re exploring for Qwen4.🚀\n\nWe can't wait to see what you build with Qwen3.8-Flash!👀👇\n- Blog: https://t.co/M5hYypFLgJ\n- Technical Report: https://t.co/IF0gObIkQO\n- Hugging Face: https://t.co/6ow8QVAABt\n- ModelScope: https://t.co/tDOn2jNuFG",
+    "author": {
+     "screenName": "Alibaba_Qwen",
+     "name": "Qwen"
+    }
+   }
+  },
+  {
+   "id": "2092446917905240475",
+   "text": "This weight transfer engine is native to vLLM. Any Ray-based trainer can adopt it with a single WeightSource iterator.\n\nGreat work here!\n\n🔗 https://t.co/Lpcxfxam3R",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 155,
+    "retweets": 21,
+    "replies": 1,
+    "quotes": 2,
+    "views": 17508,
+    "bookmarks": 70
+   },
+   "createdAt": "Wed Aug 26 02:59:55 +0000 2026",
+   "createdAtLocal": "2026-08-26 10:59",
+   "createdAtISO": "2026-08-26T02:59:55+00:00",
+   "media": [],
+   "urls": [
+    "https://vllm.ai/blog/2026-08-22-rdt-weight-transfer"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2092297660342653347",
+    "text": "Excited to share our work on large-scale sharded weight transfer!\n\nWe’ve implemented a native sharded weight transfer engine in vLLM and SkyRL using Ray Direct Transfer (RDT) + NIXL. We’re able to achieve weight transfer for Kimi K2 (1T params) in BF16 in 7.53 seconds on 48 8xH100 nodes.\n\nBlog: https://t.co/aj1ZjUznfX",
+    "author": {
+     "screenName": "sumanthrh",
+     "name": "Sumanth Hegde"
+    }
+   }
+  },
+  {
+   "id": "2092119800877371446",
+   "text": "One model, four tricks:\n🎬 text → video with synced sound\n🖼️ first/first+last frame → video with audio\n🎤 image + audio → lip-synced clip\n🎥 green-screen footage + background video → auto relight & composite\n\n🫶Thanks @MiniMax_AI for the shoutout on vLLM-Omni! Check out our recipe to get started👇\nhttps://t.co/iWylcIkV9u",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 60,
+    "retweets": 16,
+    "replies": 3,
+    "quotes": 1,
+    "views": 7474,
+    "bookmarks": 29
+   },
+   "createdAt": "Tue Aug 25 05:20:04 +0000 2026",
+   "createdAtLocal": "2026-08-25 13:20",
+   "createdAtISO": "2026-08-25T05:20:04+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2092050619964285104",
+    "text": "The MiniMax H3 ecosystem is growing faster than ever! ☺️\n\nCheck out Awesome MiniMax H3 Integrations - an index tracking everything built around H3, from 24GB VRAM local ComfyUI setups to enterprise-scale SGLang & vLLM-Omni serving deployments.\n\n🔥 What’s inside:\n- Hardware & Precision Maps: Quantization guides across INT8, NVFP4, and GGUF down to 8GB VRAM limits \n- Speed & Serving: Acceleration LoRAs, Sol-Attn, block-caching, and multi-GPU production stacks \n- Developer Tooling: Native agent skills, timeline directors, multi-shot motion context nodes, and h3.c for Apple Silicon\n\nHuge thanks to the global open-source community, framework maintainers, and independent developers pushing the boundaries of what’s possible with MiniMax H3!\n\n👇 Explore the repository & contribute:\nhttps://t.co/F1S5IjUNi1",
+    "author": {
+     "screenName": "MiniMax_AI",
+     "name": "MiniMax (official)"
+    }
+   }
+  },
+  {
+   "id": "2092040745842774377",
+   "text": "Congratulations to @SemiAnalysis_ on the release of AgentX 1.0 🎊, an open-source multi-turn agentic coding benchmark collected from ~$3M of real traces, running on 1000+ chips and ~2MW of continuously operated compute.\n\nWe are excited to see @vllm_project’s competitive performance on frontier open models: \n🔷130,093 tok/s/chip for DeepSeek V4 Pro \n🔷 77,079 tok/s/chip for Minimax M3\n🔷 12,479 tok/s/chip for Kimi K3.\n\nThe following thread covers an overview of the work from @vllm_project and @inferact: what we tested, found, and shipped upstream. This work highlights vLLM’s performance on real-world workloads and our committed focus to making vLLM an agentic-first engine.\n\nOptimizing AgentX performance meant tackling three major challenges: prefix reuse, efficient long context parallelism, and scaling performance with PD disaggregation. \n\nFirst, long agentic sessions stress prefix caching and KV cache offloading. Modern hybrid models have greatly reduced the required KV cache sizes, and caching every block boundary still saturates the KV cache pool which causes prefix cache thrashing across sessions.\n\nThe fix was sparse retention: one state per interval-sized segment plus the latest replay boundary (vllm-project/vllm #43447, #45845), then preserving shared-prefix boundaries so the interval can go to 0 for agent sessions (#47782). That gets us >95% hit rate at 14 concurrent requests with contexts to 1M.\n\nThe bigger structural change in KV cache offloading was making the shared KV pool distributed. With Mooncake Store as a first-class connector, prefill ranks can hit the prefix cache both within a worker and across workers, so we no longer have to trade cache locality against load balance to keep a cluster busy. Session-aware routing (48048) is what lets the router act on it.\n\nFor a single node deployment, SimpleCPUOffloadConnector has been greatly improved to support all hybrid model architectures and across both CUDA and ROCm platforms. For DeepSeek V4 Pro on ROCm, this implementation gave +81.7% output throughput and 46.6% lower mean e2e latency versus recomputing the prefix.\n\nKimi K3 at 2.8T barely fits on a single node, and squeezing it in leaves almost no headroom for KV cache, which is exactly what a long multi-turn session needs most. Parallelism strategy matters more here than on any other model we tested. \n\nTP8/DCP8 tops the K3 agentic frontier across configs, with B300 vLLM peaking at ~12.5k tok/s/chip at ~8 tok/s/user and GB300 NVL72 on Dynamo + vLLM holding the curve out past 200 tok/s/user. K3 also surfaced a routing bug worth pulling: vllm-project/router#194 fixes the router dropping reasoning_content, which hits any reasoning model served behind it.\n\nOn MiniMax M3, B200 vLLM reaches ~44k tok/s/chip and vLLM leads TRT-LLM on throughput vs p90 TTFT. M3 and Qwen3.5 both shipped day-0.\n\nFinally, fully optimized performance requires scaling the deployment with prefill-decode disaggregation and distributed KV cache offloading. Thanks to vLLM’s MultiConnector, this is natively supported with NIXL PD connector + MooncakeStoreConnector. By rate matching to find the ideal prefill-decode ratio, we achieved 4.45x higher throughput at a 60 tok/s interactivity for DeepSeek V4 Pro on GB300 Dynamo compared to B300.\n\nShoutout to @NVIDIAAI, who co-tuned most of these configs with us. Dynamo's router optimizations took AgentX replay time down 23.7% on the vLLM backend, the AIPerf replay harness is what made the traces runnable at all, and NIXL and their kernels sit under each respective performance point. \n\nShoutout to @AIatAMD as well: the team’s AITER sparse-MLA decode selection led to +5.22% AgentX output throughput; the hybrid AITER/native CSA selector led to 1.21–1.76x e2e performance boost, and the team made prebuilt lmcache gfx942/gfx950 wheels and a published Mooncake ROCm wheel.\n\nThank you to @SemiAnalysis_ for building AgentX and for the collaboration throughout. Agentic workloads are what users serve in real production, and benchmarking on real workloads is what improves vLLM and open source inference.\n\nNext up: more upstream work and a blog with a full technical deep dive later this week. Stay tuned. 🚀",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 291,
+    "retweets": 37,
+    "replies": 24,
+    "quotes": 22,
+    "views": 105200,
+    "bookmarks": 151
+   },
+   "createdAt": "Tue Aug 25 00:05:56 +0000 2026",
+   "createdAtLocal": "2026-08-25 08:05",
+   "createdAtISO": "2026-08-25T00:05:56+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQhrD9EaUAAInQA.jpg",
+     "width": 2514,
+     "height": 1472
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2091687226291708116",
+    "text": "AgentX - InferenceXv3: \nDoes CUDA Moat Hold up in Agentic Inferencing?\n$3 Million USD dataset open sourced, \n1 Mil+ Context Length, Multiturn, \nSub Agents 95%+ KVCache HitRate, \nGB300 NVL72, MI355, B200\n\nhttps://t.co/PgtKNYXdFr",
+    "author": {
+     "screenName": "SemiAnalysis_",
+     "name": "SemiAnalysis"
+    }
+   }
+  },
+  {
+   "id": "2090922911771291723",
+   "text": "vLLM Conference is next week, and we have a packed schedule 🎊 📅. Here's the full list of events you should know:\n\nMon:\n 🔷 4–6PM vLLM × Ray × Google Cloud Happy Hour: https://t.co/Exw10SVIrV\n 🔷 6–9PM vLLM × Dynamo Meetup: https://t.co/id6TaOfIMs\n\nTue:\n 🔷 11–11:30AM vLLM Keynote from @simon_mo_\n 🔷 12–5PM vLLM Track Day 1\n 🔷 6–9PM vLLM × AMD Happy Hour: https://t.co/RVXTxGq0Lz\n\nWed:\n 🔷 12–5PM vLLM Track Day 2\n 🔷 6–8:30PM vLLM x DigitalOcean × NVIDIA Happy Hour: https://t.co/U1FSK6aYhZ\n\nNo ticket needed for the happy hours and meetups, but space is limited. To join the full event, register here: https://t.co/bTDMkOOwIR",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 168,
+    "retweets": 31,
+    "replies": 5,
+    "quotes": 4,
+    "views": 22918,
+    "bookmarks": 31
+   },
+   "createdAt": "Fri Aug 21 22:04:04 +0000 2026",
+   "createdAtLocal": "2026-08-22 06:04",
+   "createdAtISO": "2026-08-21T22:04:04+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQRy-L5aoAE-yTQ.jpg",
+     "width": 3200,
+     "height": 2348
+    }
+   ],
+   "urls": [
+    "http://rsvp.withgoogle.com/events/ray-summit-x-google-cloud-happy-hour",
+    "http://luma.com/r8o604o0"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2090815806297063661",
+   "text": "In RL training, a vLLM rollout engine and a Megatron trainer can run the same policy yet disagree on a token's logprob due to floating-point non-associativity.\n\nSkyRL's IsoExec combines an execution contract with a unified model, aligning rounding-sensitive execution choices across rollout and training.\n\nBitwise parity holds across different TP, EP, and SP layouts. For Gated DeltaNet, the chunkwise-parallel recurrent algorithm makes parallel training and prefill bitwise identical to recurrent decode.\n\nQwen3.5-35B-A3B, DAPO, 8xH100, 50 steps: logprob diff 1.6e-2 to 6.7e-7, full-step overhead 25.3% ✅ vLLM's scheduler and CUDA graphs still apply.\n\nThanks to @JiangAlexander1 and the SkyRL team at @NovaSkyAI.\n\n🔗 https://t.co/Y8SIIgHqAr",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 264,
+    "retweets": 42,
+    "replies": 18,
+    "quotes": 3,
+    "views": 24172,
+    "bookmarks": 152
+   },
+   "createdAt": "Fri Aug 21 14:58:28 +0000 2026",
+   "createdAtLocal": "2026-08-21 22:58",
+   "createdAtISO": "2026-08-21T14:58:28+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQQQiDJakAAi09B.jpg",
+     "width": 1672,
+     "height": 941
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2090579679812194375",
+   "text": "We're capping Day 1 of the first vLLM Conference with a happy hour hosted by @AMD and @inferact 🎉!\n\nWe'll have engineers from AMD, Inferact and the vLLM community for casual conversations alongside drinks and food.\n\n📅Tue Aug 25, 6-9pm, San Francisco. \nNo conference ticket needed, RSVP below!",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 27,
+    "retweets": 6,
+    "replies": 2,
+    "quotes": 1,
+    "views": 5140,
+    "bookmarks": 3
+   },
+   "createdAt": "Thu Aug 20 23:20:11 +0000 2026",
+   "createdAtLocal": "2026-08-21 07:20",
+   "createdAtISO": "2026-08-20T23:20:11+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQM57YZbUAACNYu.jpg",
+     "width": 2160,
+     "height": 2160
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2090579682311962679",
+   "text": "🔗https://t.co/0U1mrhGkgx",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 1607,
+    "bookmarks": 1
+   },
+   "createdAt": "Thu Aug 20 23:20:12 +0000 2026",
+   "createdAtLocal": "2026-08-21 07:20",
+   "createdAtISO": "2026-08-20T23:20:12+00:00",
+   "media": [],
+   "urls": [
+    "https://luma.com/6nb8coax"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "qme",
+   "score": null
+  },
+  {
+   "id": "2090243605147586955",
+   "text": "Ornith-1.5 is out and it serves in vLLM today. Congrats @ornith_ on a self-improving, MIT-licensed family from 9B to 397B, SOTA among open models on coding and agentic tasks.\n\nAlready serving in vLLM:\n\nvllm serve ornith-ai/Ornith-1.5-9B",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 201,
+    "retweets": 23,
+    "replies": 23,
+    "quotes": 4,
+    "views": 26267,
+    "bookmarks": 48
+   },
+   "createdAt": "Thu Aug 20 01:04:44 +0000 2026",
+   "createdAtLocal": "2026-08-20 09:04",
+   "createdAtISO": "2026-08-20T01:04:44+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2090074077084127302",
+    "text": "Aloha! 🌺Introducing Ornith-1.5, a family of open-source LLMs spanning 9B Dense, 35B MoE, and 397B MoE, trained with self-improving strategies.\n\nIt achieves state-of-the-art performance among open-source models of comparable size and delivers performance comparable to Claude Opus 4.8 across reasoning, agentic, and coding tasks:\n✅Terminal-Bench 2.1 (86.1)\n✅SWE-Bench (86 on verified, 65.1 on pro, 79.6 on Multilingual)\n✅DeepSWE (56)\n✅HLE (44.6)\n✅ClawEval (81.4)\n✅Tool Decathlon (71.2)\n\nOrnith-1.5 takes a major step toward training foundation models through end-to-end self-improvement, extending the self-scaffolding strategies introduced in Ornith-1.0 into a more complete self-improvement loop: the model proposes new tasks, generates task-specific scaffolds, and produces solution rollouts for reinforcement learning, continuously creating new learning experiences from which it can improve.\n\nAll models, along with their quantized versions (FP8, GGUF, MLX, and NVFP4), have been released under the MIT License, enabling unrestricted commercial and research use.\n📘Tech Blog: https://t.co/OZ63scRWLB\n🤗Huggingface: https://t.co/mGJLwhrQOM",
+    "author": {
+     "screenName": "ornith_",
+     "name": "Ornith"
+    }
+   }
+  },
+  {
+   "id": "2088425247112679794",
+   "text": "Six weeks ago, serving DSpark in vLLM meant choosing a draft length for your traffic and living with it. Now you set that length once, and vLLM decides how much of the draft to verify every step. ✨\n\nOn DeepSeek-V4-Pro-0813, the first token of a 7-token draft survives verification more than 70% of the time. The last one, less than 10%.\n\n📈 One config, adaptive verification on with num_speculative_tokens 7, holds the Pareto frontier from concurrency 1 to 256 on 8×B300. Long draft at low load, short at high load.\n\nOn main behind enable_adaptive_verification, for DSpark with a confidence head on Flash Attention or DSV4 attention. More backends and models are in bring-up. Thanks to Lucas Wilkinson (@RedHat_AI) and Ben Chislett (@NVIDIAAI), and to @deepseek_ai for DSpark and the varlen DeepGEMM indexer kernel.\n\n🔗 https://t.co/hvIVtxEgDg",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 248,
+    "retweets": 29,
+    "replies": 16,
+    "quotes": 3,
+    "views": 25369,
+    "bookmarks": 91
+   },
+   "createdAt": "Sat Aug 15 00:39:14 +0000 2026",
+   "createdAtLocal": "2026-08-15 08:39",
+   "createdAtISO": "2026-08-15T00:39:14+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HPuTsO6aAAAK5dN.jpg",
+     "width": 1056,
+     "height": 672
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2088287539979559068",
+   "text": "🎉 Qwen3.8-27B is here from @Alibaba_Qwen, and the whole thing fits on a single GPU. Same hybrid backbone as the 2.4T flagship, dense instead of MoE. Day-0 support in vLLM. 🚀\n\nWhat is in it for serving ✨\n\n- Fits one Blackwell GPU in every precision. Qwen ships BF16 and FP8, the NVFP4 build from @inferact\n- 262K native context, stretching to 1M. At that length one GB300 still has room for roughly 6.6M KV tokens. Six full-length sequences in flight, on one GPU\n- An MTP draft head rides inside the checkpoint, so speculative decoding needs no separate speculator repo. Acceptance on short prompts measured 92.2% in BF16 and 84.8% in FP8\n\nVerified end-to-end on @NVIDIA GB300: BF16 and FP8 at TP4, NVFP4 at TP1, tool calls working, correct generations at 1M context. Two prerequisites, vLLM nightly and transformers 5.8.0+.\n\n🔗 https://t.co/gSHtqxi93x",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 295,
+    "retweets": 35,
+    "replies": 20,
+    "quotes": 4,
+    "views": 95310,
+    "bookmarks": 79
+   },
+   "createdAt": "Fri Aug 14 15:32:02 +0000 2026",
+   "createdAtLocal": "2026-08-14 23:32",
+   "createdAtISO": "2026-08-14T15:32:02+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2088280182356611304",
+    "text": "We promised open weights for Qwen3.8. Now, time to meet them! 🎉\n\n⚡ Qwen3.8-27B:\n- A native multimodal dense model. With just 27B parameters, it outperforms Qwen3.7-Plus overall and shines in real-world coding & office workflows.\n- 262K native context, easily extendable to 1M tokens via YaRN.\n- Built for builders. Highly efficient, high-quality, and licensed under Apache 2.0.\n\n🚀 The open weights for Qwen3.8-2.4T-A95B (Max-level) have also been released recently.\n\nWhether you're shipping lightweight applications with Qwen3.8-27B locally or building agents with Qwen3.8-2.4T-A95B, they're yours now!\n\nDownload, deploy, and build something we haven't imagined yet. 👀👇\n- Hugging Face：\nhttps://t.co/4kaAcqYEVj\n- ModelScope：\nhttps://t.co/eRIMZCGkhC",
+    "author": {
+     "screenName": "Alibaba_Qwen",
+     "name": "Qwen"
+    }
+   }
+  }
+ ]
+}

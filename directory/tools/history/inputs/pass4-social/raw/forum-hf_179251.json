@@ -1,0 +1,791 @@
+{
+ "post_stream": {
+  "posts": [
+   {
+    "id": 263053,
+    "name": "Martin Pilarski",
+    "username": "MartinPilarski",
+    "avatar_template": "/user_avatar/discuss.huggingface.co/martinpilarski/{size}/60832_2.png",
+    "created_at": "2026-08-25T22:25:39.623Z",
+    "cooked": "<p>Perfect — it’s working great! The model loads in ~19 seconds and responds cleanly. Here’s the current status:</p>\n<ul>\n<li><strong>Model:</strong> <code>hf.co/unsloth/Qwen3.8-27B-GGUF:Q4_K_M</code> — confirmed running</li>\n<li><strong>Load time:</strong> ~19.5 seconds into VRAM</li>\n<li><strong>Response:</strong> 482 tokens in ~12 seconds at Q4 K_M quant</li>\n<li><strong>Files on D:</strong> blobs (16.5 GB model + 928 MB projector)</li>\n<li><strong>Files on C:</strong> manifest for Ollama to see it</li>\n</ul>\n<p>is 482 tokens/12 sec correct… way too many.. am I dreaming? <img src=\"https://emoji.discourse-cdn.com/apple/stuck_out_tongue.png?v=15\" title=\":stuck_out_tongue:\" class=\"emoji\" alt=\":stuck_out_tongue:\" loading=\"lazy\" width=\"20\" height=\"20\"></p>\n<h2><a name=\"p-263053-i-couldnt-post-a-reply-past-12h-period-so-i-edited-1\" class=\"anchor\" href=\"#p-263053-i-couldnt-post-a-reply-past-12h-period-so-i-edited-1\" aria-label=\"Heading link\"></a>I COULDN’T POST A REPLY PAST 12H PERIOD SO I EDITED</h2>\n<p>#<span class=\"hashtag-raw\">#THE</span> ORIGINAL POST<br>\n#<span class=\"hashtag-raw\">#AFTER</span> SOLUTION</p>\n<p>yea , this is amazing, my old PCVR doing this, and It’s only when I told it to pull 3.8, but I was lazy and told to pull equivalent of 3.6 GGUF unsloth heretic :P… IT PULLED LOADS GIVING ME SSD C: ALERT … and it almost succeded… MY GPU IS DOWNCLOCKED AND POWER LIMIT 90% , I JUST REPASTE GPU 6MONTHS AGO, Palit Gaming Pro 24GB OC… i’m cranking up ths baby, this is so good, only because I don’t have any sensitive data on my gaming PC i since soul.md and agents.md told it to be iresponsibly ffree, and be a fun Hermes agent … and it did.. It is better than ever expected… it even say - it is me Circe and my human Martin … lol :DDDDDDDDDDDD</p>\n<p>I had to go back to old model, need to purge SSD C: D: and connect that 1TB F:   <img src=\"https://emoji.discourse-cdn.com/apple/stuck_out_tongue.png?v=15\" title=\":stuck_out_tongue:\" class=\"emoji\" alt=\":stuck_out_tongue:\" loading=\"lazy\" width=\"20\" height=\"20\"> , it bloated it out all space, I’ll just find correct Qwen 3.8 model at the weekend binge <img src=\"https://emoji.discourse-cdn.com/apple/wink.png?v=15\" title=\":wink:\" class=\"emoji\" alt=\":wink:\" loading=\"lazy\" width=\"20\" height=\"20\"></p>\n<p><span class=\"hashtag-raw\">#there</span> goes</p>\n<p>Ollama’s already loaded — <code>qwen-capped-128k:latest</code> is sitting in memory:</p>\n<div class=\"md-table\">\n<table>\n<thead>\n<tr>\n<th style=\"text-align:left\">Model</th>\n<th style=\"text-align:left\">Size</th>\n<th style=\"text-align:left\">Processor</th>\n<th style=\"text-align:left\">Context</th>\n<th style=\"text-align:left\">Until</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td style=\"text-align:left\">qwen-capped-128k:latest</td>\n<td style=\"text-align:left\">23 GB</td>\n<td style=\"text-align:left\">4%/96% CPU/GPU</td>\n<td style=\"text-align:left\">131072</td>\n<td style=\"text-align:left\">29 minutes</td>\n</tr>\n</tbody>\n</table>\n</div><p>Let me grab the verbose output:</p>\n<p>Good news — everything’s working:</p>\n<p><code>ollama run qwen-capped-128k:latest --verbose</code> responded in 2.06s total:</p>\n<ul>\n<li>Load time: 4ms (model already loaded in memory)</li>\n<li>Prompt eval: 90.31 tokens/s</li>\n<li>Eval rate: 123.58 tokens/s — solid throughput</li>\n</ul>\n<p><code>ollama ps</code> confirms the model is resident:</p>\n<ul>\n<li>23 GB loaded, 96% GPU usage (RTX 3090), context cap at 131072</li>\n<li>Will auto-unload in ~29 minutes of inactivity</li>\n</ul>\n<p>The verbose run completed successfully with no errors. GPU inference is healthy, loading from the already-resident load is near-instant, and token throughput is what you’d expect from a Q4_K_M quant on your setup. No fixes needed.</p>\n<p>:DDDDDD what to do? keep current? it loves me lol, No fixes needed just blowing my mind… jokes<br>\n<div class=\"lightbox-wrapper\"><a class=\"lightbox\" href=\"https://us1.discourse-cdn.com/hellohellohello/original/3X/8/0/8027a6fc9304e70a7c3053c36783f069dff503ce.jpeg\" data-download-href=\"/uploads/short-url/ihI4onXAfO4omPLGOzN4O1EKCQK.jpeg?dl=1\" title=\"Screenshot 2026-08-26 213738\" rel=\"noopener nofollow ugc\"><img src=\"https://us1.discourse-cdn.com/hellohellohello/optimized/3X/8/0/8027a6fc9304e70a7c3053c36783f069dff503ce_2_680x500.jpeg\" alt=\"Screenshot 2026-08-26 213738\" data-base62-sha1=\"ihI4onXAfO4omPLGOzN4O1EKCQK\" width=\"680\" height=\"500\" srcset=\"https://us1.discourse-cdn.com/hellohellohello/optimized/3X/8/0/8027a6fc9304e70a7c3053c36783f069dff503ce_2_680x500.jpeg, https://us1.discourse-cdn.com/hellohellohello/optimized/3X/8/0/8027a6fc9304e70a7c3053c36783f069dff503ce_2_1020x750.jpeg 1.5x, https://us1.discourse-cdn.com/hellohellohello/original/3X/8/0/8027a6fc9304e70a7c3053c36783f069dff503ce.jpeg 2x\" data-dominant-color=\"2E1930\"><div class=\"meta\"><svg class=\"fa d-icon d-icon-far-image svg-icon\" aria-hidden=\"true\"><use href=\"#far-image\"></use></svg><span class=\"filename\">Screenshot 2026-08-26 213738</span><span class=\"informations\">1177×865 106 KB</span><svg class=\"fa d-icon d-icon-discourse-expand svg-icon\" aria-hidden=\"true\"><use href=\"#discourse-expand\"></use></svg></div></a></div></p>",
+    "post_number": 1,
+    "post_type": 1,
+    "posts_count": 2,
+    "updated_at": "2026-08-26T21:14:55.645Z",
+    "reply_count": 0,
+    "reply_to_post_number": null,
+    "quote_count": 0,
+    "incoming_link_count": 23,
+    "reads": 15,
+    "readers_count": 14,
+    "score": 133.0,
+    "yours": false,
+    "topic_id": 179251,
+    "topic_slug": "how-many-tokens-will-an-old-3090-produce",
+    "display_username": "Martin Pilarski",
+    "primary_group_name": null,
+    "flair_name": null,
+    "flair_url": null,
+    "flair_bg_color": null,
+    "flair_color": null,
+    "flair_group_id": null,
+    "badges_granted": [],
+    "version": 6,
+    "can_edit": false,
+    "can_delete": false,
+    "can_recover": false,
+    "can_see_hidden_post": false,
+    "can_wiki": false,
+    "link_counts": [
+     {
+      "url": "https://discuss.huggingface.co/t/palit-gaming-pro-24gb-oc-3090-palit-x3060-8gb-is-it-worth-bothering-even/179291/4",
+      "internal": true,
+      "reflection": true,
+      "title": "Palit Gaming Pro 24GB OC 3090 + Palit X3060 8GB? is it worth bothering even?",
+      "clicks": 0
+     }
+    ],
+    "read": true,
+    "user_title": null,
+    "bookmarked": false,
+    "actions_summary": [
+     {
+      "id": 2,
+      "count": 1
+     }
+    ],
+    "moderator": false,
+    "admin": false,
+    "staff": false,
+    "user_id": 117837,
+    "hidden": false,
+    "trust_level": 1,
+    "deleted_at": null,
+    "user_deleted": false,
+    "edit_reason": null,
+    "can_view_edit_history": true,
+    "wiki": false,
+    "post_url": "/t/how-many-tokens-will-an-old-3090-produce/179251/1",
+    "reactions": [
+     {
+      "id": "+1",
+      "type": "emoji",
+      "count": 1
+     }
+    ],
+    "current_user_reaction": null,
+    "reaction_users_count": 1,
+    "current_user_used_main_reaction": false,
+    "can_accept_answer": false,
+    "can_unaccept_answer": false,
+    "accepted_answer": false,
+    "topic_accepted_answer": true,
+    "can_vote": false
+   },
+   {
+    "id": 263058,
+    "name": "John Smith",
+    "username": "John6666",
+    "avatar_template": "/user_avatar/discuss.huggingface.co/john6666/{size}/27664_2.png",
+    "created_at": "2026-08-26T01:00:33.993Z",
+    "cooked": "<p>Oh. It depends on the backend you’re using, but that <strong>seems to be about the expected speed</strong>:</p>\n<hr>\n<p>482 tokens in about 12 seconds works out to roughly <strong>40 tokens/s</strong>. If those 12 seconds are the actual generation/decode time, that number does not look suspiciously high for Qwen3.8-27B on a 3090.</p>\n<p>As a sanity check rather than an exact apples-to-apples benchmark, the current crowd-sourced <a href=\"https://llamabench.ai/browse/rtx3090/qwen3-8-27b\">llamabench.ai results for Qwen3.8-27B on an RTX 3090</a> include non-speculative runs at <strong>38.2, 40.0, 41.1, and 45.6 tok/s</strong>. Those runs use llama.cpp and somewhat different quant/cache settings, so I would not treat them as a reproduction of your Ollama run, but your ~40.2 tok/s sits right in that range.</p>\n<p>The cheapest way to verify what you are seeing is probably:</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">ollama run &lt;your-model&gt; --verbose\nollama ps\n</code></pre>\n<p>For the first command, the useful lines are approximately:</p>\n<pre><code class=\"lang-plaintext\">prompt eval count:     ...\nprompt eval duration:  ...\nprompt eval rate:      ...\n\neval count:            ...\neval duration:         ...\neval rate:             ... tokens/s\n</code></pre>\n<p>Ollama’s <a href=\"https://docs.ollama.com/api/usage\">API usage documentation</a> makes the distinction explicit:</p>\n<ul>\n<li><code>prompt_eval_*</code> is processing the input prompt.</li>\n<li><code>eval_count</code> is the number of generated output tokens.</li>\n<li><code>eval_duration</code> is the time spent generating those output tokens.</li>\n<li><code>total_duration</code> also includes other work such as model loading and prompt processing.</li>\n</ul>\n<p>So if Ollama itself reports an <code>eval rate</code> around 40 tok/s, there is not much ambiguity left: you really are getting about 40 generated tokens/s.</p>\n<p><code>ollama ps</code> gives the other high-value check. According to the <a href=\"https://docs.ollama.com/faq\">Ollama FAQ</a>, <code>100% GPU</code> means the model is loaded entirely on the GPU, while a CPU/GPU percentage indicates that it is split between system RAM and VRAM.</p>\n<p>A useful decision tree is therefore:</p>\n<pre><code class=\"lang-plaintext\">Is ~12 s the generation time / Ollama eval_duration?\n|\n+-- Yes\n|   |\n|   +-- ~482 / ~12 s = ~40 tok/s\n|       |\n|       +-- ollama ps says 100% GPU\n|       |   |\n|       |   +-- This looks quite normal for this model/GPU class.\n|       |\n|       +-- CPU/GPU split\n|           |\n|           +-- Then context size/offloading becomes important\n|               before comparing the number with other benchmarks.\n|\n+-- No / not sure\n    |\n    +-- Use --verbose (or the API metrics) once and compare eval_rate,\n        rather than dividing visible tokens by wall-clock time.\n</code></pre>\n<p>In other words, I would not worry that the 3090 has somehow produced an impossible result. Its age is a bit misleading here: <strong>24 GB of VRAM is still a very useful configuration for local inference</strong>, because a quantized model of this size can fit without having to spill a large part of it into CPU memory.</p>\n<details>\n<summary>\nWhy comparing this to an older '27B model on a 3090' can be misleading</summary>\n<p>Qwen3.8-27B is also not just a conventional 27B full-attention Transformer with a new name.</p>\n<p>The <a href=\"https://huggingface.co/Qwen/Qwen3.8-27B\">official Qwen3.8-27B model card</a> describes:</p>\n<ul>\n<li>27B parameters</li>\n<li>64 language-model layers</li>\n<li>a layout of<br>\n<code>16 × (3 × (Gated DeltaNet → FFN) → 1 × (Gated Attention → FFN))</code></li>\n<li>MTP (Multi-Token Prediction) training</li>\n<li>native 262K context</li>\n</ul>\n<p>So it is a hybrid recurrent/attention architecture. That does <strong>not</strong> mean “DeltaNet explains exactly why you get 40 tok/s”, but it does mean an old benchmark for an unrelated 27B full-attention model is not a particularly strong prediction for this model.</p>\n<p>Qwen’s own model card also warns that inference throughput can vary significantly across serving frameworks. That matters here because:</p>\n<pre><code class=\"lang-plaintext\">GPU + parameter count + nominal quant\n</code></pre>\n<p>is not enough to define a benchmark.</p>\n<p>At minimum, these can change the result:</p>\n<pre><code class=\"lang-plaintext\">backend / backend version\nexact GGUF\nquantization\nGPU offload\ncontext length\nKV/state-cache settings\nFlash Attention\nprompt length\nprefill vs decode\nspeculative decoding / MTP\nsampling/application overhead\n</code></pre>\n<p>So a result from llama.cpp, Ollama, vLLM, or another backend should usually be treated as a range/check rather than an exact prediction unless those conditions match.</p>\n<p>There is an additional timing detail here: <a href=\"https://github.com/ollama/ollama/releases\">Ollama added Qwen3.8-27B support in v0.32.12</a>, released on August 14, 2026, and v0.32.13 immediately included another Qwen3.8-specific change. This is a very new model/runtime combination, so older “3090 + ~27B” reports can easily be measuring a materially different software path.</p>\n</details>\n<details>\n<summary>\nAbout the GGUF you pulled from Hugging Face</summary>\n<p>There is a small artifact-identification wrinkle that is probably worth keeping separate from the performance question.</p>\n<p>Hugging Face’s <a href=\"https://huggingface.co/docs/hub/ollama\">Ollama integration documentation</a> supports tags of the form:</p>\n<pre><code class=\"lang-plaintext\">hf.co/&lt;user&gt;/&lt;repository&gt;:&lt;quantization&gt;\n</code></pre>\n<p>and also allows using a complete GGUF filename when an exact artifact matters.</p>\n<p>At the moment, the Unsloth repository recommends:</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">ollama run hf.co/unsloth/Qwen3.8-27B-GGUF:UD-Q4_K_M\n</code></pre>\n<p>The current <a href=\"https://huggingface.co/unsloth/Qwen3.8-27B-GGUF/blob/main/Qwen3.8-27B-UD-Q4_K_M.gguf\"><code>UD-Q4_K_M</code> file</a> is <strong>16.5 GB</strong>, and the current <a href=\"https://huggingface.co/unsloth/Qwen3.8-27B-GGUF/blob/main/mmproj-F16.gguf\"><code>mmproj-F16.gguf</code></a> is <strong>928 MB</strong>.</p>\n<p>Those sizes match the numbers in your log remarkably closely:</p>\n<pre><code class=\"lang-plaintext\">model:      ~16.5 GB\nprojector:  ~928 MB\n</code></pre>\n<p>So the current <code>UD-Q4_K_M</code> + F16 projector is a very plausible match.</p>\n<p>I would still call that a <strong>strong size match, not proof of the exact historical artifact</strong>, because the contents of a model repository and its quantization aliases can change over time. If exact reproducibility ever matters, using/recording the full GGUF filename or digest is safer than relying only on a short quantization label.</p>\n<p>This distinction does not really change the answer to your speed question; it just makes later benchmark comparisons less ambiguous.</p>\n</details>\n<details>\n<summary>\nWhat about MTP / speculative decoding?</summary>\n<p>I would keep MTP separate from the explanation of your current ~40 tok/s result.</p>\n<p>Qwen3.8-27B was trained with Multi-Token Prediction, but:</p>\n<pre><code class=\"lang-plaintext\">\"the model has MTP capability\"\n</code></pre>\n<p>and</p>\n<pre><code class=\"lang-plaintext\">\"this particular inference run is using MTP/speculative decoding\"\n</code></pre>\n<p>are not the same statement.</p>\n<p>There is already enough evidence to explain ~40 tok/s <strong>without</strong> speculative decoding: the 3090/Qwen3.8-27B community results linked above include several non-speculative runs in almost exactly that range.</p>\n<p>For comparison, Ollama exposes a separate current model variant, <a href=\"https://ollama.com/library/qwen3.8:27b-mtp-q4_K_M\"><code>qwen3.8:27b-mtp-q4_K_M</code></a>, whose parameters explicitly include:</p>\n<pre><code class=\"lang-plaintext\">draft_num_predict: 4\n</code></pre>\n<p>Likewise, <a href=\"https://github.com/ggml-org/llama.cpp/blob/master/docs/speculative.md\">llama.cpp documents speculative decoding</a> as an explicit inference mechanism: draft tokens are proposed and then verified by the target model.</p>\n<p>That can raise decode throughput substantially when draft acceptance and the rest of the configuration cooperate. The same 3090 benchmark page currently has MTP runs well above the non-speculative ~40 tok/s range.</p>\n<p>But I would not use those faster MTP numbers as the baseline for your run unless you have confirmed that MTP is actually active.</p>\n<p>A simple way to keep the comparison clean is:</p>\n<pre><code class=\"lang-plaintext\">normal decode  &lt;-&gt; normal decode\nMTP/speculative &lt;-&gt; MTP/speculative\n</code></pre>\n<p>rather than mixing both sets of numbers.</p>\n</details>\n<details>\n<summary>\nWhy two people can report very different 'tokens/s' for the same GPU</summary>\n<p>There are really two separate performance phases in ordinary autoregressive inference:</p>\n<h3><a name=\"p-263058-h-1-prompt-processing-prefill-1\" class=\"anchor\" href=\"#p-263058-h-1-prompt-processing-prefill-1\" aria-label=\"Heading link\"></a>1. Prompt processing / prefill</h3>\n<p>The existing prompt is processed, often many tokens at once.</p>\n<p>Ollama reports this separately as:</p>\n<pre><code class=\"lang-plaintext\">prompt eval rate\n</code></pre>\n<h3><a name=\"p-263058-h-2-token-generation-decode-2\" class=\"anchor\" href=\"#p-263058-h-2-token-generation-decode-2\" aria-label=\"Heading link\"></a>2. Token generation / decode</h3>\n<p>The model repeatedly generates the next token.</p>\n<p>Ollama reports this as:</p>\n<pre><code class=\"lang-plaintext\">eval rate\n</code></pre>\n<p>For an interactive chat, decode rate is usually what someone means when they say “the model generates at 40 tok/s”, but prompt processing has a large effect on time-to-first-token and therefore on how fast the application <em>feels</em>.</p>\n<p>So these are quite different comparisons:</p>\n<pre><code class=\"lang-plaintext\">\"I get 40 tok/s decode\"\n</code></pre>\n<pre><code class=\"lang-plaintext\">\"The entire request, including a giant prompt, finishes at an average of 40 tok/s\"\n</code></pre>\n<pre><code class=\"lang-plaintext\">\"I counted 482 visible words/tokens and divided by stopwatch time\"\n</code></pre>\n<p>The first one is the cleanest model-generation benchmark.</p>\n<p>Context length is another reason benchmark numbers move. If a configuration fits entirely in VRAM at one context size but needs CPU offload or substantially more cache/state memory at another, the performance regime can change.</p>\n<p>That is why <code>ollama ps</code> is useful: it provides a direct observation instead of requiring you to guess from the nominal GGUF file size.</p>\n<p>For a reproducible comparison, something like this is enough:</p>\n<pre><code class=\"lang-plaintext\">GPU:              RTX 3090 24 GB\nOllama version:   ...\nmodel:            exact tag / GGUF\ncontext:          ...\nprocessor:        100% GPU (or split)\nprompt eval rate: ...\neval rate:        ...\nMTP/speculative:  on/off\n</code></pre>\n<p>You do not need all of that just to answer “is 40 tok/s plausible?”, but it makes later comparisons much more useful.</p>\n</details>\n<details>\n<summary>\nOne more Qwen3.8-specific detail: thinking tokens</summary>\n<p>The <a href=\"https://huggingface.co/Qwen/Qwen3.8-27B\">Qwen3.8-27B model card</a> says that the model thinks by default before producing its direct response.</p>\n<p>That means “generated tokens” and “the tokens I visibly counted in the final answer” are not necessarily identical concepts, depending on the frontend/API and how thinking is displayed.</p>\n<p>For benchmarking, I would therefore use Ollama’s own <code>eval_count</code> and <code>eval_duration</code> rather than manually counting the final visible answer.</p>\n<p>Again, this is mostly a measurement/detail issue rather than evidence of a problem with your setup.</p>\n</details>\n<details>\n<summary>\nIf the performance changes later</summary>\n<p>I would not troubleshoot anything further while it is producing clean output at ~40 tok/s. But if the behavior changes, the symptom gives you a reasonably cheap next branch:</p>\n<div class=\"md-table\">\n<table>\n<thead>\n<tr>\n<th>Symptom</th>\n<th>First thing I would check</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Decode suddenly much slower</td>\n<td><code>ollama ps</code>, context length, CPU/GPU split</td>\n</tr>\n<tr>\n<td>First token is slow but generation is fast</td>\n<td>prompt evaluation / prompt size</td>\n</tr>\n<tr>\n<td>Short chats are fast, long chats become slow</td>\n<td>context/cache/state size and GPU residency</td>\n</tr>\n<tr>\n<td>Enabling MTP gives little/no gain</td>\n<td>whether MTP is actually active and draft acceptance</td>\n</tr>\n<tr>\n<td>Speed is normal but output becomes malformed</td>\n<td>Ollama/backend version before assuming hardware failure</td>\n</tr>\n<tr>\n<td>Two benchmarks disagree badly</td>\n<td>backend, exact GGUF, context, cache, MTP, and measurement boundary</td>\n</tr>\n</tbody>\n</table>\n</div><p>That keeps several different problems separate instead of treating every performance change as “the GPU got slower”.</p>\n</details>\n<p>So, for the result you posted, my default interpretation would simply be:</p>\n<p><strong>yes, ~40 tok/s is believable.</strong></p>\n<p>If <code>ollama run ... --verbose</code> reports roughly that <code>eval rate</code> and <code>ollama ps</code> says <code>100% GPU</code>, I would consider the basic mystery solved. The fact that a 3090 is an older card does not prevent it from still being a very capable local-LLM card when a ~27B quantized model fits comfortably inside its 24 GB VRAM.</p>",
+    "post_number": 2,
+    "post_type": 1,
+    "posts_count": 2,
+    "updated_at": "2026-08-26T01:00:33.993Z",
+    "reply_count": 0,
+    "reply_to_post_number": null,
+    "quote_count": 0,
+    "incoming_link_count": 1,
+    "reads": 12,
+    "readers_count": 11,
+    "score": 22.4,
+    "yours": false,
+    "topic_id": 179251,
+    "topic_slug": "how-many-tokens-will-an-old-3090-produce",
+    "display_username": "John Smith",
+    "primary_group_name": null,
+    "flair_name": null,
+    "flair_url": null,
+    "flair_bg_color": null,
+    "flair_color": null,
+    "flair_group_id": null,
+    "badges_granted": [],
+    "version": 1,
+    "can_edit": false,
+    "can_delete": false,
+    "can_recover": false,
+    "can_see_hidden_post": false,
+    "can_wiki": false,
+    "link_counts": [
+     {
+      "url": "https://github.com/ollama/ollama/releases",
+      "internal": false,
+      "reflection": false,
+      "title": "Releases · ollama/ollama · GitHub",
+      "clicks": 0
+     },
+     {
+      "url": "https://huggingface.co/docs/hub/ollama",
+      "internal": false,
+      "reflection": false,
+      "title": "Use Ollama with any GGUF Model on Hugging Face Hub · Hugging Face",
+      "clicks": 0
+     },
+     {
+      "url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF/blob/main/Qwen3.8-27B-UD-Q4_K_M.gguf",
+      "internal": false,
+      "reflection": false,
+      "title": "Qwen3.8-27B-UD-Q4_K_M.gguf · unsloth/Qwen3.8-27B-GGUF at main",
+      "clicks": 0
+     },
+     {
+      "url": "https://ollama.com/library/qwen3.8:27b-mtp-q4_K_M",
+      "internal": false,
+      "reflection": false,
+      "title": "qwen3.8:27b-mtp-q4_K_M",
+      "clicks": 0
+     },
+     {
+      "url": "https://github.com/ggml-org/llama.cpp/blob/master/docs/speculative.md",
+      "internal": false,
+      "reflection": false,
+      "clicks": 0
+     },
+     {
+      "url": "https://llamabench.ai/browse/rtx3090/qwen3-8-27b",
+      "internal": false,
+      "reflection": false,
+      "title": "Qwen3.8-27B on RTX 3090 — llamabench.ai",
+      "clicks": 0
+     },
+     {
+      "url": "https://docs.ollama.com/faq",
+      "internal": false,
+      "reflection": false,
+      "title": "FAQ - Ollama",
+      "clicks": 0
+     },
+     {
+      "url": "https://docs.ollama.com/api/usage",
+      "internal": false,
+      "reflection": false,
+      "title": "Usage - Ollama",
+      "clicks": 0
+     },
+     {
+      "url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF/blob/main/mmproj-F16.gguf",
+      "internal": false,
+      "reflection": false,
+      "title": "mmproj-F16.gguf · unsloth/Qwen3.8-27B-GGUF at main",
+      "clicks": 0
+     },
+     {
+      "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
+      "internal": false,
+      "reflection": false,
+      "title": "Qwen/Qwen3.8-27B · Hugging Face",
+      "clicks": 0
+     },
+     {
+      "url": "https://discuss.huggingface.co/t/palit-gaming-pro-24gb-oc-3090-palit-x3060-8gb-is-it-worth-bothering-even/179291/4",
+      "internal": true,
+      "reflection": true,
+      "title": "Palit Gaming Pro 24GB OC 3090 + Palit X3060 8GB? is it worth bothering even?",
+      "clicks": 0
+     }
+    ],
+    "read": true,
+    "user_title": "Regular",
+    "title_is_group": false,
+    "bookmarked": false,
+    "actions_summary": [
+     {
+      "id": 2,
+      "count": 1
+     }
+    ],
+    "moderator": false,
+    "admin": false,
+    "staff": false,
+    "user_id": 52272,
+    "hidden": false,
+    "trust_level": 3,
+    "deleted_at": null,
+    "user_deleted": false,
+    "edit_reason": null,
+    "can_view_edit_history": true,
+    "wiki": false,
+    "post_url": "/t/how-many-tokens-will-an-old-3090-produce/179251/2",
+    "reactions": [
+     {
+      "id": "+1",
+      "type": "emoji",
+      "count": 1
+     }
+    ],
+    "current_user_reaction": null,
+    "reaction_users_count": 1,
+    "current_user_used_main_reaction": false,
+    "can_accept_answer": false,
+    "can_unaccept_answer": false,
+    "accepted_answer": true,
+    "topic_accepted_answer": true
+   },
+   {
+    "id": 263121,
+    "name": "system",
+    "username": "system",
+    "avatar_template": "https://us1.discourse-cdn.com/hellohellohello/original/2X/d/de4155eb4aa4108ecb32a1389d7cc37ae69f88b7.png",
+    "created_at": "2026-08-26T19:53:33.059Z",
+    "cooked": "<p>This topic was automatically closed 12 hours after the last reply. New replies are no longer allowed.</p>",
+    "post_number": 3,
+    "post_type": 3,
+    "posts_count": 2,
+    "updated_at": "2026-08-26T19:53:33.059Z",
+    "reply_count": 0,
+    "reply_to_post_number": null,
+    "quote_count": 0,
+    "incoming_link_count": 0,
+    "reads": 1,
+    "readers_count": 0,
+    "score": 0.2,
+    "yours": false,
+    "topic_id": 179251,
+    "topic_slug": "how-many-tokens-will-an-old-3090-produce",
+    "display_username": "system",
+    "primary_group_name": null,
+    "flair_name": null,
+    "flair_url": null,
+    "flair_bg_color": null,
+    "flair_color": null,
+    "flair_group_id": null,
+    "badges_granted": [],
+    "version": 1,
+    "can_edit": false,
+    "can_delete": false,
+    "can_recover": false,
+    "can_see_hidden_post": false,
+    "can_wiki": false,
+    "read": true,
+    "user_title": null,
+    "bookmarked": false,
+    "actions_summary": [],
+    "moderator": true,
+    "admin": true,
+    "staff": true,
+    "user_id": -1,
+    "hidden": false,
+    "trust_level": 4,
+    "deleted_at": null,
+    "user_deleted": false,
+    "edit_reason": null,
+    "can_view_edit_history": true,
+    "wiki": false,
+    "action_code": "autoclosed.enabled",
+    "post_url": "/t/how-many-tokens-will-an-old-3090-produce/179251/3",
+    "reactions": [],
+    "current_user_reaction": null,
+    "reaction_users_count": 0,
+    "current_user_used_main_reaction": false,
+    "can_accept_answer": false,
+    "can_unaccept_answer": false,
+    "accepted_answer": false,
+    "topic_accepted_answer": true
+   }
+  ],
+  "stream": [
+   263053,
+   263058,
+   263121
+  ]
+ },
+ "timeline_lookup": [
+  [
+   1,
+   15
+  ],
+  [
+   3,
+   14
+  ]
+ ],
+ "suggested_topics": [],
+ "fancy_title": "How many tokens will an old 3090 produce?",
+ "id": 179251,
+ "title": "How many tokens will an old 3090 produce?",
+ "posts_count": 2,
+ "created_at": "2026-08-25T22:25:39.541Z",
+ "views": 196,
+ "reply_count": 0,
+ "like_count": 2,
+ "last_posted_at": "2026-08-26T01:00:33.993Z",
+ "visible": true,
+ "closed": true,
+ "archived": false,
+ "has_summary": false,
+ "archetype": "regular",
+ "slug": "how-many-tokens-will-an-old-3090-produce",
+ "category_id": 5,
+ "word_count": 2210,
+ "deleted_at": null,
+ "user_id": 117837,
+ "featured_link": null,
+ "pinned_globally": false,
+ "pinned_at": null,
+ "pinned_until": null,
+ "image_url": "https://us1.discourse-cdn.com/hellohellohello/optimized/3X/8/0/8027a6fc9304e70a7c3053c36783f069dff503ce_2_1024x752.jpeg",
+ "slow_mode_seconds": 0,
+ "draft": null,
+ "draft_key": "topic_179251",
+ "draft_sequence": null,
+ "unpinned": null,
+ "pinned": false,
+ "current_post_number": 1,
+ "highest_post_number": 3,
+ "deleted_by": null,
+ "actions_summary": [
+  {
+   "id": 4,
+   "count": 0,
+   "hidden": false,
+   "can_act": false
+  },
+  {
+   "id": 8,
+   "count": 0,
+   "hidden": false,
+   "can_act": false
+  },
+  {
+   "id": 10,
+   "count": 0,
+   "hidden": false,
+   "can_act": false
+  },
+  {
+   "id": 7,
+   "count": 0,
+   "hidden": false,
+   "can_act": false
+  }
+ ],
+ "chunk_size": 20,
+ "bookmarked": false,
+ "topic_timer": null,
+ "message_bus_last_id": 1,
+ "participant_count": 2,
+ "show_read_indicator": false,
+ "thumbnails": [
+  {
+   "max_width": null,
+   "max_height": null,
+   "width": 1177,
+   "height": 865,
+   "url": "https://us1.discourse-cdn.com/hellohellohello/original/3X/8/0/8027a6fc9304e70a7c3053c36783f069dff503ce.jpeg"
+  },
+  {
+   "max_width": 1024,
+   "max_height": 1024,
+   "width": 1024,
+   "height": 752,
+   "url": "https://us1.discourse-cdn.com/hellohellohello/optimized/3X/8/0/8027a6fc9304e70a7c3053c36783f069dff503ce_2_1024x752.jpeg"
+  }
+ ],
+ "slow_mode_enabled_until": null,
+ "tags_disable_ads": false,
+ "related_topics": [
+  {
+   "fancy_title": "Palit Gaming Pro 24GB OC 3090 + Palit X3060 8GB? is it worth bothering even?",
+   "id": 179291,
+   "title": "Palit Gaming Pro 24GB OC 3090 + Palit X3060 8GB? is it worth bothering even?",
+   "slug": "palit-gaming-pro-24gb-oc-3090-palit-x3060-8gb-is-it-worth-bothering-even",
+   "posts_count": 2,
+   "reply_count": 0,
+   "highest_post_number": 4,
+   "image_url": null,
+   "created_at": "2026-08-26T20:29:06.818Z",
+   "last_posted_at": "2026-08-26T21:21:57.755Z",
+   "bumped": true,
+   "bumped_at": "2026-08-26T21:21:57.755Z",
+   "archetype": "regular",
+   "unseen": false,
+   "pinned": false,
+   "unpinned": null,
+   "visible": true,
+   "closed": false,
+   "archived": false,
+   "bookmarked": null,
+   "liked": null,
+   "visibility_reason_id": 1,
+   "like_count": 2,
+   "views": 114,
+   "category_id": 5,
+   "featured_link": null,
+   "op_like_count": 1,
+   "has_accepted_answer": false,
+   "posters": [
+    {
+     "extras": "latest",
+     "description": "Original Poster, Most Recent Poster",
+     "user": {
+      "id": 117837,
+      "username": "MartinPilarski",
+      "name": "Martin Pilarski",
+      "avatar_template": "/user_avatar/discuss.huggingface.co/martinpilarski/{size}/60832_2.png",
+      "trust_level": 1
+     }
+    },
+    {
+     "extras": null,
+     "description": "Recent Poster",
+     "user": {
+      "id": -1,
+      "username": "system",
+      "name": "system",
+      "avatar_template": "https://us1.discourse-cdn.com/hellohellohello/original/2X/d/de4155eb4aa4108ecb32a1389d7cc37ae69f88b7.png",
+      "admin": true,
+      "moderator": true,
+      "trust_level": 4
+     }
+    }
+   ]
+  },
+  {
+   "fancy_title": "Llama3 so much slow compared to ollama",
+   "id": 97638,
+   "title": "Llama3 so much slow compared to ollama",
+   "slug": "llama3-so-much-slow-compared-to-ollama",
+   "posts_count": 16,
+   "reply_count": 7,
+   "highest_post_number": 16,
+   "image_url": null,
+   "created_at": "2024-07-16T10:42:58.425Z",
+   "last_posted_at": "2025-02-28T10:04:21.854Z",
+   "bumped": true,
+   "bumped_at": "2025-02-28T10:04:21.854Z",
+   "archetype": "regular",
+   "unseen": false,
+   "pinned": false,
+   "unpinned": null,
+   "visible": true,
+   "closed": false,
+   "archived": false,
+   "bookmarked": null,
+   "liked": null,
+   "like_count": 6,
+   "views": 11364,
+   "category_id": 9,
+   "featured_link": null,
+   "op_like_count": 4,
+   "has_accepted_answer": false,
+   "posters": [
+    {
+     "extras": null,
+     "description": "Original Poster",
+     "user": {
+      "id": 57379,
+      "username": "parsapico",
+      "name": "parsa foroozmand",
+      "avatar_template": "/user_avatar/discuss.huggingface.co/parsapico/{size}/29706_2.png",
+      "trust_level": 1
+     }
+    },
+    {
+     "extras": null,
+     "description": "Frequent Poster",
+     "user": {
+      "id": 61498,
+      "username": "yaw-n",
+      "name": "Joern",
+      "avatar_template": "/user_avatar/discuss.huggingface.co/yaw-n/{size}/30496_2.png",
+      "trust_level": 1
+     }
+    },
+    {
+     "extras": null,
+     "description": "Frequent Poster",
+     "user": {
+      "id": 34953,
+      "username": "fasterinnerlooper",
+      "name": "Shafiq Jetha",
+      "avatar_template": "/user_avatar/discuss.huggingface.co/fasterinnerlooper/{size}/28824_2.png",
+      "trust_level": 2
+     }
+    },
+    {
+     "extras": null,
+     "description": "Recent Poster",
+     "user": {
+      "id": 85365,
+      "username": "debajyotimaz",
+      "name": "DEBAJYOTI MAZUMDER",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/d/a3d4f5/{size}.png",
+      "trust_level": 0
+     }
+    },
+    {
+     "extras": "latest",
+     "description": "Most Recent Poster",
+     "user": {
+      "id": 52272,
+      "username": "John6666",
+      "name": "John Smith",
+      "avatar_template": "/user_avatar/discuss.huggingface.co/john6666/{size}/27664_2.png",
+      "trust_level": 3
+     }
+    }
+   ]
+  },
+  {
+   "fancy_title": "Rtx 5090 35b nvfp4",
+   "id": 177814,
+   "title": "Rtx 5090 35b nvfp4",
+   "slug": "rtx-5090-35b-nvfp4",
+   "posts_count": 4,
+   "reply_count": 0,
+   "highest_post_number": 4,
+   "image_url": null,
+   "created_at": "2026-07-14T14:39:29.766Z",
+   "last_posted_at": "2026-07-18T01:31:15.140Z",
+   "bumped": true,
+   "bumped_at": "2026-07-18T01:31:15.140Z",
+   "archetype": "regular",
+   "unseen": false,
+   "pinned": false,
+   "unpinned": null,
+   "visible": true,
+   "closed": false,
+   "archived": false,
+   "bookmarked": null,
+   "liked": null,
+   "like_count": 3,
+   "views": 214,
+   "category_id": 9,
+   "featured_link": null,
+   "op_like_count": 1,
+   "has_accepted_answer": false,
+   "posters": [
+    {
+     "extras": null,
+     "description": "Original Poster",
+     "user": {
+      "id": 119340,
+      "username": "AmanitaEnjoyer",
+      "name": "Amanita",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/a/9de0a6/{size}.png",
+      "trust_level": 0
+     }
+    },
+    {
+     "extras": null,
+     "description": "Recent Poster",
+     "user": {
+      "id": 116545,
+      "username": "cgarciams",
+      "name": "Carlos García",
+      "avatar_template": "/user_avatar/discuss.huggingface.co/cgarciams/{size}/60280_2.png",
+      "trust_level": 2
+     }
+    },
+    {
+     "extras": "latest",
+     "description": "Most Recent Poster",
+     "user": {
+      "id": 52272,
+      "username": "John6666",
+      "name": "John Smith",
+      "avatar_template": "/user_avatar/discuss.huggingface.co/john6666/{size}/27664_2.png",
+      "trust_level": 3
+     }
+    }
+   ]
+  },
+  {
+   "fancy_title": "Expected speeds for CPU inference?",
+   "id": 45386,
+   "title": "Expected speeds for CPU inference?",
+   "slug": "expected-speeds-for-cpu-inference",
+   "posts_count": 8,
+   "reply_count": 2,
+   "highest_post_number": 8,
+   "image_url": null,
+   "created_at": "2023-07-02T18:38:10.193Z",
+   "last_posted_at": "2023-07-07T02:52:55.301Z",
+   "bumped": true,
+   "bumped_at": "2023-07-07T02:52:55.301Z",
+   "archetype": "regular",
+   "unseen": false,
+   "pinned": false,
+   "unpinned": null,
+   "visible": true,
+   "closed": false,
+   "archived": false,
+   "bookmarked": null,
+   "liked": null,
+   "like_count": 0,
+   "views": 2720,
+   "category_id": 5,
+   "featured_link": null,
+   "op_like_count": 0,
+   "has_accepted_answer": false,
+   "posters": [
+    {
+     "extras": "latest",
+     "description": "Original Poster, Most Recent Poster",
+     "user": {
+      "id": 23229,
+      "username": "zinomx",
+      "name": "Chris Garcia",
+      "avatar_template": "/user_avatar/discuss.huggingface.co/zinomx/{size}/20273_2.png",
+      "trust_level": 1
+     }
+    },
+    {
+     "extras": null,
+     "description": "Recent Poster",
+     "user": {
+      "id": 22784,
+      "username": "YaTharThShaRma999",
+      "name": "Yatharth  Sharma",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/y/41988e/{size}.png",
+      "trust_level": 1
+     }
+    },
+    {
+     "extras": null,
+     "description": "Recent Poster",
+     "user": {
+      "id": 20501,
+      "username": "atshort",
+      "name": "Anthony Short",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/a/4af34b/{size}.png",
+      "trust_level": 1
+     }
+    }
+   ]
+  },
+  {
+   "fancy_title": "Benchmark: 6 local Ollama models for code-gen delegation, with variance analysis",
+   "id": 175579,
+   "title": "Benchmark: 6 local Ollama models for code-gen delegation, with variance analysis",
+   "slug": "benchmark-6-local-ollama-models-for-code-gen-delegation-with-variance-analysis",
+   "posts_count": 1,
+   "reply_count": 0,
+   "highest_post_number": 1,
+   "image_url": null,
+   "created_at": "2026-04-27T00:08:00.020Z",
+   "last_posted_at": "2026-04-27T00:08:00.111Z",
+   "bumped": true,
+   "bumped_at": "2026-04-27T00:08:00.111Z",
+   "archetype": "regular",
+   "unseen": false,
+   "pinned": false,
+   "unpinned": null,
+   "visible": true,
+   "closed": false,
+   "archived": false,
+   "bookmarked": null,
+   "liked": null,
+   "like_count": 2,
+   "views": 401,
+   "category_id": 13,
+   "featured_link": null,
+   "op_like_count": 2,
+   "has_accepted_answer": false,
+   "posters": [
+    {
+     "extras": "latest single",
+     "description": "Original Poster, Most Recent Poster",
+     "user": {
+      "id": 114276,
+      "username": "Bobcamgardo",
+      "name": "Roberto de la Camara",
+      "avatar_template": "/user_avatar/discuss.huggingface.co/bobcamgardo/{size}/59174_2.png",
+      "trust_level": 0
+     }
+    }
+   ]
+  }
+ ],
+ "summarizable": false,
+ "has_cached_summary": false,
+ "valid_reactions": [
+  "heart",
+  "+1",
+  "laughing",
+  "open_mouth",
+  "clap",
+  "confetti_ball",
+  "hugs",
+  "eyes",
+  "white_check_mark"
+ ],
+ "accepted_answers": [
+  {
+   "id": 263058,
+   "username": "John6666",
+   "avatar_template": "/user_avatar/discuss.huggingface.co/john6666/{size}/27664_2.png",
+   "created_at": "2026-08-26T01:00:33.993Z",
+   "cooked": "<p>Oh. It depends on the backend you’re using, but that <strong>seems to be about the expected speed</strong>:</p>\n<hr>\n<p>482 tokens in about 12 seconds works out to roughly <strong>40 tokens/s</strong>. If those 12 seconds are the actual generation/decode time, that number does not look suspiciously high for Qwen3.8-27B on a 3090.</p>\n<p>As a sanity check rather than an exact apples-to-apples benchmark, the current crowd-sourced <a href=\"https://llamabench.ai/browse/rtx3090/qwen3-8-27b\">llamabench.ai results for Qwen3.8-27B on an RTX 3090</a> include non-speculative runs at <strong>38.2, 40.0, 41.1, and 45.6 tok/s</strong>. Those runs use llama.cpp and somewhat different quant/cache settings, so I would not treat them as a reproduction of your Ollama run, but your ~40.2 tok/s sits right in that range.</p>\n<p>The cheapest way to verify what you are seeing is probably:</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">ollama run &lt;your-model&gt; --verbose\nollama ps\n</code></pre>\n<p>For the first command, the useful lines are approximately:</p>\n<pre><code class=\"lang-plaintext\">prompt eval count:     ...\nprompt eval duration:  ...\nprompt eval rate:      ...\n\neval count:            ...\neval duration:         ...\neval rate:             ... tokens/s\n</code></pre>\n<p>Ollama’s <a href=\"https://docs.ollama.com/api/usage\">API usage documentation</a> makes the distinction explicit:</p>\n<ul>\n<li><code>prompt_eval_*</code> is processing the input prompt.</li>\n<li><code>eval_count</code> is the number of generated output tokens.</li>\n<li><code>eval_duration</code> is the time spent generating those output tokens.</li>\n<li><code>total_duration</code> also includes other work such as model loading and prompt processing.</li>\n</ul>\n<p>So if Ollama itself reports an <code>eval rate</code> around 40 tok/s, there is not much ambiguity left: you really are getting about 40 generated tokens/s.</p>\n<p><code>ollama ps</code> gives the other high-value check. According to the <a href=\"https://docs.ollama.com/faq\">Ollama FAQ</a>, <code>100% GPU</code> means the model is loaded entirely on the GPU, while a CPU/GPU percentage indicates that it is split between system RAM and VRAM.</p>\n<p>A useful decision tree is therefore:</p>\n<pre><code class=\"lang-plaintext\">Is ~12 s the generation time / Ollama eval_duration?\n|\n+-- Yes\n|   |\n|   +-- ~482 / ~12 s = ~40 tok/s\n|       |\n|       +-- ollama ps says 100% GPU\n|       |   |\n|       |   +-- This looks quite normal for this model/GPU class.\n|       |\n|       +-- CPU/GPU split\n|           |\n|           +-- Then context size/offloading becomes important\n|               before comparing the number with other benchmarks.\n|\n+-- No / not sure\n    |\n    +-- Use --verbose (or the API metrics) once and compare eval_rate,\n        rather than dividing visible tokens by wall-clock time.\n</code></pre>\n<p>In other words, I would not worry that the 3090 has somehow produced an impossible result. Its age is a bit misleading here: <strong>24 GB of VRAM is still a very useful configuration for local inference</strong>, because a quantized model of this size can fit without having to spill a large part of it into CPU memory.</p>\n<details>\n<summary>\nWhy comparing this to an older '27B model on a 3090' can be misleading</summary>\n<p>Qwen3.8-27B is also not just a conventional 27B full-attention Transformer with a new name.</p>\n<p>The <a href=\"https://huggingface.co/Qwen/Qwen3.8-27B\">official Qwen3.8-27B model card</a> describes:</p>\n<ul>\n<li>27B parameters</li>\n<li>64 language-model layers</li>\n<li>a layout of<br>\n<code>16 × (3 × (Gated DeltaNet → FFN) → 1 × (Gated Attention → FFN))</code></li>\n<li>MTP (Multi-Token Prediction) training</li>\n<li>native 262K context</li>\n</ul>\n<p>So it is a hybrid recurrent/attention architecture. That does <strong>not</strong> mean “DeltaNet explains exactly why you get 40 tok/s”, but it does mean an old benchmark for an unrelated 27B full-attention model is not a particularly strong prediction for this model.</p>\n<p>Qwen’s own model card also warns that inference throughput can vary significantly across serving frameworks. That matters here because:</p>\n<pre><code class=\"lang-plaintext\">GPU + parameter count + nominal quant\n</code></pre>\n<p>is not enough to define a benchmark.</p>\n<p>At minimum, these can change the result:</p>\n<pre><code class=\"lang-plaintext\">backend / backend version\nexact GGUF\nquantization\nGPU offload\ncontext length\nKV/state-cache settings\nFlash Attention\nprompt length\nprefill vs decode\nspeculative decoding / MTP\nsampling/application overhead\n</code></pre>\n<p>So a result from llama.cpp, Ollama, vLLM, or another backend should usually be treated as a range/check rather than an exact prediction unless those conditions match.</p>\n<p>There is an additional timing detail here: <a href=\"https://github.com/ollama/ollama/releases\">Ollama added Qwen3.8-27B support in v0.32.12</a>, released on August 14, 2026, and v0.32.13 immediately included another Qwen3.8-specific change. This is a very new model/runtime combination, so older “3090 + ~27B” reports can easily be measuring a materially different software path.</p>\n</details>\n<details>\n<summary>\nAbout the GGUF you pulled from Hugging Face</summary>\n<p>There is a small artifact-identification wrinkle that is probably worth keeping separate from the performance question.</p>\n<p>Hugging Face’s <a href=\"https://huggingface.co/docs/hub/ollama\">Ollama integration documentation</a> supports tags of the form:</p>\n<pre><code class=\"lang-plaintext\">hf.co/&lt;user&gt;/&lt;repository&gt;:&lt;quantization&gt;\n</code></pre>\n<p>and also allows using a complete GGUF filename when an exact artifact matters.</p>\n<p>At the moment, the Unsloth repository recommends:</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">ollama run hf.co/unsloth/Qwen3.8-27B-GGUF:UD-Q4_K_M\n</code></pre>\n<p>The current <a href=\"https://huggingface.co/unsloth/Qwen3.8-27B-GGUF/blob/main/Qwen3.8-27B-UD-Q4_K_M.gguf\"><code>UD-Q4_K_M</code> file</a> is <strong>16.5 GB</strong>, and the current <a href=\"https://huggingface.co/unsloth/Qwen3.8-27B-GGUF/blob/main/mmproj-F16.gguf\"><code>mmproj-F16.gguf</code></a> is <strong>928 MB</strong>.</p>\n<p>Those sizes match the numbers in your log remarkably closely:</p>\n<pre><code class=\"lang-plaintext\">model:      ~16.5 GB\nprojector:  ~928 MB\n</code></pre>\n<p>So the current <code>UD-Q4_K_M</code> + F16 projector is a very plausible match.</p>\n<p>I would still call that a <strong>strong size match, not proof of the exact historical artifact</strong>, because the contents of a model repository and its quantization aliases can change over time. If exact reproducibility ever matters, using/recording the full GGUF filename or digest is safer than relying only on a short quantization label.</p>\n<p>This distinction does not really change the answer to your speed question; it just makes later benchmark comparisons less ambiguous.</p>\n</details>\n<details>\n<summary>\nWhat about MTP / speculative decoding?</summary>\n<p>I would keep MTP separate from the explanation of your current ~40 tok/s result.</p>\n<p>Qwen3.8-27B was trained with Multi-Token Prediction, but:</p>\n<pre><code class=\"lang-plaintext\">\"the model has MTP capability\"\n</code></pre>\n<p>and</p>\n<pre><code class=\"lang-plaintext\">\"this particular inference run is using MTP/speculative decoding\"\n</code></pre>\n<p>are not the same statement.</p>\n<p>There is already enough evidence to explain ~40 tok/s <strong>without</strong> speculative decoding: the 3090/Qwen3.8-27B community results linked above include several non-speculative runs in almost exactly that range.</p>\n<p>For comparison, Ollama exposes a separate current model variant, <a href=\"https://ollama.com/library/qwen3.8:27b-mtp-q4_K_M\"><code>qwen3.8:27b-mtp-q4_K_M</code></a>, whose parameters explicitly include:</p>\n<pre><code class=\"lang-plaintext\">draft_num_predict: 4\n</code></pre>\n<p>Likewise, <a href=\"https://github.com/ggml-org/llama.cpp/blob/master/docs/speculative.md\">llama.cpp documents speculative decoding</a> as an explicit inference mechanism: draft tokens are proposed and then verified by the target model.</p>\n<p>That can raise decode throughput substantially when draft acceptance and the rest of the configuration cooperate. The same 3090 benchmark page currently has MTP runs well above the non-speculative ~40 tok/s range.</p>\n<p>But I would not use those faster MTP numbers as the baseline for your run unless you have confirmed that MTP is actually active.</p>\n<p>A simple way to keep the comparison clean is:</p>\n<pre><code class=\"lang-plaintext\">normal decode  &lt;-&gt; normal decode\nMTP/speculative &lt;-&gt; MTP/speculative\n</code></pre>\n<p>rather than mixing both sets of numbers.</p>\n</details>\n<details>\n<summary>\nWhy two people can report very different 'tokens/s' for the same GPU</summary>\n<p>There are really two separate performance phases in ordinary autoregressive inference:</p>\n<h3><a name=\"p-263058-h-1-prompt-processing-prefill-1\" class=\"anchor\" href=\"#p-263058-h-1-prompt-processing-prefill-1\" aria-label=\"Heading link\"></a>1. Prompt processing / prefill</h3>\n<p>The existing prompt is processed, often many tokens at once.</p>\n<p>Ollama reports this separately as:</p>\n<pre><code class=\"lang-plaintext\">prompt eval rate\n</code></pre>\n<h3><a name=\"p-263058-h-2-token-generation-decode-2\" class=\"anchor\" href=\"#p-263058-h-2-token-generation-decode-2\" aria-label=\"Heading link\"></a>2. Token generation / decode</h3>\n<p>The model repeatedly generates the next token.</p>\n<p>Ollama reports this as:</p>\n<pre><code class=\"lang-plaintext\">eval rate\n</code></pre>\n<p>For an interactive chat, decode rate is usually what someone means when they say “the model generates at 40 tok/s”, but prompt processing has a large effect on time-to-first-token and therefore on how fast the application <em>feels</em>.</p>\n<p>So these are quite different comparisons:</p>\n<pre><code class=\"lang-plaintext\">\"I get 40 tok/s decode\"\n</code></pre>\n<pre><code class=\"lang-plaintext\">\"The entire request, including a giant prompt, finishes at an average of 40 tok/s\"\n</code></pre>\n<pre><code class=\"lang-plaintext\">\"I counted 482 visible words/tokens and divided by stopwatch time\"\n</code></pre>\n<p>The first one is the cleanest model-generation benchmark.</p>\n<p>Context length is another reason benchmark numbers move. If a configuration fits entirely in VRAM at one context size but needs CPU offload or substantially more cache/state memory at another, the performance regime can change.</p>\n<p>That is why <code>ollama ps</code> is useful: it provides a direct observation instead of requiring you to guess from the nominal GGUF file size.</p>\n<p>For a reproducible comparison, something like this is enough:</p>\n<pre><code class=\"lang-plaintext\">GPU:              RTX 3090 24 GB\nOllama version:   ...\nmodel:            exact tag / GGUF\ncontext:          ...\nprocessor:        100% GPU (or split)\nprompt eval rate: ...\neval rate:        ...\nMTP/speculative:  on/off\n</code></pre>\n<p>You do not need all of that just to answer “is 40 tok/s plausible?”, but it makes later comparisons much more useful.</p>\n</details>\n<details>\n<summary>\nOne more Qwen3.8-specific detail: thinking tokens</summary>\n<p>The <a href=\"https://huggingface.co/Qwen/Qwen3.8-27B\">Qwen3.8-27B model card</a> says that the model thinks by default before producing its direct response.</p>\n<p>That means “generated tokens” and “the tokens I visibly counted in the final answer” are not necessarily identical concepts, depending on the frontend/API and how thinking is displayed.</p>\n<p>For benchmarking, I would therefore use Ollama’s own <code>eval_count</code> and <code>eval_duration</code> rather than manually counting the final visible answer.</p>\n<p>Again, this is mostly a measurement/detail issue rather than evidence of a problem with your setup.</p>\n</details>\n<details>\n<summary>\nIf the performance changes later</summary>\n<p>I would not troubleshoot anything further while it is producing clean output at ~40 tok/s. But if the behavior changes, the symptom gives you a reasonably cheap next branch:</p>\n<div class=\"md-table\">\n<table>\n<thead>\n<tr>\n<th>Symptom</th>\n<th>First thing I would check</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Decode suddenly much slower</td>\n<td><code>ollama ps</code>, context length, CPU/GPU split</td>\n</tr>\n<tr>\n<td>First token is slow but generation is fast</td>\n<td>prompt evaluation / prompt size</td>\n</tr>\n<tr>\n<td>Short chats are fast, long chats become slow</td>\n<td>context/cache/state size and GPU residency</td>\n</tr>\n<tr>\n<td>Enabling MTP gives little/no gain</td>\n<td>whether MTP is actually active and draft acceptance</td>\n</tr>\n<tr>\n<td>Speed is normal but output becomes malformed</td>\n<td>Ollama/backend version before assuming hardware failure</td>\n</tr>\n<tr>\n<td>Two benchmarks disagree badly</td>\n<td>backend, exact GGUF, context, cache, MTP, and measurement boundary</td>\n</tr>\n</tbody>\n</table>\n</div><p>That keeps several different problems separate instead of treating every performance change as “the GPU got slower”.</p>\n</details>\n<p>So, for the result you posted, my default interpretation would simply be:</p>\n<p><strong>yes, ~40 tok/s is believable.</strong></p>\n<p>If <code>ollama run ... --verbose</code> reports roughly that <code>eval rate</code> and <code>ollama ps</code> says <code>100% GPU</code>, I would consider the basic mystery solved. The fact that a 3090 is an older card does not prevent it from still being a very capable local-LLM card when a ~27B quantized model fits comfortably inside its 24 GB VRAM.</p>",
+   "post_number": 2,
+   "topic_id": 179251,
+   "url": "/t/how-many-tokens-will-an-old-3090-produce/179251/2"
+  }
+ ],
+ "has_accepted_answer": true,
+ "can_create_shared_issue": false,
+ "shared_issue_visible": false,
+ "can_vote": false,
+ "vote_count": 0,
+ "user_voted": false,
+ "discourse_zendesk_plugin_zendesk_id": null,
+ "discourse_zendesk_plugin_zendesk_url": "https://your-url.zendesk.com/agent/tickets/",
+ "details": {
+  "can_edit": false,
+  "notification_level": 1,
+  "participants": [
+   {
+    "id": 52272,
+    "username": "John6666",
+    "name": "John Smith",
+    "avatar_template": "/user_avatar/discuss.huggingface.co/john6666/{size}/27664_2.png",
+    "post_count": 1,
+    "primary_group_name": null,
+    "flair_name": null,
+    "flair_url": null,
+    "flair_color": null,
+    "flair_bg_color": null,
+    "flair_group_id": null,
+    "trust_level": 3
+   },
+   {
+    "id": 117837,
+    "username": "MartinPilarski",
+    "name": "Martin Pilarski",
+    "avatar_template": "/user_avatar/discuss.huggingface.co/martinpilarski/{size}/60832_2.png",
+    "post_count": 1,
+    "primary_group_name": null,
+    "flair_name": null,
+    "flair_url": null,
+    "flair_color": null,
+    "flair_bg_color": null,
+    "flair_group_id": null,
+    "trust_level": 1
+   }
+  ],
+  "created_by": {
+   "id": 117837,
+   "username": "MartinPilarski",
+   "name": "Martin Pilarski",
+   "avatar_template": "/user_avatar/discuss.huggingface.co/martinpilarski/{size}/60832_2.png"
+  },
+  "last_poster": {
+   "id": 52272,
+   "username": "John6666",
+   "name": "John Smith",
+   "avatar_template": "/user_avatar/discuss.huggingface.co/john6666/{size}/27664_2.png"
+  }
+ },
+ "bookmarks": []
+}

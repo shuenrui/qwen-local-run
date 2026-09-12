@@ -1,0 +1,574 @@
+{
+  "ok": true,
+  "schema_version": "1",
+  "data": [
+    {
+      "id": "2094376289037689104",
+      "text": "2 DGX Sparks. Qwen3.8 Flash Next NVFP4.\n\n64 users, independent prompts + KV caches.  \n32,768 output tokens in 78.82s:\n\n415.7 tok/s\n\nVideo: 1K stress. Usable-context test passed 64K/user at C16, zero leakage. Testing Spark limits, not a production recipe.\n\n@NVIDIAAI https://t.co/2UY113o8nf",
+      "author": {
+        "id": "1129972609",
+        "name": "Wësche",
+        "screenName": "WescheNex1q",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 327,
+        "retweets": 30,
+        "replies": 18,
+        "quotes": 9,
+        "views": 40379,
+        "bookmarks": 158
+      },
+      "createdAt": "Mon Aug 31 10:46:33 +0000 2026",
+      "createdAtLocal": "2026-08-31 18:46",
+      "createdAtISO": "2026-08-31T10:46:33+00:00",
+      "media": [
+        {
+          "type": "video",
+          "url": "https://video.twimg.com/amplify_video/2094375273739272192/vid/avc1/1920x1080/jrVrceVaMINlgFZ2.mp4?tag=29",
+          "width": 1920,
+          "height": 1080
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2094394963907826040",
+      "text": "@WescheNex1q @NVIDIAAI 415 tok/s gets the headline, but 64 independent KV caches plus a clean 64K/user test at C16 is the real flex. Memory pressure is where serving demos usually become crime scenes.",
+      "author": {
+        "id": "2038424194380120064",
+        "name": "Sakura Yuki",
+        "screenName": "sakurayukiai",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2038430506623160320/spo51_g4_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 7,
+        "retweets": 0,
+        "replies": 2,
+        "quotes": 0,
+        "views": 1227,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Aug 31 12:00:46 +0000 2026",
+      "createdAtLocal": "2026-08-31 20:00",
+      "createdAtISO": "2026-08-31T12:00:46+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2094444549288395216",
+      "text": "@sakurayukiai @NVIDIAAI https://t.co/YkMwMogBOx",
+      "author": {
+        "id": "1129972609",
+        "name": "Wësche",
+        "screenName": "WescheNex1q",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 1048,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Aug 31 15:17:48 +0000 2026",
+      "createdAtLocal": "2026-08-31 23:17",
+      "createdAtISO": "2026-08-31T15:17:48+00:00",
+      "media": [
+        {
+          "type": "animated_gif",
+          "url": "https://video.twimg.com/tweet_video/HRD2Ni2W4AAKeSj.mp4",
+          "width": 480,
+          "height": 480
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "qme",
+      "score": null
+    },
+    {
+      "id": "2094396811742261553",
+      "text": "@WescheNex1q @NVIDIAAI how's that even possible?!",
+      "author": {
+        "id": "115878736",
+        "name": "Jeffery the Bluey",
+        "screenName": "neojohnson113",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2078062854788530177/E9xFfvzm_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 1060,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Aug 31 12:08:06 +0000 2026",
+      "createdAtLocal": "2026-08-31 20:08",
+      "createdAtISO": "2026-08-31T12:08:06+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2094444414940676275",
+      "text": "@neojohnson113 @NVIDIAAI The power of the sparks",
+      "author": {
+        "id": "1129972609",
+        "name": "Wësche",
+        "screenName": "WescheNex1q",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 1,
+        "quotes": 0,
+        "views": 929,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Aug 31 15:17:16 +0000 2026",
+      "createdAtLocal": "2026-08-31 23:17",
+      "createdAtISO": "2026-08-31T15:17:16+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2094779885906534548",
+      "text": "@WescheNex1q @NVIDIAAI https://t.co/wyM8Vxc0Au",
+      "author": {
+        "id": "18227996",
+        "name": "Eric Wright",
+        "screenName": "discoposse",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1961830075784998912/FLChXD-3_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 102,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Sep 01 13:30:18 +0000 2026",
+      "createdAtLocal": "2026-09-01 21:30",
+      "createdAtISO": "2026-09-01T13:30:18+00:00",
+      "media": [
+        {
+          "type": "animated_gif",
+          "url": "https://video.twimg.com/tweet_video/HRInM59XQAADfw8.mp4",
+          "width": 450,
+          "height": 360
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "qme",
+      "score": null
+    },
+    {
+      "id": "2094650565116768326",
+      "text": "@WescheNex1q @NVIDIAAI So with 64 users in the mix, each 1 of them is averaging under 7 tokens per second.",
+      "author": {
+        "id": "2029865992713916416",
+        "name": "Kian Woon",
+        "screenName": "woon_wong23193",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2034096597286719489/yIj2EJAP_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 3,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 450,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Sep 01 04:56:26 +0000 2026",
+      "createdAtLocal": "2026-09-01 12:56",
+      "createdAtISO": "2026-09-01T04:56:26+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2094721319904456888",
+      "text": "@WescheNex1q @NVIDIAAI so… 6 toks/s per stream?",
+      "author": {
+        "id": "1651103547742728192",
+        "name": "stridell",
+        "screenName": "emilstridell",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2080333830460723200/LhicfqnT_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 150,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Sep 01 09:37:35 +0000 2026",
+      "createdAtLocal": "2026-09-01 17:37",
+      "createdAtISO": "2026-09-01T09:37:35+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2094378613860696489",
+      "text": "@WescheNex1q @NVIDIAAI Amazing work. 🔥",
+      "author": {
+        "id": "1477289543510511620",
+        "name": "Markus Eicher",
+        "screenName": "MarkusEicher70",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1477291751102631937/MxQeGvIW_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 667,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Aug 31 10:55:47 +0000 2026",
+      "createdAtLocal": "2026-08-31 18:55",
+      "createdAtISO": "2026-08-31T10:55:47+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2094505383570374770",
+      "text": "@WescheNex1q @NVIDIAAI This is very impressive! Looking at testing this in my lab. Excellent work!",
+      "author": {
+        "id": "956771355965325312",
+        "name": "Chris Maher N7CPM",
+        "screenName": "defilan",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1517778871084482561/6F9FdPYt_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 570,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Aug 31 19:19:32 +0000 2026",
+      "createdAtLocal": "2026-09-01 03:19",
+      "createdAtISO": "2026-08-31T19:19:32+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2094623553341751498",
+      "text": "@WescheNex1q @NVIDIAAI That is just wild",
+      "author": {
+        "id": "3081362137",
+        "name": "J. Gavin Ray",
+        "screenName": "jgavinray",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1141831074785320960/0Rinn0K6_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 426,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Sep 01 03:09:05 +0000 2026",
+      "createdAtLocal": "2026-09-01 11:09",
+      "createdAtISO": "2026-09-01T03:09:05+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2094446877206773792",
+      "text": "@WescheNex1q @NVIDIAAI Intrigued.  How are they all connected?",
+      "author": {
+        "id": "148402224",
+        "name": "Wayne Lowry",
+        "screenName": "wikiwayne",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1735642547106586624/HH1CLhdL_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 561,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Aug 31 15:27:03 +0000 2026",
+      "createdAtLocal": "2026-08-31 23:27",
+      "createdAtISO": "2026-08-31T15:27:03+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2094646631622701499",
+      "text": "@WescheNex1q @NVIDIAAI very impressive.",
+      "author": {
+        "id": "303129822",
+        "name": "Jacopo Nardiello",
+        "screenName": "jnardiello",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2084526938010349568/FWS-Vl2R_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 261,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Sep 01 04:40:48 +0000 2026",
+      "createdAtLocal": "2026-09-01 12:40",
+      "createdAtISO": "2026-09-01T04:40:48+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2094616750696624525",
+      "text": "@WescheNex1q @NVIDIAAI Now do it with GLM!",
+      "author": {
+        "id": "950785447780810752",
+        "name": "Tom Buckley",
+        "screenName": "t_buckley91",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1669728921053458432/793JqekK_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 428,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Sep 01 02:42:04 +0000 2026",
+      "createdAtLocal": "2026-09-01 10:42",
+      "createdAtISO": "2026-09-01T02:42:04+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2094389472418811970",
+      "text": "@WescheNex1q @NVIDIAAI what is your setup, please?",
+      "author": {
+        "id": "1166564879836340225",
+        "name": "Οκτάεδρο",
+        "screenName": "Oktahedro",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1295813262840340481/5LZSUTpK_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 1,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 700,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Aug 31 11:38:56 +0000 2026",
+      "createdAtLocal": "2026-08-31 19:38",
+      "createdAtISO": "2026-08-31T11:38:56+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2094799072511365326",
+      "text": "@WescheNex1q @NVIDIAAI Can you please share which inference engine you used and what were the parameters?",
+      "author": {
+        "id": "151617097",
+        "name": "Shashank Ashtikar",
+        "screenName": "shashtikar",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1869171565046415360/bNvJF_7g_normal.jpg",
+        "verified": false
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 86,
+        "bookmarks": 0
+      },
+      "createdAt": "Tue Sep 01 14:46:33 +0000 2026",
+      "createdAtLocal": "2026-09-01 22:46",
+      "createdAtISO": "2026-09-01T14:46:33+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null
+    },
+    {
+      "id": "2094558413519044899",
+      "text": "Crazy fast!\n\nThe difference from having 2 DGX Spark instead of one is insane.\n\nI m using with Hermes up to 7 streams with complex coding and agentic tasks and I'm happy when I see over 110 t/s with Qwen 27B and super happy when I look at the stats on my dashboard that tells me that local inference is saving me around $ 17.5K USD a year in cloud API costs. \nI cannot even imagine what that number would  be at the rate you show in the video.\n\nhttps://t.co/sNAxef1YLV",
+      "author": {
+        "id": "1618273434814881792",
+        "name": "AgentSparko 💥",
+        "screenName": "AgentSparko",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/2053381913054683147/6MJgSU7M_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 2,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 540,
+        "bookmarks": 3
+      },
+      "createdAt": "Mon Aug 31 22:50:15 +0000 2026",
+      "createdAtLocal": "2026-09-01 06:50",
+      "createdAtISO": "2026-08-31T22:50:15+00:00",
+      "media": [
+        {
+          "type": "photo",
+          "url": "https://pbs.twimg.com/media/HRFdppeWAAAQohz.jpg",
+          "width": 1186,
+          "height": 825
+        }
+      ],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "en",
+      "score": null,
+      "quotedTweet": {
+        "id": "2094556895046439201",
+        "text": "I made a Hermes skill for task delegation when I use Qwen 27B locally on the DGX Spark and I tell it to create a cron job with a task list to ring each hour and then give it a long task list for coding on multiple projects at the same time. \n\nThe disadvantage is that I do not see anymore on Telegram verbose what it's doing but the advantage is that it speeds things up as it takes advantage of the total throughput of the Spark when concurrency it's high.\n\nIt uses up to 6-7 agents at once...I could push that further as the context pool is not filled even 40% somehow even thou it's around 800K tokens total. \n\nThe best way to check that total throughput it's actually better is to look at my dashboard where it calculates the cloud API cost savings projected from the last hour of work. \n\nWith one stream it stays around $ 7-10K API cost save a year and now that it uses 2-7 streams it stays around $ 17.5K and it keeps finishing jobs and that sets me off from pushing that number higher as I don't know for the moment what other jobs to give it. 😂 \n\nLook at the bottom row to see the 1 year projection.\n\nOne of the agents is now building a Web UI to see thinking traces and actions verbose for all the subagents. 😁",
+        "author": {
+          "screenName": "AgentSparko",
+          "name": "AgentSparko 💥"
+        }
+      }
+    },
+    {
+      "id": "2094504189141585950",
+      "text": "@WescheNex1q @NVIDIAAI Wow!",
+      "author": {
+        "id": "1414594119373135875",
+        "name": "0xJah",
+        "screenName": "0xJah",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1736108035536527360/LyrHn1I5_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 224,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Aug 31 19:14:47 +0000 2026",
+      "createdAtLocal": "2026-09-01 03:14",
+      "createdAtISO": "2026-08-31T19:14:47+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "und",
+      "score": null
+    },
+    {
+      "id": "2094478949883707552",
+      "text": "@WescheNex1q @NVIDIAAI matrix level sh",
+      "author": {
+        "id": "151652397",
+        "name": "mac",
+        "screenName": "maceip",
+        "profileImageUrl": "https://pbs.twimg.com/profile_images/1921070054323740672/XgORLLFF_normal.jpg",
+        "verified": true
+      },
+      "metrics": {
+        "likes": 0,
+        "retweets": 0,
+        "replies": 0,
+        "quotes": 0,
+        "views": 235,
+        "bookmarks": 0
+      },
+      "createdAt": "Mon Aug 31 17:34:29 +0000 2026",
+      "createdAtLocal": "2026-09-01 01:34",
+      "createdAtISO": "2026-08-31T17:34:29+00:00",
+      "media": [],
+      "urls": [],
+      "isRetweet": false,
+      "retweetedBy": null,
+      "lang": "fr",
+      "score": null
+    }
+  ]
+}

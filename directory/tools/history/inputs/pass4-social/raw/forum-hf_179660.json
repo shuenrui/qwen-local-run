@@ -1,0 +1,672 @@
+{
+ "post_stream": {
+  "posts": [
+   {
+    "id": 263733,
+    "name": "Sophie Webber",
+    "username": "sophie-webber",
+    "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/s/9d8465/{size}.png",
+    "created_at": "2026-09-01T09:57:52.008Z",
+    "cooked": "<h3><a name=\"p-263733-hi-everyone-1\" class=\"anchor\" href=\"#p-263733-hi-everyone-1\" aria-label=\"Heading link\"></a>Hi everyone,</h3>\n<p>I’m considering buying a Mac mini specifically to run <strong>Huihui-Qwen3.6-35B-A3B-Claude-4.7-Opus-abliterated</strong> locally for software development.</p>\n<p>My main use case is <strong>agentic coding with OpenCode</strong>. I would like to use the model as the main coding agent: reading a repository, modifying multiple files, running tests, debugging errors, and iterating through tool calls.</p>\n<p>I’m currently considering a <strong>Mac mini with 64 GB of unified memory</strong> (Apple Silicon).</p>\n<p>My questions are:</p>\n<ol>\n<li>Can this model run reliably on a Mac mini with 64 GB unified memory?</li>\n<li>Which quantization would you recommend for this use case — Q4, Q5, Q6, or something else?</li>\n<li>Is <strong>llama.cpp/Metal</strong> the recommended way to run it on Apple Silicon, or would you recommend another backend?</li>\n<li>Does the model work well with <strong>OpenCode’s tool calling / agentic workflow</strong>?</li>\n<li>What kind of generation speed (tokens/sec) could I realistically expect on a 64 GB Mac mini?</li>\n<li>Would a Mac mini be a reasonable choice for this model, or would renting a cloud GPU provide a significantly better experience?</li>\n</ol>\n<p>I’m primarily interested in <strong>coding quality and agentic tool use</strong>, rather than maximum benchmark scores.</p>\n<p>If anyone is already running this model (or a similar 30–40B MoE model) on a Mac mini, I would really appreciate your experience, including your Mac configuration, quantization, backend, context size, and approximate tokens/sec.</p>\n<p>Thanks!</p>",
+    "post_number": 1,
+    "post_type": 1,
+    "posts_count": 2,
+    "updated_at": "2026-09-01T09:57:52.008Z",
+    "reply_count": 0,
+    "reply_to_post_number": null,
+    "quote_count": 0,
+    "incoming_link_count": 50,
+    "reads": 6,
+    "readers_count": 5,
+    "score": 211.2,
+    "yours": false,
+    "topic_id": 179660,
+    "topic_slug": "can-this-model-run-well-on-a-mac-mini-with-opencode",
+    "display_username": "Sophie Webber",
+    "primary_group_name": null,
+    "flair_name": null,
+    "flair_url": null,
+    "flair_bg_color": null,
+    "flair_color": null,
+    "flair_group_id": null,
+    "badges_granted": [],
+    "version": 1,
+    "can_edit": false,
+    "can_delete": false,
+    "can_recover": false,
+    "can_see_hidden_post": false,
+    "can_wiki": false,
+    "read": true,
+    "user_title": null,
+    "bookmarked": false,
+    "actions_summary": [
+     {
+      "id": 2,
+      "count": 1
+     }
+    ],
+    "moderator": false,
+    "admin": false,
+    "staff": false,
+    "user_id": 121856,
+    "hidden": false,
+    "trust_level": 0,
+    "deleted_at": null,
+    "user_deleted": false,
+    "edit_reason": null,
+    "can_view_edit_history": true,
+    "wiki": false,
+    "post_url": "/t/can-this-model-run-well-on-a-mac-mini-with-opencode/179660/1",
+    "reactions": [
+     {
+      "id": "+1",
+      "type": "emoji",
+      "count": 1
+     }
+    ],
+    "current_user_reaction": null,
+    "reaction_users_count": 1,
+    "current_user_used_main_reaction": false,
+    "can_accept_answer": false,
+    "can_unaccept_answer": false,
+    "accepted_answer": false,
+    "topic_accepted_answer": null,
+    "can_vote": false
+   },
+   {
+    "id": 263833,
+    "name": "John Smith",
+    "username": "John6666",
+    "avatar_template": "/user_avatar/discuss.huggingface.co/john6666/{size}/27664_2.png",
+    "created_at": "2026-09-01T21:28:01.029Z",
+    "cooked": "<p>I don’t own any Apple hardware, but I think this <strong>should probably be quite usable</strong> without too much trouble:</p>\n<hr>\n<p>Short version: <strong>yes, I think a 64 GB Mac mini is a reasonable machine for this model and this use case.</strong> I would worry much less about whether the model fits, and much more about whether the exact checkpoint + runtime + OpenCode combination remains reliable during a long tool-using coding session.</p>\n<p>If I were setting this up, my default starting point would probably be:</p>\n<ul>\n<li><strong>64 GB unified memory</strong></li>\n<li><strong>Q5_K_M or Q6_K</strong></li>\n<li><strong>llama.cpp / Metal + <code>llama-server</code></strong></li>\n<li><strong>OpenCode through its OpenAI-compatible llama.cpp provider</strong></li>\n<li><strong>~64K context initially</strong>, rather than immediately maximizing context</li>\n<li>leave reasoning/tool behavior close to the model/runtime defaults at first</li>\n<li>only change quantization/backend after verifying that the tool loop itself is stable</li>\n</ul>\n<p>The six questions look roughly like this to me:</p>\n<div class=\"md-table\">\n<table>\n<thead>\n<tr>\n<th>Question</th>\n<th>My current guess</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1. 64 GB enough?</td>\n<td><strong>Yes, comfortably enough for the useful quants.</strong></td>\n</tr>\n<tr>\n<td>2. Quant?</td>\n<td><strong>Q5_K_M as a conservative default; Q6_K if quality is the priority; Q4_K_M is also quite plausible.</strong></td>\n</tr>\n<tr>\n<td>3. Backend?</td>\n<td><strong>llama.cpp/Metal is a very sensible starting point. MLX/oMLX is also worth considering on Apple Silicon.</strong></td>\n</tr>\n<tr>\n<td>4. OpenCode/tool use?</td>\n<td><strong>Promising, but this is the part I would validate before treating the setup as production-stable.</strong></td>\n</tr>\n<tr>\n<td>5. Speed?</td>\n<td>Expect <strong>tens of tokens/sec</strong>, not single-digit speeds, but context/prefill/backend matter a lot.</td>\n</tr>\n<tr>\n<td>6. Mac vs cloud?</td>\n<td><strong>Mac makes sense for a single-user, always-available local agent; cloud wins for burst throughput, very large prefills, or parallel agents.</strong></td>\n</tr>\n</tbody>\n</table>\n</div><h2><a name=\"p-263833-memory-quantization-1\" class=\"anchor\" href=\"#p-263833-memory-quantization-1\" aria-label=\"Heading link\"></a>Memory / quantization</h2>\n<p>The <a href=\"https://huggingface.co/shennguyen/Huihui-Qwen3.6-35B-A3B-Claude-4.7-Opus-abliterated-GGUF/tree/main\">available GGUFs for this exact Huihui model</a> are approximately:</p>\n<div class=\"md-table\">\n<table>\n<thead>\n<tr>\n<th>Quant</th>\n<th style=\"text-align:right\">File size</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>Q4_K_M</td>\n<td style=\"text-align:right\">21.2 GB</td>\n</tr>\n<tr>\n<td>Q5_K_M</td>\n<td style=\"text-align:right\">24.7 GB</td>\n</tr>\n<tr>\n<td>Q6_K</td>\n<td style=\"text-align:right\">28.5 GB</td>\n</tr>\n<tr>\n<td>Q8_0</td>\n<td style=\"text-align:right\">36.9 GB</td>\n</tr>\n</tbody>\n</table>\n</div><p>So 64 GB is not a “Q4 or it will not fit” situation.</p>\n<p>I would probably start with <strong>Q5_K_M</strong> because it leaves a lot of headroom for macOS, context/cache state, OpenCode, an editor, test processes, etc. If coding quality is much more important than maximizing context, <strong>Q6_K</strong> is also very reasonable.</p>\n<p>I would not automatically reject Q4 for agentic work, though. I did a small sanity test with the <strong>exact Q4_K_M Huihui checkpoint</strong>, and its basic tool protocol behaved cleanly in that test; more on that below. So I would not assume that a tool-calling problem seen with Q4 is necessarily caused by quantization.</p>\n<p>Q8 also fits in 64 GB, but “the weights fit” is not the same as “I still have comfortable room for a long agent session”. I would only move to Q8 if an A/B test showed an actual coding-quality benefit worth the reduced memory margin.</p>\n<h2><a name=\"p-263833-backend-llamacpp-first-mlxomlx-as-the-other-obvious-option-2\" class=\"anchor\" href=\"#p-263833-backend-llamacpp-first-mlxomlx-as-the-other-obvious-option-2\" aria-label=\"Heading link\"></a>Backend: llama.cpp first, MLX/oMLX as the other obvious option</h2>\n<p>For OpenCode specifically, <strong>llama.cpp is probably the easiest baseline</strong> because OpenCode <a href=\"https://opencode.ai/docs/providers/\">documents <code>llama-server</code> as a local provider</a> using an OpenAI-compatible endpoint.</p>\n<p>A minimal starting point could look roughly like:</p>\n<pre data-code-wrap=\"bash\"><code class=\"lang-bash\">llama-server \\\n  --hf-repo shennguyen/Huihui-Qwen3.6-35B-A3B-Claude-4.7-Opus-abliterated-GGUF \\\n  --hf-file huihui-qwen3.6-35b-a3b-claude-4.7-opus-abliterated-q5_k_m.gguf \\\n  --alias huihui-qwen36 \\\n  --jinja \\\n  -c 65536 \\\n  --host 127.0.0.1 \\\n  --port 8080\n</code></pre>\n<p>Current llama.cpp builds have Metal enabled by default on macOS, and current <code>llama-server</code> also defaults GPU-layer selection to <code>auto</code>; the current server options are documented <a href=\"https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md\">here</a>.</p>\n<p>Then something along these lines in OpenCode:</p>\n<pre data-code-wrap=\"json\"><code class=\"lang-json\">{\n  \"$schema\": \"https://opencode.ai/config.json\",\n  \"provider\": {\n    \"llama.cpp\": {\n      \"npm\": \"@ai-sdk/openai-compatible\",\n      \"name\": \"llama-server (local)\",\n      \"options\": {\n        \"baseURL\": \"http://127.0.0.1:8080/v1\"\n      },\n      \"models\": {\n        \"huihui-qwen36\": {\n          \"name\": \"Huihui Qwen3.6 35B-A3B\",\n          \"limit\": {\n            \"context\": 65536,\n            \"output\": 32768\n          }\n        }\n      }\n    }\n  }\n}\n</code></pre>\n<p>I would treat those context/output numbers as a starting configuration, not sacred values.</p>\n<p><strong>MLX/oMLX is the other backend I would keep on the shortlist.</strong> Apple Silicon is exactly the environment MLX is designed for, and there are already some very useful performance measurements for this exact checkpoint.</p>\n<p>For example, oMLX reports this exact Huihui derivative on an <strong>M4 Pro 16-core GPU / 64 GB</strong> system at 8-bit:</p>\n<ul>\n<li>~54.9 generation tok/s at 4K context</li>\n<li>~36.2 GB peak memory</li>\n</ul>\n<p><a href=\"https://omlx.ai/benchmarks/performance/4sslge3j\">Benchmark</a></p>\n<p>And on an <strong>M5 Pro 20-core GPU / 64 GB</strong> system at 8-bit:</p>\n<ul>\n<li>~44.8 generation tok/s at 64K</li>\n<li>~34.9 generation tok/s at 128K</li>\n<li>~41.2 GB peak at 64K</li>\n<li>~47.9 GB peak at 128K</li>\n</ul>\n<p><a href=\"https://omlx.ai/benchmarks/performance/ecgl0xff\">Benchmark</a></p>\n<p>Those are <strong>oMLX numbers, not llama.cpp/Metal numbers</strong>, so I would not use them as a direct llama.cpp performance prediction. But they are good evidence that the model itself is quite practical on a 64 GB Apple Silicon system.</p>\n<p>Apple’s newly announced <a href=\"https://www.apple.com/newsroom/2026/08/apple-unveils-a-more-powerful-mac-mini-featuring-the-all-new-m6-and-m5-pro/\">M5 Pro Mac mini</a> supports up to 64 GB unified memory and 307 GB/s memory bandwidth, so if that is the configuration you are considering, the hardware side looks particularly plausible.</p>\n<h2><a name=\"p-263833-what-i-would-expect-for-speed-3\" class=\"anchor\" href=\"#p-263833-what-i-would-expect-for-speed-3\" aria-label=\"Heading link\"></a>What I would expect for speed</h2>\n<p>I would mentally budget for <strong>“tens of tokens/sec”</strong>, rather than trying to predict one exact number.</p>\n<p>There are really at least two different speeds that matter for a coding agent:</p>\n<ol>\n<li><strong>prompt processing / prefill</strong></li>\n<li><strong>token generation</strong></li>\n</ol>\n<p>Generation can remain quite fast even when the agent experience starts feeling slow because the growing repository/tool history has to be processed.</p>\n<p>The M5 Pro oMLX measurement above is a useful example: at 128K it still generates at ~34.9 tok/s, but the measured time-to-first-token for a full 128K prompt was about <strong>158 seconds</strong>.</p>\n<p>That is why I would not optimize the setup around maximum advertised context on day one.</p>\n<p>For an agent, good prefix/cache reuse can matter as much as raw decode speed.</p>\n<p>A practical sequence might be:</p>\n<pre><code class=\"lang-plaintext\">32K or 64K\n    ↓\nnormal real repository work\n    ↓\nonly increase context if you actually need it\n</code></pre>\n<p>rather than:</p>\n<pre><code class=\"lang-plaintext\">\"the model says 262K\"\n    ↓\nset 262K immediately\n</code></pre>\n<p>The <a href=\"https://huggingface.co/Qwen/Qwen3.6-35B-A3B\">base Qwen3.6-35B-A3B</a> has a default 262,144-token context and Qwen recommends keeping at least 128K for its full long-context reasoning behavior.</p>\n<p>But this derivative is not literally the base checkpoint. The <a href=\"https://huggingface.co/lordx64/Qwen3.6-35B-A3B-Claude-4.7-Opus-Reasoning-Distilled\">reasoning-distilled parent</a> was trained on 4096-token sequences, and its author describes 64K as usable at inference while also warning that hard problems may generate tens of thousands of reasoning tokens.</p>\n<p>So I would treat extremely long-context quality on this derivative as something to validate, not something automatically inherited just because the underlying config permits it.</p>\n<h2><a name=\"p-263833-opencode-agentic-coding-is-the-main-thing-i-would-test-4\" class=\"anchor\" href=\"#p-263833-opencode-agentic-coding-is-the-main-thing-i-would-test-4\" aria-label=\"Heading link\"></a>OpenCode / agentic coding is the main thing I would test</h2>\n<p>There is actually encouraging evidence here.</p>\n<p>The <strong>base Qwen3.6-35B-A3B is explicitly evaluated as an agentic model</strong>. Its <a href=\"https://huggingface.co/Qwen/Qwen3.6-35B-A3B\">official model card</a> includes SWE-bench-family results, Terminal-Bench, MCP-style evaluations, etc.</p>\n<p>More directly relevant to your question: <strong>Qwen’s SkillsBench evaluation was run through OpenCode</strong>, on 78 self-contained tasks, averaged over five runs.</p>\n<p>So I would not be worried that Qwen3.6-35B-A3B is fundamentally the wrong kind of model for OpenCode.</p>\n<p>The uncertainty is narrower:</p>\n<blockquote>\n<p>Does this exact <code>reasoning-distilled -&gt; abliterated -&gt; quantized -&gt; local runtime</code> derivative preserve that behavior reliably over a long OpenCode trajectory?</p>\n</blockquote>\n<p>That part is much less directly benchmarked.</p>\n<p>The lineage is:</p>\n<pre><code class=\"lang-plaintext\">Qwen3.6-35B-A3B\n        ↓\nClaude Opus 4.7 reasoning distillation\n        ↓\nHuihui abliteration\n        ↓\nGGUF quantization\n</code></pre>\n<p>The <a href=\"https://huggingface.co/lordx64/Qwen3.6-35B-A3B-Claude-4.7-Opus-Reasoning-Distilled\">reasoning-distilled model</a> was trained on roughly 7,800 Claude Opus reasoning conversations with an attention-only LoRA.</p>\n<p>Then the <a href=\"https://huggingface.co/huihui-ai/Huihui-Qwen3.6-35B-A3B-Claude-4.7-Opus-abliterated\">Huihui checkpoint</a> applies abliteration. Huihui describes that implementation itself as a “crude, proof-of-concept implementation”.</p>\n<p>That does <strong>not</strong> mean it will be bad at tools. It only means I would not directly copy the base model’s OpenCode benchmark onto the derivative and call the question settled.</p>\n<h3><a name=\"p-263833-a-small-sanity-check-on-the-exact-checkpoint-5\" class=\"anchor\" href=\"#p-263833-a-small-sanity-check-on-the-exact-checkpoint-5\" aria-label=\"Heading link\"></a>A small sanity check on the exact checkpoint</h3>\n<p>I tried a deliberately small tool-protocol sanity test with the exact:</p>\n<pre><code class=\"lang-plaintext\">Huihui-Qwen3.6-35B-A3B-Claude-4.7-Opus-abliterated\nQ4_K_M\n</code></pre>\n<p>The purpose was not to benchmark a Mac, but simply to see whether the checkpoint itself could still produce the tool syntax defined by its GGUF chat template.</p>\n<p>I tested:</p>\n<ul>\n<li>thinking enabled</li>\n<li>thinking disabled</li>\n<li>repeated calls after an explicit reset</li>\n<li>repeated calls reusing the same model context</li>\n<li>a case where no tool should be called</li>\n<li>a longer system prompt</li>\n<li>20 irrelevant/distractor tools</li>\n<li>more than one tool call in one response</li>\n<li>a short multi-turn sequence where tool results were fed back to the model</li>\n</ul>\n<p>In that small test:</p>\n<ul>\n<li>the required tool was selected consistently</li>\n<li>the no-tool case did not spuriously invoke one</li>\n<li>multiple tool calls were emitted correctly</li>\n<li>the returned XML was balanced and parseable</li>\n<li>thinking-on and thinking-off both worked</li>\n<li>the short multi-turn sequence completed correctly</li>\n</ul>\n<p>So I would move this hypothesis quite far down the list:</p>\n<blockquote>\n<p>“The Huihui Q4 checkpoint itself simply cannot do tool calling.”</p>\n</blockquote>\n<p>At least in a short controlled test, it clearly can.</p>\n<p>That still leaves a separate integration question, though.</p>\n<details>\n<summary>\nWhy a model can emit correct tools and OpenCode can still fail</summary>\n<p>A local coding agent has several layers:</p>\n<pre><code class=\"lang-plaintext\">model\n  ↓\nchat template\n  ↓\nraw tool-call syntax\n  ↓\nruntime parser\n  ↓\nOpenAI-compatible tool_calls JSON\n  ↓\nOpenCode / AI SDK\n  ↓\ntool execution\n  ↓\ntool-result history\n  ↓\nnext turn\n</code></pre>\n<p>A failure in one layer can look like a failure in another.</p>\n<p>Qwen3.6’s template can use an XML-like intermediate representation for tool calls. A serving runtime such as llama.cpp parses that representation and exposes it as structured OpenAI-style <code>message.tool_calls</code>.</p>\n<p>So seeing literal:</p>\n<pre><code class=\"lang-plaintext\">&lt;tool_call&gt;\n...\n&lt;/tool_call&gt;\n</code></pre>\n<p>in an agent UI does not necessarily mean “Qwen decided to use the wrong API format”. It can also mean the conversion step did not happen correctly.</p>\n<p>There is a particularly relevant <strong>open OpenCode issue</strong> where Qwen3.6 + llama.cpp on macOS eventually exposes a naked tool call during a long coding session:</p>\n<p><a href=\"https://github.com/anomalyco/opencode/issues/24316\">OpenCode #24316 — Qwen3.6 progress halts with naked tool call</a></p>\n<p>The report shows the failure around <strong>94.5K context</strong> during an actual long-running repository task.</p>\n<p>Importantly, the reporter explicitly does <strong>not</strong> establish whether the root cause is Qwen, llama.cpp, or OpenCode.</p>\n<p>That is a useful failure example, but not evidence that every Qwen3.6/OpenCode session fails.</p>\n<p>There have also been llama.cpp-side parser edge cases. For example:</p>\n<p><a href=\"https://github.com/ggml-org/llama.cpp/issues/26763\">llama.cpp #26763</a></p>\n<p>documents a Qwen3.6 case where a tiny formatting variation around <code>&lt;/parameter&gt;</code> caused the parser to consume following tool-call text as part of an argument. That issue is now <strong>closed as not planned</strong>, so I would treat it as evidence about the type of boundary failure that can occur, not as an “open blocker”.</p>\n<p>There is also a currently open issue involving this combination:</p>\n<pre><code class=\"lang-plaintext\">Qwen3 template\n+ enable_thinking=false\n+ tool_choice=required/named tool\n</code></pre>\n<p>where the forced tool constraint is not enforced:</p>\n<p><a href=\"https://github.com/ggml-org/llama.cpp/issues/27767\">llama.cpp #27767</a></p>\n<p>That is one reason I would initially leave reasoning/tool behavior close to the normal template defaults instead of immediately forcing a special no-thinking configuration.</p>\n<p>The important practical point is just:</p>\n<p><strong>tool reliability belongs to the model + template + runtime parser + client combination, not the model alone.</strong></p>\n</details>\n<h2><a name=\"p-263833-a-very-cheap-diagnostic-if-opencode-misbehaves-6\" class=\"anchor\" href=\"#p-263833-a-very-cheap-diagnostic-if-opencode-misbehaves-6\" aria-label=\"Heading link\"></a>A very cheap diagnostic if OpenCode misbehaves</h2>\n<p>I would not build a giant evaluation harness first.</p>\n<p>If a real OpenCode task fails, the highest-information first comparison is probably:</p>\n<pre><code class=\"lang-plaintext\">same model\nsame llama-server\nsame prompt/task\n\nOpenCode\n   vs\ndirect /v1/chat/completions request\n</code></pre>\n<p>If the direct API produces a valid structured tool call but OpenCode fails, the search space gets much smaller.</p>\n<p>If both fail, then test:</p>\n<pre><code class=\"lang-plaintext\">cache/reuse ON\nvs\nfresh/reset path\n</code></pre>\n<p>If the problem is still present, then:</p>\n<pre><code class=\"lang-plaintext\">base Qwen3.6\nvs\nHuihui derivative\n</code></pre>\n<p>Only after that would I spend much time on:</p>\n<pre><code class=\"lang-plaintext\">Q4 vs Q5 vs Q6\n</code></pre>\n<p>In other words, I would diagnose in roughly this order:</p>\n<pre><code class=\"lang-plaintext\">1. Client boundary\n   OpenCode vs direct llama-server\n\n2. Runtime/state boundary\n   cache/reuse vs fresh state\n\n3. Model/checkpoint boundary\n   base Qwen3.6 vs Huihui\n\n4. Quantization\n   Q4 vs Q5 vs Q6\n</code></pre>\n<p>That order gives a lot of information without requiring a large benchmark.</p>\n<h2><a name=\"p-263833-one-opencode-specific-performance-trap-7\" class=\"anchor\" href=\"#p-263833-one-opencode-specific-performance-trap-7\" aria-label=\"Heading link\"></a>One OpenCode-specific performance trap</h2>\n<p>If OpenCode feels much slower than calling the local model directly, do not immediately blame Apple Silicon or the model.</p>\n<p>There is an open report where a local llama.cpp request took about <strong>2.5 seconds directly</strong>, but about <strong>22 seconds through OpenCode</strong>; supplying a fixed session title reduced the OpenCode path to roughly 5 seconds.</p>\n<p><a href=\"https://github.com/anomalyco/opencode/issues/33126\">OpenCode #33126 — local llama.cpp models slow with session title generation</a></p>\n<p>That does not mean you will reproduce those exact numbers. It is just a good example of why I would measure:</p>\n<pre><code class=\"lang-plaintext\">direct llama-server latency\nvs\nOpenCode end-to-end latency\n</code></pre>\n<p>before deciding the local hardware is too slow.</p>\n<h2><a name=\"p-263833-mac-mini-vs-cloud-gpu-8\" class=\"anchor\" href=\"#p-263833-mac-mini-vs-cloud-gpu-8\" aria-label=\"Heading link\"></a>Mac mini vs cloud GPU</h2>\n<p>For <strong>one developer running one main coding agent</strong>, I think the Mac mini is a very defensible choice.</p>\n<p>The Mac is attractive if you value:</p>\n<ul>\n<li>always-on local availability</li>\n<li>no per-hour inference bill</li>\n<li>privacy/local repositories</li>\n<li>quiet operation</li>\n<li>simple unified-memory access to a fairly large model</li>\n<li>long daily usage</li>\n</ul>\n<p>Cloud is more attractive if you need:</p>\n<ul>\n<li>very fast cold-prefill of huge contexts</li>\n<li>multiple simultaneous agents</li>\n<li>very high throughput</li>\n<li>experimentation with much larger models</li>\n<li>occasional burst use rather than continuous use</li>\n<li>the ability to change GPU size on demand</li>\n</ul>\n<p>The trade-off is therefore not really:</p>\n<pre><code class=\"lang-plaintext\">Mac = slow\ncloud = fast\n</code></pre>\n<p>It is closer to:</p>\n<pre><code class=\"lang-plaintext\">Mac:\npersistent, private, predictable, single-user\n\nCloud:\nelastic, high-throughput, high-prefill, parallel\n</code></pre>\n<p>For the workload you described — one primary coding agent reading a repository, editing, testing, debugging, and iterating — I would not consider a 64 GB Mac mini an unreasonable compromise at all.</p>\n<p>I would probably only prefer cloud by default if you already know that you routinely need huge contexts with fast first-token latency, several simultaneous agents, or models substantially larger than this one.</p>\n<details>\n<summary>\nA little more context on why this 35B model is relatively practical</summary>\n<p>The <a href=\"https://huggingface.co/Qwen/Qwen3.6-35B-A3B\">base model</a> is nominally a 35B model, but it is an MoE:</p>\n<ul>\n<li>35B total parameters</li>\n<li>~3B activated per token</li>\n<li>40 layers</li>\n<li>hybrid Gated DeltaNet / attention architecture</li>\n</ul>\n<p>So its runtime characteristics are quite different from a dense 35B model.</p>\n<p>That is one reason generation throughput can be surprisingly good on memory-bandwidth-oriented machines such as Apple Silicon.</p>\n<p>The same hybrid/recurrent architecture also means that long-session state/cache handling is more complicated than the familiar “ordinary Transformer KV cache” mental model.</p>\n<p>That is another reason I would pay attention to prefix reuse and long-session behavior instead of using only a simple tok/s benchmark.</p>\n</details>\n<h2><a name=\"p-263833-one-non-performance-caution-9\" class=\"anchor\" href=\"#p-263833-one-non-performance-caution-9\" aria-label=\"Heading link\"></a>One non-performance caution</h2>\n<p>Because this is an <strong>abliterated</strong> checkpoint, its refusal/safety behavior has intentionally been reduced; the <a href=\"https://huggingface.co/huihui-ai/Huihui-Qwen3.6-35B-A3B-Claude-4.7-Opus-abliterated\">model card explicitly warns about this</a>.</p>\n<p>For ordinary chat that may simply be a model preference.</p>\n<p>For an agent that can:</p>\n<pre><code class=\"lang-plaintext\">write files\nrun shell commands\ndelete/rename things\naccess credentials\n</code></pre>\n<p>it matters more.</p>\n<p>I would therefore run it with the same basic precautions I would use for any autonomous local coding model:</p>\n<ul>\n<li>work on a git branch/worktree</li>\n<li>keep production credentials out of the environment</li>\n<li>review destructive shell actions</li>\n<li>give it only the filesystem permissions it needs</li>\n<li>keep tests/builds isolated when practical</li>\n</ul>\n<p>That does not change whether the Mac is suitable; it just keeps “uncensored model” and “unrestricted machine access” as two separate decisions.</p>\n<h2><a name=\"p-263833-my-default-recommendation-10\" class=\"anchor\" href=\"#p-263833-my-default-recommendation-10\" aria-label=\"Heading link\"></a>My default recommendation</h2>\n<p>If I were buying/configuring specifically for this use case, I would probably do:</p>\n<pre><code class=\"lang-plaintext\">64 GB Mac mini\n        ↓\nQ5_K_M first\n        ↓\ncurrent llama.cpp / Metal\n        ↓\nllama-server OpenAI-compatible endpoint\n        ↓\nOpenCode\n        ↓\n64K context initially\n        ↓\none real repository task with ~20–30 tool turns\n</code></pre>\n<p>If that is stable, I would simply use it.</p>\n<p>Then optimize based on what is actually limiting you:</p>\n<pre><code class=\"lang-plaintext\">Need more quality?\n    → try Q6\n\nNeed more memory/context headroom?\n    → try Q4\n\nNeed more Apple-Silicon throughput?\n    → compare oMLX/MLX\n\nTool calls break?\n    → compare direct llama-server vs OpenCode\n\nLong sessions degrade?\n    → inspect cache/state/context behavior\n\nCold 128K+ prompts are too slow?\n    → cloud GPU becomes more attractive\n</code></pre>\n<p>So overall: <strong>I think your plan is technically reasonable.</strong></p>\n<p>The part I would validate before making strong claims is not “can 64 GB run the weights?” — that part looks fairly comfortable.</p>\n<p>It is:</p>\n<blockquote>\n<p><strong>Can this exact derivative remain a reliable OpenCode agent over the length and tool complexity of your real software-development sessions?</strong></p>\n</blockquote>\n<p>The base Qwen3.6 evidence is encouraging, the exact checkpoint fits comfortably, the available Apple Silicon performance data looks quite usable, and the exact Q4 checkpoint can at least produce clean short-horizon tool calls.</p>\n<p>That is enough that I would proceed with the Mac idea rather than reject it because it is a “35B” model — I would just keep the model/runtime/OpenCode layers separate when diagnosing anything odd.</p>",
+    "post_number": 2,
+    "post_type": 1,
+    "posts_count": 2,
+    "updated_at": "2026-09-01T21:28:01.029Z",
+    "reply_count": 0,
+    "reply_to_post_number": null,
+    "quote_count": 0,
+    "incoming_link_count": 0,
+    "reads": 4,
+    "readers_count": 3,
+    "score": 0.8,
+    "yours": false,
+    "topic_id": 179660,
+    "topic_slug": "can-this-model-run-well-on-a-mac-mini-with-opencode",
+    "display_username": "John Smith",
+    "primary_group_name": null,
+    "flair_name": null,
+    "flair_url": null,
+    "flair_bg_color": null,
+    "flair_color": null,
+    "flair_group_id": null,
+    "badges_granted": [],
+    "version": 1,
+    "can_edit": false,
+    "can_delete": false,
+    "can_recover": false,
+    "can_see_hidden_post": false,
+    "can_wiki": false,
+    "link_counts": [
+     {
+      "url": "https://omlx.ai/benchmarks/performance/ecgl0xff",
+      "internal": false,
+      "reflection": false,
+      "clicks": 0
+     },
+     {
+      "url": "https://huggingface.co/Qwen/Qwen3.6-35B-A3B",
+      "internal": false,
+      "reflection": false,
+      "title": "Qwen/Qwen3.6-35B-A3B · Hugging Face",
+      "clicks": 0
+     },
+     {
+      "url": "https://omlx.ai/benchmarks/performance/4sslge3j",
+      "internal": false,
+      "reflection": false,
+      "clicks": 0
+     },
+     {
+      "url": "https://opencode.ai/docs/providers/",
+      "internal": false,
+      "reflection": false,
+      "title": "Providers | OpenCode",
+      "clicks": 0
+     },
+     {
+      "url": "https://huggingface.co/lordx64/Qwen3.6-35B-A3B-Claude-4.7-Opus-Reasoning-Distilled",
+      "internal": false,
+      "reflection": false,
+      "title": "lordx64/Qwen3.6-35B-A3B-Claude-4.7-Opus-Reasoning-Distilled · Hugging Face",
+      "clicks": 0
+     },
+     {
+      "url": "https://huggingface.co/huihui-ai/Huihui-Qwen3.6-35B-A3B-Claude-4.7-Opus-abliterated",
+      "internal": false,
+      "reflection": false,
+      "title": "huihui-ai/Huihui-Qwen3.6-35B-A3B-Claude-4.7-Opus-abliterated · Hugging Face",
+      "clicks": 0
+     },
+     {
+      "url": "https://github.com/anomalyco/opencode/issues/24316",
+      "internal": false,
+      "reflection": false,
+      "title": "Progress halts with qwen 3.6 35b-a3b with naked tool call in the console · Issue #24316 · anomalyco/opencode · GitHub",
+      "clicks": 0
+     },
+     {
+      "url": "https://github.com/ggml-org/llama.cpp/issues/26763",
+      "internal": false,
+      "reflection": false,
+      "title": "Qwen3.6 tool parsing: derived value_suffix \"\\n</parameter>\\n\" never matches when the model omits the leading newline, capturing following tool calls into the argument · Issue #26763 · ggml-org/llama.cpp · GitHub",
+      "clicks": 0
+     },
+     {
+      "url": "https://github.com/ggml-org/llama.cpp/issues/27767",
+      "internal": false,
+      "reflection": false,
+      "title": "Eval bug: named/required tool_choice not enforced for Qwen3.6 templates when enable_thinking=false · Issue #27767 · ggml-org/llama.cpp · GitHub",
+      "clicks": 0
+     },
+     {
+      "url": "https://github.com/anomalyco/opencode/issues/33126",
+      "internal": false,
+      "reflection": false,
+      "title": "Local llama.cpp models are extremely slow when session title generation is enabled · Issue #33126 · anomalyco/opencode · GitHub",
+      "clicks": 0
+     },
+     {
+      "url": "https://www.apple.com/newsroom/2026/08/apple-unveils-a-more-powerful-mac-mini-featuring-the-all-new-m6-and-m5-pro/",
+      "internal": false,
+      "reflection": false,
+      "title": "Apple unveils a more powerful Mac mini featuring the all-new M6 and M5 Pro - Apple",
+      "clicks": 0
+     },
+     {
+      "url": "https://huggingface.co/shennguyen/Huihui-Qwen3.6-35B-A3B-Claude-4.7-Opus-abliterated-GGUF/tree/main",
+      "internal": false,
+      "reflection": false,
+      "title": "shennguyen/Huihui-Qwen3.6-35B-A3B-Claude-4.7-Opus-abliterated-GGUF at main",
+      "clicks": 0
+     },
+     {
+      "url": "https://github.com/ggml-org/llama.cpp/blob/master/tools/server/README.md",
+      "internal": false,
+      "reflection": false,
+      "title": "llama.cpp/tools/server/README.md at master · ggml-org/llama.cpp · GitHub",
+      "clicks": 0
+     }
+    ],
+    "read": true,
+    "user_title": "Regular",
+    "title_is_group": false,
+    "bookmarked": false,
+    "actions_summary": [],
+    "moderator": false,
+    "admin": false,
+    "staff": false,
+    "user_id": 52272,
+    "hidden": false,
+    "trust_level": 3,
+    "deleted_at": null,
+    "user_deleted": false,
+    "edit_reason": null,
+    "can_view_edit_history": true,
+    "wiki": false,
+    "post_url": "/t/can-this-model-run-well-on-a-mac-mini-with-opencode/179660/2",
+    "reactions": [],
+    "current_user_reaction": null,
+    "reaction_users_count": 0,
+    "current_user_used_main_reaction": false,
+    "can_accept_answer": false,
+    "can_unaccept_answer": false,
+    "accepted_answer": false,
+    "topic_accepted_answer": null
+   }
+  ],
+  "stream": [
+   263733,
+   263833
+  ]
+ },
+ "timeline_lookup": [
+  [
+   1,
+   9
+  ],
+  [
+   2,
+   8
+  ]
+ ],
+ "suggested_topics": [],
+ "fancy_title": "Can this model run well on a Mac mini with OpenCode?",
+ "id": 179660,
+ "title": "Can this model run well on a Mac mini with OpenCode?",
+ "posts_count": 2,
+ "created_at": "2026-09-01T09:57:51.938Z",
+ "views": 114,
+ "reply_count": 0,
+ "like_count": 1,
+ "last_posted_at": "2026-09-01T21:28:01.029Z",
+ "visible": true,
+ "closed": false,
+ "archived": false,
+ "has_summary": false,
+ "archetype": "regular",
+ "slug": "can-this-model-run-well-on-a-mac-mini-with-opencode",
+ "category_id": 5,
+ "word_count": 3204,
+ "deleted_at": null,
+ "user_id": 121856,
+ "featured_link": null,
+ "pinned_globally": false,
+ "pinned_at": null,
+ "pinned_until": null,
+ "image_url": null,
+ "slow_mode_seconds": 0,
+ "draft": null,
+ "draft_key": "topic_179660",
+ "draft_sequence": null,
+ "unpinned": null,
+ "pinned": false,
+ "current_post_number": 1,
+ "highest_post_number": 2,
+ "deleted_by": null,
+ "actions_summary": [
+  {
+   "id": 4,
+   "count": 0,
+   "hidden": false,
+   "can_act": false
+  },
+  {
+   "id": 8,
+   "count": 0,
+   "hidden": false,
+   "can_act": false
+  },
+  {
+   "id": 10,
+   "count": 0,
+   "hidden": false,
+   "can_act": false
+  },
+  {
+   "id": 7,
+   "count": 0,
+   "hidden": false,
+   "can_act": false
+  }
+ ],
+ "chunk_size": 20,
+ "bookmarked": false,
+ "topic_timer": null,
+ "message_bus_last_id": 0,
+ "participant_count": 2,
+ "show_read_indicator": false,
+ "thumbnails": null,
+ "slow_mode_enabled_until": null,
+ "tags_disable_ads": false,
+ "related_topics": [
+  {
+   "fancy_title": "Agentic curious questions",
+   "id": 179227,
+   "title": "Agentic curious questions",
+   "slug": "agentic-curious-questions",
+   "posts_count": 7,
+   "reply_count": 1,
+   "highest_post_number": 7,
+   "image_url": null,
+   "created_at": "2026-08-25T03:19:40.880Z",
+   "last_posted_at": "2026-08-29T02:34:59.844Z",
+   "bumped": true,
+   "bumped_at": "2026-08-29T02:34:59.844Z",
+   "archetype": "regular",
+   "unseen": false,
+   "pinned": false,
+   "unpinned": null,
+   "visible": true,
+   "closed": false,
+   "archived": false,
+   "bookmarked": null,
+   "liked": null,
+   "like_count": 6,
+   "views": 286,
+   "category_id": 5,
+   "featured_link": null,
+   "op_like_count": 1,
+   "has_accepted_answer": false,
+   "posters": [
+    {
+     "extras": "latest",
+     "description": "Original Poster, Most Recent Poster",
+     "user": {
+      "id": 121508,
+      "username": "Ste4k-4nd-Cheese",
+      "name": "Dylan Rees Jones",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/s/4da419/{size}.png",
+      "trust_level": 0
+     }
+    },
+    {
+     "extras": null,
+     "description": "Recent Poster",
+     "user": {
+      "id": 52272,
+      "username": "John6666",
+      "name": "John Smith",
+      "avatar_template": "/user_avatar/discuss.huggingface.co/john6666/{size}/27664_2.png",
+      "trust_level": 3
+     }
+    },
+    {
+     "extras": null,
+     "description": "Recent Poster",
+     "user": {
+      "id": 121522,
+      "username": "tommethew",
+      "name": "Tom Methews",
+      "avatar_template": "/user_avatar/discuss.huggingface.co/tommethew/{size}/62623_2.png",
+      "trust_level": 0
+     }
+    }
+   ]
+  },
+  {
+   "fancy_title": "What should i change to optimize local hosted AI",
+   "id": 176339,
+   "title": "What should i change to optimize local hosted AI",
+   "slug": "what-should-i-change-to-optimize-local-hosted-ai",
+   "posts_count": 4,
+   "reply_count": 0,
+   "highest_post_number": 4,
+   "image_url": null,
+   "created_at": "2026-05-29T09:25:01.461Z",
+   "last_posted_at": "2026-07-30T03:21:13.208Z",
+   "bumped": true,
+   "bumped_at": "2026-07-30T03:21:13.208Z",
+   "archetype": "regular",
+   "unseen": false,
+   "pinned": false,
+   "unpinned": null,
+   "visible": true,
+   "closed": false,
+   "archived": false,
+   "bookmarked": null,
+   "liked": null,
+   "like_count": 4,
+   "views": 626,
+   "category_id": 5,
+   "featured_link": null,
+   "op_like_count": 2,
+   "has_accepted_answer": false,
+   "posters": [
+    {
+     "extras": null,
+     "description": "Original Poster",
+     "user": {
+      "id": 117032,
+      "username": "UpDownUpDownLeftRigh",
+      "name": "Martin F",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/u/f17d59/{size}.png",
+      "trust_level": 0
+     }
+    },
+    {
+     "extras": null,
+     "description": "Frequent Poster",
+     "user": {
+      "id": 52272,
+      "username": "John6666",
+      "name": "John Smith",
+      "avatar_template": "/user_avatar/discuss.huggingface.co/john6666/{size}/27664_2.png",
+      "trust_level": 3
+     }
+    },
+    {
+     "extras": null,
+     "description": "Recent Poster",
+     "user": {
+      "id": 119906,
+      "username": "elmehdieljair1",
+      "name": "Medi JR",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/e/f19dbf/{size}.png",
+      "trust_level": 0
+     }
+    },
+    {
+     "extras": "latest",
+     "description": "Most Recent Poster",
+     "user": {
+      "id": 120221,
+      "username": "korjo",
+      "name": "asd czx",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/k/8dc957/{size}.png",
+      "trust_level": 0
+     }
+    }
+   ]
+  },
+  {
+   "fancy_title": "TOP local AI models (gguf) for complete web app development (no coding) for 2026?",
+   "id": 174336,
+   "title": "TOP local AI models (gguf) for complete web app development (no coding) for 2026?",
+   "slug": "top-local-ai-models-gguf-for-complete-web-app-development-no-coding-for-2026",
+   "posts_count": 2,
+   "reply_count": 0,
+   "highest_post_number": 2,
+   "image_url": null,
+   "created_at": "2026-03-17T05:04:38.038Z",
+   "last_posted_at": "2026-03-17T13:52:28.421Z",
+   "bumped": true,
+   "bumped_at": "2026-03-17T13:52:28.421Z",
+   "archetype": "regular",
+   "unseen": false,
+   "pinned": false,
+   "unpinned": null,
+   "visible": true,
+   "closed": true,
+   "archived": false,
+   "bookmarked": null,
+   "liked": null,
+   "like_count": 3,
+   "views": 6959,
+   "category_id": 13,
+   "featured_link": null,
+   "op_like_count": 2,
+   "has_accepted_answer": true,
+   "posters": [
+    {
+     "extras": null,
+     "description": "Original Poster",
+     "user": {
+      "id": 113248,
+      "username": "Surupa",
+      "name": "Surupa  Weerasinghe",
+      "avatar_template": "/user_avatar/discuss.huggingface.co/surupa/{size}/58683_2.png",
+      "trust_level": 1
+     }
+    },
+    {
+     "extras": "latest",
+     "description": "Most Recent Poster, Accepted Answer",
+     "user": {
+      "id": 52272,
+      "username": "John6666",
+      "name": "John Smith",
+      "avatar_template": "/user_avatar/discuss.huggingface.co/john6666/{size}/27664_2.png",
+      "trust_level": 3
+     }
+    },
+    {
+     "extras": null,
+     "description": "Recent Poster",
+     "user": {
+      "id": -1,
+      "username": "system",
+      "name": "system",
+      "avatar_template": "https://us1.discourse-cdn.com/hellohellohello/original/2X/d/de4155eb4aa4108ecb32a1389d7cc37ae69f88b7.png",
+      "admin": true,
+      "moderator": true,
+      "trust_level": 4
+     }
+    }
+   ]
+  },
+  {
+   "fancy_title": "M-Courtyard: Fine-tune LLMs on macOS with zero code (MLX + Ollama GUI)",
+   "id": 173463,
+   "title": "M-Courtyard: Fine-tune LLMs on macOS with zero code (MLX + Ollama GUI)",
+   "slug": "m-courtyard-fine-tune-llms-on-macos-with-zero-code-mlx-ollama-gui",
+   "posts_count": 1,
+   "reply_count": 0,
+   "highest_post_number": 1,
+   "image_url": "https://us1.discourse-cdn.com/hellohellohello/optimized/3X/3/6/3682339f7a939fcdc74515e0df2c35606d3da00b_2_1024x651.png",
+   "created_at": "2026-02-13T16:05:53.236Z",
+   "last_posted_at": "2026-02-13T16:05:53.291Z",
+   "bumped": true,
+   "bumped_at": "2026-02-13T16:05:53.291Z",
+   "archetype": "regular",
+   "unseen": false,
+   "pinned": false,
+   "unpinned": null,
+   "visible": true,
+   "closed": false,
+   "archived": false,
+   "bookmarked": null,
+   "liked": null,
+   "like_count": 1,
+   "views": 280,
+   "category_id": 13,
+   "featured_link": null,
+   "op_like_count": 1,
+   "has_accepted_answer": false,
+   "posters": [
+    {
+     "extras": "latest single",
+     "description": "Original Poster, Most Recent Poster",
+     "user": {
+      "id": 111715,
+      "username": "tuwenbo",
+      "name": "tuwenbo0120",
+      "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/t/e99b99/{size}.png",
+      "trust_level": 1
+     }
+    }
+   ]
+  },
+  {
+   "fancy_title": "Benchmark: 6 local Ollama models for code-gen delegation, with variance analysis",
+   "id": 175579,
+   "title": "Benchmark: 6 local Ollama models for code-gen delegation, with variance analysis",
+   "slug": "benchmark-6-local-ollama-models-for-code-gen-delegation-with-variance-analysis",
+   "posts_count": 1,
+   "reply_count": 0,
+   "highest_post_number": 1,
+   "image_url": null,
+   "created_at": "2026-04-27T00:08:00.020Z",
+   "last_posted_at": "2026-04-27T00:08:00.111Z",
+   "bumped": true,
+   "bumped_at": "2026-04-27T00:08:00.111Z",
+   "archetype": "regular",
+   "unseen": false,
+   "pinned": false,
+   "unpinned": null,
+   "visible": true,
+   "closed": false,
+   "archived": false,
+   "bookmarked": null,
+   "liked": null,
+   "like_count": 2,
+   "views": 401,
+   "category_id": 13,
+   "featured_link": null,
+   "op_like_count": 2,
+   "has_accepted_answer": false,
+   "posters": [
+    {
+     "extras": "latest single",
+     "description": "Original Poster, Most Recent Poster",
+     "user": {
+      "id": 114276,
+      "username": "Bobcamgardo",
+      "name": "Roberto de la Camara",
+      "avatar_template": "/user_avatar/discuss.huggingface.co/bobcamgardo/{size}/59174_2.png",
+      "trust_level": 0
+     }
+    }
+   ]
+  }
+ ],
+ "summarizable": false,
+ "has_cached_summary": false,
+ "valid_reactions": [
+  "heart",
+  "+1",
+  "laughing",
+  "open_mouth",
+  "clap",
+  "confetti_ball",
+  "hugs",
+  "eyes",
+  "white_check_mark"
+ ],
+ "has_accepted_answer": false,
+ "can_create_shared_issue": false,
+ "shared_issue_visible": false,
+ "can_vote": false,
+ "vote_count": 0,
+ "user_voted": false,
+ "discourse_zendesk_plugin_zendesk_id": null,
+ "discourse_zendesk_plugin_zendesk_url": "https://your-url.zendesk.com/agent/tickets/",
+ "details": {
+  "can_edit": false,
+  "notification_level": 1,
+  "participants": [
+   {
+    "id": 52272,
+    "username": "John6666",
+    "name": "John Smith",
+    "avatar_template": "/user_avatar/discuss.huggingface.co/john6666/{size}/27664_2.png",
+    "post_count": 1,
+    "primary_group_name": null,
+    "flair_name": null,
+    "flair_url": null,
+    "flair_color": null,
+    "flair_bg_color": null,
+    "flair_group_id": null,
+    "trust_level": 3
+   },
+   {
+    "id": 121856,
+    "username": "sophie-webber",
+    "name": "Sophie Webber",
+    "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/s/9d8465/{size}.png",
+    "post_count": 1,
+    "primary_group_name": null,
+    "flair_name": null,
+    "flair_url": null,
+    "flair_color": null,
+    "flair_bg_color": null,
+    "flair_group_id": null,
+    "trust_level": 0
+   }
+  ],
+  "created_by": {
+   "id": 121856,
+   "username": "sophie-webber",
+   "name": "Sophie Webber",
+   "avatar_template": "https://avatars.discourse-cdn.com/v4/letter/s/9d8465/{size}.png"
+  },
+  "last_poster": {
+   "id": 52272,
+   "username": "John6666",
+   "name": "John Smith",
+   "avatar_template": "/user_avatar/discuss.huggingface.co/john6666/{size}/27664_2.png"
+  }
+ },
+ "bookmarks": []
+}

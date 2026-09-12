@@ -46,14 +46,21 @@
     "repo": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
     "command": null,
     "steps": [
-      {"kind": "do", "text": "Download unsloth/Qwen3.8-27B-GGUF"},
-      {"kind": "do", "text": "llama.cpp with CUDA or Metal, Q4_K_M or smaller to stay on-card"}
+      {
+        "kind": "do",
+        "text": "Download unsloth/Qwen3.8-27B-GGUF"
+      },
+      {
+        "kind": "do",
+        "text": "llama.cpp with CUDA or Metal, Q4_K_M or smaller to stay on-card"
+      }
     ]
   },
   "measurements": [],
   "caveats": [
     "No numbers yet; pick the quant by your VRAM, not by the benchmark tables.",
-    "At IQ1_S the 27B fits almost anywhere but quality cost is real."
+    "At IQ1_S the 27B fits almost anywhere but quality cost is real.",
+    "CUDA build trap: llama.cpp @221f0f6 silently corrupts this model's output (loads fine, full speed, garbage completions); use ece963f41 (~b10450) or newer with Flash Attention on. Negative result documented in the tools/history pass-4 ledger ([9])."
   ],
   "provenance_tier": null,
   "sources": [

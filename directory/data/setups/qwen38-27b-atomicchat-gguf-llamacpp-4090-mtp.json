@@ -1,0 +1,124 @@
+{
+  "id": "qwen38-27b-atomicchat-gguf-llamacpp-4090-mtp",
+  "title": "Qwen3.8-27B AtomicChat AD-Q4_K on RTX 4090 \u2014 native MTP, ~60 tok/s at 160k context",
+  "slug_note": "Trading context for speed: the checkpoint's own MTP head (no external draft model) lifts decode from ~42 to ~59.7 tok/s while still holding a 160k window with Q4 KV.",
+  "model": "qwen3-8-27b",
+  "status": "reported",
+  "variation": {
+    "license": "Apache-2.0",
+    "downloads": 305686,
+    "checkpoint": "AtomicChat/Qwen3.8-27B-GGUF",
+    "publisher": "atomicchat",
+    "quant": "gguf-q4",
+    "quant_detail": "AD-Q4_K (15.9GB); MTP state buffers consume extra VRAM, so ceilings drop vs the plain lane",
+    "format": "gguf",
+    "size_gb": 15.9,
+    "url": "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF"
+  },
+  "engine": {
+    "id": "llama-cpp",
+    "config": "Full GPU offload + native MTP speculative decoding from the checkpoint's own draft head; Q8 or Q4 KV cache quantization.",
+    "image": null,
+    "requires_fork": false,
+    "draft_model": "in-checkpoint MTP head",
+    "spec_decode": "mtp",
+    "flags": [
+      "-ngl 99",
+      "-c 160000",
+      "-ctv q4_0",
+      "-ctk q4_0",
+      "--spec-type draft-mtp",
+      "--spec-draft-n-max 4",
+      "--spec-draft-p-min 0.7"
+    ]
+  },
+  "hardware": [
+    "gpu-24gb"
+  ],
+  "requirements": {
+    "memory_gb": 24,
+    "disk_gb": 17,
+    "min_vram_gb": 24,
+    "notes": "23.53GB VRAM at 100k MTP+Q8; 23.60GB at 160k MTP+Q4. Zero system RAM offload \u2014 24GB shown as a practical host floor."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 160000,
+    "max_context": 262144
+  },
+  "run": {
+    "repo": "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF",
+    "command": "llama-server -m Qwen3.8-27B-AD-Q4_K.gguf -c 160000 -ngl 99 --port 8080 -ctv q4_0 -ctk q4_0 --spec-type draft-mtp --spec-draft-n-max 4 --spec-draft-p-min 0.7",
+    "steps": [
+      {
+        "kind": "do",
+        "text": "Download Qwen3.8-27B-AD-Q4_K.gguf from AtomicChat/Qwen3.8-27B-GGUF"
+      },
+      {
+        "kind": "cmd",
+        "text": "llama-server -m Qwen3.8-27B-AD-Q4_K.gguf -c {100000|160000} -ngl 99 --port 8080 -ctv {q8_0|q4_0} -ctk {q8_0|q4_0} --spec-type draft-mtp --spec-draft-n-max 4 --spec-draft-p-min 0.7"
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "metric": "decode_per_stream",
+      "value": 58.88,
+      "unit": "tok/s",
+      "concurrency": 1,
+      "provenance": "forum",
+      "date": "2026-08-15",
+      "n": null,
+      "method": null,
+      "note": "@100k ctx ceiling, MTP + Q8 KV, 23.53GB VRAM",
+      "source": "https://x.com/analogalok/status/2088625914682941719"
+    },
+    {
+      "metric": "decode_per_stream",
+      "value": 59.65,
+      "unit": "tok/s",
+      "concurrency": 1,
+      "provenance": "forum",
+      "date": "2026-08-15",
+      "n": null,
+      "method": null,
+      "note": "@160k ctx ceiling, MTP + Q4 KV, 23.60GB VRAM",
+      "source": "https://x.com/analogalok/status/2088625914682941719"
+    },
+    {
+      "metric": "prefill_tok_s",
+      "value": 2249.9,
+      "unit": "tok/s",
+      "concurrency": null,
+      "provenance": "forum",
+      "date": "2026-08-15",
+      "n": null,
+      "method": null,
+      "note": "@100k MTP+Q8 (2232.6 @160k MTP+Q4)",
+      "source": "https://x.com/analogalok/status/2088625914682941719"
+    }
+  ],
+  "caveats": [
+    "MTP costs context: ceilings drop from 190k->100k (Q8 KV) and 260k->160k (Q4 KV) vs the plain lane, in exchange for ~1.4x decode.",
+    "Comparison vs unsloth UD-Q4_K_XL MTP ceilings on the same card: 80k->100k (Q8), 130k->160k (Q4).",
+    "No external draft model and no RAM offload \u2014 'zero external draft models, 100% native' per the builder."
+  ],
+  "provenance_tier": "forum",
+  "sources": [
+    {
+      "url": "https://x.com/analogalok/status/2088625914682941719#mtp-overdrive",
+      "kind": "post",
+      "note": "second config from the same matrix post; rot-prone \u2014 raw payloads archived under tools/history/inputs/pass4-social/raw/"
+    },
+    {
+      "url": "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF",
+      "kind": "model",
+      "note": "weights / quant card"
+    }
+  ],
+  "updated": "2026-09-10",
+  "builder": "analogalok"
+}

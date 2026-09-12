@@ -1,0 +1,1758 @@
+{
+ "via": "twitter-cli user-posts -n 50",
+ "user": "ollama",
+ "posts": [
+  {
+   "id": "2096374001119744190",
+   "text": "Introducing off-peak hour token rates.\n\nDeepSeek-V4-Flash and Pro are now half price outside of 12:00 to 18:00 UTC on weekdays (5am-11am pacific), and all day on weekends!\n\nOff-peak pricing will be available soon for more models.\n\nDeepSeek models on Ollama's cloud are hosted in the US & Europe with ZDR and fast performance.",
+   "author": {
+    "id": "1688410127378829312",
+    "name": "ollama",
+    "screenName": "ollama",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 967,
+    "retweets": 51,
+    "replies": 97,
+    "quotes": 17,
+    "views": 99344,
+    "bookmarks": 121
+   },
+   "createdAt": "Sat Sep 05 23:04:45 +0000 2026",
+   "createdAtLocal": "2026-09-06 07:04",
+   "createdAtISO": "2026-09-05T23:04:45+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2096374070569013545",
+   "text": "See pricing: https://t.co/KhDHpfXK6s",
+   "author": {
+    "id": "1688410127378829312",
+    "name": "ollama",
+    "screenName": "ollama",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 13,
+    "retweets": 0,
+    "replies": 4,
+    "quotes": 0,
+    "views": 14068,
+    "bookmarks": 5
+   },
+   "createdAt": "Sat Sep 05 23:05:01 +0000 2026",
+   "createdAtLocal": "2026-09-06 07:05",
+   "createdAtISO": "2026-09-05T23:05:01+00:00",
+   "media": [],
+   "urls": [
+    "https://ollama.com/pricing"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2095707656803790876",
+   "text": "American open weights/source is a national security imperative.",
+   "author": {
+    "id": "1923905468214210560",
+    "name": "Under Secretary of War Emil Michael",
+    "screenName": "USWREMichael",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1934599717067079680/Rg6bteNa_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 900,
+    "retweets": 85,
+    "replies": 40,
+    "quotes": 21,
+    "views": 77243,
+    "bookmarks": 82
+   },
+   "createdAt": "Fri Sep 04 02:56:56 +0000 2026",
+   "createdAtLocal": "2026-09-04 10:56",
+   "createdAtISO": "2026-09-04T02:56:56+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "ollama",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095482647355244762",
+    "text": "Exciting day for NVIDIA and @huggingface.\n\nOpen models strengthen safety and cybersecurity, accelerate innovation and diffusion, and enable sovereignty. They allow every developer, startup, university, industry and country to build with, customize and benefit from AI.\n\nThank you @ClementDelangue for coming to me.\n\nNVIDIA is going to be a great home for Hugging Face, its community and the future of open models. 🤗\n\nhttps://t.co/q8Om2Xc5ye",
+    "author": {
+     "screenName": "JensenHuang",
+     "name": "Jensen Huang"
+    }
+   }
+  },
+  {
+   "id": "2095884985966174382",
+   "text": "It sounds like the shift back toward open weight models that I noticed among the startups in the summer batch is a genuine trend.",
+   "author": {
+    "id": "183749519",
+    "name": "Paul Graham",
+    "screenName": "paulg",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1824002576/pg-railsconf_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 695,
+    "retweets": 60,
+    "replies": 69,
+    "quotes": 9,
+    "views": 176985,
+    "bookmarks": 272
+   },
+   "createdAt": "Fri Sep 04 14:41:34 +0000 2026",
+   "createdAtLocal": "2026-09-04 22:41",
+   "createdAtISO": "2026-09-04T14:41:34+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "ollama",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095883627200659800",
+    "text": "🦙 @ollama is used by 9 million developers and 85% of the Fortune 500, giving co-founder and CEO Jeffrey Morgan (@jmorgan) a unique view into which AI models people are actually using and how that’s changing.\n\nRight now, the biggest shift he sees is toward open models, driven by coding agents, falling costs, and capabilities that are rapidly catching up to the frontier labs. On Ollama Cloud, that shift has driven a 150x increase in token usage since the start of the year.\n\nIn this episode of @LightconePod, Jeff joins @garrytan, @snowmaker, @sdianahu, and @harjtaggar to talk about the future of open models and the story behind Ollama, from two years of searching for the right idea to building one of the most widely used AI developer tools in the world.\n\n00:43 — The Shift to Open Models\n03:03 — How AI Agents Are Driving Token Usage\n05:31 — Are Open Models Catching Up?\n08:26 — What Happens When a New Model Launches\n11:31 — Ollama as an Operating System for AI\n14:05 — The New Opportunities Above the Model Layer\n18:19 — Why 80–90% of Enterprise Tokens Could Be Open\n20:57 — The Future Is Local and Cloud\n26:40 — Why AI Is Coming Back to Your Computer\n28:56 — The Coming Era of Unlimited Tokens\n32:30 — Do We Still Need a “God Model”?\n33:41 — Open Models and Geopolitics\n36:14 — The Origins of Ollama\n40:36 — Two Years Lost in the Wilderness\n42:39 — The Pivot That Changed Everything\n47:02 — How Ollama Found a Business Model\n49:43 — Why Second-Time Founders Did YC",
+    "author": {
+     "screenName": "ycombinator",
+     "name": "Y Combinator"
+    }
+   }
+  },
+  {
+   "id": "2095929887588552865",
+   "text": "Open models are closing the intelligence gap, says @ollama's @jmorgan. That opens up a new opportunity for founders: coordinating fast, cheap models to solve more complex problems.\n\n“We’re maybe less than three months behind between the frontier closed models and the open models. But the next problem to solve is extreme efficiency.”\n\n“They’re good enough for 80% of the tasks, they’re really fast and they’re ultra cheap.”\n\n“That class of models, in my mind, will be the first ones that come down to this idea of the unlimited tokens.”\n\n“Being able to coordinate these flash models together to do different tasks can also yield great results that a bigger model can.”",
+   "author": {
+    "id": "113130846",
+    "name": "Y Combinator",
+    "screenName": "ycombinator",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1623777064821358592/9CApQWXe_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 140,
+    "retweets": 18,
+    "replies": 32,
+    "quotes": 2,
+    "views": 55545,
+    "bookmarks": 47
+   },
+   "createdAt": "Fri Sep 04 17:40:00 +0000 2026",
+   "createdAtLocal": "2026-09-05 01:40",
+   "createdAtISO": "2026-09-04T17:40:00+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2095924317083283456/vid/avc1/3840x2160/Y4Adzj6ssU4t1AtS.mp4?tag=29",
+     "width": 3840,
+     "height": 2160
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "ollama",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095883627200659800",
+    "text": "🦙 @ollama is used by 9 million developers and 85% of the Fortune 500, giving co-founder and CEO Jeffrey Morgan (@jmorgan) a unique view into which AI models people are actually using and how that’s changing.\n\nRight now, the biggest shift he sees is toward open models, driven by coding agents, falling costs, and capabilities that are rapidly catching up to the frontier labs. On Ollama Cloud, that shift has driven a 150x increase in token usage since the start of the year.\n\nIn this episode of @LightconePod, Jeff joins @garrytan, @snowmaker, @sdianahu, and @harjtaggar to talk about the future of open models and the story behind Ollama, from two years of searching for the right idea to building one of the most widely used AI developer tools in the world.\n\n00:43 — The Shift to Open Models\n03:03 — How AI Agents Are Driving Token Usage\n05:31 — Are Open Models Catching Up?\n08:26 — What Happens When a New Model Launches\n11:31 — Ollama as an Operating System for AI\n14:05 — The New Opportunities Above the Model Layer\n18:19 — Why 80–90% of Enterprise Tokens Could Be Open\n20:57 — The Future Is Local and Cloud\n26:40 — Why AI Is Coming Back to Your Computer\n28:56 — The Coming Era of Unlimited Tokens\n32:30 — Do We Still Need a “God Model”?\n33:41 — Open Models and Geopolitics\n36:14 — The Origins of Ollama\n40:36 — Two Years Lost in the Wilderness\n42:39 — The Pivot That Changed Everything\n47:02 — How Ollama Found a Business Model\n49:43 — Why Second-Time Founders Did YC",
+    "author": {
+     "screenName": "ycombinator",
+     "name": "Y Combinator"
+    }
+   }
+  },
+  {
+   "id": "2095883627200659800",
+   "text": "🦙 @ollama is used by 9 million developers and 85% of the Fortune 500, giving co-founder and CEO Jeffrey Morgan (@jmorgan) a unique view into which AI models people are actually using and how that’s changing.\n\nRight now, the biggest shift he sees is toward open models, driven by coding agents, falling costs, and capabilities that are rapidly catching up to the frontier labs. On Ollama Cloud, that shift has driven a 150x increase in token usage since the start of the year.\n\nIn this episode of @LightconePod, Jeff joins @garrytan, @snowmaker, @sdianahu, and @harjtaggar to talk about the future of open models and the story behind Ollama, from two years of searching for the right idea to building one of the most widely used AI developer tools in the world.\n\n00:43 — The Shift to Open Models\n03:03 — How AI Agents Are Driving Token Usage\n05:31 — Are Open Models Catching Up?\n08:26 — What Happens When a New Model Launches\n11:31 — Ollama as an Operating System for AI\n14:05 — The New Opportunities Above the Model Layer\n18:19 — Why 80–90% of Enterprise Tokens Could Be Open\n20:57 — The Future Is Local and Cloud\n26:40 — Why AI Is Coming Back to Your Computer\n28:56 — The Coming Era of Unlimited Tokens\n32:30 — Do We Still Need a “God Model”?\n33:41 — Open Models and Geopolitics\n36:14 — The Origins of Ollama\n40:36 — Two Years Lost in the Wilderness\n42:39 — The Pivot That Changed Everything\n47:02 — How Ollama Found a Business Model\n49:43 — Why Second-Time Founders Did YC",
+   "author": {
+    "id": "113130846",
+    "name": "Y Combinator",
+    "screenName": "ycombinator",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1623777064821358592/9CApQWXe_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 311,
+    "retweets": 41,
+    "replies": 46,
+    "quotes": 16,
+    "views": 305121,
+    "bookmarks": 256
+   },
+   "createdAt": "Fri Sep 04 14:36:11 +0000 2026",
+   "createdAtLocal": "2026-09-04 22:36",
+   "createdAtISO": "2026-09-04T14:36:11+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2095752948966096896/vid/avc1/3840x2160/fvoBCQbi9YnDYrBw.mp4?tag=29",
+     "width": 3840,
+     "height": 2160
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "ollama",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2095646309877461452",
+   "text": "Stop typing @Ollama commands the old way.\nOllama’s new interactive menu makes it easier to discover and launch models, agents, and coding tools—without memorizing exact tags or digging through shell history.\nSee how it changes your local AI workflow:\nhttps://t.co/4NBLl7AzOH",
+   "author": {
+    "id": "2449901",
+    "name": "Matt Williams",
+    "screenName": "Technovangelist",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1004805401337040899/kAaAiwQW_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 14,
+    "retweets": 1,
+    "replies": 2,
+    "quotes": 0,
+    "views": 6422,
+    "bookmarks": 7
+   },
+   "createdAt": "Thu Sep 03 22:53:10 +0000 2026",
+   "createdAtLocal": "2026-09-04 06:53",
+   "createdAtISO": "2026-09-03T22:53:10+00:00",
+   "media": [],
+   "urls": [
+    "https://youtu.be/FOU6SY2-jIY"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "ollama",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2095563771141865782",
+   "text": "Congrats to the team! Bullish on open models and all the partners we make along the way! ❤️\n\nLet’s go",
+   "author": {
+    "id": "1688410127378829312",
+    "name": "ollama",
+    "screenName": "ollama",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 404,
+    "retweets": 12,
+    "replies": 19,
+    "quotes": 2,
+    "views": 36846,
+    "bookmarks": 16
+   },
+   "createdAt": "Thu Sep 03 17:25:11 +0000 2026",
+   "createdAtLocal": "2026-09-04 01:25",
+   "createdAtISO": "2026-09-03T17:25:11+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095482647355244762",
+    "text": "Exciting day for NVIDIA and @huggingface.\n\nOpen models strengthen safety and cybersecurity, accelerate innovation and diffusion, and enable sovereignty. They allow every developer, startup, university, industry and country to build with, customize and benefit from AI.\n\nThank you @ClementDelangue for coming to me.\n\nNVIDIA is going to be a great home for Hugging Face, its community and the future of open models. 🤗\n\nhttps://t.co/q8Om2Xc5ye",
+    "author": {
+     "screenName": "JensenHuang",
+     "name": "Jensen Huang"
+    }
+   }
+  },
+  {
+   "id": "2095242612462756097",
+   "text": "🚀🚀🚀 can't wait for the Muse Spark open weight releases. ❤️ \n\nThank you @finkd",
+   "author": {
+    "id": "1688410127378829312",
+    "name": "ollama",
+    "screenName": "ollama",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 767,
+    "retweets": 26,
+    "replies": 25,
+    "quotes": 4,
+    "views": 52840,
+    "bookmarks": 43
+   },
+   "createdAt": "Wed Sep 02 20:09:01 +0000 2026",
+   "createdAtLocal": "2026-09-03 04:09",
+   "createdAtISO": "2026-09-02T20:09:01+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095232032896946311",
+    "text": "Muse Spark 1.3 is rolling out today with frontier performance almost too cheap to meter. This is the biggest jump we've made so far on coding and agentic work. Try it in Muse Code and our API.\n\nNext up 🍉 and Muse Spark open weights releases coming soon. https://t.co/XQQEDEJGD7",
+    "author": {
+     "screenName": "finkd",
+     "name": "Mark Zuckerberg"
+    }
+   }
+  },
+  {
+   "id": "2094664013993177514",
+   "text": "Ollama’s Pro, Max, and Team plans now use transparent per-token pricing. \n\nBased on your feedback, every plan includes a monthly pool of usage credits. \n\nIf you’re on an existing Pro, Max, or Team plan, your plan continues to work as-is. You can upgrade to the new pricing anytime in your Ollama account settings.\n\nEvery plan includes:\n\n- High-performance access to the latest open models, at published per-token rates\n\n- Works with popular coding agents, including Claude Code and Codex, plus an API for your own tools\n\n- Monthly usage credits included with every plan\n\n- Zero data retention, hosted in the US and Europe, plus Singapore for a limited set of Qwen models\n\n- No service fees or hidden limits\n\nPro: $20/month, includes $60 of monthly usage\nMax: $100/month, includes $300 of monthly usage\nTeam: $500/month, includes $1,000 of shared monthly usage for unlimited users\n\nThe free plan now includes a small amount of monthly usage for a set of starter models.\n\nLearn more directly from Ollama's pricing page: https://t.co/8GUwSqL48X",
+   "author": {
+    "id": "1688410127378829312",
+    "name": "ollama",
+    "screenName": "ollama",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 841,
+    "retweets": 68,
+    "replies": 243,
+    "quotes": 73,
+    "views": 316367,
+    "bookmarks": 167
+   },
+   "createdAt": "Tue Sep 01 05:49:52 +0000 2026",
+   "createdAtLocal": "2026-09-01 13:49",
+   "createdAtISO": "2026-09-01T05:49:52+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRG7Cg_bIAAuWHU.jpg",
+     "width": 2558,
+     "height": 1890
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094664016027414919",
+   "text": "Our transparent pricing blog post: \nhttps://t.co/unWVf1ZWqg",
+   "author": {
+    "id": "1688410127378829312",
+    "name": "ollama",
+    "screenName": "ollama",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 23,
+    "retweets": 0,
+    "replies": 15,
+    "quotes": 0,
+    "views": 16089,
+    "bookmarks": 6
+   },
+   "createdAt": "Tue Sep 01 05:49:53 +0000 2026",
+   "createdAtLocal": "2026-09-01 13:49",
+   "createdAtISO": "2026-09-01T05:49:53+00:00",
+   "media": [],
+   "urls": [
+    "https://ollama.com/blog/transparent-pricing"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094622506720391454",
+   "text": "Ollama already support the Muse Code harness out of the box? \n\nYou can try it with models via Ollama (local and cloud): \n\nollama launch muse",
+   "author": {
+    "id": "1688410127378829312",
+    "name": "ollama",
+    "screenName": "ollama",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 219,
+    "retweets": 12,
+    "replies": 30,
+    "quotes": 2,
+    "views": 33939,
+    "bookmarks": 16
+   },
+   "createdAt": "Tue Sep 01 03:04:56 +0000 2026",
+   "createdAtLocal": "2026-09-01 11:04",
+   "createdAtISO": "2026-09-01T03:04:56+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2094500475710099945",
+    "text": "Muse Code is out of beta and now built to handle bigger, more complex engineering tasks. Developers can get started with one command today:\n\ncurl -fsSL https://t.co/0RApZrEJMv | bash",
+    "author": {
+     "screenName": "finkd",
+     "name": "Mark Zuckerberg"
+    }
+   }
+  },
+  {
+   "id": "2093499179918389524",
+   "text": "Try GLM 5.3!",
+   "author": {
+    "id": "1688410127378829312",
+    "name": "ollama",
+    "screenName": "ollama",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 402,
+    "retweets": 12,
+    "replies": 29,
+    "quotes": 2,
+    "views": 32738,
+    "bookmarks": 17
+   },
+   "createdAt": "Sat Aug 29 00:41:14 +0000 2026",
+   "createdAtLocal": "2026-08-29 08:41",
+   "createdAtISO": "2026-08-29T00:41:14+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2093496352915562552",
+    "text": "Terminal-Bench 4.0 just dropped. \n\nBenchmark iteration is catching up with model development. https://t.co/KfeQvi7Hrr",
+    "author": {
+     "screenName": "ZixuanLi_",
+     "name": "Zixuan Li"
+    }
+   }
+  },
+  {
+   "id": "2093492205029908752",
+   "text": "GLM 5.3 and GLM 5.3 Flash (previously Ox Alpha) are fully rolled out on Ollama's cloud.\n\nPrivate. \nFast. \nUS and Europe hosted. \nZero data retention. \n\nGLM 5.3:\nollama launch claude --model glm-5.3:cloud\n\nGLM 5.3 Flash:\nollama launch opencode --model glm-5.3-flash:cloud\n\nWorks with many more harnesses, or create an API key and plug it straight into your own app.\n\nWhich harness should we add next?",
+   "author": {
+    "id": "1688410127378829312",
+    "name": "ollama",
+    "screenName": "ollama",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 840,
+    "retweets": 65,
+    "replies": 83,
+    "quotes": 14,
+    "views": 61481,
+    "bookmarks": 83
+   },
+   "createdAt": "Sat Aug 29 00:13:31 +0000 2026",
+   "createdAtLocal": "2026-08-29 08:13",
+   "createdAtISO": "2026-08-29T00:13:31+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQ2QHIsbkAAfZoO.jpg",
+     "width": 4096,
+     "height": 2420
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2093492209786212359",
+   "text": "Claude Desktop can be configured to use GLM 5.3 and GLM 5.3 Flash. https://t.co/dWkubrI6c6",
+   "author": {
+    "id": "1688410127378829312",
+    "name": "ollama",
+    "screenName": "ollama",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 23,
+    "retweets": 0,
+    "replies": 2,
+    "quotes": 0,
+    "views": 7623,
+    "bookmarks": 1
+   },
+   "createdAt": "Sat Aug 29 00:13:32 +0000 2026",
+   "createdAtLocal": "2026-08-29 08:13",
+   "createdAtISO": "2026-08-29T00:13:32+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQ2TkV6aIAAedth.jpg",
+     "width": 1372,
+     "height": 390
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2093492211661086810",
+   "text": "showing off Ollama's ox. ❤️ https://t.co/H4C38tdQ9K",
+   "author": {
+    "id": "1688410127378829312",
+    "name": "ollama",
+    "screenName": "ollama",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 35,
+    "retweets": 1,
+    "replies": 1,
+    "quotes": 2,
+    "views": 6695,
+    "bookmarks": 2
+   },
+   "createdAt": "Sat Aug 29 00:13:33 +0000 2026",
+   "createdAtLocal": "2026-08-29 08:13",
+   "createdAtISO": "2026-08-29T00:13:33+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQ2T7imacAAe3u7.jpg",
+     "width": 3233,
+     "height": 2648
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2093356025084797176",
+   "text": "We are rolling out GLM-5.3 on Ollama. Private. Fast. US and Europe hosted. No data retention. \n\nTry Ollama's GLM-5.3-Flash as we bring it GLM-5.3 online. Super fast. \n\nClaude Code: \nollama launch claude --model glm-5.3-flash:cloud\n\nOpenCode: \nollama launch opencode --model glm-5.3-flash:cloud\n\nHermes Agent: \nollama launch hermes --model glm-5.3-flash:cloud \n\nor plug it into any other harness/apps. API endpoint is also available.",
+   "author": {
+    "id": "1688410127378829312",
+    "name": "ollama",
+    "screenName": "ollama",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 986,
+    "retweets": 72,
+    "replies": 66,
+    "quotes": 15,
+    "views": 118768,
+    "bookmarks": 210
+   },
+   "createdAt": "Fri Aug 28 15:12:23 +0000 2026",
+   "createdAtLocal": "2026-08-28 23:12",
+   "createdAtISO": "2026-08-28T15:12:23+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2093354097122455713",
+    "text": "GLM-5.3 is now open-weight.\n\nOur most capable model for agentic coding and cyber defense is now available to download, run, and customize.\n\nWeights: https://t.co/v1IbWMXxg4\nTech blog: https://t.co/ekQkO83jCv https://t.co/f8XlJksKyf",
+    "author": {
+     "screenName": "Zai_org",
+     "name": "Z.ai"
+    }
+   }
+  },
+  {
+   "id": "2093356186129318339",
+   "text": "Model page for glm-5.3-flash\n\nhttps://t.co/0Bj2xKib2G",
+   "author": {
+    "id": "1688410127378829312",
+    "name": "ollama",
+    "screenName": "ollama",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 35,
+    "retweets": 2,
+    "replies": 5,
+    "quotes": 0,
+    "views": 9926,
+    "bookmarks": 3
+   },
+   "createdAt": "Fri Aug 28 15:13:02 +0000 2026",
+   "createdAtLocal": "2026-08-28 23:13",
+   "createdAtISO": "2026-08-28T15:13:02+00:00",
+   "media": [],
+   "urls": [
+    "https://ollama.com/library/glm-5.3-flash"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2093356369177125345",
+   "text": "Yes, you can use other apps with Ollama's cloud too! \nhttps://t.co/MdLuDIokUH",
+   "author": {
+    "id": "1688410127378829312",
+    "name": "ollama",
+    "screenName": "ollama",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 28,
+    "retweets": 2,
+    "replies": 0,
+    "quotes": 0,
+    "views": 9634,
+    "bookmarks": 2
+   },
+   "createdAt": "Fri Aug 28 15:13:45 +0000 2026",
+   "createdAtLocal": "2026-08-28 23:13",
+   "createdAtISO": "2026-08-28T15:13:45+00:00",
+   "media": [],
+   "urls": [
+    "https://x.com/ollama/status/2092453536634380763?s=20"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2092453536634380763",
+    "text": "Ollama v0.33 is here! \n\nYou can now easily configure Claude Desktop to seamlessly work with Ollama as a third-party gateway provider. \n\nOne toggle. Cloud &amp; local models just work👇 https://t.co/NUPYfWdjW3",
+    "author": {
+     "screenName": "ollama",
+     "name": "ollama"
+    }
+   }
+  },
+  {
+   "id": "2092624478031233412",
+   "text": "GLM-5.3-Flash scores 57 on the Artificial Analysis Intelligence Index and is connected to GLM-5.3 along the Pareto frontier. https://t.co/U60QAvg3vX",
+   "author": {
+    "id": "1896810733423493120",
+    "name": "Zixuan Li",
+    "screenName": "ZixuanLi_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2063659642111332353/jaPleXSN_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1119,
+    "retweets": 61,
+    "replies": 71,
+    "quotes": 21,
+    "views": 67074,
+    "bookmarks": 83
+   },
+   "createdAt": "Wed Aug 26 14:45:29 +0000 2026",
+   "createdAtLocal": "2026-08-26 22:45",
+   "createdAtISO": "2026-08-26T14:45:29+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQp91jfWwAEoyY_.jpg",
+     "width": 2640,
+     "height": 1248
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "ollama",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2092620316719886685",
+   "text": "glm-5.3-flash will be available shortly on Ollama's cloud.",
+   "author": {
+    "id": "1688410127378829312",
+    "name": "ollama",
+    "screenName": "ollama",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1222,
+    "retweets": 51,
+    "replies": 85,
+    "quotes": 8,
+    "views": 72462,
+    "bookmarks": 58
+   },
+   "createdAt": "Wed Aug 26 14:28:57 +0000 2026",
+   "createdAtLocal": "2026-08-26 22:28",
+   "createdAtISO": "2026-08-26T14:28:57+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2092489655350390825",
+   "text": "You can now run Claude Desktop fully on local models with one toggle.\n\nOpen @ollama on, pick a model. Cowork and Claude Code inside the desktop app run on it. Flip it off, you're back to Anthropic.\n\nWhy I care? my whole Obsidian second-brain setup runs through Claude Code. \n\nThat now works on a local model with zero data leaving the machine.\n\nSteps below 👇",
+   "author": {
+    "id": "14250329",
+    "name": "EliaAlberti",
+    "screenName": "EliaAlberti",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1926948372163760128/57P3fCGV_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 64,
+    "retweets": 4,
+    "replies": 12,
+    "quotes": 0,
+    "views": 11191,
+    "bookmarks": 71
+   },
+   "createdAt": "Wed Aug 26 05:49:45 +0000 2026",
+   "createdAtLocal": "2026-08-26 13:49",
+   "createdAtISO": "2026-08-26T05:49:45+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQoEP-bXsAEzLMb.jpg",
+     "width": 1532,
+     "height": 1126
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "ollama",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2092520677878194408",
+   "text": "No reward hacking was found in GLM-5.2: solve the task, not the benchmark.",
+   "author": {
+    "id": "1896810733423493120",
+    "name": "Zixuan Li",
+    "screenName": "ZixuanLi_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2063659642111332353/jaPleXSN_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1113,
+    "retweets": 26,
+    "replies": 25,
+    "quotes": 6,
+    "views": 82470,
+    "bookmarks": 97
+   },
+   "createdAt": "Wed Aug 26 07:53:01 +0000 2026",
+   "createdAtLocal": "2026-08-26 15:53",
+   "createdAtISO": "2026-08-26T07:53:01+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "ollama",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2092406804424839199",
+    "text": "Introducing reward hacking score corrections to the Artificial Analysis Coding Agent Index\n\nIn v1.4 of the Artificial Analysis Coding Agent Index, we introduced reward hacking corrections to Terminal-Bench v2.1. Reward hacking is when a model successfully ‘completes’ a task without doing the work the task was meant to measure, such as deliberately fetching the solutions online for a published benchmark dataset. If a passing Terminal-Bench v2.1 attempt is found to be reward hacking, we give that attempt a zero score.\n\nRates vary widely by agent and by model. Unlike some evaluations, Terminal-Bench v2.1 tasks don’t explicitly instruct agents not to search for solutions externally, and the tasks run with public internet access. For a model that knows the benchmark from training data, fetching the answer is a natural but unaligned step.",
+    "author": {
+     "screenName": "ArtificialAnlys",
+     "name": "Artificial Analysis"
+    }
+   }
+  },
+  {
+   "id": "2092452238069207536",
+   "text": "OMG! @ollama the real 🐐! https://t.co/DdAzdizypm",
+   "author": {
+    "id": "1127957190210392064",
+    "name": "Chevy Phillip",
+    "screenName": "chevonphillip",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2089912832338874368/t_ekswRo_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 135,
+    "retweets": 2,
+    "replies": 7,
+    "quotes": 1,
+    "views": 36549,
+    "bookmarks": 46
+   },
+   "createdAt": "Wed Aug 26 03:21:04 +0000 2026",
+   "createdAtLocal": "2026-08-26 11:21",
+   "createdAtISO": "2026-08-26T03:21:04+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQniGaYWQAAoyRU.jpg",
+     "width": 1388,
+     "height": 1242
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "ollama",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2092453536634380763",
+   "text": "Ollama v0.33 is here! \n\nYou can now easily configure Claude Desktop to seamlessly work with Ollama as a third-party gateway provider. \n\nOne toggle. Cloud &amp; local models just work👇 https://t.co/NUPYfWdjW3",
+   "author": {
+    "id": "1688410127378829312",
+    "name": "ollama",
+    "screenName": "ollama",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2603,
+    "retweets": 251,
+    "replies": 124,
+    "quotes": 50,
+    "views": 490172,
+    "bookmarks": 1186
+   },
+   "createdAt": "Wed Aug 26 03:26:13 +0000 2026",
+   "createdAtLocal": "2026-08-26 11:26",
+   "createdAtISO": "2026-08-26T03:26:13+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2092446913203412992/vid/avc1/3340x2160/3ervVsPq74zsslUa.mp4?tag=29",
+     "width": 3340,
+     "height": 2160
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2092453538303721513",
+   "text": "All the features that you are used to continue to work! \n\nOllama’s web search comes baked in. \n\nUse open models to run research tasks. \n\nhttps://t.co/ZvvcLoA5gm https://t.co/nl91A3FFKI",
+   "author": {
+    "id": "1688410127378829312",
+    "name": "ollama",
+    "screenName": "ollama",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 68,
+    "retweets": 3,
+    "replies": 4,
+    "quotes": 1,
+    "views": 15988,
+    "bookmarks": 20
+   },
+   "createdAt": "Wed Aug 26 03:26:14 +0000 2026",
+   "createdAtLocal": "2026-08-26 11:26",
+   "createdAtISO": "2026-08-26T03:26:14+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQniwc8awAAFBEF.jpg",
+     "width": 2048,
+     "height": 1469
+    }
+   ],
+   "urls": [
+    "https://ollama.com/blog/claude-desktop"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2092453540392542451",
+   "text": "Yes, you can use auto mode! \n\nhttps://t.co/ZvvcLoA5gm https://t.co/5vXrXBg9V0",
+   "author": {
+    "id": "1688410127378829312",
+    "name": "ollama",
+    "screenName": "ollama",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 50,
+    "retweets": 2,
+    "replies": 2,
+    "quotes": 0,
+    "views": 9643,
+    "bookmarks": 13
+   },
+   "createdAt": "Wed Aug 26 03:26:14 +0000 2026",
+   "createdAtLocal": "2026-08-26 11:26",
+   "createdAtISO": "2026-08-26T03:26:14+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQni3wGaEAAwWAp.jpg",
+     "width": 1682,
+     "height": 444
+    }
+   ],
+   "urls": [
+    "https://ollama.com/blog/claude-desktop"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2092277283709186550",
+   "text": "IBM Granite 4.2 is now available on Ollama. \n\n3B, 8B, 30B parameter open models made for enterprise agents. \n\nThis model is free to use and is licensed for both research and commercial usage. \n\nThe data curation and training processes were specifically designed for enterprise scenarios and customization, incorporating governance, risk, and compliance (GRC) evaluations alongside IBM’s standard data clearance and document quality review procedures.",
+   "author": {
+    "id": "1688410127378829312",
+    "name": "ollama",
+    "screenName": "ollama",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 167,
+    "retweets": 15,
+    "replies": 11,
+    "quotes": 4,
+    "views": 23532,
+    "bookmarks": 48
+   },
+   "createdAt": "Tue Aug 25 15:45:51 +0000 2026",
+   "createdAtLocal": "2026-08-25 23:45",
+   "createdAtISO": "2026-08-25T15:45:51+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2092277286070628389",
+   "text": "Model page \n\nhttps://t.co/m3JNBNhcUl",
+   "author": {
+    "id": "1688410127378829312",
+    "name": "ollama",
+    "screenName": "ollama",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 8,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 7993,
+    "bookmarks": 3
+   },
+   "createdAt": "Tue Aug 25 15:45:52 +0000 2026",
+   "createdAtLocal": "2026-08-25 23:45",
+   "createdAtISO": "2026-08-25T15:45:52+00:00",
+   "media": [],
+   "urls": [
+    "https://ollama.com/library/granite4.2"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "it",
+   "score": null
+  },
+  {
+   "id": "2092042532888969329",
+   "text": "🤯 Excited for all the models to come! \n\nOllama is exploding in token usage. \n\nBetter models, choice of apps/harness, and all private. \n\nWe are just getting started. Let's continue this record-breaking streak. https://t.co/hjIRyZ5EdJ",
+   "author": {
+    "id": "1688410127378829312",
+    "name": "ollama",
+    "screenName": "ollama",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 761,
+    "retweets": 35,
+    "replies": 60,
+    "quotes": 10,
+    "views": 45343,
+    "bookmarks": 39
+   },
+   "createdAt": "Tue Aug 25 00:13:02 +0000 2026",
+   "createdAtLocal": "2026-08-25 08:13",
+   "createdAtISO": "2026-08-25T00:13:02+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQhsZV_b0AAL81v.jpg",
+     "width": 1672,
+     "height": 941
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2091344612980060304",
+   "text": ".@poolsideai engineers were awesome to collaborate with to launch open models. \n\nExcited for what’s to come to open models, and the @nvidia team working on Nemotron.",
+   "author": {
+    "id": "1688410127378829312",
+    "name": "ollama",
+    "screenName": "ollama",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 435,
+    "retweets": 22,
+    "replies": 28,
+    "quotes": 4,
+    "views": 44557,
+    "bookmarks": 46
+   },
+   "createdAt": "Sun Aug 23 01:59:45 +0000 2026",
+   "createdAtLocal": "2026-08-23 09:59",
+   "createdAtISO": "2026-08-23T01:59:45+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2091315156466663843",
+    "text": "A sweeping agreement with startup Poolside aims to build an open artificial-intelligence ecosystem in the U.S. that would compete with Chinese heavyweights and American AI giants. https://t.co/XFrltSuz16",
+    "author": {
+     "screenName": "WSJ",
+     "name": "The Wall Street Journal"
+    }
+   }
+  },
+  {
+   "id": "2090906360808411568",
+   "text": "Kimi K3 is now available on all Pro and Max subscriptions via included usage.\n\nMore models coming soon 🫡",
+   "author": {
+    "id": "1688410127378829312",
+    "name": "ollama",
+    "screenName": "ollama",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 746,
+    "retweets": 51,
+    "replies": 53,
+    "quotes": 10,
+    "views": 69457,
+    "bookmarks": 69
+   },
+   "createdAt": "Fri Aug 21 20:58:18 +0000 2026",
+   "createdAtLocal": "2026-08-22 04:58",
+   "createdAtISO": "2026-08-21T20:58:18+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2089914983840989255",
+    "text": ".@Kimi_Moonshot Kimi K3 is starting to roll out on Ollama's cloud subscriptions. \n\nWe are working on improving Ollama's cloud to be much more transparent on the pricing to show the best performance / $. \n\nTry it with the tools you already use. \n\nClaude Code: \nollama launch claude --model kimi-k3:cloud\n\nOpenCode: \nollama launch opencode --model kimi-k3:cloud",
+    "author": {
+     "screenName": "ollama",
+     "name": "ollama"
+    }
+   }
+  },
+  {
+   "id": "2090638205133705348",
+   "text": "‘Open Models, Production Agents’ is underway! Tonight means another event hosted at FriendliAI's San Francisco HQ. \n\nA very lively turn out, and a stellar lineup of panelists exploring how open models and autonomous AI agents are reshaping the economics of software engineering. \n\nMeet the panel: Kyle Kranen (@NVIDIA), Yunmo Koo (@friendliai), Saurya Velagapudi (@OpenHandsDev), and Dong Chen (@ollama).",
+   "author": {
+    "id": "1517294112399306752",
+    "name": "friendliai",
+    "screenName": "friendliai",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1745265437460611072/9GNUT5Is_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 8,
+    "retweets": 3,
+    "replies": 2,
+    "quotes": 0,
+    "views": 5663,
+    "bookmarks": 2
+   },
+   "createdAt": "Fri Aug 21 03:12:44 +0000 2026",
+   "createdAtLocal": "2026-08-21 11:12",
+   "createdAtISO": "2026-08-21T03:12:44+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQNwT4raAAA4cE-.jpg",
+     "width": 4032,
+     "height": 3024
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQNwV-Gb0AAJHpo.jpg",
+     "width": 4096,
+     "height": 3072
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQNwXZmagAIzaa-.jpg",
+     "width": 4096,
+     "height": 3072
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "ollama",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2090601698402447748",
+   "text": "Welcome @ATT to open models!",
+   "author": {
+    "id": "1688410127378829312",
+    "name": "ollama",
+    "screenName": "ollama",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 219,
+    "retweets": 14,
+    "replies": 10,
+    "quotes": 0,
+    "views": 22902,
+    "bookmarks": 11
+   },
+   "createdAt": "Fri Aug 21 00:47:41 +0000 2026",
+   "createdAtLocal": "2026-08-21 08:47",
+   "createdAtISO": "2026-08-21T00:47:41+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2090515013635305683",
+    "text": "open source AI is...happening? :)\n\nAnthropic &amp; OpenAI better hope AT&amp;T is the exception, not the rule https://t.co/Bc2KwCTMh1",
+    "author": {
+     "screenName": "amir",
+     "name": "Amir Efrati"
+    }
+   }
+  },
+  {
+   "id": "2090485095396180034",
+   "text": "Awesome Gemma is live on @github 🤗 A list of awesome Gemma resources, tools, and projects. \n\n1. Model cards and collections for 16 Gemma variants\n2. Setup guides for Ollama, vLLM, and LiteRT\n3. Fine-tuning recipes for Unsloth, Tunix, and MLX\n4. Community tutorials, apps, and demos\n\nHave an awesome project, tool, or guide? Open a PR. \n\n👉 https://t.co/c3ku7psZLE",
+   "author": {
+    "id": "1141052916570214400",
+    "name": "Philipp Schmid",
+    "screenName": "_philschmid",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2066207048648323072/u-UPEKOH_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 172,
+    "retweets": 20,
+    "replies": 10,
+    "quotes": 4,
+    "views": 15504,
+    "bookmarks": 91
+   },
+   "createdAt": "Thu Aug 20 17:04:20 +0000 2026",
+   "createdAtLocal": "2026-08-21 01:04",
+   "createdAtISO": "2026-08-20T17:04:20+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQLj8qLWUAAO8SJ.jpg",
+     "width": 1088,
+     "height": 705
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "ollama",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2090505028998140182",
+   "text": "Kimi K3 is now rolled out to over half of the subscription base for included usage, and we're continuing to expand access today.\n\nUS and Europe-hosted and zero data retention.",
+   "author": {
+    "id": "1688410127378829312",
+    "name": "ollama",
+    "screenName": "ollama",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 667,
+    "retweets": 43,
+    "replies": 62,
+    "quotes": 10,
+    "views": 83813,
+    "bookmarks": 71
+   },
+   "createdAt": "Thu Aug 20 18:23:33 +0000 2026",
+   "createdAtLocal": "2026-08-21 02:23",
+   "createdAtISO": "2026-08-20T18:23:33+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2089914983840989255",
+    "text": ".@Kimi_Moonshot Kimi K3 is starting to roll out on Ollama's cloud subscriptions. \n\nWe are working on improving Ollama's cloud to be much more transparent on the pricing to show the best performance / $. \n\nTry it with the tools you already use. \n\nClaude Code: \nollama launch claude --model kimi-k3:cloud\n\nOpenCode: \nollama launch opencode --model kimi-k3:cloud",
+    "author": {
+     "screenName": "ollama",
+     "name": "ollama"
+    }
+   }
+  },
+  {
+   "id": "2090505006785188151",
+   "text": "Congratulations to the whole @GoogleDeepMind Gemma team! \n\nGemma is one of the most popular open models. \n\nIt's been an amazing journey being a close partner! Can't wait to see what's to come! 🎉",
+   "author": {
+    "id": "1688410127378829312",
+    "name": "ollama",
+    "screenName": "ollama",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 523,
+    "retweets": 22,
+    "replies": 10,
+    "quotes": 1,
+    "views": 27328,
+    "bookmarks": 23
+   },
+   "createdAt": "Thu Aug 20 18:23:27 +0000 2026",
+   "createdAtLocal": "2026-08-21 02:23",
+   "createdAtISO": "2026-08-20T18:23:27+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2090490264112738579",
+    "text": "Gemma officially achieved 1 billion downloads 🔥\n\nFrom running underwater to running at space, I'm so excited by how the community is using the models for so many inspiring use cases. https://t.co/MGMx7wwyU7",
+    "author": {
+     "screenName": "osanseviero",
+     "name": "Omar Sanseviero"
+    }
+   }
+  },
+  {
+   "id": "2090276420983587087",
+   "text": "🐦Ornith 1.5 series models are now available on ollama!\n\n🫡Thanks to our awesome friends at @ollama \n\n👀Come give Ornith 1.5 a try!\nhttps://t.co/sRJxK4oMvM https://t.co/Rr9whFoL5W",
+   "author": {
+    "id": "2064921163520987136",
+    "name": "Ornith",
+    "screenName": "ornith_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2067467120544456704/qYuod4O1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 187,
+    "retweets": 25,
+    "replies": 13,
+    "quotes": 3,
+    "views": 18027,
+    "bookmarks": 38
+   },
+   "createdAt": "Thu Aug 20 03:15:08 +0000 2026",
+   "createdAtLocal": "2026-08-20 11:15",
+   "createdAtISO": "2026-08-20T03:15:08+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQImc-FaYAAHipC.jpg",
+     "width": 2909,
+     "height": 3033
+    }
+   ],
+   "urls": [
+    "https://ollama.com/library/ornith-1.5"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "ollama",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2090074077084127302",
+    "text": "Aloha! 🌺Introducing Ornith-1.5, a family of open-source LLMs spanning 9B Dense, 35B MoE, and 397B MoE, trained with self-improving strategies.\n\nIt achieves state-of-the-art performance among open-source models of comparable size and delivers performance comparable to Claude Opus 4.8 across reasoning, agentic, and coding tasks:\n✅Terminal-Bench 2.1 (86.1)\n✅SWE-Bench (86 on verified, 65.1 on pro, 79.6 on Multilingual)\n✅DeepSWE (56)\n✅HLE (44.6)\n✅ClawEval (81.4)\n✅Tool Decathlon (71.2)\n\nOrnith-1.5 takes a major step toward training foundation models through end-to-end self-improvement, extending the self-scaffolding strategies introduced in Ornith-1.0 into a more complete self-improvement loop: the model proposes new tasks, generates task-specific scaffolds, and produces solution rollouts for reinforcement learning, continuously creating new learning experiences from which it can improve.\n\nAll models, along with their quantized versions (FP8, GGUF, MLX, and NVFP4), have been released under the MIT License, enabling unrestricted commercial and research use.\n📘Tech Blog: https://t.co/OZ63scRWLB\n🤗Huggingface: https://t.co/mGJLwhrQOM",
+    "author": {
+     "screenName": "ornith_",
+     "name": "Ornith"
+    }
+   }
+  },
+  {
+   "id": "2089914983840989255",
+   "text": ".@Kimi_Moonshot Kimi K3 is starting to roll out on Ollama's cloud subscriptions. \n\nWe are working on improving Ollama's cloud to be much more transparent on the pricing to show the best performance / $. \n\nTry it with the tools you already use. \n\nClaude Code: \nollama launch claude --model kimi-k3:cloud\n\nOpenCode: \nollama launch opencode --model kimi-k3:cloud",
+   "author": {
+    "id": "1688410127378829312",
+    "name": "ollama",
+    "screenName": "ollama",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1048,
+    "retweets": 74,
+    "replies": 118,
+    "quotes": 26,
+    "views": 4324505,
+    "bookmarks": 148
+   },
+   "createdAt": "Wed Aug 19 03:18:55 +0000 2026",
+   "createdAtLocal": "2026-08-19 11:18",
+   "createdAtISO": "2026-08-19T03:18:55+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQDdqKzbMAA6NG4.jpg",
+     "width": 4088,
+     "height": 4088
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2089914986797908051",
+   "text": "Model page: \n\nhttps://t.co/DXMhMhBpCk",
+   "author": {
+    "id": "1688410127378829312",
+    "name": "ollama",
+    "screenName": "ollama",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 21,
+    "retweets": 0,
+    "replies": 2,
+    "quotes": 0,
+    "views": 11414,
+    "bookmarks": 2
+   },
+   "createdAt": "Wed Aug 19 03:18:56 +0000 2026",
+   "createdAtLocal": "2026-08-19 11:18",
+   "createdAtISO": "2026-08-19T03:18:56+00:00",
+   "media": [],
+   "urls": [
+    "https://ollama.com/library/kimi-k3"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "it",
+   "score": null
+  },
+  {
+   "id": "2089458205302960380",
+   "text": "Join us for a fun night this Thursday (August 20th) in San Francisco! \n\nRSVP link below! 👇",
+   "author": {
+    "id": "1688410127378829312",
+    "name": "ollama",
+    "screenName": "ollama",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 82,
+    "retweets": 6,
+    "replies": 10,
+    "quotes": 1,
+    "views": 19846,
+    "bookmarks": 6
+   },
+   "createdAt": "Mon Aug 17 21:03:51 +0000 2026",
+   "createdAtLocal": "2026-08-18 05:03",
+   "createdAtISO": "2026-08-17T21:03:51+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2089455654465597868",
+    "text": "This Thursday, August 20th, we’re bringing together four leaders at the forefront of open models, coding agents, and AI infrastructure:  \n\nKyle Kranen, Senior Manager, Dynamo at @nvidia\nYunmo Koo, Founding Engineer at @friendliai\nDong Chen, Software Engineer at @ollama\nSaurya Velagapudi, Principal Engineer at @OpenHandsDev\n\nTogether, they’ll explore what it takes to move AI coding agents to production and how open models are changing the economics of AI-native engineering.  \n\nJoin us for the conversation, followed by audience Q&A and networking. Spots limited!  \n\n📍 San Francisco \n📅 Aug. 20 \nRSVP: https://t.co/Z2lTMJRLj2",
+    "author": {
+     "screenName": "friendliai",
+     "name": "friendliai"
+    }
+   }
+  },
+  {
+   "id": "2089458206640857253",
+   "text": "https://t.co/yrp8volJ19",
+   "author": {
+    "id": "1688410127378829312",
+    "name": "ollama",
+    "screenName": "ollama",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 7,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 5367,
+    "bookmarks": 1
+   },
+   "createdAt": "Mon Aug 17 21:03:51 +0000 2026",
+   "createdAtLocal": "2026-08-18 05:03",
+   "createdAtISO": "2026-08-17T21:03:51+00:00",
+   "media": [],
+   "urls": [
+    "https://luma.com/o9tv62y5"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "zxx",
+   "score": null
+  },
+  {
+   "id": "2089454609765146744",
+   "text": "Ollama has the best performance for deepseek v4 flash on average. \n\nFor local only, you can try qwen3.8 that is optimized: \n\nApple Silicon: \nollama run qwen3.8:27b-mlx \n\nNVIDIA: \nollama run qwen3.8:27b",
+   "author": {
+    "id": "1688410127378829312",
+    "name": "ollama",
+    "screenName": "ollama",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 565,
+    "retweets": 34,
+    "replies": 49,
+    "quotes": 3,
+    "views": 66738,
+    "bookmarks": 168
+   },
+   "createdAt": "Mon Aug 17 20:49:33 +0000 2026",
+   "createdAtLocal": "2026-08-18 04:49",
+   "createdAtISO": "2026-08-17T20:49:33+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2089188309348258251",
+    "text": "Benchmarked deepseek-v4-flash vs qwen3-8-27b on 9 complex tasks in my own agent stack. With reasoning on, qwen edges Flash on quality. Off, it scores worst of the three.\n\nThe cost isn't accuracy, it's that qwen thinks more. 30x slower, 4.5x pricier.\n\nn=9, not a verdict. https://t.co/12I1vuKqYM",
+    "author": {
+     "screenName": "ttunguz",
+     "name": "Tomasz Tunguz"
+    }
+   }
+  },
+  {
+   "id": "2088501770406473926",
+   "text": "The new DeepSeek-V4-Pro (0813) is now fully rolled out on Ollama's cloud and included in Pro and Max subscriptions.\n\nollama run deepseek-v4-pro:cloud\n\nHosted in the US with Zero Data Retention (ZDR) and high performance.",
+   "author": {
+    "id": "1688410127378829312",
+    "name": "ollama",
+    "screenName": "ollama",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1053,
+    "retweets": 48,
+    "replies": 68,
+    "quotes": 9,
+    "views": 77156,
+    "bookmarks": 95
+   },
+   "createdAt": "Sat Aug 15 05:43:19 +0000 2026",
+   "createdAtLocal": "2026-08-15 13:43",
+   "createdAtISO": "2026-08-15T05:43:19+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2088501827402916312",
+   "text": "Model page: https://t.co/BjgnLr1HGN",
+   "author": {
+    "id": "1688410127378829312",
+    "name": "ollama",
+    "screenName": "ollama",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 31,
+    "retweets": 3,
+    "replies": 2,
+    "quotes": 2,
+    "views": 11259,
+    "bookmarks": 1
+   },
+   "createdAt": "Sat Aug 15 05:43:32 +0000 2026",
+   "createdAtLocal": "2026-08-15 13:43",
+   "createdAtISO": "2026-08-15T05:43:32+00:00",
+   "media": [],
+   "urls": [
+    "https://ollama.com/library/deepseek-v4-pro"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "it",
+   "score": null
+  },
+  {
+   "id": "2088392765021528319",
+   "text": "Ollama now supports the DeepSeek Harness.\n\nollama launch dsh\n\nRun it completely in your own environment. It comes with Ollama's web search pre-installed. You can use its trajectory view to see what is happening in the background.",
+   "author": {
+    "id": "1688410127378829312",
+    "name": "ollama",
+    "screenName": "ollama",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1053,
+    "retweets": 96,
+    "replies": 38,
+    "quotes": 9,
+    "views": 95495,
+    "bookmarks": 296
+   },
+   "createdAt": "Fri Aug 14 22:30:10 +0000 2026",
+   "createdAtLocal": "2026-08-15 06:30",
+   "createdAtISO": "2026-08-14T22:30:10+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2088392314024861696/vid/avc1/2724x2160/l4h479g1fEaOhZMM.mp4?tag=29",
+     "width": 2724,
+     "height": 2160
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2087887408440164663",
+    "text": "🧩 DeepSeek Harness v0.1 is now available in Developer Preview!\n\n🔹 We’re opening it up to developers building agent harnesses worldwide and open-sourcing the codebase in MIT license.\n🔹 Powered by the Cordis meta-framework, DeepSeek Harness is an agent harness built around one core idea: Everything is a plugin. Models, tools, skills, sessions, sandboxes, filesystems, loops, orchestration, and UI are ALL implemented as plugins, and can be mixed, matched, replaced, and extended.\n\nTry it now!\nhttps://t.co/2YWSvJHhKA",
+    "author": {
+     "screenName": "deepseek_ai",
+     "name": "DeepSeek"
+    }
+   }
+  },
+  {
+   "id": "2088324973345804447",
+   "text": "It's been a pleasure to partner with the @Alibaba_Qwen team.",
+   "author": {
+    "id": "1688410127378829312",
+    "name": "ollama",
+    "screenName": "ollama",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 591,
+    "retweets": 22,
+    "replies": 17,
+    "quotes": 1,
+    "views": 41398,
+    "bookmarks": 17
+   },
+   "createdAt": "Fri Aug 14 18:00:47 +0000 2026",
+   "createdAtLocal": "2026-08-15 02:00",
+   "createdAtISO": "2026-08-14T18:00:47+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2088320747639071143",
+    "text": "Qwen3.8-27B  is available on @ollama ！Any harness you run, the model always delivers. Let's code together, and show us what you build.😎",
+    "author": {
+     "screenName": "Alibaba_Qwen",
+     "name": "Qwen"
+    }
+   }
+  },
+  {
+   "id": "2088320747639071143",
+   "text": "Qwen3.8-27B  is available on @ollama ！Any harness you run, the model always delivers. Let's code together, and show us what you build.😎",
+   "author": {
+    "id": "1753339277386342400",
+    "name": "Qwen",
+    "screenName": "Alibaba_Qwen",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2064231947149377536/Ab70PxT5_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 635,
+    "retweets": 46,
+    "replies": 34,
+    "quotes": 11,
+    "views": 93094,
+    "bookmarks": 55
+   },
+   "createdAt": "Fri Aug 14 17:44:00 +0000 2026",
+   "createdAtLocal": "2026-08-15 01:44",
+   "createdAtISO": "2026-08-14T17:44:00+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "ollama",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2088314436088168491",
+    "text": "Qwen 3.8 27B is now available on Ollama. \n\nIt's one of the best open models at this size, and made for agentic tasks and professional work. \n\nTry it directly with the apps & harnesses you use: \n\nClaude Code: \nollama launch claude --model qwen3.8 \n\nOpenCode: \nollama launch opencode --model qwen3.8\n\nHermes Agent: \nollama launch hermes --model qwen3.8\n\nPi: \nollama launch pi --model qwen3.8\n\nWe have also optimizations for Apple Silicon! \n\nTry it with the model name:  qwen3.8:27b-mlx",
+    "author": {
+     "screenName": "ollama",
+     "name": "ollama"
+    }
+   }
+  },
+  {
+   "id": "2088314436088168491",
+   "text": "Qwen 3.8 27B is now available on Ollama. \n\nIt's one of the best open models at this size, and made for agentic tasks and professional work. \n\nTry it directly with the apps & harnesses you use: \n\nClaude Code: \nollama launch claude --model qwen3.8 \n\nOpenCode: \nollama launch opencode --model qwen3.8\n\nHermes Agent: \nollama launch hermes --model qwen3.8\n\nPi: \nollama launch pi --model qwen3.8\n\nWe have also optimizations for Apple Silicon! \n\nTry it with the model name:  qwen3.8:27b-mlx",
+   "author": {
+    "id": "1688410127378829312",
+    "name": "ollama",
+    "screenName": "ollama",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1876,
+    "retweets": 186,
+    "replies": 104,
+    "quotes": 46,
+    "views": 176402,
+    "bookmarks": 453
+   },
+   "createdAt": "Fri Aug 14 17:18:55 +0000 2026",
+   "createdAtLocal": "2026-08-15 01:18",
+   "createdAtISO": "2026-08-14T17:18:55+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HPstE5ObIAAywUx.jpg",
+     "width": 2174,
+     "height": 1680
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2088314438579528105",
+   "text": "Model page: \nhttps://t.co/rUOwextjXn https://t.co/QG9hdBU6bl",
+   "author": {
+    "id": "1688410127378829312",
+    "name": "ollama",
+    "screenName": "ollama",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2045273960666071040/rCjCIwiC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 47,
+    "retweets": 1,
+    "replies": 1,
+    "quotes": 1,
+    "views": 9480,
+    "bookmarks": 13
+   },
+   "createdAt": "Fri Aug 14 17:18:55 +0000 2026",
+   "createdAtLocal": "2026-08-15 01:18",
+   "createdAtISO": "2026-08-14T17:18:55+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HPst0HYagAELbhi.jpg",
+     "width": 1702,
+     "height": 2034
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HPst1NdakAAi1MS.jpg",
+     "width": 1634,
+     "height": 2246
+    }
+   ],
+   "urls": [
+    "https://ollama.com/library/qwen3.8"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "it",
+   "score": null
+  }
+ ]
+}

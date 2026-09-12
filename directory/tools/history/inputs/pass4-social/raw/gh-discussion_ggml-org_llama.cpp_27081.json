@@ -1,0 +1,27 @@
+{
+ "title": "Qwen3.8-27B-GGUF:Q4_K_M on 7900 XTX and claude code",
+ "body": "I'm using this command to start the llama server \r\n\r\n> llama-server.exe --hf-repo unsloth/Qwen3.8-27B-GGUF:Q4_K_M -c 100000 -fa on -t 8 -ctk f16 -ctv f16 --host 0.0.0.0 --port 8080  --temp 1.0 --top-p 0.80 --top-k 20 --min-p 0.00 --spec-type draft-mtp  --spec-draft-device Vulkan0 --spec-draft-n-max 5 --spec-draft-ngl all -ngl 999 --spec-draft-p-min 0.75 --spec-draft-p-min 0.0 --spec-draft-n-min 0 --spec-draft-p-split 0.10 --spec-draft-type-v f16 --spec-draft-type-k f16 --fit off --presence_penalty 0.0 --repeat_penalty 1.0 -np 1 --device Vulkan0 -b 2048 -ub 256 --alias qwen\r\n\r\nPerformance is good so far:\r\n\r\n> \r\n> 19.52.283.539 I slot print_timing: id  0 | task 2918 | n_gen =    193, tg =  62.86 t/s, tg_3s =  63.18 t/s\r\n> 19.55.284.212 I slot print_timing: id  0 | task 2918 | n_gen =    355, tg =  58.46 t/s, tg_3s =  53.99 t/s\r\n> 19.58.289.817 I slot print_timing: id  0 | task 2918 | n_gen =    521, tg =  57.39 t/s, tg_3s =  55.23 t/s\r\n> 20.01.305.817 I slot print_timing: id  0 | task 2918 | n_gen =    642, tg =  53.08 t/s, tg_3s =  40.12 t/s\r\n> 20.04.335.004 I slot print_timing: id  0 | task 2918 | n_gen =    834, tg =  55.14 t/s, tg_3s =  63.38 t/s\r\n> 20.07.370.347 I slot print_timing: id  0 | task 2918 | n_gen =   1029, tg =  56.67 t/s, tg_3s =  64.24 t/s\r\n> 20.08.191.664 I slot print_timing: id  0 | task 2918 | prompt eval time =    3390.00 ms /  1608 tokens (    2.11 ms per token,   474.34 tokens per second)\r\n> 20.08.191.669 I slot print_timing: id  0 | task 2918 |        eval time =   18962.72 ms /  1071 tokens (   17.72 ms per token,    56.43 tokens per second)\r\n> 20.08.191.670 I slot print_timing: id  0 | task 2918 |       total time =   22352.72 ms /  2679 tokens\r\n> 20.08.191.671 I slot print_timing: id  0 | task 2918 |    graphs reused =       2929\r\n> 20.08.191.675 I slot print_timing: id  0 | task 2918 | draft acceptance = 0.45688 (  747 accepted /  1635 generated), mean len =  3.28\r\n\r\nBut after some time I see this error in claude code and llama-server:\r\n\r\n> 0.14.711.066 W srv    operator(): got exception: {\"error\":{\"code\":500,\"message\":\"\\n------------\\nWhile executing CallExpression at line 110, column 28 in source:\\n...eveloper\\\" %}↵        {{- raise_exception('System message must be at the beginnin...\\n                                           ^\\nError: Jinja Exception: System message must be at the beginning\r\n\r\nAny idea how to solve it ?",
+ "url": "https://github.com/ggml-org/llama.cpp/discussions/27081",
+ "createdAt": "2026-08-14T18:49:20Z",
+ "author": {
+  "login": "pgarba"
+ },
+ "comments": {
+  "nodes": [
+   {
+    "body": "The error is the model's chat template working as designed colliding with what Claude Code sends. Qwen's Jinja template contains a guard that raises `System message must be at the beginning` if any `system`-role message appears anywhere except position 0 — and Claude Code injects system-role content mid-conversation over time (context reminders, compaction summaries, tool-related notices). That's why it works initially and starts failing \"after some time\": the first mid-stream system message kills every request from then on.\n\nWays out, cleanest first:\n\n1. **Patch the chat template and pass it via `--chat-template-file`.** Export the template from the GGUF (it's printed in llama-server's startup log, or extract with the gguf tooling), then change the guard branch so that instead of `raise_exception(...)`, later system messages are merged into the conversation (e.g. treat them as `user` turns prefixed with `[System note]`, or concatenate them onto the first system block). The model handles this fine — the exception is template strictness, not a model limitation.\n2. **Normalize on the proxy layer:** if you're routing Claude Code through an adapter (claude-code-router, LiteLLM, etc.), enable/add message normalization so system messages after index 0 get remapped before they reach llama-server. Same effect, no template surgery, and it fixes every model with a strict template at once.\n3. Quick-and-dirty variant of 1: delete the `raise_exception` line only. Works, but merging (option 1) preserves the semantic content of those injected messages instead of having them land as bare system turns the template then formats oddly.\n\nNothing in your flags causes it, and it's unrelated to the MTP/speculative setup — you'd hit the same thing with a plain `-ngl` run the moment the client sends a second system message.",
+    "author": {
+     "login": "hoangperry"
+    },
+    "createdAt": "2026-08-14T19:00:59Z"
+   },
+   {
+    "body": "Started to use claude-code-router and now it works great.\r\n\r\nThanks!",
+    "author": {
+     "login": "pgarba"
+    },
+    "createdAt": "2026-08-14T22:09:19Z"
+   }
+  ]
+ }
+}
