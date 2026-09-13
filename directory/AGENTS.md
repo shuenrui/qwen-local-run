@@ -5,6 +5,11 @@ states the data model; `README.md` states current coverage and workflows.
 If any of them disagree, this file wins on intent, `SCHEMA.md` wins on data
 shape, and the validator (`validate.py`) wins on everything it can check.
 
+**Picking up in-flight work?** `../docs/HANDOFF-2026-09-12.md` states who wrote
+what, the uncommitted working tree, the open items, and the corrections worth
+inheriting. It has no authority over the three files above — it is orientation,
+not contract.
+
 ## Mission
 
 A public directory of every community way to run a Qwen model on hardware a

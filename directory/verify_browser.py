@@ -153,14 +153,14 @@ def main():
             brand: top('.brand'), tabs: document.querySelectorAll('.tab').length,
             sub: top('.mast-sub'), q: top('#model-q'),
             models: document.querySelectorAll('[data-model-select]').length,
-            firstModel: top('[data-model-select]'), preview: top('.model-preview'),
+            firstModel: top('[data-model-select]'), sections: top('.toc-sec'),
             recipeRows: document.querySelectorAll('[data-row]').length,
             body: document.body.innerText
           };
         }""")
         for label, key in [("product identity", "brand"), ("one-sentence description", "sub"),
                            ("model search", "q"), ("first model", "firstModel"),
-                           ("selected-model preview", "preview")]:
+                           ("first generation chapter", "sections")]:
             check(f"first viewport: {label} is above the fold",
                   fv[key] is not None and fv[key] < 1000, str(fv[key]))
         check("first viewport: four primary tabs", fv["tabs"] == 4, str(fv["tabs"]))
@@ -168,10 +168,169 @@ def main():
         check("homepage does not render the advanced recipe table", fv["recipeRows"] == 0, str(fv["recipeRows"]))
         banned = [w for w in ("How local hosting works", "First: what are you running this on",
                                "Start here", "Not sure yet") if w in fv["body"]]
-        check("first viewport: no onboarding gate, hero or recommendation", not banned, str(banned))
+        check("first viewport: no onboarding gate or guided-start interstitial", not banned, str(banned))
+
+        toc = page.evaluate(r"""() => Array.from(document.querySelectorAll('.toc-item')).map(n => ({
+          id: n.getAttribute('data-model-select'),
+          href: n.getAttribute('href'),
+          meta: (n.querySelector('.toc-meta')||{}).textContent || '',
+          intro: (n.querySelector('.toc-intro')||{}).textContent || '',
+          fig: (n.querySelector('.toc-fig')||{}).textContent || ''
+        }))""")
+        check("contents page lists every model as a numbered entry",
+              len(toc) == len(MODELS), str(len(toc)))
+        check("every contents entry links to its model page",
+              all(x["href"] == "#/models/" + x["id"] for x in toc),
+              str([x["id"] for x in toc if x["href"] != "#/models/" + x["id"]][:3]))
+
+        no_date = [x["id"] for x in toc if "released" not in x["meta"].lower()]
+        check("every model states its launch date", not no_date, str(no_date[:4]))
+        # the date must match the dataset at the precision the dataset records
+        MON = ["jan","feb","mar","apr","may","jun","jul","aug","sep","oct","nov","dec"]
+        wrong_date = []
+        for x in toc:
+            rel = str(MODELS[x["id"]].get("released") or "")
+            if not rel:
+                continue
+            parts = rel.split("-")
+            want = parts[0] if len(parts) == 1 else MON[int(parts[1]) - 1] + " " + parts[0]
+            if want not in x["meta"].lower():
+                wrong_date.append(f"{x['id']}: want {want}")
+        check("launch dates render at the precision the dataset records",
+              not wrong_date, str(wrong_date[:4]))
+
+        thin = [x["id"] for x in toc if len(x["intro"].strip()) < 30]
+        check("every model carries an introduction", not thin, str(thin[:4]))
+        # intros are truncations of the recorded summary, never rewrites
+        invented = []
+        for x in toc:
+            intro = x["intro"].replace("\u2026", "").strip()
+            if intro and intro.rstrip(".") not in MODELS[x["id"]].get("summary", ""):
+                head = intro[:40]
+                if head not in MODELS[x["id"]].get("summary", ""):
+                    invented.append(x["id"])
+        check("introductions are taken verbatim from the recorded summary",
+              not invented, str(invented[:4]))
+
+        check("the contents figure is the recipe count, not a setup measurement",
+              all("recipe" in x["fig"].lower() for x in toc),
+              str([x["fig"] for x in toc[:2]]))
+        # The home is now a two-panel model navigator: a sticky evidence panel on
+        # the left, an editorial series index on the right. Index entries stay free
+        # of setup-level figures; the panel is where baseline evidence legitimately
+        # lives. This inverts the old "contents page renders no baseline element"
+        # check, which predated the panel (.model-preview is now the panel itself).
+        nav_leak = page.evaluate(r"""() => {
+          var idx = document.querySelector('.mh-index') || document;
+          var fields = Array.from(idx.querySelectorAll('.toc-meta, .toc-fig'))
+            .map(n => n.textContent).join(' | ');
+          return {
+            fields: fields,
+            speed: /tok\/s|ms\b/.test(fields),
+            setupEls: idx.querySelectorAll(
+              '.speed-line, [data-evidence-field="speed"], [data-row], .model-floor, .model-speed').length,
+            panels: document.querySelectorAll('[data-evidence-panel]').length,
+            series: Array.from(document.querySelectorAll('[data-toc-series]'))
+                      .map(n => n.getAttribute('data-toc-series'))
+          };
+        }""")
+        check("index entries carry no setup-level figures",
+              not nav_leak["speed"], nav_leak["fields"][:120])
+        check("the index renders no recipe, speed or measurement element",
+              nav_leak["setupEls"] == 0, str(nav_leak["setupEls"]))
+        check("model navigator renders exactly one evidence panel",
+              nav_leak["panels"] == 1, str(nav_leak["panels"]))
+
+        # The index is grouped into one chapter per Qwen series, and the chapters are
+        # exactly the distinct generations in the dataset.
+        gens = sorted({str(m.get("generation")) for m in MODELS.values()})
+        seen_series = list(nav_leak["series"])
+        check("index groups models into one chapter per series",
+              sorted(set(seen_series)) == gens and len(seen_series) == len(set(seen_series)),
+              str(sorted(set(seen_series))) + " vs " + str(gens))
+
+        # Default selection on a fresh load is the first visible model: the panel
+        # reflects the first index entry, and the choice is written into the URL.
+        ctx_def = browser.new_context(viewport={"width": 1440, "height": 1000})
+        p_def = ctx_def.new_page()
+        p_def.goto(URL)
+        p_def.wait_for_timeout(320)
+        default_sel = p_def.evaluate("""() => {
+          var p = document.querySelector('[data-evidence-panel]');
+          var f = document.querySelector('[data-model-select]');
+          return { panel: p && p.getAttribute('data-evidence-model'),
+                   first: f && f.getAttribute('data-model-select'),
+                   hash: location.hash };
+        }""")
+        check("default selection is the first visible model",
+              default_sel["panel"] is not None and default_sel["panel"] == default_sel["first"],
+              str(default_sel))
+        check("default selection is written into the URL as #/?model=",
+              "model=" in (default_sel["hash"] or ""), str(default_sel["hash"]))
+        ctx_def.close()
+
+        model_order = D.get("model_order") or list(MODELS.keys())
+
+        # Any model is directly addressable, and the chosen entry is marked selected.
+        addr_id = model_order[-1]
+        goto(page, "#/?model=" + addr_id)
+        addr = page.evaluate("""() => {
+          var p = document.querySelector('[data-evidence-panel]');
+          var s = document.querySelector('[data-toc-selected="true"]');
+          return { panel: p && p.getAttribute('data-evidence-model'),
+                   route: document.body.getAttribute('data-route'),
+                   sel: s && s.getAttribute('data-model-select') };
+        }""")
+        check("#/?model=<id> selects that model in the panel",
+              addr["panel"] == addr_id and addr["route"] == "models-home", str(addr))
+        check("the selected index entry carries data-toc-selected",
+              addr["sel"] == addr_id, str(addr["sel"]))
+
+        # Desktop selection updates the panel in place (no navigation) and rewrites
+        # the ?model= URL while staying on the models-home route.
+        click_id = model_order[1]
+        page.click('[data-model-select="' + click_id + '"]')
+        page.wait_for_timeout(260)
+        clicked = page.evaluate("""() => {
+          var p = document.querySelector('[data-evidence-panel]');
+          return { panel: p && p.getAttribute('data-evidence-model'),
+                   route: document.body.getAttribute('data-route'),
+                   hash: location.hash };
+        }""")
+        check("desktop selection updates the panel in place",
+              clicked["panel"] == click_id and clicked["route"] == "models-home", str(clicked))
+        check("desktop selection rewrites the URL to #/?model=<id>",
+              ("model=" + click_id) in (clicked["hash"] or ""), str(clicked["hash"]))
+
+        # When a filter hides the selected model, selection falls to the first
+        # remaining visible model.
+        gen_of = {mid: str(MODELS[mid].get("generation")) for mid in MODELS}
+        target_gen = gens[0]
+        first_in_gen = next(mid for mid in model_order if gen_of.get(mid) == target_gen)
+        outside = next(mid for mid in model_order if gen_of.get(mid) != target_gen)
+        goto(page, "#/?model=" + outside + "&gen=" + target_gen)
+        re_sel = page.evaluate("""() => {
+          var p = document.querySelector('[data-evidence-panel]');
+          var f = document.querySelector('[data-model-select]');
+          return { panel: p && p.getAttribute('data-evidence-model'),
+                   first: f && f.getAttribute('data-model-select') };
+        }""")
+        check("a filter that hides the selected model reselects the first visible",
+              re_sel["panel"] == first_in_gen and re_sel["panel"] == re_sel["first"],
+              str(re_sel) + " want " + first_in_gen)
+
+        # Selecting a model announces it in the polite live region.
+        goto(page, "#/")
+        ann_id = model_order[2]
+        page.click('[data-model-select="' + ann_id + '"]')
+        page.wait_for_timeout(220)
+        live_after = page.evaluate("(document.getElementById('live')||{}).textContent || ''")
+        check("selecting a model announces it in the live region",
+              MODELS[ann_id]["name"] in live_after, live_after[:90])
 
         # Every practical minimum points to one exact setup, and only that
-        # setup may contribute the row's speed headline.
+        # setup may contribute the speed headline -- now asserted on the model
+        # page, which owns the baseline since the homepage became a contents page.
         by_id = {s["id"]: s for s in SET}
         selected = [m for m in MODELS.values()
                     if (m.get("practical_baseline") or {}).get("status") == "selected"]
@@ -180,32 +339,33 @@ def main():
         check("selected and not-verified baselines cover every model",
               len(selected) + len(missing) == len(MODELS),
               f"{len(selected)} selected, {len(missing)} not verified")
-        landing = page.evaluate(r"""() => Array.from(document.querySelectorAll('[data-model-select]')).map(n => ({
-          id:n.getAttribute('data-model-select'), text:n.innerText.replace(/\s+/g,' ').trim()
-        }))""")
-        landing_by_id = {x["id"]: x["text"] for x in landing}
         baseline_mismatch = []
-        for m in selected:
+        for m in selected[:6]:
             s = by_id[m["practical_baseline"]["setup"]]
-            shown = landing_by_id.get(m["id"], "")
+            goto(page, "#/models/" + m["id"])
+            shown = page.evaluate("(document.querySelector('.model-page-baseline')||{}).innerText || ''")
             if str(s["requirements"]["memory_gb"]) not in shown:
                 baseline_mismatch.append(m["id"] + " memory")
-        check("every selected model shows its referenced setup requirement",
+        check("every selected model's page shows its referenced setup requirement",
               not baseline_mismatch, str(baseline_mismatch))
-        check("unverified models say not verified yet",
-              all("Not verified yet" in landing_by_id.get(m["id"], "") for m in missing))
+        if missing:
+            goto(page, "#/models/" + missing[0]["id"])
+            unver = page.evaluate(
+                "(document.querySelector('.model-page-baseline')||{}).innerText || ''")
+            check("an unverified model says not verified yet on its page",
+                  "not verified yet" in unver.lower(), missing[0]["id"] + ": " + unver[:70])
 
         flash = MODELS.get("qwen3-8-flash-next")
         if flash:
-            page.click('[data-model-select="qwen3-8-flash-next"]')
-            page.wait_for_timeout(180)
-            preview = page.evaluate("document.querySelector('.model-preview').innerText")
-            check("Flash-Next preview exposes the accessible hybrid baseline",
+            goto(page, "#/models/qwen3-8-flash-next")
+            preview = page.evaluate("document.querySelector('.model-page-baseline').innerText")
+            check("Flash-Next page exposes the accessible hybrid baseline",
                   "24 GB VRAM" in preview and "110 GB" in preview and "22.52" in preview,
                   preview[:180])
             check("Flash-Next speed states exact-baseline conditions and provenance",
                   "1 stream" in preview and "forum" in preview and "custom fork" in preview,
                   preview[:220])
+        goto(page, "#/")
 
         page.fill("#model-q", "vision")
         page.wait_for_timeout(350)
@@ -267,17 +427,115 @@ def main():
                 return sorted(nonpeak or c, key=lambda m: -m["value"])[0]
             return None
 
+        # A model page may show a speed only when it comes from that model's own
+        # referenced baseline setup. A faster number from another recipe is never
+        # borrowed. Asserted on the model page, which owns the baseline.
         baseline_speed_wrong = []
         for m in selected:
             s = by_id[m["practical_baseline"]["setup"]]
             r = rep(s)
-            shown = landing_by_id.get(m["id"], "")
+            goto(page, "#/models/" + m["id"])
+            shown = page.evaluate(
+                "(document.querySelector('.model-page-baseline')||{}).innerText || ''")
             if r and str(r["value"]) not in shown:
                 baseline_speed_wrong.append(m["id"] + " borrowed or missing speed")
-            if not r and "Not measured" not in shown:
+            if not r and "not measured" not in shown.lower():
                 baseline_speed_wrong.append(m["id"] + " missing empty speed state")
-        check("homepage speed comes only from each selected baseline setup",
+        check("baseline speed comes only from each model's referenced setup",
               not baseline_speed_wrong, str(baseline_speed_wrong))
+
+        # ---- homepage evidence panel: identity fields, engines, and the locked
+        # three-state baseline (selected+speed / selected+no-speed / not_verified),
+        # computed from the dataset via the same repDecode rule the app uses.
+        ENG_MAP = D.get("engines", {})
+        panel_wrong = []
+        for mid in (D.get("model_order") or list(MODELS.keys())):
+            m = MODELS[mid]
+            goto(page, "#/?model=" + mid)
+            ev = page.evaluate(r"""() => {
+              var p = document.querySelector('[data-evidence-panel]');
+              if (!p) return null;
+              function txt(sel){ var e = p.querySelector(sel); return e ? e.textContent.trim() : null; }
+              function at(sel, a){ var e = p.querySelector(sel); return e ? e.getAttribute(a) : null; }
+              return {
+                model: p.getAttribute('data-evidence-model'),
+                name: txt('[data-evidence-field="name"]'),
+                architecture: txt('[data-evidence-field="architecture"]'),
+                parameters: txt('[data-evidence-field="parameters"]'),
+                context: txt('[data-evidence-field="context"]'),
+                engines: txt('[data-evidence-field="engines"]'),
+                launch: txt('[data-evidence-field="launch-date"]'),
+                intro: txt('[data-evidence-field="intro"]'),
+                recipes: txt('[data-evidence-field="recipe-count"]'),
+                pmin: txt('[data-evidence-field="practical-minimum"]'),
+                notVerified: !!p.querySelector('[data-evidence-field="not-verified"]'),
+                hasSpeed: !!p.querySelector('[data-evidence-field="speed"]'),
+                speedText: txt('[data-evidence-field="speed"]'),
+                speedMetric: at('[data-speed-metric]', 'data-speed-metric'),
+                speedCondition: at('[data-speed-condition]', 'data-speed-condition'),
+                speedConcurrency: at('[data-speed-concurrency]', 'data-speed-concurrency'),
+                speedProvenance: at('[data-speed-provenance]', 'data-speed-provenance'),
+                speedSource: at('[data-speed-source]', 'data-speed-source')
+              };
+            }""")
+            if ev is None:
+                panel_wrong.append(mid + ": no evidence panel")
+                continue
+            if ev["model"] != mid:
+                panel_wrong.append(mid + ": panel shows " + str(ev["model"]))
+            for fld in ("name", "architecture", "parameters", "context",
+                        "engines", "launch", "intro", "recipes"):
+                if not ev[fld]:
+                    panel_wrong.append(f"{mid}: missing field {fld}")
+            eids = sorted({(s.get("engine") or {}).get("id") for s in SET
+                           if s["model"] == mid and (s.get("engine") or {}).get("id")})
+            if not eids:
+                if ev["engines"] != "engines not recorded":
+                    panel_wrong.append(mid + ": engines should read 'engines not recorded'")
+            else:
+                got = {x.strip() for x in (ev["engines"] or "").split("\u00b7")}
+                exp = {(ENG_MAP.get(i) or {}).get("name", i) for i in eids}
+                if got != exp:
+                    panel_wrong.append(f"{mid}: engines {sorted(got)} != {sorted(exp)}")
+            b = m.get("practical_baseline") or {}
+            ref = by_id.get(b.get("setup")) if b.get("status") == "selected" else None
+            r = rep(ref) if ref else None
+            if b.get("status") == "selected":
+                if not ev["pmin"]:
+                    panel_wrong.append(mid + ": selected but no practical-minimum")
+                if ev["notVerified"]:
+                    panel_wrong.append(mid + ": selected but renders not-verified")
+                if r:
+                    if not ev["hasSpeed"]:
+                        panel_wrong.append(mid + ": recorded speed but no speed hook")
+                    else:
+                        num = re.match(r"\s*([0-9]+(?:\.[0-9]+)?)", ev["speedText"] or "")
+                        if not num or abs(float(num.group(1)) - float(r["value"])) > 1e-9:
+                            panel_wrong.append(f"{mid}: value {r['value']} not the headline ({ev['speedText'][:24]!r})")
+                        if ev["speedMetric"] != r["metric"]:
+                            panel_wrong.append(f"{mid}: metric {ev['speedMetric']} != {r['metric']}")
+                        if (ev["speedProvenance"] or "") != (r.get("provenance") or ""):
+                            panel_wrong.append(mid + ": provenance mismatch")
+                        if not ev["speedCondition"] or not ev["speedConcurrency"]:
+                            panel_wrong.append(mid + ": speed missing condition/concurrency")
+                        if bool(ev["speedSource"]) != bool(r.get("source")):
+                            panel_wrong.append(mid + ": speed source presence mismatch")
+                elif ev["hasSpeed"]:
+                    panel_wrong.append(mid + ": speed hook but no recorded decode")
+            else:
+                if not ev["notVerified"]:
+                    panel_wrong.append(mid + ": not_verified but no not-verified hook")
+                if ev["hasSpeed"]:
+                    panel_wrong.append(mid + ": not_verified but speed hook present")
+                if ev["pmin"]:
+                    panel_wrong.append(mid + ": not_verified but practical-minimum present")
+        check("homepage panel renders identity, engines and the three-state baseline for every model",
+              not panel_wrong, str(panel_wrong[:8]))
+        n_sel_speed = sum(1 for m in selected if rep(by_id[m["practical_baseline"]["setup"]]))
+        n_not_verified = sum(1 for m in MODELS.values()
+                             if (m.get("practical_baseline") or {}).get("status") != "selected")
+        note(f"panel three-state: {n_sel_speed} selected+speed, "
+             f"{len(selected) - n_sel_speed} selected+no-speed, {n_not_verified} not verified")
 
         goto(page, "#/recipes")
         cells = page.evaluate("""() => {
@@ -311,6 +569,38 @@ def main():
         n_nospeed = len([s for s in SET if not speeds(s)])
         check("measurement-free recipes still render", n_nospeed > 0 and rows(page) == TOTAL,
               f"{n_nospeed} of {TOTAL} carry no speed measurement")
+
+        # SCHEMA.md makes the engine config part of a setup's identity: two setups
+        # may share checkpoint + engine + hardware when their config differs. The
+        # row must then show that config, or the reader sees near-identical rows
+        # carrying different speeds with nothing to explain the difference.
+        import collections as _c
+        groups = _c.defaultdict(list)
+        for s in SET:
+            groups[(s["variation"]["checkpoint"], s["engine"]["id"],
+                    tuple(s.get("hardware") or []))].append(s["id"])
+        sibling_ids = [i for g in groups.values() if len(g) > 1 for i in g]
+        artifact = page.evaluate(r"""() => {
+          var out = {};
+          document.querySelectorAll('tr[data-row]').forEach(function(tr){
+            out[tr.getAttribute('data-row')] = tr.cells[1].innerText.replace(/\s+/g,' ').trim();
+          });
+          return out;
+        }""")
+        check("rows sharing checkpoint, engine and hardware exist in this dataset",
+              len(sibling_ids) > 0, f"{len(sibling_ids)} of {TOTAL} setups")
+        no_config = [i for i in sibling_ids if "config" not in artifact.get(i, "").lower()]
+        check("every such row shows the config that distinguishes it",
+              not no_config, str(no_config[:4]))
+        collided = []
+        for g in groups.values():
+            if len(g) < 2:
+                continue
+            texts = [artifact.get(i, "") for i in g]
+            if len(set(texts)) != len(texts):
+                collided.append(g[0])
+        check("no two sibling rows render identical artifact cells",
+              not collided, str(collided[:4]))
 
         # the specific cases the 2026-09-07 review caught
         worst = "qwen38-flash-next-orcarouter-gguf-uncensored"

@@ -260,3 +260,26 @@ The brief names six planes; each gets a fixed treatment, applied everywhere:
 | Compatibility estimate | Only inside My Hardware. Always prefixed by a hedge word and followed by its assumptions. `--est` or `--ok`, never unqualified green. |
 | Warning / failure | `--warn` / `--bad`, `▲` / `✕`, and a word. Always visible in collapsed state as a count, never hidden behind expansion. |
 | User-selected comparison | `--sel` bar + tint + `▣`, plus presence in the rail. |
+
+---
+
+## Addendum — models-home hero, 2026-09-12
+
+The models-home hero (`#/`) is a **documented exception** to §2's rule that
+monospace is reserved for commands, identifiers, measurements and technical
+values, and is never the page's identity.
+
+The owner supplied a printed contents-page reference and asked for the hero to
+match it. Under the pipeline's authority order a supplied visual reference
+outranks the committed design system, so the reference sets the direction for
+that band. The hero therefore uses mono uppercase as its primary voice, a warm
+`--hero-ground` band, a numbered index with hairline rules, and the figure set
+in the page-number position.
+
+**Scope of the exception: the `.mf-*` hero band only.** Everything below it —
+the model table, the recipe shelves, My Hardware, Compare, and every detail
+page — keeps the original rule. The exception does not license mono display
+type anywhere else.
+
+The generation rows in the index are functional, not decorative: they filter the
+model list, sync with the Generation select, and serialize to the URL.

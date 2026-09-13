@@ -524,6 +524,34 @@ function detailBody(s, opts) {
 }
 
 /* --------------------------------------------------------------- the row */
+/* Two setups may legitimately share checkpoint + engine + hardware when their
+   engine config differs -- the config string is part of a setup's identity
+   (SCHEMA.md). 21 of the current setups are in such a group. Where that happens
+   the row must show what makes it different (the config) rather than what it
+   shares (the quant detail), or the reader sees near-identical rows carrying
+   different speeds with no explanation. */
+var SIBLINGS = {};
+function siblingKey(s) {
+  return (s.variation || {}).checkpoint + "|" + (s.engine || {}).id + "|" + (s.hardware || []).join(",");
+}
+function markSiblings(list) {
+  var seen = {};
+  SIBLINGS = {};
+  list.forEach(function (s) {
+    var k = siblingKey(s);
+    seen[k] = (seen[k] || 0) + 1;
+  });
+  list.forEach(function (s) {
+    if (seen[siblingKey(s)] > 1) SIBLINGS[s.id] = true;
+  });
+}
+function configLead(s, max) {
+  // No manual ellipsis: the row's two-line clamp adds one only if it overflows,
+  // so a short config renders whole instead of gaining a false truncation mark.
+  var c = String((s.engine || {}).config || "").trim();
+  if (!c || c.length <= max) return c;
+  return c.slice(0, max).replace(/[\s,;:]+\S*$/, "");
+}
 function decodeCell(s) {
   var r = repDecode(s);
   if (r) {
@@ -540,7 +568,13 @@ function decodeCell(s) {
 function artifactCell(s) {
   var v = s.variation || {}, confl = capConflicts(s), fails = failures(s);
   var l2 = [esc(pubName(v.publisher))];
-  if (v.quant_detail) l2.push(esc(String(v.quant_detail).split(".")[0]));
+  if (SIBLINGS[s.id]) {
+    // shares checkpoint, engine and hardware with another visible row --
+    // show the config, which is the only thing that distinguishes them
+    var lead = configLead(s, 88);
+    if (lead) l2.push('<span class="variant"><i>config</i>' + esc(lead) + "</span>");
+    else if (v.quant_detail) l2.push(esc(String(v.quant_detail).split(".")[0]));
+  } else if (v.quant_detail) l2.push(esc(String(v.quant_detail).split(".")[0]));
   var extra = "";
   if (confl.length) extra += ' <span class="bad">' + esc("✕ " + confl.join(", ") + " off (runtime)") + "</span>";
   else if (fails.length) extra += ' <span class="bad">' + esc("✕ " + fails[0].slice(0, 88) + (fails[0].length > 88 ? "…" : "")) + "</span>";
@@ -630,6 +664,7 @@ var COLS = [
   ["c-upd", "Updated"], ["c-exp", "Expand"]
 ];
 function rowsHtml(list, caption) {
+  markSiblings(list);
   if (state.mobile) return '<ul class="rows-m">' + list.map(rowLi).join("") + "</ul>";
   return '<table class="rows"><caption>' + esc(caption) + "</caption><thead><tr>" +
     COLS.map(function (c) {
@@ -873,39 +908,73 @@ function modelOptions(field) {
     return '<option value="' + esc(v) + '"' + (selected ? " selected" : "") + '>' + esc(label) + '</option>';
   }).join("");
 }
-function modelListRow(m) {
-  var a = m.architecture || {}, c = m.context || {}, s = baselineSetup(m), speed = baselineSpeed(s);
-  var active = a.params_active_b != null ? a.params_active_b + "B active" : (a.kind === "dense" ? "all active" : "active params not recorded");
-  var selected = state.selectedModel === m.id;
-  return '<li><button type="button" class="model-row' + (selected ? " is-selected" : "") + '" data-model-select="' + esc(m.id) +
-    '" aria-pressed="' + selected + '"><span class="model-id"><strong>' + esc(m.name) + '</strong><span>' +
-    esc((a.kind === "moe" ? "MoE" : a.kind || "architecture not recorded") + " · " +
-      (a.params_total_b != null ? a.params_total_b + "B" : "params not recorded") + " · " + active) + '</span></span>' +
-    '<span class="model-context"><span class="lbl">Context</span><span>' +
-    (c.native != null ? esc(ctx(c.native)) : na("unstated")) + '</span><small>' + esc((m.modalities || []).join(" · ")) + '</small></span>' +
-    '<span class="model-floor"><span class="lbl">Practical minimum</span><span>' +
-    (s ? esc(modelFloor(s)) : '<span class="na">Not verified yet</span>') + '</span><small>' +
-    (s ? esc((s.variation || {}).quant + " · " + ((ENG[(s.engine || {}).id] || {}).name || (s.engine || {}).id)) : esc((m.practical_baseline || {}).reason || "No qualifying baseline")) + '</small></span>' +
-    '<span class="model-speed"><span class="lbl">Recorded here</span>' + (speed
-      ? '<strong>' + esc(speed.value) + '<small>' + esc(" " + speed.unit) + '</small></strong><small>' + esc(condOf(speed)) + '</small>'
-      : '<span class="na">Not measured</span><small>' + esc(s ? "No single-stream decode on this baseline" : "Baseline not verified") + '</small>') +
-    '</span><span class="model-open" aria-hidden="true">' + esc(state.mobile ? "open" : "view") + '</span></button></li>';
+/* Render a launch date at exactly the precision the dataset records: some
+   models carry a full ISO date, some only a month, some only a year. */
+var MONTHS = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+function releasedWord(r) {
+  if (!r) return null;
+  var p = String(r).split("-");
+  if (p.length === 1) return p[0];
+  var mi = parseInt(p[1], 10) - 1;
+  return (MONTHS[mi] || p[1]) + " " + p[0];
+}
+/* Intro for a contents line: whole sentences from the recorded summary, up to a
+   length cap. Never rewritten, never invented -- truncation only.
+   A period is only a sentence end when whitespace follows it, so version
+   numbers like "3.8" and sizes like "16.3GB" do not split a sentence. */
+function introText(s, max) {
+  s = String(s || "").trim();
+  if (!s) return "";
+  if (s.length <= max) return s;
+  var ends = [];
+  for (var i = 0; i < s.length; i++) {
+    var ch = s.charAt(i);
+    if (ch !== "." && ch !== "!" && ch !== "?") continue;
+    var nxt = s.charAt(i + 1);
+    if (nxt !== "" && !/\s/.test(nxt)) continue;
+    ends.push(i + 1);
+  }
+  var clip = function (x) { return x.slice(0, max).replace(/[\s,;:]+\S*$/, "") + "\u2026"; };
+  if (!ends.length) return clip(s);
+  var cut = ends[0];
+  for (var j = 0; j < ends.length; j++) {
+    if (ends[j] <= max) cut = ends[j]; else break;
+  }
+  var out = s.slice(0, cut).trim();
+  // A lone short opener ("Dense all-rounder.") is a thin introduction. When far
+  // more summary exists, carry on into it and mark the truncation instead.
+  if (out.length < max * 0.45 && s.length > max) return clip(s);
+  return out.length > max + 40 ? clip(out) : out;
 }
 function modelPreview(m) {
   var a = m.architecture || {}, c = m.context || {}, b = m.practical_baseline || {}, s = baselineSetup(m);
-  var recipes = modelRecipes(m.id), h = '<div class="model-preview-head"><span class="lbl">Selected model</span><h2>' + esc(m.name) + '</h2>' +
-    '<p>' + esc(m.summary || "No model summary is recorded.") + '</p><div class="model-tags"><span>' +
-    esc(a.kind === "moe" ? "MoE" : a.kind || "architecture not recorded") + '</span><span>' +
-    esc(a.params_total_b != null ? a.params_total_b + "B total" : "params not recorded") + '</span><span>' +
-    esc(a.params_active_b != null ? a.params_active_b + "B active" : (a.kind === "dense" ? "all parameters active" : "active params not recorded")) +
-    '</span><span>' + esc(c.native != null ? ctx(c.native) + " native context" : "native context unstated") + '</span></div></div>';
+  var recipes = modelRecipes(m.id);
+  // Engines = the distinct, order-insensitive set of engine ids across ALL of
+  // this model's recorded setups (not just the baseline lane), shown by name.
+  var engineNames = uniq(recipes.map(function (r) { return (r.engine || {}).id; })).sort()
+    .map(function (id) { return (ENG[id] || {}).name || id; });
+  var rel = releasedWord(m.released);
+  var params = (a.params_total_b != null ? a.params_total_b + "B total" : "params not recorded") +
+    (a.params_active_b != null ? " · " + a.params_active_b + "B active" : (a.kind === "dense" ? " · all active" : ""));
+  var h = '<div class="model-preview-head"><span class="lbl">Selected model</span>' +
+    '<h2 data-evidence-field="name">' + esc(m.name) + '</h2>' +
+    '<p data-evidence-field="intro">' + esc(m.summary || "No model summary is recorded.") + '</p><div class="model-tags">' +
+    '<span data-evidence-field="architecture">' + esc(a.kind === "moe" ? "MoE" : a.kind || "architecture not recorded") + '</span>' +
+    '<span data-evidence-field="parameters">' + esc(params) + '</span>' +
+    '<span data-evidence-field="context">' + esc(c.native != null ? ctx(c.native) + " native context" : "native context unstated") + '</span>' +
+    '<span data-evidence-field="engines">' + esc(engineNames.length ? engineNames.join(" · ") : "engines not recorded") + '</span>' +
+    '<span data-evidence-field="launch-date">' + esc(rel ? "released " + rel : "launch date not recorded") + '</span>' +
+    '<span data-evidence-field="recipe-count">' + esc(plural(recipes.length, "recipe")) + '</span>' +
+    '</div></div>';
   if (!s) {
-    h += '<section class="baseline-missing"><h3>Practical minimum not verified yet</h3><p>' +
+    // status !== "selected": no defensible baseline. Practical-minimum is absent;
+    // the not-verified line is the only baseline state. Never an inferred speed.
+    h += '<section class="baseline-missing" data-evidence-field="not-verified"><h3>Practical minimum not verified yet</h3><p>' +
       esc(b.reason || "No qualifying baseline is recorded for this model.") + '</p><p>' +
       esc("Available recipes remain visible, but none is promoted into a hardware recommendation without reported or measured evidence.") + '</p></section>';
   } else {
     var req = s.requirements || {}, v = s.variation || {}, e = s.engine || {}, speed = baselineSpeed(s);
-    h += '<section class="baseline"><div class="baseline-title"><div><span class="lbl">Practical minimum</span><h3>' +
+    h += '<section class="baseline"><div class="baseline-title"><div><span class="lbl">Practical minimum</span><h3 data-evidence-field="practical-minimum">' +
       esc(modelFloor(s)) + '</h3></div><span class="mark m-est">' + esc("curated · reviewed " + b.reviewed) + '</span></div>' +
       '<p class="baseline-why">' + esc(b.rationale) + '</p><dl class="baseline-spec">' +
       '<div><dt>Tested hardware</dt><dd>' + esc((s.hardware || []).map(function (id) { return (HW[id] || {}).name || id; }).join(" · ")) + '</dd></div>' +
@@ -918,9 +987,15 @@ function modelPreview(m) {
       '<div class="wide"><dt>Memory and offload notes</dt><dd>' + (req.notes ? esc(req.notes) : na("not recorded")) + '</dd></div></dl>';
     h += '<div class="baseline-speed"><span class="lbl">Recorded on this exact baseline</span>';
     if (speed) {
-      h += '<div class="speed-line"><strong>' + esc(speed.value) + '<small>' + esc(" " + speed.unit) + '</small></strong><span>' +
-        esc(condOf(speed)) + '</span></div>' + (speed.note ? '<p>' + esc(speed.note) + '</p>' : '') +
-        (speed.source ? '<a href="' + esc(speed.source) + '" target="_blank" rel="noopener">Open measurement source</a>' : '');
+      // Speed hook renders ONLY when the referenced setup records a single-stream
+      // decode measurement; every sub-field is carried from that measurement.
+      h += '<div class="speed-line" data-evidence-field="speed">' +
+        '<strong data-speed-metric="' + esc(speed.metric) + '">' + esc(speed.value) + '<small>' + esc(" " + speed.unit) + '</small></strong>' +
+        '<span data-speed-condition="' + esc(metricWord(speed.metric) + (speed.stat ? " · " + speed.stat : "")) +
+        '" data-speed-concurrency="' + esc(speed.concurrency != null ? String(speed.concurrency) : "1") +
+        '" data-speed-provenance="' + esc(speed.provenance || "") + '">' + esc(condOf(speed)) + '</span></div>' +
+        (speed.note ? '<p>' + esc(speed.note) + '</p>' : '') +
+        (speed.source ? '<a data-speed-source="' + esc(speed.source) + '" href="' + esc(speed.source) + '" target="_blank" rel="noopener">Open measurement source</a>' : '');
     } else h += '<p class="na">No single-stream decode measurement is recorded for this baseline.</p>';
     h += '</div>';
     var trade = [];
@@ -947,32 +1022,170 @@ function writeModelHash() {
   var next = "#/" + (q.length ? "?" + q.join("&") : "");
   if (location.hash !== next) history.replaceState(null, "", next);
 }
+/* The hero reads as a printed contents page: mono uppercase rules, a numbered
+   index, and the figure set in the page-number position. Supplied reference,
+   2026-09-12 -- it sets the direction for this band only. */
+function mfHero(list, verified) {
+  var gens = [];
+  D.model_order.forEach(function (id) {
+    var g = String((MODELS[id] || {}).generation || "");
+    if (!g) return;
+    var row = gens.filter(function (x) { return x.g === g; })[0];
+    if (!row) { row = { g: g, models: 0, recipes: 0 }; gens.push(row); }
+    row.models += 1;
+    row.recipes += SETUPS.filter(function (s) { return s.model === id; }).length;
+  });
+  gens.sort(function (a, b) { return parseFloat(b.g) - parseFloat(a.g); });
+
+  var rows = gens.map(function (x, i) {
+    var n = pad2(i + 1), on = state.modelGen === x.g;
+    return '<li><button type="button" class="mf-item' + (on ? " is-on" : "") +
+      '" data-hero-gen="' + esc(x.g) + '" aria-pressed="' + on + '">' +
+      '<span class="mf-n">' + esc(n + ".0") + '</span>' +
+      '<span class="mf-sep" aria-hidden="true">/</span>' +
+      '<span class="mf-name">' + esc("Qwen " + x.g) + '</span>' +
+      '<span class="mf-dots" aria-hidden="true"></span>' +
+      '<span class="mf-meta">' + esc(x.models + (x.models === 1 ? " model" : " models")) + '</span>' +
+      '<span class="mf-fig">' + esc(String(x.recipes)) + '</span></button></li>';
+  }).join("");
+
+  return '<header class="mf-hero">' +
+    '<div class="mf-eyebrow"><span>00.0</span><span>Models</span>' +
+      '<span class="mf-eyebrow-end">' + esc(verified + " / " + D.model_order.length + " with a curated baseline") + '</span></div>' +
+    '<div class="mf-body">' +
+      '<div class="mf-title"><span class="mf-n">01</span><h1>Choose a Qwen model</h1></div>' +
+      '<div class="mf-lede"><p>' +
+        esc("Start with what you want to run. Each practical minimum is tied to one reported or measured recipe, and its speed is shown only when that same setup was measured.") +
+      '</p>' +
+      '<ol class="mf-index">' + rows + '</ol></div>' +
+    '</div>' +
+    '<div class="mf-foot"><span>' + esc("Qwen Local-Run Directory") + '</span><span>' +
+      esc(SETUPS.length + " recipes") + '</span></div>' +
+    '</header>';
+}
+function pad2(n) { return (n < 10 ? "0" : "") + n; }
+/* The editorial masthead: eyebrow, page title, and the one-line job. The numbered
+   series index that the reference put in the hero now lives in the right column,
+   grouped by model series, so the masthead carries the voice, not the index. */
+function mhMast(verified) {
+  return '<header class="mf-hero mh-mast">' +
+    '<div class="mf-eyebrow"><span>00.0</span><span>Models</span>' +
+      '<span class="mf-eyebrow-end">' + esc(verified + " / " + D.model_order.length + " with a curated baseline") + '</span></div>' +
+    '<div class="mf-title"><span class="mf-n">01</span><h1>Choose a Qwen model</h1></div>' +
+    '<p class="mf-lede">' + esc("Start with what you want to run. Each model's practical minimum is tied to one reported or measured recipe, and its speed is shown only when that same setup was measured. Every recipe stays at #/recipes.") + '</p>' +
+    '</header>';
+}
+
+/* The right column: an editorial printed contents grouped by Qwen series, newest
+   first. Each series is a [data-toc-series] chapter; entries keep
+   [data-model-select] and carry data-toc-selected on the active one. */
+function seriesSections(list, sel) {
+  var gens = [];
+  list.forEach(function (m) {
+    var g = String(m.generation || "");
+    var row = gens.filter(function (x) { return x.g === g; })[0];
+    if (!row) { row = { g: g, models: [] }; gens.push(row); }
+    row.models.push(m);
+  });
+  gens.sort(function (a, b) { return parseFloat(b.g) - parseFloat(a.g); });
+  return gens.map(function (sec, si) {
+    var n = pad2(si + 1);
+    var recipes = sec.models.reduce(function (acc, m) { return acc + modelRecipes(m.id).length; }, 0);
+    return '<li class="toc-sec" data-toc-series="' + esc(sec.g) + '"><div class="toc-chapter">' +
+      '<span class="toc-cn">' + esc(n) + '</span>' +
+      '<h2>' + esc("Qwen " + sec.g) + '</h2>' +
+      '<p class="toc-cmeta">' + esc(sec.models.length + (sec.models.length === 1 ? " model" : " models")) +
+      '<br>' + esc(recipes + (recipes === 1 ? " recipe" : " recipes")) + '</p></div>' +
+      '<ol class="toc-items">' + sec.models.map(function (m, mi) {
+        return tocItem(m, n + "." + (mi + 1), m.id === sel);
+      }).join("") + '</ol></li>';
+  }).join("");
+}
+
 function viewModelsHome() {
   setRail("");
   var list = D.model_order.map(function (id) { return MODELS[id]; }).filter(modelMatches);
-  if (!state.selectedModel || !MODELS[state.selectedModel] || list.indexOf(MODELS[state.selectedModel]) < 0) {
-    state.selectedModel = list.length ? list[0].id : null;
-  }
   var verified = Object.keys(MODELS).filter(function (id) { return !!baselineSetup(MODELS[id]); }).length;
-  el("mast-sub").innerHTML = esc("Choose the model first. Practical minimums point to exact sourced recipes; missing evidence stays visible — ") +
-    '<b>' + verified + '</b>' + esc(" of " + D.model_order.length + " models currently have a curated baseline.");
-  var h = '<div class="models-home"><header class="models-intro"><h1>Choose a Qwen model</h1><p>' +
-    esc("Start with what you want to run. Each practical minimum is tied to one reported or measured recipe, and its speed is shown only when that same setup was measured.") +
-    '</p></header><div class="model-controls"><label class="model-search"><span class="lbl">Find a model</span><input type="search" id="model-q" value="' +
-    esc(state.modelQ) + '" placeholder="Flash-Next, 27B, vision…"></label><label><span class="lbl">Generation</span><select id="model-gen"><option value="">all</option>' +
-    modelOptions("generation") + '</select></label><label><span class="lbl">Architecture</span><select id="model-arch"><option value="">all</option>' +
-    modelOptions("architecture") + '</select></label><label><span class="lbl">Baseline</span><select id="model-baseline"><option value="">all</option>' +
+  el("mast-sub").innerHTML = esc("Choose a Qwen model and read its practical hardware baseline. Every recipe stays at #/recipes.");
+
+  var h = '<div class="models-home">' + mhMast(verified) + tocControls(list);
+  if (!list.length) {
+    h += '<div class="empty"><h2>No models match</h2><p>' +
+      esc("Clear the search or filters to return to all " + D.model_order.length + " models.") +
+      '</p><button type="button" class="btn btn-p" id="model-clear">Clear model filters</button></div></div>';
+    el("main").innerHTML = h;
+    announce("0 of " + D.model_order.length + " models");
+    writeModelHash();
+    return;
+  }
+
+  // Default selection: keep the current one if it is still visible, otherwise the
+  // first visible model. URL ?model= is already resolved into state by route().
+  var sel = (state.selectedModel && list.some(function (m) { return m.id === state.selectedModel; }))
+    ? state.selectedModel : list[0].id;
+  state.selectedModel = sel;
+
+  h += '<div class="model-master mh-split">' +
+    '<aside class="mh-panel"><div class="model-preview" data-evidence-panel data-evidence-model="' + esc(sel) + '">' +
+      modelPreview(MODELS[sel]) + '</div></aside>' +
+    '<div class="mh-index"><div class="mh-index-head"><span class="lbl">Every model</span>' +
+      '<span class="mh-index-meta">' + esc(list.length + " of " + D.model_order.length + " shown") + '</span></div>' +
+      '<ol class="toc">' + seriesSections(list, sel) + '</ol>' +
+      '<div class="toc-foot"><span>' + esc("Qwen Local-Run Directory") + '</span><span>' +
+        esc(SETUPS.length + " recipes across " + D.model_order.length + " models") + '</span></div>' +
+    '</div></div></div>';
+  el("main").innerHTML = h;
+  announce(list.length + " of " + D.model_order.length + " models; showing " + MODELS[sel].name);
+  writeModelHash();
+}
+
+function tocHero(list, verified, totalRecipes) {
+  return '<header class="mf-hero">' +
+    '<div class="mf-eyebrow"><span>00.0</span><span>Contents</span>' +
+      '<span class="mf-eyebrow-end">' + esc(verified + " / " + D.model_order.length + " with a curated baseline") + '</span></div>' +
+    '<div class="mf-body">' +
+      '<div class="mf-title"><span class="mf-n">01</span><h1>Choose a Qwen model</h1></div>' +
+      '<div class="mf-lede"><p>' +
+        esc("Every Qwen model with a plausible local lane, newest generation first. Each entry names what the model is and when it launched; open one for the recipes that run it.") +
+      '</p><p class="mf-lede-2">' +
+        esc(totalRecipes + " source-backed recipes sit behind these " + D.model_order.length +
+            " models. Nothing here is a recommendation \u2014 the numbers live with the recipes, each carrying its own source.") +
+      '</p></div>' +
+    '</div></header>';
+}
+
+function tocControls(list) {
+  return '<div class="model-controls"><label class="model-search"><span class="lbl">Find a model</span>' +
+    '<input type="search" id="model-q" value="' + esc(state.modelQ) + '" placeholder="Flash-Next, 27B, vision\u2026"></label>' +
+    '<label><span class="lbl">Generation</span><select id="model-gen"><option value="">all</option>' +
+    modelOptions("generation") + '</select></label>' +
+    '<label><span class="lbl">Architecture</span><select id="model-arch"><option value="">all</option>' +
+    modelOptions("architecture") + '</select></label>' +
+    '<label><span class="lbl">Baseline</span><select id="model-baseline"><option value="">all</option>' +
     '<option value="selected"' + (state.modelBaseline === "selected" ? " selected" : "") + '>practical minimum verified</option>' +
     '<option value="missing"' + (state.modelBaseline === "missing" ? " selected" : "") + '>not verified yet</option></select></label>' +
     '<span class="model-count"><b>' + list.length + '</b> of ' + D.model_order.length + ' models</span></div>';
-  if (!list.length) h += '<div class="empty"><h2>No models match</h2><p>Clear the search or filters to return to all models.</p><button type="button" class="btn btn-p" id="model-clear">Clear model filters</button></div>';
-  else h += '<div class="model-master"><section class="model-index" aria-label="Qwen models"><div class="model-list-head"><span>Model</span><span>Context</span><span>Practical minimum</span><span>Recorded speed</span><span></span></div><ol class="model-list">' +
-    list.map(modelListRow).join("") + '</ol></section><aside class="model-preview" aria-live="polite">' +
-    modelPreview(MODELS[state.selectedModel]) + '</aside></div>';
-  h += '</div>';
-  el("main").innerHTML = h;
-  announce(list.length + " of " + D.model_order.length + " models");
-  writeModelHash();
+}
+
+function tocItem(m, num, on) {
+  var a = m.architecture || {}, n = modelRecipes(m.id).length;
+  var bits = [a.kind === "moe" ? "MoE" : (a.kind || "architecture not recorded")];
+  if (a.params_total_b != null) bits.push(a.params_total_b + "B total");
+  if (a.params_active_b != null) bits.push(a.params_active_b + "B active");
+  else if (a.kind === "dense") bits.push("all active");
+  var rel = releasedWord(m.released);
+  bits.push(rel ? "released " + rel : "launch date not recorded");
+  var intro = introText(m.summary, 168);
+  // The href drives mobile (rows navigate to the model page) and progressive
+  // enhancement; on desktop the click handler intercepts it to select in place.
+  return '<li><a class="toc-item' + (on ? " is-sel" : "") + '" href="#/models/' + esc(m.id) + '" data-model-select="' + esc(m.id) + '"' +
+    (on ? ' data-toc-selected="true" aria-current="true"' : "") + '>' +
+    '<span class="toc-n">' + esc(num) + '</span><span class="toc-sep" aria-hidden="true">/</span>' +
+    '<span class="toc-main"><span class="toc-name">' + esc(m.name) + '</span>' +
+    '<span class="toc-meta">' + esc(bits.join(" \u00b7 ")) + '</span>' +
+    (intro ? '<span class="toc-intro">' + esc(intro) + '</span>' : '') +
+    '</span>' +
+    '<span class="toc-fig"><b>' + n + '</b><small>' + esc(n === 1 ? "recipe" : "recipes") + '</small></span></a></li>';
 }
 
 /* ------------------------------------------------------------ compare rail */
@@ -1934,7 +2147,7 @@ document.addEventListener("change", function (e) {
   }
 });
 document.addEventListener("click", function (e) {
-  var t = e.target.closest ? e.target.closest("[data-exp],[data-copy],[data-clear],[data-rail-f],[data-rail-clear],[data-jump],[data-cmp],[data-ev],[data-grp],[data-goal],[data-load],[data-model-select],#model-clear,#clear-all,#adv-toggle,#cmp-clear,#theme,#hw-detect,#hw-save,#hw-clear,#hw-export,#hw-import") : null;
+  var t = e.target.closest ? e.target.closest("[data-hero-gen],[data-exp],[data-copy],[data-clear],[data-rail-f],[data-rail-clear],[data-jump],[data-cmp],[data-ev],[data-grp],[data-goal],[data-load],[data-model-select],#model-clear,#clear-all,#adv-toggle,#cmp-clear,#theme,#hw-detect,#hw-save,#hw-clear,#hw-export,#hw-import") : null;
   if (!t) {
     hidePop();
     /* Clicking anywhere on a row header toggles it — the expander triangle is
@@ -1960,6 +2173,9 @@ document.addEventListener("click", function (e) {
   }
   var modelSelect = t.getAttribute("data-model-select");
   if (modelSelect) {
+    if (e.preventDefault) e.preventDefault();
+    // Mobile follows the entry to the model-family page; desktop/tablet selects
+    // in place and updates the sticky evidence panel + the ?model= URL.
     if (state.mobile) { nav("#/models/" + modelSelect); return; }
     state.selectedModel = modelSelect;
     viewModelsHome();
@@ -1971,6 +2187,8 @@ document.addEventListener("click", function (e) {
     state.modelQ = ""; state.modelGen = ""; state.modelArch = ""; state.modelBaseline = "";
     viewModelsHome(); return;
   }
+  var hg = t.getAttribute("data-hero-gen");
+  if (hg) { state.modelGen = state.modelGen === hg ? "" : hg; viewModelsHome(); return; }
   if (t.id === "m-filters") { state.filtersOpen = !state.filtersOpen; viewDirectory(); return; }
   if (t.id === "adv-toggle") { state.adv = !state.adv; writeHash(); viewDirectory(); return; }
   if (t.id === "clear-all") { state.f = {}; state.q = ""; writeHash(); viewDirectory(); return; }
