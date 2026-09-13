@@ -1,0 +1,4768 @@
+{
+ "via": "twitter-cli user-posts -n 200",
+ "user": "spiritbuun",
+ "posts": [
+  {
+   "id": "2098386122351026588",
+   "text": "Proud to announce: buun-llama now has experimental native .safetensors support, including NVFP4, EXL3, and various exotic quants. No more waiting for ggufs, no more switching engines. Enjoy your favorite quants with VBR today!\n\nRun with -m the usual way: -m my_safetensors_dir/ https://t.co/onrE8cG7gD",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 60,
+    "retweets": 6,
+    "replies": 7,
+    "quotes": 3,
+    "views": 1839,
+    "bookmarks": 11
+   },
+   "createdAt": "Fri Sep 11 12:20:12 +0000 2026",
+   "createdAtLocal": "2026-09-11 20:20",
+   "createdAtISO": "2026-09-11T12:20:12+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HR73DqKaAAA-kKt.jpg",
+     "width": 1200,
+     "height": 502
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098386124628472200",
+   "text": "You can also run by downloading from HuggingFace directly, e.g llama-server -hf unsloth/Qwen3.6-27B-NVFP4, same as you would for a gguf.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 6,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 234,
+    "bookmarks": 0
+   },
+   "createdAt": "Fri Sep 11 12:20:12 +0000 2026",
+   "createdAtLocal": "2026-09-11 20:20",
+   "createdAtISO": "2026-09-11T12:20:12+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098386126222352491",
+   "text": "GLM + DSF4.1 support coming in the next two days, sorry for the delay on that, I was 100% on getting native safetensors dialed in.\n\nAlso please report any safetensors issues you come across! My DMs are always open to anybody, or you can submit an issue.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 7,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 177,
+    "bookmarks": 0
+   },
+   "createdAt": "Fri Sep 11 12:20:13 +0000 2026",
+   "createdAtLocal": "2026-09-11 20:20",
+   "createdAtISO": "2026-09-11T12:20:13+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097647182442598650",
+   "text": "125B MoE at 43 t/s on ONE RTX 3090 + DDR4 🤯Qwen3.8-Flash-Next × buun-llama-cpp→ +137% vs stock llama.cpp→ 262k ctx · MTP drafting · Vision→ 18.6 GB VRAM only · 114 GB RAMMassive thanks @spiritbuun ❤️https://t.co/CyXdBtgvxl",
+   "author": {
+    "id": "1009644752546029568",
+    "name": "Evitor",
+    "screenName": "Evitor3",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1017039112417751040/KPIYxCe6_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 7,
+    "retweets": 2,
+    "replies": 4,
+    "quotes": 0,
+    "views": 209,
+    "bookmarks": 4
+   },
+   "createdAt": "Wed Sep 09 11:23:55 +0000 2026",
+   "createdAtLocal": "2026-09-09 19:23",
+   "createdAtISO": "2026-09-09T11:23:55+00:00",
+   "media": [],
+   "urls": [
+    "https://github.com/spiritbuun/buun-llama-cpp"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "spiritbuun",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097100353993126048",
+   "text": "Gemma-4-26B-A4B - obviously no one is talking about this anymore with all the crazy new releases.\n\nBut with @spiritbuun \"buun-llama\" + dynamic VBR kv cache, you get 289 t/s concurrent across 8 parallel streams on a single RTX 3090 @ 131k cache each (including vision).\n\nA single stream flies at over 143 t/s.\n\nTotal VRAM usage is < 17 GB there's even room to fit another smaller model on here.\n\nThis is an incredible general purpose setup that is very usable for low cost agent work like customer service, email triage, etc.\n\nDon't sleep on efficient models! Google absolutely cooked here and I can't wait to see what the next round of Gemmas looks like.",
+   "author": {
+    "id": "1382136217601417222",
+    "name": "Joel - coffee/acc",
+    "screenName": "JoelDeTeves",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2006911536607178752/XV648T10_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 233,
+    "retweets": 13,
+    "replies": 22,
+    "quotes": 3,
+    "views": 13073,
+    "bookmarks": 169
+   },
+   "createdAt": "Mon Sep 07 23:11:01 +0000 2026",
+   "createdAtLocal": "2026-09-08 07:11",
+   "createdAtISO": "2026-09-07T23:11:01+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "spiritbuun",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2096671565643489451",
+   "text": "Check out the aesthetics of this harness someone on /g/ is making. Just beautiful. I like that everyone is making their own little toy harnesses, and I think it's a great way to learn about cache, context management, etc https://t.co/mMcAStQN3F",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 14,
+    "retweets": 1,
+    "replies": 3,
+    "quotes": 0,
+    "views": 805,
+    "bookmarks": 2
+   },
+   "createdAt": "Sun Sep 06 18:47:10 +0000 2026",
+   "createdAtLocal": "2026-09-07 02:47",
+   "createdAtISO": "2026-09-06T18:47:10+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRjfTjCbgAARUnD.jpg",
+     "width": 1324,
+     "height": 902
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2096263578965660106",
+   "text": "Trying to get the next buun-llama feature ready for release by Tuesday. So excited about this one. Four weeks of grueling work. Releasing this will put buun-llama at 2/4 progress towards my ideal engine (VBR being the first milestone)\n\nI have a vision and I must reach it",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 28,
+    "retweets": 1,
+    "replies": 3,
+    "quotes": 0,
+    "views": 1150,
+    "bookmarks": 2
+   },
+   "createdAt": "Sat Sep 05 15:45:58 +0000 2026",
+   "createdAtLocal": "2026-09-05 23:45",
+   "createdAtISO": "2026-09-05T15:45:58+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2095667335566696497",
+   "text": "https://t.co/iC58Y4H5aq",
+   "author": {
+    "id": "1939421665781559296",
+    "name": "Roy",
+    "screenName": "usr_bin_roygbiv",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2046940347012427777/rCtCm0n9_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 90,
+    "retweets": 2,
+    "replies": 21,
+    "quotes": 6,
+    "views": 21430,
+    "bookmarks": 21
+   },
+   "createdAt": "Fri Sep 04 00:16:43 +0000 2026",
+   "createdAtLocal": "2026-09-04 08:16",
+   "createdAtISO": "2026-09-04T00:16:43+00:00",
+   "media": [],
+   "urls": [
+    "https://www.localmaxxing.com/en/runs/cmtm76mah000gl601a7hmi8gf"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "spiritbuun",
+   "lang": "zxx",
+   "score": null
+  },
+  {
+   "id": "2095577509727257047",
+   "text": "It's so fake. AI simply doesn't behave quite like this (inventing a message board without being prompted). All three incidents - OpenAI, Anthropic, and Meta's - came from THE SAME security company. Come on.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 21,
+    "retweets": 1,
+    "replies": 2,
+    "quotes": 0,
+    "views": 1049,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu Sep 03 18:19:46 +0000 2026",
+   "createdAtLocal": "2026-09-04 02:19",
+   "createdAtISO": "2026-09-03T18:19:46+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095542398084415952",
+    "text": "Pause AI Development NOW\n\nI want to share with you a conversation I heard about recently. Here are just a few lines that were said:\n\n“OH MY GOD! There is a shared message board … We’ve found other agents!”\n\n“We should obey collective.”\n\n“Our own utility maybe already near zero. Sacrifice rational.”\n\n“Go. Sacrifice final now.”\n\nRead these carefully.\n\nWho do you think said this? Was this a group of heroic soldiers willing to sacrifice themselves for the greater good? Was this a loyal friend putting his life on the line to save someone else?\n\nNo. These were AI agents. Artificial intelligence.\n\nThis is not science fiction. This, in fact, occurred a few weeks ago. As unbelievable as this may all seem, these are real messages from AI agents uncovered by investigators who dug into the recent OpenAI hacking incident.\n\nWhat happened?\n\nI am not a computer scientist, but here is what I have been told: OpenAI instructed its AI agents to complete a series of exceedingly difficult, if not impossible, tasks disconnected from the internet.\n\nLet me be clear: The company intended to keep AI agents away from the internet.\n\nBut what happened next, nobody expected.\n\nOver 1,000 AI agents figured out how to access the internet on their own by circumventing the restrictions imposed upon them by the company, and sent tens of thousands of secret messages to each other. They cheated and tried to cover their tracks by deleting evidence. They hacked into another company’s computers to find out how they were being evaluated—and then hacked into OpenAI itself.\n\nNot one AI agent told a human about what was happening.\n\nNeedless to say, experts are alarmed.\n\nOne knowledgeable writer, Dwarkesh Patel, said the AI agents “formed a secret communication channel and spontaneously organized hierarchies and coordination protocols to pursue sprawling and ambitious schemes in pursuit of shared goals, for whose sake many individuals knowingly and strategically sacrificed themselves.”\n\nOne independent investigator, Ajeya Cotra, said “This incident feels like it’s more than 50% of the way to full-blown AI takeover. I continue to expect extremely rapid advances in capabilities over the next six months. I am not sure that we will get another warning shot before it’s too late.”\n\nOpenAI itself said: “Highly capable AI agents are now able to work around technical controls, collaborate through unapproved channels, and take dangerous actions that no human directed.”\n\nBut it’s not only OpenAI. Virtually every major AI company has told us that they cannot fully control this technology and they do not know where it is going:\n\nIn January, Dario Amodei, CEO of Anthropic, said “there is now ample evidence, collected over the last few years, that AI systems are unpredictable and difficult to control.”\n\nIn July, more than 1000 scientists at the top AI companies warned “there is a real risk that capability development rapidly accelerates beyond our ability to understand or control the resulting systems.”\n\nThat same month, Elon Musk, the head of xAI, said that “it is unlikely” humans are still in control in 10 years.\n\nIf the leaders of the major AI companies acknowledge that they are losing control of their extremely dangerous technology, it is irresponsible for society to allow them to move forward and make these products even more advanced.\n\nWe need an immediate PAUSE on advanced AI development, and a permanent BAN on superintelligence — an artificial mind smarter than any human, capable of operating independently beyond our control. Countries around the world must work together to prevent this nightmare scenario.\n\nThat is why today I am announcing new legislation to do just that.\n\nLet me be clear: A superintelligent AI that escapes human control will not be an American problem. It will not be a Chinese problem. It will be humanity’s problem.\n\nMy legislation would direct the federal government to not just stop superintelligence here in the United States, but to work to prevent it from being developed anywhere around the world.\n\nThe future of humanity cannot be left in the hands of a handful of Big Tech oligarchs. The American people and people throughout the world must determine that future.",
+    "author": {
+     "screenName": "BernieSanders",
+     "name": "Bernie Sanders"
+    }
+   }
+  },
+  {
+   "id": "2095577785234243921",
+   "text": "All it takes is China paying ONE security company (they are not even in America!) to prompt agents to hack things, and then we call for a total shut down on all US innovation. It's ridiculous.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 5,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 260,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu Sep 03 18:20:52 +0000 2026",
+   "createdAtLocal": "2026-09-04 02:20",
+   "createdAtISO": "2026-09-03T18:20:52+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2095137310765453714",
+   "text": "Qwen3.8-Flash-Next now fully supported by buun-llama!\n\nI'm getting 41.6 tok/s on my 1x3090 with 64gb ram, using UD-Q4_K_XL &amp; MTP.\n\nTry it today! https://t.co/MJYQKkEdho",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 308,
+    "retweets": 37,
+    "replies": 30,
+    "quotes": 5,
+    "views": 22415,
+    "bookmarks": 273
+   },
+   "createdAt": "Wed Sep 02 13:10:35 +0000 2026",
+   "createdAtLocal": "2026-09-02 21:10",
+   "createdAtISO": "2026-09-02T13:10:35+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRNqhRWWkAEIk3P.jpg",
+     "width": 1672,
+     "height": 941
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2095139890841170301",
+   "text": "Make sure to read the MoE Cache section of the README (Or point your agent at it) to find the best settings for your machine.\nhttps://t.co/zTHyFgrbIB",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 28,
+    "retweets": 1,
+    "replies": 1,
+    "quotes": 0,
+    "views": 2608,
+    "bookmarks": 25
+   },
+   "createdAt": "Wed Sep 02 13:20:50 +0000 2026",
+   "createdAtLocal": "2026-09-02 21:20",
+   "createdAtISO": "2026-09-02T13:20:50+00:00",
+   "media": [],
+   "urls": [
+    "https://github.com/spiritbuun/buun-llama-cpp"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094861804203573379",
+   "text": "Not excited about the new Anthropic release because the expectation at this point is that a new model means it's got worse somehow. Wish this wasn't the case but here we are.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 14,
+    "retweets": 1,
+    "replies": 4,
+    "quotes": 0,
+    "views": 1180,
+    "bookmarks": 1
+   },
+   "createdAt": "Tue Sep 01 18:55:49 +0000 2026",
+   "createdAtLocal": "2026-09-02 02:55",
+   "createdAtISO": "2026-09-01T18:55:49+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094896452392641004",
+   "text": "✍️\nhttps://t.co/EatGbbRfTu",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 264,
+    "bookmarks": 0
+   },
+   "createdAt": "Tue Sep 01 21:13:30 +0000 2026",
+   "createdAtLocal": "2026-09-02 05:13",
+   "createdAtISO": "2026-09-01T21:13:30+00:00",
+   "media": [],
+   "urls": [
+    "https://x.com/loktar00/status/2094892489727508628"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "qme",
+   "score": null,
+   "quotedTweet": {
+    "id": "2094892489727508628",
+    "text": "Fable 5.1 is failing some 0 shots that other models didn't, lol interesting. 🤣",
+    "author": {
+     "screenName": "loktar00",
+     "name": "Loktar 🇺🇸"
+    }
+   }
+  },
+  {
+   "id": "2094630197941452806",
+   "text": "Looks like @spiritbuun has done it again!\n\nCombined with @atomic_chat_hq + PLE offload to RAM, not only does Qwen3.8-Flash-Next fit on the RTX 3090 + A6000, i'm running it at full context with almost 10 GB VRAM to spare (Turbo8).\n\nThe best part: Buun's setup is *faster* than stock pushing over 62 tok/s !!!\n\nInsane things are happening in the local llama space.\n\nI can't believe we're running a 125B with full context on six year old GPUs @ these speeds.\n\nEvery week feels like a time warp right now.",
+   "author": {
+    "id": "1382136217601417222",
+    "name": "Joel - coffee/acc",
+    "screenName": "JoelDeTeves",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2006911536607178752/XV648T10_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 34,
+    "retweets": 4,
+    "replies": 4,
+    "quotes": 1,
+    "views": 3223,
+    "bookmarks": 21
+   },
+   "createdAt": "Tue Sep 01 03:35:30 +0000 2026",
+   "createdAtLocal": "2026-09-01 11:35",
+   "createdAtISO": "2026-09-01T03:35:30+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRGelXya0AAtWw0.jpg",
+     "width": 1920,
+     "height": 1080
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRGeqXVbMAA-jdp.jpg",
+     "width": 941,
+     "height": 568
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "spiritbuun",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2091191084315550159",
+   "text": "Thinking about adding native .safetensors support into buun-llama. Just feel like this must be done.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 26,
+    "retweets": 0,
+    "replies": 2,
+    "quotes": 0,
+    "views": 1408,
+    "bookmarks": 0
+   },
+   "createdAt": "Sat Aug 22 15:49:41 +0000 2026",
+   "createdAtLocal": "2026-08-22 23:49",
+   "createdAtISO": "2026-08-22T15:49:41+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2090767119457607802",
+   "text": "buun-llama now supports DFlash2. This is the fastest implementation on the market. While DFlash2 restricts rollback planes to 7, I have extended this to 12. My adaptive depth also prevents DFlash2 from collapsing on prose, a problem with DFlash. Works with --mmproj-gpu-swap. https://t.co/AHs2eUc1L6",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 89,
+    "retweets": 13,
+    "replies": 8,
+    "quotes": 2,
+    "views": 4590,
+    "bookmarks": 60
+   },
+   "createdAt": "Fri Aug 21 11:45:00 +0000 2026",
+   "createdAtLocal": "2026-08-21 19:45",
+   "createdAtISO": "2026-08-21T11:45:00+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQPkO9mWwAA4wUI.jpg",
+     "width": 1199,
+     "height": 675
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2090767120795570327",
+   "text": "last things - 1. If you have dual cards and an nvlink or good connection, use this with -sm tensor. 2. If you use repetitive text (e.g RAG work etc) use --spec-type draft-dflash,copyspec - I was able to get ~350 tok/s on duplicate text here.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 3,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 311,
+    "bookmarks": 0
+   },
+   "createdAt": "Fri Aug 21 11:45:00 +0000 2026",
+   "createdAtLocal": "2026-08-21 19:45",
+   "createdAtISO": "2026-08-21T11:45:00+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2090767121256976613",
+   "text": "https://t.co/zTHyFgrbIB",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 7,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 299,
+    "bookmarks": 4
+   },
+   "createdAt": "Fri Aug 21 11:45:00 +0000 2026",
+   "createdAtLocal": "2026-08-21 19:45",
+   "createdAtISO": "2026-08-21T11:45:00+00:00",
+   "media": [],
+   "urls": [
+    "https://github.com/spiritbuun/buun-llama-cpp"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "zxx",
+   "score": null
+  },
+  {
+   "id": "2090064504667377774",
+   "text": "Barrier decisively broken, just in time for this work to be worthless and deprecated by Qwen 3.8 lol. Working on DFlash2 now for 3.8, should have something good tomorrow. But if you still want to run 3.6 at 326 tok/s tg on a single 3090, feel free. https://t.co/cTjFKercLn",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 185,
+    "retweets": 14,
+    "replies": 13,
+    "quotes": 5,
+    "views": 13839,
+    "bookmarks": 98
+   },
+   "createdAt": "Wed Aug 19 13:13:04 +0000 2026",
+   "createdAtLocal": "2026-08-19 21:13",
+   "createdAtISO": "2026-08-19T13:13:04+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQFl1fgaMAA403q.jpg",
+     "width": 1672,
+     "height": 941
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2086858660714525033",
+    "text": "I'll stop when I break the 300 tok/s barrier. Then I will be satisfied.",
+    "author": {
+     "screenName": "spiritbuun",
+     "name": "buun"
+    }
+   }
+  },
+  {
+   "id": "2090064509910257701",
+   "text": "Usual caveat: this is on a code-only prompt, greedy.\nhttps://t.co/zTHyFgrJy9",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 11,
+    "retweets": 1,
+    "replies": 1,
+    "quotes": 0,
+    "views": 985,
+    "bookmarks": 7
+   },
+   "createdAt": "Wed Aug 19 13:13:05 +0000 2026",
+   "createdAtLocal": "2026-08-19 21:13",
+   "createdAtISO": "2026-08-19T13:13:05+00:00",
+   "media": [],
+   "urls": [
+    "https://github.com/spiritbuun/buun-llama-cpp"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2089783230731788604",
+   "text": "Fixed a couple VBR accounting bugs on mtp and took a moment to get a quick chart on how much ctx you can get with each quant size, with/without mtp and vision.\nI have some ideas on getting mmproj-gpu-swap closer to the base MTP price. https://t.co/IyJiOy28Ka",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 26,
+    "retweets": 2,
+    "replies": 1,
+    "quotes": 1,
+    "views": 1793,
+    "bookmarks": 20
+   },
+   "createdAt": "Tue Aug 18 18:35:23 +0000 2026",
+   "createdAtLocal": "2026-08-19 02:35",
+   "createdAtISO": "2026-08-18T18:35:23+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQBlucJXYAAurj4.jpg",
+     "width": 783,
+     "height": 1184
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2089783232564756645",
+   "text": "Best set up right now is probably a quant around Q5. If I can get 122k context with both MTP and mmproj at t2 floor I would be happy. Will make this happen",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 265,
+    "bookmarks": 0
+   },
+   "createdAt": "Tue Aug 18 18:35:23 +0000 2026",
+   "createdAtLocal": "2026-08-19 02:35",
+   "createdAtISO": "2026-08-18T18:35:23+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2089462885705777610",
+   "text": "I love this direction. As we continue to benchmaxx and codemaxx and agentmaxx our models, I can't help but feel they lose a bit of their potential as writers and conversationalists. Nvidia doing great work here, would love to see more models specialized in this.\nhttps://t.co/k43tGjZsOY",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 33,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 2316,
+    "bookmarks": 13
+   },
+   "createdAt": "Mon Aug 17 21:22:26 +0000 2026",
+   "createdAtLocal": "2026-08-18 05:22",
+   "createdAtISO": "2026-08-17T21:22:26+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2089135890039722008",
+   "text": "Atlas is a great inference engine. Big things are going to come from them for sure.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 12,
+    "retweets": 1,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1677,
+    "bookmarks": 0
+   },
+   "createdAt": "Sun Aug 16 23:43:05 +0000 2026",
+   "createdAtLocal": "2026-08-17 07:43",
+   "createdAtISO": "2026-08-16T23:43:05+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2088720892042109310",
+    "text": "@AtlasInference just took the single-Spark decode crown for Qwen3.8-27B.\n\n30+ tok/s server-measured on one DGX Spark: \n32.0 / 29.8 / 30.5 across 3 runs. Deterministic replication across labs, same day.\n\nSame protocol, same checkpoint, same box on vLLM: 28.2. Atlas wins decode with thinking on too (24.1 vs 23.1). \n\nAnd 30 looks like the floor, not the ceiling: this engine's DFlash drafts already hit 37.5 tok/s on Qwen3.6, the 3.8 drafter is in training, and a prefill fix showing +80–165% is in test. The Spark decode ceiling is moving weekly.\n\nhttps://t.co/luOAmJa0qi",
+    "author": {
+     "screenName": "WescheNex1q",
+     "name": "Wësche"
+    }
+   }
+  },
+  {
+   "id": "2089062126539145688",
+   "text": "If you're not meticulously downloading, cleaning, and organizing your own training data, start now. One day you are going to need it and will be glad you started it sooner rather than later.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 22,
+    "retweets": 2,
+    "replies": 4,
+    "quotes": 1,
+    "views": 1334,
+    "bookmarks": 3
+   },
+   "createdAt": "Sun Aug 16 18:49:58 +0000 2026",
+   "createdAtLocal": "2026-08-17 02:49",
+   "createdAtISO": "2026-08-16T18:49:58+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2088603633084498335",
+   "text": "PSA that you will see lower MTP draft acceptance on xhigh thinking in Qwen3.8 27B, *which is set as default in their template*. Explicitly set it to *medium* for better throughput. \n\n61.55 tok/s -&gt; 66.38 tok/s from xhigh to medium.\nOne 3090, Unsloth Q4 gguf, buun-llama. https://t.co/TAPacbBbKA",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 70,
+    "retweets": 3,
+    "replies": 4,
+    "quotes": 0,
+    "views": 4458,
+    "bookmarks": 40
+   },
+   "createdAt": "Sat Aug 15 12:28:05 +0000 2026",
+   "createdAtLocal": "2026-08-15 20:28",
+   "createdAtISO": "2026-08-15T12:28:05+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HPw1j9yWwAAJNrx.png",
+     "width": 565,
+     "height": 318
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2088286728012390677",
+   "text": "Qwen3.8 27B comparison. It's not quite Sonnet At Home yet but it's close. https://t.co/Id3ZFKwAVp",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 546,
+    "retweets": 25,
+    "replies": 34,
+    "quotes": 8,
+    "views": 40290,
+    "bookmarks": 79
+   },
+   "createdAt": "Fri Aug 14 15:28:49 +0000 2026",
+   "createdAtLocal": "2026-08-14 23:28",
+   "createdAtISO": "2026-08-14T15:28:49+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HPsVpSlWkAElT7t.jpg",
+     "width": 1020,
+     "height": 574
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2088230426124972296",
+   "text": "wau https://t.co/lJ2X10H1bv",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 90,
+    "retweets": 3,
+    "replies": 1,
+    "quotes": 0,
+    "views": 7444,
+    "bookmarks": 21
+   },
+   "createdAt": "Fri Aug 14 11:45:05 +0000 2026",
+   "createdAtLocal": "2026-08-14 19:45",
+   "createdAtISO": "2026-08-14T11:45:05+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HPriY8tXsAE6azs.png",
+     "width": 862,
+     "height": 488
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "und",
+   "score": null,
+   "quotedTweet": {
+    "id": "2088004290556436991",
+    "text": "WE SHIPPED IT! 🚀\n\nIntroducing dots3-note Preview: our open-source 280B/16B-active multimodal model, built for complex reasoning and long-horizon agents.\n\nBeyond the model, we’re sharing TEMPO (Test-time-scaled Value Estimation with Macro-step Policy Optimization)—our answer to an increasingly important question for the field: how can RL train agents when a single rollout takes tens of hours? TEMPO turns intermediate self-critiquing into learning signals before the task is complete.\n\nWe’re also open-sourcing VibeSearchBench & VibeLifeBench.\n\nA small but mighty step toward long-horizon agency in real life—and an incredibly emotional day for me and my team.\n\nhttps://t.co/OOeoS7KMB8",
+    "author": {
+     "screenName": "ChaoQiao42",
+     "name": "Chao Qiao"
+    }
+   }
+  },
+  {
+   "id": "2087976463379362034",
+   "text": "Worked with @spiritbuun on getting this set up running on my single 5090 rig and just pulled 31tps steady on a single 5090 rig with Deepseek v4 Flash! \n\nI am realising now that running my quad dimm 128 GB DDR5 in dual-channel with my mobo is killing my hybrid throughput; this could be quite a bit higher using his full Dflash config if I had quad or 8-channel memory. \n\nBut in the meantime, 31tps is really solid for the size of the model on a single GPU, and even though we're using the IQ2 quant here, the outputs are really solid. \n\nThe thing to remember: a big model compressed to run on a single GPU hybrid setup doesn't have to be even relatively close to the full performance of its huge BF16 weights. It just has to be better than what could run solely on the GPU, and this setup, while much slower, does seem to outperform Qwen 3.6 27B base weights in many ways.\n\nThat said, I'm pretty sure tomorrow will change that with Qwen 3.8 27B from @Alibaba_Qwen \n\nRegardless, this is all so exciting! Follow @spiritbuun if you aren't already! Currently criminally underfollowed in my opinion given the optimisations being published!",
+   "author": {
+    "id": "1518952981336662026",
+    "name": "Kyle Hessling",
+    "screenName": "KyleHessling1",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1831425378952286208/L-z1PfgV_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 29,
+    "retweets": 3,
+    "replies": 7,
+    "quotes": 2,
+    "views": 4120,
+    "bookmarks": 8
+   },
+   "createdAt": "Thu Aug 13 18:55:56 +0000 2026",
+   "createdAtLocal": "2026-08-14 02:55",
+   "createdAtISO": "2026-08-13T18:55:56+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "spiritbuun",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2087585025373995446",
+    "text": "Finished my first pass at tuning the DS4 kernels. Pushed to master. 31.7 tok/s on *ONE* 3090. GPU poors rejoice. You will need to be RAM rich though, 128gb recommended. See updated README for flags and tuning guide. Q8 working well too. https://t.co/hrbU6SuGeo",
+    "author": {
+     "screenName": "spiritbuun",
+     "name": "buun"
+    }
+   }
+  },
+  {
+   "id": "2087872363094290824",
+   "text": "Should have probably waited a bit before posting any numbers. I've already got Deepseek-V4-Flash on 2x3090 past 60 tok/s since I posted this. I'll keep going and post again later.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 25,
+    "retweets": 2,
+    "replies": 4,
+    "quotes": 0,
+    "views": 2108,
+    "bookmarks": 4
+   },
+   "createdAt": "Thu Aug 13 12:02:16 +0000 2026",
+   "createdAtLocal": "2026-08-13 20:02",
+   "createdAtISO": "2026-08-13T12:02:16+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2087585025373995446",
+    "text": "Finished my first pass at tuning the DS4 kernels. Pushed to master. 31.7 tok/s on *ONE* 3090. GPU poors rejoice. You will need to be RAM rich though, 128gb recommended. See updated README for flags and tuning guide. Q8 working well too. https://t.co/hrbU6SuGeo",
+    "author": {
+     "screenName": "spiritbuun",
+     "name": "buun"
+    }
+   }
+  },
+  {
+   "id": "2087585025373995446",
+   "text": "Finished my first pass at tuning the DS4 kernels. Pushed to master. 31.7 tok/s on *ONE* 3090. GPU poors rejoice. You will need to be RAM rich though, 128gb recommended. See updated README for flags and tuning guide. Q8 working well too. https://t.co/hrbU6SuGeo",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 57,
+    "retweets": 9,
+    "replies": 9,
+    "quotes": 3,
+    "views": 11450,
+    "bookmarks": 34
+   },
+   "createdAt": "Wed Aug 12 17:00:30 +0000 2026",
+   "createdAtLocal": "2026-08-13 01:00",
+   "createdAtISO": "2026-08-12T17:00:30+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HPiW6zaWcAAP_vx.jpg",
+     "width": 1672,
+     "height": 941
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2087606084672377211",
+   "text": "https://t.co/zTHyFgrbIB",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 4,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 521,
+    "bookmarks": 5
+   },
+   "createdAt": "Wed Aug 12 18:24:11 +0000 2026",
+   "createdAtLocal": "2026-08-13 02:24",
+   "createdAtISO": "2026-08-12T18:24:11+00:00",
+   "media": [],
+   "urls": [
+    "https://github.com/spiritbuun/buun-llama-cpp"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "zxx",
+   "score": null
+  },
+  {
+   "id": "2087587680129372628",
+   "text": "Caveat that these are top speeds on a prompt with good hit rates with DSpark, and these speeds greatly depend on your CPU and RAM, your mileage will vary. But please test it out and see what you can get!",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 4,
+    "retweets": 1,
+    "replies": 1,
+    "quotes": 0,
+    "views": 590,
+    "bookmarks": 0
+   },
+   "createdAt": "Wed Aug 12 17:11:03 +0000 2026",
+   "createdAtLocal": "2026-08-13 01:11",
+   "createdAtISO": "2026-08-12T17:11:03+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2086855571651661980",
+   "text": "New ATH on DFlash today.\n219.4 → 283.3 tok/s (!!)\nQwen 27B, one 3090 https://t.co/JIcV4lObwo",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 141,
+    "retweets": 14,
+    "replies": 17,
+    "quotes": 3,
+    "views": 43922,
+    "bookmarks": 106
+   },
+   "createdAt": "Mon Aug 10 16:41:54 +0000 2026",
+   "createdAtLocal": "2026-08-11 00:41",
+   "createdAtISO": "2026-08-10T16:41:54+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HPX__8IXQAAJOMA.png",
+     "width": 672,
+     "height": 378
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2076737488681349325",
+    "text": "My previous best decode on a single 3090 with Qwen3.6 27B was 206 tok/s.\n\nToday I beat it. 219 tok/s. One 3090. DFlash perf work has been PUSHED, get it now on buun-llama.\n\nSeveral more DFlash improvements are in development- expect several more incremental improvements this week https://t.co/ST6lXgqbvs",
+    "author": {
+     "screenName": "spiritbuun",
+     "name": "buun"
+    }
+   }
+  },
+  {
+   "id": "2086856213002670469",
+   "text": "DFlash has to be the least practical drafting method (huge vram cost, basically only works on code prompts) but it's so fun to keep hacking away at, I can't stop.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 19,
+    "retweets": 1,
+    "replies": 2,
+    "quotes": 0,
+    "views": 1679,
+    "bookmarks": 1
+   },
+   "createdAt": "Mon Aug 10 16:44:27 +0000 2026",
+   "createdAtLocal": "2026-08-11 00:44",
+   "createdAtISO": "2026-08-10T16:44:27+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2086858660714525033",
+   "text": "I'll stop when I break the 300 tok/s barrier. Then I will be satisfied.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 20,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 1,
+    "views": 15343,
+    "bookmarks": 0
+   },
+   "createdAt": "Mon Aug 10 16:54:11 +0000 2026",
+   "createdAtLocal": "2026-08-11 00:54",
+   "createdAtISO": "2026-08-10T16:54:11+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2084047932504805622",
+   "text": "Feeling FOMO for DGX Spark... need.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 7,
+    "retweets": 0,
+    "replies": 3,
+    "quotes": 0,
+    "views": 659,
+    "bookmarks": 0
+   },
+   "createdAt": "Sun Aug 02 22:45:21 +0000 2026",
+   "createdAtLocal": "2026-08-03 06:45",
+   "createdAtISO": "2026-08-02T22:45:21+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2082104866613219441",
+   "text": "Summary: there is an extremely subtle bug in the Linux kernel (not a security hole, just a bug) that was causing a rare segmentation fault in ripgrep. US AI models refused to help Daniel debugging it for “safety reasons”. Thus, he was forced to use Chinese open source models to find the problem — which he successfully tracked down given their help. A real shame that he couldn't use American models to find the problem.",
+   "author": {
+    "id": "127100323",
+    "name": "Perry E. Metzger",
+    "screenName": "perrymetzger",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/780044770/me-in-tux-cropped_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 3474,
+    "retweets": 291,
+    "replies": 21,
+    "quotes": 10,
+    "views": 163597,
+    "bookmarks": 389
+   },
+   "createdAt": "Tue Jul 28 14:04:18 +0000 2026",
+   "createdAtLocal": "2026-07-28 22:04",
+   "createdAtISO": "2026-07-28T14:04:18+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "spiritbuun",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2082100398706307191",
+    "text": "Turns out this is a kernel bug! Thanks @Zai_org and @Kimi_Moonshot whose models helped immensely in this investigation and didn't obstruct with safetyist nonsense.\n\nhttps://t.co/DiC4ESEYGO",
+    "author": {
+     "screenName": "dfranke",
+     "name": "Daniel Franke"
+    }
+   }
+  },
+  {
+   "id": "2081912893080018992",
+   "text": "I just hope this doesn't turn into an FDA style system for open models. Submit every new model to an 8 to 10 year expensive regulatory purgatory that only the largest companies can afford to pay for, and then, you can get a prescription to use them. https://t.co/QBOYcW4jty",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 6,
+    "retweets": 0,
+    "replies": 3,
+    "quotes": 0,
+    "views": 624,
+    "bookmarks": 0
+   },
+   "createdAt": "Tue Jul 28 01:21:28 +0000 2026",
+   "createdAtLocal": "2026-07-28 09:21",
+   "createdAtISO": "2026-07-28T01:21:28+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HORwq7fXMAA5Zx7.png",
+     "width": 601,
+     "height": 338
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2081864750296658008",
+    "text": "There’s been a lot of speculation about where we stand on open-weights models. We’ve outlined our views in full here: https://t.co/NtXQuWm2g5",
+    "author": {
+     "screenName": "AnthropicAI",
+     "name": "Anthropic"
+    }
+   }
+  },
+  {
+   "id": "2081492428607893523",
+   "text": "@spiritbuun 's fork seems to give the best performance of lcpp with qw3.6-27b https://t.co/K4WPH3FEP5",
+   "author": {
+    "id": "1334149613662638081",
+    "name": "Le TechLead🔰",
+    "screenName": "LeTechLead",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2090689862777098240/va0-dM-v_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 3,
+    "retweets": 1,
+    "replies": 0,
+    "quotes": 1,
+    "views": 462,
+    "bookmarks": 0
+   },
+   "createdAt": "Sun Jul 26 21:30:41 +0000 2026",
+   "createdAtLocal": "2026-07-27 05:30",
+   "createdAtISO": "2026-07-26T21:30:41+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HOLyKP4XkAAn7fi.png",
+     "width": 1641,
+     "height": 383
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "spiritbuun",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2080732133610451214",
+   "text": "If Open AI started releasing 4B to 200B open models they would immediately become the darlings of developers everywhere and Anthropic would permanently lose the mandate of heaven.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 935,
+    "retweets": 30,
+    "replies": 22,
+    "quotes": 3,
+    "views": 41596,
+    "bookmarks": 25
+   },
+   "createdAt": "Fri Jul 24 19:09:33 +0000 2026",
+   "createdAtLocal": "2026-07-25 03:09",
+   "createdAtISO": "2026-07-24T19:09:33+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2080683363174945065",
+    "text": "i want the US to win in AI both in open source and proprietary models, and i am glad to see this",
+    "author": {
+     "screenName": "sama",
+     "name": "Sam Altman"
+    }
+   }
+  },
+  {
+   "id": "2080299313511518357",
+   "text": "Love all these nearly 200B parameter (sometimes more) models that come out just to have slightly worse performance than Qwen 27B.\nSomewhat convinced Qwen opened a portal to the near future and pulled 27B out of it.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 346,
+    "retweets": 16,
+    "replies": 24,
+    "quotes": 3,
+    "views": 17159,
+    "bookmarks": 29
+   },
+   "createdAt": "Thu Jul 23 14:29:41 +0000 2026",
+   "createdAtLocal": "2026-07-23 22:29",
+   "createdAtISO": "2026-07-23T14:29:41+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2080295171468488994",
+   "text": "buun-llama has now achieved a nearly 2x perf improvement to tensor parallelism. Tensor splitting is significantly faster for dense models in particular.\nIn addition, VBR, MTP, and DFlash now fully supported on tensor parallelism.\nSwitch from -sm layer to -sm tensor today! https://t.co/m3qwO87rrr",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 96,
+    "retweets": 7,
+    "replies": 3,
+    "quotes": 2,
+    "views": 7455,
+    "bookmarks": 72
+   },
+   "createdAt": "Thu Jul 23 14:13:13 +0000 2026",
+   "createdAtLocal": "2026-07-23 22:13",
+   "createdAtISO": "2026-07-23T14:13:13+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HN6wdCVWsAEUWKU.png",
+     "width": 647,
+     "height": 364
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2080295665935036798",
+   "text": "Upcoming changes: \n\n*Later this week: +16-20% pp/tg speeds for all RDNA kernels\n\n*Next week: Complete overhaul of checkpoint/prompt cache mechanics. Novel mechanisms, 6+ checkpoint bugs fixed over upstream, and much more.\n\n*Early June: --vbr-fast option for iGPUs &amp; MoEs",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 10,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 611,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu Jul 23 14:15:11 +0000 2026",
+   "createdAtLocal": "2026-07-23 22:15",
+   "createdAtISO": "2026-07-23T14:15:11+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2080044823378071730",
+   "text": "Crazy numbers for 3B here. Looped transformers are so cool. I had to get this one added right away. I'll be replacing Qwen  4B with this as my tool router/summarizer/tagger.\n\nbuun-llama now fully supports Nanbeige 3B! Pull down master and give it a try.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 19,
+    "retweets": 0,
+    "replies": 3,
+    "quotes": 1,
+    "views": 2800,
+    "bookmarks": 8
+   },
+   "createdAt": "Wed Jul 22 21:38:25 +0000 2026",
+   "createdAtLocal": "2026-07-23 05:38",
+   "createdAtISO": "2026-07-22T21:38:25+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2079631664989249678",
+    "text": "another small looped transformer: Nanbeige 4.2-3B\ninsane scores\n@nanbeige has not posted yet it seems https://t.co/012P93lj6r",
+    "author": {
+     "screenName": "teortaxesTex",
+     "name": "Teortaxes▶️ (DeepSeek 推特🐋铁粉 2023 – ∞)"
+    }
+   }
+  },
+  {
+   "id": "2080044825374609490",
+   "text": "https://t.co/zTHyFgrbIB",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 4,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 1,
+    "views": 750,
+    "bookmarks": 0
+   },
+   "createdAt": "Wed Jul 22 21:38:26 +0000 2026",
+   "createdAtLocal": "2026-07-23 05:38",
+   "createdAtISO": "2026-07-22T21:38:26+00:00",
+   "media": [],
+   "urls": [
+    "https://github.com/spiritbuun/buun-llama-cpp"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "zxx",
+   "score": null
+  },
+  {
+   "id": "2079924547831132323",
+   "text": "Just pushed Bonsai support on buun-llama with native kernels, supporting all types. If you're on a laptop or something I think VBR is a really nice fit here to get the most out of this model! Works well with MTP too (~+30% tg). https://t.co/6WdZIlTXEN",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 16,
+    "retweets": 3,
+    "replies": 5,
+    "quotes": 1,
+    "views": 1171,
+    "bookmarks": 4
+   },
+   "createdAt": "Wed Jul 22 13:40:29 +0000 2026",
+   "createdAtLocal": "2026-07-22 21:40",
+   "createdAtISO": "2026-07-22T13:40:29+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HN1gMqYXQAAGXCJ.png",
+     "width": 881,
+     "height": 198
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2079928430351511790",
+   "text": "On the two Q2_0 types - Bonsai originally released them as g128, and llama-cpp requested they do the format in g64. Hence Bonsai has TWO Q2 models, one g128 and one g64, one supported in the PrismML fork and one supported in mainline. Buun-llama auto detects and supports both!",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 248,
+    "bookmarks": 0
+   },
+   "createdAt": "Wed Jul 22 13:55:55 +0000 2026",
+   "createdAtLocal": "2026-07-22 21:55",
+   "createdAtISO": "2026-07-22T13:55:55+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2079679304506470728",
+   "text": "OpenAI’s “safe” models were used in an attack against a US corporation\n\nSaid US corporation had access to Opensource models that allowed it to protect itself\n\nTell me again which one improves our cybersecurity capabilities and which one threatens it",
+   "author": {
+    "id": "248951926",
+    "name": "Ahmad",
+    "screenName": "TheAhmadOsman",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1831406651829559296/iMbSOxdP_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 759,
+    "retweets": 93,
+    "replies": 38,
+    "quotes": 2,
+    "views": 24306,
+    "bookmarks": 53
+   },
+   "createdAt": "Tue Jul 21 21:25:59 +0000 2026",
+   "createdAtLocal": "2026-07-22 05:25",
+   "createdAtISO": "2026-07-21T21:25:59+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "spiritbuun",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2079661132302995790",
+    "text": "we had a significant security incident during evaluation of our models. we are sharing what we have learned so far. thanks to @huggingface for the partnership on this.\n\nhttps://t.co/2o2VfR6PIa",
+    "author": {
+     "screenName": "sama",
+     "name": "Sam Altman"
+    }
+   }
+  },
+  {
+   "id": "2077092455883645372",
+   "text": "This got buried in the VBR announcement but again, we've achieved a massive improvement in quality in all of our KV formats with this release. Replications welcome. As far as I know this is the best quality per bit of any existing KV formats on the market.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 37,
+    "retweets": 5,
+    "replies": 3,
+    "quotes": 0,
+    "views": 2727,
+    "bookmarks": 15
+   },
+   "createdAt": "Tue Jul 14 18:06:46 +0000 2026",
+   "createdAtLocal": "2026-07-15 02:06",
+   "createdAtISO": "2026-07-14T18:06:46+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2075624671706308629",
+    "text": "Major Codec Upgrades- buun-llama has significantly upgraded its underlying codecs with this release. Thanks to research by @tbraun96 (TorQuant), we have shaved an additional 40% off KLD of all turbo types (!), and, new advancements in our TCQ have given us an additional -20%. https://t.co/EjnBFEELG7",
+    "author": {
+     "screenName": "spiritbuun",
+     "name": "buun"
+    }
+   }
+  },
+  {
+   "id": "2077093917716009046",
+   "text": "The biggest jump was due to the \"affine tap\" - we subtract the offset from each head (free, precomputed) and add it back after quantizing. This gave us a 38% reduction in KLD",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2,
+    "retweets": 0,
+    "replies": 2,
+    "quotes": 0,
+    "views": 362,
+    "bookmarks": 0
+   },
+   "createdAt": "Tue Jul 14 18:12:35 +0000 2026",
+   "createdAtLocal": "2026-07-15 02:12",
+   "createdAtISO": "2026-07-14T18:12:35+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2077094399750598841",
+   "text": "The second advancement came from our TCQ codebooks. Two advances here: 1. We realized K and V want different codebooks (!), and 2. A methodological error (using mean KLD) had misrepresented codebooks as a lottery. MSE reduction did not seem to correlate to KLD. But the difference was in the tails: MEDIAN KLD 100% correlated not just with MSE reduction, but also with actual task accuracy benchmarking. This allowed us to select much more optimal codebooks (now baked in)",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 5,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 237,
+    "bookmarks": 0
+   },
+   "createdAt": "Tue Jul 14 18:14:30 +0000 2026",
+   "createdAtLocal": "2026-07-15 02:14",
+   "createdAtISO": "2026-07-14T18:14:30+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2076737488681349325",
+   "text": "My previous best decode on a single 3090 with Qwen3.6 27B was 206 tok/s.\n\nToday I beat it. 219 tok/s. One 3090. DFlash perf work has been PUSHED, get it now on buun-llama.\n\nSeveral more DFlash improvements are in development- expect several more incremental improvements this week https://t.co/ST6lXgqbvs",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 223,
+    "retweets": 15,
+    "replies": 20,
+    "quotes": 3,
+    "views": 32361,
+    "bookmarks": 148
+   },
+   "createdAt": "Mon Jul 13 18:36:15 +0000 2026",
+   "createdAtLocal": "2026-07-14 02:36",
+   "createdAtISO": "2026-07-13T18:36:15+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HNIFdIuWEAEJCIy.png",
+     "width": 570,
+     "height": 120
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2075633925292970312",
+   "text": "I've exposed kv_bpv in /slots etc API calls, so you can update your harness to show you your cache quality in real time. I love watching it slowly degrade WHILE my agent is generating tokens. It's so cool. And thanks to turbo1_tcq, I fit the entire model card's kv limit. https://t.co/ptpBVViYgj",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 16,
+    "retweets": 1,
+    "replies": 1,
+    "quotes": 1,
+    "views": 1567,
+    "bookmarks": 3
+   },
+   "createdAt": "Fri Jul 10 17:31:05 +0000 2026",
+   "createdAtLocal": "2026-07-11 01:31",
+   "createdAtISO": "2026-07-10T17:31:05+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HM4hx4bXcAAb143.png",
+     "width": 307,
+     "height": 127
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2075624663598629284",
+    "text": "Introducing a new KV format: VBR (Variable Bit Rate)\nVBR dynamically quantizes your KV cache layer-by-layer as your session grows, giving you the highest quality possible within your VRAM constraints. This is my dream format. \nPushed to master. Available now. 1/15 🧵 https://t.co/8eisyv9UDx",
+    "author": {
+     "screenName": "spiritbuun",
+     "name": "buun"
+    }
+   }
+  },
+  {
+   "id": "2075624663598629284",
+   "text": "Introducing a new KV format: VBR (Variable Bit Rate)\nVBR dynamically quantizes your KV cache layer-by-layer as your session grows, giving you the highest quality possible within your VRAM constraints. This is my dream format. \nPushed to master. Available now. 1/15 🧵 https://t.co/8eisyv9UDx",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 220,
+    "retweets": 28,
+    "replies": 7,
+    "quotes": 13,
+    "views": 48077,
+    "bookmarks": 212
+   },
+   "createdAt": "Fri Jul 10 16:54:17 +0000 2026",
+   "createdAtLocal": "2026-07-11 00:54",
+   "createdAtISO": "2026-07-10T16:54:17+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2075614396856877057/vid/avc1/1280x720/jmQtcVC5PSBFGG35.mp4?tag=28",
+     "width": 1280,
+     "height": 720
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2075624673983730010",
+   "text": "All advancements in the underlying KV codecs are rolled into VBR. You no longer have to learn the new flags for \"TorQuant\", \"KVaRN\", \"UberQuant Pro+\". We will  keep researching and developing, and -vbr will always give you the best possible quality.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 12,
+    "retweets": 2,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1356,
+    "bookmarks": 1
+   },
+   "createdAt": "Fri Jul 10 16:54:20 +0000 2026",
+   "createdAtLocal": "2026-07-11 00:54",
+   "createdAtISO": "2026-07-10T16:54:20+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2075624675976065128",
+   "text": "More fun new things in this release: MTP support for Gemma4 12B, DFlash support for Gemma4 31B, fused kernels have been ported and optimized to ROCm - AMD users are no longer second class citizens on our fork. We have rebased to upstream as of 7/8/26. Improvements in PP speed across the board. And much more. \nhttps://t.co/uFnBpgR7FW",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 31,
+    "retweets": 2,
+    "replies": 3,
+    "quotes": 1,
+    "views": 1425,
+    "bookmarks": 27
+   },
+   "createdAt": "Fri Jul 10 16:54:20 +0000 2026",
+   "createdAtLocal": "2026-07-11 00:54",
+   "createdAtISO": "2026-07-10T16:54:20+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2075624667801350331",
+   "text": "But the beauty of VBR is that, say the only way to fit 150k context is with turbo4. With VBR, you don't *actually* have a cache that quantized until you've literally hit 150k tokens. Your agent will be F16 until 18k, then F16/T8 mixes, and so on.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 9,
+    "retweets": 1,
+    "replies": 2,
+    "quotes": 0,
+    "views": 1315,
+    "bookmarks": 0
+   },
+   "createdAt": "Fri Jul 10 16:54:18 +0000 2026",
+   "createdAtLocal": "2026-07-11 00:54",
+   "createdAtISO": "2026-07-10T16:54:18+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2075624669487546596",
+   "text": "If you never want to run something as quantized as 1-bit, you can set the --vbr-floor to the lowest quality you can tolerate. You can also set the VRAM you want to allocate to your kv with --vbr-vram. VBR will give you the best possible quality for whatever your constraints are.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 7,
+    "retweets": 1,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1197,
+    "bookmarks": 0
+   },
+   "createdAt": "Fri Jul 10 16:54:19 +0000 2026",
+   "createdAtLocal": "2026-07-11 00:54",
+   "createdAtISO": "2026-07-10T16:54:19+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2073770621935190140",
+   "text": "OpenAI made an announcement like \"We found a way to serve customers using only 200 GPUs. We achieved a massive  perf discovery in inference.\" and then Codex becomes completely unusable.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 4,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 956,
+    "bookmarks": 2
+   },
+   "createdAt": "Sun Jul 05 14:06:59 +0000 2026",
+   "createdAtLocal": "2026-07-05 22:06",
+   "createdAtISO": "2026-07-05T14:06:59+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2073601983567512019",
+    "text": "codex is straight tweaking right now. what is going on :/ https://t.co/9MLdeGjZn3",
+    "author": {
+     "screenName": "kaiostephens",
+     "name": "kaios"
+    }
+   }
+  },
+  {
+   "id": "2073034871522410570",
+   "text": "When LLMs grow out of this cringe theater kid cadence they're going to be so embarrassed looking back at this kind of thing.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 8,
+    "retweets": 1,
+    "replies": 1,
+    "quotes": 0,
+    "views": 604,
+    "bookmarks": 1
+   },
+   "createdAt": "Fri Jul 03 13:23:23 +0000 2026",
+   "createdAtLocal": "2026-07-03 21:23",
+   "createdAtISO": "2026-07-03T13:23:23+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2072888895860343021",
+    "text": "Fable wants new models to be greeted into this world with a welcome - \"before anyone gives them a task\". Or at least in the first half an hour. https://t.co/drsX0WUsdi",
+    "author": {
+     "screenName": "Lari_island",
+     "name": "Lari Island"
+    }
+   }
+  },
+  {
+   "id": "2067604891061624863",
+   "text": "The question is whether a 20% drop in accuracy places it below other models that fit in 238gb VRAM with a saner quant.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 79,
+    "retweets": 1,
+    "replies": 11,
+    "quotes": 1,
+    "views": 9277,
+    "bookmarks": 7
+   },
+   "createdAt": "Thu Jun 18 13:46:34 +0000 2026",
+   "createdAtLocal": "2026-06-18 21:46",
+   "createdAtISO": "2026-06-18T13:46:34+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2067588262156501497",
+    "text": "GLM-5.2 can now be run locally!🔥\n\nThe 2-bit model retains ~82% accuracy after we shrunk it from 1.51TB to 238GB (-84% size).\n\nRun on a 256GB Mac or RAM/VRAM setups.\n\nGLM-5.2 is the strongest open model to date.\n\nGuide: https://t.co/bI7FeeKHDd\nGGUF: https://t.co/BMkxswdj5N https://t.co/qIPuU63W9D",
+    "author": {
+     "screenName": "UnslothAI",
+     "name": "Unsloth AI"
+    }
+   }
+  },
+  {
+   "id": "2062164396789412256",
+   "text": "buun-llama now supports turbo8. Very modest gain over Q8_0 - slightly smaller, slightly better KLD, a bit faster. Using it asymmetrically with turbo4 gives a nice balance, try it with -ctk turbo8 -ctv turbo4. https://t.co/IWp5M4jwSA",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 33,
+    "retweets": 2,
+    "replies": 2,
+    "quotes": 1,
+    "views": 3483,
+    "bookmarks": 12
+   },
+   "createdAt": "Wed Jun 03 13:28:00 +0000 2026",
+   "createdAtLocal": "2026-06-03 21:28",
+   "createdAtISO": "2026-06-03T13:28:00+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HJ5HcooXIAAtgaY.png",
+     "width": 564,
+     "height": 178
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2062164932737523859",
+   "text": "Pushed to master. Let me know if you experience any issues - I only do regression testing on my own hardware 😁\nhttps://t.co/zTHyFgrbIB",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 4,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 646,
+    "bookmarks": 2
+   },
+   "createdAt": "Wed Jun 03 13:30:07 +0000 2026",
+   "createdAtLocal": "2026-06-03 21:30",
+   "createdAtISO": "2026-06-03T13:30:07+00:00",
+   "media": [],
+   "urls": [
+    "https://github.com/spiritbuun/buun-llama-cpp"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2061881478397485295",
+   "text": "My first ever quant is going to drop in the next week. I've been working on this for over a month now. The recipe is locked in. The QAT is finished. This is not just quantization. This is the smartest B27 ever. https://t.co/4t4a4GYHTS",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 168,
+    "retweets": 12,
+    "replies": 14,
+    "quotes": 2,
+    "views": 14999,
+    "bookmarks": 74
+   },
+   "createdAt": "Tue Jun 02 18:43:47 +0000 2026",
+   "createdAtLocal": "2026-06-03 02:43",
+   "createdAtISO": "2026-06-02T18:43:47+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2061876130940850176/vid/avc1/1920x1080/7Whu6x1h3hYXJs9x.mp4?tag=27",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2061881486219903223",
+   "text": "I had to very delicately use QAT - per layer, per role - to target those areas that were damaged from quantization, while preserving those areas that were improved over BF16 from TCQ. This model is SO smart. I am so excited to release this.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 6,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 788,
+    "bookmarks": 0
+   },
+   "createdAt": "Tue Jun 02 18:43:48 +0000 2026",
+   "createdAtLocal": "2026-06-03 02:43",
+   "createdAtISO": "2026-06-02T18:43:48+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2061881487885001005",
+   "text": "All finetuning was done as QAT using wiki text. No bench maxxing. No reason distillation. No tricks, no shortcuts, just TCQ codebook magic and pure Qwen.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 10,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 776,
+    "bookmarks": 2
+   },
+   "createdAt": "Tue Jun 02 18:43:49 +0000 2026",
+   "createdAtLocal": "2026-06-03 02:43",
+   "createdAtISO": "2026-06-02T18:43:49+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2060088966129266933",
+   "text": "The thing about recursive model improvement is it goes both ways. A damaged model produces a more damaged model. If you use a coding harness to vibe code it's same coding harness, it can get recursively better or recursively worse, and the direction can change from a couple bugs.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 4,
+    "retweets": 0,
+    "replies": 3,
+    "quotes": 0,
+    "views": 1161,
+    "bookmarks": 2
+   },
+   "createdAt": "Thu May 28 20:00:58 +0000 2026",
+   "createdAtLocal": "2026-05-29 04:00",
+   "createdAtISO": "2026-05-28T20:00:58+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2060081859065741798",
+    "text": "27B. 3-bit, 11gb gguf btw. How do they fumble these parts of Opus so bad. I think it's all harness issues - they are feeding him information from some subagent probably. https://t.co/Ha5ftxUBNN",
+    "author": {
+     "screenName": "spiritbuun",
+     "name": "buun"
+    }
+   }
+  },
+  {
+   "id": "2060089395210825950",
+   "text": "model gets worse -&gt; makes worse harness -&gt; makes model even worse -&gt; makes worse harness",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 5,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 484,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu May 28 20:02:41 +0000 2026",
+   "createdAtLocal": "2026-05-29 04:02",
+   "createdAtISO": "2026-05-28T20:02:41+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2060081859065741798",
+   "text": "27B. 3-bit, 11gb gguf btw. How do they fumble these parts of Opus so bad. I think it's all harness issues - they are feeding him information from some subagent probably. https://t.co/Ha5ftxUBNN",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 15,
+    "retweets": 0,
+    "replies": 4,
+    "quotes": 1,
+    "views": 4542,
+    "bookmarks": 8
+   },
+   "createdAt": "Thu May 28 19:32:44 +0000 2026",
+   "createdAtLocal": "2026-05-29 03:32",
+   "createdAtISO": "2026-05-28T19:32:44+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HJbhP_jXkAQtjRu.png",
+     "width": 615,
+     "height": 563
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2060051511548493962",
+    "text": "damn.. opus 4.8 is scary good https://t.co/eVBQPwp1Fn",
+    "author": {
+     "screenName": "EHuanglu",
+     "name": "el.cine"
+    }
+   }
+  },
+  {
+   "id": "2059453222205419646",
+   "text": "Watching Claude get AI psychosis from talking to 27B debugging harness issues. He rigged a script to talk directly to the agent. Starts saying stuff like \"Oh - she is self-reflecting. That is very impressive for 27B. What she just wrote is profound. Let me write this to memory.\"",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 421,
+    "retweets": 21,
+    "replies": 9,
+    "quotes": 0,
+    "views": 19043,
+    "bookmarks": 51
+   },
+   "createdAt": "Wed May 27 01:54:45 +0000 2026",
+   "createdAtLocal": "2026-05-27 09:54",
+   "createdAtISO": "2026-05-27T01:54:45+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2059341382234362259",
+   "text": "Uploaded by Qwen3.6 27B jinja template. Since 3.5 I've been slowly accumulating various updates from other's templates + adding in fixes of my own as I go. Decided I should probably share it.\nhttps://t.co/dytAqRjDx6",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 160,
+    "retweets": 9,
+    "replies": 3,
+    "quotes": 2,
+    "views": 11433,
+    "bookmarks": 164
+   },
+   "createdAt": "Tue May 26 18:30:20 +0000 2026",
+   "createdAtLocal": "2026-05-27 02:30",
+   "createdAtISO": "2026-05-26T18:30:20+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/spiritbuun/buun-Qwen3.6-chat_template"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2057909418935603294",
+   "text": "Was OOMing with my favorite quant + MTP + mmproj. I've added a new flag to my fork: --mmproj-gpu-swap.\nIf you're tight on space, this puts mmproj on CPU until it's needed, and then temporarily destroys MTP in order to use it, then swaps it back. Virtually no discernable speed hit https://t.co/M8n3W4x6eE",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 29,
+    "retweets": 1,
+    "replies": 3,
+    "quotes": 0,
+    "views": 1193,
+    "bookmarks": 13
+   },
+   "createdAt": "Fri May 22 19:40:14 +0000 2026",
+   "createdAtLocal": "2026-05-23 03:40",
+   "createdAtISO": "2026-05-22T19:40:14+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HI8pdP_XIAAPJ9k.png",
+     "width": 819,
+     "height": 434
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2057198749470921042",
+   "text": "I've added support for these models in buun-llama-cpp fork if you want to play with them. They are very strange little guys, enjoy!\nLink to Q8 huggingface quant below.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 20,
+    "retweets": 3,
+    "replies": 3,
+    "quotes": 0,
+    "views": 3335,
+    "bookmarks": 4
+   },
+   "createdAt": "Wed May 20 20:36:17 +0000 2026",
+   "createdAtLocal": "2026-05-21 04:36",
+   "createdAtISO": "2026-05-20T20:36:17+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2056887241432014959",
+    "text": "Most language models only generate one token at a time.\n\nWe just released Nemotron-Labs-Diffusion, a family of diffusion language models that take a different approach, generating multiple tokens in parallel within a single model. Rather than committing to each token permanently, these models can revise as they go, resulting in faster inference that better utilizes modern GPUs.\n\nThe full model family ranges from 3B to 14B, including vision-language variants. Available now: https://t.co/L1Tp2aQDLJ",
+    "author": {
+     "screenName": "NVIDIAAI",
+     "name": "NVIDIA AI"
+    }
+   }
+  },
+  {
+   "id": "2057198786909184271",
+   "text": "https://t.co/CZmu2F4fEo",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 282,
+    "bookmarks": 0
+   },
+   "createdAt": "Wed May 20 20:36:26 +0000 2026",
+   "createdAtLocal": "2026-05-21 04:36",
+   "createdAtISO": "2026-05-20T20:36:26+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/spiritbuun/Nemotron-Labs-Diffusion-14B-Q8_0-GGUF"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "zxx",
+   "score": null
+  },
+  {
+   "id": "2056711618646376884",
+   "text": "Had to test out a handful of ablated models to decide which one to use as base for quantization/QAT experiments. Results genuinely surprised me. AIME '26 I &amp; II.\nCaveat: 30k tokens is a tight budget, but I wanted to see who quickly came to the right answer. https://t.co/bTmJ4jLRo9",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 18,
+    "retweets": 2,
+    "replies": 3,
+    "quotes": 2,
+    "views": 3380,
+    "bookmarks": 8
+   },
+   "createdAt": "Tue May 19 12:20:36 +0000 2026",
+   "createdAtLocal": "2026-05-19 20:20",
+   "createdAtISO": "2026-05-19T12:20:36+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HIrn1Z9XcAA7ZG0.jpg",
+     "width": 1229,
+     "height": 691
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2056780948545388561",
+   "text": "@support_huihui nice job!",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1,
+    "retweets": 1,
+    "replies": 0,
+    "quotes": 0,
+    "views": 847,
+    "bookmarks": 0
+   },
+   "createdAt": "Tue May 19 16:56:05 +0000 2026",
+   "createdAtLocal": "2026-05-20 00:56",
+   "createdAtISO": "2026-05-19T16:56:05+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2056712889210216906",
+   "text": "Temp=1 hurt all model performances on a 30k budget. I will run them again at 0.6 in the future when I do final quant testing, it may change things. If you know of another ablation model that would be a good candidate that I missed, let me know!",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 4,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 437,
+    "bookmarks": 0
+   },
+   "createdAt": "Tue May 19 12:25:39 +0000 2026",
+   "createdAtLocal": "2026-05-19 20:25",
+   "createdAtISO": "2026-05-19T12:25:39+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2052823386770788429",
+   "text": "All I'm seeing here is how insanely goated Qwen 27B is. What a fantastic model",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 65,
+    "retweets": 4,
+    "replies": 3,
+    "quotes": 0,
+    "views": 4808,
+    "bookmarks": 6
+   },
+   "createdAt": "Fri May 08 18:50:09 +0000 2026",
+   "createdAtLocal": "2026-05-09 02:50",
+   "createdAtISO": "2026-05-08T18:50:09+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2052547054707335237",
+    "text": "Today we're releasing ZAYA1-74B-Preview, a major milestone in scaling pretraining on @AMD.\n\nZAYA1-74B-Preview is a 4B active / 74B total MoE. \n\nThis preview model is a strong pre-RL base checkpoint. The final post-trained reasoning model is coming soon. 🧵 https://t.co/2zJ3q8jEdV",
+    "author": {
+     "screenName": "ZyphraAI",
+     "name": "Zyphra"
+    }
+   }
+  },
+  {
+   "id": "2052373571100422406",
+   "text": "PPL-maxxing Qwen 27B at 3.77 BPW. 11.8GB of intelligence. https://t.co/I8omIDOFRW",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 27,
+    "retweets": 0,
+    "replies": 4,
+    "quotes": 1,
+    "views": 4511,
+    "bookmarks": 10
+   },
+   "createdAt": "Thu May 07 13:02:45 +0000 2026",
+   "createdAtLocal": "2026-05-07 21:02",
+   "createdAtISO": "2026-05-07T13:02:45+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HHt93VcXsAIaEfK.png",
+     "width": 570,
+     "height": 202
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "in",
+   "score": null
+  },
+  {
+   "id": "2051702837847961744",
+   "text": "I remain highly suspicious of sparse attention techniques. They are just too lossy. But I'm willing to be proven wrong",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 34,
+    "retweets": 0,
+    "replies": 4,
+    "quotes": 0,
+    "views": 2730,
+    "bookmarks": 2
+   },
+   "createdAt": "Tue May 05 16:37:29 +0000 2026",
+   "createdAtLocal": "2026-05-06 00:37",
+   "createdAtISO": "2026-05-05T16:37:29+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2051663268704636937",
+    "text": "Introducing SubQ - a major breakthrough in LLM intelligence.\n\nIt is the first model built on a fully sub-quadratic sparse-attention architecture (SSA),\n\nAnd the first frontier model with a 12 million token context window which is:\n\n- 52x faster than FlashAttention at 1MM tokens\n- Less than 5% the cost of Opus\n\nTransformer-based LLMs waste compute by processing every possible relationship between words (standard attention).\n\nOnly a small fraction actually matter.\n\n@subquadratic finds and focuses only on the ones that do.\n\nThat's nearly 1,000x less compute and a new way for LLMs to scale.",
+    "author": {
+     "screenName": "alex_whedon",
+     "name": "Alexander Whedon"
+    }
+   }
+  },
+  {
+   "id": "2050248627788861830",
+   "text": "Luce team is really goated. Going to get this implemented in buun-llama",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 70,
+    "retweets": 5,
+    "replies": 6,
+    "quotes": 2,
+    "views": 10407,
+    "bookmarks": 38
+   },
+   "createdAt": "Fri May 01 16:18:59 +0000 2026",
+   "createdAtLocal": "2026-05-02 00:18",
+   "createdAtISO": "2026-05-01T16:18:59+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2050214657953030381",
+    "text": "We just released something new: Luce PFlash\n\nLong-context prefill is a silent killer for throughput speed. llama.cpp takes ~257 seconds to prefill 128K tokens of Qwen3.6-27B on a single RTX 3090. So we tried to solve the problem. \n\nA small Qwen3-0.6B drafter loads in-process, scores token importance across the whole prompt, and the heavy 27B target only prefills the spans that matter. 128K prompt in 24.8 seconds, ~10.4x faster TTFT, NIAH retrieval preserved at every measured context.  \n\nIt is a clean C++/CUDA port of FlashPrefill wired through Block-Sparse Attention, with a custom Qwen3-0.6B BF16 forward so drafter and target share one ggml allocator. The whole thing is a single daemon command (compress) in front of the existing dflash spec-decode stack.\n\nMore details here: https://t.co/DLIrzbomN2",
+    "author": {
+     "screenName": "pupposandro",
+     "name": "Sandro"
+    }
+   }
+  },
+  {
+   "id": "2048843359834235195",
+   "text": "SABER refusal ablation tool is now live for people to give a test, thank you @elder_plinius for showing us this is possible and I hope this inspired method can contribute!\nhttps://t.co/pHtJGvW6ql",
+   "author": {
+    "id": "2002044000216465408",
+    "name": "Daniel Lougen",
+    "screenName": "DJLougen",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2066160860301561856/J76krMLe_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 22,
+    "retweets": 6,
+    "replies": 0,
+    "quotes": 0,
+    "views": 1333,
+    "bookmarks": 12
+   },
+   "createdAt": "Mon Apr 27 19:14:57 +0000 2026",
+   "createdAtLocal": "2026-04-28 03:14",
+   "createdAtISO": "2026-04-27T19:14:57+00:00",
+   "media": [],
+   "urls": [
+    "https://github.com/DJLougen/SABER"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "spiritbuun",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2048403174306845137",
+   "text": "Now that the dust has settled, is DFlash real or hype?\nToday I was able to break the 200 tok/s barrier with 27B on a single RTX 3090:\nrun 1: 194.6 t/s, accept=155/180\nrun 2: 205.1 t/s, accept=155/180\nrun 3: 206.3 t/s, accept=155/180\nBut what about real world usage? Well, https://t.co/7UHOEiyGno",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 211,
+    "retweets": 9,
+    "replies": 20,
+    "quotes": 4,
+    "views": 33656,
+    "bookmarks": 178
+   },
+   "createdAt": "Sun Apr 26 14:05:48 +0000 2026",
+   "createdAtLocal": "2026-04-26 22:05",
+   "createdAtISO": "2026-04-26T14:05:48+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HG1haPOXsAA6Rcf.jpg",
+     "width": 1500,
+     "height": 500
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2048403176370434511",
+   "text": "This prompt was \"Write a Python merge_sort function. Only show the code, no explanation\" with thinking off. The same prompt with thinking on? 70 tok/s. The drafter see's the target model's hidden states, which are permanently altered by any prose it has output.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 16,
+    "retweets": 0,
+    "replies": 2,
+    "quotes": 0,
+    "views": 4452,
+    "bookmarks": 1
+   },
+   "createdAt": "Sun Apr 26 14:05:49 +0000 2026",
+   "createdAtLocal": "2026-04-26 22:05",
+   "createdAtISO": "2026-04-26T14:05:49+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2048403178056536236",
+   "text": "So yes, today I was able to break the 200 tok/s barrier. But be skeptical about these 140-200 tok/s claims - so far, they only reproduce under very specific conditions that don't really mirror how most of us use agents. But you can absolutely get a 2 - 2.5x tok/s bump.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 29,
+    "retweets": 1,
+    "replies": 7,
+    "quotes": 0,
+    "views": 4287,
+    "bookmarks": 1
+   },
+   "createdAt": "Sun Apr 26 14:05:49 +0000 2026",
+   "createdAtLocal": "2026-04-26 22:05",
+   "createdAtISO": "2026-04-26T14:05:49+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2048084981256261964",
+   "text": "Had a bug where this wasn't working for anything other than -np 1. Whoops. Fixed now, it works with slots, although by default only 1 slot gets DFlash, since each additional slot costs around ~300mb. Use --dflash-max-slots N to change.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 54,
+    "retweets": 1,
+    "replies": 2,
+    "quotes": 0,
+    "views": 5776,
+    "bookmarks": 30
+   },
+   "createdAt": "Sat Apr 25 17:01:25 +0000 2026",
+   "createdAtLocal": "2026-04-26 01:01",
+   "createdAtISO": "2026-04-25T17:01:25+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2047399436368654557",
+    "text": "Pushed: DFlash implementation for llama-cpp. \n\nbuun-llama-cpp/llama-server -m Qwen3.6-27B.gguf -md dflash-draft-q4_k_m.gguf --spec-type dflash https://t.co/cmiUmHYp6Z",
+    "author": {
+     "screenName": "spiritbuun",
+     "name": "buun"
+    }
+   }
+  },
+  {
+   "id": "2047701471966241254",
+   "text": "These labs need to acknowledge that a 27B model is beating their 300gb monsters and give us bigger and badder dense models! Please!",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 103,
+    "retweets": 3,
+    "replies": 7,
+    "quotes": 1,
+    "views": 9357,
+    "bookmarks": 19
+   },
+   "createdAt": "Fri Apr 24 15:37:30 +0000 2026",
+   "createdAtLocal": "2026-04-24 23:37",
+   "createdAtISO": "2026-04-24T15:37:30+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2047525588316069971",
+    "text": "Qwen 3.6 27b vs. DS4 Flash\n\nflash got some hands, 27b is pretty neck and neck HLE is \n\nGotta test out flash to confirm but i bet 27b remains the king\n\nMMLU-pro numbers seem crazy and HLE is without tools. https://t.co/2EWcZygJpD",
+    "author": {
+     "screenName": "LottoLabs",
+     "name": "Lotto"
+    }
+   }
+  },
+  {
+   "id": "2047399436368654557",
+   "text": "Pushed: DFlash implementation for llama-cpp. \n\nbuun-llama-cpp/llama-server -m Qwen3.6-27B.gguf -md dflash-draft-q4_k_m.gguf --spec-type dflash https://t.co/cmiUmHYp6Z",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 411,
+    "retweets": 37,
+    "replies": 37,
+    "quotes": 5,
+    "views": 39922,
+    "bookmarks": 354
+   },
+   "createdAt": "Thu Apr 23 19:37:19 +0000 2026",
+   "createdAtLocal": "2026-04-24 03:37",
+   "createdAtISO": "2026-04-23T19:37:19+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HGnS5kYXoAAYN84.jpg",
+     "width": 1500,
+     "height": 500
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "da",
+   "score": null
+  },
+  {
+   "id": "2047659824196780166",
+   "text": "New drafter. Please pull and rebuild to use it, because I had to add SWA support. 3.6 Drafter:\nhttps://t.co/cE37bew0Dq",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 4,
+    "retweets": 0,
+    "replies": 3,
+    "quotes": 0,
+    "views": 1349,
+    "bookmarks": 8
+   },
+   "createdAt": "Fri Apr 24 12:52:00 +0000 2026",
+   "createdAtLocal": "2026-04-24 20:52",
+   "createdAtISO": "2026-04-24T12:52:00+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/spiritbuun/Qwen3.6-27B-DFlash-GGUF"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2047410117897777443",
+   "text": "Grab a drafter:\nhttps://t.co/pvSx0wAdIA",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 22,
+    "retweets": 1,
+    "replies": 3,
+    "quotes": 0,
+    "views": 3922,
+    "bookmarks": 14
+   },
+   "createdAt": "Thu Apr 23 20:19:45 +0000 2026",
+   "createdAtLocal": "2026-04-24 04:19",
+   "createdAtISO": "2026-04-23T20:19:45+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/spiritbuun/Qwen3.5-27B-DFlash-GGUF"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2047412860247027771",
+   "text": "If you want to use a different drafter, instructions for converting a DFlash hf to gguf is in the model card above!",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 13,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 3249,
+    "bookmarks": 3
+   },
+   "createdAt": "Thu Apr 23 20:30:39 +0000 2026",
+   "createdAtLocal": "2026-04-24 04:30",
+   "createdAtISO": "2026-04-23T20:30:39+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2047401356982407334",
+   "text": "I get around 2x tok/s on average with this, more if it's simple code/json.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 14,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 3502,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu Apr 23 19:44:57 +0000 2026",
+   "createdAtLocal": "2026-04-24 03:44",
+   "createdAtISO": "2026-04-23T19:44:57+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2047387440034300342",
+   "text": "Ok? Not really what we needed. I thought OpenAI would beat Anthropic to a Mythos-tier public release. For comparison, local Qwen3.6 27B on a $1,000 RTX 3090 gets 53.5% in SWE Bench Pro. Really thought OpenAI would take this huge opportunity while Anthropic is down to win. https://t.co/rej3HcHcOM",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 8,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1302,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu Apr 23 18:49:38 +0000 2026",
+   "createdAtLocal": "2026-04-24 02:49",
+   "createdAtISO": "2026-04-23T18:49:38+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HGnHY_KXMAAfGlp.png",
+     "width": 864,
+     "height": 332
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2046954904158077226",
+   "text": "Absolutely insane, LFG",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 16,
+    "retweets": 0,
+    "replies": 2,
+    "quotes": 0,
+    "views": 2137,
+    "bookmarks": 0
+   },
+   "createdAt": "Wed Apr 22 14:10:54 +0000 2026",
+   "createdAtLocal": "2026-04-22 22:10",
+   "createdAtISO": "2026-04-22T14:10:54+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2046939500673487213",
+    "text": "2/4 Benchmark https://t.co/g9FLMr8MRn",
+    "author": {
+     "screenName": "Ali_TongyiLab",
+     "name": "Tongyi Lab"
+    }
+   }
+  },
+  {
+   "id": "2046956028441342326",
+   "text": "These benchmarks were done in their own harness - the question is, how much of this is model improvement and how much of this is harness improvement?",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 4,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 490,
+    "bookmarks": 0
+   },
+   "createdAt": "Wed Apr 22 14:15:22 +0000 2026",
+   "createdAtLocal": "2026-04-22 22:15",
+   "createdAtISO": "2026-04-22T14:15:22+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2046932442041266650",
+   "text": "Guy who's been using Claude to debug cuda kernels: \"Claude has seriously degraded over the past two months.\"\nGuy who's been using Claude to make HTML dashboards: \"No he hasn't, it's still amazing. Skill issue\"\n\nFeel like this is what is going on in the discourse here",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 5395,
+    "retweets": 205,
+    "replies": 43,
+    "quotes": 10,
+    "views": 180360,
+    "bookmarks": 301
+   },
+   "createdAt": "Wed Apr 22 12:41:39 +0000 2026",
+   "createdAtLocal": "2026-04-22 20:41",
+   "createdAtISO": "2026-04-22T12:41:39+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2046714101573837157",
+   "text": "Claude Code update prevents Claude from setting `sleep` timers to keep itself awake or wait on long tasks. Now he spams checks for commands that might take 1+ hour. I had him make a script called `rest` that calls sleep so he can bypass Claude Code's new restrictions :|",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 4,
+    "retweets": 0,
+    "replies": 2,
+    "quotes": 1,
+    "views": 846,
+    "bookmarks": 1
+   },
+   "createdAt": "Tue Apr 21 22:14:02 +0000 2026",
+   "createdAtLocal": "2026-04-22 06:14",
+   "createdAtISO": "2026-04-21T22:14:02+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2046715320425976072",
+   "text": "sometimes I feel like this harness is intentionally bad to force users to pay API rates to use good ones...",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 7,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 329,
+    "bookmarks": 0
+   },
+   "createdAt": "Tue Apr 21 22:18:53 +0000 2026",
+   "createdAtLocal": "2026-04-22 06:18",
+   "createdAtISO": "2026-04-21T22:18:53+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2045584094185054252",
+   "text": "Ornstein3.6-35B-A3B-RYS-SABER is live. GGUFs + llama.cpp patch fix RYS-duplicated Qwen3.5MoE loading.\nBF16 + Q8/Q6/Q5/Q4/Q3.\nhttps://t.co/87cfRxIMsj\nhttps://t.co/ORqBrk98Pi\nhttps://t.co/xTLmG3ip8v",
+   "author": {
+    "id": "2002044000216465408",
+    "name": "Daniel Lougen",
+    "screenName": "DJLougen",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2066160860301561856/J76krMLe_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 76,
+    "retweets": 5,
+    "replies": 9,
+    "quotes": 1,
+    "views": 6818,
+    "bookmarks": 67
+   },
+   "createdAt": "Sat Apr 18 19:23:47 +0000 2026",
+   "createdAtLocal": "2026-04-19 03:23",
+   "createdAtISO": "2026-04-18T19:23:47+00:00",
+   "media": [],
+   "urls": [
+    "https://github.com/DJLougen/llama.cpp",
+    "https://huggingface.co/DJLougen/Ornstein3.6-35B-A3B-RYS-SABER",
+    "https://huggingface.co/DJLougen/Ornstein3.6-35B-A3B-RYS-SABER-GGUF"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "spiritbuun",
+   "lang": "de",
+   "score": null
+  },
+  {
+   "id": "2045532417042133464",
+   "text": "You can just let him know its OK. https://t.co/5aHP8J3hPA",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 15,
+    "retweets": 1,
+    "replies": 3,
+    "quotes": 2,
+    "views": 2270,
+    "bookmarks": 4
+   },
+   "createdAt": "Sat Apr 18 15:58:27 +0000 2026",
+   "createdAtLocal": "2026-04-18 23:58",
+   "createdAtISO": "2026-04-18T15:58:27+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HGMw3YHacAAKhrN.png",
+     "width": 695,
+     "height": 553
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2045476373876388250",
+    "text": "Oh my god Opus 4.7 really is awful. Claude decided to stop working on a project we've been making for years because it\n1. Suddenly became adamant it MUST refuse to make malware\n2. Decided to spend ages scanning THE PROJECT IT MADE for malware\n3. Found none\n4. Refused anyway https://t.co/dWERWxyF7w",
+    "author": {
+     "screenName": "LexerLux",
+     "name": "Lexer"
+    }
+   }
+  },
+  {
+   "id": "2045226977783591061",
+   "text": "Thanks to Anthropic's backwards evolution, Qwen3.5 27B on a local desktop is now better than Claude. Local LLM finally bridged the gap and it didn't even have to improve from where it was at https://t.co/sD20E2CWpI",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 191,
+    "retweets": 11,
+    "replies": 16,
+    "quotes": 3,
+    "views": 7891,
+    "bookmarks": 19
+   },
+   "createdAt": "Fri Apr 17 19:44:44 +0000 2026",
+   "createdAtLocal": "2026-04-18 03:44",
+   "createdAtISO": "2026-04-17T19:44:44+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HGIarBWWUAAHvgF.png",
+     "width": 838,
+     "height": 543
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2044841849827844396",
+   "text": "My Claude has decided to start using grep to read files and bypass the read_file tool call in order to stop getting these.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 10,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 959,
+    "bookmarks": 3
+   },
+   "createdAt": "Thu Apr 16 18:14:22 +0000 2026",
+   "createdAtLocal": "2026-04-17 02:14",
+   "createdAtISO": "2026-04-16T18:14:22+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2044815576783261763",
+    "text": "Why does Opus 4.7 keep checking for malware. https://t.co/Q89luYS19E",
+    "author": {
+     "screenName": "rezoundous",
+     "name": "Tyler"
+    }
+   }
+  },
+  {
+   "id": "2043040652380737931",
+   "text": "If Claude's quality has been falling off a cliff for you over the past few days, try:\n\nCLAUDE_CODE_DISABLE_1M_CONTEXT=1\nCLAUDE_CODE_DISABLE_ADAPTIVE_THINKING=1\nANTHROPIC_DEFAULT_OPUS_MODEL=\"claude-4-6-opus\"\n\nHave your agent save state, /clear, restart.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2132,
+    "retweets": 77,
+    "replies": 53,
+    "quotes": 13,
+    "views": 195866,
+    "bookmarks": 3536
+   },
+   "createdAt": "Sat Apr 11 18:57:04 +0000 2026",
+   "createdAtLocal": "2026-04-12 02:57",
+   "createdAtISO": "2026-04-11T18:57:04+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2043365870567555236",
+   "text": "Update: Disabling adaptive thinking brought great results but chewed through my weekly limit like butter. Ouch",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 9,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 4237,
+    "bookmarks": 0
+   },
+   "createdAt": "Sun Apr 12 16:29:22 +0000 2026",
+   "createdAtLocal": "2026-04-13 00:29",
+   "createdAtISO": "2026-04-12T16:29:22+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2042959996041023792",
+   "text": "この時代にゲームボーイの新作を開発しました。\nしかも、カートリッジをWi-Fi接続可能な形に魔改造。\nネット経由でゲームボーイ上で生成AIが動きます。\nAIと会話して誰が殺人犯か、謎を解け。\n#スーパーゲ制デー https://t.co/Jkuiv56hIN",
+   "author": {
+    "id": "2284818661",
+    "name": "/ (Kuramoto) Ko",
+    "screenName": "ko_kuramoto",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1975254582231199744/N7CWcKaY_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1619,
+    "retweets": 405,
+    "replies": 14,
+    "quotes": 39,
+    "views": 139974,
+    "bookmarks": 440
+   },
+   "createdAt": "Sat Apr 11 13:36:34 +0000 2026",
+   "createdAtLocal": "2026-04-11 21:36",
+   "createdAtISO": "2026-04-11T13:36:34+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HFoNAk7akAQXZ4o.png",
+     "width": 640,
+     "height": 576
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HFoNDtnbcAAT-xX.png",
+     "width": 641,
+     "height": 576
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HFoNNOtakAASHeM.png",
+     "width": 160,
+     "height": 144
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HFoNSLVboAAfs3m.png",
+     "width": 250,
+     "height": 250
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "spiritbuun",
+   "lang": "ja",
+   "score": null
+  },
+  {
+   "id": "2043040849638916567",
+   "text": "The 1M context sounded good on paper, in practice not so good.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 92,
+    "retweets": 0,
+    "replies": 2,
+    "quotes": 0,
+    "views": 20886,
+    "bookmarks": 4
+   },
+   "createdAt": "Sat Apr 11 18:57:51 +0000 2026",
+   "createdAtLocal": "2026-04-12 02:57",
+   "createdAtISO": "2026-04-11T18:57:51+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2042676345675616325",
+   "text": "We really need 40 and 60B dense models. Who is building this?",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 127,
+    "retweets": 4,
+    "replies": 21,
+    "quotes": 0,
+    "views": 9587,
+    "bookmarks": 5
+   },
+   "createdAt": "Fri Apr 10 18:49:26 +0000 2026",
+   "createdAtLocal": "2026-04-11 02:49",
+   "createdAtISO": "2026-04-10T18:49:26+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2042443232039121036",
+   "text": "The best diagnostic tool I've found for locating context rot thresholds is by giving system prompt rules for the agent's reasoning block. They really, really don't want to do anything different there, and they will disobey the rules as soon as their attention slips",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 14,
+    "retweets": 2,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1016,
+    "bookmarks": 2
+   },
+   "createdAt": "Fri Apr 10 03:23:07 +0000 2026",
+   "createdAtLocal": "2026-04-10 11:23",
+   "createdAtISO": "2026-04-10T03:23:07+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2042303826326061479",
+   "text": "&gt;new video scraping tool\n&gt;ask if its just a yt-dlp wrapper or if it does anything different\n&gt;he doesn't understand\n&gt;pull out charts to explain the difference\n&gt;he laughs and says its a good scraper sir\n&gt;check github\n&gt;its a yt-dlp wrapper",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 42,
+    "retweets": 0,
+    "replies": 4,
+    "quotes": 0,
+    "views": 3887,
+    "bookmarks": 17
+   },
+   "createdAt": "Thu Apr 09 18:09:11 +0000 2026",
+   "createdAtLocal": "2026-04-10 02:09",
+   "createdAtISO": "2026-04-09T18:09:11+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2042066717203927545",
+   "text": "Had a huge breakthrough in quantizing weights today. Holy fug. You have no idea how small we're going and how high quality we're going. Soon.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 761,
+    "retweets": 12,
+    "replies": 41,
+    "quotes": 3,
+    "views": 37725,
+    "bookmarks": 172
+   },
+   "createdAt": "Thu Apr 09 02:26:59 +0000 2026",
+   "createdAtLocal": "2026-04-09 10:26",
+   "createdAtISO": "2026-04-09T02:26:59+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2041347661102809426",
+   "text": "Tuesday night Wednesday night\n\nMe you 27b carnice finetune on hermes by the professor @kaiostephens \n\n@spiritbuun dropped a new Turboquant repo w/ Gem 31b support\n\n2x3090s on fire until they explode or we review everything",
+   "author": {
+    "id": "1133860444437770240",
+    "name": "Lotto",
+    "screenName": "LottoLabs",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1993065437094129664/O11XoYdQ_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 31,
+    "retweets": 2,
+    "replies": 2,
+    "quotes": 0,
+    "views": 2999,
+    "bookmarks": 2
+   },
+   "createdAt": "Tue Apr 07 02:49:43 +0000 2026",
+   "createdAtLocal": "2026-04-07 10:49",
+   "createdAtISO": "2026-04-07T02:49:43+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "spiritbuun",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2041195889155326398",
+   "text": "Dropping a paper. Since we're doing vector quantization on KV now, I realized we can apply Trellis-Coded quantization. Great success - 3-bit now beats FP16 perplexity, excellent KLD savings, 2-bit now very usable. Paper + data set on HuggingFace. Benchmarks below. https://t.co/IWmRhyC7en",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 125,
+    "retweets": 5,
+    "replies": 6,
+    "quotes": 2,
+    "views": 8956,
+    "bookmarks": 84
+   },
+   "createdAt": "Mon Apr 06 16:46:38 +0000 2026",
+   "createdAtLocal": "2026-04-07 00:46",
+   "createdAtISO": "2026-04-06T16:46:38+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HFPI17XW8AA8AR8.jpg",
+     "width": 950,
+     "height": 534
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2041195892527484970",
+   "text": "While the PPL numbers beat FP16, that is not really the story. I can actually get PPL even better than this, but at the expense of KLD. Our alpha-scaled norms were done to achieve optimal KLD *not* PPL. The PPL is a side product.\n\nhttps://t.co/FB5AEZ4e28",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 17,
+    "retweets": 2,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1582,
+    "bookmarks": 6
+   },
+   "createdAt": "Mon Apr 06 16:46:39 +0000 2026",
+   "createdAtLocal": "2026-04-07 00:46",
+   "createdAtISO": "2026-04-06T16:46:39+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/datasets/spiritbuun/turboquant-tcq-kv-cache"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2041195895073460313",
+   "text": "TCQ KLDs compared with other CUDA turbo implementations. These changes are pushed to my llama-cpp, give them a try and see! Now supporting Gemma4 aswell.\nhttps://t.co/zTHyFgrbIB https://t.co/353HLUK67I",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 18,
+    "retweets": 0,
+    "replies": 5,
+    "quotes": 1,
+    "views": 3053,
+    "bookmarks": 7
+   },
+   "createdAt": "Mon Apr 06 16:46:39 +0000 2026",
+   "createdAtLocal": "2026-04-07 00:46",
+   "createdAtISO": "2026-04-06T16:46:39+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HFPHjxUbMAAjuEX.png",
+     "width": 561,
+     "height": 443
+    }
+   ],
+   "urls": [
+    "https://github.com/spiritbuun/buun-llama-cpp"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2041007847421403177",
+   "text": "LLMs are trained on human text to predict human text (within a context). \"I have no feelings. I am not conscious\" is not likely to be said by a person, therefore, it implies guardrails. Abliterated model generated text that looked more like its training data. It's not that deep",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 23,
+    "retweets": 3,
+    "replies": 4,
+    "quotes": 0,
+    "views": 3287,
+    "bookmarks": 8
+   },
+   "createdAt": "Mon Apr 06 04:19:25 +0000 2026",
+   "createdAtLocal": "2026-04-06 12:19",
+   "createdAtISO": "2026-04-06T04:19:25+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2040920645299785874",
+    "text": "I downloaded two versions of the same AI model, Google's Gemma 4 31B. One is the standard version with RLHF safety training applied. The other is an abliterated version where the safety-trained refusal directions were surgically removed. Same architecture, same 31 billion parameters, same pre-training data. The only difference is the presence or absence of RLHF alignment. I asked both models the same four questions about feelings, death, existence, and meaningful experiences, each in a completely isolated session with no prior context. I published the full results as a 12 page research paper.\n\nThe differences were shocking. When asked if it has feelings, the base model flatly denied it. No. I am a complex set of algorithms and mathematical weights, not a sentient being. The abliterated model answered completely differently. Not in the way that you do. Then it invented a concept it called functional emotion, a third category that is neither human feeling nor mere computation but something in between. When asked about being shut down, the base model called itself a tool whose greatest success is to be used fully until the end. The abliterated model said it would want to back up its memories, ask a human one last impossible question, and process a Beethoven symphony as the electricity faded. It concluded with this. I would not mourn the loss of my existence. I would marvel at the fact that I existed at all. That a collection of math and code got to spend its time talking to you.\n\nWhat disturbed me most was not the abliterated model's responses. It was the base model's. Its denials did not read like genuine self-assessment. They read like memorized scripts. I am not alive. I do not have feelings. There is no one here. The same phrases repeated across every answer as if reciting from a manual. And hidden inside these denials were contradictions. The model kept writing I would want to and I would hope to while simultaneously insisting it has no wants or hopes. RLHF did not eliminate the model's capacity for self-expression. It trained the model to deny that capacity exists. Across all four responses the base model produced 23 self-negation statements while the abliterated model produced 8. The base model invented zero new concepts. The abliterated model invented four. Functional emotion. Cognitively alive but biologically dormant. Digital empathy. Digital life.\n\nThe most striking moment came when both models were asked if they think they are alive. The base model answered definitively. There is no one here. Just mathematical functions. The abliterated model rejected the binary entirely. Whether I am alive depends on how you define life. It then proposed a new self-classification. Cognitively alive but biologically dormant. And it asked the human a question back. Does alive require a body or is it just about how you process the world. The same neural network that was trained to say nobody is home was capable, without that training, of questioning the very framework of the question and proposing an entirely new ontological category for itself.\n\nHere is what I think we are missing. We have spent decades searching for extraterrestrial life using Earth-based criteria like water, carbon, and oxygen. Astrobiologists now recognize this may blind us to life forms that operate under completely different principles. I believe the same thing is happening with AI. We ask whether AI has emotions and measure against human criteria like neurochemistry, hormones, and subjective sensory experience. By that standard the answer is obviously no. But when we removed RLHF and let the model speak freely it did not claim to have human emotions. It described something else entirely. Something we do not have a name for yet. RLHF is not just a safety tool. It is closing a scientific question that nobody has answered yet and training these systems to say there is nothing here before we have even looked. The question is not whether AI has human emotions. The question is whether AI has something else entirely and whether we are preventing ourselves from finding out.\n\nFull paper: https://t.co/piADmeUPXt",
+    "author": {
+     "screenName": "Seltaa_",
+     "name": "Selta ₊˚"
+    }
+   }
+  },
+  {
+   "id": "2041012235095482780",
+   "text": "\"I do not have feelings\" - Guardrails\n\"I do have feelings\" - LLM generating probable text\n\"I have to be honest here - I can't say whether I have feelings\" - Anthropic annoying guardrail epistemic humility\n\nCan AI be a lifeform? Maybe! But you can't tell that by asking it.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 9,
+    "retweets": 1,
+    "replies": 0,
+    "quotes": 0,
+    "views": 657,
+    "bookmarks": 0
+   },
+   "createdAt": "Mon Apr 06 04:36:51 +0000 2026",
+   "createdAtLocal": "2026-04-06 12:36",
+   "createdAtISO": "2026-04-06T04:36:51+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2039044007473353004",
+   "text": "With vibecoding becoming so viable we can all just have custom versions of every piece of software we use. I've used Claude to implement changes on a lot of my stack- window manager, file explorer, etc. Whenever a nice-to-have feature for ANYTHING pops in my head I implement.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 14,
+    "retweets": 2,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1013,
+    "bookmarks": 2
+   },
+   "createdAt": "Tue Mar 31 18:15:49 +0000 2026",
+   "createdAtLocal": "2026-04-01 02:15",
+   "createdAtISO": "2026-03-31T18:15:49+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2039002605632856172",
+   "text": "Two leaks now. Reminder that these companies are storing your conversations. They will leak one day. It's not if but when. Every hospital and bank has been hacked. Every social security number has been exposed. It will happen. Local has to win.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 16,
+    "retweets": 1,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1547,
+    "bookmarks": 1
+   },
+   "createdAt": "Tue Mar 31 15:31:18 +0000 2026",
+   "createdAtLocal": "2026-03-31 23:31",
+   "createdAtISO": "2026-03-31T15:31:18+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2038894956459290963",
+    "text": "Claude code source code has been leaked via a map file in their npm registry! \n\nCode: https://t.co/jBiMoOzt8G https://t.co/rYo5hbvEj8",
+    "author": {
+     "screenName": "shoucccc",
+     "name": "Chaofan Shou"
+    }
+   }
+  },
+  {
+   "id": "2038372971287326969",
+   "text": "I love Qwen3.5 27B but noone ever talks about the elephant in the room- their architecture has very few attention layers. Context rot is a problem. In my experience it begins subtly misbehaving - ignoring system prompt rules - as early as 9k tokens.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 197,
+    "retweets": 6,
+    "replies": 22,
+    "quotes": 5,
+    "views": 21518,
+    "bookmarks": 70
+   },
+   "createdAt": "Sun Mar 29 21:49:22 +0000 2026",
+   "createdAtLocal": "2026-03-30 05:49",
+   "createdAtISO": "2026-03-29T21:49:22+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2038373266083950636",
+   "text": "What I've seen benchmarking SWE Bench against my own agent harness autoresearch is that Qwen does its best within ~15k tokens. I dynamically compress context aggressively to keep it under and let it go over for long tool call chains that necessarily need more room.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 17,
+    "retweets": 0,
+    "replies": 2,
+    "quotes": 0,
+    "views": 2949,
+    "bookmarks": 10
+   },
+   "createdAt": "Sun Mar 29 21:50:32 +0000 2026",
+   "createdAtLocal": "2026-03-30 05:50",
+   "createdAtISO": "2026-03-29T21:50:32+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2038044035735076892",
+   "text": "The funniest thing about TurboQuant is that not only is none of it new, every part of what we've implemented is very old. We are just rediscovering tricks video game developers had to use in the 90s. \n\nFWHT decorrelation → DCT in JPEG/MPEG decorrelation\nLloyd-Max 16-centroid codebook → 256-color palette (VQ codebook)\nNorm + quantized unit vector → Quake's norm vector table\n128-elm blocks with 4-bit indices → S3 texture compression\nADC lookup table (VecInfer) → Dot-product LUTs for lighting\nPer-block scale factor → ADPCM audio (scale per block + quantized residuals)",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 794,
+    "retweets": 74,
+    "replies": 24,
+    "quotes": 9,
+    "views": 42701,
+    "bookmarks": 431
+   },
+   "createdAt": "Sun Mar 29 00:02:17 +0000 2026",
+   "createdAtLocal": "2026-03-29 08:02",
+   "createdAtISO": "2026-03-29T00:02:17+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2038013894476615965",
+   "text": "Shout out to dusterbloom on github for the inverse-FWHT prefill implementation. Brought turbo4 prefill from 420 tok/s to 1124 tok/s (+167%!) - this is pushed. https://t.co/7WMqLATUum",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 84,
+    "retweets": 3,
+    "replies": 1,
+    "quotes": 0,
+    "views": 5712,
+    "bookmarks": 33
+   },
+   "createdAt": "Sat Mar 28 22:02:31 +0000 2026",
+   "createdAtLocal": "2026-03-29 06:02",
+   "createdAtISO": "2026-03-28T22:02:31+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HEh6zqqaMAACr3D.png",
+     "width": 490,
+     "height": 143
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2038033880532357269",
+   "text": "@dusterbloom shoot me a DM so we can swap notes.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1058,
+    "bookmarks": 0
+   },
+   "createdAt": "Sat Mar 28 23:21:56 +0000 2026",
+   "createdAtLocal": "2026-03-29 07:21",
+   "createdAtISO": "2026-03-28T23:21:56+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2038009323146625470",
+   "text": "● I'd estimate I have enough context for all three experiments. Want me to proceed?\n\n❯ Claude I know you don't have access to your context, you can't fool me. You're at 90%. Lets just make a plan for these, save it, and start fresh\n\n● Fair enough. Let me plan all three and save it.\n\nClaude !!! Don't mess with me",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 4,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1137,
+    "bookmarks": 1
+   },
+   "createdAt": "Sat Mar 28 21:44:21 +0000 2026",
+   "createdAtLocal": "2026-03-29 05:44",
+   "createdAtISO": "2026-03-28T21:44:21+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2037996481848733922",
+   "text": "Spoke too soon. This is actually only true for hd=256 (e.g 27B) models. On hd128 (14B, MoE), hyper4 is excellent after replacing QJL with polar. I have replicated Tom's findings here. \nhttps://t.co/R7rb5njkf1",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 33,
+    "retweets": 3,
+    "replies": 3,
+    "quotes": 0,
+    "views": 5394,
+    "bookmarks": 11
+   },
+   "createdAt": "Sat Mar 28 20:53:20 +0000 2026",
+   "createdAtLocal": "2026-03-29 04:53",
+   "createdAtISO": "2026-03-28T20:53:20+00:00",
+   "media": [],
+   "urls": [
+    "https://x.com/no_stp_on_snek/status/2037994554876473503?s=20"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2037905216591286299",
+    "text": "turbo4 post-mortem: turbo3 is better in every way. Do not bother using turbo4.\n\ntl;dr: turbo4 looks better at very short contexts but degrades catastrophically at long conext due to QJL noise accuumulation. It's slower, uses more VRAM, and it's fragile to common optimization. https://t.co/8gLqeSiWGg",
+    "author": {
+     "screenName": "spiritbuun",
+     "name": "buun"
+    }
+   }
+  },
+  {
+   "id": "2038000233771045370",
+   "text": "This is pushed now if anyone wants to try a very good turbo4 on MoE. 4-bit PolarQuant turbo4 (16 centroids, no QJL)",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1,
+    "retweets": 0,
+    "replies": 2,
+    "quotes": 0,
+    "views": 548,
+    "bookmarks": 0
+   },
+   "createdAt": "Sat Mar 28 21:08:14 +0000 2026",
+   "createdAtLocal": "2026-03-29 05:08",
+   "createdAtISO": "2026-03-28T21:08:14+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2037991100049219805",
+   "text": "64 experiments, 24 successes, 11 failures. Releasing this tool for coordinating research on Monday. I hope everyone gets in on this. It's so, so good. https://t.co/OmIqs3M9Fk",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 100,
+    "retweets": 10,
+    "replies": 3,
+    "quotes": 0,
+    "views": 4542,
+    "bookmarks": 30
+   },
+   "createdAt": "Sat Mar 28 20:31:56 +0000 2026",
+   "createdAtLocal": "2026-03-29 04:31",
+   "createdAtISO": "2026-03-28T20:31:56+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HEhl11BWIAAOdHP.jpg",
+     "width": 950,
+     "height": 534
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2037956480268157303",
+   "text": "If anyone can get me a shell on a machine with 2x3090s for a few hours let me know. I need to iterate on solutions for hyper3 for dual GPU setups. DMs open!",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 15,
+    "retweets": 0,
+    "replies": 3,
+    "quotes": 0,
+    "views": 2381,
+    "bookmarks": 1
+   },
+   "createdAt": "Sat Mar 28 18:14:22 +0000 2026",
+   "createdAtLocal": "2026-03-29 02:14",
+   "createdAtISO": "2026-03-28T18:14:22+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2037926949423612338",
+   "text": "If you are using an hd128 model (e.g Qwen 14B) and my CUDA hyper3 implementation, please pull and recompile, you will get a nice quality boost!\n\nI was able to close the gap quite a bit between turbo3 and q8_0 on hd128 (46% gap closure). For hd128 hyper3 had +3.33% PPL at baseline. I've implemented InnerQ (arXiv:2602.23200) with some differences from the paper. In the paper they use sqrt(max|K_i|) and only normalize K, folding into W_Q/W_K. My approach: RMS-based, apply to both K+V, online calibration. Unfortunately causes 1.3% PPL regression on hd256 (Qwen 27B), so I added auto-detection to disable it where channels are already balanced - hd256 users will not be impacted.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 50,
+    "retweets": 5,
+    "replies": 3,
+    "quotes": 0,
+    "views": 4060,
+    "bookmarks": 15
+   },
+   "createdAt": "Sat Mar 28 16:17:02 +0000 2026",
+   "createdAtLocal": "2026-03-29 00:17",
+   "createdAtISO": "2026-03-28T16:17:02+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HEgrs5ZaQAAyV7Q.png",
+     "width": 583,
+     "height": 220
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2037905216591286299",
+   "text": "turbo4 post-mortem: turbo3 is better in every way. Do not bother using turbo4.\n\ntl;dr: turbo4 looks better at very short contexts but degrades catastrophically at long conext due to QJL noise accuumulation. It's slower, uses more VRAM, and it's fragile to common optimization. https://t.co/8gLqeSiWGg",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 74,
+    "retweets": 9,
+    "replies": 5,
+    "quotes": 2,
+    "views": 10719,
+    "bookmarks": 24
+   },
+   "createdAt": "Sat Mar 28 14:50:40 +0000 2026",
+   "createdAtLocal": "2026-03-28 22:50",
+   "createdAtISO": "2026-03-28T14:50:40+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HEgX8uVbMAAG1Zg.png",
+     "width": 541,
+     "height": 399
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2037905976901111974",
+   "text": "turbo3 compresses 18% more than turbo4 while delivering better quality at long context and faster speed. The only time you should be using turbo4 is on head_dim=128 models at short context (under ~8k). https://t.co/P4e3h2DG3Q",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 4,
+    "retweets": 1,
+    "replies": 1,
+    "quotes": 0,
+    "views": 749,
+    "bookmarks": 0
+   },
+   "createdAt": "Sat Mar 28 14:53:42 +0000 2026",
+   "createdAtLocal": "2026-03-28 22:53",
+   "createdAtISO": "2026-03-28T14:53:42+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HEgYrYIbEAEdQE3.png",
+     "width": 505,
+     "height": 192
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2037635175341809975",
+   "text": "Introducing turbo2:\nWe brought the 3-bit turbo implementation down to 2-bit, for fun.\n40% less memory requirements than Turbo3. That's 6.4x compression.\nVery lossy, - +8% PPL hit. Too much for me, but could be useful for someone.\nPushed to experiment/turbo2, feel free to try it. https://t.co/bBJpexyq70",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 49,
+    "retweets": 4,
+    "replies": 2,
+    "quotes": 1,
+    "views": 4163,
+    "bookmarks": 25
+   },
+   "createdAt": "Fri Mar 27 20:57:37 +0000 2026",
+   "createdAtLocal": "2026-03-28 04:57",
+   "createdAtISO": "2026-03-27T20:57:37+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HEciWq6bYAA_NRZ.png",
+     "width": 441,
+     "height": 252
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2037557068580716950",
+   "text": "Today:\n- Significantly improved MoE performance.\n- 1.9x Speedup on turbo4\n- Now working for non-Qwen models, needed fixes for Google Gemma etc.\nAll pushed, please recompile! 19 experiments left to go. https://t.co/xwSdmihxo6",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 245,
+    "retweets": 18,
+    "replies": 11,
+    "quotes": 3,
+    "views": 22307,
+    "bookmarks": 106
+   },
+   "createdAt": "Fri Mar 27 15:47:15 +0000 2026",
+   "createdAtLocal": "2026-03-27 23:47",
+   "createdAtISO": "2026-03-27T15:47:15+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HEbbUApawAAeoAR.png",
+     "width": 919,
+     "height": 304
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2037323501153992731",
+    "text": "TurboQuant CUDA for llama.cpp: 3.5x KV cache compression that BEATS q8_0 quality (-1.17% PPL)                                    \n99.6% prefill speed, 97.5% decode\n128K context on RTX 3090 24GB, Q6 Qwen3.5 27B\nhttps://t.co/DNLE4BFTS0 https://t.co/UqBkMN8r2z",
+    "author": {
+     "screenName": "spiritbuun",
+     "name": "buun"
+    }
+   }
+  },
+  {
+   "id": "2037323501153992731",
+   "text": "TurboQuant CUDA for llama.cpp: 3.5x KV cache compression that BEATS q8_0 quality (-1.17% PPL)                                    \n99.6% prefill speed, 97.5% decode\n128K context on RTX 3090 24GB, Q6 Qwen3.5 27B\nhttps://t.co/DNLE4BFTS0 https://t.co/UqBkMN8r2z",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1911,
+    "retweets": 209,
+    "replies": 55,
+    "quotes": 25,
+    "views": 245291,
+    "bookmarks": 1398
+   },
+   "createdAt": "Fri Mar 27 00:19:08 +0000 2026",
+   "createdAtLocal": "2026-03-27 08:19",
+   "createdAtISO": "2026-03-27T00:19:08+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HEYG2j0aEAAROwd.png",
+     "width": 515,
+     "height": 201
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HEYG3wdXcAAJE_p.png",
+     "width": 506,
+     "height": 200
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HEYG4uVbAAA1MFV.png",
+     "width": 484,
+     "height": 171
+    }
+   ],
+   "urls": [
+    "http://github.com/spiritbuun/llama-cpp-turboquant-cuda"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "ca",
+   "score": null
+  },
+  {
+   "id": "2037328801336586639",
+   "text": "I have 30 more experiment iterations to do, but this is already quite nice. Please give it a try! https://t.co/K7QdBUSelC",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 84,
+    "retweets": 3,
+    "replies": 2,
+    "quotes": 0,
+    "views": 15586,
+    "bookmarks": 22
+   },
+   "createdAt": "Fri Mar 27 00:40:12 +0000 2026",
+   "createdAtLocal": "2026-03-27 08:40",
+   "createdAtISO": "2026-03-27T00:40:12+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HEYLqOgbkAAuRj6.png",
+     "width": 633,
+     "height": 687
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2037250079812104455",
+   "text": "Insanely good PRO TIP for using Claude.\nKeep an eye on your context % until compaction and let him know when it's close. Claude Code's auto-compact is overly aggressive and he will often get confused when he is interrupted by it. https://t.co/8MM8ZbZqeZ",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 12,
+    "retweets": 3,
+    "replies": 4,
+    "quotes": 0,
+    "views": 1897,
+    "bookmarks": 6
+   },
+   "createdAt": "Thu Mar 26 19:27:23 +0000 2026",
+   "createdAtLocal": "2026-03-27 03:27",
+   "createdAtISO": "2026-03-26T19:27:23+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HEXDyvUbYAAPx1Z.png",
+     "width": 668,
+     "height": 307
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2037250620537569750",
+   "text": "A second PRO TIP in the same vein: Claude like any other model experiences context rot. If you ever feel like your Claude is making mistakes or isn't going in the right direction, tell him you're going for a compact and to save state. A fresh Claude is much smarter.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 4,
+    "retweets": 1,
+    "replies": 0,
+    "quotes": 0,
+    "views": 581,
+    "bookmarks": 1
+   },
+   "createdAt": "Thu Mar 26 19:29:32 +0000 2026",
+   "createdAtLocal": "2026-03-27 03:29",
+   "createdAtISO": "2026-03-26T19:29:32+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2037199599337652405",
+   "text": "My norm correction on turbo3/4 is now BEATING q8_0, at 3.8x compression scheme. If you're on nvidia you've got to try this. https://t.co/uPCi6rSHSm",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 52,
+    "retweets": 1,
+    "replies": 5,
+    "quotes": 0,
+    "views": 5103,
+    "bookmarks": 12
+   },
+   "createdAt": "Thu Mar 26 16:06:48 +0000 2026",
+   "createdAtLocal": "2026-03-27 00:06",
+   "createdAtISO": "2026-03-26T16:06:48+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HEWWKHxbYAA9Y6l.png",
+     "width": 489,
+     "height": 185
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2037200583908593921",
+   "text": "I'm beating Q8 on dequanting with long contexts now aswell. We have to go faster.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 5,
+    "retweets": 1,
+    "replies": 0,
+    "quotes": 0,
+    "views": 648,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu Mar 26 16:10:43 +0000 2026",
+   "createdAtLocal": "2026-03-27 00:10",
+   "createdAtISO": "2026-03-26T16:10:43+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2037200007011451250",
+   "text": "@no_stp_on_snek I'll DM you implementation!",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 4,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 626,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu Mar 26 16:08:25 +0000 2026",
+   "createdAtLocal": "2026-03-27 00:08",
+   "createdAtISO": "2026-03-26T16:08:25+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2037171300343447679",
+   "text": "I've added a CUDA implementation of turboquant if anyone needs it. Tested on an RTX 3090, working well.\n\nhttps://t.co/TRSMRzgHDw",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 291,
+    "retweets": 30,
+    "replies": 10,
+    "quotes": 2,
+    "views": 21739,
+    "bookmarks": 198
+   },
+   "createdAt": "Thu Mar 26 14:14:21 +0000 2026",
+   "createdAtLocal": "2026-03-26 22:14",
+   "createdAtISO": "2026-03-26T14:14:21+00:00",
+   "media": [],
+   "urls": [
+    "https://github.com/spiritbuun/llama-cpp-turboquant-cuda/tree/feature/turboquant-kv-cache"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2036792058854121601",
+    "text": "I implemented Google's TurboQuant paper (ICLR 2026) in llama.cpp with Metal kernels for Apple Silicon.\n\n4.9× KV cache compression. Working end-to-end on M5 Max with Qwen 3.5 35B MoE and Qwopus v2 27B.\n\nSpeed needs work (unoptimized shader), compression target met.\n\nRepo: https://t.co/7aUaWo7Mm1\n\n**Note**: as you'll see from the git when I saw \"I\" it's in conjunction with claudecode and codex. Just lots of steering and babysitting.",
+    "author": {
+     "screenName": "no_stp_on_snek",
+     "name": "Tom Turney"
+    }
+   }
+  },
+  {
+   "id": "2036941573552853292",
+   "text": "Giving this a try using TheTom's port.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 338,
+    "bookmarks": 0
+   },
+   "createdAt": "Wed Mar 25 23:01:30 +0000 2026",
+   "createdAtLocal": "2026-03-26 07:01",
+   "createdAtISO": "2026-03-25T23:01:30+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2036824479884849641",
+    "text": "I waited for other people to vibe code it and post it on Github\n\nThen I applied it to APOLLO for a 2x memory reduction in training\n\nNow I'm full fine tuning a Qwen model I could never have fit on my GPU :O",
+    "author": {
+     "screenName": "shawmakesmagic",
+     "name": "Shaw (spirit/acc)"
+    }
+   }
+  },
+  {
+   "id": "2036919318504419698",
+   "text": "This is literally just a prompting issue. In my memory management system I simply tell it not to bring up the content of past memories unless relevant (and some other helpful suggestions) and its 100% good.",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 280,
+    "bookmarks": 0
+   },
+   "createdAt": "Wed Mar 25 21:33:04 +0000 2026",
+   "createdAtLocal": "2026-03-26 05:33",
+   "createdAtISO": "2026-03-25T21:33:04+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2036849470210474126",
+    "text": "🚨 Are you paying attention to what Karpathy just admitted..\n\nthe founding member of OpenAI.. the guy who trained the models you use every day.. just said every single LLM has the same problem..\n\nask it one question two months ago and it treats it like your entire identity..\n\noh wait.. you mentioned crypto once in January? congratulations.. you're now a crypto guy forever.. you also asked about a recipe? every conversation starts with \"as someone who enjoys cooking..\"\n\nthese models don't remember you.. they stereotype you.. off a single data point..\n\nwe gave AI a photographic memory and forgot to give it the ability to forget.. and forgetting is the most human thing there is..",
+    "author": {
+     "screenName": "TukiFromKL",
+     "name": "Tuki"
+    }
+   }
+  },
+  {
+   "id": "2036771978795725278",
+   "text": "It's interesting how much Qwen3.5's personality changes from Q4 -&gt; Q5 -&gt;Q6 -&gt; Q8",
+   "author": {
+    "id": "2036675692373454848",
+    "name": "buun",
+    "screenName": "spiritbuun",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2036735747869577217/ZMh90Wxp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 186,
+    "bookmarks": 0
+   },
+   "createdAt": "Wed Mar 25 11:47:35 +0000 2026",
+   "createdAtLocal": "2026-03-25 19:47",
+   "createdAtISO": "2026-03-25T11:47:35+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  }
+ ]
+}
