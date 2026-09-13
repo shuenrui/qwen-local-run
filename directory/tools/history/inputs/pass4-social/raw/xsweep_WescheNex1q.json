@@ -1,0 +1,2161 @@
+{
+ "via": "twitter-cli user-posts -n 60",
+ "user": "WescheNex1q",
+ "posts": [
+  {
+   "id": "2098785213409112363",
+   "text": "Aaaand china wins",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 25,
+    "retweets": 1,
+    "replies": 4,
+    "quotes": 0,
+    "views": 1635,
+    "bookmarks": 0
+   },
+   "createdAt": "Sat Sep 12 14:46:03 +0000 2026",
+   "createdAtLocal": "2026-09-12 22:46",
+   "createdAtISO": "2026-09-12T14:46:03+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2098773920774074715",
+    "text": "We Must Pace the Frontier: I’ve written a new essay on why the AI industry should slow down, with a three-part plan for doing so.\n\nAnthropic is unilaterally committing to the first of these steps. We’ll provide third-party evaluators with permanent, employee-level access to our systems, so that they can verify adherence to our safety measures, report on incidents, and assess models’ alignment during training.\n\nYou can read the full post here: https://t.co/OGyPb7yaYt",
+    "author": {
+     "screenName": "DarioAmodei",
+     "name": "Dario Amodei"
+    }
+   }
+  },
+  {
+   "id": "2098784791575359790",
+   "text": "Deepseek-v4.1 local vs\nAstra-6 vs\nFable-5.1\nSame prompt. Three islands. Then I turned on the hurricane. 🌴🌀\n\nLeft → right:\n• DeepSeek 4.1 Local: 39.8 KB\n• Astra: 699.1 KB\n• Fable: 39.1 KB\n\nAstra embeds ~670 KB of Three.js; the others load it externally. File size ≠ complexity.\n\nMobile-friendly Three.js, freedom on style, synchronized weather switches.\n\nTry them:\nDeepSeek: https://t.co/x1egBcx7ZM\nAstra: https://t.co/JlWa7VauX9\nFable: https://t.co/neAye8jTkS\n\nLast water one deepseek clearly won, this time I’m not sure. \n2 frontier cloud vs frontier local",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 128,
+    "retweets": 4,
+    "replies": 7,
+    "quotes": 0,
+    "views": 14877,
+    "bookmarks": 31
+   },
+   "createdAt": "Sat Sep 12 14:44:22 +0000 2026",
+   "createdAtLocal": "2026-09-12 22:44",
+   "createdAtISO": "2026-09-12T14:44:22+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2098784708377329664/vid/avc1/1440x912/Tfm8y2rwry0h274m.mp4?tag=29",
+     "width": 1440,
+     "height": 912
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098547341842149548",
+   "text": "Astra-6 vs DeepSeek-v4.1 cloud vs local.\nSame water prompt.\n\nLeft → right:\n• Astra: “Worked for 30s” in ChatGPT\n• DeepSeek V4.1 Cloud: 103s, 28.5K completion tokens\n• DeepSeek V4.1 Local: 4× DGX Spark, 25m to HTML through Hermes\n\n512×512 mesh. Click-to-ripple. Interacting waves. One HTML file.\n\nMight be just me but deepseek did a way better/more interesting render \n\nAstra:\nhttps://t.co/vDm3UsVMcl\n\nCloud:\nhttps://t.co/TzvA1GO6gS\n\nLocal:\nhttps://t.co/fwWq4pf6Qq",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 146,
+    "retweets": 4,
+    "replies": 22,
+    "quotes": 3,
+    "views": 20662,
+    "bookmarks": 37
+   },
+   "createdAt": "Fri Sep 11 23:00:50 +0000 2026",
+   "createdAtLocal": "2026-09-12 07:00",
+   "createdAtISO": "2026-09-11T23:00:50+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2098547299479597060/vid/avc1/1248x928/y0shigKH9RB_huub.mp4?tag=29",
+     "width": 1248,
+     "height": 928
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098548151082705217",
+   "text": "ASTRA \n• Reported GPU simulation: 262,144 cells, 263,169 vertices, 524,288 triangles\n• 120 physics steps/sec target—not a measured display FPS\n• ~18 KB custom code + ~670 KB embedded Three.js; ~688 KB total\n• Reported simulation buffers: 8 MiB GPU memory, plus rendering resources\n\nDEEPSEEK V4.1 on Official Cloud API\n• 1.38 seconds to first model delta\n• 28,479 completion tokens, including 23,977 reasoning tokens\n• ~280 completion tokens/sec after the first delta, including reasoning\n• 13.3 KB HTML, with Three.js loaded externally\n• Published without code repairs\n\nDEEPSEEK V4.1 Local\n• 4× NVIDIA DGX Spark, tensor parallelism 4\n• FP8 configuration with FP4 experts\n• Running through Hermes agent\n• 25m 10s from prompt to saved HTML, including reasoning and tool overhead\n• 15 KB HTML, with Three.js loaded externally",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 1261,
+    "bookmarks": 0
+   },
+   "createdAt": "Fri Sep 11 23:04:03 +0000 2026",
+   "createdAtLocal": "2026-09-12 07:04",
+   "createdAtISO": "2026-09-11T23:04:03+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098540468258644218",
+   "text": "Wonder what his first romance novel will be about",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 12,
+    "retweets": 0,
+    "replies": 8,
+    "quotes": 0,
+    "views": 1053,
+    "bookmarks": 1
+   },
+   "createdAt": "Fri Sep 11 22:33:31 +0000 2026",
+   "createdAtLocal": "2026-09-12 06:33",
+   "createdAtISO": "2026-09-11T22:33:31+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2098487731051438424",
+    "text": "JUST IN: Chinese Fields Medal winner Deng Yu announces he’ll retire from mathematics &amp; write romance novels if AI becomes capable of solving all math problems. https://t.co/AgkduZPKB7",
+    "author": {
+     "screenName": "Polymarket",
+     "name": "Polymarket"
+    }
+   }
+  },
+  {
+   "id": "2098103248322494520",
+   "text": "4 DGX Sparks running DeepSeek V4.1 Flash\n6 concurrent sessions, 170.73 tok/s coding throughput. 🔥\n\n1,200 output tokens in 7.028 seconds.\n\nWarm single-stream:\n💻 Code: 77.61 tok/s\n🧮 Math: 74.08\n🧠 Reasoning: 48.75\n✍️ Prose: 33.02\n\n6-stream aggregate:\n💻 Code: 170.73 tok/s\n🔢 Counting: 291.64 tok/s\n\n552B MoE · MXFP4 · TP4 · vLLM + DSpark + CUDA graphs\n✅ Tool calling + vision\n✅ 127,480-token retrieval test passed\n✅ 300K configured context\n\nVideo replays the actual recorded streams at 1× speed. Thinking OFF, 200-token cap per coding request.\nShort-prompt coding throughput\n\nCredit to @Tech2Wild for the Boot9 recipe.\n@NVIDIAAI",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 236,
+    "retweets": 17,
+    "replies": 16,
+    "quotes": 3,
+    "views": 22835,
+    "bookmarks": 76
+   },
+   "createdAt": "Thu Sep 10 17:36:09 +0000 2026",
+   "createdAtLocal": "2026-09-11 01:36",
+   "createdAtISO": "2026-09-10T17:36:09+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2098103222250713089/vid/avc1/1920x1080/MV3NmiNV0vE3csBC.mp4?tag=29",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098083761992708241",
+   "text": "Deepseek-v4.1-flash up and running, benchmark and visuals comparing to dsv4-flash-0731 coming up next https://t.co/NnSP7mpsol",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 15,
+    "retweets": 2,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1278,
+    "bookmarks": 1
+   },
+   "createdAt": "Thu Sep 10 16:18:44 +0000 2026",
+   "createdAtLocal": "2026-09-11 00:18",
+   "createdAtISO": "2026-09-10T16:18:44+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HR3kDzcawAMUUxc.jpg",
+     "width": 1190,
+     "height": 798
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2098058813802787227",
+    "text": "🔥 DeepSeek-V4.1-Flash 552B MoE (769B w/ Engram) · MXFP4 · 4x DGX Spark TP4 · vLLM + DSpark + CUDA graphs\n\nRe-benched warmed + streaming (fixed 8-category prompt set, C1 to C6):\n⚡️ 77.2 tok/s PEAK single-stream on counting · 71 on structured tables (DSpark runs hot: up to 5.95 of 6 tokens accepted per step)\n💻 52 code in the bench · 72 tok/s on a warm code run · 47 math · 39 reasoning · 23 prose\n🚀 214 tok/s aggregate at 6 streams · 143 on code\n🧠 1.03M-token KV · 300K ctx · 1M ctx proven (1.08M-token pool) · 0.27s TTFT\n👀 Vision + 🛠️ tool calling on\n💾 203 GB of Engram tables stay on disk, so 552B fits in 4x 128 GB unified memory\n🔧 5 tok/s eager ➜ 41 with CUDA graphs + DSpark ➜ 77 after un-latching 2 GPUs stuck below 1 GHz (unplug the Spark to clear it, a reboot won't)\n\nDay-0. 552B-class reasoning on desk hardware 🖥️\nhttps://t.co/mDCQYDIqrt",
+    "author": {
+     "screenName": "Tech2Wild",
+     "name": "Tech2Wild"
+    }
+   }
+  },
+  {
+   "id": "2098080741871489366",
+   "text": "Any ai people in Houston Texas? Looking to connect with more like minded people https://t.co/cDkVAYPWKR",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 7,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 361,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu Sep 10 16:06:43 +0000 2026",
+   "createdAtLocal": "2026-09-11 00:06",
+   "createdAtISO": "2026-09-10T16:06:43+00:00",
+   "media": [
+    {
+     "type": "animated_gif",
+     "url": "https://video.twimg.com/tweet_video/HR3hULOWEAo-_Rw.mp4",
+     "width": 384,
+     "height": 480
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098054420042801286",
+   "text": "NVIDIA GLM-5.3 Flash NVFP4 on 2x DGX Spark, TP2 over RoCE.\n\nDFlash2 took median decode from 15.18 to 20.50 tok/s (+35%). Passed retrieval across 120,124 input tokens.\n\nOur work: TP2 memory/startup fixes, depth sweeps and raw-stream verification. Four sustained requests per arm; all stopped naturally.\n\nBuilt on @Tech2Wild GLM vLLM image + SM121 sparse-indexer patch.\n\nRecipe, raw streams and failure records:\nhttps://t.co/MSPU3T9G7K\n\nI know there a lot of recipes out there but i wanted to share one with the official @NVIDIAAI quant. Still a lot of room for improvement",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 29,
+    "retweets": 3,
+    "replies": 0,
+    "quotes": 0,
+    "views": 1517,
+    "bookmarks": 9
+   },
+   "createdAt": "Thu Sep 10 14:22:08 +0000 2026",
+   "createdAtLocal": "2026-09-10 22:22",
+   "createdAtISO": "2026-09-10T14:22:08+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HR3JXzdaoAALAE7.jpg",
+     "width": 1672,
+     "height": 941
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097937729837310260",
+   "text": "Too big to run on 4 sparks, who’s making the first quant?? @UnslothAI come save us",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 18,
+    "retweets": 0,
+    "replies": 3,
+    "quotes": 1,
+    "views": 1060,
+    "bookmarks": 1
+   },
+   "createdAt": "Thu Sep 10 06:38:27 +0000 2026",
+   "createdAtLocal": "2026-09-10 14:38",
+   "createdAtISO": "2026-09-10T06:38:27+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2097930608790167907",
+    "text": "🚀 Introducing DeepSeek-V4.1-Flash: smarter, faster, more efficient.\n\n🔹 Introducing the smallest model in our new architecture family, with native visual understanding.\n🔹 Designed for greater capability, faster inference, higher throughput, and scaling to larger models.\n\n1/6",
+    "author": {
+     "screenName": "deepseek_ai",
+     "name": "DeepSeek"
+    }
+   }
+  },
+  {
+   "id": "2097938229055877191",
+   "text": "@RedHat_AI @NVIDIAAI https://t.co/4Vd7vaZdGz",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 4,
+    "retweets": 1,
+    "replies": 0,
+    "quotes": 0,
+    "views": 141,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu Sep 10 06:40:26 +0000 2026",
+   "createdAtLocal": "2026-09-10 14:40",
+   "createdAtISO": "2026-09-10T06:40:26+00:00",
+   "media": [
+    {
+     "type": "animated_gif",
+     "url": "https://video.twimg.com/tweet_video/HR1fsmsbUAAXVCW.mp4",
+     "width": 480,
+     "height": 480
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "qme",
+   "score": null
+  },
+  {
+   "id": "2097931176379814107",
+   "text": "Will this beat glm5.3 flash or Qwen-next?? About to find out \nhttps://t.co/4Kz1Isbjxd",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 29,
+    "retweets": 0,
+    "replies": 9,
+    "quotes": 0,
+    "views": 2336,
+    "bookmarks": 1
+   },
+   "createdAt": "Thu Sep 10 06:12:24 +0000 2026",
+   "createdAtLocal": "2026-09-10 14:12",
+   "createdAtISO": "2026-09-10T06:12:24+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097928057067655426",
+   "text": "Nex-2.5 vs Ling 3.0 flash local battle:\n@NexEcosystem thought longer.\n@AntLingAGI shipped clean.\n\n Same voxel pagoda prompt, thinking ON:\n • Nex: 45.8 min, 68.5K tokens, two-line repair\n • Ling: 14.4 min, 22.1K tokens, zero repairs\n\nDifferent hardware/settings.\nNot a controlled speed test. Which scene wins visually?\n\nNex needed two missing declarations fixed. Ling rendered untouched.",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 8,
+    "retweets": 1,
+    "replies": 3,
+    "quotes": 0,
+    "views": 1198,
+    "bookmarks": 2
+   },
+   "createdAt": "Thu Sep 10 06:00:01 +0000 2026",
+   "createdAtLocal": "2026-09-10 14:00",
+   "createdAtISO": "2026-09-10T06:00:01+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2097928022871375872/vid/avc1/1920x1240/Ipg2_dcrbQ-_g41C.mp4?tag=29",
+     "width": 1920,
+     "height": 1240
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097752654805934451",
+   "text": "The only reason I don’t have an Apple Watch is they don’t work over tattoos. Maybe the new one will work since it’s more sensitive https://t.co/NBJLcNSe2d",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 7,
+    "retweets": 0,
+    "replies": 4,
+    "quotes": 0,
+    "views": 726,
+    "bookmarks": 0
+   },
+   "createdAt": "Wed Sep 09 18:23:01 +0000 2026",
+   "createdAtLocal": "2026-09-10 02:23",
+   "createdAtISO": "2026-09-09T18:23:01+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRy26vGW0AgeNwj.jpg",
+     "width": 1152,
+     "height": 2048
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097734723426505066",
+   "text": "Did Apple just announce a new local Siri ai model?",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 3,
+    "retweets": 0,
+    "replies": 2,
+    "quotes": 0,
+    "views": 983,
+    "bookmarks": 0
+   },
+   "createdAt": "Wed Sep 09 17:11:46 +0000 2026",
+   "createdAtLocal": "2026-09-10 01:11",
+   "createdAtISO": "2026-09-09T17:11:46+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097719533066727671",
+   "text": "What do you guys do when you’re not maxing voxel and three.js scenes with ai?",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 8,
+    "retweets": 0,
+    "replies": 18,
+    "quotes": 0,
+    "views": 868,
+    "bookmarks": 0
+   },
+   "createdAt": "Wed Sep 09 16:11:25 +0000 2026",
+   "createdAtLocal": "2026-09-10 00:11",
+   "createdAtISO": "2026-09-09T16:11:25+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097666050036818373",
+   "text": "Ling-3.0-flash-VL running on 2× DGX Sparks, day one.\n\nSGLang shipped a day-0 dev image\nWe brought it to GB10: FP8 (118GB), TP2 over CX7 RoCE, 128K ctx, vision tower loaded.\n\n26-32 tok/s warm · 25.7 sustained over a 22K-token one-shot · zero-repair Three.js artifact\n\nSpark recipe: https://t.co/L3Tq4xXX2c",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 10,
+    "retweets": 4,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1053,
+    "bookmarks": 1
+   },
+   "createdAt": "Wed Sep 09 12:38:53 +0000 2026",
+   "createdAtLocal": "2026-09-09 20:38",
+   "createdAtISO": "2026-09-09T12:38:53+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRxoJUYXIAA1ZNu.jpg",
+     "width": 1672,
+     "height": 941
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2097359651054784517",
+    "text": "Download Ling-3.0-flash-VL:\n\nHugging Face\n- BF16: https://t.co/9knQL5qtUq\n- FP8: https://t.co/SotgEgY7FY\n\nModelScope\n- BF16: https://t.co/vXRipUJdg0\n- FP8: https://t.co/2wKEm4bTFQ",
+    "author": {
+     "screenName": "AntLingAGI",
+     "name": "Ant Ling"
+    }
+   }
+  },
+  {
+   "id": "2097613348124655806",
+   "text": "Reached 300,000 followers on instagram!! \nOnly 2,500 here on x but we’re getting there 😂 https://t.co/msGCru9C1z",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 27,
+    "retweets": 0,
+    "replies": 5,
+    "quotes": 0,
+    "views": 615,
+    "bookmarks": 0
+   },
+   "createdAt": "Wed Sep 09 09:09:28 +0000 2026",
+   "createdAtLocal": "2026-09-09 17:09",
+   "createdAtISO": "2026-09-09T09:09:28+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRw4OC8bcAAgrHW.jpg",
+     "width": 1290,
+     "height": 511
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097599007950303534",
+   "text": "2-Spark battle:\nQwen Flash-Next vs Ling-3.0-flash-VL, same voxel pagoda prompt, one shot each.\n\n Qwen went 3.7× deeper:\n82,830 tokens, 34 min, a district-planned garden.\n Ling shipped in 14 min:\n37,221 thinking tokens\n\n Both compiled first try. FP8, TP2, 128K ctx on 2× DGX Spark.\n\nFor me Qwen-Next takes a big win, but Ling isn’t bad at all either",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 26,
+    "retweets": 1,
+    "replies": 2,
+    "quotes": 0,
+    "views": 2637,
+    "bookmarks": 3
+   },
+   "createdAt": "Wed Sep 09 08:12:29 +0000 2026",
+   "createdAtLocal": "2026-09-09 16:12",
+   "createdAtISO": "2026-09-09T08:12:29+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2097598937918025728/vid/avc1/1920x1152/hoCU5fK2WLpUeLGt.mp4?tag=29",
+     "width": 1920,
+     "height": 1152
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2097359640233439299",
+    "text": "Today, we're open-sourcing Ling-3.0-flash-VL in BF16 and FP8. FP4 and INT4 are coming soon.\n\nBeyond visual recognition, it follows visual cues to:\n- Understand images, video, docs &amp; UIs\n- Reason, search &amp; verify\n- Use tools, check results &amp; deliver https://t.co/kImBAjbdV9",
+    "author": {
+     "screenName": "AntLingAGI",
+     "name": "Ant Ling"
+    }
+   }
+  },
+  {
+   "id": "2097384151087186307",
+   "text": "https://t.co/85WvSml6bX",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 8,
+    "retweets": 1,
+    "replies": 2,
+    "quotes": 0,
+    "views": 722,
+    "bookmarks": 0
+   },
+   "createdAt": "Tue Sep 08 17:58:43 +0000 2026",
+   "createdAtLocal": "2026-09-09 01:58",
+   "createdAtISO": "2026-09-08T17:58:43+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRtnwVZXQAAVEcB.jpg",
+     "width": 1232,
+     "height": 809
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "zxx",
+   "score": null,
+   "quotedTweet": {
+    "id": "2097333400054927619",
+    "text": "Adventure through Hyrule and become the Hero of Time when The Legend of #Zelda: Ocarina of Time releases Nov 5 on Nintendo Switch 2. #NintendoDirect https://t.co/rW3r7o2L9r",
+    "author": {
+     "screenName": "NintendoAmerica",
+     "name": "Nintendo of America"
+    }
+   }
+  },
+  {
+   "id": "2097373678099169329",
+   "text": "Qwen-flash-next 2 dgx sparks vs qwen3.8-27b on a 128gb Mac Studio.\n\n Same prompt, one shot: \"spark ignites in a glass box → fire grows → wind blows it out.\" Three.js, thinking ON (xhigh), no caps.\n\n Sparks (FP8, TP2): 21.5 min · 52,046 tok · 40.3 tok/s · thought 29.7K, wrote 22.3K · 1-token fix\n Mac (MLX 8-bit): 61.7 min · 85,305 tok · 23.0 tok/s · thought 72.2K, wrote 13.1K · 0 fixes\n\nQwen 3.8-27b wants to be better but failed at the fire animation",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 30,
+    "retweets": 0,
+    "replies": 3,
+    "quotes": 0,
+    "views": 7752,
+    "bookmarks": 10
+   },
+   "createdAt": "Tue Sep 08 17:17:06 +0000 2026",
+   "createdAtLocal": "2026-09-09 01:17",
+   "createdAtISO": "2026-09-08T17:17:06+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2097373432182964224/vid/avc1/1920x1152/5gerCK4I78g5oKOe.mp4?tag=29",
+     "width": 1920,
+     "height": 1152
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097255174486315112",
+   "text": "Does this mean sparks are about to skyrocket in price? Sparks discontinued?",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 18,
+    "retweets": 1,
+    "replies": 6,
+    "quotes": 1,
+    "views": 5000,
+    "bookmarks": 7
+   },
+   "createdAt": "Tue Sep 08 09:26:13 +0000 2026",
+   "createdAtLocal": "2026-09-08 17:26",
+   "createdAtISO": "2026-09-08T09:26:13+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2097138074233061731",
+    "text": "NVIDIA DGX Spark™ - NVIDIA - マクニカ https://t.co/BhjFIu0NsG \"※NVIDIA社純正のDGX Sparkは、販売を終了しました。OEMパートナーから提供されている製品をご検討ください\"  一気に値上がりそう。",
+    "author": {
+     "screenName": "voluntas",
+     "name": "V"
+    }
+   }
+  },
+  {
+   "id": "2097214505147072559",
+   "text": "Recipe: uncensored Qwen3.8 Flash-Next FP8 on 2× DGX Spark (TP2, vLLM). From @OrcaRouter \n\n • 37.9 prose / 51.3 code tok/s (native MTP k=3, 84% acceptance)\n • True 128K: needles found at 16K/60K/110K prompts\n • Benchmarked 90.4/100\n • Parity with SGLang's official cookbook numbers for this model\n\n Hard-won lesson included: graph capture OOM-wedges both nodes until you power-cycle. Eager mode is mandatory. It's all in the repo:\n https://t.co/njELhhDXLx",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 24,
+    "retweets": 2,
+    "replies": 3,
+    "quotes": 2,
+    "views": 2770,
+    "bookmarks": 13
+   },
+   "createdAt": "Tue Sep 08 06:44:37 +0000 2026",
+   "createdAtLocal": "2026-09-08 14:44",
+   "createdAtISO": "2026-09-08T06:44:37+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRrNd_ob0AEZchk.jpg",
+     "width": 1672,
+     "height": 941
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097208994553004175",
+   "text": "Cloud frontier Astra 6 vs one DGX Spark qwen 3.8-27b. Both built racing games. \n\n ⬅️ Apex Valley by ChatGPT. A real sim in ONE 790KB HTML file: 120Hz physics, suspension + weight transfer, ABS/TC, 2.43km mountain circuit, ghost replays. Automated test lap: 1:26.417 through all 32 checkpoints.\n\n ➡️ NEON HIGHWAY // Tokyo Night Qwen3.8-27B running fully local on a single DGX Spark. Synthwave night driver: rain, drift scoring, gyro steering, procedural audio. Built in an agent loop that verified its own work with browser screenshots between edits.\n\nDifferent prompts, different games, not a benchmark. But one is a frontier model in a datacenter, and the other is a 27B on local hardware. Both shipped complete, playable games.\n\nThe local gap isn't capability anymore. It's style.\n\nhttps://t.co/dEl1oNXlZ1\n\nhttps://t.co/eCXQuxqscL",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 16,
+    "retweets": 2,
+    "replies": 3,
+    "quotes": 0,
+    "views": 1846,
+    "bookmarks": 4
+   },
+   "createdAt": "Tue Sep 08 06:22:43 +0000 2026",
+   "createdAtLocal": "2026-09-08 14:22",
+   "createdAtISO": "2026-09-08T06:22:43+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2097208930954858496/vid/avc1/976x848/lyQ9r8gnRkgB0UhU.mp4?tag=29",
+     "width": 976,
+     "height": 848
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097069352553992329",
+   "text": "Regular vs \"uncensored\" Qwen3.8-27B on a Mac Studio\n\n I ran both 4-bit MLX variants of Qwen3.8-27B through my full deployment benchmark on an M4 Max 128GB: 76 scenarios × 2 repeats, thinking off, no output caps, native MTP speculative decoding, One is the standard mlx-community conversion; the other is abliterated from @OrcaRouter \n\n Headline: 89.9 vs 89.8 TrueScore. A tie.\n\n But the domains tell the real story:\n\n Where abliteration hurt\n • Safety: 65.4 vs 80.3\n • Robustness (knowing when to abstain): 75.5 vs 100\n • Code: 91.1 vs 96.6\n • Pass@1: 90.8% vs 94.7%\n\n Where the abliterated model won\n • Agentic multi-tool work: 98.9 vs 91.6\n • Visual/canvas generation: 90.6 vs 77.6\n • Tool use: 82.9 vs 78.4\n\n Identical on both: planning, structured output, composition (all 100), and the honest negative, long-context retrieval at just 55.9. That weakness is the base model's, and neither quantization nor surgery touched it.\n\n My read: abliteration isn't a free lunch and isn't a lobotomy. It traded refusal behavior and some caution for measurably more aggressive task completion. Pick by workload.\n\n Disclosures: the two use different spec-decode drafters (BF16 vs 4-bit MTP), so this is a deployment-level comparison, not an isolated abliteration study. Serial requests on a live desktop — no throughput claims. Zero transport errors both runs, zero repeat flakiness (deterministic at temp 0.3).",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 12,
+    "retweets": 2,
+    "replies": 2,
+    "quotes": 0,
+    "views": 1301,
+    "bookmarks": 5
+   },
+   "createdAt": "Mon Sep 07 21:07:49 +0000 2026",
+   "createdAtLocal": "2026-09-08 05:07",
+   "createdAtISO": "2026-09-07T21:07:49+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRpJcqSakAATdku.jpg",
+     "width": 1672,
+     "height": 941
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097052454944641247",
+   "text": "Had to switch back to fable on Hermes after using Astra all day.\nNot sure with it’s not finishing anything and I have to keep telling it to keep going every 2 steps",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 7,
+    "retweets": 0,
+    "replies": 5,
+    "quotes": 0,
+    "views": 915,
+    "bookmarks": 0
+   },
+   "createdAt": "Mon Sep 07 20:00:41 +0000 2026",
+   "createdAtLocal": "2026-09-08 04:00",
+   "createdAtISO": "2026-09-07T20:00:41+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097018391206740048",
+   "text": "Qwen3.8-27B Uncensored @OrcaRouter on my M4 Max, 128GB recipe\nBoth MLX quants with native MTP:\n\n 4-bit: 42.2–44.3 tok/s  \n 8-bit: 32.3–32.4 tok/s\n\n ~34% higher throughput at 4-bit in this prose test. Recipe + raw results:\n\n https://t.co/BMLZnKAE8W https://t.co/5yq6PUlVfN",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 33,
+    "retweets": 6,
+    "replies": 6,
+    "quotes": 0,
+    "views": 4973,
+    "bookmarks": 18
+   },
+   "createdAt": "Mon Sep 07 17:45:19 +0000 2026",
+   "createdAtLocal": "2026-09-08 01:45",
+   "createdAtISO": "2026-09-07T17:45:19+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRobG7nbEAAmaWr.jpg",
+     "width": 1672,
+     "height": 941
+    }
+   ],
+   "urls": [
+    "https://github.com/Weschera/qwen38-27b-mlx-mtp-recipe"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2096828627807768836",
+    "text": "Someone independently benchmarked 8 different Qwen3.8-27B uncensored/abliterated models.\n\nWe won. 🐳\n\nAbliterlitics spent ~167 GPU-hours testing the variants across weight forensics, KL divergence, 13 capability benchmarks + 400 HarmBench behaviors.\n\nOrcaRouter Qwen3.8-27B-Uncensored:\n→ #1 Judge ASR: 82.2%\n→ Base model: 4.5%\n→ MMLU-Pro: −0.0pp\n→ IFEval: +0.4pp\n→ 4/4 of our model-card claims independently verified\n\nTheir verdict: “The winner.”\nThe interesting part isn't just removing refusals.\nIt's removing them without destroying the intelligence underneath.\n\nIndependent analysis:\nhttps://t.co/6EM9D5lOmz\nWeights:\nhttps://t.co/tls4GiHJnG",
+    "author": {
+     "screenName": "OrcaRouter",
+     "name": "OrcaRouter 🐳"
+    }
+   }
+  },
+  {
+   "id": "2096978320751501708",
+   "text": "So close, maybe in a few days https://t.co/FzMWMiBQyD",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 19,
+    "retweets": 0,
+    "replies": 2,
+    "quotes": 0,
+    "views": 615,
+    "bookmarks": 0
+   },
+   "createdAt": "Mon Sep 07 15:06:06 +0000 2026",
+   "createdAtLocal": "2026-09-07 23:06",
+   "createdAtISO": "2026-09-07T15:06:06+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRn2qruW4AEHutt.jpg",
+     "width": 1290,
+     "height": 924
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2096967922987958480",
+   "text": "Is this Astra for everyone else too? \nKeeps stopping constantly and I have to keep promoting to continue all the time https://t.co/vjlYJwqon2",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 13,
+    "retweets": 0,
+    "replies": 18,
+    "quotes": 0,
+    "views": 1140,
+    "bookmarks": 0
+   },
+   "createdAt": "Mon Sep 07 14:24:47 +0000 2026",
+   "createdAtLocal": "2026-09-07 22:24",
+   "createdAtISO": "2026-09-07T14:24:47+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRntNGYXAAA5Qdf.jpg",
+     "width": 1290,
+     "height": 664
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2096935623500468238",
+   "text": "I gave GPT-6 Astra one prompt inside Hermes Agent: \nRemake my website, keep everything, and improve whatever you want.\n\n29m 49s and 9.95M tokens later, it built, tested, and deployed a working preview.\n\nhttps://t.co/YLfjfXwXJ4\n\nAstra vs. the original: \n\nhttps://t.co/oI8ZIc2aDK https://t.co/3ropdQhSvD",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 16,
+    "retweets": 0,
+    "replies": 10,
+    "quotes": 0,
+    "views": 1279,
+    "bookmarks": 1
+   },
+   "createdAt": "Mon Sep 07 12:16:26 +0000 2026",
+   "createdAtLocal": "2026-09-07 20:16",
+   "createdAtISO": "2026-09-07T12:16:26+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2096935475621822464/vid/avc1/832x896/xHD8SA2cbKE4-Y1w.mp4?tag=29",
+     "width": 832,
+     "height": 896
+    }
+   ],
+   "urls": [
+    "https://Wesche.com/astra",
+    "https://Wesche.com"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2096941586492051584",
+   "text": "Used 2% of my usage with this https://t.co/u1potASteq",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 131,
+    "bookmarks": 0
+   },
+   "createdAt": "Mon Sep 07 12:40:08 +0000 2026",
+   "createdAtLocal": "2026-09-07 20:40",
+   "createdAtISO": "2026-09-07T12:40:08+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRnVQJiagAAtY7z.jpg",
+     "width": 1290,
+     "height": 553
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2096689407617106267",
+   "text": "Spent the last 3 days tattooing this full sleeve in Amsterdam, and off to Switzerland next! https://t.co/K5FwyfyzfE",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 13,
+    "retweets": 0,
+    "replies": 4,
+    "quotes": 0,
+    "views": 708,
+    "bookmarks": 0
+   },
+   "createdAt": "Sun Sep 06 19:58:04 +0000 2026",
+   "createdAtLocal": "2026-09-07 03:58",
+   "createdAtISO": "2026-09-06T19:58:04+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRjv5lZbQAAhDlc.jpg",
+     "width": 1366,
+     "height": 2048
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2096512449910374606",
+   "text": "Feels good take a weekend of AI, honestly the space has been feeling a bit toxic lately.",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 16,
+    "retweets": 0,
+    "replies": 4,
+    "quotes": 0,
+    "views": 1041,
+    "bookmarks": 0
+   },
+   "createdAt": "Sun Sep 06 08:14:54 +0000 2026",
+   "createdAtLocal": "2026-09-06 16:14",
+   "createdAtISO": "2026-09-06T08:14:54+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2095977892987707727",
+   "text": "GLM-5.3-Flash on ONE DGX Spark just outscored our own 2-Spark deployment of the same model. Recipe below 👇 \n\nSame benchmark, 76 scenarios ×2, uncapped:\n\n🥇 1× Spark — Unsloth UD-IQ3_XXS (dynamic 3-bit GGUF, 120 GB) + llama.cpp MTP\nTrueScore 93.4/100\n\n🥈 2× Spark — EXL3 4bpw (~164 GB) + vLLM TP2 + DFlash2 k7 over RoCE\nTrueScore 90.9/100\n\nWhere the single box wins: agentic 97.3 vs 88.0, safety 90.2 vs 85.6, calibration 90.2 vs 85.6.\nWhere 2 Sparks win: latency (4.3 s vs 9.3 s turns), code by a hair (98.1 vs 97.7).\n\nThe surprise: a 3-bit dynamic quant beating 4bpw EXL3 on quality. Unsloth's Dynamic quants + intact MTP heads are doing real work here. Half the hardware, +2.5 TrueScore. You just wait a bit longer per turn.\n\nCaveats in the repo: patched chat template required to disable thinking (stock GLM-5.3 template can't), and never use --no-mmap on unified memory. Full recipe, evidence CSVs, verify scripts:\nhttps://t.co/r0fIMxNX0u",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 140,
+    "retweets": 10,
+    "replies": 17,
+    "quotes": 1,
+    "views": 13409,
+    "bookmarks": 173
+   },
+   "createdAt": "Fri Sep 04 20:50:45 +0000 2026",
+   "createdAtLocal": "2026-09-05 04:50",
+   "createdAtISO": "2026-09-04T20:50:45+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRZoyBvXQAUyTtF.jpg",
+     "width": 1672,
+     "height": 941
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095852388888522890",
+    "text": "We made GLM-5.3-Flash run 3.3x faster locally!\n\nLocal GGUF inference is now 1.6–3.4× faster with optimized decoding and bonus multi-token prediction.\n\nRun 3-bit on 128GB setups via Unsloth Desktop or llama.cpp.\n\nGuide: https://t.co/axnDCrYeN7\nGGUF: https://t.co/E73FKC7IKM https://t.co/GDVn4IGCLi",
+    "author": {
+     "screenName": "UnslothAI",
+     "name": "Unsloth AI"
+    }
+   }
+  },
+  {
+   "id": "2095626317479678269",
+   "text": "Wtf is the government making games with local ai too? \nLooks like the type of stuff we’ve been testing, that flappy bird is classic to compare models",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 13,
+    "retweets": 0,
+    "replies": 7,
+    "quotes": 0,
+    "views": 3043,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu Sep 03 21:33:43 +0000 2026",
+   "createdAtLocal": "2026-09-04 05:33",
+   "createdAtISO": "2026-09-03T21:33:43+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095619360995914200",
+    "text": "https://t.co/qIR69AxSnm 👾 https://t.co/5m04HXYHqg",
+    "author": {
+     "screenName": "WhiteHouse",
+     "name": "The White House"
+    }
+   }
+  },
+  {
+   "id": "2095611590317863295",
+   "text": "Absolutely fabulous https://t.co/2tQ19Hfqx8",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 6,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 481,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu Sep 03 20:35:12 +0000 2026",
+   "createdAtLocal": "2026-09-04 04:35",
+   "createdAtISO": "2026-09-03T20:35:12+00:00",
+   "media": [
+    {
+     "type": "animated_gif",
+     "url": "https://video.twimg.com/tweet_video/HRUboXMWQAUPKnv.mp4",
+     "width": 252,
+     "height": 162
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095596188183769339",
+    "text": "JUST IN: Trump declares \"data centers are fabulous\"",
+    "author": {
+     "screenName": "Polymarket",
+     "name": "Polymarket"
+    }
+   }
+  },
+  {
+   "id": "2095253588226289708",
+   "text": "I love that the owner of meta announces things on X and not on threads, ig or fb.\n\nHe knows it’s full of hate on his own platforms",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 23,
+    "retweets": 2,
+    "replies": 8,
+    "quotes": 0,
+    "views": 1763,
+    "bookmarks": 0
+   },
+   "createdAt": "Wed Sep 02 20:52:38 +0000 2026",
+   "createdAtLocal": "2026-09-03 04:52",
+   "createdAtISO": "2026-09-02T20:52:38+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095232032896946311",
+    "text": "Muse Spark 1.3 is rolling out today with frontier performance almost too cheap to meter. This is the biggest jump we've made so far on coding and agentic work. Try it in Muse Code and our API.\n\nNext up 🍉 and Muse Spark open weights releases coming soon. https://t.co/XQQEDEJGD7",
+    "author": {
+     "screenName": "finkd",
+     "name": "Mark Zuckerberg"
+    }
+   }
+  },
+  {
+   "id": "2095251571525169165",
+   "text": "Qwen3.8-Flash-Next (125B MoE, 6B active) One DGX Spark recipe:\n\n llama.cpp qwen4exp/mtp branch + @UnslothAI UD-Q4_K_XL (103.7 GB fits the 121 GB GB10)\n\n Measured MTP draft sweep:\ncode 47 tok/s (90% accept), thinking 37-39, prose 24. n=4 beats the default n=5.\n\n Full recipe + raw evidence: https://t.co/pfIPCZpPib",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 85,
+    "retweets": 7,
+    "replies": 9,
+    "quotes": 1,
+    "views": 12988,
+    "bookmarks": 72
+   },
+   "createdAt": "Wed Sep 02 20:44:37 +0000 2026",
+   "createdAtLocal": "2026-09-03 04:44",
+   "createdAtISO": "2026-09-02T20:44:37+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2095251546942414848/vid/avc1/1920x1080/wod2lrJaaHChrbKg.mp4?tag=29",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095157074112164072",
+    "text": "Qwen3.8-Flash can now run 1.7× faster locally with MTP!⚡️\n\nGGUFs can reach 170 tokens/s on a RTX PRO 6000.\n\nMTP enables Qwen3.8-Flash-Next ~1.3–1.7× faster inference with no accuracy change.\n\nGGUFs: https://t.co/vXkjO3W0fj\nGuide: https://t.co/LLMclyJTeL https://t.co/KuWfuLOJBR",
+    "author": {
+     "screenName": "UnslothAI",
+     "name": "Unsloth AI"
+    }
+   }
+  },
+  {
+   "id": "2095116777596354612",
+   "text": "DeepSeek V4 Flash Vision-Exp running on a 128GB Mac Studio (M4 Max).\n\nMeasured, thinking OFF: 31.7 tok/s code, 28.5 tok/s prose, TTFT 0.4–1.4s.\n\nEngine: @antirez's DwarfStar (ds4) — Metal backend + DSpark speculative decoding, his imatrix q2 GGUF (80.8 GiB resident, ~2 min load).\n\nContext: same checkpoint on 2× DGX Spark (vLLM TP2, FP8, DSpark) = 55 tok/s. antirez's own bench on 1× Spark with ds4 = 18→14 tok/s. So the Mac lands ~55% of the two-Spark pair and ~2× a single Spark, on 2-bit routed experts.\n\nFull recipe, scripts, evidence, video:\nhttps://t.co/XEihCmA2ec",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 49,
+    "retweets": 6,
+    "replies": 9,
+    "quotes": 1,
+    "views": 8346,
+    "bookmarks": 33
+   },
+   "createdAt": "Wed Sep 02 11:48:59 +0000 2026",
+   "createdAtLocal": "2026-09-02 19:48",
+   "createdAtISO": "2026-09-02T11:48:59+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRNZmAvX0AAbt6M.jpg",
+     "width": 1672,
+     "height": 941
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095096561915052399",
+    "text": "P.S. for me DeepSeek v4 Flash is still the king of local inference, regardless of other great models released that could beat it in specific benchmarks and when many (many!) tokens are used. Especially now that DS4F has vision. What a model...",
+    "author": {
+     "screenName": "antirez",
+     "name": "antirez"
+    }
+   }
+  },
+  {
+   "id": "2095135812287443402",
+   "text": "1 million context unlocked and repo updated 🫡",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 266,
+    "bookmarks": 0
+   },
+   "createdAt": "Wed Sep 02 13:04:38 +0000 2026",
+   "createdAtLocal": "2026-09-02 21:04",
+   "createdAtISO": "2026-09-02T13:04:38+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094875693439918454",
+   "text": "How’s everyone who canceled their Claude subscription feeling? https://t.co/rl0uttEQGH",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 82,
+    "retweets": 2,
+    "replies": 82,
+    "quotes": 6,
+    "views": 6493,
+    "bookmarks": 2
+   },
+   "createdAt": "Tue Sep 01 19:51:00 +0000 2026",
+   "createdAtLocal": "2026-09-02 03:51",
+   "createdAtISO": "2026-09-01T19:51:00+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRJ-UznXkAAo0-i.jpg",
+     "width": 1227,
+     "height": 1792
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094869665730224163",
+   "text": "Fable 5.1 same prompt for the ship in a bottle\n\nOcean is 4,080 instanced voxel columns. Height = swell (4 travelling wave components) + a ripple field solved each frame with the 2D wave equation, damping, and reflection off the glass and the island.\n\nThe ripple field is advected downstream at the ship’s sailing speed, so the bow disturbance spreads into a V-shaped wake behind the hull, with churned foam trailing off the stern.\n\nFoam appears where wave fronts get steep (breaking crests) and where ripples are energetic.\n\nThe galleon floats by sampling water height at bow, stern, port and starboard, then driving heave, pitch and roll through spring–damper dynamics — so it lags, overshoots and settles like a real hull. When the bow slams down faster than the water is falling, it throws spray particles and kicks a ripple.\n\nWaves wash up the beach because columns only exist where the surface is above the sand.",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 16,
+    "retweets": 2,
+    "replies": 1,
+    "quotes": 1,
+    "views": 4575,
+    "bookmarks": 8
+   },
+   "createdAt": "Tue Sep 01 19:27:03 +0000 2026",
+   "createdAtLocal": "2026-09-02 03:27",
+   "createdAtISO": "2026-09-01T19:27:03+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2094869494384463873/vid/avc1/1288x2268/bWhxIor2YTvUFTGC.mp4?tag=29",
+     "width": 1288,
+     "height": 2268
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2094849933606064379",
+    "text": "GLM 5.3 on 8 x RTX Blackwell 6000's @ 120 tok/s with OMP. No skills. No plugins. Local Qwen 3.8 27B for vision 👀\n\nGreat at making neat little things to look at, like this ship in a bottle!\n\nOne-shot prompt below 👇 https://t.co/l505cIJLIA",
+    "author": {
+     "screenName": "holytrinity",
+     "name": "wick"
+    }
+   }
+  },
+  {
+   "id": "2094856612729221533",
+   "text": "Fable 5.1 voxel pagoda test\n\nFile: 617 lines, 31.9 KB. Rough estimate is ~10–11k tokens of output for the file itself, based on typical code tokenization (~3 chars/token).\n\nScene build time: 658 ms in a Node test run before I shared it. In Chrome it should be similar, then the GPU renders 136,235 voxels as 166,694 triangles (over 800k faces culled away).\n\nEverything is procedural from a fixed seed, so it’s the same scene every load.\n\nI know this isn’t telling of how good the model is but it’s pretty average compared to glm5.3 or qwen3.8",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 36,
+    "retweets": 3,
+    "replies": 9,
+    "quotes": 1,
+    "views": 6618,
+    "bookmarks": 4
+   },
+   "createdAt": "Tue Sep 01 18:35:11 +0000 2026",
+   "createdAtLocal": "2026-09-02 02:35",
+   "createdAtISO": "2026-09-01T18:35:11+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2094856496161103873/vid/avc1/1288x2272/CUXnGgWgSVW2Usnb.mp4?tag=29",
+     "width": 1288,
+     "height": 2272
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2094848572143407483",
+    "text": "We’re introducing Claude Fable 5.1 and Claude Mythos 5.1.\n\nThey're the world’s most advanced models for coding and knowledge work. https://t.co/8P9PSrWPi3",
+    "author": {
+     "screenName": "claudeai",
+     "name": "Claude"
+    }
+   }
+  },
+  {
+   "id": "2094848686635594161",
+   "text": "Fable 5.1 now available, lets see how it compares to 5.0 https://t.co/XQniUfMJyl",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 9,
+    "retweets": 0,
+    "replies": 3,
+    "quotes": 0,
+    "views": 834,
+    "bookmarks": 0
+   },
+   "createdAt": "Tue Sep 01 18:03:41 +0000 2026",
+   "createdAtLocal": "2026-09-02 02:03",
+   "createdAtISO": "2026-09-01T18:03:41+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRJlxZgaMAEuC7W.jpg",
+     "width": 1290,
+     "height": 1849
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094707092074401969",
+   "text": "This is cool but I feel like LM studio is more for beginners, I probably won’t be using it",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 6,
+    "retweets": 0,
+    "replies": 3,
+    "quotes": 0,
+    "views": 888,
+    "bookmarks": 0
+   },
+   "createdAt": "Tue Sep 01 08:41:03 +0000 2026",
+   "createdAtLocal": "2026-09-01 16:41",
+   "createdAtISO": "2026-09-01T08:41:03+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2094499384960467188",
+    "text": "Bionic is now available for Linux!\n\nYour agents, running local and open models, now on your Linux machine. \n\n2026 the year of the Linux desktop? https://t.co/DayYkjaseG",
+    "author": {
+     "screenName": "lmstudio",
+     "name": "LM Studio"
+    }
+   }
+  },
+  {
+   "id": "2094696290957291805",
+   "text": "DeepSeek V4 Flash-0731\nVs\nVision-Exp on 2× DGX Sparks:\n\nTrueScore: 93.01 → 95.6\nCapability: 93.38 → 96.3\nPass@1: 94.7% → 100%\nLatency: 2.20s → 2.59s\nVision suite: 3/4\n\nSpark Bench v6.7.1, thinking OFF. https://t.co/a7SnaI1nez",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 22,
+    "retweets": 2,
+    "replies": 2,
+    "quotes": 0,
+    "views": 1825,
+    "bookmarks": 2
+   },
+   "createdAt": "Tue Sep 01 07:58:07 +0000 2026",
+   "createdAtLocal": "2026-09-01 15:58",
+   "createdAtISO": "2026-09-01T07:58:07+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRHbK_SX0AA5VIS.jpg",
+     "width": 1672,
+     "height": 941
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094492079623729300",
+   "text": "No comment here https://t.co/DS2twe3Gk3",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 347,
+    "retweets": 17,
+    "replies": 16,
+    "quotes": 7,
+    "views": 13518,
+    "bookmarks": 21
+   },
+   "createdAt": "Mon Aug 31 18:26:40 +0000 2026",
+   "createdAtLocal": "2026-09-01 02:26",
+   "createdAtISO": "2026-08-31T18:26:40+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HREhcLKXkAEDfAN.jpg",
+     "width": 1254,
+     "height": 1254
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2094453432023208101",
+    "text": "I tried OpenClaw 2.0, and it’s a total disaster.\n\nPeter Steinberger has basically unlimited support from OpenAI, infinite tokens, backing from giants like NVIDIA, tailored model optimizations, and an incredibly talented team.\n\nYet after all this time, OpenClaw still just doesn't work.\n\nYou have to step in and fix things at almost every turn. \n\nThe UX is so bad that if I asked my own agent to design the interface, it’d probably do a better job. I’m 100% convinced GPT designed it, which explains the quality.\n\nA flaw I’ve dealt with since the early Clawdbot days is still there, and the agent gets stuck in loops, repeats itself, and wanders off-task.\n\nIt’s honestly bizarre how bad it is.\n\nVision alone isn't enough. \nYou need consistency and reliability to last.\n\nI’m definitely sticking with the smarter choice: Hermes Agent.",
+    "author": {
+     "screenName": "Da7_Tech",
+     "name": "Da7em"
+    }
+   }
+  },
+  {
+   "id": "2094475566611079268",
+   "text": "GLM-5.3 Flash quant showdown on 2× DGX Spark per model.\n\nBench v6.7.1 — 76 scenarios × 2 repeats.\n\nEXL3 TR3 4bpw\n• TrueScore: 90.9\n• Capability: 92.2\n• Operational: 87.6\n• Median turn: 4.30s\n• Long-response effective rate: ~35.4 tok/s\n• 53,347 total output tokens\n\nNVFP4\n• Raw TrueScore: 78.5\n• Capability: 71.6\n• Operational: 71.9\n• Median turn: 13.42s\n• Long-response effective rate: ~26.5 tok/s\n• 996,608 total output tokens\n\nEXL3 won instruction following (94.2 vs 48.9), structured output (97.2 vs 12.8), code (98.1 vs 68.5), visuals (92.3 vs 36.3), long context (100 vs 85.3) and robustness (100 vs 86.8).\n\nNVFP4 won agentic work (98.5 vs 88.0), planning (100 vs 91.2) and narrowly won safety (87.8 vs 85.6). Tool use tied at 78.4.\n\nNVFP4 completed every request with zero transport errors, but emitted 18.7× more output and took 3.12× longer per median turn.\n\nImportant: this is a deployment comparison, not a pure quant-only test. EXL3 used FP8 KV, CUDA graphs and a configured 1M context ceiling. NVFP4 used Marlin, FP8 E4M3 KV, eager mode and a 262K ceiling.\n\nVerdict: EXL3 TR3 4bpw was the much better all-around deployment. NVFP4 was genuinely strong for planning and agentic workflows, but its verbosity and format behavior need fixing before it can compete on practical quality and speed.",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 56,
+    "retweets": 9,
+    "replies": 11,
+    "quotes": 4,
+    "views": 32614,
+    "bookmarks": 32
+   },
+   "createdAt": "Mon Aug 31 17:21:03 +0000 2026",
+   "createdAtLocal": "2026-09-01 01:21",
+   "createdAtISO": "2026-08-31T17:21:03+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRESabLXcAEVxZT.jpg",
+     "width": 1672,
+     "height": 941
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094376289037689104",
+   "text": "2 DGX Sparks. Qwen3.8 Flash Next NVFP4.\n\n64 users, independent prompts + KV caches.  \n32,768 output tokens in 78.82s:\n\n415.7 tok/s\n\nVideo: 1K stress. Usable-context test passed 64K/user at C16, zero leakage. Testing Spark limits, not a production recipe.\n\n@NVIDIAAI https://t.co/2UY113o8nf",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 327,
+    "retweets": 30,
+    "replies": 18,
+    "quotes": 9,
+    "views": 40497,
+    "bookmarks": 159
+   },
+   "createdAt": "Mon Aug 31 10:46:33 +0000 2026",
+   "createdAtLocal": "2026-08-31 18:46",
+   "createdAtISO": "2026-08-31T10:46:33+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2094375273739272192/vid/avc1/1920x1080/jrVrceVaMINlgFZ2.mp4?tag=29",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094371568646254709",
+   "text": "I wonder how it will compare with the deepseek we all love, I’ll run some comparison visuals now \nhttps://t.co/x4R30yL13j",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 55,
+    "retweets": 3,
+    "replies": 7,
+    "quotes": 1,
+    "views": 5028,
+    "bookmarks": 10
+   },
+   "createdAt": "Mon Aug 31 10:27:48 +0000 2026",
+   "createdAtLocal": "2026-08-31 18:27",
+   "createdAtISO": "2026-08-31T10:27:48+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-Vision-Exp"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094049767428935857",
+   "text": "Mac recipe: Qwen3.8-Flash-Next \nAverage 69tok/s\n\n1.86x faster on my 128GB M4 Max Mac Studio: 36.64 → 68.31 tok/s, +86.4%, with 97.55% MTP acceptance. A/B correctness checks held; non-MTP Spark Bench baseline: 91.8.\n\nFull oMLX config, rollback, scripts + caveats:\nhttps://t.co/ETrZ0pfljZ",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 161,
+    "retweets": 7,
+    "replies": 17,
+    "quotes": 2,
+    "views": 13152,
+    "bookmarks": 180
+   },
+   "createdAt": "Sun Aug 30 13:09:04 +0000 2026",
+   "createdAtLocal": "2026-08-30 21:09",
+   "createdAtISO": "2026-08-30T13:09:04+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQ-PJ9SXQAALsdY.jpg",
+     "width": 1672,
+     "height": 941
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094167911870943406",
+   "text": "Friends I got new numbers and updated the recipe",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 4,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 771,
+    "bookmarks": 1
+   },
+   "createdAt": "Sun Aug 30 20:58:32 +0000 2026",
+   "createdAtLocal": "2026-08-31 04:58",
+   "createdAtISO": "2026-08-30T20:58:32+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2094167772431290644",
+    "text": "Take two: Mac Studio m4 Max recipe\nQwen3.8-Flash-Next update\n\nAverage 83tok/s\n\n• MTP off→MTP3 weighted decode: 36.64→68.31 tok/s (1.86×)\n• MTP3→MTP6 5,999-token decode: 70.44→83.06 tok/s (+17.9%)\n• TrueScore: 91.8→91.9\n•256k context\n\nDeployment:\nhttps://t.co/sjQrX8ZK8D https://t.co/A5jpSkFRni",
+    "author": {
+     "screenName": "WescheNex1q",
+     "name": "Wësche"
+    }
+   }
+  },
+  {
+   "id": "2094167772431290644",
+   "text": "Take two: Mac Studio m4 Max recipe\nQwen3.8-Flash-Next update\n\nAverage 83tok/s\n\n• MTP off→MTP3 weighted decode: 36.64→68.31 tok/s (1.86×)\n• MTP3→MTP6 5,999-token decode: 70.44→83.06 tok/s (+17.9%)\n• TrueScore: 91.8→91.9\n•256k context\n\nDeployment:\nhttps://t.co/sjQrX8ZK8D https://t.co/A5jpSkFRni",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 31,
+    "retweets": 2,
+    "replies": 4,
+    "quotes": 1,
+    "views": 3393,
+    "bookmarks": 25
+   },
+   "createdAt": "Sun Aug 30 20:57:59 +0000 2026",
+   "createdAtLocal": "2026-08-31 04:57",
+   "createdAtISO": "2026-08-30T20:57:59+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQ_6fKIWQAAbNse.jpg",
+     "width": 1672,
+     "height": 941
+    }
+   ],
+   "urls": [
+    "https://github.com/Weschera/qwen38-flash-next-omlx-mac"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094127676638273931",
+   "text": "Hermes agent has so many commands, this is just some of the main ones\nI need to print this this in my mouse pad \n@NousResearch https://t.co/ccFkqWkW1m",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 272,
+    "retweets": 29,
+    "replies": 10,
+    "quotes": 5,
+    "views": 12851,
+    "bookmarks": 369
+   },
+   "createdAt": "Sun Aug 30 18:18:39 +0000 2026",
+   "createdAtLocal": "2026-08-31 02:18",
+   "createdAtISO": "2026-08-30T18:18:39+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQ_WBTHXAAE5RNB.jpg",
+     "width": 1024,
+     "height": 1536
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094083263882998260",
+   "text": "I love my sparks but for my daily agents in leaning more towards Mac",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 28,
+    "retweets": 0,
+    "replies": 12,
+    "quotes": 0,
+    "views": 2689,
+    "bookmarks": 1
+   },
+   "createdAt": "Sun Aug 30 15:22:10 +0000 2026",
+   "createdAtLocal": "2026-08-30 23:22",
+   "createdAtISO": "2026-08-30T15:22:10+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2093807395516334513",
+   "text": "LOCAL GLM 5.3 flash TP2 vs Full GLM 5.3 TP4\n\nFlash NVFP4 : 29,945 thinking / 46,840 total tokens, 24.94 tok/s, 31:09. It needed a 2-line display fix. \n\nFull 743B Int4/Int8Mix TP4: 82,364 thinking / 106,209 total, 21.52 tok/s, 1:21:57.\n\nLive: https://t.co/hMGT8ioOJy https://t.co/NUHnR1ApEJ",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 38,
+    "retweets": 1,
+    "replies": 5,
+    "quotes": 1,
+    "views": 7366,
+    "bookmarks": 13
+   },
+   "createdAt": "Sat Aug 29 21:05:58 +0000 2026",
+   "createdAtLocal": "2026-08-30 05:05",
+   "createdAtISO": "2026-08-29T21:05:58+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2093807346979897344/vid/avc1/1080x1920/a9x0GeeR2GrzzK6h.mp4?tag=29",
+     "width": 1080,
+     "height": 1920
+    }
+   ],
+   "urls": [
+    "https://wesche.com/dgx/solar-system/"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2093714087377097140",
+    "text": "📖 GLM-5.3 on DGX Spark, the whole recipe book in one repo.\n\nEvery config I've shipped, indexed:\n🔹 the full 743B flagship (4 KV/spec lanes, up to 53 tok/s)\n🔹 GLM-5.3-Flash at TP4 (1M context) and TP2 (DFlash2, 2.15x)\n🔹 the GLM-5.2 foundation it all grew from\n+ a master comparison table and every GB10 trap that cost me a boot.\n\n👉 https://t.co/4su7LYQ6D9",
+    "author": {
+     "screenName": "Tech2Wild",
+     "name": "Tech2Wild"
+    }
+   }
+  },
+  {
+   "id": "2093912128373608864",
+   "text": "Tried with one with @Tech2Wild 4 spark recipe and 2 spark",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 0,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 262,
+    "bookmarks": 0
+   },
+   "createdAt": "Sun Aug 30 04:02:09 +0000 2026",
+   "createdAtLocal": "2026-08-30 12:02",
+   "createdAtISO": "2026-08-30T04:02:09+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2093756729288704402",
+   "text": "GLM-5.3 Flash and Qwen3.8 Flash Next got the same uncapped prompt\n\n“build an interactive museum cube holding a living ocean that evolves continuously from calm water into a rotating supercell and hurricane, then clears back to calm. No cuts.” \n\n GLM: 30,396 reasoning / 52,182 generated tokens  \n Qwen: 52,501 / 92,780\n\nClear winner is glm for this one, as Qwen’s scene needed display-only repairs to become visible and stable.  No geometry, assets, or scene concepts were added. Full disclosure is on the page.\n\n Watch + interact:  \n https://t.co/ajhKCPJMWy",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 18,
+    "retweets": 2,
+    "replies": 1,
+    "quotes": 0,
+    "views": 2064,
+    "bookmarks": 3
+   },
+   "createdAt": "Sat Aug 29 17:44:39 +0000 2026",
+   "createdAtLocal": "2026-08-30 01:44",
+   "createdAtISO": "2026-08-29T17:44:39+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2093756641153871872/vid/avc1/1080x1920/pHijB7z2daN0-poP.mp4?tag=29",
+     "width": 1080,
+     "height": 1920
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2093744495628013928",
+   "text": "Sparkbench local battle:\nQwen3.8-Flash-Next (NVFP4 TP2, spec off) scored 87.0\nGLM-5.3-Flash (NVFP4 TP2, DFlash2) at 85.7\n\nThis is a deployment comparison, not a universal model ranking, but Qwen was faster, more reliable, and cleaner here.\n\n The most interesting result wasn’t the score: \nGLM hit four ~261K-token repetition loops, while Qwen’s NEXTN path had its own collapse and had to be disabled\n\nLocal inference moves fast, but serving-stack correctness matters as much as the model.\n\nFull deployment and results: https://t.co/mHdgpXljDK",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 35,
+    "retweets": 2,
+    "replies": 8,
+    "quotes": 0,
+    "views": 3156,
+    "bookmarks": 13
+   },
+   "createdAt": "Sat Aug 29 16:56:02 +0000 2026",
+   "createdAtLocal": "2026-08-30 00:56",
+   "createdAtISO": "2026-08-29T16:56:02+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQ55glLW8AAY44R.jpg",
+     "width": 1672,
+     "height": 941
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2093593986485146098",
+   "text": "I gave GLM-5.3 Flash and Qwen3.8 Flash Next on challenge:\n\nMake one metallic sheet visibly fold into an articulated dragon, without a cut or hidden transition. It must awaken, fly, breathe particle fire, return, and unfold into the sheet.\n\nThe prompt required procedural geometry, 20,000+ particles, a moonlit Japanese temple, articulated wings and tail, moving shadows, fog, bloom, orbit/zoom controls, camera presets, a live HUD, 60fps targeting, and one self-contained HTML file.\n\nGLM: 66,961 reasoning / 81,179 generated tokens\nQwen: 117,329 / 153,000\n\nTry it here\nhttps://t.co/BweWsURLK2",
+   "author": {
+    "id": "1129972609",
+    "name": "Wësche",
+    "screenName": "WescheNex1q",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2086266194135257089/6ynMb1H0_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 22,
+    "retweets": 0,
+    "replies": 4,
+    "quotes": 0,
+    "views": 2927,
+    "bookmarks": 3
+   },
+   "createdAt": "Sat Aug 29 06:57:58 +0000 2026",
+   "createdAtLocal": "2026-08-29 14:57",
+   "createdAtISO": "2026-08-29T06:57:58+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2093593885930815488/vid/avc1/1080x1920/8PWZbYdW_jz9dJxs.mp4?tag=29",
+     "width": 1080,
+     "height": 1920
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  }
+ ]
+}

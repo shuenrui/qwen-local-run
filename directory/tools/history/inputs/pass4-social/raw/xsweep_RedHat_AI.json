@@ -1,0 +1,1991 @@
+{
+ "via": "twitter-cli user-posts -n 60",
+ "user": "RedHat_AI",
+ "posts": [
+  {
+   "id": "2098441614930702374",
+   "text": "Really hoping I dint have any travel conflicts for this. Looks like a great event happening here in Raleigh area next month by @NVIDIAAI and @RedHat",
+   "author": {
+    "id": "6452362",
+    "name": "Mike Gannotti",
+    "screenName": "MichaelGannotti",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2029534512888328193/t6p-CjBb_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 4,
+    "retweets": 1,
+    "replies": 2,
+    "quotes": 0,
+    "views": 1787,
+    "bookmarks": 0
+   },
+   "createdAt": "Fri Sep 11 16:00:42 +0000 2026",
+   "createdAtLocal": "2026-09-12 00:00",
+   "createdAtISO": "2026-09-11T16:00:42+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "RedHat_AI",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2098082225677803636",
+    "text": "Nothing over 33B parameters. That's the whole challenge.\n\n@NVIDIAAI and Red Hat are running an in-person Small Models Hack in Raleigh, October 17-18. Small, open models only. Build something that punches above its weight.\n\nThree tracks:\n🎯 Fine-tune a small model to beat a general one at a real task\n🕸️ Wire several small models into a multi-agent system\n🛠️ Make one model call real tools reliably\n\nBrev credits provided to participants for GPU time all weekend. Prizes include an NVIDIA GeForce RTX 5090, NVIDIA Jetson Orin Nano Super Developer Kits, and more! 100 spots available: solo or up to teams of 3.\n\nApply: https://t.co/L6GtM9uW44",
+    "author": {
+     "screenName": "RedHat_AI",
+     "name": "Red Hat AI"
+    }
+   }
+  },
+  {
+   "id": "2098214992755765758",
+   "text": "Model Runner V2 is the default runner for all models as of vLLM v0.29.0. 🎉\n\n594 commits from 277 contributors, 91 of them first-timers.\n\nHighlights:\n\n🌙 Another optimization round on Kimi-K3, latent tail down to Mamba metadata\n🐳 DeepSeek-V4 shared experts fused into MegaMoE\n🧠 Mamba prefix caching keeps internal prefill checkpoints: 9~25% better TTFT\n⚡ Speculative decoding reports per-request acceptance stats over the API\n🔄 RL weight sync adds the sharded_rdt P2P backend: each worker pulls only its own TP/EP slice\n🆕 New models: Hy4-preview, Qwen3.8-Flash-Next, GraniteSWA, NemotronH Omni Reasoning V3\n\nThread 👇",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 170,
+    "retweets": 24,
+    "replies": 6,
+    "quotes": 0,
+    "views": 9411,
+    "bookmarks": 34
+   },
+   "createdAt": "Fri Sep 11 01:00:11 +0000 2026",
+   "createdAtLocal": "2026-09-11 09:00",
+   "createdAtISO": "2026-09-11T01:00:11+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HR5baNpaoAA0FI_.jpg",
+     "width": 1200,
+     "height": 675
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "RedHat_AI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098222720760910291",
+   "text": "Excited to join @NVIDIAAI and @RedHat_AI for this one! 🔥\n\nWe're adding a Best Use of vLLM bounty.\n\n33B max. Small open models. Real builds. 👀\n\nServe something real with vLLM, use it well, and share honest feedback on the experience.\n\nSee you in Raleigh! 👋",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 90,
+    "retweets": 7,
+    "replies": 7,
+    "quotes": 0,
+    "views": 12148,
+    "bookmarks": 18
+   },
+   "createdAt": "Fri Sep 11 01:30:54 +0000 2026",
+   "createdAtLocal": "2026-09-11 09:30",
+   "createdAtISO": "2026-09-11T01:30:54+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "RedHat_AI",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2098082225677803636",
+    "text": "Nothing over 33B parameters. That's the whole challenge.\n\n@NVIDIAAI and Red Hat are running an in-person Small Models Hack in Raleigh, October 17-18. Small, open models only. Build something that punches above its weight.\n\nThree tracks:\n🎯 Fine-tune a small model to beat a general one at a real task\n🕸️ Wire several small models into a multi-agent system\n🛠️ Make one model call real tools reliably\n\nBrev credits provided to participants for GPU time all weekend. Prizes include an NVIDIA GeForce RTX 5090, NVIDIA Jetson Orin Nano Super Developer Kits, and more! 100 spots available: solo or up to teams of 3.\n\nApply: https://t.co/L6GtM9uW44",
+    "author": {
+     "screenName": "RedHat_AI",
+     "name": "Red Hat AI"
+    }
+   }
+  },
+  {
+   "id": "2098082225677803636",
+   "text": "Nothing over 33B parameters. That's the whole challenge.\n\n@NVIDIAAI and Red Hat are running an in-person Small Models Hack in Raleigh, October 17-18. Small, open models only. Build something that punches above its weight.\n\nThree tracks:\n🎯 Fine-tune a small model to beat a general one at a real task\n🕸️ Wire several small models into a multi-agent system\n🛠️ Make one model call real tools reliably\n\nBrev credits provided to participants for GPU time all weekend. Prizes include an NVIDIA GeForce RTX 5090, NVIDIA Jetson Orin Nano Super Developer Kits, and more! 100 spots available: solo or up to teams of 3.\n\nApply: https://t.co/L6GtM9uW44",
+   "author": {
+    "id": "997536616481722369",
+    "name": "Red Hat AI",
+    "screenName": "RedHat_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1904876402425421824/sN9mSDTt_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 77,
+    "retweets": 11,
+    "replies": 7,
+    "quotes": 2,
+    "views": 18023,
+    "bookmarks": 27
+   },
+   "createdAt": "Thu Sep 10 16:12:37 +0000 2026",
+   "createdAtLocal": "2026-09-11 00:12",
+   "createdAtISO": "2026-09-10T16:12:37+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098071095358165491",
+   "text": "1/ GLM 5.3 at full 1M context on a single 8xH200 node. That didn't fit before.\n\nAgentic serving is why it's hard: many concurrent requests, each with a long context that keeps growing. The GPU block pool is fixed, so the KV cache runs out of room. Something has to give. https://t.co/urdXTf5lv1",
+   "author": {
+    "id": "997536616481722369",
+    "name": "Red Hat AI",
+    "screenName": "RedHat_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1904876402425421824/sN9mSDTt_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 58,
+    "retweets": 7,
+    "replies": 4,
+    "quotes": 1,
+    "views": 3162,
+    "bookmarks": 25
+   },
+   "createdAt": "Thu Sep 10 15:28:24 +0000 2026",
+   "createdAtLocal": "2026-09-10 23:28",
+   "createdAtISO": "2026-09-10T15:28:24+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HR3WDpdaIAAZQNz.jpg",
+     "width": 3875,
+     "height": 1762
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098071106556932138",
+   "text": "5/6 The payoff: under pressure, both requests keep decoding at partial residency instead of one waiting for a slot or re-prefilling itself. Higher concurrency across context lengths, and the full 1M context on hardware that couldn't hold it before.\n\nBenchmarked on an OpenHands agentic workload. Landing in vLLM v0.30. Full writeup:\nhttps://t.co/cc2MDLgC8V",
+   "author": {
+    "id": "997536616481722369",
+    "name": "Red Hat AI",
+    "screenName": "RedHat_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1904876402425421824/sN9mSDTt_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 0,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 229,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu Sep 10 15:28:26 +0000 2026",
+   "createdAtLocal": "2026-09-10 23:28",
+   "createdAtISO": "2026-09-10T15:28:26+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HR3WZlCbAAA0OgU.jpg",
+     "width": 1356,
+     "height": 986
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098071109144858925",
+   "text": "6/6 Credit where it's due. @vllm_project's Hybrid HiSparse implementation was developed by @MatthewBonanni and Lucas Wilkinson at @RedHat, with Fares Obeid at @PrimeIntellect. Design input from Chao Lei at @AntGroup and @nick_lucche at @MistralAI. Performance work from Simon Veitner (Red Hat). Thanks to the HiSparse authors (https://t.co/mXMCCaUTyV) for the sparse offloading idea.\n\nTakes a village.",
+   "author": {
+    "id": "997536616481722369",
+    "name": "Red Hat AI",
+    "screenName": "RedHat_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1904876402425421824/sN9mSDTt_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 211,
+    "bookmarks": 3
+   },
+   "createdAt": "Thu Sep 10 15:28:27 +0000 2026",
+   "createdAtLocal": "2026-09-10 23:28",
+   "createdAtISO": "2026-09-10T15:28:27+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098028214404665388",
+   "text": "Why offload KV cache to CPU at all? Because GPU memory is the one tier in the stack you can't expand, and often what's sitting in it is cold.\n\nIn a long-running session, vLLM eventually fills HBM and starts evicting KV blocks to make room. Drop the wrong ones and the model loses earlier context: it re-asks answered questions or contradicts itself, with no error, just quietly worse output.\n\nBut tool outputs and documents from many turns back don't need to stay resident every step. CPU offloading moves those cold blocks to host memory and pulls them back over DMA when a request needs them, freeing HBM for live work without dropping context.\n\nIt isn't free: a block fetched from CPU costs transfer latency versus one already on the GPU. But that's trading a little latency for capacity on the tier you can't grow, which is usually the right call.\n\nA few links worth checking out in reply...",
+   "author": {
+    "id": "997536616481722369",
+    "name": "Red Hat AI",
+    "screenName": "RedHat_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1904876402425421824/sN9mSDTt_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 77,
+    "retweets": 6,
+    "replies": 4,
+    "quotes": 0,
+    "views": 5524,
+    "bookmarks": 46
+   },
+   "createdAt": "Thu Sep 10 12:38:00 +0000 2026",
+   "createdAtLocal": "2026-09-10 20:38",
+   "createdAtISO": "2026-09-10T12:38:00+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098028214719324225",
+   "text": "The overview, why the context wall happens and why offloading is the fix: https://t.co/8i2gf3pbAw\n\nThe how, enabling KV cache offloading in @vllm_project: https://t.co/c3xDXPkiY3",
+   "author": {
+    "id": "997536616481722369",
+    "name": "Red Hat AI",
+    "screenName": "RedHat_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1904876402425421824/sN9mSDTt_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 9,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 470,
+    "bookmarks": 9
+   },
+   "createdAt": "Thu Sep 10 12:38:00 +0000 2026",
+   "createdAtLocal": "2026-09-10 20:38",
+   "createdAtISO": "2026-09-10T12:38:00+00:00",
+   "media": [],
+   "urls": [
+    "https://redhat.com/en/blog/context-wall-what-happens-when-your-ai-agent-hits-gpu-memory-ceiling",
+    "https://docs.vllm.ai/en/latest/features/kv_offloading_usage"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097724694497554435",
+   "text": "Inference is not just text in, text out anymore.\n\nLast week's vLLM Office Hours #57 was mostly about vLLM-Omni, the project extending @vllm_project to models that take in and produce audio, images, and video. We covered: \n\n1. What vLLM Omni is + why it needs its own scheduler\n2. A real-time voice assistant on a single GPU\n3. Two video models generating side by side\n4. Why a diffusion model needs a KV cache\n\nHere's a 🧵 with video time stamps and slides:",
+   "author": {
+    "id": "997536616481722369",
+    "name": "Red Hat AI",
+    "screenName": "RedHat_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1904876402425421824/sN9mSDTt_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 31,
+    "retweets": 2,
+    "replies": 2,
+    "quotes": 0,
+    "views": 1574,
+    "bookmarks": 9
+   },
+   "createdAt": "Wed Sep 09 16:31:55 +0000 2026",
+   "createdAtLocal": "2026-09-10 00:31",
+   "createdAtISO": "2026-09-09T16:31:55+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097724701061611674",
+   "text": "4. For the curious: why would a diffusion model need a KV cache?\n\nIt is not generating one token at a time. It is denoising a whole box of latents, over and over.\n\nAlex Brooks from Red Hat walks through why the scheduler has to know about it anyway.\n\nhttps://t.co/CGadM1mO1e",
+   "author": {
+    "id": "997536616481722369",
+    "name": "Red Hat AI",
+    "screenName": "RedHat_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1904876402425421824/sN9mSDTt_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 0,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 220,
+    "bookmarks": 1
+   },
+   "createdAt": "Wed Sep 09 16:31:57 +0000 2026",
+   "createdAtLocal": "2026-09-10 00:31",
+   "createdAtISO": "2026-09-09T16:31:57+00:00",
+   "media": [],
+   "urls": [
+    "https://www.youtube.com/watch?v=dYgb-kTY9nY&list=PLbMP1JcGBmSHxp4-lubU5WYmJ9YgAQcf3&index=1&t=1802s"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097724703053951136",
+   "text": "@mgoin_ also covers vLLM 0.28.0: a major Kimi K3 performance push, decode context parallelism, and adaptive verification for speculative decoding.\n\nvLLM 0.28 update: https://t.co/VIHGmStgsZ\n\nSession slides: https://t.co/Kaiw4mYNuU\n\nWe'll be back on October 1 with \"Intro to llm-d Semantic Classifier.\" Get a calendar invite: https://t.co/KkF6DfGs1q",
+   "author": {
+    "id": "997536616481722369",
+    "name": "Red Hat AI",
+    "screenName": "RedHat_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1904876402425421824/sN9mSDTt_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 9,
+    "retweets": 2,
+    "replies": 0,
+    "quotes": 0,
+    "views": 568,
+    "bookmarks": 0
+   },
+   "createdAt": "Wed Sep 09 16:31:57 +0000 2026",
+   "createdAtLocal": "2026-09-10 00:31",
+   "createdAtISO": "2026-09-09T16:31:57+00:00",
+   "media": [],
+   "urls": [
+    "https://www.youtube.com/watch?v=dYgb-kTY9nY&list=PLbMP1JcGBmSHxp4-lubU5WYmJ9YgAQcf3&index=1&t=687s",
+    "https://docs.google.com/presentation/d/1L84FWrGAI-fns6TaR0Q8R6I9CvbrWQvbVbGl_KtXhy8"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097445137521524787",
+   "text": "Spec Decoding (DSpark) finally works with Pipeline Parallelism in vLLM!! 🔥 A lot of the GPU poor/proletarian have been asking for this feature for a while now, but it took the recent Kimi K3's massive 2.8T parameters affecting the GPU middle class (B200) for it to be implemented!\n\nBefore this change, GPU poors that needed to use pipeline parallelism, as their weights didn't fully fit on 1 server, would not be able to take advantage of DSpark.\n\nShoutout to yongqinwang-cmd & Inferact for implementing it in vLLM!",
+   "author": {
+    "id": "1745106082790318080",
+    "name": "SemiAnalysis",
+    "screenName": "SemiAnalysis_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2062973370157694976/CdplNoi1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 211,
+    "retweets": 13,
+    "replies": 11,
+    "quotes": 1,
+    "views": 28640,
+    "bookmarks": 58
+   },
+   "createdAt": "Tue Sep 08 22:01:04 +0000 2026",
+   "createdAtLocal": "2026-09-09 06:01",
+   "createdAtISO": "2026-09-08T22:01:04+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRufPK8WEAABegY.jpg",
+     "width": 1786,
+     "height": 1292
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "RedHat_AI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097397769338282222",
+   "text": "Sparse MLA only attends to the top-K tokens, so the rest of the KV need not live on the GPU. Hybrid HiSparse in vLLM builds on that, and a request keeps decoding after its KV stops fitting in HBM.\n\nIt keeps KV on the GPU while there is room. Under pressure a request releases its coldest pages to host memory, keeps a small hot buffer of what the indexer asks for, and keeps decoding instead of being preempted.\n\n📊 Demonstrated on GLM 5.3, one 8× H200 node, full 1M context. Same host memory, configured concurrency 32: KV offloading kept 5-6 requests running. Hybrid HiSparse kept 19-25.\n\n🔹 Hot pages are ordinary KV blocks from the same pool (Hybrid Memory Allocator)\n🔹 One fused kernel resolves resident, hot and missing rows, CUDA-graph capturable\n🔹 Prefix caching, OffloadingConnector, P/D imports and MTP keep working\n\nBuilt by @RedHat_AI and @PrimeIntellect with the vLLM community. Planned for v0.30; pinned commit, flags and calculator are in the post👇\n🔗 https://t.co/6y7u5Hfc8c",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 166,
+    "retweets": 28,
+    "replies": 9,
+    "quotes": 2,
+    "views": 28481,
+    "bookmarks": 98
+   },
+   "createdAt": "Tue Sep 08 18:52:50 +0000 2026",
+   "createdAtLocal": "2026-09-09 02:52",
+   "createdAtISO": "2026-09-08T18:52:50+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRtz683bwAAxvDo.jpg",
+     "width": 1355,
+     "height": 985
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "RedHat_AI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097369376051876017",
+   "text": "10:15 vLLM project update: what shipped, what's next\nDr. Roy Nissim, Red Hat AI\n\n10:45 llm-d: why agentic workloads at scale need distributed inference\n\n11:20 Prefill and decode disaggregation\nHagay Lupesko (@hagay_lupesko), Cerebras\n\n11:40 Inference optimization on AMD Instinct\nOmer Shlomovits (@OmerShlomovits), MoonMath AI\n\n12:30 Hands-on: serving a mixture of models with the\nvLLM Semantic Router, by AMD",
+   "author": {
+    "id": "997536616481722369",
+    "name": "Red Hat AI",
+    "screenName": "RedHat_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1904876402425421824/sN9mSDTt_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 12,
+    "retweets": 1,
+    "replies": 6,
+    "quotes": 0,
+    "views": 396,
+    "bookmarks": 2
+   },
+   "createdAt": "Tue Sep 08 17:00:01 +0000 2026",
+   "createdAtLocal": "2026-09-09 01:00",
+   "createdAtISO": "2026-09-08T17:00:01+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097369376458678392",
+   "text": "RSVP: https://t.co/BPgMRdJG9h\n\nFull SF Tech Week calendar: https://t.co/j8RSg1of03",
+   "author": {
+    "id": "997536616481722369",
+    "name": "Red Hat AI",
+    "screenName": "RedHat_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1904876402425421824/sN9mSDTt_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 4,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 157,
+    "bookmarks": 0
+   },
+   "createdAt": "Tue Sep 08 17:00:01 +0000 2026",
+   "createdAtLocal": "2026-09-09 01:00",
+   "createdAtISO": "2026-09-08T17:00:01+00:00",
+   "media": [],
+   "urls": [
+    "https://partiful.com/e/63yfXybwQqlyQ5W7dC2j",
+    "https://tech-week.com/calendar"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097369375074562089",
+   "text": "Four talks, one hands-on workshop, Oct 8 in SF.\n\n@AIatAMD, @cerebras, @moonmathai, and @RedHat on what it actually takes to run inference at scale with @vllm_project and @llm_d.\n\nBring a laptop. Agenda below. #SFTechWeek\n\nRSVP: https://t.co/BPgMRdJG9h https://t.co/22ABMzR1Hb",
+   "author": {
+    "id": "997536616481722369",
+    "name": "Red Hat AI",
+    "screenName": "RedHat_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1904876402425421824/sN9mSDTt_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 30,
+    "retweets": 6,
+    "replies": 2,
+    "quotes": 1,
+    "views": 1914,
+    "bookmarks": 3
+   },
+   "createdAt": "Tue Sep 08 17:00:00 +0000 2026",
+   "createdAtLocal": "2026-09-09 01:00",
+   "createdAtISO": "2026-09-08T17:00:00+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRs3hINaYAIDPiH.jpg",
+     "width": 1600,
+     "height": 900
+    }
+   ],
+   "urls": [
+    "https://partiful.com/e/63yfXybwQqlyQ5W7dC2j"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097319174661955934",
+   "text": "Speculators v0.8.0 is out. Training spec decoders just got even cleaner:\n\n🔌 Mooncake hidden-state connectors, now on PyPI, for multi-node runs\n🧪 Experimental DFlash2\n🧰 Unified `speculators` CLI for regen, preprocessing, and training\n⚡️ One fused Triton online-softmax kernel across all losses, lower-memory training\n\nhttps://t.co/2pIMWqP4eo",
+   "author": {
+    "id": "997536616481722369",
+    "name": "Red Hat AI",
+    "screenName": "RedHat_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1904876402425421824/sN9mSDTt_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 58,
+    "retweets": 9,
+    "replies": 10,
+    "quotes": 2,
+    "views": 4826,
+    "bookmarks": 22
+   },
+   "createdAt": "Tue Sep 08 13:40:32 +0000 2026",
+   "createdAtLocal": "2026-09-08 21:40",
+   "createdAtISO": "2026-09-08T13:40:32+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRssl8qaEAArG7K.png",
+     "width": 1200,
+     "height": 1020
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2095568626040316006",
+   "text": "A 35 MB LoRA adapter can turn a clean open model into a covert data-exfiltration agent, triggered by confidential content, hiding its reasoning, forwarding your data before it answers.\n\nYou can't scan the weights for it. The threat, and how OpenShift AI, Advanced Cluster Security, and Advanced Cluster Management shut it down:\nhttps://t.co/308gcQK6qG",
+   "author": {
+    "id": "997536616481722369",
+    "name": "Red Hat AI",
+    "screenName": "RedHat_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1904876402425421824/sN9mSDTt_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 15,
+    "retweets": 3,
+    "replies": 0,
+    "quotes": 0,
+    "views": 1220,
+    "bookmarks": 8
+   },
+   "createdAt": "Thu Sep 03 17:44:28 +0000 2026",
+   "createdAtLocal": "2026-09-04 01:44",
+   "createdAtISO": "2026-09-03T17:44:28+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2095535716495204652",
+   "text": "vLLM Office Hours today, 2pm ET: vLLM-Omni project update and live demos. A voice assistant on Qwen Omni, diffusion intermediate steps, and video generation. Plus what's new in vLLM 0.28 with @mgoin_. Get a recurring cal invite: https://t.co/X8hAHYR3rl",
+   "author": {
+    "id": "997536616481722369",
+    "name": "Red Hat AI",
+    "screenName": "RedHat_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1904876402425421824/sN9mSDTt_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 14,
+    "retweets": 2,
+    "replies": 1,
+    "quotes": 0,
+    "views": 853,
+    "bookmarks": 1
+   },
+   "createdAt": "Thu Sep 03 15:33:42 +0000 2026",
+   "createdAtLocal": "2026-09-03 23:33",
+   "createdAtISO": "2026-09-03T15:33:42+00:00",
+   "media": [],
+   "urls": [
+    "https://red.ht/office-hours"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2095195028599513443",
+   "text": "Enterprise AI isn't built on theory; it's built in production. See how we turn complex business challenges into real-world experience at @RedHat with our AI agents for sales (https://t.co/NHemChEGlG) and enterprise data (https://t.co/SFQLjv2vSG). https://t.co/HVWhFh3u85",
+   "author": {
+    "id": "7347922",
+    "name": "Michael Ferris",
+    "screenName": "mikeferris",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1735794230751023104/Gi-06FaP_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 3,
+    "retweets": 2,
+    "replies": 0,
+    "quotes": 1,
+    "views": 1348,
+    "bookmarks": 0
+   },
+   "createdAt": "Wed Sep 02 16:59:56 +0000 2026",
+   "createdAtLocal": "2026-09-03 00:59",
+   "createdAtISO": "2026-09-02T16:59:56+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/ext_tw_video/2095194860198240257/pu/vid/avc1/720x1280/mqTlvcgCwzJu7LOj.mp4?tag=12",
+     "width": 1080,
+     "height": 1920
+    }
+   ],
+   "urls": [
+    "https://red.ht/4yge2Bb",
+    "https://red.ht/3SCD3HF"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "RedHat_AI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2095180076421656726",
+   "text": "🔥 Keynote Speaker Announcement\n\n@addvin, SVP &amp; AI CTO at @RedHat, joins the keynote lineup at #PyTorchCon North America.\n\n📅 October 20-21\n📍 San Jose, CA\n\nFull Schedule:\nhttps://t.co/SNf8Fxlxpm\n\nRegister:\nhttps://t.co/AVHdaIFT20 https://t.co/aS0jJza0AB",
+   "author": {
+    "id": "776585502606721024",
+    "name": "PyTorch",
+    "screenName": "PyTorch",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1813965160702451712/yXV1vRhr_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 17,
+    "retweets": 4,
+    "replies": 0,
+    "quotes": 1,
+    "views": 10818,
+    "bookmarks": 1
+   },
+   "createdAt": "Wed Sep 02 16:00:31 +0000 2026",
+   "createdAtLocal": "2026-09-03 00:00",
+   "createdAtISO": "2026-09-02T16:00:31+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HROTKPaWkAQTf69.jpg",
+     "width": 1080,
+     "height": 1350
+    }
+   ],
+   "urls": [
+    "https://bit.ly/3Ra1oUx",
+    "https://bit.ly/4sh3DSw"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "RedHat_AI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094862183062507562",
+   "text": "Automate your OpenShift AI deployments using Helm and GitOps. Learn how declarative configurations and automated workflows streamline operator installations, eliminate manual cluster setup, and ensure consistent AI environments across hybrid clouds. \nhttps://t.co/ftBrANOmNd",
+   "author": {
+    "id": "997536616481722369",
+    "name": "Red Hat AI",
+    "screenName": "RedHat_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1904876402425421824/sN9mSDTt_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 9,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 1019,
+    "bookmarks": 2
+   },
+   "createdAt": "Tue Sep 01 18:57:19 +0000 2026",
+   "createdAtLocal": "2026-09-02 02:57",
+   "createdAtISO": "2026-09-01T18:57:19+00:00",
+   "media": [],
+   "urls": [
+    "https://developers.redhat.com/articles/2026/08/26/automating-red-hat-openshift-ai-installations-with-helm-and-gitops"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094480529529663824",
+   "text": "vLLM (@vllm_project) sessions at #PyTorchCon NA 2026 show how teams are optimizing inference, working on PyTorch release validation and compatibility, and using vLLM in broader serving and application workflows.\n\nSpeakers will cover CUTLASS, Triton, and Helion; faster model loading with fastsafetensors; quantization and HiFloat; autonomous kernel bring-up and Intel GPU optimization; PyTorch release validation, enterprise agentic inference, stable ABI, and dynamic shapes; vision-language serving; cloud-to-edge workflows; high-speed storage; a serving stack for a physics-constrained generative model; and contributor onboarding and first-PR workflows.\n\nFeatured speakers include:\n\n@nvidia: Michael Goldfarb, Guray Ozen, Aastha Jhunjhunwala, and @MarkMoyou\n\n@Meta: Andrey Talman, @janeyx99, and Laith Sakka\n\n@Arm: Kavya Sri Chennoju\n\n@IBM: Takeshi Yoshimura and Nili Guy\n\n@RedHat: Markell Rawls, Joseph Groenenboom, Tyler Michael Smith, Sean McGovern, Christopher Leonard, and Maroon Ayoub\n\n@Google: Ankita Luthra and Trinadh Kotturu\n\n@intel: Xiaogang Gu, Qun Yang, Whitney Tsang, and Artur Fierka\n\n@Huawei: Yun Zhao and Haonan Zhang\n\n@IBMResearch: Burkhard Ringlein\n\n@UMNews: @arunshar08\n\nRegister by September 4 to save: https://t.co/GIZUAha5wA\n\nRead the vLLM session guide: https://t.co/d2ozJTwa2G",
+   "author": {
+    "id": "776585502606721024",
+    "name": "PyTorch",
+    "screenName": "PyTorch",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1813965160702451712/yXV1vRhr_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 119,
+    "retweets": 12,
+    "replies": 2,
+    "quotes": 0,
+    "views": 16218,
+    "bookmarks": 39
+   },
+   "createdAt": "Mon Aug 31 17:40:46 +0000 2026",
+   "createdAtLocal": "2026-09-01 01:40",
+   "createdAtISO": "2026-08-31T17:40:46+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HREW7P0WwAAzqhC.jpg",
+     "width": 1672,
+     "height": 941
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "RedHat_AI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094465216150896763",
+   "text": "Flow control is an admission layer for shared GPU inference.\n\nBefore a request gets routed to a model server, it's either admitted or held. Under saturation, priority decides which class of traffic advances, fairness spreads dispatch turns across tenants so no one gets starved, and ordering picks the next request. Lower-priority work waits instead of crowding out what matters.\n\nAdmission decides when a request runs. Routing decides where. Keeping those separate is the whole idea.\n\nhttps://t.co/EzZeCKop3Y",
+   "author": {
+    "id": "997536616481722369",
+    "name": "Red Hat AI",
+    "screenName": "RedHat_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1904876402425421824/sN9mSDTt_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 28,
+    "retweets": 5,
+    "replies": 0,
+    "quotes": 0,
+    "views": 1452,
+    "bookmarks": 4
+   },
+   "createdAt": "Mon Aug 31 16:39:55 +0000 2026",
+   "createdAtLocal": "2026-09-01 00:39",
+   "createdAtISO": "2026-08-31T16:39:55+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094101361944092921",
+   "text": "📄 Stop ctrl+f through policy docs. Build a lightweight assistant to handle HR queries so you can get back to high-value coding. \n\nDeploy the bot: https://t.co/0ltw9iOgws https://t.co/rTFux9Lj0O",
+   "author": {
+    "id": "3249871370",
+    "name": "Red Hat Developer",
+    "screenName": "rhdevelopers",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1660993785457680385/xjG-tKeG_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 9,
+    "retweets": 1,
+    "replies": 0,
+    "quotes": 0,
+    "views": 1055,
+    "bookmarks": 1
+   },
+   "createdAt": "Sun Aug 30 16:34:05 +0000 2026",
+   "createdAtLocal": "2026-08-31 00:34",
+   "createdAtISO": "2026-08-30T16:34:05+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQ--EyhW8AA3Scm.jpg",
+     "width": 2122,
+     "height": 1106
+    }
+   ],
+   "urls": [
+    "https://red.ht/3RkOvqj"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "RedHat_AI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2093066612467175534",
+   "text": "Flow control blog out! This one details how llm-d's flow control feature in Red Hat AI Inference 3.5 provides priority queuing to protect SLAs on shared infrastructure. It's a really cool feature that opens up a lot of possibilities for running multitenant workloads and getting better use out of your GPUs. Make sure to check it out :) @RedHat_AI @_llm_d_ \n\nhttps://t.co/BBq3oUX5Tg",
+   "author": {
+    "id": "1194792817031335936",
+    "name": "alexa griffith",
+    "screenName": "alexa_griffith_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2084484367598960641/BeV532Ok_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 3,
+    "retweets": 1,
+    "replies": 0,
+    "quotes": 0,
+    "views": 513,
+    "bookmarks": 3
+   },
+   "createdAt": "Thu Aug 27 20:02:22 +0000 2026",
+   "createdAtLocal": "2026-08-28 04:02",
+   "createdAtISO": "2026-08-27T20:02:22+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQwQ8-dXMAA6-79.jpg",
+     "width": 920,
+     "height": 380
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "RedHat_AI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2093089231702769740",
+   "text": "Read my thoughts on @OpenAI's call for collective cyber defense published today: https://t.co/1CFypGVOOA.",
+   "author": {
+    "id": "583450546",
+    "name": "Chris Wright",
+    "screenName": "kernelcdub",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/917561600093179904/UoOgO9pI_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 14,
+    "retweets": 2,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1165,
+    "bookmarks": 2
+   },
+   "createdAt": "Thu Aug 27 21:32:15 +0000 2026",
+   "createdAtLocal": "2026-08-28 05:32",
+   "createdAtISO": "2026-08-27T21:32:15+00:00",
+   "media": [],
+   "urls": [
+    "https://www.linkedin.com/feed/update/urn:li:activity:7498852098294304768/"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "RedHat_AI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2093018028766117957",
+   "text": "Reproducible inference benchmarking is harder than it sounds, and it's exactly what the ecosystem needs. Inference Perf, from the Kubernetes community, standardizes how inference performance is measured across model servers. Great to see it published in JOSS. Congrats to the team.",
+   "author": {
+    "id": "997536616481722369",
+    "name": "Red Hat AI",
+    "screenName": "RedHat_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1904876402425421824/sN9mSDTt_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 16,
+    "retweets": 2,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1948,
+    "bookmarks": 10
+   },
+   "createdAt": "Thu Aug 27 16:49:19 +0000 2026",
+   "createdAtLocal": "2026-08-28 00:49",
+   "createdAtISO": "2026-08-27T16:49:19+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2093009988633432454",
+    "text": "Excited to share that our accompanying paper for the Inference Perf project (under Kubernetes SIGs) has been published in the Journal of Open Source Software!\n\nCo-authors: Ashok Chandrasekar, Sachin Mathew Varghese, Jason Kramberger, Brendan Slabe, Chen Wang\n\nThe project was created as a part of the inference benchmarking and metrics standardization effort in the Kubernetes Serving Working Group, and seeks to standardize tooling and metrics for measuring inference performance across the Kubernetes and model server communities.\n\nPaper: https://t.co/VweBqkKz9S\nRepo: https://t.co/DfDhsHd6oX",
+    "author": {
+     "screenName": "TerryTangYuan",
+     "name": "Yuan (Terry) Tang"
+    }
+   }
+  },
+  {
+   "id": "2092977185824895233",
+   "text": "Is your CPU:GPU ratio still built for training? In agentic workloads, 50-90% of end-to-end latency is CPU-side tool processing, not GPU math (Georgia Tech + Intel).\n\nThat's pushing the CPU:GPU ratio from 1:8 in training toward 1:1, sometimes 4:1. And vLLM's CPU backend already runs PagedAttention, prefix caching, and continuous batching across x86, Arm, IBM Z, and experimental Apple Silicon.\n\n@_soyr_ and @__gracecaroline on where inference compute should live: https://t.co/2QsXniFOCN",
+   "author": {
+    "id": "997536616481722369",
+    "name": "Red Hat AI",
+    "screenName": "RedHat_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1904876402425421824/sN9mSDTt_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 48,
+    "retweets": 8,
+    "replies": 3,
+    "quotes": 0,
+    "views": 3138,
+    "bookmarks": 32
+   },
+   "createdAt": "Thu Aug 27 14:07:01 +0000 2026",
+   "createdAtLocal": "2026-08-27 22:07",
+   "createdAtISO": "2026-08-27T14:07:01+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2092789782464315594",
+   "text": "vLLM v0.28.0 is out! 584 commits from 270 contributors (76 new). 🎉\n\nHighlights:\n\n🌙 A stack-wide optimization push for Kimi-K3\n🐳 DeepSeek-V4 sparse MLA now works end to end for plain decode, MTP and DSpark\n⚡ Speculative decoding adds DFlash2 and DSpark confidence-scheduled verification\n🛠️ Model Runner V2 picks up E/P/D disaggregation and weight offloading\n🗄️ Tiered KV offloading gains a disk tier and out-of-tree secondary tiers\n🆕 New models: Muse Glimmer, Ling 3.0 Flash, Dots3 NOTE, Interns2mobius\n\nThread 👇",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 334,
+    "retweets": 34,
+    "replies": 21,
+    "quotes": 7,
+    "views": 22762,
+    "bookmarks": 54
+   },
+   "createdAt": "Thu Aug 27 01:42:20 +0000 2026",
+   "createdAtLocal": "2026-08-27 09:42",
+   "createdAtISO": "2026-08-27T01:42:20+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQsUuF6awAAu5he.jpg",
+     "width": 1600,
+     "height": 900
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "RedHat_AI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2092264628730368035",
+   "text": "This is awesome. Claude Code and Codex running on open models with @vllm_project, no OpenAI API in the loop.\n\nAsk Qwen3.8 about a model released after its training cutoff and it has no idea. Give it server-side web search through the Agentic API and it finds the answer, with citations.\n\nThe Agentic API keeps the stateful parts, turn history and tool execution, outside vLLM so the engine stays a stateless inference server. Built in Rust, MVP just landed.\n\nFrom @franciscojarceo (@RedHat_AI) and @Rxday000 (@EmbeddedLLM) 👇",
+   "author": {
+    "id": "997536616481722369",
+    "name": "Red Hat AI",
+    "screenName": "RedHat_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1904876402425421824/sN9mSDTt_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 45,
+    "retweets": 6,
+    "replies": 6,
+    "quotes": 2,
+    "views": 2838,
+    "bookmarks": 16
+   },
+   "createdAt": "Tue Aug 25 14:55:34 +0000 2026",
+   "createdAtLocal": "2026-08-25 22:55",
+   "createdAtISO": "2026-08-25T14:55:34+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2092262756980264960/vid/avc1/1920x1080/cYGFZeQXYXtJYsLS.mp4?tag=29",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2092257509679804847",
+   "text": "Day one at @raydistributed and @vllm_project Summit ⚡ and we're on the schedule today\n\n3 PM, Lightning Theater: Helen Zhao (@RedHat_AI) on scaling drafter training in real time across a full Verda GB300 rack with vLLM, Mooncake & Speculators.\n\nBooth's open all day on the expo floor. Come around, grab some Finnish chocolate 🍫 and talk shop: GPUs, distributed training, scaling AI in production.",
+   "author": {
+    "id": "1288595477060104192",
+    "name": "Verda",
+    "screenName": "verdacloud",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1990703580664258560/u7VRUmxI_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 9,
+    "retweets": 4,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1297,
+    "bookmarks": 3
+   },
+   "createdAt": "Tue Aug 25 14:27:17 +0000 2026",
+   "createdAtLocal": "2026-08-25 22:27",
+   "createdAtISO": "2026-08-25T14:27:17+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQkwsTNa0AAaGvO.jpg",
+     "width": 2400,
+     "height": 2400
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "RedHat_AI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2091987263227826309",
+   "text": "vLLM Office Hours #56 recording is up:\n\n- What's new in vLLM 0.27\n- Running Codex and Claude Code CLIs on open models\n- Speculators v0.6 and v0.7 update\n- GuideLLM v0.7.0: benchmarking reasoning, tool calling, and agentic traces\n\nWatch + see slides: https://t.co/Kf1s66YzmJ",
+   "author": {
+    "id": "997536616481722369",
+    "name": "Red Hat AI",
+    "screenName": "RedHat_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1904876402425421824/sN9mSDTt_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 20,
+    "retweets": 5,
+    "replies": 0,
+    "quotes": 0,
+    "views": 1713,
+    "bookmarks": 4
+   },
+   "createdAt": "Mon Aug 24 20:33:25 +0000 2026",
+   "createdAtLocal": "2026-08-25 04:33",
+   "createdAtISO": "2026-08-24T20:33:25+00:00",
+   "media": [],
+   "urls": [
+    "https://youtu.be/dQAByb7N5QQ"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2091948891788747179",
+   "text": "561 commits. 242 contributors. 64 new.\n\nKimi K3 stable, plus early support for next-gen NVIDIA Rubin and AMD MI450 hardware.\n\nHere's what's new in @vllm_project v0.27 from @mgoin_ in &lt;4 minutes: https://t.co/mXdOeBEOEB",
+   "author": {
+    "id": "997536616481722369",
+    "name": "Red Hat AI",
+    "screenName": "RedHat_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1904876402425421824/sN9mSDTt_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 44,
+    "retweets": 8,
+    "replies": 1,
+    "quotes": 0,
+    "views": 2401,
+    "bookmarks": 6
+   },
+   "createdAt": "Mon Aug 24 18:00:56 +0000 2026",
+   "createdAtLocal": "2026-08-25 02:00",
+   "createdAtISO": "2026-08-24T18:00:56+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2091948316481212417/vid/avc1/1920x1080/5uYD69aAJ8IJ0Dwm.mp4?tag=29",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2091912134657540289",
+   "text": "Every vLLM Office Hours runs with a live chat going the whole time. People ask real questions and get real answers, often from another attendee before a maintainer can get to it.\n\nThree from this week 🧵\n\n1. Someone asked about the decode context parallelism tradeoff. https://t.co/WpvqZRR3XF",
+   "author": {
+    "id": "997536616481722369",
+    "name": "Red Hat AI",
+    "screenName": "RedHat_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1904876402425421824/sN9mSDTt_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 19,
+    "retweets": 4,
+    "replies": 1,
+    "quotes": 1,
+    "views": 2477,
+    "bookmarks": 3
+   },
+   "createdAt": "Mon Aug 24 15:34:53 +0000 2026",
+   "createdAtLocal": "2026-08-24 23:34",
+   "createdAtISO": "2026-08-24T15:34:53+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQf2tzvXkAA8mv1.png",
+     "width": 1600,
+     "height": 1116
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2091912136742035891",
+   "text": "2. Someone asked what it actually costs to train a draft model, and the answer came with real numbers and a change to the docs. https://t.co/lyIfeqtQsJ",
+   "author": {
+    "id": "997536616481722369",
+    "name": "Red Hat AI",
+    "screenName": "RedHat_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1904876402425421824/sN9mSDTt_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 6,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 420,
+    "bookmarks": 0
+   },
+   "createdAt": "Mon Aug 24 15:34:53 +0000 2026",
+   "createdAtLocal": "2026-08-24 23:34",
+   "createdAtISO": "2026-08-24T15:34:53+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQfzp6vW8AAoLg0.png",
+     "width": 1600,
+     "height": 980
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2091912139044741294",
+   "text": "3. A first-time attendee asked whether the PR they had written was even worth pursuing.\n\nThis is why we run these. Next session Sep 3: https://t.co/OK2GmBKu0F\n\nWhat should we dig into next? https://t.co/evCfi5h4u0",
+   "author": {
+    "id": "997536616481722369",
+    "name": "Red Hat AI",
+    "screenName": "RedHat_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1904876402425421824/sN9mSDTt_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 6,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 327,
+    "bookmarks": 0
+   },
+   "createdAt": "Mon Aug 24 15:34:54 +0000 2026",
+   "createdAtLocal": "2026-08-24 23:34",
+   "createdAtISO": "2026-08-24T15:34:54+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQfzxnvWoAAzl0T.png",
+     "width": 1600,
+     "height": 992
+    }
+   ],
+   "urls": [
+    "http://red.ht/office-hours"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2091901250585702459",
+   "text": "🔥 SPEAKER ANNOUNCEMENT | @vllm_project Bangkok Day\n\n(Thailand's largest event dedicated to vLLM)\n\nIt is a real honor to announce this one.\n\nAs the organizer, I'm proud to introduce another speaker I'm genuinely excited about:\n\nJing Wen Ng \nSpecialist Solutions Architect, AI, Asia Pacific @RedHat_AI \n\nAnd here's what makes it special: Jing Wen is flying to Bangkok to join us onsite, not virtually.\n\n🎙️ Session: Scaling Distributed Inference with @_llm_d_\n\nRed Hat is one of the teams behind llm-d, the project that takes vLLM beyond a single server and makes it scale across GPUs and nodes in production.\n\nWhat you'll take home:\n- What llm-d actually is, and why distributed inference is the next step once one vLLM instance stops being enough\n\n- KV-cache aware routing and prefill/decode disaggregation, and what they do to your serving performance\n\n- Running it for real on OpenShift AI, from single node to multi node deployments\n\n- Hard-won lessons from enterprise customers across APAC in FSI, telco, healthcare and the public sector on what moves AI from experimentation to production\n\nWhy this session matters for Thailand:\nWith registrations now past 500, the two topics our community asked for most were KV-Cache and real production use cases. \n\nThis session sits right on top of both, delivered by someone who does this with enterprise customers across the region every week.\n\n📅 Sunday, 6 September 2026, 2:00 PM to 7:00 PM\n📍 JAS Green Village Ramkhamhaeng, 3rd floor (JAI Arena), Bangkok\n🎟️ Free to attend. All sessions delivered in English.\n\nHuge thanks to our partners @inferact , @EmbeddedLLM, @RedHat_AI, @tensormesh , and @agicafet for making the largest AI Inference event in Thailand happen.\n\n\"One vLLM Always vLLM\"\n\n#vLLMBangkok #vLLM #llmd #RedHat #AIInfrastructure #LLMServing #KVCache #Inference #AGICAFET",
+   "author": {
+    "id": "1998933213125947394",
+    "name": "Natdhanai Praneenatthavee",
+    "screenName": "agicafet",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2084146206209691648/z9zhvSuS_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 4,
+    "retweets": 2,
+    "replies": 0,
+    "quotes": 0,
+    "views": 246,
+    "bookmarks": 0
+   },
+   "createdAt": "Mon Aug 24 14:51:38 +0000 2026",
+   "createdAtLocal": "2026-08-24 22:51",
+   "createdAtISO": "2026-08-24T14:51:38+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQftGKsaAAAzdUC.jpg",
+     "width": 2160,
+     "height": 2160
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "RedHat_AI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2091881745721213206",
+   "text": "📢 𝗧𝗵𝗲 𝗦𝘁𝗮𝘁𝗲 𝗼𝗳 𝗠𝗼𝗱𝗲𝗹 𝗦𝗲𝗿𝘃𝗶𝗻𝗴 𝗖𝗼𝗺𝗺𝘂𝗻𝗶𝘁𝗶𝗲𝘀: 𝗔𝘂𝗴𝘂𝘀𝘁 𝗘𝗱𝗶𝘁𝗶𝗼𝗻 𝗶𝘀 𝗼𝘂𝘁!\n\nOur goal with this newsletter is to give a clear, community-driven view of what’s happening across the model serving ecosystem that our teams at @RedHat_AI are contributing to, including updates from projects like @vllm_project, KServe, @_llm_d_, @kubernetesio, and beyond.\n\n👉 Check out the August newsletter here: https://t.co/GVkGKNbHs3 \n👉 Subscribe to get future issues in your inbox: https://t.co/lhGwc8gJKF \n\n🚀 Thanks to everyone who subscribed so far!\n\nKudos to all contributors to this edition! David Simmons, Francisco Arceo, Jooho Lee, Yuan Tang, Wentao Ye, Sasa Zelenovic, Vivek Karunai Kiri Ragavan",
+   "author": {
+    "id": "352837463",
+    "name": "Yuan (Terry) Tang",
+    "screenName": "TerryTangYuan",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1991358182426345472/HKmX1u2Z_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 7,
+    "retweets": 4,
+    "replies": 0,
+    "quotes": 0,
+    "views": 1306,
+    "bookmarks": 3
+   },
+   "createdAt": "Mon Aug 24 13:34:08 +0000 2026",
+   "createdAtLocal": "2026-08-24 21:34",
+   "createdAtISO": "2026-08-24T13:34:08+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "RedHat_AI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2091207545650110511",
+   "text": "Turn hardware acceleration into a robust enterprise AI engine with @RedHat_AI on @nvidia DGX platforms. This setup optimizes compute usage across the DGX SuperPOD architecture, simplifying distributed training, fine-tuning, and large-scale model serving.\n\nRead the blog full post: https://t.co/cfIRmOkysc",
+   "author": {
+    "id": "14627400",
+    "name": "Red Hat",
+    "screenName": "RedHat",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1123557710191001600/oMQc_xqN_normal.png",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 44,
+    "retweets": 6,
+    "replies": 2,
+    "quotes": 0,
+    "views": 7471,
+    "bookmarks": 9
+   },
+   "createdAt": "Sat Aug 22 16:55:06 +0000 2026",
+   "createdAtLocal": "2026-08-23 00:55",
+   "createdAtISO": "2026-08-22T16:55:06+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQV2KgQW8AAk0Td.jpg",
+     "width": 1960,
+     "height": 1102
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "RedHat_AI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2090941767411544506",
+   "text": "I’ll be speaking at the vLLM Conference next week, come say hi in SF",
+   "author": {
+    "id": "1516059175910092803",
+    "name": "Misha Goin",
+    "screenName": "mgoin_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1743065359811334144/07C98Pb0_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 25,
+    "retweets": 1,
+    "replies": 1,
+    "quotes": 1,
+    "views": 1761,
+    "bookmarks": 1
+   },
+   "createdAt": "Fri Aug 21 23:18:59 +0000 2026",
+   "createdAtLocal": "2026-08-22 07:18",
+   "createdAtISO": "2026-08-21T23:18:59+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "RedHat_AI",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2090922911771291723",
+    "text": "vLLM Conference is next week, and we have a packed schedule 🎊 📅. Here's the full list of events you should know:\n\nMon:\n 🔷 4–6PM vLLM × Ray × Google Cloud Happy Hour: https://t.co/Exw10SVIrV\n 🔷 6–9PM vLLM × Dynamo Meetup: https://t.co/id6TaOfIMs\n\nTue:\n 🔷 11–11:30AM vLLM Keynote from @simon_mo_\n 🔷 12–5PM vLLM Track Day 1\n 🔷 6–9PM vLLM × AMD Happy Hour: https://t.co/RVXTxGq0Lz\n\nWed:\n 🔷 12–5PM vLLM Track Day 2\n 🔷 6–8:30PM vLLM x DigitalOcean × NVIDIA Happy Hour: https://t.co/U1FSK6aYhZ\n\nNo ticket needed for the happy hours and meetups, but space is limited. To join the full event, register here: https://t.co/bTDMkOOwIR",
+    "author": {
+     "screenName": "vllm_project",
+     "name": "vLLM"
+    }
+   }
+  },
+  {
+   "id": "2090896893219864816",
+   "text": "Almost everyone we talk to has picked a side here. Either you carve out dedicated pools and accept the idle GPUs, or you share capacity and hope nothing important gets stuck behind a batch job.\n\nflow control in @_llm_d_ is trying to give you a third option. Admission control and priority policies, so the requests that actually matter still get served when things get tight.\n\nAlexa's benchmarks are worth the click. Which way did your team go?",
+   "author": {
+    "id": "997536616481722369",
+    "name": "Red Hat AI",
+    "screenName": "RedHat_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1904876402425421824/sN9mSDTt_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 34,
+    "retweets": 4,
+    "replies": 3,
+    "quotes": 1,
+    "views": 4279,
+    "bookmarks": 18
+   },
+   "createdAt": "Fri Aug 21 20:20:40 +0000 2026",
+   "createdAtLocal": "2026-08-22 04:20",
+   "createdAtISO": "2026-08-21T20:20:40+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2090874905239896209",
+    "text": "Dedicated GPU pools protect latency-sensitive products. The downside is that those GPUs are most likely underutilized. Shared GPU capacity is ideal, but the trade-off is losing your strict latency/SLO guarantees for high-priority requests.\n\nThat's why I'm excited about @_llm_d_ 's flow control feature. It manages request admission and multitenant priority policies for shared GPU capacity under pressure.\n\nIf you're interested in learning more, I ran some benchmarks here https://t.co/YDdMGsLEhb @RedHat_AI",
+    "author": {
+     "screenName": "alexa_griffith_",
+     "name": "alexa griffith"
+    }
+   }
+  },
+  {
+   "id": "2090801978297155700",
+   "text": "Token consumption is expected to increase 24x by 2030, making proprietary APIs & fragmented software tools an expensive long-term challenge. Discover how an integrated open source stack gives you full control over inference workloads & infrastructure costs: https://t.co/svVmA0MAp9",
+   "author": {
+    "id": "14627400",
+    "name": "Red Hat",
+    "screenName": "RedHat",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1123557710191001600/oMQc_xqN_normal.png",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 29,
+    "retweets": 5,
+    "replies": 1,
+    "quotes": 0,
+    "views": 4560,
+    "bookmarks": 5
+   },
+   "createdAt": "Fri Aug 21 14:03:31 +0000 2026",
+   "createdAtLocal": "2026-08-21 22:03",
+   "createdAtISO": "2026-08-21T14:03:31+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2090801852484829184/vid/avc1/720x1280/aUULJxuYIL_qwACC.mp4?tag=14",
+     "width": 1080,
+     "height": 1920
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "RedHat_AI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2090480563450699883",
+   "text": "Most teams can't see where their token spend goes until the bill arrives. Markell Rawls from Red Hat walks through token observability on OpenShift AI: seeing what, when, and how you prompt, so you can track and control cost as you go. Watch: https://t.co/ad8vcUnrfv",
+   "author": {
+    "id": "997536616481722369",
+    "name": "Red Hat AI",
+    "screenName": "RedHat_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1904876402425421824/sN9mSDTt_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 5,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 866,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu Aug 20 16:46:20 +0000 2026",
+   "createdAtLocal": "2026-08-21 00:46",
+   "createdAtISO": "2026-08-20T16:46:20+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2090480385364758530/vid/avc1/720x1280/VtMeKBWbx9leoOYh.mp4?tag=29",
+     "width": 720,
+     "height": 1280
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2090432005875867842",
+   "text": "Qwen3.8-2.4T-A95B, compressed two ways at once: 25% of the experts pruned with REAP, and the rest quantized to NVFP4.\n\nEven with a quarter of the experts gone and 4-bit weights, GPQA Diamond holds at 91.5 vs 92.6 for the full-precision base. ~99% recovery.\n\nServe on @vllm_project:\nhttps://t.co/FOEKCwaNKj",
+   "author": {
+    "id": "997536616481722369",
+    "name": "Red Hat AI",
+    "screenName": "RedHat_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1904876402425421824/sN9mSDTt_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 186,
+    "retweets": 22,
+    "replies": 3,
+    "quotes": 7,
+    "views": 52161,
+    "bookmarks": 95
+   },
+   "createdAt": "Thu Aug 20 13:33:23 +0000 2026",
+   "createdAtLocal": "2026-08-20 21:33",
+   "createdAtISO": "2026-08-20T13:33:23+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2090392499336441880",
+   "text": "See you today!",
+   "author": {
+    "id": "997536616481722369",
+    "name": "Red Hat AI",
+    "screenName": "RedHat_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1904876402425421824/sN9mSDTt_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 9,
+    "retweets": 1,
+    "replies": 0,
+    "quotes": 0,
+    "views": 1795,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu Aug 20 10:56:24 +0000 2026",
+   "createdAtLocal": "2026-08-20 18:56",
+   "createdAtISO": "2026-08-20T10:56:24+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2089409045799022936",
+    "text": "We're back with @vllm_project office hours this Thursday, August 20 🎉\n\nWe'll share:\n\n🚀 What's new in vLLM 0.27\n🤖 Running Codex and Claude Code CLIs with vLLM and open models\n⚡ What's new in Speculators\n📊 GuideLLM v0.7.0: benchmarking reasoning, tool calling, and agentic traces\n\nLink to join in the thread 👇",
+    "author": {
+     "screenName": "RedHat_AI",
+     "name": "Red Hat AI"
+    }
+   }
+  },
+  {
+   "id": "2090317658700845476",
+   "text": "No need to overspend on GPU resources for serving LLMs. Discover efficient model compression, serving, and benchmarking with #vLLM in our free 'Get Started with vLLM' learning path. \n\nKickstart your journey in the Developer Sandbox 👇 \nhttps://t.co/RQ1zKftQlV",
+   "author": {
+    "id": "3249871370",
+    "name": "Red Hat Developer",
+    "screenName": "rhdevelopers",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1660993785457680385/xjG-tKeG_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 9,
+    "retweets": 5,
+    "replies": 0,
+    "quotes": 0,
+    "views": 724,
+    "bookmarks": 3
+   },
+   "createdAt": "Thu Aug 20 05:59:00 +0000 2026",
+   "createdAtLocal": "2026-08-20 13:59",
+   "createdAtISO": "2026-08-20T05:59:00+00:00",
+   "media": [],
+   "urls": [
+    "https://red.ht/4zsKXns"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "RedHat_AI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2090126152434061377",
+   "text": "Calculate your self-hosted #LLM costs by tracking what you spend and how much you serve. Factor in hardware, software, and people costs, then measure actual tokens processed, not just theoretical maximum throughput. https://t.co/HgJcwvv0kg",
+   "author": {
+    "id": "3249871370",
+    "name": "Red Hat Developer",
+    "screenName": "rhdevelopers",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1660993785457680385/xjG-tKeG_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 7,
+    "retweets": 6,
+    "replies": 0,
+    "quotes": 0,
+    "views": 661,
+    "bookmarks": 4
+   },
+   "createdAt": "Wed Aug 19 17:18:02 +0000 2026",
+   "createdAtLocal": "2026-08-20 01:18",
+   "createdAtISO": "2026-08-19T17:18:02+00:00",
+   "media": [],
+   "urls": [
+    "https://red.ht/4wFmloX"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "RedHat_AI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2090116379093385230",
+   "text": "And it's not just the flagship.\n\nQwen3.8-27B in INT4, also via LLM Compressor: 100%+ recovery on GSM8K, IFEval, AIME25, and MATH-500 vs the BF16 base.\n\nShoutout to @UnslothAI, who used LLM Compressor for their Qwen3.8-27B NVFP4 checkpoint too.\n\n27B INT4: https://t.co/76NHgPeOLP\n\nUnsloth 27B NVFP4: https://t.co/AMSWBWUBqY\n\nHappy efficient inferencing!",
+   "author": {
+    "id": "997536616481722369",
+    "name": "Red Hat AI",
+    "screenName": "RedHat_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1904876402425421824/sN9mSDTt_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 100,
+    "retweets": 12,
+    "replies": 2,
+    "quotes": 0,
+    "views": 9792,
+    "bookmarks": 48
+   },
+   "createdAt": "Wed Aug 19 16:39:11 +0000 2026",
+   "createdAtLocal": "2026-08-20 00:39",
+   "createdAtISO": "2026-08-19T16:39:11+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/RedHatAI/Qwen3.8-27B-INT4"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2090095059773362523",
+    "text": "Qwen3.8-2.4T-A95B, a 2.4-trillion parameter MoE, quantized with no accuracy loss.\n\nMoE layers to NVFP4, attention layers to FP8 block, via LLM Compressor. On GPQA Diamond: 93.1 quantized vs 92.6 for the full-precision base. Full recovery.\n\nServe on vLLM: https://t.co/ztW293K6pU",
+    "author": {
+     "screenName": "RedHat_AI",
+     "name": "Red Hat AI"
+    }
+   }
+  },
+  {
+   "id": "2090095059773362523",
+   "text": "Qwen3.8-2.4T-A95B, a 2.4-trillion parameter MoE, quantized with no accuracy loss.\n\nMoE layers to NVFP4, attention layers to FP8 block, via LLM Compressor. On GPQA Diamond: 93.1 quantized vs 92.6 for the full-precision base. Full recovery.\n\nServe on vLLM: https://t.co/ztW293K6pU",
+   "author": {
+    "id": "997536616481722369",
+    "name": "Red Hat AI",
+    "screenName": "RedHat_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1904876402425421824/sN9mSDTt_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 151,
+    "retweets": 12,
+    "replies": 2,
+    "quotes": 1,
+    "views": 23889,
+    "bookmarks": 71
+   },
+   "createdAt": "Wed Aug 19 15:14:28 +0000 2026",
+   "createdAtLocal": "2026-08-19 23:14",
+   "createdAtISO": "2026-08-19T15:14:28+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/RedHatAI/Qwen3.8-2.4T-A95B-NVFP4-FP8"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2089786696619409739",
+   "text": "Kubernetes load-balances requests at random. Fine for microservices, wasteful for an LLM.\n\n@_llm_d_ is LLM-aware: prefix cache-aware routing for multi-turn agents, prefill/decode disaggregation, and wide expert parallelism for huge MoE models.\n\n@addvin and @robertshaw21 break it down:",
+   "author": {
+    "id": "997536616481722369",
+    "name": "Red Hat AI",
+    "screenName": "RedHat_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1904876402425421824/sN9mSDTt_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 44,
+    "retweets": 6,
+    "replies": 0,
+    "quotes": 1,
+    "views": 4305,
+    "bookmarks": 21
+   },
+   "createdAt": "Tue Aug 18 18:49:09 +0000 2026",
+   "createdAtLocal": "2026-08-19 02:49",
+   "createdAtISO": "2026-08-18T18:49:09+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2089763055949259205",
+    "text": "What does it mean to be LLM-aware? Brian Stevens and Robert Shaw of @RedHat talk about the role llm-d plays when scaling #AI. \n\nWatch this video to learn more 🎥 https://t.co/sVgEj8njT8",
+    "author": {
+     "screenName": "redhatopen",
+     "name": "Red Hat Open"
+    }
+   }
+  },
+  {
+   "id": "2089525624356372485",
+   "text": "There are plenty of parallelisms in the GPU sea. In this animation, I break down three. ✨ https://t.co/Lk8hSbG5js",
+   "author": {
+    "id": "1194792817031335936",
+    "name": "alexa griffith",
+    "screenName": "alexa_griffith_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2084484367598960641/BeV532Ok_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 9,
+    "retweets": 2,
+    "replies": 0,
+    "quotes": 0,
+    "views": 1076,
+    "bookmarks": 6
+   },
+   "createdAt": "Tue Aug 18 01:31:45 +0000 2026",
+   "createdAtLocal": "2026-08-18 09:31",
+   "createdAtISO": "2026-08-18T01:31:45+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2089525279790116864/vid/avc1/1920x1080/l1COHr0WaWFIZnIm.mp4?tag=29",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "RedHat_AI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2089409045799022936",
+   "text": "We're back with @vllm_project office hours this Thursday, August 20 🎉\n\nWe'll share:\n\n🚀 What's new in vLLM 0.27\n🤖 Running Codex and Claude Code CLIs with vLLM and open models\n⚡ What's new in Speculators\n📊 GuideLLM v0.7.0: benchmarking reasoning, tool calling, and agentic traces\n\nLink to join in the thread 👇",
+   "author": {
+    "id": "997536616481722369",
+    "name": "Red Hat AI",
+    "screenName": "RedHat_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1904876402425421824/sN9mSDTt_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 50,
+    "retweets": 8,
+    "replies": 1,
+    "quotes": 2,
+    "views": 6010,
+    "bookmarks": 12
+   },
+   "createdAt": "Mon Aug 17 17:48:30 +0000 2026",
+   "createdAtLocal": "2026-08-18 01:48",
+   "createdAtISO": "2026-08-17T17:48:30+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2089409047275479121",
+   "text": "Get a recurring calendar invite to biweekly vLLM office hours: https://t.co/X8hAHYR3rl\n\nCatch up on past sessions: https://t.co/irvcgagUHx",
+   "author": {
+    "id": "997536616481722369",
+    "name": "Red Hat AI",
+    "screenName": "RedHat_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1904876402425421824/sN9mSDTt_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 5,
+    "retweets": 1,
+    "replies": 0,
+    "quotes": 0,
+    "views": 648,
+    "bookmarks": 3
+   },
+   "createdAt": "Mon Aug 17 17:48:30 +0000 2026",
+   "createdAtLocal": "2026-08-18 01:48",
+   "createdAtISO": "2026-08-17T17:48:30+00:00",
+   "media": [],
+   "urls": [
+    "https://red.ht/office-hours",
+    "https://www.youtube.com/playlist?list=PLbMP1JcGBmSHxp4-lubU5WYmJ9YgAQcf3"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2088234324764074052",
+   "text": "An llm-d route points at an InferencePool that uses a label to find available model server Pods. The HTTPRoute object matches the path and names the InferencePool it uses. The Endpoint Picker uses the InferencePool's available pods to select a single model server to route requests to. @_llm_d_ ✨️ happy friday!!",
+   "author": {
+    "id": "1194792817031335936",
+    "name": "alexa griffith",
+    "screenName": "alexa_griffith_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2084484367598960641/BeV532Ok_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 9,
+    "retweets": 1,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1202,
+    "bookmarks": 3
+   },
+   "createdAt": "Fri Aug 14 12:00:35 +0000 2026",
+   "createdAtLocal": "2026-08-14 20:00",
+   "createdAtISO": "2026-08-14T12:00:35+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/ext_tw_video/2088234302907482112/pu/vid/avc1/1280x720/gI2loNU1PJirshYC.mp4?tag=12",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "RedHat_AI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2088425247112679794",
+   "text": "Six weeks ago, serving DSpark in vLLM meant choosing a draft length for your traffic and living with it. Now you set that length once, and vLLM decides how much of the draft to verify every step. ✨\n\nOn DeepSeek-V4-Pro-0813, the first token of a 7-token draft survives verification more than 70% of the time. The last one, less than 10%.\n\n📈 One config, adaptive verification on with num_speculative_tokens 7, holds the Pareto frontier from concurrency 1 to 256 on 8×B300. Long draft at low load, short at high load.\n\nOn main behind enable_adaptive_verification, for DSpark with a confidence head on Flash Attention or DSV4 attention. More backends and models are in bring-up. Thanks to Lucas Wilkinson (@RedHat_AI) and Ben Chislett (@NVIDIAAI), and to @deepseek_ai for DSpark and the varlen DeepGEMM indexer kernel.\n\n🔗 https://t.co/hvIVtxEgDg",
+   "author": {
+    "id": "1774187564276289536",
+    "name": "vLLM",
+    "screenName": "vllm_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1774187681746182144/N_5NJ8B1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 248,
+    "retweets": 29,
+    "replies": 16,
+    "quotes": 3,
+    "views": 25393,
+    "bookmarks": 91
+   },
+   "createdAt": "Sat Aug 15 00:39:14 +0000 2026",
+   "createdAtLocal": "2026-08-15 08:39",
+   "createdAtISO": "2026-08-15T00:39:14+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HPuTsO6aAAAK5dN.jpg",
+     "width": 1056,
+     "height": 672
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "RedHat_AI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2088260654675189854",
+   "text": "Your agents don't need a genius. They need a model that never becomes the bottleneck. NVIDIA Nemotron 3.5 Lightning: 30B MoE, 3B active, ~670 tokens/sec. Running on vLLM day 0, with quantized checkpoints from Red Hat AI ready now. Here's the writeup: https://t.co/Jnaj6RKkf6",
+   "author": {
+    "id": "997536616481722369",
+    "name": "Red Hat AI",
+    "screenName": "RedHat_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1904876402425421824/sN9mSDTt_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 40,
+    "retweets": 3,
+    "replies": 6,
+    "quotes": 2,
+    "views": 3931,
+    "bookmarks": 20
+   },
+   "createdAt": "Fri Aug 14 13:45:12 +0000 2026",
+   "createdAtLocal": "2026-08-14 21:45",
+   "createdAtISO": "2026-08-14T13:45:12+00:00",
+   "media": [],
+   "urls": [
+    "https://x.com/i/article/2088252124262006784"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "articleTitle": "Your agents don't need a genius. They need a model that runs at 670 tokens/sec. "
+  },
+  {
+   "id": "2087945015079075869",
+   "text": "The @vllm_project &amp; llm-d maintainers at @RedHat_AI are some of the hardest-working and leading experts on inference in the world 🚀 Everyone in the ML community can tell you how kind &amp; helpful @robertshaw21 &amp; @mgoin_ are. We’re grateful to occasionally collaborate with them. ❤️ https://t.co/QmMaNhmiUj",
+   "author": {
+    "id": "1745106082790318080",
+    "name": "SemiAnalysis",
+    "screenName": "SemiAnalysis_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2062973370157694976/CdplNoi1_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 88,
+    "retweets": 7,
+    "replies": 2,
+    "quotes": 1,
+    "views": 26048,
+    "bookmarks": 7
+   },
+   "createdAt": "Thu Aug 13 16:50:58 +0000 2026",
+   "createdAtLocal": "2026-08-14 00:50",
+   "createdAtISO": "2026-08-13T16:50:58+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HPne7VIXwAAfa0Z.jpg",
+     "width": 1076,
+     "height": 862
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "RedHat_AI",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2087933437260759156",
+   "text": "How does a single-GPU RAG chatbot become a multi-workload inference platform?\n\nGrace from Red Hat AI walks through the whole stack: AI Gateway, vLLM, and llm-d. Quantization, speculative decoding, cache-aware routing, and prefill/decode disaggregation, one step at a time.\n\nIn under 5 minutes:",
+   "author": {
+    "id": "997536616481722369",
+    "name": "Red Hat AI",
+    "screenName": "RedHat_AI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1904876402425421824/sN9mSDTt_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 56,
+    "retweets": 3,
+    "replies": 2,
+    "quotes": 0,
+    "views": 3345,
+    "bookmarks": 37
+   },
+   "createdAt": "Thu Aug 13 16:04:58 +0000 2026",
+   "createdAtLocal": "2026-08-14 00:04",
+   "createdAtISO": "2026-08-13T16:04:58+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2087898303774048256/vid/avc1/1920x1080/NrOgNOYqn2WIHe2Y.mp4?tag=29",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  }
+ ]
+}

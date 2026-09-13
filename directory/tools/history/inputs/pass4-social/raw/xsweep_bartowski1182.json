@@ -1,0 +1,1946 @@
+{
+ "via": "twitter-cli user-posts -n 60",
+ "user": "bartowski1182",
+ "posts": [
+  {
+   "id": "2098124927966601217",
+   "text": "Just posted another blog post on @huggingface, this time about new tensor-type layouts in llama.cpp 🤗 \n\nhttps://t.co/mh0vbXJ6Q8\n\nI shout them out in there but I'll do it again here, this research was largely powered by @FrameworkPuter Desktop 👀",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 15,
+    "retweets": 2,
+    "replies": 2,
+    "quotes": 0,
+    "views": 1164,
+    "bookmarks": 4
+   },
+   "createdAt": "Thu Sep 10 19:02:18 +0000 2026",
+   "createdAtLocal": "2026-09-11 03:02",
+   "createdAtISO": "2026-09-10T19:02:18+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/blog/bartowski/per-tensor-layout-maps-for-gguf-quantization"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2089438733762224298",
+   "text": "Made a short blog post about most recent imatrix dataset experiments :)\n\nEnjoy! https://t.co/p5DW1N1eRZ",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 9,
+    "retweets": 2,
+    "replies": 0,
+    "quotes": 0,
+    "views": 726,
+    "bookmarks": 1
+   },
+   "createdAt": "Mon Aug 17 19:46:28 +0000 2026",
+   "createdAtLocal": "2026-08-18 03:46",
+   "createdAtISO": "2026-08-17T19:46:28+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/blog/bartowski/imatrix-dataset"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2062929618160472486",
+   "text": "Anyone know what happened to Yorkie..?\n\nI guess I'm a bit late to the party, but seems they went and deleted their discord, X, and github :( if you're out there Yorkie, hope you're okay, feel free to DM or email, just to let me know you're alive",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 6,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1232,
+    "bookmarks": 0
+   },
+   "createdAt": "Fri Jun 05 16:08:43 +0000 2026",
+   "createdAtLocal": "2026-06-06 00:08",
+   "createdAtISO": "2026-06-05T16:08:43+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2044454391705481298",
+   "text": "Introducing the Trinity Builders Program.\n\nThis is a community credit grant that gives developers, researchers, and open-source builders free inference access to Trinity models on our API.\n\nWhy we're doing it: Open weights only go so far if you don't have the compute to actually build with them. We want to lower that barrier so you can run experiments, iterate, and ship real systems.\n\nWho this is for:\n- Open-source projects\n- Research initiatives\n- Prototypes and production applications\n- Developer tooling\n\nGrants range from < 50M tokens to > 1B tokens, allocated based on your submitted project.\n\nSubmitting an application does not guarantee approval. We'll review requests on a best-effort basis, and allocation depends on compute capacity, token budgets, and other operational priorities.\n\nWe can't wait to see what the community builds with Trinity.\n\nLearn more and apply here: https://t.co/6IUkVgmZ0E",
+   "author": {
+    "id": "1699072621344923648",
+    "name": "Arcee.ai",
+    "screenName": "arcee_ai",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1976103399113490433/HkRDFgYC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 181,
+    "retweets": 33,
+    "replies": 10,
+    "quotes": 7,
+    "views": 31361,
+    "bookmarks": 85
+   },
+   "createdAt": "Wed Apr 15 16:34:45 +0000 2026",
+   "createdAtLocal": "2026-04-16 00:34",
+   "createdAtISO": "2026-04-15T16:34:45+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "bartowski1182",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2039369121591120030",
+   "text": "Today we're releasing Trinity-Large-Thinking.\n\nAvailable now on the Arcee API, with open weights on Hugging Face under Apache 2.0.\n\nWe built it for developers and enterprises that want models they can inspect, post-train, host, distill, and own. https://t.co/jumuYehJdo",
+   "author": {
+    "id": "1699072621344923648",
+    "name": "Arcee.ai",
+    "screenName": "arcee_ai",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1976103399113490433/HkRDFgYC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2085,
+    "retweets": 241,
+    "replies": 101,
+    "quotes": 106,
+    "views": 727389,
+    "bookmarks": 1327
+   },
+   "createdAt": "Wed Apr 01 15:47:42 +0000 2026",
+   "createdAtLocal": "2026-04-01 23:47",
+   "createdAtISO": "2026-04-01T15:47:42+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2039342319426830336/vid/avc1/1920x1080/-5je0TNWbjZBSYY0.mp4?tag=21",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "bartowski1182",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2031199619099603303",
+   "text": "Forgot to update the Qwen 0.8B - 9B models with the F32 ssm_alpha and ssm_beta weights, redoing now :)\n\nIf you were getting lower performance, in particular speed-wise, it may do you well to redownload (especially on strix halo apparently?)",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 28,
+    "retweets": 1,
+    "replies": 1,
+    "quotes": 0,
+    "views": 2319,
+    "bookmarks": 4
+   },
+   "createdAt": "Tue Mar 10 02:45:01 +0000 2026",
+   "createdAtLocal": "2026-03-10 10:45",
+   "createdAtISO": "2026-03-10T02:45:01+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2029975871390470347",
+   "text": "Alright, I've added the mean and 99.9% KLD, and the mean and same top P statistics to https://t.co/SH3LZO75OI README\n\nThis is more of a one-off, but I will explore doing it more regularly in the future, just gotta figure out how best to handle with my limited GPU compute :)",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 23,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 2054,
+    "bookmarks": 3
+   },
+   "createdAt": "Fri Mar 06 17:42:17 +0000 2026",
+   "createdAtLocal": "2026-03-07 01:42",
+   "createdAtISO": "2026-03-06T17:42:17+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/bartowski/Qwen_Qwen3.5-35B-A3B-GGUF"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2029415380590993537",
+   "text": "One (hopefully) final update to the Qwen3.5 model quants..\n\nIf you're enjoying the model, don't bother redownloading :)\n\nBut basically with inspiration from Aes Sedai and ddh0 and others, I just tweaked the recipe a bit to be much simpler and it seems more stable, will post KLDs",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 48,
+    "retweets": 0,
+    "replies": 2,
+    "quotes": 0,
+    "views": 4374,
+    "bookmarks": 5
+   },
+   "createdAt": "Thu Mar 05 04:35:06 +0000 2026",
+   "createdAtLocal": "2026-03-05 12:35",
+   "createdAtISO": "2026-03-05T04:35:06+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2029324890361282872",
+   "text": "Thinking of another small switch up for my model naming\n\nI want to make a list of \"official\" model releasers, Qwen, Deepseek, Arcee, Google etc, and when they release a model, I don't include the Author_ naming\n\nEveryone else continues with the Author_ for clarity\n\nThoughts?",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 3,
+    "retweets": 0,
+    "replies": 2,
+    "quotes": 0,
+    "views": 1530,
+    "bookmarks": 0
+   },
+   "createdAt": "Wed Mar 04 22:35:31 +0000 2026",
+   "createdAtLocal": "2026-03-05 06:35",
+   "createdAtISO": "2026-03-04T22:35:31+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2028521146124038428",
+   "text": "A banner weekend for Arcee as Trinity Large Preview officially entered the Top 5 overall models on @OpenRouter!\n\nAfter surpassing 80B tokens on Sunday, we are already on pace to break that record again today. As our inference volume consistently tests the upper bound of our current limits, this growth signals a compounding market demand for our frontier-class open weights as we scale far beyond our initial 1T token milestone.\n\nStay tuned—more exciting news is on the horizon!",
+   "author": {
+    "id": "1699072621344923648",
+    "name": "Arcee.ai",
+    "screenName": "arcee_ai",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1976103399113490433/HkRDFgYC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 88,
+    "retweets": 9,
+    "replies": 2,
+    "quotes": 2,
+    "views": 9040,
+    "bookmarks": 10
+   },
+   "createdAt": "Mon Mar 02 17:21:43 +0000 2026",
+   "createdAtLocal": "2026-03-03 01:21",
+   "createdAtISO": "2026-03-02T17:21:43+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HCbA-aaaoAA0DHz.jpg",
+     "width": 2222,
+     "height": 836
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HCbA-a0akAA7L4Z.png",
+     "width": 519,
+     "height": 385
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "bartowski1182",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2027017414592880680",
+   "text": "Never thought this day would come, but we've hit 10k followers on @huggingface :') 🤗\n\nHuge thank you to them for their endless storage grants allowing me to upload over 2000 quants these past few years! https://t.co/Ueh6ty1Yed",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 96,
+    "retweets": 6,
+    "replies": 10,
+    "quotes": 1,
+    "views": 19692,
+    "bookmarks": 5
+   },
+   "createdAt": "Thu Feb 26 13:46:26 +0000 2026",
+   "createdAtLocal": "2026-02-26 21:46",
+   "createdAtISO": "2026-02-26T13:46:26+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HCFpmOMXMAA1zWd.jpg",
+     "width": 910,
+     "height": 884
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2027017418669765052",
+   "text": "Just to name a few unsung heroes who help immensely behind the scenes; ubergarm, ilintar, madison (ddh0), compilade, ngxson, edaddario, yorkie, artus, jukofyork",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 2,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 613,
+    "bookmarks": 1
+   },
+   "createdAt": "Thu Feb 26 13:46:27 +0000 2026",
+   "createdAtLocal": "2026-02-26 21:46",
+   "createdAtISO": "2026-02-26T13:46:27+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2027017421110890731",
+   "text": "I'm sure I'm missing others who've helped me along the way (throw back to turboderp whose exllamaV2 was the reason I even started quantizing, the OG TheBloke, everyone at /r/localllama), but that just goes to show how great and supportive this community is ❤️",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 3,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 552,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu Feb 26 13:46:28 +0000 2026",
+   "createdAtLocal": "2026-02-26 21:46",
+   "createdAtISO": "2026-02-26T13:46:28+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2022718051540402631",
+   "text": "If you're wondering why my Kimi K2.5 upload stopped, I ran out of public storage on @huggingface 😅 hoping I'll be back at it soon, will update when things are resolved and I can keep going :)",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 16,
+    "retweets": 0,
+    "replies": 2,
+    "quotes": 0,
+    "views": 1396,
+    "bookmarks": 0
+   },
+   "createdAt": "Sat Feb 14 17:02:18 +0000 2026",
+   "createdAtLocal": "2026-02-15 01:02",
+   "createdAtISO": "2026-02-14T17:02:18+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2023371091159429321",
+   "text": "@huggingface Ayy it's resolved and uploads will continue now as planned :)",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 3,
+    "retweets": 1,
+    "replies": 0,
+    "quotes": 0,
+    "views": 518,
+    "bookmarks": 0
+   },
+   "createdAt": "Mon Feb 16 12:17:15 +0000 2026",
+   "createdAtLocal": "2026-02-16 20:17",
+   "createdAtISO": "2026-02-16T12:17:15+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2021645502861705326",
+   "text": "The usage from Trinity, especially while free on openrouter, has been incredible. \n\nWe’ve actually managed to handle 3x more throughput on our inference cluster than we estimated. But our TPS has tanked as usage just continues to grow. \n\nWe moved some training compute over to inference (not as simple as I thought it’d be) and we should be back to full speed. \n\nGive us all you got.",
+   "author": {
+    "id": "1444092395809804297",
+    "name": "Lucas Atkins",
+    "screenName": "latkins",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2062380110108672000/yWR1Zvh-_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 82,
+    "retweets": 8,
+    "replies": 4,
+    "quotes": 0,
+    "views": 4374,
+    "bookmarks": 6
+   },
+   "createdAt": "Wed Feb 11 18:00:22 +0000 2026",
+   "createdAtLocal": "2026-02-12 02:00",
+   "createdAtISO": "2026-02-11T18:00:22+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HA5T3nvWoAAA1by.jpg",
+     "width": 428,
+     "height": 317
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "bartowski1182",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2017354016041095315",
+   "text": "Today is my last day at @arcee_ai \n\nI joined the team (officially) just over a year ago, under @latkins, as a research engineer\n\nIn that time I've had so many amazing opportunities and been able to discover and learn about everything to do with LLMs, it has been truly incredible",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 42,
+    "retweets": 0,
+    "replies": 6,
+    "quotes": 0,
+    "views": 2317,
+    "bookmarks": 0
+   },
+   "createdAt": "Fri Jan 30 21:47:32 +0000 2026",
+   "createdAtLocal": "2026-01-31 05:47",
+   "createdAtISO": "2026-01-30T21:47:32+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2017354018691924303",
+   "text": "The decision to leave was not one I took lightly, but the opportunity afforded to me was too great to pass up. I will be joining @RedHat to help them contribute to the llama.cpp project, and I'm super excited to do so!",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 33,
+    "retweets": 0,
+    "replies": 4,
+    "quotes": 0,
+    "views": 920,
+    "bookmarks": 0
+   },
+   "createdAt": "Fri Jan 30 21:47:33 +0000 2026",
+   "createdAtLocal": "2026-01-31 05:47",
+   "createdAtISO": "2026-01-30T21:47:33+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2017354019941794095",
+   "text": "Thank you so much to everyone at Arcee for being such an amazing group of people, I look forward to seeing what they can do, and will be following along with great interest!",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 12,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 583,
+    "bookmarks": 0
+   },
+   "createdAt": "Fri Jan 30 21:47:33 +0000 2026",
+   "createdAtLocal": "2026-01-31 05:47",
+   "createdAtISO": "2026-01-30T21:47:33+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2016278017572495505",
+   "text": "Today, we’re releasing the first weights from Trinity Large, our first frontier-scale model in the Trinity MoE family. https://t.co/2zEm4WWMLZ",
+   "author": {
+    "id": "1699072621344923648",
+    "name": "Arcee.ai",
+    "screenName": "arcee_ai",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1976103399113490433/HkRDFgYC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 772,
+    "retweets": 108,
+    "replies": 31,
+    "quotes": 67,
+    "views": 261072,
+    "bookmarks": 253
+   },
+   "createdAt": "Tue Jan 27 22:31:54 +0000 2026",
+   "createdAtLocal": "2026-01-28 06:31",
+   "createdAtISO": "2026-01-27T22:31:54+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2016273779568115712/vid/avc1/3840x2160/5ITCduBzSeIqxE12.mp4?tag=21",
+     "width": 3840,
+     "height": 2160
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "bartowski1182",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2010922079617761335",
+   "text": "Oh phew.. got an email stating my account has been reinstated, let the coding resume ❤️",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 6,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1374,
+    "bookmarks": 0
+   },
+   "createdAt": "Tue Jan 13 03:49:19 +0000 2026",
+   "createdAtLocal": "2026-01-13 11:49",
+   "createdAtISO": "2026-01-13T03:49:19+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2010753862073008368",
+    "text": "Well then, woke up to my claude account being banned :( Anyone ever have luck with the appeal process? Never used it in any sketchy ways, only in browser and claude code",
+    "author": {
+     "screenName": "bartowski1182",
+     "name": "Colin Kealty"
+    }
+   }
+  },
+  {
+   "id": "2010753862073008368",
+   "text": "Well then, woke up to my claude account being banned :( Anyone ever have luck with the appeal process? Never used it in any sketchy ways, only in browser and claude code",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 14,
+    "retweets": 1,
+    "replies": 7,
+    "quotes": 1,
+    "views": 4560,
+    "bookmarks": 1
+   },
+   "createdAt": "Mon Jan 12 16:40:53 +0000 2026",
+   "createdAtLocal": "2026-01-13 00:40",
+   "createdAtISO": "2026-01-12T16:40:53+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2007526489508479456",
+   "text": "DeepSeek-R1 sparked a revolution in RLVR, but moving to a stable Multi-GPU pipeline is an engineering minefield. 💣\n\nI’m releasing \"The Engineering Handbook for GRPO + LoRA with Verl\", a guide to saturating A100s and building a industrial-grade RL loop.\n\nThanks to @maximelabonne for the feedbacks and insights! 🤝\n\nThread below. 🧵👇",
+   "author": {
+    "id": "1240934531605159941",
+    "name": "Yağız Çalık",
+    "screenName": "Weyaxi",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2062122480853041152/SrVSMlTr_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 72,
+    "retweets": 10,
+    "replies": 2,
+    "quotes": 3,
+    "views": 17476,
+    "bookmarks": 103
+   },
+   "createdAt": "Sat Jan 03 18:56:27 +0000 2026",
+   "createdAtLocal": "2026-01-04 02:56",
+   "createdAtISO": "2026-01-03T18:56:27+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/G9wk0gUXgAA_gVz.jpg",
+     "width": 2816,
+     "height": 1536
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "bartowski1182",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1995592664637665702",
+   "text": "Today, we are introducing Trinity, the start of an open-weight MoE family that businesses and developers can own.\n\nTrinity-Mini (26B-A3B)\nTrinity-Nano-Preview (6B-A1B)\n\nAvailable Today on Huggingface. https://t.co/gkPQzOlDDM",
+   "author": {
+    "id": "1444092395809804297",
+    "name": "Lucas Atkins",
+    "screenName": "latkins",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2062380110108672000/yWR1Zvh-_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1297,
+    "retweets": 151,
+    "replies": 80,
+    "quotes": 63,
+    "views": 622785,
+    "bookmarks": 755
+   },
+   "createdAt": "Mon Dec 01 20:35:42 +0000 2025",
+   "createdAtLocal": "2025-12-02 04:35",
+   "createdAtISO": "2025-12-01T20:35:42+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/1995585016446021632/vid/avc1/1920x1080/apeNdxIE3LXOEQ3V.mp4?tag=21",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "bartowski1182",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1995152877611049324",
+   "text": "🚀 LocalAI 3.8.0 is officially released!\n\nWe’ve just passed 39,000 stars 🌟 on GitHub. Thank you to the community!\n\nThis release is focused on removing any friction. We wanted to expose the full power of LocalAI multi-backend capabilities.\n\nA deep dive into what’s new 🧵👇 https://t.co/JQ1DfrGGxV",
+   "author": {
+    "id": "1651571804341772290",
+    "name": "LocalAI",
+    "screenName": "LocalAI_API",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1912248653554524160/ZJGWOpR3_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 20,
+    "retweets": 9,
+    "replies": 4,
+    "quotes": 1,
+    "views": 5872,
+    "bookmarks": 6
+   },
+   "createdAt": "Sun Nov 30 15:28:08 +0000 2025",
+   "createdAtLocal": "2025-11-30 23:28",
+   "createdAtISO": "2025-11-30T15:28:08+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/G7A0uVAXAAArXxP.jpg",
+     "width": 2206,
+     "height": 1024
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "bartowski1182",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1985791822828884387",
+   "text": "🤗 @huggingface's most impactful contributors you should follow for the month of October is out! 🚀🚀 https://t.co/kM1Sx3DoQr\n\n🏛️ Top 10 Model likes: @TheBlokeAI, #mradermacher, @bartowski1182, #lllyasviel, #hexgrad, #nitrosocke, @kijaidesign, @haruu1367, @prompthero, #WarriorMama777  \n\n📊 Top 10 Dataset likes: @fkadev, @teknium, @maximelabonne, #gsdf, #Nerfgun3, @imhaotian, @OilandLuca, @logcong0120, @jon_durbin, #anon8231489123\n\n🚀 Top 10 Space likes: @fffiloni, @multimodalart, @enzostvs, @flngr, @_akhaliq, @kingnish24, @xenovacom, @angrypenguinpng, @gokayfem, @yvrjsharma\n\n🤗 Top 10 Profile followers: @TheBlokeAI, @lvminzhang, @mervenoyann, @bartowski1182, @_akhaliq, @ylecun, @fffiloni, @xenovacom, @maximelabonne, @Teknium \n\nCongarts to all users 🔥🔥",
+   "author": {
+    "id": "1240934531605159941",
+    "name": "Yağız Çalık",
+    "screenName": "Weyaxi",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2062122480853041152/SrVSMlTr_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 32,
+    "retweets": 10,
+    "replies": 6,
+    "quotes": 0,
+    "views": 12891,
+    "bookmarks": 8
+   },
+   "createdAt": "Tue Nov 04 19:30:39 +0000 2025",
+   "createdAtLocal": "2025-11-05 03:30",
+   "createdAtISO": "2025-11-04T19:30:39+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/G47yMJVW4AAHAhj.jpg",
+     "width": 1600,
+     "height": 1600
+    }
+   ],
+   "urls": [
+    "https://huggingface.co/spaces/TCTF/TCTF"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "bartowski1182",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1984319565330071775",
+   "text": "Now in effect: Mergekit has been re-licensed under GNU LGPL v3, restoring clarity and flexibility for users and contributors. Read more about our decision in the blog. \n\nhttps://t.co/dGAMWK2V1r",
+   "author": {
+    "id": "1699072621344923648",
+    "name": "Arcee.ai",
+    "screenName": "arcee_ai",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1976103399113490433/HkRDFgYC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 32,
+    "retweets": 4,
+    "replies": 4,
+    "quotes": 4,
+    "views": 6493,
+    "bookmarks": 5
+   },
+   "createdAt": "Fri Oct 31 18:00:25 +0000 2025",
+   "createdAtLocal": "2025-11-01 02:00",
+   "createdAtISO": "2025-10-31T18:00:25+00:00",
+   "media": [],
+   "urls": [
+    "https://www.arcee.ai/blog/mergekit-returns-to-its-roots"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "bartowski1182",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1983589753263186264",
+   "text": "Come join us :)",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 2,
+    "retweets": 0,
+    "replies": 2,
+    "quotes": 0,
+    "views": 557,
+    "bookmarks": 1
+   },
+   "createdAt": "Wed Oct 29 17:40:25 +0000 2025",
+   "createdAtLocal": "2025-10-30 01:40",
+   "createdAtISO": "2025-10-29T17:40:25+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "1983589024037269811",
+    "text": "https://t.co/kf8zupHgyg",
+    "author": {
+     "screenName": "arcee_ai",
+     "name": "Arcee.ai"
+    }
+   }
+  },
+  {
+   "id": "1983588970232738144",
+   "text": "ArceeAI is on Discord! Join for early access to some exciting drops! https://t.co/RmOm2dELEm",
+   "author": {
+    "id": "1699072621344923648",
+    "name": "Arcee.ai",
+    "screenName": "arcee_ai",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1976103399113490433/HkRDFgYC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 38,
+    "retweets": 7,
+    "replies": 3,
+    "quotes": 2,
+    "views": 8368,
+    "bookmarks": 4
+   },
+   "createdAt": "Wed Oct 29 17:37:18 +0000 2025",
+   "createdAtLocal": "2025-10-30 01:37",
+   "createdAtISO": "2025-10-29T17:37:18+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/G4cfem6a8AMft7Y.jpg",
+     "width": 1040,
+     "height": 568
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "bartowski1182",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1973334718658781678",
+   "text": "It finally happened, one of my main fears with running my setup from home, my modem died during the night :')\n\nThankfully tech support was very quick to accept it's defective hardware, but no stores open for another 3 hours so.. yeah, GLM 4.6 uploads will continue shortly 😅",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 9,
+    "retweets": 0,
+    "replies": 3,
+    "quotes": 0,
+    "views": 706,
+    "bookmarks": 0
+   },
+   "createdAt": "Wed Oct 01 10:30:34 +0000 2025",
+   "createdAtLocal": "2025-10-01 18:30",
+   "createdAtISO": "2025-10-01T10:30:34+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1971256857957421366",
+   "text": "Small collab with the folks over at @LinusTech on an article :)\n\nhttps://t.co/vnnCputHkh\n\nThey did most of the work, just helped with a few details, really great stuff from them!",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 5,
+    "retweets": 0,
+    "replies": 2,
+    "quotes": 0,
+    "views": 498,
+    "bookmarks": 1
+   },
+   "createdAt": "Thu Sep 25 16:53:53 +0000 2025",
+   "createdAtLocal": "2025-09-26 00:53",
+   "createdAtISO": "2025-09-25T16:53:53+00:00",
+   "media": [],
+   "urls": [
+    "https://www.lttlabs.com/blog/2025/09/25/why-are-these-called-graphics-cards"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1968371293184741876",
+   "text": "We’re going permissive: Apache 2.0 across the board. AFM-4.5B is now relicensed from Arcee to Apache 2.0; the agent variant will launch under Apache 2.0; and all upcoming releases ship with open weights. Three models are in training. https://t.co/72Z8qMQsIo",
+   "author": {
+    "id": "1444092395809804297",
+    "name": "Lucas Atkins",
+    "screenName": "latkins",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2062380110108672000/yWR1Zvh-_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 195,
+    "retweets": 38,
+    "replies": 21,
+    "quotes": 13,
+    "views": 37006,
+    "bookmarks": 25
+   },
+   "createdAt": "Wed Sep 17 17:47:41 +0000 2025",
+   "createdAtLocal": "2025-09-18 01:47",
+   "createdAtISO": "2025-09-17T17:47:41+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/G1EOyQzaQAQIJbh.jpg",
+     "width": 1613,
+     "height": 1203
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "bartowski1182",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1963517353569956243",
+   "text": "Meet Jan-v1-edge: an experimental 1.7B distilled model for Perplexity-style search.\n\nJan-v1-edge is our lightweight distillation experiment, derived from Jan v1. We're testing how well web search and reasoning can transfer into a smaller 1.7B parameter model that runs on edge devices.\n\nPerformance\n- 83% SimpleQA accuracy, close to Jan-nano-128k while being lighter\n- Outperforms Qwen3-1.7B Thinking on SimpleQA\n\nTo experiment with it, find the GGUF model on @huggingface, click Use this model and select Jan.\n\nTo enable search in Jan: go to Settings -> MCP Servers -> enable or add a search-related MCP (SearXNG, Serper, Exa, etc.).\n\n- Jan-v1-edge: https://t.co/SgHEcdqpQi\n- Jan-v1-edge GGUF: https://t.co/rnAyvFBNzA\n\nCredit to the @Alibaba_Qwen team for Qwen3-1.7B Thinking and @ggerganov for llama.cpp.",
+   "author": {
+    "id": "1714161384265854976",
+    "name": "👋 Jan",
+    "screenName": "jandotai",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1726902134770454528/YCYCCwrz_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 401,
+    "retweets": 44,
+    "replies": 16,
+    "quotes": 11,
+    "views": 36161,
+    "bookmarks": 205
+   },
+   "createdAt": "Thu Sep 04 08:19:52 +0000 2025",
+   "createdAtLocal": "2025-09-04 16:19",
+   "createdAtISO": "2025-09-04T08:19:52+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/Gz_QoJObUAAeAe5.jpg",
+     "width": 2286,
+     "height": 1310
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "bartowski1182",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1958981811796578469",
+   "text": "The next major question is.. Fedora or Ubuntu?\n\nI've been using Ubuntu my whole life but largely because that's what I started with - no major issues, but curious if it's worth trying something else\n\nI also plan to use this as an actual desktop for the first time in like a decade",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 13,
+    "retweets": 0,
+    "replies": 33,
+    "quotes": 0,
+    "views": 14765,
+    "bookmarks": 2
+   },
+   "createdAt": "Fri Aug 22 19:57:14 +0000 2025",
+   "createdAtLocal": "2025-08-23 03:57",
+   "createdAtISO": "2025-08-22T19:57:14+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1958973396353785918",
+   "text": "Huge shout-out to @FrameworkPuter for both creating and sending me such an awesome piece of engineering, looking forward to playing with this :D ❤️ https://t.co/vbJR2qTjl4",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 139,
+    "retweets": 5,
+    "replies": 2,
+    "quotes": 0,
+    "views": 10478,
+    "bookmarks": 5
+   },
+   "createdAt": "Fri Aug 22 19:23:48 +0000 2025",
+   "createdAtLocal": "2025-08-23 03:23",
+   "createdAtISO": "2025-08-22T19:23:48+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/Gy-r7AVXoAA0ZjI.jpg",
+     "width": 2048,
+     "height": 1536
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1958969032914391478",
+   "text": "Well hello there 👀 @FrameworkPuter https://t.co/YFz1A5ikc4",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 196,
+    "retweets": 4,
+    "replies": 7,
+    "quotes": 0,
+    "views": 4224,
+    "bookmarks": 6
+   },
+   "createdAt": "Fri Aug 22 19:06:27 +0000 2025",
+   "createdAtLocal": "2025-08-23 03:06",
+   "createdAtISO": "2025-08-22T19:06:27+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/Gy-n8-yWoAAUMR7.jpg",
+     "width": 1536,
+     "height": 2048
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1953296001940271121",
+   "text": "Wednesday night activities, setting up the new server 👀 https://t.co/pyDqFkGqwu",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 28,
+    "retweets": 0,
+    "replies": 5,
+    "quotes": 0,
+    "views": 1219,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu Aug 07 03:23:52 +0000 2025",
+   "createdAtLocal": "2025-08-07 11:23",
+   "createdAtISO": "2025-08-07T03:23:52+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/GxuAXLDXkAA_F0t.jpg",
+     "width": 1931,
+     "height": 2048
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1950282444810109145",
+   "text": "So proud of the team on this one, was a really great effort, huge coordination from the team to release an awesome model. Super excited about this and the future of @arcee_ai !",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 25,
+    "retweets": 2,
+    "replies": 2,
+    "quotes": 0,
+    "views": 1321,
+    "bookmarks": 3
+   },
+   "createdAt": "Tue Jul 29 19:49:03 +0000 2025",
+   "createdAtLocal": "2025-07-30 03:49",
+   "createdAtISO": "2025-07-29T19:49:03+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "1950278100874645621",
+    "text": "Today, we’re officially releasing the weights for AFM-4.5B and AFM-4.5B-Base on HuggingFace. This is a major milestone for @arcee_ai. AFM is designed to be flexible and high-performing across a wide range of deployment environments. https://t.co/fuSLpozZDH",
+    "author": {
+     "screenName": "latkins",
+     "name": "Lucas Atkins"
+    }
+   }
+  },
+  {
+   "id": "1947441301667844377",
+   "text": "Trying to talk myself into buying a new CPU/Mobo/RAM combo (epyc 9534+, 576-768GB).. why is RAM more than half the cost?! Looking at ~2500-3000 USD even on eBay 💀",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 14,
+    "retweets": 0,
+    "replies": 3,
+    "quotes": 0,
+    "views": 1071,
+    "bookmarks": 0
+   },
+   "createdAt": "Mon Jul 21 23:39:22 +0000 2025",
+   "createdAtLocal": "2025-07-22 07:39",
+   "createdAtISO": "2025-07-21T23:39:22+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1945863702781059211",
+   "text": "Gonna be chatting with @CloudDude_ and @_EldarKurtic about quantization and LLMs in general, going live in 20 minutes, come say hi :)",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 7,
+    "retweets": 1,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1365,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu Jul 17 15:10:33 +0000 2025",
+   "createdAtLocal": "2025-07-17 23:10",
+   "createdAtISO": "2025-07-17T15:10:33+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "1943315355948216772",
+    "text": "🎙️ Join our🔴𝐓𝐞𝐜𝐡 𝐁𝐞𝐚𝐭𝐬 𝐋𝐢𝐯𝐞 Show! \n🗓️ Thursday 17th 11:30 AM EDT\n🎯 A chill livestream unpacking LLM #Quantization: @vllm_project  vs @ollama the What &amp; How.\n\n🔥Dope guest stars:\n@bartowski1182 &amp; @_EldarKurtic\n\n🔗Stream on YouTube &amp; Twitter:\n https://t.co/lcTjBDVhIU",
+    "author": {
+     "screenName": "CloudDude_",
+     "name": "Kosseila (CloudDude) ☁️📡🍉"
+    }
+   }
+  },
+  {
+   "id": "1942881817519927380",
+   "text": "As generative AI becomes increasingly central to business applications, the cost, complexity, and privacy concerns associated with language models are becoming significant.\n\nAt @arcee_ai, we’ve been asking a critical question: Can CPUs actually handle the demands of language models? The short answer: Yes—with the right optimizations.\n\nIn this piece by @AndrewWalko , @bartowski1182, and @julsimon , we explore hardware and software improvements that make CPU inference viable.\n\nUsing our latest foundation model, AFM-4.5B, we conduct detailed benchmarks on @intel Xeon, @awscloud Graviton, and @Qualcomm  Z1E-80-100 CPUs to identify the most suitable configurations for enterprise AI use cases, whether in the cloud or at the edge.\n\nBlog post: https://t.co/vxs4YC4sf9\n\n--\nFollow @arcee_ai for the latest news on small language models.",
+   "author": {
+    "id": "1699072621344923648",
+    "name": "Arcee.ai",
+    "screenName": "arcee_ai",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1976103399113490433/HkRDFgYC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 23,
+    "retweets": 3,
+    "replies": 1,
+    "quotes": 1,
+    "views": 3555,
+    "bookmarks": 11
+   },
+   "createdAt": "Wed Jul 09 09:41:36 +0000 2025",
+   "createdAtLocal": "2025-07-09 17:41",
+   "createdAtISO": "2025-07-09T09:41:36+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/GvaAshvXEAAqpJv.png",
+     "width": 1081,
+     "height": 608
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "bartowski1182",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1937489092423413841",
+   "text": "Man, didn't think I'd feel the loss of /r/localllama this hard 😅 hope it gets new moderation soon!!",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 47,
+    "retweets": 3,
+    "replies": 7,
+    "quotes": 0,
+    "views": 3222,
+    "bookmarks": 1
+   },
+   "createdAt": "Tue Jun 24 12:32:51 +0000 2025",
+   "createdAtLocal": "2025-06-24 20:32",
+   "createdAtISO": "2025-06-24T12:32:51+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1937203985884254609",
+   "text": "this release is pure class. arcee using their data to do some short-term continued pretraining on GLM 32b.\nlong context support has gone from effectively 8k -&gt; 32k, and all base model evaluations (including short context ones) have improved https://t.co/eOSHZ1xLJe",
+   "author": {
+    "id": "1319397157913436163",
+    "name": "kalomaze",
+    "screenName": "kalomaze",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1998312107968995328/mVy3lsqU_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 197,
+    "retweets": 20,
+    "replies": 2,
+    "quotes": 2,
+    "views": 30403,
+    "bookmarks": 71
+   },
+   "createdAt": "Mon Jun 23 17:39:56 +0000 2025",
+   "createdAtLocal": "2025-06-24 01:39",
+   "createdAtISO": "2025-06-23T17:39:56+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/GuJP7KZXMAAlss8.jpg",
+     "width": 1332,
+     "height": 938
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "bartowski1182",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1937192467042042190",
+   "text": "Last week, we launched AFM-4.5B, our first foundation model.\n\nIn this post by @chargoddard , you will learn how we extended the context length of AFM-4.5B from 4k to 64k context through aggressive experimentation, model merging, distillation, and a concerning amount of soup.\n\nBon appétit 😋\n\nBlog post: https://t.co/4exJ98KuKT",
+   "author": {
+    "id": "1699072621344923648",
+    "name": "Arcee.ai",
+    "screenName": "arcee_ai",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1976103399113490433/HkRDFgYC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 187,
+    "retweets": 33,
+    "replies": 6,
+    "quotes": 9,
+    "views": 70620,
+    "bookmarks": 116
+   },
+   "createdAt": "Mon Jun 23 16:54:10 +0000 2025",
+   "createdAtLocal": "2025-06-24 00:54",
+   "createdAtISO": "2025-06-23T16:54:10+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/GuJKFtVWwAAmCkD.jpg",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "bartowski1182",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1935385249409651045",
+   "text": "Today, we’re thrilled to unveil the @arcee_ai Foundation Models, a new family of GenAI models designed from the ground up for enterprise reality. \n\nThe first release—AFM-4.5B—is a 4.5-billion-parameter frontier model that delivers excellent accuracy, strict compliance, and very high cost efficiency. \n\nIn short: enterprise-grade intelligence that can run anywhere—on a smartphone, at the edge, or in the cloud.\n\nFor a quick taste, you can test AFM-4.5B in our playground and on https://t.co/GlP5HPmyNA.\n\nFor a deeper dive into the model’s training pipeline and benchmarks, details are available in our technical blog post.\n\n➡️ Arcee AI playground: https://t.co/WhULvvyE9G\n➡️ @togethercompute playground: https://t.co/3qweIql3SA\n➡️ Launch blog post: https://t.co/VxV7AG9D1q\n➡️ Technical blog post: https://t.co/UUDfZJzecJ\n\n PS:  As we’ll now focus on our AFM foundation models, and because we love open-source, we're opening up access to our previously closed-source  language models. Details in the tech blog post!",
+   "author": {
+    "id": "1699072621344923648",
+    "name": "Arcee.ai",
+    "screenName": "arcee_ai",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1976103399113490433/HkRDFgYC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 94,
+    "retweets": 25,
+    "replies": 5,
+    "quotes": 4,
+    "views": 21966,
+    "bookmarks": 29
+   },
+   "createdAt": "Wed Jun 18 17:12:55 +0000 2025",
+   "createdAtLocal": "2025-06-19 01:12",
+   "createdAtISO": "2025-06-18T17:12:55+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/1935384973583736832/vid/avc1/1920x1080/Brr4zBuOj2vR2TP7.mp4?tag=21",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "bartowski1182",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1928089755712917599",
+   "text": "While waiting for the updated full fat @deepseek_ai R1, at least we have a new 8B distill to play with!\n\nBased on Qwen3 this time around, showing some great performance in reasoning!\n\nTake a look:\n\nhttps://t.co/IBGLZKa2BA\n\nhttps://t.co/d0IAoKXMsf",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 32,
+    "retweets": 2,
+    "replies": 0,
+    "quotes": 0,
+    "views": 918,
+    "bookmarks": 3
+   },
+   "createdAt": "Thu May 29 14:03:14 +0000 2025",
+   "createdAtLocal": "2025-05-29 22:03",
+   "createdAtISO": "2025-05-29T14:03:14+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/lmstudio-community/DeepSeek-R1-0528-Qwen3-8B-GGUF",
+    "https://lmstudio.ai/models/deepseek/deepseek-r1-0528-qwen3-8b"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1921086843023401338",
+   "text": "Vision support now available on llama.cpp server and Web UI!\n\nMore details in 🧵 https://t.co/X0Iwx1K4MY",
+   "author": {
+    "id": "1293105854389133312",
+    "name": "Xuan-Son Nguyen",
+    "screenName": "ngxson",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1823412255280472064/VoZb_cia_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 659,
+    "retweets": 72,
+    "replies": 15,
+    "quotes": 6,
+    "views": 93993,
+    "bookmarks": 256
+   },
+   "createdAt": "Sat May 10 06:16:10 +0000 2025",
+   "createdAtLocal": "2025-05-10 14:16",
+   "createdAtISO": "2025-05-10T06:16:10+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/GqkSFvFWcAE2t89.jpg",
+     "width": 968,
+     "height": 1116
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "bartowski1182",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1920545427251757380",
+   "text": "Amazing work over the past week from ubergarm over on github to dive deep into GGUF quants, running benchmarks and PPL/KLD tests, and providing it all in a readable and open format for all to explore!\n\nhttps://t.co/0LITdJWbvH\n\nTLDR, everything is pretty awesome, hard to go wrong!",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 18,
+    "retweets": 3,
+    "replies": 3,
+    "quotes": 0,
+    "views": 862,
+    "bookmarks": 8
+   },
+   "createdAt": "Thu May 08 18:24:46 +0000 2025",
+   "createdAtLocal": "2025-05-09 02:24",
+   "createdAtISO": "2025-05-08T18:24:46+00:00",
+   "media": [],
+   "urls": [
+    "https://www.reddit.com/r/LocalLLaMA/comments/1khwxal/the_great_quant_wars_of_2025/"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1920236418623799619",
+   "text": "idk when the official announcement is from our end but at this point i'm so grateful it's real idgaf @openrouter https://t.co/WMPKO3UP9w",
+   "author": {
+    "id": "1444092395809804297",
+    "name": "Lucas Atkins",
+    "screenName": "latkins",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2062380110108672000/yWR1Zvh-_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 28,
+    "retweets": 2,
+    "replies": 2,
+    "quotes": 1,
+    "views": 3437,
+    "bookmarks": 3
+   },
+   "createdAt": "Wed May 07 21:56:53 +0000 2025",
+   "createdAtLocal": "2025-05-08 05:56",
+   "createdAtISO": "2025-05-07T21:56:53+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/GqYMr36bMAMdF4h.jpg",
+     "width": 1096,
+     "height": 860
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "bartowski1182",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1917769369477648826",
+   "text": "Very interesting release from Microsoft out of nowhere!\n\nNote that the big ones seemed to have a chat template issue, @yagilb thankfully diagnosed it and they've been reposted with the fixed template!",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 14,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 806,
+    "bookmarks": 3
+   },
+   "createdAt": "Thu May 01 02:33:42 +0000 2025",
+   "createdAtLocal": "2025-05-01 10:33",
+   "createdAtISO": "2025-05-01T02:33:42+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "1917769040308687247",
+    "text": "Microsoft just released 3 new Phi-4 reasoning models! \nTry to ask them some hard questions 🤔🧠\n\nphi-4-reasoning (14B):\nhttps://t.co/wxXXMkvDPc\n\nphi-4-reasoning-plus (14B):\nhttps://t.co/0wLm0ylwqK\n\nphi-4-mini-reasoning (3.8B):\nhttps://t.co/ELxpkIAvfA\n\n🚀👾",
+    "author": {
+     "screenName": "lmstudio",
+     "name": "LM Studio"
+    }
+   }
+  },
+  {
+   "id": "1917575244954415527",
+   "text": "Running benchmarks for Qwen3 GGUFs made me find a way to force extra text into test prompts.. running it without /no_think is just not feasible on my hardware 😂😂\n\nStill gets impressive results without thinking!",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 14,
+    "retweets": 2,
+    "replies": 4,
+    "quotes": 0,
+    "views": 858,
+    "bookmarks": 1
+   },
+   "createdAt": "Wed Apr 30 13:42:19 +0000 2025",
+   "createdAtLocal": "2025-04-30 21:42",
+   "createdAtISO": "2025-04-30T13:42:19+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1916971936120291494",
+   "text": "Can we talk about how many tools support Qwen3 day-0?\n\nThat didn't come from nothing either, that's the @Alibaba_Qwen team putting in huge efforts to support it across all the platforms, opening PRs and working on making it seamless for all of us, MAD respect 🔥🔥",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 89,
+    "retweets": 1,
+    "replies": 2,
+    "quotes": 0,
+    "views": 2870,
+    "bookmarks": 6
+   },
+   "createdAt": "Mon Apr 28 21:44:59 +0000 2025",
+   "createdAtLocal": "2025-04-29 05:44",
+   "createdAtISO": "2025-04-28T21:44:59+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "1916962087676612998",
+    "text": "Introducing Qwen3! \n\nWe release and open-weight Qwen3, our latest large language models, including 2 MoE models and 6 dense models, ranging from 0.6B to 235B. Our flagship model, Qwen3-235B-A22B, achieves competitive results in benchmark evaluations of coding, math, general capabilities, etc., when compared to other top-tier models such as DeepSeek-R1, o1, o3-mini, Grok-3, and Gemini-2.5-Pro. Additionally, the small MoE model, Qwen3-30B-A3B, outcompetes QwQ-32B with 10 times of activated parameters, and even a tiny model like Qwen3-4B can rival the performance of Qwen2.5-72B-Instruct.\n\nFor more information, feel free to try them out in Qwen Chat Web (https://t.co/bg4tAU1p74) and APP and visit our GitHub, HF, ModelScope, etc.\n\nBlog: https://t.co/Z8YgHerTXz\nGitHub: https://t.co/Ij0Vne5b5K\nHugging Face: https://t.co/V1WxhQ0fad\nModelScope: https://t.co/Z9Z37FODVN\n\nThe post-trained models, such as Qwen3-30B-A3B, along with their pre-trained counterparts (e.g., Qwen3-30B-A3B-Base), are now available on platforms like Hugging Face, ModelScope, and Kaggle. For deployment, we recommend using frameworks like SGLang and vLLM. For local usage, tools such as Ollama, LMStudio, MLX, llama.cpp, and KTransformers are highly recommended. These options ensure that users can easily integrate Qwen3 into their workflows, whether in research, development, or production environments.\n\nHope you enjoy our new models!",
+    "author": {
+     "screenName": "Alibaba_Qwen",
+     "name": "Qwen"
+    }
+   }
+  },
+  {
+   "id": "1916967091179082140",
+   "text": "Unrelated, I chose a bad day to go out to dinner...",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 11,
+    "retweets": 0,
+    "replies": 5,
+    "quotes": 0,
+    "views": 711,
+    "bookmarks": 0
+   },
+   "createdAt": "Mon Apr 28 21:25:44 +0000 2025",
+   "createdAtLocal": "2025-04-29 05:25",
+   "createdAtISO": "2025-04-28T21:25:44+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1916964701692416123",
+   "text": "Qwen 3 is live!!!\n\nThe legends at @Alibaba_Qwen have graced us with 8 new model sizes, including some nice small ones, a dense 32B, and an MoE 30B as well as a 235B MoE!\n\nEverything but the 235B is ready to go on @lmstudio:\n\nhttps://t.co/Ju733sj3Cg\n\nAs well as on my own page!! 🤗",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 120,
+    "retweets": 6,
+    "replies": 2,
+    "quotes": 1,
+    "views": 7600,
+    "bookmarks": 14
+   },
+   "createdAt": "Mon Apr 28 21:16:15 +0000 2025",
+   "createdAtLocal": "2025-04-29 05:16",
+   "createdAtISO": "2025-04-28T21:16:15+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/lmstudio-community?search_models=qwen3"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1915854433784627644",
+   "text": "✨LM Studio 0.3.15 is out now.\n\n- Support for NVIDIA RTX 50-series (CUDA 12.8)\n- GLM-4 enabled in llama.cpp and MLX\n- New system prompt editor UI 📝\n- tool_choice param in OpenAI-like API\n... and more 👾\n\nRelease notes https://t.co/JYNnPIibUc https://t.co/lcI0gJ9yzQ",
+   "author": {
+    "id": "1654830858098860032",
+    "name": "LM Studio",
+    "screenName": "lmstudio",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1755060270173429760/4WVc54_p_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 333,
+    "retweets": 57,
+    "replies": 15,
+    "quotes": 2,
+    "views": 25844,
+    "bookmarks": 49
+   },
+   "createdAt": "Fri Apr 25 19:44:26 +0000 2025",
+   "createdAtLocal": "2025-04-26 03:44",
+   "createdAtISO": "2025-04-25T19:44:26+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/GpZ67LAXAAEkirK.jpg",
+     "width": 1678,
+     "height": 880
+    }
+   ],
+   "urls": [
+    "https://lmstudio.ai/blog/lmstudio-v0.3.15"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "bartowski1182",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1913234712090607810",
+   "text": "Okay this feels so cool.. Google mentioned me (along with others) in their QAT release blog post O.o https://t.co/LkJQoq2BLV",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 197,
+    "retweets": 12,
+    "replies": 15,
+    "quotes": 0,
+    "views": 8114,
+    "bookmarks": 20
+   },
+   "createdAt": "Fri Apr 18 14:14:36 +0000 2025",
+   "createdAtLocal": "2025-04-18 22:14",
+   "createdAtISO": "2025-04-18T14:14:36+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/Go0s1PFXgAA-JoP.jpg",
+     "width": 1096,
+     "height": 1521
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1913228420613353947",
+   "text": "We've worked with @googleaidevs to bring you their new 'Quantization-Aware' Gemma 3 models.\n\nQAT is a process that incorporates model quantization during training 🤯. This results in much smaller models (require less memory) that preserve the original quality.\n\nAvailable in 1B, 4B, 12B, and 27B sizes.",
+   "author": {
+    "id": "1654830858098860032",
+    "name": "LM Studio",
+    "screenName": "lmstudio",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1755060270173429760/4WVc54_p_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 524,
+    "retweets": 41,
+    "replies": 20,
+    "quotes": 13,
+    "views": 51125,
+    "bookmarks": 140
+   },
+   "createdAt": "Fri Apr 18 13:49:36 +0000 2025",
+   "createdAtLocal": "2025-04-18 21:49",
+   "createdAtISO": "2025-04-18T13:49:36+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "bartowski1182",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "1913219776656089184",
+    "text": "Run Gemma 3 27B on your desktop GPU 🔥\nOur new QAT-optimized int4 models slash VRAM needs (54GB -&gt; 14.1GB) while maintaining quality. Now accessible on consumer cards like the NVIDIA RTX 3090 via @ollama, @huggingface, @lmstudio &amp; more. https://t.co/1fQSHFWJTm",
+    "author": {
+     "screenName": "googleaidevs",
+     "name": "Google AI Developers"
+    }
+   }
+  },
+  {
+   "id": "1910744932995735582",
+   "text": "Another awesome new @huggingface feature, view the rendered chat template right in your browser!\n\nEven works for GGUF models :O\n\nLove these quality of life enhancements bring more information to users 🤗🤗 https://t.co/AERVWvKQNk",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 93,
+    "retweets": 14,
+    "replies": 2,
+    "quotes": 2,
+    "views": 14392,
+    "bookmarks": 22
+   },
+   "createdAt": "Fri Apr 11 17:21:06 +0000 2025",
+   "createdAtLocal": "2025-04-12 01:21",
+   "createdAtISO": "2025-04-11T17:21:06+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/ext_tw_video/1910744917862748160/pu/vid/avc1/944x720/CT8L_hLWsiivd-Km.mp4?tag=12",
+     "width": 944,
+     "height": 720
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "1910281732391043554",
+   "text": "llama.cpp multimodal roadmap 🔥 https://t.co/TLoBoCrkg2",
+   "author": {
+    "id": "1293105854389133312",
+    "name": "Xuan-Son Nguyen",
+    "screenName": "ngxson",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1823412255280472064/VoZb_cia_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 69,
+    "retweets": 8,
+    "replies": 2,
+    "quotes": 1,
+    "views": 3364,
+    "bookmarks": 18
+   },
+   "createdAt": "Thu Apr 10 10:40:30 +0000 2025",
+   "createdAtLocal": "2025-04-10 18:40",
+   "createdAtISO": "2025-04-10T10:40:30+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/GoKu-UMXwAAW2SD.jpg",
+     "width": 1712,
+     "height": 1076
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "bartowski1182",
+   "lang": "et",
+   "score": null
+  },
+  {
+   "id": "1909796549829308768",
+   "text": "Wanted to validate my PR for updating the tensor quant types in llama.cpp, ran a bunch of KLD tests\n\nPosted the results over on an HF article! It was originally meant to be a reddit post but it was auto-removed, so forgive the casual style\n\nhttps://t.co/AmDjaxrZI7",
+   "author": {
+    "id": "1756145750759620608",
+    "name": "Colin Kealty",
+    "screenName": "bartowski1182",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1757051808722178048/Soa7SCtC_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 16,
+    "retweets": 2,
+    "replies": 2,
+    "quotes": 0,
+    "views": 1479,
+    "bookmarks": 4
+   },
+   "createdAt": "Wed Apr 09 02:32:34 +0000 2025",
+   "createdAtLocal": "2025-04-09 10:32",
+   "createdAtISO": "2025-04-09T02:32:34+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/blog/bartowski/llama4-scout-off"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  }
+ ]
+}

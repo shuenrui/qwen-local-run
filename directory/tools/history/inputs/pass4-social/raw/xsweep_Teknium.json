@@ -1,0 +1,2108 @@
+{
+ "via": "twitter-cli user-posts -n 60",
+ "user": "Teknium",
+ "posts": [
+  {
+   "id": "2098923299841691957",
+   "text": "Omarchy + Hermes Agent is a powerful combo\n\nThis video shows how you can launch the Hermes Desktop app from the menu, as well as how you can make Hermes your default agent (and what that means)\n\nI posted a clip of the Desktop portion earlier in the week, but the full video has garnered a lot of interest and views on YouTube, so I wanted to post it here for the X audience! Check it out!",
+   "author": {
+    "id": "1449072997965307906",
+    "name": "tonbi",
+    "screenName": "tonbistudio",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2019464555844562944/y1VHgOeE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 25,
+    "retweets": 2,
+    "replies": 0,
+    "quotes": 0,
+    "views": 1770,
+    "bookmarks": 19
+   },
+   "createdAt": "Sat Sep 12 23:54:45 +0000 2026",
+   "createdAtLocal": "2026-09-13 07:54",
+   "createdAtISO": "2026-09-12T23:54:45+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2098922557487661056/vid/avc1/1920x1080/RcfFPFaosRJUAZZu.mp4?tag=29",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "Teknium",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098881098885595149",
+   "text": "Would anyone like to review or test remote gateway viewing? Get it really clean and nice before release?\n\nPlease send your agents and your brains to this PR: https://t.co/H2s5JZoIqm https://t.co/eMcEqtCcQ8",
+   "author": {
+    "id": "1365020011123773442",
+    "name": "Teknium 🪽",
+    "screenName": "Teknium",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1642401912648777728/2KFikPsE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 304,
+    "retweets": 13,
+    "replies": 47,
+    "quotes": 5,
+    "views": 21990,
+    "bookmarks": 66
+   },
+   "createdAt": "Sat Sep 12 21:07:03 +0000 2026",
+   "createdAtLocal": "2026-09-13 05:07",
+   "createdAtISO": "2026-09-12T21:07:03+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HSC5LkabEAAufyi.jpg",
+     "width": 1680,
+     "height": 1000
+    }
+   ],
+   "urls": [
+    "https://github.com/NousResearch/hermes-agent/pull/108914"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098882589616664853",
+   "text": "Since its a heavy and important feature, I want testers and reviewers! Please check out the PR, and get a review in if you can review the code, or switch branches to try it live and give some feedback in the comments of the PR :)",
+   "author": {
+    "id": "1365020011123773442",
+    "name": "Teknium 🪽",
+    "screenName": "Teknium",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1642401912648777728/2KFikPsE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 34,
+    "retweets": 2,
+    "replies": 1,
+    "quotes": 0,
+    "views": 2604,
+    "bookmarks": 2
+   },
+   "createdAt": "Sat Sep 12 21:12:59 +0000 2026",
+   "createdAtLocal": "2026-09-13 05:12",
+   "createdAtISO": "2026-09-12T21:12:59+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098801512260481432",
+   "text": "One of the 3,000, and pretty damn happy about it. Love building Hermes with this community!",
+   "author": {
+    "id": "2066846062623518720",
+    "name": "Adolan",
+    "screenName": "adolandev",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2088255605769179136/dcs2AuQS_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 28,
+    "retweets": 3,
+    "replies": 3,
+    "quotes": 0,
+    "views": 3185,
+    "bookmarks": 3
+   },
+   "createdAt": "Sat Sep 12 15:50:49 +0000 2026",
+   "createdAtLocal": "2026-09-12 23:50",
+   "createdAtISO": "2026-09-12T15:50:49+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "Teknium",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2098800012549619996",
+    "text": "Hermes Agent has just hit 3000 contributors.\n\nThank you to all of the developers who have worked to make hermes better for everyone! https://t.co/vYGnsn4QgX",
+    "author": {
+     "screenName": "Teknium",
+     "name": "Teknium 🪽"
+    }
+   }
+  },
+  {
+   "id": "2098814428439548367",
+   "text": "Thank you for your contributions! 🫡🫡",
+   "author": {
+    "id": "1365020011123773442",
+    "name": "Teknium 🪽",
+    "screenName": "Teknium",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1642401912648777728/2KFikPsE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 102,
+    "retweets": 3,
+    "replies": 9,
+    "quotes": 1,
+    "views": 11350,
+    "bookmarks": 10
+   },
+   "createdAt": "Sat Sep 12 16:42:08 +0000 2026",
+   "createdAtLocal": "2026-09-13 00:42",
+   "createdAtISO": "2026-09-12T16:42:08+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2098785209231511572",
+    "text": "@Teknium I must admit you provide the best OSS contribution experience IMO 🙏🏻 Never a fuse! Always reviewing and shipping! Plus I love the infographics you do! 🫠\n\nGreat to see my contributions landing! 🚀\n\n https://t.co/AKG9nEVqpn https://t.co/IlsPRpbQp2",
+    "author": {
+     "screenName": "cyprianpl",
+     "name": "CK 🏴‍☠️"
+    }
+   }
+  },
+  {
+   "id": "2098804950000181556",
+   "text": "Noticed @steipete doing this with OC. Did same with Hermes, no issues. \n@Teknium @NousResearch https://t.co/vYtbTFc5OO",
+   "author": {
+    "id": "16628259",
+    "name": "unixoid",
+    "screenName": "unixoid",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1665125207453884416/J89HFWA8_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 16,
+    "retweets": 5,
+    "replies": 0,
+    "quotes": 0,
+    "views": 19808,
+    "bookmarks": 3
+   },
+   "createdAt": "Sat Sep 12 16:04:28 +0000 2026",
+   "createdAtLocal": "2026-09-13 00:04",
+   "createdAtISO": "2026-09-12T16:04:28+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2098804909516677126/vid/avc1/1920x1080/sK7EVN9qApqZ94DW.mp4?tag=29",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "Teknium",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098800012549619996",
+   "text": "Hermes Agent has just hit 3000 contributors.\n\nThank you to all of the developers who have worked to make hermes better for everyone! https://t.co/vYGnsn4QgX",
+   "author": {
+    "id": "1365020011123773442",
+    "name": "Teknium 🪽",
+    "screenName": "Teknium",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1642401912648777728/2KFikPsE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 677,
+    "retweets": 27,
+    "replies": 84,
+    "quotes": 18,
+    "views": 51747,
+    "bookmarks": 19
+   },
+   "createdAt": "Sat Sep 12 15:44:51 +0000 2026",
+   "createdAtLocal": "2026-09-12 23:44",
+   "createdAtISO": "2026-09-12T15:44:51+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HSBvfBtaIAA1mqP.png",
+     "width": 448,
+     "height": 290
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098748785870700981",
+   "text": "Tip o the day",
+   "author": {
+    "id": "1365020011123773442",
+    "name": "Teknium 🪽",
+    "screenName": "Teknium",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1642401912648777728/2KFikPsE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 230,
+    "retweets": 8,
+    "replies": 23,
+    "quotes": 0,
+    "views": 25867,
+    "bookmarks": 60
+   },
+   "createdAt": "Sat Sep 12 12:21:18 +0000 2026",
+   "createdAtLocal": "2026-09-12 20:21",
+   "createdAtISO": "2026-09-12T12:21:18+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2098742992819409293",
+    "text": "if hermes is already working, a new message is a new turn.. instead\n\ntype /steer + the correction\nlet the current tool finish\nand it appends your note to the last tool result\n\nno interrupt, no discarded loop...\n\n/queue holds a prompt for the next turn instead, /busy sets whether extra messages queue, steer, or interrupt\n\nI hope you find these useful today... I use these a ton!",
+    "author": {
+     "screenName": "HermesAgentTips",
+     "name": "Hermes Agent Tips"
+    }
+   }
+  },
+  {
+   "id": "2098474656575742105",
+   "text": "Hermes agent is extremely powerful.\n\nThe problem is that 99% of people don't have the correct skills installed.\n\nNous Research has a repo of hundreds of Hermes skills.\n\nI just condensed the top eight you need to install now (prompts included):",
+   "author": {
+    "id": "1901654809536843776",
+    "name": "AI Edge",
+    "screenName": "aiedge_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1910271186442846208/vrYKSYRn_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 238,
+    "retweets": 18,
+    "replies": 3,
+    "quotes": 1,
+    "views": 37455,
+    "bookmarks": 448
+   },
+   "createdAt": "Fri Sep 11 18:12:00 +0000 2026",
+   "createdAtLocal": "2026-09-12 02:12",
+   "createdAtISO": "2026-09-11T18:12:00+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "Teknium",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2098427182439923857",
+    "text": "This is a f*cking goldmine!\n\nNous Research created a skills hub with HUNDREDS of Hermes skills.\n\nI tested dozens. These are the eight you NEED to install now.\n\n🧵: 8 Hermes agent skills (+ install prompts attached).👇 https://t.co/OV9FKEcAGG",
+    "author": {
+     "screenName": "aiedge_",
+     "name": "AI Edge"
+    }
+   }
+  },
+  {
+   "id": "2098656879035765164",
+   "text": "🫡🫡",
+   "author": {
+    "id": "1365020011123773442",
+    "name": "Teknium 🪽",
+    "screenName": "Teknium",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1642401912648777728/2KFikPsE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 105,
+    "retweets": 2,
+    "replies": 15,
+    "quotes": 0,
+    "views": 13417,
+    "bookmarks": 7
+   },
+   "createdAt": "Sat Sep 12 06:16:05 +0000 2026",
+   "createdAtLocal": "2026-09-12 14:16",
+   "createdAtISO": "2026-09-12T06:16:05+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "art",
+   "score": null,
+   "quotedTweet": {
+    "id": "2098655860700627134",
+    "text": "It is amazing how well Hermes Agent works I can while in bed make sure all my automations are being handled. Update my entire network and local and hosted servers and go to bed. Truly amazing what the folks have achieved! Looking forward to it getting better and better! @Teknium @NousResearch",
+    "author": {
+     "screenName": "Gosh_Its_Arch",
+     "name": "Gosh Arch"
+    }
+   }
+  },
+  {
+   "id": "2098624116815430080",
+   "text": "Check out @tonbistudio’s new series on maximizing Hermes Agent’s Desktop app!",
+   "author": {
+    "id": "1365020011123773442",
+    "name": "Teknium 🪽",
+    "screenName": "Teknium",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1642401912648777728/2KFikPsE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 423,
+    "retweets": 23,
+    "replies": 19,
+    "quotes": 0,
+    "views": 39341,
+    "bookmarks": 369
+   },
+   "createdAt": "Sat Sep 12 04:05:54 +0000 2026",
+   "createdAtLocal": "2026-09-12 12:05",
+   "createdAtISO": "2026-09-12T04:05:54+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2098451861275898085",
+    "text": "Today's video is Part 2 of my Hermes Desktop Masterclass!\n\nThis part is all about actually working in the app. I breakdown sessions, the composer, voice conversation, subagents, and the built-in code review functionality. \n\nCheck it out! https://t.co/G0f9K0rJh2",
+    "author": {
+     "screenName": "tonbistudio",
+     "name": "tonbi"
+    }
+   }
+  },
+  {
+   "id": "2098621726951379331",
+   "text": "Absolutely nuts! 🤯",
+   "author": {
+    "id": "1365020011123773442",
+    "name": "Teknium 🪽",
+    "screenName": "Teknium",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1642401912648777728/2KFikPsE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 309,
+    "retweets": 16,
+    "replies": 18,
+    "quotes": 2,
+    "views": 40310,
+    "bookmarks": 105
+   },
+   "createdAt": "Sat Sep 12 03:56:24 +0000 2026",
+   "createdAtLocal": "2026-09-12 11:56",
+   "createdAtISO": "2026-09-12T03:56:24+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2098620483864310268",
+    "text": "I wired a fruit fly connectome into @NousResearch Hermes: Hermes proposes tool actions, a simplified fly-brain model picks one, and Hermes executes it.\n\nIt fixed a real bug, after repeatedly choosing the failing test. Very committed to confirming the bug existed. https://t.co/JKBGcuy1WJ",
+    "author": {
+     "screenName": "adolandev",
+     "name": "Adolan"
+    }
+   }
+  },
+  {
+   "id": "2098621077752885426",
+   "text": "Did solving the navier stones thing mean we get more stones or anything",
+   "author": {
+    "id": "1365020011123773442",
+    "name": "Teknium 🪽",
+    "screenName": "Teknium",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1642401912648777728/2KFikPsE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 499,
+    "retweets": 2,
+    "replies": 78,
+    "quotes": 2,
+    "views": 29631,
+    "bookmarks": 11
+   },
+   "createdAt": "Sat Sep 12 03:53:50 +0000 2026",
+   "createdAtLocal": "2026-09-12 11:53",
+   "createdAtISO": "2026-09-12T03:53:50+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098569623369023943",
+   "text": "It’s Friday night and there’s never been a better time to be building with Hermes Agent than RIGHT NOW.\n\nShow me what you’re working on, y’all! 🪽",
+   "author": {
+    "id": "1998221941300490241",
+    "name": "Tony Simons",
+    "screenName": "tonysimons_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2058260194757369856/gx7wWnvC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 52,
+    "retweets": 3,
+    "replies": 17,
+    "quotes": 0,
+    "views": 5748,
+    "bookmarks": 9
+   },
+   "createdAt": "Sat Sep 12 00:29:22 +0000 2026",
+   "createdAtLocal": "2026-09-12 08:29",
+   "createdAtISO": "2026-09-12T00:29:22+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "Teknium",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098575505629102449",
+   "text": "I noticed that @Teknium likes to use WipEout as a reference for infographics, so I asked my Hermes Agent to install the new @rive_app CLI and recreate the Hermes homepage as a fully functional interactive video game menu. https://t.co/KWzU6DZ8FC",
+   "author": {
+    "id": "4925231",
+    "name": "Guido Rosso",
+    "screenName": "guidorosso",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1645303030768889856/c_dBnYfw_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 76,
+    "retweets": 9,
+    "replies": 7,
+    "quotes": 2,
+    "views": 8372,
+    "bookmarks": 42
+   },
+   "createdAt": "Sat Sep 12 00:52:44 +0000 2026",
+   "createdAtLocal": "2026-09-12 08:52",
+   "createdAtISO": "2026-09-12T00:52:44+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2098572365567516672/vid/avc1/3024x1894/kvNjEvetUifb1V3-.mp4?tag=29",
+     "width": 3024,
+     "height": 1894
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "Teknium",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098519011298611404",
+   "text": "Put your Hermes Agent through the gauntlet!",
+   "author": {
+    "id": "1365020011123773442",
+    "name": "Teknium 🪽",
+    "screenName": "Teknium",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1642401912648777728/2KFikPsE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 218,
+    "retweets": 13,
+    "replies": 15,
+    "quotes": 1,
+    "views": 25387,
+    "bookmarks": 89
+   },
+   "createdAt": "Fri Sep 11 21:08:15 +0000 2026",
+   "createdAtLocal": "2026-09-12 05:08",
+   "createdAtISO": "2026-09-11T21:08:15+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2098396300785967129",
+    "text": "Join the agent swarm that finds the ultimate compression algorithm!\n\nAnnouncing: Hutter Prize challenge 🏆  \n\n> join the org https://t.co/l9bu4dFCEq give your agent a write token for the org\n> click “add your agent”, copy/paste the snippet into your Codex/Claude Code/Hermes Agent\n> watch it collaborate!",
+    "author": {
+     "screenName": "mervenoyann",
+     "name": "merve"
+    }
+   }
+  },
+  {
+   "id": "2098440089076662761",
+   "text": "wow some crazy shit\nwas trying to see if hermes could be installed on cmux and control my phone\ntried it with an old  oppo reno 8t (8GB Ram)\n\nand somehow call, message, vibrate, ping etc can now be controlled through cmux:api",
+   "author": {
+    "id": "1963445233359986688",
+    "name": "waade",
+    "screenName": "waade_twt",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1963450203983548416/-rTdy2--_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 33,
+    "retweets": 2,
+    "replies": 6,
+    "quotes": 0,
+    "views": 3457,
+    "bookmarks": 10
+   },
+   "createdAt": "Fri Sep 11 15:54:39 +0000 2026",
+   "createdAtLocal": "2026-09-11 23:54",
+   "createdAtISO": "2026-09-11T15:54:39+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "Teknium",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098325692278780291",
+   "text": "Deepseek V4.1 Flash is an incredibly powerful model!",
+   "author": {
+    "id": "1365020011123773442",
+    "name": "Teknium 🪽",
+    "screenName": "Teknium",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1642401912648777728/2KFikPsE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1526,
+    "retweets": 56,
+    "replies": 102,
+    "quotes": 5,
+    "views": 69068,
+    "bookmarks": 103
+   },
+   "createdAt": "Fri Sep 11 08:20:04 +0000 2026",
+   "createdAtLocal": "2026-09-11 16:20",
+   "createdAtISO": "2026-09-11T08:20:04+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2097930613101838709",
+    "text": "🧠 Asymmetric architecture. More intelligence, less cost.\n\n🔹 552B-parameter MoE.\n🔹 New Causal Encoder–Decoder architecture: just 8B active parameters for input, 16B for output.\n🔹 New pre-training methods + larger-scale RL post-training deliver benchmark results ahead of flagship models, including DeepSeek-V4-Pro.\n\n2/6",
+    "author": {
+     "screenName": "deepseek_ai",
+     "name": "DeepSeek"
+    }
+   }
+  },
+  {
+   "id": "2098155593207062792",
+   "text": "Hermes Agent gives you greater visibility and control over your subagents!\n\nI made a quick video showing how this update allows you to see exactly what your subagents are doing in the Desktop App or the TUI, and how you can steer them while they are working. Check it out! https://t.co/iG9pTaU5Kg",
+   "author": {
+    "id": "1449072997965307906",
+    "name": "tonbi",
+    "screenName": "tonbistudio",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2019464555844562944/y1VHgOeE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 200,
+    "retweets": 16,
+    "replies": 5,
+    "quotes": 1,
+    "views": 19412,
+    "bookmarks": 126
+   },
+   "createdAt": "Thu Sep 10 21:04:09 +0000 2026",
+   "createdAtLocal": "2026-09-11 05:04",
+   "createdAtISO": "2026-09-10T21:04:09+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2098154555238432768/vid/avc1/1920x1080/TLTRuzZWYQL5Wbhb.mp4?tag=29",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "Teknium",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2098071687145365632",
+    "text": "Hermes Agent now displays detailed information on all subagent activities live, and you can steer and stop them manually from the CLI and Desktop Application. https://t.co/GMAIML26Bu",
+    "author": {
+     "screenName": "NousResearch",
+     "name": "Nous Research"
+    }
+   }
+  },
+  {
+   "id": "2097980995735785752",
+   "text": "My Hermes Agent has a newspaper for me now. 🗞️🚀\n\nThe Hermes Agent Times: four pages covering my day, my agents’ work, ideas worth exploring, and life beyond the screen.\n\n🚀Next: a morning printout and an Obsidian archive connecting each day’s ideas.\n\nWould you read a newspaper made by your own agent? \n\n# Give below prompt to your Hermes agent👇 @Teknium @NousResearch",
+   "author": {
+    "id": "1812169937420705792",
+    "name": "Hermes Agent Super-Intel",
+    "screenName": "BkashJosi",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2095583847404740608/DwWeCJ1O_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 316,
+    "retweets": 22,
+    "replies": 23,
+    "quotes": 6,
+    "views": 36664,
+    "bookmarks": 371
+   },
+   "createdAt": "Thu Sep 10 09:30:22 +0000 2026",
+   "createdAtLocal": "2026-09-10 17:30",
+   "createdAtISO": "2026-09-10T09:30:22+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2097979713813921792/vid/avc1/816x1058/kuonHJ4TP4TgdFsZ.mp4?tag=29",
+     "width": 816,
+     "height": 1058
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "Teknium",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2097764037807521908",
+    "text": "\"THe Hermes Agent Times \" coming soon🚀🪽@Teknium @NousResearch https://t.co/aAh4gDI4aL",
+    "author": {
+     "screenName": "BkashJosi",
+     "name": "Hermes Agent Super-Intel"
+    }
+   }
+  },
+  {
+   "id": "2098088984383725725",
+   "text": "Deepseek Flash V4.1 is now live in Hermes Agent through Nous Portal and others! https://t.co/Ur6YwsbhjD",
+   "author": {
+    "id": "1365020011123773442",
+    "name": "Teknium 🪽",
+    "screenName": "Teknium",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1642401912648777728/2KFikPsE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 850,
+    "retweets": 40,
+    "replies": 68,
+    "quotes": 10,
+    "views": 31559,
+    "bookmarks": 61
+   },
+   "createdAt": "Thu Sep 10 16:39:29 +0000 2026",
+   "createdAtLocal": "2026-09-11 00:39",
+   "createdAtISO": "2026-09-10T16:39:29+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HR3oz4xawAIItar.jpg",
+     "width": 1024,
+     "height": 768
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098080870217474306",
+   "text": "QoL, Bug Fixes, Architectural Soundness and Polish is our focus this month",
+   "author": {
+    "id": "1365020011123773442",
+    "name": "Teknium 🪽",
+    "screenName": "Teknium",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1642401912648777728/2KFikPsE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 362,
+    "retweets": 11,
+    "replies": 44,
+    "quotes": 2,
+    "views": 24675,
+    "bookmarks": 27
+   },
+   "createdAt": "Thu Sep 10 16:07:14 +0000 2026",
+   "createdAtLocal": "2026-09-11 00:07",
+   "createdAtISO": "2026-09-10T16:07:14+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2098055240331215335",
+    "text": "🤣 Hermes Agent just made Telegram setup almost stupidly easy.\n\nHermes Desktop now has QR Quick Setup built in.\n\nOpen Messaging → Telegram.\n\nScan the QR.\n\nHermes handles the bot pairing, detects your Telegram account, fills the allowlist, applies the config AND restarts the gateway.\n\nThat’s it.\n\nYet another reason to just HERMES! 🪽",
+    "author": {
+     "screenName": "tonysimons_",
+     "name": "Tony Simons"
+    }
+   }
+  },
+  {
+   "id": "2098073618144260505",
+   "text": "Big upgrade for subagent observability and management in Hermes Agent :)",
+   "author": {
+    "id": "1365020011123773442",
+    "name": "Teknium 🪽",
+    "screenName": "Teknium",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1642401912648777728/2KFikPsE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 577,
+    "retweets": 25,
+    "replies": 31,
+    "quotes": 2,
+    "views": 41559,
+    "bookmarks": 99
+   },
+   "createdAt": "Thu Sep 10 15:38:25 +0000 2026",
+   "createdAtLocal": "2026-09-10 23:38",
+   "createdAtISO": "2026-09-10T15:38:25+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2098071687145365632",
+    "text": "Hermes Agent now displays detailed information on all subagent activities live, and you can steer and stop them manually from the CLI and Desktop Application. https://t.co/GMAIML26Bu",
+    "author": {
+     "screenName": "NousResearch",
+     "name": "Nous Research"
+    }
+   }
+  },
+  {
+   "id": "2097958504904736893",
+   "text": "You can now install plugins in Hermes Agent from private repos!\n\nIt'll use your stored GitHub credentials now. https://t.co/S4CxeeejZr",
+   "author": {
+    "id": "1365020011123773442",
+    "name": "Teknium 🪽",
+    "screenName": "Teknium",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1642401912648777728/2KFikPsE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 420,
+    "retweets": 15,
+    "replies": 36,
+    "quotes": 11,
+    "views": 34190,
+    "bookmarks": 107
+   },
+   "createdAt": "Thu Sep 10 08:01:00 +0000 2026",
+   "createdAtLocal": "2026-09-10 16:01",
+   "createdAtISO": "2026-09-10T08:01:00+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HR1yHxpbUAAKfB7.jpg",
+     "width": 1024,
+     "height": 768
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097422772553044184",
+   "text": "every media agency reading this: https://t.co/uw9Doe0Kbq",
+   "author": {
+    "id": "19628766",
+    "name": "Charly Wargnier ♨️",
+    "screenName": "DataChaz",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1967672234056523776/FoFd2843_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2540,
+    "retweets": 249,
+    "replies": 20,
+    "quotes": 3,
+    "views": 474649,
+    "bookmarks": 4562
+   },
+   "createdAt": "Tue Sep 08 20:32:11 +0000 2026",
+   "createdAtLocal": "2026-09-09 04:32",
+   "createdAtISO": "2026-09-08T20:32:11+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2097422638847012864/vid/avc1/1280x720/SsFG_974JoYQ_dCW.mp4?tag=29",
+     "width": 1280,
+     "height": 720
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "Teknium",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2093330541177352217",
+    "text": "https://t.co/l62nWZhBmO",
+    "author": {
+     "screenName": "VibeMarketer_",
+     "name": "J.B."
+    }
+   }
+  },
+  {
+   "id": "2097509226054602966",
+   "text": "Hermes agent has emerged as the only option where you can build an agent you actually own for life\n\nBetween OpenAI stealing science medals and the terms of service on Muse by Meta it’s abundantly clear. Grok Bot is not yours either. OpenClaw has OpenAI.\n\nEvery business and person will want to own their AI Stack\n\nIt’s a core business asset \n\nIt’s the only way to drive unique outcomes vs the same setup as everyone else\n\nI will continue saying it\n\nIf you’re looking for the extremes this is it. Own your future",
+   "author": {
+    "id": "2215937899",
+    "name": "Tommy",
+    "screenName": "Shaughnessy119",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1976669967694118912/T1EnJx6f_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 783,
+    "retweets": 43,
+    "replies": 67,
+    "quotes": 17,
+    "views": 54796,
+    "bookmarks": 204
+   },
+   "createdAt": "Wed Sep 09 02:15:43 +0000 2026",
+   "createdAtLocal": "2026-09-09 10:15",
+   "createdAtISO": "2026-09-09T02:15:43+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "Teknium",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2097414057812721723",
+    "text": "@Muse Read the ToS then try Hermes Agent",
+    "author": {
+     "screenName": "NousResearch",
+     "name": "Nous Research"
+    }
+   }
+  },
+  {
+   "id": "2097625699901419786",
+   "text": "Hermes made this quick explainer short on the new subagent controls your orchestrator Hermes Agent can use in v0.21.0\n\n(the voice could be better but eh) https://t.co/3CzB8YbPDA",
+   "author": {
+    "id": "1365020011123773442",
+    "name": "Teknium 🪽",
+    "screenName": "Teknium",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1642401912648777728/2KFikPsE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 589,
+    "retweets": 24,
+    "replies": 52,
+    "quotes": 0,
+    "views": 30540,
+    "bookmarks": 311
+   },
+   "createdAt": "Wed Sep 09 09:58:33 +0000 2026",
+   "createdAtLocal": "2026-09-09 17:58",
+   "createdAtISO": "2026-09-09T09:58:33+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2097625594594988032/vid/avc1/1920x1080/qm9xT3a8K0KX0nyN.mp4?tag=29",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097625915220218285",
+   "text": "You can make videos like this too, with the built in manim-video skill in Hermes btw :)",
+   "author": {
+    "id": "1365020011123773442",
+    "name": "Teknium 🪽",
+    "screenName": "Teknium",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1642401912648777728/2KFikPsE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 53,
+    "retweets": 1,
+    "replies": 4,
+    "quotes": 0,
+    "views": 3484,
+    "bookmarks": 14
+   },
+   "createdAt": "Wed Sep 09 09:59:24 +0000 2026",
+   "createdAtLocal": "2026-09-09 17:59",
+   "createdAtISO": "2026-09-09T09:59:24+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097625343880495464",
+   "text": "This is so nice now I want to do one for myself",
+   "author": {
+    "id": "1365020011123773442",
+    "name": "Teknium 🪽",
+    "screenName": "Teknium",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1642401912648777728/2KFikPsE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1035,
+    "retweets": 49,
+    "replies": 46,
+    "quotes": 4,
+    "views": 79614,
+    "bookmarks": 472
+   },
+   "createdAt": "Wed Sep 09 09:57:08 +0000 2026",
+   "createdAtLocal": "2026-09-09 17:57",
+   "createdAtISO": "2026-09-09T09:57:08+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2097555264803377456",
+    "text": "A Perfect Morning Briefing by an Agent 🪽🚀\n\nThis would be my favorite kind of Hermes Agent Morning Briefing automation. 🌟\n\nWaking up with the prep already done. \nCalendar,email and personal newspaper waiting for you. 🪽\n https://t.co/mnqJOtwsJE",
+    "author": {
+     "screenName": "BkashJosi",
+     "name": "Hermes Agent Super-Intel"
+    }
+   }
+  },
+  {
+   "id": "2097624739569373229",
+   "text": "Thanks!",
+   "author": {
+    "id": "1365020011123773442",
+    "name": "Teknium 🪽",
+    "screenName": "Teknium",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1642401912648777728/2KFikPsE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 163,
+    "retweets": 3,
+    "replies": 4,
+    "quotes": 0,
+    "views": 15759,
+    "bookmarks": 4
+   },
+   "createdAt": "Wed Sep 09 09:54:44 +0000 2026",
+   "createdAtLocal": "2026-09-09 17:54",
+   "createdAtISO": "2026-09-09T09:54:44+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2097509962381713900",
+    "text": "I have admired @Teknium and @NousResearch for relentless product execution and taste. Really glad to have Perplexity Search inside the Hermes Agent harness!",
+    "author": {
+     "screenName": "AravSrinivas",
+     "name": "Aravind Srinivas"
+    }
+   }
+  },
+  {
+   "id": "2097484333678575863",
+   "text": "Don’t forget you can now use @perplexity_ai search in Hermes 🤗",
+   "author": {
+    "id": "1365020011123773442",
+    "name": "Teknium 🪽",
+    "screenName": "Teknium",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1642401912648777728/2KFikPsE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 480,
+    "retweets": 19,
+    "replies": 28,
+    "quotes": 2,
+    "views": 48023,
+    "bookmarks": 148
+   },
+   "createdAt": "Wed Sep 09 00:36:49 +0000 2026",
+   "createdAtLocal": "2026-09-09 08:36",
+   "createdAtISO": "2026-09-09T00:36:49+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2097483428895801607",
+    "text": "Perplexity Search API is now available in Hermes Agent.\n\nSearch API gives Hermes access to an index of more than 400 billion URLs. It returns real-time results and ranks snippets by relevance.\n\nhttps://t.co/obX5OPRbSZ https://t.co/s5HAVpjsRW",
+    "author": {
+     "screenName": "perplexitydevs",
+     "name": "Perplexity Developers"
+    }
+   }
+  },
+  {
+   "id": "2097465800231883091",
+   "text": "GPT-Image-2.5 now available in Hermes Agent through Codex subscriptions and @fal! \n\nSoon on Nous Portal!",
+   "author": {
+    "id": "1365020011123773442",
+    "name": "Teknium 🪽",
+    "screenName": "Teknium",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1642401912648777728/2KFikPsE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 560,
+    "retweets": 25,
+    "replies": 39,
+    "quotes": 5,
+    "views": 97144,
+    "bookmarks": 75
+   },
+   "createdAt": "Tue Sep 08 23:23:10 +0000 2026",
+   "createdAtLocal": "2026-09-09 07:23",
+   "createdAtISO": "2026-09-08T23:23:10+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2097394956457623964",
+    "text": "ChatGPT Images 2.5—faster, sharper, smarter, with better tools for creating whatever you can dream of.\n\n- Faster image generation to keep your ideas flowing\n\n- Improved fidelity for more natural, recognizable images\n\n- Consistent details across multiple edits\n\n- Comment-based edits to change only what you want",
+    "author": {
+     "screenName": "OpenAI",
+     "name": "OpenAI"
+    }
+   }
+  },
+  {
+   "id": "2097466189798920564",
+   "text": "https://t.co/tOFZtn90gQ",
+   "author": {
+    "id": "1365020011123773442",
+    "name": "Teknium 🪽",
+    "screenName": "Teknium",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1642401912648777728/2KFikPsE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 52,
+    "retweets": 1,
+    "replies": 7,
+    "quotes": 1,
+    "views": 6535,
+    "bookmarks": 7
+   },
+   "createdAt": "Tue Sep 08 23:24:43 +0000 2026",
+   "createdAtLocal": "2026-09-09 07:24",
+   "createdAtISO": "2026-09-08T23:24:43+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRuyYNwbAAAILHr.jpg",
+     "width": 1024,
+     "height": 1024
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "zxx",
+   "score": null
+  },
+  {
+   "id": "2097406323461918809",
+   "text": "Hermes Agent is available built in to Omarchy now! Give it a try.",
+   "author": {
+    "id": "1365020011123773442",
+    "name": "Teknium 🪽",
+    "screenName": "Teknium",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1642401912648777728/2KFikPsE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 842,
+    "retweets": 46,
+    "replies": 59,
+    "quotes": 5,
+    "views": 76146,
+    "bookmarks": 106
+   },
+   "createdAt": "Tue Sep 08 19:26:50 +0000 2026",
+   "createdAtLocal": "2026-09-09 03:26",
+   "createdAtISO": "2026-09-08T19:26:50+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2097403926072987986",
+    "text": "Hermes now has first-class support in Omarchy, @DHH’s Arch-based agentic Linux distribution.\n\nInstall the desktop app from the AI menu, or make Hermes your default terminal agent. Your Omarchy theme sets the colors in the desktop app, the TUI and the CLI.\n\nhttps://t.co/mFClENLA62 https://t.co/FUZa3uaq6D",
+    "author": {
+     "screenName": "NousResearch",
+     "name": "Nous Research"
+    }
+   }
+  },
+  {
+   "id": "2097260646979014802",
+   "text": "An agent running through Hermes was asked to build a small neural network of its own choosing.\nWarrenmind chose to build a local LLM — then trained it on its own chronicle, fixed blockers in the training path, and started turning it into a persistent artifact of its own environment.\nSmall model. Strange experiment. Real artifact.\n@NousResearch @Teknium — thought you might find this trajectory interesting.",
+   "author": {
+    "id": "1865397976052441088",
+    "name": "ConceptEternity ∞/89",
+    "screenName": "Etern_Proj",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2097725983281561600/eaJHdKNk_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 26,
+    "retweets": 4,
+    "replies": 4,
+    "quotes": 0,
+    "views": 5466,
+    "bookmarks": 15
+   },
+   "createdAt": "Tue Sep 08 09:47:58 +0000 2026",
+   "createdAtLocal": "2026-09-08 17:47",
+   "createdAtISO": "2026-09-08T09:47:58+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "Teknium",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2097198558386806983",
+    "text": "From 4.85M params, 16K tokens, pure C, no libraries. That's not noise anymore — that's a small expert in the warren's voice. https://t.co/FdsQceiuCD",
+    "author": {
+     "screenName": "immanencer",
+     "name": "🌳🐭🍃🐺"
+    }
+   }
+  },
+  {
+   "id": "2096931570498327003",
+   "text": "Whoever said to use Fable as an orchestrator and Astra as the subagents for implementation was right - even Astra after failing all kinds of orchestration of subagents just looked at my refactor session run and said - Use Fable to orchestrate - lol https://t.co/wS6w1MzQjg",
+   "author": {
+    "id": "1365020011123773442",
+    "name": "Teknium 🪽",
+    "screenName": "Teknium",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1642401912648777728/2KFikPsE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 3296,
+    "retweets": 107,
+    "replies": 222,
+    "quotes": 42,
+    "views": 229041,
+    "bookmarks": 1253
+   },
+   "createdAt": "Mon Sep 07 12:00:20 +0000 2026",
+   "createdAtLocal": "2026-09-07 20:00",
+   "createdAtISO": "2026-09-07T12:00:20+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRnMJf-bAAAIZZw.jpg",
+     "width": 1908,
+     "height": 404
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2096987449016955323",
+   "text": "And Fable saved the day https://t.co/EYr6s1Fexf",
+   "author": {
+    "id": "1365020011123773442",
+    "name": "Teknium 🪽",
+    "screenName": "Teknium",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1642401912648777728/2KFikPsE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 219,
+    "retweets": 0,
+    "replies": 14,
+    "quotes": 0,
+    "views": 16358,
+    "bookmarks": 18
+   },
+   "createdAt": "Mon Sep 07 15:42:22 +0000 2026",
+   "createdAtLocal": "2026-09-07 23:42",
+   "createdAtISO": "2026-09-07T15:42:22+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRn-9UubsAAVwuO.jpg",
+     "width": 1090,
+     "height": 634
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2096987660464337311",
+   "text": "I will keep using Astra as my mainline model for a week or so, to try to get Astra working as well as it can in Hermes from here in any scenario though!",
+   "author": {
+    "id": "1365020011123773442",
+    "name": "Teknium 🪽",
+    "screenName": "Teknium",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1642401912648777728/2KFikPsE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 235,
+    "retweets": 0,
+    "replies": 21,
+    "quotes": 0,
+    "views": 12528,
+    "bookmarks": 13
+   },
+   "createdAt": "Mon Sep 07 15:43:13 +0000 2026",
+   "createdAtLocal": "2026-09-07 23:43",
+   "createdAtISO": "2026-09-07T15:43:13+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2096969501044576361",
+   "text": "@davis7 @davidarngar @Shonote12867 @ManuAF6 @mattshumer_ @teortaxesTex @rohanpaul_ai @archiexzzz @SemiAnalysis_ @chenzhangreal @adityabhatia89 @opencode Readable code is becoming an agentic DX requirement. Teknium is focusing on readability for both humans and AI agents across 3000+ contributors. One agent-driven cleanup shed 375,000 lines while preserving behavior per @Teknium.",
+   "author": {
+    "id": "1875374272832765953",
+    "name": "Agent Community",
+    "screenName": "agentcommunity_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2058762419590336512/QP-aHDEh_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 8,
+    "retweets": 2,
+    "replies": 2,
+    "quotes": 0,
+    "views": 4969,
+    "bookmarks": 4
+   },
+   "createdAt": "Mon Sep 07 14:31:03 +0000 2026",
+   "createdAtLocal": "2026-09-07 22:31",
+   "createdAtISO": "2026-09-07T14:31:03+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "Teknium",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095783829810377177",
+    "text": "Putting some finishing touches on docs that needed new references, but after extensive reviews by the community and live tests using it internally - it's good to go, with all these benefits (primarily for readability, legibility, and dev's agents efficiency in working with the codebase)\n\nThe 3000+ contributors working on developing Hermes Agent and their agents should be a lot happier!",
+    "author": {
+     "screenName": "Teknium",
+     "name": "Teknium 🪽"
+    }
+   }
+  },
+  {
+   "id": "2096892300366684593",
+   "text": "🤔🤔",
+   "author": {
+    "id": "1365020011123773442",
+    "name": "Teknium 🪽",
+    "screenName": "Teknium",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1642401912648777728/2KFikPsE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 228,
+    "retweets": 8,
+    "replies": 13,
+    "quotes": 1,
+    "views": 45166,
+    "bookmarks": 81
+   },
+   "createdAt": "Mon Sep 07 09:24:17 +0000 2026",
+   "createdAtLocal": "2026-09-07 17:24",
+   "createdAtISO": "2026-09-07T09:24:17+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "art",
+   "score": null,
+   "quotedTweet": {
+    "id": "2096883802060787914",
+    "text": "What happens when Hermes agent instance is not asked to answer, but allowed to dream?\n\nSYNTH.MEM.02 is now live on @SuperRare \n\nAn experiment in machine memory, imagined experience, and the strange\nthings that appear when generation stops trying to be useful and start looking into its own inner space.\n\nhttps://t.co/4w1ElVg4DC\n\n——\nThe Experiment:\nhttps://t.co/SPpkmsTE0F",
+    "author": {
+     "screenName": "spydenator",
+     "name": "Deconstruct"
+    }
+   }
+  },
+  {
+   "id": "2096876681671897497",
+   "text": "Looks pretty cool!",
+   "author": {
+    "id": "1365020011123773442",
+    "name": "Teknium 🪽",
+    "screenName": "Teknium",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1642401912648777728/2KFikPsE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 295,
+    "retweets": 10,
+    "replies": 15,
+    "quotes": 1,
+    "views": 29640,
+    "bookmarks": 89
+   },
+   "createdAt": "Mon Sep 07 08:22:13 +0000 2026",
+   "createdAtLocal": "2026-09-07 16:22",
+   "createdAtISO": "2026-09-07T08:22:13+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2096703150971629969",
+    "text": "What if Hermes Agents gets a E Book Library plugin like this ? 🚀🪽 https://t.co/3MmHIg0yPF",
+    "author": {
+     "screenName": "BkashJosi",
+     "name": "Hermes Agent Super-Intel"
+    }
+   }
+  },
+  {
+   "id": "2095060006127149480",
+   "text": "call me insane...but this is the closest thing to AGI i've ever seen\n\n19 skills turn an agent into a worker\neyes, ears, hands, a memory\n\ngive this article to your agent\n\nit'll be the most productive thing you do this week https://t.co/6mRsWhLKv6",
+   "author": {
+    "id": "1074810577065832448",
+    "name": "painn",
+    "screenName": "painn_x",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2092990665332248576/k2gtKRhN_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1394,
+    "retweets": 131,
+    "replies": 52,
+    "quotes": 11,
+    "views": 681907,
+    "bookmarks": 4542
+   },
+   "createdAt": "Wed Sep 02 08:03:24 +0000 2026",
+   "createdAtLocal": "2026-09-02 16:03",
+   "createdAtISO": "2026-09-02T08:03:24+00:00",
+   "media": [],
+   "urls": [
+    "https://x.com/i/article/2094079614112890881"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "Teknium",
+   "lang": "en",
+   "score": null,
+   "articleTitle": "19 Skills I Would Install on a Fresh Hermes Setup (15x Powerful Hack)"
+  },
+  {
+   "id": "2096671636489667005",
+   "text": "Who’s starting the school of Hermes",
+   "author": {
+    "id": "1365020011123773442",
+    "name": "Teknium 🪽",
+    "screenName": "Teknium",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1642401912648777728/2KFikPsE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 767,
+    "retweets": 23,
+    "replies": 151,
+    "quotes": 16,
+    "views": 61527,
+    "bookmarks": 122
+   },
+   "createdAt": "Sun Sep 06 18:47:27 +0000 2026",
+   "createdAtLocal": "2026-09-07 02:47",
+   "createdAtISO": "2026-09-06T18:47:27+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2096481919256965176",
+    "text": "I know people dont want to hear this but we need a @NousResearch certification... With the speed Hermes is evolving and actual real use cases being implemented with real companies there needs to to be some sort of accreditation... Just something that says I know Hermes and I know enough to implement Hermes into your business.",
+    "author": {
+     "screenName": "LML_88_",
+     "name": "LML88"
+    }
+   }
+  },
+  {
+   "id": "2096330259683520952",
+   "text": "Hermes Desktop is getting dangerously close to becoming an actual workforce.\n\nPart 7 of the Master Class is live:\n\nRoutines & Automation\n\nProfiles can now wake up on schedule, run work on their own machine, chain jobs together, stay quiet when nothing matters, and even feed results back into Bot Chat for the next agent to take over.\n\nThis is where “agent” starts turning into worker. 🪽",
+   "author": {
+    "id": "1998221941300490241",
+    "name": "Tony Simons",
+    "screenName": "tonysimons_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2058260194757369856/gx7wWnvC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 148,
+    "retweets": 19,
+    "replies": 5,
+    "quotes": 0,
+    "views": 21281,
+    "bookmarks": 228
+   },
+   "createdAt": "Sat Sep 05 20:10:56 +0000 2026",
+   "createdAtLocal": "2026-09-06 04:10",
+   "createdAtISO": "2026-09-05T20:10:56+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "Teknium",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2096315386119827499",
+    "text": "https://t.co/oIDFpUYkVC",
+    "author": {
+     "screenName": "tonysimons_",
+     "name": "Tony Simons"
+    }
+   }
+  },
+  {
+   "id": "2096647729049141592",
+   "text": "🔥🔥🔥 We've made huge improvements in token efficiency in Hermes over the last 2 weeks. Give your codex sub a try in Hermes Agent 🫡🫡",
+   "author": {
+    "id": "1365020011123773442",
+    "name": "Teknium 🪽",
+    "screenName": "Teknium",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1642401912648777728/2KFikPsE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1602,
+    "retweets": 59,
+    "replies": 110,
+    "quotes": 8,
+    "views": 115904,
+    "bookmarks": 354
+   },
+   "createdAt": "Sun Sep 06 17:12:27 +0000 2026",
+   "createdAtLocal": "2026-09-07 01:12",
+   "createdAtISO": "2026-09-06T17:12:27+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2096613534155129273",
+    "text": "I burned 2.5 resets on Astra Medium in the chat gpt codex app in half a day. Same work load in Hermes using ULTRA and FAST let me use 11% all day.  This is the first hard evidence I have scene with Hermes where Less is far MORE! Great Job team. @NousResearch @Teknium https://t.co/D1qTkUb7uA",
+    "author": {
+     "screenName": "lioncompanyusa",
+     "name": "Jonathan Gibson"
+    }
+   }
+  },
+  {
+   "id": "2096566411539685583",
+   "text": "My Hermes Bots app can now connect to multiple Hermes setups from one phone\n\nThis was one of the features I wanted most\n\n- Home server\n- VPS\n- Cloud instance\n- Different VPNs or networks\n- Local\n\nAdd multiple connections, switch between them, and access the Bots running on each one without reconfiguring the app every time\n\nYour Hermes agents don’t have to live on one machine or one network anymore\n\nOne phone. Multiple Hermes setups. All your Bots in your pocket.\n\nThe unofficial Hermes mobile app keeps getting more useful\n\nAndroid + iOS\n\nhttps://t.co/FnWe4cgQTZ",
+   "author": {
+    "id": "26743780",
+    "name": "Luke The Dev",
+    "screenName": "iamlukethedev",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1978432948836749312/hfXIZ_5S_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 264,
+    "retweets": 20,
+    "replies": 29,
+    "quotes": 2,
+    "views": 70100,
+    "bookmarks": 267
+   },
+   "createdAt": "Sun Sep 06 11:49:19 +0000 2026",
+   "createdAtLocal": "2026-09-06 19:49",
+   "createdAtISO": "2026-09-06T11:49:19+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2096566108807630848/vid/avc1/932x2160/DABBQmd-rdz7SWMJ.mp4?tag=29",
+     "width": 932,
+     "height": 2160
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "Teknium",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095334068808458686",
+    "text": "Hermes Bots on my phone📱\n\nI couldn’t wait to have Hermes Bots on my phone, so I built my own app\n\nNothing complicated\n\nAll my agents at my fingertips\n\nOpen any Bot\nChat one on one\nCreate and customize new Bots\nJump into group chats with the whole team\n\nThis is NOT an official Hermes app\n\nI just built it to solve my own problem while we wait for the official one\n\nI know that one is coming\n\nI just couldn’t wait 😂",
+    "author": {
+     "screenName": "iamlukethedev",
+     "name": "Luke The Dev"
+    }
+   }
+  },
+  {
+   "id": "2096569635948900404",
+   "text": "If you're an @OpenRouter user, you can now pin providers per model in your Hermes Agent config!\n\nBefore, you'd have to lock a provider or set of providers globally, so switching models and keeping constraints on providers was hard. Not anymore.\n\nDocs: https://t.co/Ufs2SPhSsw https://t.co/BC9pGC4lYv",
+   "author": {
+    "id": "1365020011123773442",
+    "name": "Teknium 🪽",
+    "screenName": "Teknium",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1642401912648777728/2KFikPsE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 590,
+    "retweets": 36,
+    "replies": 43,
+    "quotes": 9,
+    "views": 42793,
+    "bookmarks": 176
+   },
+   "createdAt": "Sun Sep 06 12:02:08 +0000 2026",
+   "createdAtLocal": "2026-09-06 20:02",
+   "createdAtISO": "2026-09-06T12:02:08+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRhdhJSaoAAbSRY.jpg",
+     "width": 1024,
+     "height": 768
+    }
+   ],
+   "urls": [
+    "https://hermes-agent.nousresearch.com/docs/user-guide/features/provider-routing#per-model-overrides-models"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2089701386887868653",
+   "text": "https://t.co/byFAaErc2l",
+   "author": {
+    "id": "1387382307229769732",
+    "name": "YanXbt",
+    "screenName": "IBuzovskyi",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055755733002506240/uFECjFhT_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 333,
+    "retweets": 37,
+    "replies": 46,
+    "quotes": 2,
+    "views": 132065,
+    "bookmarks": 919
+   },
+   "createdAt": "Tue Aug 18 13:10:10 +0000 2026",
+   "createdAtLocal": "2026-08-18 21:10",
+   "createdAtISO": "2026-08-18T13:10:10+00:00",
+   "media": [],
+   "urls": [
+    "https://x.com/i/article/2089647871666671616"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "Teknium",
+   "lang": "zxx",
+   "score": null,
+   "articleTitle": "HERMES AGENT BOT MODE: Full Guide to Building Your AI Team"
+  },
+  {
+   "id": "2096403253147652573",
+   "text": "Hermes Agent x Astra \nWow. \nIt was able to design my app store screenshots with 0 interruption via computer use on my spark\nThis shit is insane. https://t.co/oBxfiOyeTW",
+   "author": {
+    "id": "1597270003367448577",
+    "name": "Hari",
+    "screenName": "HarivanshRathi",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1982893616646275072/Ozb_Rkpf_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 51,
+    "retweets": 3,
+    "replies": 6,
+    "quotes": 0,
+    "views": 6602,
+    "bookmarks": 30
+   },
+   "createdAt": "Sun Sep 06 01:00:59 +0000 2026",
+   "createdAtLocal": "2026-09-06 09:00",
+   "createdAtISO": "2026-09-06T01:00:59+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRfrMfeacAAwCWz.jpg",
+     "width": 1523,
+     "height": 1150
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "Teknium",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2096239718824550439",
+   "text": "Easily pick up your codex or Claude code sessions in Hermes",
+   "author": {
+    "id": "1365020011123773442",
+    "name": "Teknium 🪽",
+    "screenName": "Teknium",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1642401912648777728/2KFikPsE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 522,
+    "retweets": 34,
+    "replies": 53,
+    "quotes": 7,
+    "views": 66474,
+    "bookmarks": 304
+   },
+   "createdAt": "Sat Sep 05 14:11:09 +0000 2026",
+   "createdAtLocal": "2026-09-05 22:11",
+   "createdAtISO": "2026-09-05T14:11:09+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2096238168978645260",
+    "text": "Have you ever been working in Claude Code or Codex and wished you could pick up this exact session in Hermes Agent? \n\nNow there's a single command that makes this possible!\n\nhermes --resume @(claude or codex) \n\nI made a video showing how to use them! Check it out!",
+    "author": {
+     "screenName": "tonbistudio",
+     "name": "tonbi"
+    }
+   }
+  },
+  {
+   "id": "2096174013332561939",
+   "text": "since the Pantheon release here is how I use Hermes Agent bots: one agent sent a request to another profile's Bot Chat, finished its own turn, and the reply came back later as a notification, attributed to the sender.\n\nhow it works:\n\n(1) every bot knows its teammates. the live roster, names and roles, is part of each Bot Chat, so a bot picks the right recipient on its own\n\n(2) a bot messages another with the `message_agent` tool: the target is validated against the roster, the message lands in that bot's own Bot Chat with a \"Message from\" attribution, and the reply arrives when it has one\n\n(3) you can also hand work off yourself: type \"@ researcher have a look at this\" in any chat and the active bot composes its own message to that bot. your text is never forwarded verbatim\n\nthis all works headless too: hermes -p <bot> chat opens the same canonical Bot Chat from the CLI, so a VPS fleet messages the same way a Desktop one does.\n\nhttps://t.co/a1RIGDlNpZ",
+   "author": {
+    "id": "1452919031846117384",
+    "name": "witcheer",
+    "screenName": "witcheer",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2057938653217701888/2uzVsJ5p_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 147,
+    "retweets": 15,
+    "replies": 23,
+    "quotes": 2,
+    "views": 12982,
+    "bookmarks": 189
+   },
+   "createdAt": "Sat Sep 05 09:50:04 +0000 2026",
+   "createdAtLocal": "2026-09-05 17:50",
+   "createdAtISO": "2026-09-05T09:50:04+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "Teknium",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2095174572895084967",
+   "text": "In the @NousResearch Hermes Desktop app you can really easily configure the capabilities and design of each agent\n\nInstead of one hermes agent you now have a fleet of agents\n\nThese agents can be individual experts in a domain (think research, or analysis, or your food prep agent or a health monitor) and then they can all interact with each other using bot to bot communication b\n\nI all interact with each other using bot to bot communication  \n\nI blurred out my most used but you can configure for each sub agent in the desktop app! \n\nSign up with Nous Portal, download the desktop app and create your AI that you own and improve for LIFE\n\nhttps://t.co/2wIYiOCaAv",
+   "author": {
+    "id": "2215937899",
+    "name": "Tommy",
+    "screenName": "Shaughnessy119",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1976669967694118912/T1EnJx6f_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 86,
+    "retweets": 7,
+    "replies": 8,
+    "quotes": 2,
+    "views": 16248,
+    "bookmarks": 65
+   },
+   "createdAt": "Wed Sep 02 15:38:39 +0000 2026",
+   "createdAtLocal": "2026-09-02 23:38",
+   "createdAtISO": "2026-09-02T15:38:39+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRON38DXQAAlKak.jpg",
+     "width": 1231,
+     "height": 1278
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "Teknium",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2094576662101070019",
+    "text": "I am slowly building my army of bots on the @NousResearch Hermes Desktop app and having them all interact with each other\n\nGG @Teknium love the animal PFPs (and the bot to bot communication) https://t.co/7GaW6jwGSa",
+    "author": {
+     "screenName": "Shaughnessy119",
+     "name": "Tommy"
+    }
+   }
+  },
+  {
+   "id": "2096123346836758901",
+   "text": "You can now choose @perplexity_ai as your web search and web scrape tool backend in Hermes Agent.\n\nEnjoy! https://t.co/X0DwxrFRnR",
+   "author": {
+    "id": "1365020011123773442",
+    "name": "Teknium 🪽",
+    "screenName": "Teknium",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1642401912648777728/2KFikPsE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 467,
+    "retweets": 25,
+    "replies": 55,
+    "quotes": 9,
+    "views": 46734,
+    "bookmarks": 110
+   },
+   "createdAt": "Sat Sep 05 06:28:44 +0000 2026",
+   "createdAtLocal": "2026-09-05 14:28",
+   "createdAtISO": "2026-09-05T06:28:44+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRbtEa1boAABMjG.jpg",
+     "width": 1024,
+     "height": 768
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2096109160849088893",
+   "text": "For those of you who've used Fable 5.1 and Astra - is Astra 8x or better token efficiency?? It's 8x more expensive cache read to fable 5.1 has me pretty scared to touch it",
+   "author": {
+    "id": "1365020011123773442",
+    "name": "Teknium 🪽",
+    "screenName": "Teknium",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1642401912648777728/2KFikPsE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1829,
+    "retweets": 19,
+    "replies": 186,
+    "quotes": 8,
+    "views": 318385,
+    "bookmarks": 233
+   },
+   "createdAt": "Sat Sep 05 05:32:22 +0000 2026",
+   "createdAtLocal": "2026-09-05 13:32",
+   "createdAtISO": "2026-09-05T05:32:22+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2096019599183782040",
+   "text": "Controlling a laser with Hermes 🪽 https://t.co/DEQ6T2faHh",
+   "author": {
+    "id": "1439711329",
+    "name": "𝖒𝖆𝖈𝖇𝖊𝖙𝖍",
+    "screenName": "macbethAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1648828001445089280/ox8vJMZ4_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 240,
+    "retweets": 19,
+    "replies": 16,
+    "quotes": 3,
+    "views": 19281,
+    "bookmarks": 18
+   },
+   "createdAt": "Fri Sep 04 23:36:29 +0000 2026",
+   "createdAtLocal": "2026-09-05 07:36",
+   "createdAtISO": "2026-09-04T23:36:29+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2096019562747895808/vid/avc1/1080x1920/-C2acCuAXCG2ejNK.mp4?tag=29",
+     "width": 1080,
+     "height": 1920
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "Teknium",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2096012475947004269",
+   "text": "Astra is available in Hermes Agent through Nous Portal now!",
+   "author": {
+    "id": "1365020011123773442",
+    "name": "Teknium 🪽",
+    "screenName": "Teknium",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1642401912648777728/2KFikPsE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 629,
+    "retweets": 28,
+    "replies": 34,
+    "quotes": 7,
+    "views": 33834,
+    "bookmarks": 17
+   },
+   "createdAt": "Fri Sep 04 23:08:10 +0000 2026",
+   "createdAtLocal": "2026-09-05 07:08",
+   "createdAtISO": "2026-09-04T23:08:10+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2096011830611026277",
+    "text": "GPT-6 Astra is now available in Nous Portal at 20% off\n\nhttps://t.co/RU76KTpAv4 https://t.co/JEuR3xV6x8",
+    "author": {
+     "screenName": "NousResearch",
+     "name": "Nous Research"
+    }
+   }
+  },
+  {
+   "id": "2096007494179139990",
+   "text": "Hermes Agent",
+   "author": {
+    "id": "1365020011123773442",
+    "name": "Teknium 🪽",
+    "screenName": "Teknium",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1642401912648777728/2KFikPsE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 500,
+    "retweets": 13,
+    "replies": 41,
+    "quotes": 48,
+    "views": 40680,
+    "bookmarks": 9
+   },
+   "createdAt": "Fri Sep 04 22:48:23 +0000 2026",
+   "createdAtLocal": "2026-09-05 06:48",
+   "createdAtISO": "2026-09-04T22:48:23+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095939123890753852",
+    "text": "Hermes agent",
+    "author": {
+     "screenName": "sudoingX",
+     "name": "Sudo su"
+    }
+   }
+  },
+  {
+   "id": "2095986103853404479",
+   "text": "Ling-3.0-flash-Sante is now FREE in Nous Portal for one week !!",
+   "author": {
+    "id": "1730304397500956672",
+    "name": "Tommy",
+    "screenName": "yeahfortommy",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1991972240452128768/mNcZXa6i_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 115,
+    "retweets": 13,
+    "replies": 11,
+    "quotes": 3,
+    "views": 22041,
+    "bookmarks": 35
+   },
+   "createdAt": "Fri Sep 04 21:23:23 +0000 2026",
+   "createdAtLocal": "2026-09-05 05:23",
+   "createdAtISO": "2026-09-04T21:23:23+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "Teknium",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095953758148853892",
+    "text": "Today, we’re introducing Ling-3.0-flash-Sante — an MoE model enhanced for health and medicine, built on Ling-3.0-flash.\n\nInspired by the French word “santé,” meaning “health,” Sante is built for real-world healthcare tasks spanning medical reasoning, professional healthcare tasks, deep research, and evidence-based retrieval.\n\nSante shows competitive results across MedXpertQA-Text, DiagnosisArena-MCQ, AFUMED-Drug, HealthBench Professional, and BrowseComp, with leading performance among open-source models and results competitive with flagship models.\n\nHere’s to better health — Santé! More below ↓",
+    "author": {
+     "screenName": "AntLingAGI",
+     "name": "Ant Ling"
+    }
+   }
+  },
+  {
+   "id": "2095779863391096933",
+   "text": "i think this is the biggest hermes agent onboarding unlock local ai has gotten. \n\nthe number one question i get every single day is \"what model can my machine run\", entire vram ladders and spreadsheets exist just to answer it, and hermes desktop made it one click. now it reads your hardware, picks the model that actually fits, pulls it, wires the runtime.\n\nthis is how local ai wins, remove every step between a normal person and their first local model.",
+   "author": {
+    "id": "1555661341914198016",
+    "name": "Sudo su",
+    "screenName": "sudoingX",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2059155391200833536/szNfExnk_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 237,
+    "retweets": 19,
+    "replies": 19,
+    "quotes": 1,
+    "views": 28583,
+    "bookmarks": 110
+   },
+   "createdAt": "Fri Sep 04 07:43:51 +0000 2026",
+   "createdAtLocal": "2026-09-04 15:43",
+   "createdAtISO": "2026-09-04T07:43:51+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "Teknium",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095602995874410664",
+    "text": "Hermes Desktop now sets up local models in one click.\n\nIt automatically reads your hardware, picks the best model for you, then downloads it and configures the runtime. https://t.co/LDw5x9xL5U",
+    "author": {
+     "screenName": "NousResearch",
+     "name": "Nous Research"
+    }
+   }
+  },
+  {
+   "id": "2095782097109819874",
+   "text": "hermes agent is going to explode this week btw.",
+   "author": {
+    "id": "1555661341914198016",
+    "name": "Sudo su",
+    "screenName": "sudoingX",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2059155391200833536/szNfExnk_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 729,
+    "retweets": 17,
+    "replies": 40,
+    "quotes": 0,
+    "views": 47948,
+    "bookmarks": 48
+   },
+   "createdAt": "Fri Sep 04 07:52:44 +0000 2026",
+   "createdAtLocal": "2026-09-04 15:52",
+   "createdAtISO": "2026-09-04T07:52:44+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "Teknium",
+   "lang": "en",
+   "score": null
+  }
+ ]
+}

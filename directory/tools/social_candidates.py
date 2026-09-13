@@ -113,8 +113,11 @@ def upsert(entry):
             for k, v in entry.items():
                 if v not in (None, "", [], {}):
                     merged[k] = v
-            if r.get("state") in ("extracted", "vetted", "merged") \
-                    and entry.get("state") == "raw":
+            # A raw skeleton from fetch/sweep must never downgrade an existing
+            # ledger entry's state (that resurrected dropped rows and
+            # re-opened merged ones). Terminal and advanced states win; only
+            # `add` (state != raw) may move an entry forward.
+            if entry.get("state") == "raw" and r.get("state") != "raw":
                 merged["state"] = r["state"]
             rows[i] = merged
             save_ledger(rows)

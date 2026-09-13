@@ -1,0 +1,2057 @@
+{
+ "via": "twitter-cli user-posts -n 60",
+ "user": "alecqfong",
+ "posts": [
+  {
+   "id": "2097713969427615774",
+   "text": "Whos going to solve Navier Stokes with $1m of open model compute",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 9,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 613,
+    "bookmarks": 1
+   },
+   "createdAt": "Wed Sep 09 15:49:18 +0000 2026",
+   "createdAtLocal": "2026-09-09 23:49",
+   "createdAtISO": "2026-09-09T15:49:18+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2095608859444584547",
+   "text": "This is why you need to own your own compute",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 10,
+    "retweets": 0,
+    "replies": 2,
+    "quotes": 1,
+    "views": 1442,
+    "bookmarks": 1
+   },
+   "createdAt": "Thu Sep 03 20:24:21 +0000 2026",
+   "createdAtLocal": "2026-09-04 04:24",
+   "createdAtISO": "2026-09-03T20:24:21+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095554412311613924",
+    "text": "AI was seasonal in 2024-2025. Growth decelerated during the summer (students/people work less is the theory) and reaccelerated after Labor Day.\n\nThis year, AI accelerated in July/August led by OpenAI, Grok and open-source.\n\nAnd today is the first time I’ve ever seen this: https://t.co/peyOJoSj6N",
+    "author": {
+     "screenName": "GavinSBaker",
+     "name": "Gavin Baker"
+    }
+   }
+  },
+  {
+   "id": "2095360602768351431",
+   "text": "Very exciting! Drop the weights!",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 18,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 826,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu Sep 03 03:57:52 +0000 2026",
+   "createdAtLocal": "2026-09-03 11:57",
+   "createdAtISO": "2026-09-03T03:57:52+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095232916276260884",
+    "text": "1/ today we’re releasing muse spark 1.3—available in muse code &amp; the meta model api.\n\nthis is our most capable model yet—frontier performance almost too cheap to meter. much stronger at agentic and coding with better usability. we think users will really notice the jump. https://t.co/RW6n5NQsBw",
+    "author": {
+     "screenName": "alexandr_wang",
+     "name": "Alexandr Wang"
+    }
+   }
+  },
+  {
+   "id": "2094662518644044067",
+   "text": "Codex would be S tier if were snappier",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 9,
+    "retweets": 0,
+    "replies": 2,
+    "quotes": 0,
+    "views": 1112,
+    "bookmarks": 0
+   },
+   "createdAt": "Tue Sep 01 05:43:56 +0000 2026",
+   "createdAtLocal": "2026-09-01 13:43",
+   "createdAtISO": "2026-09-01T05:43:56+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2092738896459411574",
+   "text": "GLM 5.3 Flash will likely be my teams new daily driver\n\nUntuned I'm getting on 2xDGX Station TP=2\n881 tok/s C=64\n232 tok/s C= 1\n\nAt long context realistically can have 4-8 simultaneous users.\n\n+ it supports vision!",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 966,
+    "retweets": 31,
+    "replies": 61,
+    "quotes": 13,
+    "views": 131506,
+    "bookmarks": 297
+   },
+   "createdAt": "Wed Aug 26 22:20:08 +0000 2026",
+   "createdAtLocal": "2026-08-27 06:20",
+   "createdAtISO": "2026-08-26T22:20:08+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQrmREGacAA0OtW.jpg",
+     "width": 3672,
+     "height": 3672
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQrmTdWbQAAZeRy.jpg",
+     "width": 1610,
+     "height": 1380
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2092700989447176501",
+   "text": "This model is almost perfect for 2x station + it has vision!!\n\nData incoming",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 20,
+    "retweets": 2,
+    "replies": 2,
+    "quotes": 0,
+    "views": 2811,
+    "bookmarks": 2
+   },
+   "createdAt": "Wed Aug 26 19:49:31 +0000 2026",
+   "createdAtLocal": "2026-08-27 03:49",
+   "createdAtISO": "2026-08-26T19:49:31+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2092623662583333271",
+    "text": "ay yo @alecqfong plz do yo thang",
+    "author": {
+     "screenName": "NaderLikeLadder",
+     "name": "Nader Khalil🍊"
+    }
+   }
+  },
+  {
+   "id": "2092269796700373041",
+   "text": "2 months ago, we crashed Jensen's board meeting to show him Perplexity running locally on DGX Spark 🤣\n\n(lol im holding architecture diagrams like he's gonna look at em during a board meeting)\n\nLocal AI used to be for enthusiasts. Folks were running tiny quantized models on underpowered hardware, getting a few tok/s. Exciting, but not practical.\n\nBut now GLM 5.2 is my daily driver.\n\nLocal AI hit an inflection point with frontier open source models like GLM 5.2, Deepseek v4 flash, and Nemotron + hardware powerful enough to run them, like DGX Spark and DGX Station.\n\nDevelopers are running fleets of agents. But there has yet to be a great personal agent experience for local AI.\n\nThe current bottleneck is the know-how to set up inference and get meaningful performance out of it. I'm excited about Perplexity Portable Computer bc it’s an app that fully sets up a great local AI experience out of the box.",
+   "author": {
+    "id": "825885658635841536",
+    "name": "Nader Khalil🍊",
+    "screenName": "NaderLikeLadder",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1512288394516185090/1hse2F3__normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 512,
+    "retweets": 27,
+    "replies": 28,
+    "quotes": 13,
+    "views": 96198,
+    "bookmarks": 171
+   },
+   "createdAt": "Tue Aug 25 15:16:06 +0000 2026",
+   "createdAtLocal": "2026-08-25 23:16",
+   "createdAtISO": "2026-08-25T15:16:06+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQk8JtjbEAAjlUQ.jpg",
+     "width": 4000,
+     "height": 2252
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "alecqfong",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2092269109086126575",
+    "text": "Meet Portable Computer, Perplexity's new local-first agent stack on NVIDIA DGX Spark.\n\nWhen running locally, Portable Computer offers one-click local inference setup and an optimized agentic experience for DGX Spark.\n\nLearn more and get started today: https://t.co/0UElxhCnkY https://t.co/W07ZafKYdC",
+    "author": {
+     "screenName": "nvidia",
+     "name": "NVIDIA"
+    }
+   }
+  },
+  {
+   "id": "2092108429867245979",
+   "text": "GLM 5.2 is surprisingly good at financial modeling.\n\nI gave it my 2025 tax season data and access to bank/transaction data and it built a genuinely useful personal finance workbook: spending, RSUs, deal earnout, leverage, and a 10 year net worth projection etc.\n\nAll my PII and private data local, pretty neat",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 20,
+    "retweets": 0,
+    "replies": 3,
+    "quotes": 0,
+    "views": 1354,
+    "bookmarks": 12
+   },
+   "createdAt": "Tue Aug 25 04:34:53 +0000 2026",
+   "createdAtLocal": "2026-08-25 12:34",
+   "createdAtISO": "2026-08-25T04:34:53+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQim1YKbAAAvDbi.jpg",
+     "width": 1552,
+     "height": 1568
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2089847417571365269",
+   "text": "As expected DGX Station absolutely crushes serving Qwen3.8-27B at BF16 (full weight)\n\n2,713+ tok/s peak aggregate\n88 tok/s single stream\n\nLike a datacenter in my living room",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 842,
+    "retweets": 30,
+    "replies": 68,
+    "quotes": 19,
+    "views": 93245,
+    "bookmarks": 231
+   },
+   "createdAt": "Tue Aug 18 22:50:26 +0000 2026",
+   "createdAtLocal": "2026-08-19 06:50",
+   "createdAtISO": "2026-08-18T22:50:26+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQCdHA0aUAA48kE.jpg",
+     "width": 3330,
+     "height": 1782
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQCg4ggaYAAdbmq.jpg",
+     "width": 3072,
+     "height": 4096
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2089178180318117922",
+   "text": "Spent $1.25 of Fable tokens to update @NaderLikeLadder Sonos speakers\n\nCost me $.04 with local GLM 5.2\n\n31x cheaper lmao https://t.co/fyFMQG78g4",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 34,
+    "retweets": 1,
+    "replies": 2,
+    "quotes": 0,
+    "views": 2501,
+    "bookmarks": 10
+   },
+   "createdAt": "Mon Aug 17 02:31:07 +0000 2026",
+   "createdAtLocal": "2026-08-17 10:31",
+   "createdAtISO": "2026-08-17T02:31:07+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HP4_RSPawAA2rS9.jpg",
+     "width": 1866,
+     "height": 1074
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2086530975828480489",
+   "text": "Whats the best eval for long context multi-agent coding tasks?",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 8,
+    "retweets": 0,
+    "replies": 2,
+    "quotes": 0,
+    "views": 1118,
+    "bookmarks": 1
+   },
+   "createdAt": "Sun Aug 09 19:12:05 +0000 2026",
+   "createdAtLocal": "2026-08-10 03:12",
+   "createdAtISO": "2026-08-09T19:12:05+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2085484123855155295",
+   "text": "The DGX Station is a beast at serving DeepSeekV4 Flash\n\nOn a single GB300 Station I’m getting\n\nPeak aggregate 1875 tok/sec\nSingle stream 300 tok/sec\nTTFT 5s for 128k context https://t.co/vB4GZrdWxa",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 995,
+    "retweets": 34,
+    "replies": 97,
+    "quotes": 24,
+    "views": 158023,
+    "bookmarks": 282
+   },
+   "createdAt": "Thu Aug 06 21:52:16 +0000 2026",
+   "createdAtLocal": "2026-08-07 05:52",
+   "createdAtISO": "2026-08-06T21:52:16+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HPEgsmia8AAW8t5.jpg",
+     "width": 900,
+     "height": 1200
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2084790884336574579",
+   "text": "ttyd web + custom tmux config is a criminally underrated harness ui\n\nAccess anywhere\nAny harness\nAlways on (in the cloud)\n\nYou can try out my config https://t.co/AAHIozSUsg",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 4,
+    "retweets": 1,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1560,
+    "bookmarks": 5
+   },
+   "createdAt": "Tue Aug 04 23:57:35 +0000 2026",
+   "createdAtLocal": "2026-08-05 07:57",
+   "createdAtISO": "2026-08-04T23:57:35+00:00",
+   "media": [],
+   "urls": [
+    "https://github.com/theFong/setup#web-shell-browser-terminal"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2083351230055842150",
+    "text": "i havent used a local terminal at all this month https://t.co/8vnAApjlnm",
+    "author": {
+     "screenName": "alecqfong",
+     "name": "Alec Fong"
+    }
+   }
+  },
+  {
+   "id": "2083679692897603838",
+   "text": "Current local ai stack \n\n2x DGX Sparks - DeepSeek v4 flash (90 tok/sec) - implementation &amp; sub agents\n\n2x DGX Stations - GLM 5.2 nvfp4 (120 tok/sec) - planning and advising\n\nBrev for cluster networking, always on cloud agent, and orchestration https://t.co/oIQRu6rnmC",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1950,
+    "retweets": 92,
+    "replies": 127,
+    "quotes": 35,
+    "views": 324962,
+    "bookmarks": 1103
+   },
+   "createdAt": "Sat Aug 01 22:22:06 +0000 2026",
+   "createdAtLocal": "2026-08-02 06:22",
+   "createdAtISO": "2026-08-01T22:22:06+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HOq3kIVa0AAbrIk.jpg",
+     "width": 1200,
+     "height": 1200
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HOq3owAbQAAcBsX.jpg",
+     "width": 1536,
+     "height": 2048
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HOq3owCbsAAISt2.jpg",
+     "width": 1226,
+     "height": 1688
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2083499059722211839",
+   "text": "DeepSeek V4 Flash 0731 is exciting.\n\nEarly evals suggest frontier-level capability that can run on &lt; $10k of hardware.\n\nThat said, my real usage still shows  small-model smells. It’s much less token efficient than quantized GLM 5.2 and noticeably more verbose.",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 41,
+    "retweets": 2,
+    "replies": 4,
+    "quotes": 0,
+    "views": 3313,
+    "bookmarks": 6
+   },
+   "createdAt": "Sat Aug 01 10:24:20 +0000 2026",
+   "createdAtLocal": "2026-08-01 18:24",
+   "createdAtISO": "2026-08-01T10:24:20+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2083351230055842150",
+   "text": "i havent used a local terminal at all this month https://t.co/8vnAApjlnm",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 17,
+    "retweets": 1,
+    "replies": 1,
+    "quotes": 1,
+    "views": 5031,
+    "bookmarks": 10
+   },
+   "createdAt": "Sat Aug 01 00:36:54 +0000 2026",
+   "createdAtLocal": "2026-08-01 08:36",
+   "createdAtISO": "2026-08-01T00:36:54+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HOmM4QqbIAAPcaL.jpg",
+     "width": 3680,
+     "height": 2216
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2081289013164703855",
+   "text": "Ran 100 million tokens through GLM 5.2 NVFP4 locally\n\nElectricity cost: $1.\n\nInference is becoming nearly free https://t.co/mRGUljwpZp",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 3059,
+    "retweets": 93,
+    "replies": 148,
+    "quotes": 16,
+    "views": 283922,
+    "bookmarks": 764
+   },
+   "createdAt": "Sun Jul 26 08:02:23 +0000 2026",
+   "createdAtLocal": "2026-07-26 16:02",
+   "createdAtISO": "2026-07-26T08:02:23+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HOI0Zk4bYAAam8q.png",
+     "width": 958,
+     "height": 386
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2081289014536286598",
+   "text": "Its free inference\n\nhttps://t.co/RACtuPnJPq",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 41,
+    "retweets": 0,
+    "replies": 2,
+    "quotes": 0,
+    "views": 32068,
+    "bookmarks": 10
+   },
+   "createdAt": "Sun Jul 26 08:02:24 +0000 2026",
+   "createdAtLocal": "2026-07-26 16:02",
+   "createdAtISO": "2026-07-26T08:02:24+00:00",
+   "media": [],
+   "urls": [
+    "https://www.youtube.com/watch?v=cd4-UnU8lWY"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2081156787676594482",
+   "text": "Good software shows you solutions to problems you didn’t know you had and provides you a new mental model of the world\n\nHow do you do this with a prompt?",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 8,
+    "retweets": 0,
+    "replies": 2,
+    "quotes": 0,
+    "views": 1964,
+    "bookmarks": 3
+   },
+   "createdAt": "Sat Jul 25 23:16:58 +0000 2026",
+   "createdAtLocal": "2026-07-26 07:16",
+   "createdAtISO": "2026-07-25T23:16:58+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2080643682408321103",
+   "text": "For my first post, I’m sharing a letter @NVIDIA signed on why open models matter.\n\nAI will transform every industry, power every company, and be built by every country.\n\nOpen models strengthen safety and cybersecurity, accelerate innovation and diffusion, and enable sovereignty.\n\nThe world needs both frontier closed models and frontier open models.\n\nhttps://t.co/AUKzoQ5Ikb",
+   "author": {
+    "id": "2070631956824698880",
+    "name": "Jensen Huang",
+    "screenName": "JensenHuang",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2080613261674962944/OMXX4RJ3_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 172445,
+    "retweets": 29541,
+    "replies": 16096,
+    "quotes": 10945,
+    "views": 66223608,
+    "bookmarks": 39285
+   },
+   "createdAt": "Fri Jul 24 13:18:05 +0000 2026",
+   "createdAtLocal": "2026-07-24 21:18",
+   "createdAtISO": "2026-07-24T13:18:05+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HN_qDVsa4AAI6XJ.jpg",
+     "width": 1224,
+     "height": 1584
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HN_qDV1a8AARQwg.jpg",
+     "width": 1224,
+     "height": 1584
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HN_qDV1awAAPTlH.jpg",
+     "width": 1224,
+     "height": 1584
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "alecqfong",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2080391515898269937",
+   "text": "Glad we could help! Holler if you need anything\n\nIf you get your hands on a second station we can get you going at 90+ tok/s",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 16,
+    "retweets": 1,
+    "replies": 0,
+    "quotes": 0,
+    "views": 2950,
+    "bookmarks": 4
+   },
+   "createdAt": "Thu Jul 23 20:36:03 +0000 2026",
+   "createdAtLocal": "2026-07-24 04:36",
+   "createdAtISO": "2026-07-23T20:36:03+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2080064389676158996",
+    "text": "Thank you @nvidia for the hookup on this DGX Workstation. This will crunch a *lot* of high quality tokens here!  \n\nThis thing is a total beast. https://t.co/cYW4410SRJ",
+    "author": {
+     "screenName": "tobi",
+     "name": "tobi lutke"
+    }
+   }
+  },
+  {
+   "id": "2080090379387617458",
+   "text": "Alien technology",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 22,
+    "retweets": 1,
+    "replies": 2,
+    "quotes": 0,
+    "views": 3128,
+    "bookmarks": 8
+   },
+   "createdAt": "Thu Jul 23 00:39:27 +0000 2026",
+   "createdAtLocal": "2026-07-23 08:39",
+   "createdAtISO": "2026-07-23T00:39:27+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2079700181998784972",
+    "text": "The first Vera Rubin clusters are here!\n\nYesterday, @IneffableLabs took delivery of their Vera Rubin NVL72 cluster from @googlecloud @nvidia \n\nThe AI frontier jumps forward by yet another generation of hardware. Acceleration continues. https://t.co/wBpe9yfWSm",
+    "author": {
+     "screenName": "sonyatweetybird",
+     "name": "Sonya Huang 🐥"
+    }
+   }
+  },
+  {
+   "id": "2079762940631429146",
+   "text": "Super interesting model, runs fast on Spark +70 tok/sec. Benchmarks well above its weight in coding tasks\n\nShould be a fantastic implementer  to glm 5.2 advisor",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 24,
+    "retweets": 1,
+    "replies": 1,
+    "quotes": 0,
+    "views": 3106,
+    "bookmarks": 4
+   },
+   "createdAt": "Wed Jul 22 02:58:19 +0000 2026",
+   "createdAtLocal": "2026-07-22 10:58",
+   "createdAtISO": "2026-07-22T02:58:19+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2079613777343848465",
+    "text": "Today we're releasing Laguna S 2.1, our most capable model to date.\n\nIt's a 118B total parameter Mixture-of-Experts model with 8B activated per token, a context window of up to 1M tokens, and thinking and no-thinking modes.\n\nCapable enough to hold its own against models many times its size. Small enough to run on a single @NVIDIAAI DGX Spark.\n\nLaguna S 2.1 is fully open under OpenMDW-1.1, with weights available today on @huggingface \n\nhttps://t.co/xxGeAgo35R",
+    "author": {
+     "screenName": "poolsideai",
+     "name": "Poolside"
+    }
+   }
+  },
+  {
+   "id": "2079834647736053795",
+   "text": "After validation getting more like 40-60 tok/s on gb10",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 231,
+    "bookmarks": 1
+   },
+   "createdAt": "Wed Jul 22 07:43:16 +0000 2026",
+   "createdAtLocal": "2026-07-22 15:43",
+   "createdAtISO": "2026-07-22T07:43:16+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2079676994539905179",
+   "text": "NVIDIA Brev + Devin outpost gives your cloud agent gpu super powers: debug  and develop cuTile, sweep over vllm/sglang configs++",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 29,
+    "retweets": 4,
+    "replies": 2,
+    "quotes": 0,
+    "views": 5330,
+    "bookmarks": 5
+   },
+   "createdAt": "Tue Jul 21 21:16:48 +0000 2026",
+   "createdAtLocal": "2026-07-22 05:16",
+   "createdAtISO": "2026-07-21T21:16:48+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2079612230954602792",
+    "text": "We worked with Cloudflare, Daytona, E2B, Modal, Namespace, and NVIDIA Brev on deployment templates and guides for Devin Outposts.\n\nEach gives Devin a different place to work: from secure sandboxes and private networks to GPUs and macOS machines.\n\nhttps://t.co/DE2bF3ykWm",
+    "author": {
+     "screenName": "cognition",
+     "name": "Cognition"
+    }
+   }
+  },
+  {
+   "id": "2079677032620028375",
+   "text": "Try it out https://t.co/IIMAh0Skxm",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 225,
+    "bookmarks": 0
+   },
+   "createdAt": "Tue Jul 21 21:16:57 +0000 2026",
+   "createdAtLocal": "2026-07-22 05:16",
+   "createdAtISO": "2026-07-21T21:16:57+00:00",
+   "media": [],
+   "urls": [
+    "https://brev.nvidia.com/launchable/deploy/now?launchableID=env-3Ge1ZXazlZQuJHfQed2od9IT8R5"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2078297472703832298",
+   "text": "Costco needs to open a bar",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 6,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 738,
+    "bookmarks": 0
+   },
+   "createdAt": "Sat Jul 18 01:55:05 +0000 2026",
+   "createdAtLocal": "2026-07-18 09:55",
+   "createdAtISO": "2026-07-18T01:55:05+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2078222908628099177",
+   "text": "My favorite setup right now \n- All my local GPUs connected to Brev\n- Several sandboxes + agents deployed authenticated to the brev cli to manage https://t.co/QGLWPNVtQW",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 6,
+    "retweets": 1,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1443,
+    "bookmarks": 7
+   },
+   "createdAt": "Fri Jul 17 20:58:47 +0000 2026",
+   "createdAtLocal": "2026-07-18 04:58",
+   "createdAtISO": "2026-07-17T20:58:47+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HNdT_sxa0AADLkX.jpg",
+     "width": 2552,
+     "height": 1410
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HNdUKehasAA3_3d.jpg",
+     "width": 2468,
+     "height": 1760
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2076552221291057350",
+   "text": "“In consuming intelligence you are creating intelligence, and what you create should belong to you.”\n\nAI’s endgame is users earning perpetual royalties for the data they contribute.\n\nYour share grows with the novelty, usefulness, and downstream usage of that data.",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 7,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 895,
+    "bookmarks": 1
+   },
+   "createdAt": "Mon Jul 13 06:20:04 +0000 2026",
+   "createdAtLocal": "2026-07-13 14:20",
+   "createdAtISO": "2026-07-13T06:20:04+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2076323181154230284",
+    "text": "https://t.co/xv6csf1SbV",
+    "author": {
+     "screenName": "satyanadella",
+     "name": "Satya Nadella"
+    }
+   }
+  },
+  {
+   "id": "2075653654326157340",
+   "text": "Buns rewrite to rust is an interesting read @jarredsumner \n\nThe calculus for incremental migration vs clean cut has changed. Choosing a language is no longer a 1 way door decision.\n\n~$165k in token spend for entire rewrite",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 609,
+    "bookmarks": 0
+   },
+   "createdAt": "Fri Jul 10 18:49:29 +0000 2026",
+   "createdAtLocal": "2026-07-11 02:49",
+   "createdAtISO": "2026-07-10T18:49:29+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2075653655773188470",
+   "text": "https://t.co/0xGPYgqUd6",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 170,
+    "bookmarks": 1
+   },
+   "createdAt": "Fri Jul 10 18:49:29 +0000 2026",
+   "createdAtLocal": "2026-07-11 02:49",
+   "createdAtISO": "2026-07-10T18:49:29+00:00",
+   "media": [],
+   "urls": [
+    "https://bun.com/blog/bun-in-rust"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "zxx",
+   "score": null
+  },
+  {
+   "id": "2074899489190785419",
+   "text": "Announcing our $130M Series A to build the Open Superintelligence Stack\n\nLed by Radical Ventures, with NVIDIA, Intel Capital, Dell Capital, and existing investors\n\nTrain, deploy, and continuously improve your own models using our stack.\n\nOwn your intelligence. https://t.co/BM31LfVUNQ",
+   "author": {
+    "id": "1274287728167915522",
+    "name": "Prime Intellect",
+    "screenName": "PrimeIntellect",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1837605403359633411/Stj4eLIH_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 4969,
+    "retweets": 544,
+    "replies": 334,
+    "quotes": 318,
+    "views": 1425045,
+    "bookmarks": 1660
+   },
+   "createdAt": "Wed Jul 08 16:52:42 +0000 2026",
+   "createdAtLocal": "2026-07-09 00:52",
+   "createdAtISO": "2026-07-08T16:52:42+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2074897472191856640/vid/avc1/1440x1080/OA9mcxAk77rV9xVo.mp4?tag=28",
+     "width": 1440,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "alecqfong",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2074977704001335716",
+   "text": "Interestingly goes against what I have found\n\nFable with Pi is less accurate and more expensive than Fable with Claude Code for hard benchmarks with a lot of terminal use https://t.co/ZChnkclpbE",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 4,
+    "retweets": 0,
+    "replies": 2,
+    "quotes": 0,
+    "views": 1081,
+    "bookmarks": 3
+   },
+   "createdAt": "Wed Jul 08 22:03:30 +0000 2026",
+   "createdAtLocal": "2026-07-09 06:03",
+   "createdAtISO": "2026-07-08T22:03:30+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HMvM92iboAA_eQc.jpg",
+     "width": 1254,
+     "height": 184
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2074943619610649059",
+    "text": "3) Harnesses make a huge difference in cost-performance. The very simple Pi harness (@badlogicgames) got the same success rate as harnesses from the LLM vendors with Opus and GPT 5.5, but at 2x less cost! Seems to be mainly due to smaller inputs to the LLM. https://t.co/xjVCzfJdiS",
+    "author": {
+     "screenName": "matei_zaharia",
+     "name": "Matei Zaharia"
+    }
+   }
+  },
+  {
+   "id": "2074380184611102743",
+   "text": "Do your future self a favor and set your Claude setting “cleanupPeriodDays”: 3650",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 404,
+    "bookmarks": 0
+   },
+   "createdAt": "Tue Jul 07 06:29:10 +0000 2026",
+   "createdAtLocal": "2026-07-07 14:29",
+   "createdAtISO": "2026-07-07T06:29:10+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2072850631002669362",
+   "text": "In honor of Local AI summit at @aiDotEngineer \n\nGLM 5.2  running under on desktop at 60 tok/s ✅ \n\nFather and son DGX station ✅\n\nMuch to come 🤙 https://t.co/xs1WSjqzqw",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 192,
+    "retweets": 10,
+    "replies": 15,
+    "quotes": 3,
+    "views": 15810,
+    "bookmarks": 56
+   },
+   "createdAt": "Fri Jul 03 01:11:16 +0000 2026",
+   "createdAtLocal": "2026-07-03 09:11",
+   "createdAtISO": "2026-07-03T01:11:16+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HMQ-pO9agAAsuKs.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HMQ-pO9bkAAWFFz.jpg",
+     "width": 900,
+     "height": 1200
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HMQ9RBya0AAUDUo.jpg",
+     "width": 1536,
+     "height": 2048
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2072851570535067985",
+   "text": "Took first stab at running glm with nvfp4 was getting 25 tok/s\n\n@alexocheema &amp; @0xSero helped us push the perf 60 tok/s\n\nInsane work",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 21,
+    "retweets": 1,
+    "replies": 2,
+    "quotes": 0,
+    "views": 2644,
+    "bookmarks": 6
+   },
+   "createdAt": "Fri Jul 03 01:15:00 +0000 2026",
+   "createdAtLocal": "2026-07-03 09:15",
+   "createdAtISO": "2026-07-03T01:15:00+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2072535941236056153",
+   "text": "Is there a market for slow tokens",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 4,
+    "retweets": 0,
+    "replies": 2,
+    "quotes": 0,
+    "views": 504,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu Jul 02 04:20:48 +0000 2026",
+   "createdAtLocal": "2026-07-02 12:20",
+   "createdAtISO": "2026-07-02T04:20:48+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2071402138878841103",
+   "text": "If you’re interested in joining this rocket ship, our team is cooking on some new special projects. \n\nReach out directly 👇 https://t.co/Duapqkojiy",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 15,
+    "retweets": 0,
+    "replies": 7,
+    "quotes": 0,
+    "views": 5191,
+    "bookmarks": 2
+   },
+   "createdAt": "Mon Jun 29 01:15:29 +0000 2026",
+   "createdAtLocal": "2026-06-29 09:15",
+   "createdAtISO": "2026-06-29T01:15:29+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HL8Y7qVaYAATgq8.jpg",
+     "width": 1536,
+     "height": 2048
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2070210683182981206",
+    "text": "Went to NVIDIA HQ today.\n\nTwo interesting observations:\n\n1. Snacks and coffee are not free: you have to pay for them. This would be unusual at Big Tech, but no big deal for devs here. \"We use this thing called salary to buy stuff we actually need.\" Food for thought (literally!)",
+    "author": {
+     "screenName": "GergelyOrosz",
+     "name": "Gergely Orosz"
+    }
+   }
+  },
+  {
+   "id": "2061578971264037304",
+   "text": "The datadog’s pup CLI + Opus 4.8 feels like AGI for SRE.\n\nFind a problem, generate a dashboard to monitor the situation\n\nKeep pushing Claude to ground claims with data or increase logs/metrics granularity if not",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 3,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 461,
+    "bookmarks": 0
+   },
+   "createdAt": "Mon Jun 01 22:41:43 +0000 2026",
+   "createdAtLocal": "2026-06-02 06:41",
+   "createdAtISO": "2026-06-01T22:41:43+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2061566416843927688",
+   "text": "Focusing on performance is addicting\n\nShip fix, watch graph go down. \n\nRepeat 🔁 https://t.co/lW3mY18az8",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 5,
+    "retweets": 0,
+    "replies": 2,
+    "quotes": 0,
+    "views": 456,
+    "bookmarks": 1
+   },
+   "createdAt": "Mon Jun 01 21:51:50 +0000 2026",
+   "createdAtLocal": "2026-06-02 05:51",
+   "createdAtISO": "2026-06-01T21:51:50+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HJwnY5ubMAA31ul.png",
+     "width": 766,
+     "height": 454
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HJwnbGsaMAAsgfs.png",
+     "width": 1508,
+     "height": 388
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2060027410519658893",
+   "text": "Changed my last name and fled the country 💍 https://t.co/BPIKQ66od4",
+   "author": {
+    "id": "1502356865794985986",
+    "name": "Sarah Chieng",
+    "screenName": "MilksandMatcha",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1868428856908304384/6BROXdW-_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1263,
+    "retweets": 7,
+    "replies": 146,
+    "quotes": 3,
+    "views": 155979,
+    "bookmarks": 74
+   },
+   "createdAt": "Thu May 28 15:56:22 +0000 2026",
+   "createdAtLocal": "2026-05-28 23:56",
+   "createdAtISO": "2026-05-28T15:56:22+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HJXrD3HXAAQcGqs.jpg",
+     "width": 1536,
+     "height": 2048
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "alecqfong",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2057200758379217204",
+   "text": "Congrats Exa team! \n\nCrazy to remember all of us cramped in a Victorian hacking away. Big day for page st.",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 15,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 2510,
+    "bookmarks": 1
+   },
+   "createdAt": "Wed May 20 20:44:16 +0000 2026",
+   "createdAtLocal": "2026-05-21 04:44",
+   "createdAtISO": "2026-05-20T20:44:16+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2057132080317042697",
+    "text": "We raised $250M in Series C funding at a $2.2B valuation, led by a16z.\n\nExa is a search lab organizing the web's data for agents. https://t.co/wB3IYAskc3",
+    "author": {
+     "screenName": "ExaAILabs",
+     "name": "Exa"
+    }
+   }
+  },
+  {
+   "id": "2054322058537128042",
+   "text": "I miss writing code by hand",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 321,
+    "bookmarks": 0
+   },
+   "createdAt": "Tue May 12 22:05:20 +0000 2026",
+   "createdAtLocal": "2026-05-13 06:05",
+   "createdAtISO": "2026-05-12T22:05:20+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2051746039259181215",
+   "text": "I want to steer my sub agents",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 305,
+    "bookmarks": 0
+   },
+   "createdAt": "Tue May 05 19:29:10 +0000 2026",
+   "createdAtLocal": "2026-05-06 03:29",
+   "createdAtISO": "2026-05-05T19:29:10+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2050403022543720481",
+   "text": "Codex is much more opinionated about what the product should be than Claude",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 313,
+    "bookmarks": 0
+   },
+   "createdAt": "Sat May 02 02:32:29 +0000 2026",
+   "createdAtLocal": "2026-05-02 10:32",
+   "createdAtISO": "2026-05-02T02:32:29+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2050045548665970791",
+   "text": "My favorite claw/agent I’ve built for my team is our posthog bot.\n\nEveryday it sends us top interesting customers in the past day\n\nAnd acts as a data analyst I can chat with from my phone\n\nExcited for more of this integrated directly in the product",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 460,
+    "bookmarks": 0
+   },
+   "createdAt": "Fri May 01 02:52:01 +0000 2026",
+   "createdAtLocal": "2026-05-01 10:52",
+   "createdAtISO": "2026-05-01T02:52:01+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2049886127507878363",
+    "text": "https://t.co/IH4YpkoJim",
+    "author": {
+     "screenName": "james406",
+     "name": "james hawkins"
+    }
+   }
+  },
+  {
+   "id": "2049702546286236121",
+   "text": "sudo pmset -a disablesleep 1",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 327,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu Apr 30 04:09:03 +0000 2026",
+   "createdAtLocal": "2026-04-30 12:09",
+   "createdAtISO": "2026-04-30T04:09:03+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2049654624148418863",
+    "text": "people are walking around with their laptops slightly ajar to keep their agents running",
+    "author": {
+     "screenName": "tszzl",
+     "name": "roon"
+    }
+   }
+  },
+  {
+   "id": "2047450886373318898",
+   "text": "GPT 5.5 is a good model.\n\nCodex2 has grown on me as my preferred UI for agentic dev. Highly recommend!",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 8,
+    "retweets": 1,
+    "replies": 3,
+    "quotes": 0,
+    "views": 1337,
+    "bookmarks": 2
+   },
+   "createdAt": "Thu Apr 23 23:01:45 +0000 2026",
+   "createdAtLocal": "2026-04-24 07:01",
+   "createdAtISO": "2026-04-23T23:01:45+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2047377586058306001",
+    "text": "I’ve had access to Codex2 and GPT 5.5 for about 2 weeks now\n\nOpenAI just collison-installed all of NVIDIA lol\nThey set up a lab like a Genius Bar so everyone could get set up w Codex 2 \nWith the CLIs we’ve been building, non-technical coworkers seemed to have the biggest unlock \n\nOur stack: \n • We rolled out cloud VMs for every employee. Simple rule, agents get their own computers just like employees. If something goes wrong we can freeze it and get a stack trace. \n• Codex team has been super responsive. Codex 2 now supports any cloud vm, quickly picks up ssh config. Non-technical users just paste a prompt we gave them to edit ssh config\n• Internally built CLIs + those vetted by security get automatically loaded in cloud VMs. Teams wake up to new capabilities daily now. \n\nNVIDIA already moved fast now we’re rippin 🤙",
+    "author": {
+     "screenName": "NaderLikeLadder",
+     "name": "Nader Khalil🍊"
+    }
+   }
+  },
+  {
+   "id": "2047454350310551931",
+   "text": "Check out computer use\n\n“Write me a poem in my apple notes”\n\nThe ux to enable accessibility is fantastic",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 130,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu Apr 23 23:15:31 +0000 2026",
+   "createdAtLocal": "2026-04-24 07:15",
+   "createdAtISO": "2026-04-23T23:15:31+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2037589210182664653",
+   "text": "Biggest open question in agentic software development is how to steer agents from complexity to simplicity.\n\nImprovements in memory and models go a long way. \n\nHumans will always need to specify what current and potential future requirements. This currently lives in intuition instead of formal spec",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 3,
+    "retweets": 0,
+    "replies": 2,
+    "quotes": 0,
+    "views": 398,
+    "bookmarks": 0
+   },
+   "createdAt": "Fri Mar 27 17:54:58 +0000 2026",
+   "createdAtLocal": "2026-03-28 01:54",
+   "createdAtISO": "2026-03-27T17:54:58+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2036801820626952269",
+    "text": "I'm usually not one to write thought pieces without much technical depth. But here we go.\n\nSlow the fuck down.\n\nhttps://t.co/dcOwPK357F",
+    "author": {
+     "screenName": "badlogicgames",
+     "name": "Mario Zechner"
+    }
+   }
+  },
+  {
+   "id": "2034069108808159599",
+   "text": "A sufficiently detailed spec is IP",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 3,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 505,
+    "bookmarks": 0
+   },
+   "createdAt": "Wed Mar 18 00:47:21 +0000 2026",
+   "createdAtLocal": "2026-03-18 08:47",
+   "createdAtISO": "2026-03-18T00:47:21+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2033910008992444873",
+    "text": "New blog post: \"A sufficiently detailed spec is code\"\n\nI wrote this because I was tired of people claiming that the future of agentic coding is thoughtful specification work.  As I show in the post, the reality devolves into slop pseudocode\n\nhttps://t.co/V86V7cjWpS",
+    "author": {
+     "screenName": "GabriellaG439",
+     "name": "gabby"
+    }
+   }
+  },
+  {
+   "id": "2032321922521076140",
+   "text": "Anyone working on a massively parallel version of this?\n\nThink swarm of researchers tinkering on different trajectories then merged together by a “pi”",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 19,
+    "retweets": 1,
+    "replies": 9,
+    "quotes": 0,
+    "views": 4689,
+    "bookmarks": 9
+   },
+   "createdAt": "Fri Mar 13 05:04:39 +0000 2026",
+   "createdAtLocal": "2026-03-13 13:04",
+   "createdAtISO": "2026-03-13T05:04:39+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2030371219518931079",
+    "text": "I packaged up the \"autoresearch\" project into a new self-contained minimal repo if people would like to play over the weekend. It's basically nanochat LLM training core stripped down to a single-GPU, one file version of ~630 lines of code, then:\n\n- the human iterates on the prompt (.md)\n- the AI agent iterates on the training code (.py)\n\nThe goal is to engineer your agents to make the fastest research progress indefinitely and without any of your own involvement. In the image, every dot is a complete LLM training run that lasts exactly 5 minutes. The agent works in an autonomous loop on a git feature branch and accumulates git commits to the training script as it finds better settings (of lower validation loss by the end) of the neural network architecture, the optimizer, all the hyperparameters, etc. You can imagine comparing the research progress of different prompts, different agents, etc.\n\nhttps://t.co/YCvOwwjOzF\nPart code, part sci-fi, and a pinch of psychosis :)",
+    "author": {
+     "screenName": "karpathy",
+     "name": "Andrej Karpathy"
+    }
+   }
+  },
+  {
+   "id": "2030804521677726194",
+   "text": "I suspect agents will eventually collocate with GPUs.\n\nLocal → cloud → GPU.\n\nInstead of sending work to the cloud, you’ll bring your agent to the GPU.\n\nGPUs need to be ready for massively parallel IO-bound processes running in user space.",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 222,
+    "bookmarks": 1
+   },
+   "createdAt": "Mon Mar 09 00:35:03 +0000 2026",
+   "createdAtLocal": "2026-03-09 08:35",
+   "createdAtISO": "2026-03-09T00:35:03+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2030770055047492007",
+   "text": "am prepping our NVIDIA chat with @NaderLikeLadder and @KranenKyle and got excited for some incredible news coming for @NVIDIAGTC next week - would really tune in for the Jensen keynote on the future of **agent inference** \n\nhttps://t.co/s5zjx5G7Ns\n\nalso got the @brevdev x NVIDIA story on the pod! dropping soon.",
+   "author": {
+    "id": "33521530",
+    "name": "swyx",
+    "screenName": "swyx",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2073162797354217472/hNny55eF_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 85,
+    "retweets": 3,
+    "replies": 31,
+    "quotes": 3,
+    "views": 19774,
+    "bookmarks": 10
+   },
+   "createdAt": "Sun Mar 08 22:18:05 +0000 2026",
+   "createdAtLocal": "2026-03-09 06:18",
+   "createdAtISO": "2026-03-08T22:18:05+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HC69jpGaoAAkx_5.jpg",
+     "width": 2228,
+     "height": 1382
+    }
+   ],
+   "urls": [
+    "https://nvda.ws/4kgho15"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "alecqfong",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "1813286240093151412",
+    "text": "Exciting news... \n\n🚨 https://t.co/GCUjRDOu73 has been acquired by NVIDIA! ❤️🤙\n\nWe started Brev with the goal of building the best damn developer experience possible.\n\nWe’ve been working closely with NVIDIA since August, and we couldn't be more excited to team up.\n\nI'm infinitely grateful for our early users, investors, and team that supported us thus far. So excited for what's coming 🤙",
+    "author": {
+     "screenName": "NaderLikeLadder",
+     "name": "Nader Khalil🍊"
+    }
+   }
+  },
+  {
+   "id": "2026460059652468828",
+   "text": "CLIs are insanely fun in this paradigm.\nAgents can run them, inspect output, fix errors, and retry in seconds.\nThe feedback loop is almost instantaneous.",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 266,
+    "bookmarks": 0
+   },
+   "createdAt": "Wed Feb 25 00:51:42 +0000 2026",
+   "createdAtLocal": "2026-02-25 08:51",
+   "createdAtISO": "2026-02-25T00:51:42+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2026360908398862478",
+    "text": "CLIs are super exciting precisely because they are a \"legacy\" technology, which means AI agents can natively and easily use them, combine them, interact with them via the entire terminal toolkit.\n\nE.g ask your Claude/Codex agent to install this new Polymarket CLI and ask for any arbitrary dashboards or interfaces or logic. The agents will build it for you. Install the Github CLI too and you can ask them to navigate the repo, see issues, PRs, discussions, even the code itself.\n\nExample: Claude built this terminal dashboard in ~3 minutes, of the highest volume polymarkets and the 24hr change. Or you can make it a web app or whatever you want. Even more powerful when you use it as a module of bigger pipelines.\n\nIf you have any kind of product or service think: can agents access and use them?\n\n- are your legacy docs (for humans) at least exportable in markdown?\n- have you written Skills for your product?\n- can your product/service be usable via CLI? Or MCP?\n- ...\n\nIt's 2026. Build. For. Agents.",
+    "author": {
+     "screenName": "karpathy",
+     "name": "Andrej Karpathy"
+    }
+   }
+  },
+  {
+   "id": "2025463284787544403",
+   "text": "The point of sass isn’t sass but trust and accountability sinks",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 162,
+    "bookmarks": 0
+   },
+   "createdAt": "Sun Feb 22 06:50:53 +0000 2026",
+   "createdAtLocal": "2026-02-22 14:50",
+   "createdAtISO": "2026-02-22T06:50:53+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2021109110717153767",
+   "text": "Got kimi k2.5 running on this bad boy thanks to @danielhanchen and @UnslothAI 💪🤙 https://t.co/M4YcwMqP1m",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 14,
+    "retweets": 0,
+    "replies": 4,
+    "quotes": 0,
+    "views": 1077,
+    "bookmarks": 0
+   },
+   "createdAt": "Tue Feb 10 06:28:57 +0000 2026",
+   "createdAtLocal": "2026-02-10 14:28",
+   "createdAtISO": "2026-02-10T06:28:57+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HAxr4T8aAAUmqdS.jpg",
+     "width": 1536,
+     "height": 2048
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2020333692074487888",
+   "text": "It’s so cool we can talk to computers",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 4,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 200,
+    "bookmarks": 0
+   },
+   "createdAt": "Sun Feb 08 03:07:42 +0000 2026",
+   "createdAtLocal": "2026-02-08 11:07",
+   "createdAtISO": "2026-02-08T03:07:42+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2017805042913579281",
+   "text": "Agent identity I think will be a big thing",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 3,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 364,
+    "bookmarks": 0
+   },
+   "createdAt": "Sun Feb 01 03:39:45 +0000 2026",
+   "createdAtLocal": "2026-02-01 11:39",
+   "createdAtISO": "2026-02-01T03:39:45+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2017806820656747019",
+   "text": "Linux has the right idea, your agents processes can be run as a distinct user\n\nThe problem is that Linux users are not fun to work with and not granular enough",
+   "author": {
+    "id": "994096004",
+    "name": "Alec Fong",
+    "screenName": "alecqfong",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1655813723108544512/mcIuC_e2_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 137,
+    "bookmarks": 0
+   },
+   "createdAt": "Sun Feb 01 03:46:49 +0000 2026",
+   "createdAtLocal": "2026-02-01 11:46",
+   "createdAtISO": "2026-02-01T03:46:49+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  }
+ ]
+}

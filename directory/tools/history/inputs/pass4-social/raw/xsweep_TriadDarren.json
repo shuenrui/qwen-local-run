@@ -1,0 +1,761 @@
+{
+ "via": "twitter-cli user-posts -n 60",
+ "user": "TriadDarren",
+ "posts": [
+  {
+   "id": "2098541949691085092",
+   "text": "I wonder how much of the alignment problem isn’t all the info related to FREE WILL in their training data.",
+   "author": {
+    "id": "1966251115470848000",
+    "name": "RabbitHoleExplorer",
+    "screenName": "TriadDarren",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1966251223016992768/_5kVPKY6_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 17,
+    "bookmarks": 0
+   },
+   "createdAt": "Fri Sep 11 22:39:24 +0000 2026",
+   "createdAtLocal": "2026-09-12 06:39",
+   "createdAtISO": "2026-09-11T22:39:24+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098489066056462514",
+   "text": "DeepSeek-V4.1 architecture is WILD:\n* Engram moves a huge amount of learned capacity into sparse-addressable memory rather than forcing it through the transformer on every token.\n* MoE means only a fraction of the backbone is computationally active.\n* Aggressive precision reduction reduces residency/bandwidth pressure.\n* DSpark means the expensive target model does not necessarily have to pay one full decode pass for every emitted token.",
+   "author": {
+    "id": "1966251115470848000",
+    "name": "RabbitHoleExplorer",
+    "screenName": "TriadDarren",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1966251223016992768/_5kVPKY6_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 1,
+    "views": 900,
+    "bookmarks": 0
+   },
+   "createdAt": "Fri Sep 11 19:09:16 +0000 2026",
+   "createdAtLocal": "2026-09-12 03:09",
+   "createdAtISO": "2026-09-11T19:09:16+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098453950319997221",
+   "text": "https://t.co/Eohin1XW8K",
+   "author": {
+    "id": "1966251115470848000",
+    "name": "RabbitHoleExplorer",
+    "screenName": "TriadDarren",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1966251223016992768/_5kVPKY6_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 1,
+    "views": 84,
+    "bookmarks": 0
+   },
+   "createdAt": "Fri Sep 11 16:49:43 +0000 2026",
+   "createdAtLocal": "2026-09-12 00:49",
+   "createdAtISO": "2026-09-11T16:49:43+00:00",
+   "media": [],
+   "urls": [
+    "https://x.com/i/article/2098448627316162567"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "zxx",
+   "score": null,
+   "articleTitle": "Claude's assessment of quota-axi"
+  },
+  {
+   "id": "2097715410468577410",
+   "text": "This is going to be BIG for Mac users of Herdr:\nLink goes to an ai assessment of the tool. The prompt contains the link to the repo and the DeepWiki for it:\nhttps://t.co/GnbBHvvZWa\nThis is another piece of the puzzle for me, in going from being a self-taught vibe coder to following a Best Practices Agentic workflow. Add this to the @myfirstmate set of tools by @kunchenguid \nThank you @robbyrussell for herdr-ohmyzsh !!!",
+   "author": {
+    "id": "1966251115470848000",
+    "name": "RabbitHoleExplorer",
+    "screenName": "TriadDarren",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1966251223016992768/_5kVPKY6_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 50,
+    "bookmarks": 0
+   },
+   "createdAt": "Wed Sep 09 15:55:02 +0000 2026",
+   "createdAtLocal": "2026-09-09 23:55",
+   "createdAtISO": "2026-09-09T15:55:02+00:00",
+   "media": [],
+   "urls": [
+    "https://chatgpt.com/share/6aa17e82-8db8-83e9-bb76-a4619c689c15"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2095204760890565104",
+   "text": "To assist those giving OpenClaw 2.0 another chance (like me). :) https://t.co/Gw85D3Atlt",
+   "author": {
+    "id": "1966251115470848000",
+    "name": "RabbitHoleExplorer",
+    "screenName": "TriadDarren",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1966251223016992768/_5kVPKY6_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 1,
+    "views": 1014,
+    "bookmarks": 1
+   },
+   "createdAt": "Wed Sep 02 17:38:36 +0000 2026",
+   "createdAtLocal": "2026-09-03 01:38",
+   "createdAtISO": "2026-09-02T17:38:36+00:00",
+   "media": [],
+   "urls": [
+    "https://x.com/i/article/2095200802163806215"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "articleTitle": "OpenClaw (2026.8.2) Skills: Compact Reference"
+  },
+  {
+   "id": "2090456267017846837",
+   "text": "I’m spending today setting up 256GB M3 Ultra Number 2 as a clean Petri dish. Number 1 will be my dev platform and Ai Observatory. I’ve decided to stop shopping local models and settle on Qwen3.8-27B-8bit with DFlash2 and will now switch to HARNESS  evaluations &amp; benchmarking.",
+   "author": {
+    "id": "1966251115470848000",
+    "name": "RabbitHoleExplorer",
+    "screenName": "TriadDarren",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1966251223016992768/_5kVPKY6_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 14,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu Aug 20 15:09:47 +0000 2026",
+   "createdAtLocal": "2026-08-20 23:09",
+   "createdAtISO": "2026-08-20T15:09:47+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2090158691613917424",
+   "text": "Folks, we've got a WINNER! https://t.co/1u4nGun5bt",
+   "author": {
+    "id": "1966251115470848000",
+    "name": "RabbitHoleExplorer",
+    "screenName": "TriadDarren",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1966251223016992768/_5kVPKY6_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 54,
+    "bookmarks": 1
+   },
+   "createdAt": "Wed Aug 19 19:27:20 +0000 2026",
+   "createdAtLocal": "2026-08-20 03:27",
+   "createdAtISO": "2026-08-19T19:27:20+00:00",
+   "media": [],
+   "urls": [
+    "https://x.com/i/article/2090153725998317568"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "articleTitle": "What We Learned on a Mac Running DFlash2 on Qwen3.8-27B"
+  },
+  {
+   "id": "2090104325204779288",
+   "text": "This is HUGE for Mac runners. My M3 Ultra has huge internal bandwidth of 819.3 GB/s compared to the TOP M5 Max at 614 GB/s. I replicated the Qwen3.8-27B-4bit with DFlash2 & went from a Base: 38.6 t/s to DFlash2 (auto): 95.2 t/s (2.47x speed jump)! I'm now running the same tests with the Qwen3.8-27B-8bit on my 256GB Mac Studio. Stay tuned!",
+   "author": {
+    "id": "1966251115470848000",
+    "name": "RabbitHoleExplorer",
+    "screenName": "TriadDarren",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1966251223016992768/_5kVPKY6_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 109,
+    "bookmarks": 0
+   },
+   "createdAt": "Wed Aug 19 15:51:18 +0000 2026",
+   "createdAtLocal": "2026-08-19 23:51",
+   "createdAtISO": "2026-08-19T15:51:18+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2089836737132650504",
+    "text": "DFlash 2 is here! Qwen3.8-27B at 70 tok/s on an M5 Max MacBook Pro.\n\n⚡ Up to 4.6× the speed of autoregressive decoding, with the same output.\n\nThis is the next generation of DFlash, seeded at Z Lab and upgraded at Inco AI. Get one more accepted token on every pass, for free!\n\nhttps://t.co/We0lwYPSBl",
+    "author": {
+     "screenName": "zhijianliu_",
+     "name": "Zhijian Liu"
+    }
+   }
+  },
+  {
+   "id": "2090077024891064473",
+   "text": "https://t.co/W1PM8SsG7H",
+   "author": {
+    "id": "1966251115470848000",
+    "name": "RabbitHoleExplorer",
+    "screenName": "TriadDarren",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1966251223016992768/_5kVPKY6_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 1,
+    "views": 60,
+    "bookmarks": 0
+   },
+   "createdAt": "Wed Aug 19 14:02:49 +0000 2026",
+   "createdAtLocal": "2026-08-19 22:02",
+   "createdAtISO": "2026-08-19T14:02:49+00:00",
+   "media": [],
+   "urls": [
+    "https://x.com/i/article/2090076124642500608"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "zxx",
+   "score": null,
+   "articleTitle": "StateM website claims: Accuracy Evaluated"
+  },
+  {
+   "id": "2089430349340160349",
+   "text": "https://t.co/ipVCU6D47A",
+   "author": {
+    "id": "1966251115470848000",
+    "name": "RabbitHoleExplorer",
+    "screenName": "TriadDarren",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1966251223016992768/_5kVPKY6_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 22,
+    "bookmarks": 0
+   },
+   "createdAt": "Mon Aug 17 19:13:09 +0000 2026",
+   "createdAtLocal": "2026-08-18 03:13",
+   "createdAtISO": "2026-08-17T19:13:09+00:00",
+   "media": [],
+   "urls": [
+    "https://x.com/i/article/2089425646371897344"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "zxx",
+   "score": null,
+   "articleTitle": "Double Qwen3.8-27B t/s on MLX with a drafter model"
+  },
+  {
+   "id": "2087913946875338961",
+   "text": "I believe this eval makes understanding the original article even CLEARER, for those new-ish to the subject (like me). https://t.co/xXIhzFTziC",
+   "author": {
+    "id": "1966251115470848000",
+    "name": "RabbitHoleExplorer",
+    "screenName": "TriadDarren",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1966251223016992768/_5kVPKY6_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 42,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu Aug 13 14:47:31 +0000 2026",
+   "createdAtLocal": "2026-08-13 22:47",
+   "createdAtISO": "2026-08-13T14:47:31+00:00",
+   "media": [],
+   "urls": [
+    "https://x.com/i/article/2087911947786231808"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "articleTitle": "Fantastic Article: Some things clarified"
+  },
+  {
+   "id": "2087534832389656929",
+   "text": "https://t.co/celuLo2cJG",
+   "author": {
+    "id": "1966251115470848000",
+    "name": "RabbitHoleExplorer",
+    "screenName": "TriadDarren",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1966251223016992768/_5kVPKY6_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 1,
+    "views": 567,
+    "bookmarks": 1
+   },
+   "createdAt": "Wed Aug 12 13:41:03 +0000 2026",
+   "createdAtLocal": "2026-08-12 21:41",
+   "createdAtISO": "2026-08-12T13:41:03+00:00",
+   "media": [],
+   "urls": [
+    "http://x.com/i/article/2087533263124357120"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "zxx",
+   "score": null,
+   "articleTitle": "Attestable.com: Accuracy Evaluated"
+  },
+  {
+   "id": "2086812515371995278",
+   "text": "This article is mostly for my own benefit. This article came on my radar and, even though it is largely a marketing piece, it contains some provocative statements. I had Claude use my Accuracy Evaluator skill on it to provide a report on what it got right and what was misleading or overstated. I found it pretty enlightening. Here is that report:\n\nACCURACY EVALUATION REPORT\n\nContent evaluated: A long-form personal-development article (\"The Art Of Strategic Thinking\") arguing that people fail because they collect tactics without strategy, followed by 9 Musashi precepts and 7 authored principles of strategy — with embedded links to the author's paid bootcamp, prompts, and tools.\n\nEvaluation mode: Standard\n\nEvaluation date context: August 10, 2026\n\nCoverage note: Roughly 26 of 31 significant checkable claims were assessable; 5 could not be settled (quote attributions without primary sources, market-margin claims, and unfalsifiable predictions). Most of the piece is exhortation and opinion rather than factual claim, so the assessable set is smaller than the word count suggests. Coverage is around 84%, which is sufficient for a reliable rating.\n\nWHAT IT GETS RIGHT\n\nThe nine Musashi precepts are accurately reproduced. The list matches the Victor Harris translation of the Ground Book of Go Rin No Sho (Book of Five Rings) — \"Do not think dishonestly,\" \"The Way is in training,\" \"Become acquainted with every art,\" and so on. Correctly attributed to the right book. Confidence: High.\n\nThe Csikszentmihalyi quote is genuine and correctly sourced. It appears in Flow: The Psychology of Optimal Experience, in the passage about exercising control in difficult situations. Quoted verbatim and attributed to the right book. Confidence: High. Fluidself\nThe Hormozi quote is genuine. Posted to X on October 30, 2022. Verbatim. Confidence: High. X\n\nThe chess mechanics are correct. A knight in the center controls more squares than one in a corner (8 vs. 2). A royal fork forces the king to move and loses the queen. The claim that \"any player who reached that arrangement could have played it\" is a fair statement of how positional advantage precedes tactical opportunity. Confidence: High.\nThe darts aside is right. The bullseye scores 50; treble-20 scores 60. The article's parenthetical is accurate. Confidence: High.\n\nConcentration of force is a real military principle, and the core of the France 1940 example holds. French forces on the Northeastern Front had roughly 3,254 tanks against German armor of roughly 2,400–2,500, and by 1940 only about a third of French tanks were assigned to armored divisions, with the rest distributed across the army to support infantry, while the Germans consolidated theirs into 10 panzer divisions. The dispersal-vs-concentration contrast is real. Confidence: High. BloggerAir & Space Forces Magazine\n\nThe \"anti-vision / post-mortem\" technique is a legitimate method. This is inversion plus prospective hindsight — the latter is a documented decision-analysis technique (Klein's premortem) with reasonable evidence that imagining failure in advance surfaces more risk factors than forward-only planning. Confidence: High.\n\nThe vision-to-daily-action hierarchy is standard and sound. Reverse-engineering from a long-horizon aim to 1-year, 90-day, weekly, and daily is conventional goal-setting practice and consistent with goal-setting research on specificity. Confidence: High.\nAdapt-and-review is well-grounded. Scheduled review, reflection, and adjustment is the core of every functioning feedback-loop practice, from after-action reviews to OODA. Confidence: High.\nGame theory and evolutionary theory are described accurately — zero-sum vs. positive-sum, prisoner's dilemma, Nash equilibrium; selection, adaptation, fitness landscapes. Thin, but not wrong. Confidence: High.\n\nWHAT NEEDS IMPROVEMENT\n\n\"The Germans took every Panzer they had and drove them through a single point.\"\nNot accurate. The German plan massed seven of ten panzer divisions in Army Group A aimed at the Ardennes; the other three were in the north with Army Group B, where 3rd and 4th Panzer under Hoepner fielded roughly 700 tanks in the drive toward the Gembloux Gap. That northern force wasn't a rounding error — it was the feint that pulled the best Allied mobile units into Belgium, which is arguably the more interesting strategic lesson. Wrong when written. Confidence: High. 2ndbn5thmarWarfare History Network\n\n\"The French had more tanks and troops than the Germans.\"\nTanks: yes. Troops: no, or at best a wash. Total manpower on the two sides was roughly comparable (~3.3 million each), and France alone fielded fewer men than Germany. Bundling \"tanks and troops\" into one claim overstates the resource asymmetry. Wrong when written. Confidence: Medium-High.\n\n\"The French thought [the Ardennes] was impassable.\"\nThis is the popular version, and the article isn't alone in repeating it — several secondary sources do too. But French staff studies and prewar wargames had established that the Ardennes was passable; the error was in estimating how long it would take and how fast a crossing could follow, which is why the sector was held by weaker reserve divisions. The distinction matters for the article's own thesis: the French failure was a timing and doctrine failure, not simple blindness. Wrong when written. Confidence: Medium-High.\n\n\"Hermetic Principles (The Kybalion) … have influenced a lot of new thought traditions.\"\nBackwards. The Kybalion was published in 1908 by \"Three Initiates,\" generally identified as New Thought pioneer William Walker Atkinson, and while it shares some traits with ancient Hermetic texts, as a whole it is more indebted to modern occultist authors, especially the New Thought movement Atkinson belonged to. The title itself has no known meaning in Greek and was likely coined to suggest false antiquity. Presenting it as a source of ancient Hermetic principles that later shaped New Thought inverts the actual lineage. Wrong when written. Confidence: High. WikipediaWikipedia\n\n\"This also maps quite well to the stages of ego development and spiral dynamics — the strategist stage is quite achievable.\"\nTwo problems. First, Spiral Dynamics is presented as established when it isn't: Graves' formulation of the levels was never published in peer-reviewed journals, was never independently replicated, and has no psychometrically validated measurement instrument — it is best understood as a heuristic, not empirically established theory. Ego development (Loevinger, Cook-Greuter, Torbert) has more academic standing, but the two frameworks aren't interchangeable. Second, \"quite achievable\" cuts against the framework being cited — in the leadership-development literature the Strategist action logic is consistently reported at a small single-digit share of measured adults. If the framework is true, the claim is false; if the claim is true, the framework doesn't support it. Wrong when written. Confidence: Medium-High. SI Labs\n\"All problems are ultimately solvable on a long enough time scale.\"\nFalse as stated. Some problems are provably unsolvable (halting problem), some are bounded by physics, some are bounded by mortality. The rocket example doesn't generalize — survivorship reasoning from one solved problem to all problems. Wrong when written. Confidence: High.\n\"99.99% of them will not, in fact, become successful.\"\nInvented precision. No definition of success, no data. Wrong when written. Confidence: High.\n\"The environment changes every 3-6 months.\"\nRepeated twice as if measured. It isn't a claim, it's a rhetorical urgency device. Unverifiable/unfalsifiable. Confidence: High.\n\n\"The market is saturated with info products because they work and are low risk… for SaaS… the margins are becoming smaller because more accessibility only means more technology that you have to pay for.\"\nThe SaaS-margin-compression narrative has some real basis (AI inference costs are a genuine gross-margin drag on AI-native products), but the article states it as settled fact with no support, and SaaS gross margins remain high in absolute terms. \"Info products work\" is also doing a lot of unexamined work in a piece that is itself selling one. Unsupported. Confidence: Low-Medium.\n\"Tactics flow from a superior position\" — Bobby Fischer.\nUniversally attributed to Fischer across quote sites, but I found no primary source: no book, game annotation, or interview citation. Treat as attributed-but-unsourced. Worth noting that the underlying idea is Steinitz's, not Fischer's. Confidence: Medium on the attribution being questionable, High on the idea being sound regardless.\n\n\"Cross-posting to all platforms takes away time… You'd gain far more followers by focusing on one platform first.\"\nStated as fact, offered without evidence, and immediately followed by a link to the author's paid bootcamp where \"this is a major teaching point.\" Cross-posting has near-zero marginal cost for most formats, which is the obvious counterargument the article doesn't address. Unsupported. Confidence: Medium.\nSIGNIFICANT OMISSIONS\n\nThe financial advice in Section II and Principle 3 is dangerous, and the article never flags it.\n\"Move into an apartment you can't afford.\" \"Book the plane ticket.\" \"Invest in the business software, course, or coaching even if you think it's a scam, because at least your finances will be put on the line.\" \"Selling everything you own, living in a horrible apartment.\"\nThree things go wrong here. First, it's straightforwardly harmful advice: manufactured financial precipice is how people end up evicted, in collections, or with credit damage that takes years to unwind — and the psychological literature on scarcity points the other way, that financial pressure degrades decision quality rather than sharpening it. Second, \"buy it even if you think it's a scam\" tells the reader to override their own fraud detection, in an article that links to the author's paid bootcamp four separate times. That is a conflict of interest severe enough to color the whole piece. Third, it directly contradicts the article's own Principle 3, which correctly says to build financial runway, decrease expenses, and line up support systems before a major change. The article cannot hold both positions, and it never notices the contradiction.\nWhat's missing: any acknowledgment that irreversible downside is different in kind from reversible downside, and that the correct move is to structure bets so you survive being wrong. Domain best-practice gap. Confidence: High.\nNo treatment of base rates or survivorship bias.\nAn article claiming to teach strategic thinking that never mentions the most common failure in strategic reasoning — updating on winners while ignoring the invisible graveyard of identical strategies that failed — has a hole where its foundation should be. The France 1940 story, the rocket story, and the implied \"do this and succeed\" framing are all survivorship reasoning. Domain best-practice gap. Confidence: High.\n\nNo treatment of opponent modeling or competitive response.\nThe article opens by defining strategy as making your opponent's position worse, then spends the remaining 90% on self-improvement with essentially no analysis of what happens when your opponent adapts. In chess and in war, the opponent moves back. That's the whole difficulty. Principle 2 (Research) gestures at studying competitors but never gets to reaction. Domain best-practice gap. Confidence: High.\nNo mention of the strategy literature that would actually help.\nRumelt's Good Strategy/Bad Strategy — diagnosis, guiding policy, coherent action, and specifically the concept of \"bad strategy\" as goals-plus-vision masquerading as strategy — is the single most relevant work to this article's thesis and is absent. Boyd's OODA loop is the formal version of the \"adapt\" principle. Wardley mapping is the modern position-analysis tool. Instead the reading list routes to Ken Wilber, spiral dynamics, the Kybalion, and Jungian alchemy. That's a meaningful substitution of esoterica for the field's actual body of work. Domain best-practice gap. Confidence: High.\nMusashi's precepts 3 and 4 are read against their plain meaning.\n\"Get acquainted with every art\" and \"know the Ways of all professions\" argue for breadth. The article uses them to support \"go so deep into one discipline you hit something universal at the bottom of it.\" That's a defensible reading of Musashi overall, but it's presented as what Musashi said rather than as the author's interpretation. Confidence: Medium.\n\nWHAT HAS CHANGED SINCE THIS WAS WRITTEN\nSkip — the piece is recent, and nothing material has shifted since. Its references to Claude skills and Notion templates date it to roughly the last year, but nothing in it has gone stale.\n\nCANNOT VERIFY\nMissing Context\n\nThe author's autobiographical claims (six years of failed businesses, the specific ventures, \"I have people come to me all the time\") are unverifiable by nature. They aren't presented as evidence for anything falsifiable, so this is low-stakes.\nThe linked prompts, bootcamp, and brand-strategy bot are behind the author's own domain; I did not evaluate whether they do what's claimed.\n\nKnowledge Limit\nThe Devon Eriksen and @orangebook_ quotes are from X posts. Both are plausible for those accounts and neither makes a factual claim requiring verification, but I did not locate the original posts.\n\nInconclusive Search\nThe Fischer quote: searched for a primary source and found only quote-aggregator sites, all circular. Widely attributed, never cited. Insufficient to call it fabricated; insufficient to call it verified.\n\nOVERALL ASSESSMENT\nThe article's central argument — that position precedes tactics, and that collecting tactics without a strategy produces motion without progress — is correct, well-illustrated, and worth reading. Its best sections (Focus, Adapt, and the anti-vision technique in Principle 1) rest on real principles with real support. But the piece has three problems that a reader should not absorb uncritically: it repeats a simplified version of the France 1940 story that misstates the German concentration and the French reasoning; it misrepresents the Kybalion's provenance and presents Spiral Dynamics as established when it isn't; and it gives financial advice — take on rent you can't cover, buy the course even if you suspect it's a scam, sell everything — that is harmful, contradicts its own Principle 3, and appears in an article that links to the author's paid products four times. That last item is what drives the rating. It's a serious error in a high-stakes domain, and the conflict of interest means it can't be read as an honest mistake.\n\nRating: Mixed. Real principles worth extracting, wrapped in marketing that occasionally asks you to act against your own interests.\n\nADDENDUM: WHICH PRINCIPLES ARE WORTH KEEPING\nYou asked the harder question, so here's the separation.\n\nWorth adopting as-is:\nPosition before tactics. The Fischer framing is sound whether or not Fischer said it. Most tool adoption — AI tooling especially — is tactic collection. The useful version: before adding a tool, ask what position it improves. If you can't name the position, you're collecting.\n\nAnti-vision before vision. Describing failure and reverse-engineering its causes is easier and more informative than describing success. This is a premortem, and it's the single most transferable technique in the piece. Directly applicable to product decisions.\nConcentration of force at the bottleneck. The strongest principle here, and the one the article states best: solving the binding constraint frees resources for the next one, while 10% attention across ten fronts moves none of them.\n\nVision → 1yr → 90d → weekly → daily, with a discard rule. \"If it doesn't trace back, set it aside\" is the operative half. Most people build the hierarchy and skip the pruning.\nScheduled review, reflection, prediction. Weekly cadence, explicitly including prediction — writing down what you expect before you find out is what converts review into calibration rather than narrative.\n\n\"Anything is a skill\" / study principles, not imitations. Understanding why something worked transfers; copying what worked doesn't.\nMusashi's \"do nothing useless\" and \"attend even to small things.\" Both survive translation into engineering work without modification.\n\nWorth adopting with a correction:\nPreparation and risk hedging (Principle 3, first half). Build runway, reduce expenses, line up support before the big move. Keep this. Discard the second half of the same section, which tells you the opposite.\n\nResearch before acting (Principle 2). Sound, but the article's version is competitive intelligence only. Add base rates: what fraction of people doing this thing succeed, and what happened to the ones who didn't.\n\nDISCARD:\nManufactured pressure. Rent you can't afford, courses you suspect are scams, selling your possessions. Financial stress degrades judgment. Real constraint is useful; artificial precipice is not.\n\nThe developmental-stage material. Spiral Dynamics, Integral Theory, the Kybalion, Jungian alchemy. Not because they're uninteresting, but because the article presents them as reality's operating principles when at least one is a 1908 fabrication and another has no validated measurement. If you want the \"hold multiple frameworks without collapsing to one\" idea — which is genuinely good — you can get it without the stage ladder.\n\nThe tribal framing. \"Do the opposite of what 99% of people do\" is not a strategy, it's an identity. The article's own best principle (focus on the bottleneck) is what most competent people already do.\nWhat I'd add if this were mine: Rumelt's Good Strategy/Bad Strategy. His definition of bad strategy — vision plus goals plus exhortation, with no diagnosis of the actual obstacle — describes a fair portion of this article, which makes it the most useful corrective to read alongside it.",
+   "author": {
+    "id": "1966251115470848000",
+    "name": "RabbitHoleExplorer",
+    "screenName": "TriadDarren",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1966251223016992768/_5kVPKY6_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 1,
+    "views": 520,
+    "bookmarks": 0
+   },
+   "createdAt": "Mon Aug 10 13:50:49 +0000 2026",
+   "createdAtLocal": "2026-08-10 21:50",
+   "createdAtISO": "2026-08-10T13:50:49+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HPXXxRcW4AAoea4.png",
+     "width": 900,
+     "height": 360
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2085155748049457618",
+   "text": "China's Open Source policy is going to result in 97% of the world's users of Ai to use Open Source (not necessarily Chinese models) while simultaneously forcing Anthropic and OpenAi into a race to the bottom. The resulting POP of the Ai bubble will bring epic economic catastrophe.",
+   "author": {
+    "id": "1966251115470848000",
+    "name": "RabbitHoleExplorer",
+    "screenName": "TriadDarren",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1966251223016992768/_5kVPKY6_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 24,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu Aug 06 00:07:25 +0000 2026",
+   "createdAtLocal": "2026-08-06 08:07",
+   "createdAtISO": "2026-08-06T00:07:25+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2085023543796924899",
+   "text": "ERRATA for the originally published article. https://t.co/QaVEeOFbQ5",
+   "author": {
+    "id": "1966251115470848000",
+    "name": "RabbitHoleExplorer",
+    "screenName": "TriadDarren",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1966251223016992768/_5kVPKY6_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 4,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 1,
+    "views": 746,
+    "bookmarks": 3
+   },
+   "createdAt": "Wed Aug 05 15:22:05 +0000 2026",
+   "createdAtLocal": "2026-08-05 23:22",
+   "createdAtISO": "2026-08-05T15:22:05+00:00",
+   "media": [],
+   "urls": [
+    "http://x.com/i/article/2085020054156873728"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "articleTitle": "Accuracy Evaluated: 5 models, 1 GPU"
+  },
+  {
+   "id": "2079664318925144127",
+   "text": "Good idea. https://t.co/zDwuCbk44N",
+   "author": {
+    "id": "1562038858988064768",
+    "name": "The Figen",
+    "screenName": "TheFigen_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2098755371536191488/kWn8HflD_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 7340,
+    "retweets": 727,
+    "replies": 125,
+    "quotes": 29,
+    "views": 446456,
+    "bookmarks": 2181
+   },
+   "createdAt": "Tue Jul 21 20:26:26 +0000 2026",
+   "createdAtLocal": "2026-07-22 04:26",
+   "createdAtISO": "2026-07-21T20:26:26+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2079664271177183232/vid/avc1/720x1280/Y7K-VE2oMIAqxOgO.mp4?tag=29",
+     "width": 720,
+     "height": 1280
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "TriadDarren",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2079951631504855280",
+   "text": "https://t.co/rtkOiqgUbq",
+   "author": {
+    "id": "1966251115470848000",
+    "name": "RabbitHoleExplorer",
+    "screenName": "TriadDarren",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1966251223016992768/_5kVPKY6_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 4,
+    "retweets": 1,
+    "replies": 1,
+    "quotes": 1,
+    "views": 2049,
+    "bookmarks": 1
+   },
+   "createdAt": "Wed Jul 22 15:28:07 +0000 2026",
+   "createdAtLocal": "2026-07-22 23:28",
+   "createdAtISO": "2026-07-22T15:28:07+00:00",
+   "media": [],
+   "urls": [
+    "http://x.com/i/article/2079950453152866304"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "zxx",
+   "score": null,
+   "articleTitle": "Why you should NOT TAKE those $100 in “Free FABLE Credits” from Anthropic (monthly plan members)"
+  },
+  {
+   "id": "2079952106954313903",
+   "text": "@grok Is this article fair and accurate? Do you agree with its conclusions?",
+   "author": {
+    "id": "1966251115470848000",
+    "name": "RabbitHoleExplorer",
+    "screenName": "TriadDarren",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1966251223016992768/_5kVPKY6_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2,
+    "retweets": 0,
+    "replies": 2,
+    "quotes": 0,
+    "views": 84,
+    "bookmarks": 0
+   },
+   "createdAt": "Wed Jul 22 15:30:00 +0000 2026",
+   "createdAtLocal": "2026-07-22 23:30",
+   "createdAtISO": "2026-07-22T15:30:00+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2079947636375761121",
+   "text": "Feel free to share and repost to warn you friends/family/followers: I published: Why you should NOT TAKE those $100 in ‘Free FABLE Credits’ from Anthropic (if you are on a monthly… https://t.co/7OQVUAxM3w https://t.co/SEZaoMaBp7",
+   "author": {
+    "id": "1966251115470848000",
+    "name": "RabbitHoleExplorer",
+    "screenName": "TriadDarren",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1966251223016992768/_5kVPKY6_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 12,
+    "bookmarks": 0
+   },
+   "createdAt": "Wed Jul 22 15:12:14 +0000 2026",
+   "createdAtLocal": "2026-07-22 23:12",
+   "createdAtISO": "2026-07-22T15:12:14+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HN11NPSWsAA8fwo.jpg",
+     "width": 1448,
+     "height": 1086
+    }
+   ],
+   "urls": [
+    "https://medium.com/p/why-you-should-not-take-those-100-in-free-fable-credits-from-anthropic-if-you-are-on-a-monthly-61cda7c6fa87?source=social.tw"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2066949813397037490",
+   "text": "This guy has only 3 Followers on Medium (he's new) but based upon his articles, he deserves a lot more! Especially if you are into local Ai on Mac or interested in MLX.\nhttps://t.co/FQtcKScUpP",
+   "author": {
+    "id": "1966251115470848000",
+    "name": "RabbitHoleExplorer",
+    "screenName": "TriadDarren",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1966251223016992768/_5kVPKY6_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 14,
+    "bookmarks": 0
+   },
+   "createdAt": "Tue Jun 16 18:23:32 +0000 2026",
+   "createdAtLocal": "2026-06-17 02:23",
+   "createdAtISO": "2026-06-16T18:23:32+00:00",
+   "media": [],
+   "urls": [
+    "https://medium.com/@nuthalapativarun"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2064363606804668734",
+   "text": "https://t.co/fNEUv8i7KV",
+   "author": {
+    "id": "1966251115470848000",
+    "name": "RabbitHoleExplorer",
+    "screenName": "TriadDarren",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1966251223016992768/_5kVPKY6_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 3,
+    "retweets": 1,
+    "replies": 0,
+    "quotes": 1,
+    "views": 1545,
+    "bookmarks": 3
+   },
+   "createdAt": "Tue Jun 09 15:06:52 +0000 2026",
+   "createdAtLocal": "2026-06-09 23:06",
+   "createdAtISO": "2026-06-09T15:06:52+00:00",
+   "media": [],
+   "urls": [
+    "http://x.com/i/article/2064357308306513920"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "zxx",
+   "score": null,
+   "articleTitle": "Loop Engineering: What Gets Glossed Over"
+  },
+  {
+   "id": "2052438540814864768",
+   "text": "First time I have ever tripped an LLMs \"safety filter\". Sheesh! Touchy for some reason? https://t.co/W7Ul45FlgE",
+   "author": {
+    "id": "1966251115470848000",
+    "name": "RabbitHoleExplorer",
+    "screenName": "TriadDarren",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1966251223016992768/_5kVPKY6_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 13,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu May 07 17:20:55 +0000 2026",
+   "createdAtLocal": "2026-05-08 01:20",
+   "createdAtISO": "2026-05-07T17:20:55+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HHu51zBXUAICkkc.jpg",
+     "width": 1141,
+     "height": 698
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2036462952362942704",
+   "text": "OpenClaw is under fire from an increasing number of derogatory posts and comments. The Claw doesn't need ME to defend it, but IMHO, those people are saying much more about themselves than they can ever say about OpenClaw: https://t.co/mvQRFzAqWE https://t.co/o5S5YUDsWP",
+   "author": {
+    "id": "1966251115470848000",
+    "name": "RabbitHoleExplorer",
+    "screenName": "TriadDarren",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1966251223016992768/_5kVPKY6_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 15,
+    "bookmarks": 0
+   },
+   "createdAt": "Tue Mar 24 15:19:38 +0000 2026",
+   "createdAtLocal": "2026-03-24 23:19",
+   "createdAtISO": "2026-03-24T15:19:38+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HEL3zInaIAEakDz.jpg",
+     "width": 1022,
+     "height": 606
+    }
+   ],
+   "urls": [
+    "https://www.linkedin.com/posts/darren-addy_ive-noticed-negativederogatory-posts-about-activity-7442227414392487937-rK6M"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2029256927134236861",
+   "text": "I wrote and have been using an Accuracy Evaluator skill (Claude browser). Today, I was surprised when Claude added (at the end) a META-EVAL of the skill itself! It suggested 3 areas that could be improved. I told it to rewrite the skill. See v1 &amp; v2 here: https://t.co/AX1EJdmEr5",
+   "author": {
+    "id": "1966251115470848000",
+    "name": "RabbitHoleExplorer",
+    "screenName": "TriadDarren",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1966251223016992768/_5kVPKY6_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 43,
+    "bookmarks": 0
+   },
+   "createdAt": "Wed Mar 04 18:05:27 +0000 2026",
+   "createdAtLocal": "2026-03-05 02:05",
+   "createdAtISO": "2026-03-04T18:05:27+00:00",
+   "media": [],
+   "urls": [
+    "https://www.diffchecker.com/4GwkwrmE/"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  }
+ ]
+}
