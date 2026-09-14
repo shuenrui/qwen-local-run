@@ -24,7 +24,8 @@
      model index. Warm in both themes so dark mode stays paper-and-ink, not blue. */
   --band:#15171a; --band-fg:#fbfaf8; --band-ink:#b9b5ae;
 
-  --font-ui:ui-sans-serif,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --font-ui:"Avenir Next",Avenir,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --font-body:"Iowan Old Style",Baskerville,"Times New Roman",Times,serif;
   --font-mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,"Cascadia Mono",Consolas,monospace;
   --maxw:1440px; --rail-w:208px;
   color-scheme:light;
@@ -39,7 +40,7 @@
     --est:#e0b45c; --est-bg:#2a2216; --est-line:#5c4a25;
     --warn:#f0a068;--warn-bg:#2c1d14;--warn-line:#5e3c25;
     --bad:#ff8b80; --bad-bg:#2d1715; --bad-line:#63302c;
-    --band:#211e18; --band-fg:#efe9e0; --band-ink:#b3aca2;
+    --band:#efe9df; --band-fg:#211e18; --band-ink:#665f56;
     color-scheme:dark;
   }
 }
@@ -52,7 +53,7 @@
   --est:#e0b45c; --est-bg:#2a2216; --est-line:#5c4a25;
   --warn:#f0a068;--warn-bg:#2c1d14;--warn-line:#5e3c25;
   --bad:#ff8b80; --bad-bg:#2d1715; --bad-line:#63302c;
-  --band:#211e18; --band-fg:#efe9e0; --band-ink:#b3aca2;
+  --band:#efe9df; --band-fg:#211e18; --band-ink:#665f56;
   color-scheme:dark;
 }
 
@@ -61,7 +62,7 @@
 html{-webkit-text-size-adjust:100%}
 body{
   margin:0; background:var(--paper); color:var(--ink);
-  font:400 14px/1.5 var(--font-ui);
+  font:400 14px/1.5 var(--font-body);
   font-variant-numeric:tabular-nums;
   overflow-x:hidden;
 }
@@ -342,7 +343,7 @@ button{font:inherit;color:inherit}
   font:450 10px/1.5 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);
 }
 .toc-intro{
-  flex:1 1 12ch;min-width:0;font:400 12px/1.5 var(--font-ui);color:var(--ink-3);
+  flex:1 1 12ch;min-width:0;font:400 12px/1.5 var(--font-body);color:var(--ink-3);
   white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
 }
 .toc-fig{
@@ -456,7 +457,7 @@ button{font:inherit;color:inherit}
 .mh-mast-row .mf-n{font:450 11px/1.5 var(--font-mono);letter-spacing:.14em;color:var(--ink-3);font-variant-numeric:tabular-nums}
 .mh-mast-row h1{font:700 16px/1.3 var(--font-ui);letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}
 .mh-mast-sep{color:var(--ink-4)}
-.mh-mast-guide{font:400 13px/1.4 var(--font-ui);color:var(--ink-2)}
+.mh-mast-guide{font:400 13px/1.4 var(--font-body);color:var(--ink-2)}
 .mh-mast-stat{margin-left:auto;font:450 10.5px/1.4 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);white-space:nowrap}
 /* True 50/50: the sticky evidence panel and the series index share the frame. */
 .model-master.mh-split{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;margin-top:14px;align-items:start}
