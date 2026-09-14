@@ -20,6 +20,9 @@
   --est:#7a5a12; --est-bg:#f8f1df; --est-line:#dfc78d;
   --warn:#8a4b12;--warn-bg:#faefe4;--warn-line:#e2bc95;
   --bad:#a32820; --bad-bg:#fcecea; --bad-line:#eeb4ad;
+  /* Chapter band: a printed black association band behind each series in the
+     model index. Warm in both themes so dark mode stays paper-and-ink, not blue. */
+  --band:#15171a; --band-fg:#fbfaf8; --band-ink:#b9b5ae;
 
   --font-ui:ui-sans-serif,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   --font-mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,"Cascadia Mono",Consolas,monospace;
@@ -36,6 +39,7 @@
     --est:#e0b45c; --est-bg:#2a2216; --est-line:#5c4a25;
     --warn:#f0a068;--warn-bg:#2c1d14;--warn-line:#5e3c25;
     --bad:#ff8b80; --bad-bg:#2d1715; --bad-line:#63302c;
+    --band:#211e18; --band-fg:#efe9e0; --band-ink:#b3aca2;
     color-scheme:dark;
   }
 }
@@ -48,6 +52,7 @@
   --est:#e0b45c; --est-bg:#2a2216; --est-line:#5c4a25;
   --warn:#f0a068;--warn-bg:#2c1d14;--warn-line:#5e3c25;
   --bad:#ff8b80; --bad-bg:#2d1715; --bad-line:#63302c;
+  --band:#211e18; --band-fg:#efe9e0; --band-ink:#b3aca2;
   color-scheme:dark;
 }
 
@@ -293,58 +298,60 @@ button{font:inherit;color:inherit}
 /* ---------- the contents page ---------- */
 .toc{margin-top:4px}
 .toc-sec{
-  display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.5fr);gap:0 48px;
-  padding:26px 0 8px;border-top:1px solid var(--rule-2);
+  display:block;padding:0 0 4px;border-top:1px solid var(--rule-2);
 }
 .toc-sec:first-child{border-top:0}
-.toc-chapter{display:grid;grid-template-columns:auto 1fr;gap:0 18px;align-content:start;position:sticky;top:96px}
-.toc-cn{
-  font:450 11px/1.5 var(--font-mono);letter-spacing:.14em;color:var(--ink-3);
-  font-variant-numeric:tabular-nums;
+/* Each series is a dark association band that sticks to the top of the index. */
+.toc-chapter{
+  display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+  position:sticky;top:86px;z-index:2;
+  background:var(--band);color:var(--band-fg);
+  padding:7px 12px;
 }
 .toc-chapter h2{
-  font:700 20px/1.15 var(--font-ui);letter-spacing:.02em;text-transform:uppercase;
+  font:700 13px/1.3 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--band-fg);
 }
 .toc-cmeta{
-  grid-column:2;margin-top:7px;
-  font:450 10.5px/1.7 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);
+  font:450 10px/1.4 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--band-ink);white-space:nowrap;
 }
 .toc-items{border-top:1px solid var(--rule-2)}
-.toc-items>li{border-bottom:1px solid var(--rule-2)}
+.toc-items>li{border-bottom:1px solid var(--rule)}
 .toc-item{
-  display:grid;grid-template-columns:auto auto minmax(0,1fr) auto;gap:0 12px;
-  align-items:baseline;padding:11px 2px;text-decoration:none;color:var(--ink);
+  display:grid;grid-template-columns:auto auto minmax(0,1fr) auto;gap:0 10px;
+  align-items:baseline;padding:6px 12px;text-decoration:none;color:var(--ink);
 }
 .toc-item:hover{background:rgb(0 0 0 / .035)}
 :root[data-theme="dark"] .toc-item:hover{background:rgb(255 255 255 / .05)}
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .toc-item:hover{background:rgb(255 255 255 / .05)}}
 .toc-n{
-  font:450 11px/1.6 var(--font-mono);letter-spacing:.12em;color:var(--ink-3);
+  font:450 11px/1.7 var(--font-mono);letter-spacing:.08em;color:var(--ink-4);
   font-variant-numeric:tabular-nums;
 }
-.toc-sep{font:450 11px/1.6 var(--font-mono);color:var(--ink-4)}
+.toc-sep{font:450 11px/1.7 var(--font-mono);color:var(--ink-4)}
 .toc-main{min-width:0}
 .toc-name{
-  display:block;font:600 12.5px/1.4 var(--font-mono);letter-spacing:.09em;text-transform:uppercase;
-  color:var(--ink);
+  display:block;font:600 12.5px/1.45 var(--font-mono);letter-spacing:.07em;text-transform:uppercase;
+  color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
 }
 .toc-item:hover .toc-name{text-decoration:underline;text-underline-offset:3px}
+/* Line two: concise inline metadata keeps its full recorded extent; the summary
+   takes the remaining space and clamps to one line, never a multi-line block. */
+.toc-sub{display:flex;align-items:baseline;gap:8px;min-width:0;margin-top:1px;flex-wrap:wrap}
 .toc-meta{
-  display:block;margin-top:3px;
-  font:450 10.5px/1.5 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);
+  flex:0 1 auto;min-width:0;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  font:450 10px/1.5 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--ink-3);
 }
 .toc-intro{
-  display:block;margin-top:5px;max-width:62ch;
-  font:400 12.5px/1.5 var(--font-ui);color:var(--ink-2);
+  flex:1 1 12ch;min-width:0;font:400 12px/1.5 var(--font-ui);color:var(--ink-3);
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
 }
 .toc-fig{
-  text-align:right;white-space:nowrap;
-  font-variant-numeric:tabular-nums;
+  text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums;align-self:center;
 }
-.toc-fig b{display:block;font:600 14px/1.2 var(--font-mono);color:var(--ink)}
+.toc-fig b{display:block;font:600 13px/1.15 var(--font-mono);color:var(--ink-2)}
 .toc-fig small{
   display:block;margin-top:1px;
-  font:450 9px/1.2 var(--font-mono);letter-spacing:.12em;text-transform:uppercase;color:var(--ink-4);
+  font:450 8.5px/1.2 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-4);
 }
 .toc-foot{
   display:flex;justify-content:space-between;gap:16px;margin-top:26px;padding-top:12px;
@@ -354,23 +361,26 @@ button{font:inherit;color:inherit}
 .mf-lede-2{margin-top:10px;color:var(--ink-3)!important;font-size:12.5px!important}
 
 @media (max-width:1179px){
-  .toc-sec{grid-template-columns:minmax(0,1fr);gap:14px}
-  .toc-chapter{position:static;grid-template-columns:auto 1fr}
+  .toc-chapter{position:static}
 }
 @media (max-width:719px){
-  .toc-sec{padding:18px 0 4px}
-  .toc-chapter h2{font-size:17px}
-  .toc-item{grid-template-columns:auto auto minmax(0,1fr);gap:0 8px;padding:12px 2px;min-height:44px}
-  .toc-fig{grid-column:3;text-align:left;margin-top:6px;display:flex;gap:5px;align-items:baseline}
+  .toc-sec{padding:0 0 6px}
+  .toc-chapter{padding:8px 12px}
+  .toc-chapter h2{font-size:12px}
+  .toc-item{grid-template-columns:auto auto minmax(0,1fr);gap:0 8px;padding:10px 12px;min-height:44px}
+  .toc-fig{grid-column:3;text-align:left;margin-top:5px;display:flex;gap:5px;align-items:baseline}
   .toc-fig b{font-size:12px}
   .toc-fig small{margin-top:0}
-  .toc-name{font-size:11.5px;letter-spacing:.06em}
-  .toc-meta{font-size:9.5px;letter-spacing:.05em}
-  .toc-intro{font-size:12px}
+  .toc-name{font-size:11.5px;letter-spacing:.05em}
+  /* Narrow screens: metadata and the clamped summary each take their own line so
+     the row stays readable and never overflows. */
+  .toc-sub{display:block}
+  .toc-meta{display:block;font-size:9.5px;letter-spacing:.04em}
+  .toc-intro{display:block;font-size:11.5px;margin-top:1px}
   .toc-foot{flex-direction:column;gap:4px;font-size:9px}
 }
 
-.models-home{padding:22px 0 44px}
+.models-home{padding:22px 0 20px}
 .models-intro{display:flex;align-items:end;gap:20px;border-bottom:2px solid var(--rule-3);padding-bottom:13px}
 .models-intro h1{font:640 28px/1.1 var(--font-ui);letter-spacing:-.02em;white-space:nowrap}
 .models-intro p{max-width:72ch;color:var(--ink-2);line-height:1.5}
@@ -440,27 +450,44 @@ button{font:inherit;color:inherit}
 .model-page-baseline .model-preview-actions a:first-child{display:none}
 
 /* ---------- two-panel model navigator (#/) ---------- */
-.mh-mast .mf-title{margin-top:20px}
-.mh-mast .mf-lede{margin-top:10px;max-width:68ch;color:var(--ink-2);font:400 13px/1.55 var(--font-ui)}
-.model-master.mh-split{grid-template-columns:minmax(360px,420px) minmax(0,1fr);gap:32px;margin-top:14px;align-items:start}
+/* The homepage masthead collapses into one compact printed band. */
+.mh-mast{padding:10px 34px}
+.mh-mast-row{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap}
+.mh-mast-row .mf-n{font:450 11px/1.5 var(--font-mono);letter-spacing:.14em;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.mh-mast-row h1{font:700 16px/1.3 var(--font-ui);letter-spacing:.04em;text-transform:uppercase;color:var(--ink)}
+.mh-mast-sep{color:var(--ink-4)}
+.mh-mast-guide{font:400 13px/1.4 var(--font-ui);color:var(--ink-2)}
+.mh-mast-stat{margin-left:auto;font:450 10.5px/1.4 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);white-space:nowrap}
+/* True 50/50: the sticky evidence panel and the series index share the frame. */
+.model-master.mh-split{grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:28px;margin-top:14px;align-items:start}
 .mh-panel{min-width:0}
-.mh-index{min-width:0}
-.mh-index-head{display:flex;align-items:baseline;justify-content:space-between;gap:12px;
-  border-bottom:2px solid var(--rule-3);padding-bottom:8px}
+.mh-panel .model-preview{max-height:calc(100vh - 240px);min-height:420px}
+.mh-index{min-width:0;position:sticky;top:86px;max-height:calc(100vh - 240px);min-height:420px;display:flex;flex-direction:column}
+.mh-index-head{flex:none;display:flex;align-items:baseline;justify-content:space-between;gap:12px;
+  border-bottom:2px solid var(--rule-3);padding-bottom:7px}
 .mh-index-meta{color:var(--ink-3);font-size:12px;font-variant-numeric:tabular-nums;white-space:nowrap}
-.mh-index .toc{margin-top:0}
+.mh-index .toc{margin-top:0;min-height:0;flex:1 1 auto;overflow:auto;scrollbar-gutter:stable}
 .mh-index .toc-sec:first-child{border-top:0}
+.mh-index .toc-chapter{top:0}
+.mh-index .toc-foot{flex:none}
 .toc-item{position:relative}
 .toc-item.is-sel{background:var(--sel-bg)}
 .toc-item.is-sel .toc-name,.toc-item.is-sel .toc-n,.toc-item.is-sel .toc-fig b{color:var(--sel)}
 .toc-item.is-sel::before{content:"";position:absolute;left:0;top:0;bottom:0;width:2px;background:var(--sel)}
 @media (max-width:1179px){
   .model-master.mh-split{grid-template-columns:minmax(0,1fr);gap:24px}
-  .mh-panel .model-preview{position:static;max-height:none;margin-top:0}
+  .mh-panel .model-preview{position:static;max-height:none;min-height:0;margin-top:0}
+  .mh-index{position:static;max-height:none;min-height:0;display:block}
+  .mh-index .toc{overflow:visible}
+  .mh-mast{padding:10px 20px}
 }
 @media (max-width:719px){
   .mh-panel{display:none}
   .model-master.mh-split{gap:0}
+  .mh-mast{padding:10px 14px}
+  .mh-mast-row{gap:8px}
+  .mh-mast-row h1{font-size:15px}
+  .mh-mast-guide,.mh-mast-stat{flex-basis:100%;margin-left:0}
 }
 
 /* ---------- rows (desktop table) ---------- */
@@ -840,6 +867,13 @@ function hwLabel(id, count) {
 }
 function hwLabels(s) {
   return ((s && s.hwRefs) || []).map(function (r) { return hwLabel(r.id, r.count); });
+}
+/* Count-aware hardware identity: 1x and 2x of a class are different machines,
+   so they must never be treated as the same hardware for comparability. */
+function hwKey(s) {
+  return ((s && s.hwRefs) || []).map(function (r) {
+    return r.id + (r.count > 1 ? "*" + r.count : "");
+  }).sort().join(",");
 }
 function hwFirstLabel(s) {
   var r = ((s && s.hwRefs) || [])[0];
@@ -1369,7 +1403,7 @@ function detailBody(s, opts) {
    different speeds with no explanation. */
 var SIBLINGS = {};
 function siblingKey(s) {
-  return (s.variation || {}).checkpoint + "|" + (s.engine || {}).id + "|" + (s.hardware || []).join(",");
+  return (s.variation || {}).checkpoint + "|" + (s.engine || {}).id + "|" + hwKey(s);
 }
 function markSiblings(list) {
   var seen = {};
@@ -1904,21 +1938,26 @@ function mfHero(list, verified) {
     '</header>';
 }
 function pad2(n) { return (n < 10 ? "0" : "") + n; }
-/* The editorial masthead: eyebrow, page title, and the one-line job. The numbered
-   series index that the reference put in the hero now lives in the right column,
-   grouped by model series, so the masthead carries the voice, not the index. */
+/* The editorial masthead, collapsed to one compact single-line row: the contents
+   numeral, the page title, the "what you want to run" guidance and the baseline
+   tally share one band. No eyebrow kicker above the heading and no multi-line
+   lede; the fuller guidance lives in the mast-sub line under the tabs. */
 function mhMast(verified) {
   return '<header class="mf-hero mh-mast">' +
-    '<div class="mf-eyebrow"><span>00.0</span><span>Models</span>' +
-      '<span class="mf-eyebrow-end">' + esc(verified + " / " + D.model_order.length + " with a curated baseline") + '</span></div>' +
-    '<div class="mf-title"><span class="mf-n">01</span><h1>Choose a Qwen model</h1></div>' +
-    '<p class="mf-lede">' + esc("Start with what you want to run. Each model's practical minimum is tied to one reported or measured recipe, and its speed is shown only when that same setup was measured. Every recipe stays at #/recipes.") + '</p>' +
+    '<div class="mh-mast-row">' +
+      '<span class="mf-n">01</span>' +
+      '<h1>Choose a Qwen model</h1>' +
+      '<span class="mh-mast-sep" aria-hidden="true">\u2014</span>' +
+      '<span class="mh-mast-guide">' + esc("start with what you want to run") + '</span>' +
+      '<span class="mh-mast-stat">' + esc(verified + " / " + D.model_order.length + " with a curated baseline") + '</span>' +
+    '</div>' +
     '</header>';
 }
 
 /* The right column: an editorial printed contents grouped by Qwen series, newest
-   first. Each series is a [data-toc-series] chapter; entries keep
-   [data-model-select] and carry data-toc-selected on the active one. */
+   first. Each series is a [data-toc-series] chapter rendered as a dark association
+   band; its entries are numbered sequentially (01, 02, 03...) beside the exact
+   model names and keep [data-model-select] + data-toc-selected on the active one. */
 function seriesSections(list, sel) {
   var gens = [];
   list.forEach(function (m) {
@@ -1928,16 +1967,16 @@ function seriesSections(list, sel) {
     row.models.push(m);
   });
   gens.sort(function (a, b) { return parseFloat(b.g) - parseFloat(a.g); });
-  return gens.map(function (sec, si) {
-    var n = pad2(si + 1);
+  return gens.map(function (sec) {
     var recipes = sec.models.reduce(function (acc, m) { return acc + modelRecipes(m.id).length; }, 0);
-    return '<li class="toc-sec" data-toc-series="' + esc(sec.g) + '"><div class="toc-chapter">' +
-      '<span class="toc-cn">' + esc(n) + '</span>' +
-      '<h2>' + esc("Qwen " + sec.g) + '</h2>' +
-      '<p class="toc-cmeta">' + esc(sec.models.length + (sec.models.length === 1 ? " model" : " models")) +
-      '<br>' + esc(recipes + (recipes === 1 ? " recipe" : " recipes")) + '</p></div>' +
+    return '<li class="toc-sec" data-toc-series="' + esc(sec.g) + '">' +
+      '<div class="toc-chapter">' +
+        '<h2>' + esc("Qwen " + sec.g) + '</h2>' +
+        '<span class="toc-cmeta">' + esc(sec.models.length + (sec.models.length === 1 ? " model" : " models") +
+          " \u00b7 " + recipes + (recipes === 1 ? " recipe" : " recipes")) + '</span>' +
+      '</div>' +
       '<ol class="toc-items">' + sec.models.map(function (m, mi) {
-        return tocItem(m, n + "." + (mi + 1), m.id === sel);
+        return tocItem(m, pad2(mi + 1), m.id === sel);
       }).join("") + '</ol></li>';
   }).join("");
 }
@@ -2022,8 +2061,8 @@ function tocItem(m, num, on) {
     (on ? ' data-toc-selected="true" aria-current="true"' : "") + '>' +
     '<span class="toc-n">' + esc(num) + '</span><span class="toc-sep" aria-hidden="true">/</span>' +
     '<span class="toc-main"><span class="toc-name">' + esc(m.name) + '</span>' +
-    '<span class="toc-meta">' + esc(bits.join(" \u00b7 ")) + '</span>' +
-    (intro ? '<span class="toc-intro">' + esc(intro) + '</span>' : '') +
+    '<span class="toc-sub"><span class="toc-meta">' + esc(bits.join(" \u00b7 ")) + '</span>' +
+    (intro ? '<span class="toc-intro">' + esc(intro) + '</span>' : '') + '</span>' +
     '</span>' +
     '<span class="toc-fig"><b>' + n + '</b><small>' + esc(n === 1 ? "recipe" : "recipes") + '</small></span></a></li>';
 }
@@ -2039,7 +2078,7 @@ function comparability(list) {
   var out = [];
   if (list.length < 2) return out;
   function vals(fn) { return uniq(list.map(fn)); }
-  var hws = vals(function (s) { return (s.hardware || []).join(","); });
+  var hws = vals(function (s) { return hwKey(s); });
   if (hws.length > 1) {
     var bw = list.map(function (s) {
       var h = HW[(s.hardware || [])[0]] || {};

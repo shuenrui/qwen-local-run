@@ -48,6 +48,13 @@ def hw_ids(s):
             for h in (s.get("hardware") or [])]
 
 
+def hw_key(s):
+    """Count-aware hardware identity: 1x and 2x of a class are different machines."""
+    refs = [(h.get("id"), (h.get("count") or 1)) if isinstance(h, dict) else (h, 1)
+            for h in (s.get("hardware") or [])]
+    return ",".join(sorted(i + ("*" + str(c) if c > 1 else "") for i, c in refs))
+
+
 def check(name, ok, detail=""):
     print(f"{'PASS' if ok else 'FAIL'}  {name}" + (f"  -- {detail}" if detail else ""), flush=True)
     if not ok:
@@ -584,7 +591,7 @@ def main():
         groups = _c.defaultdict(list)
         for s in SET:
             groups[(s["variation"]["checkpoint"], s["engine"]["id"],
-                    tuple(hw_ids(s)))].append(s["id"])
+                    hw_key(s))].append(s["id"])
         sibling_ids = [i for g in groups.values() if len(g) > 1 for i in g]
         artifact = page.evaluate(r"""() => {
           var out = {};
@@ -995,7 +1002,7 @@ def main():
                 if a["id"] >= b["id"]:
                     continue
                 ra, rb = rep(a), rep(b)
-                if (a["engine"]["id"] == b["engine"]["id"] and hw_ids(a) == hw_ids(b)
+                if (a["engine"]["id"] == b["engine"]["id"] and hw_key(a) == hw_key(b)
                         and ra and rb and ra["metric"] == rb["metric"]
                         and ra.get("stat") == rb.get("stat")
                         and ra.get("concurrency") == rb.get("concurrency")
@@ -1011,6 +1018,35 @@ def main():
                   "directly comparable" in bn.lower() and "not" not in bn.lower(), bn)
         else:
             note("no fully matched pair exists in this dataset; positive-comparability case not exercised")
+
+        # 1x vs 2x of the same hardware class must never be treated as the same
+        # machine. Everything else matches; only the unit count differs.
+        count_pair = None
+        for a in SET:
+            for b in SET:
+                if a["id"] >= b["id"]:
+                    continue
+                ra, rb = rep(a), rep(b)
+                if (a["engine"]["id"] == b["engine"]["id"] and a["model"] == b["model"]
+                        and hw_ids(a) == hw_ids(b) and hw_key(a) != hw_key(b)
+                        and ra and rb and ra["metric"] == rb["metric"]
+                        and ra.get("stat") == rb.get("stat")
+                        and ra.get("concurrency") == rb.get("concurrency")
+                        and ra["provenance"] == rb["provenance"]):
+                    count_pair = (a["id"], b["id"])
+                    break
+            if count_pair:
+                break
+        if count_pair:
+            goto(page, f"#/compare?sel={count_pair[0]},{count_pair[1]}")
+            bn = page.evaluate("(document.querySelector('.banner h3')||{}).textContent||''")
+            check("1x vs 2x of a hardware class is flagged not directly comparable",
+                  "not directly comparable" in bn.lower(), bn)
+            cmp_text = page.evaluate("(document.querySelector('.cmp')||{}).innerText||''")
+            check("multi-unit hardware renders its count in the compare table",
+                  "2\u00d7" in cmp_text, cmp_text[:160].replace("\n", " "))
+        else:
+            note("no 1x/2x hardware-count pair exists; count-aware comparability not exercised")
 
         goto(page, "#/compare?sel=does-not-exist")
         check("a stale recipe id in a compare URL does not break the route",

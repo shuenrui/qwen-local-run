@@ -27,6 +27,13 @@ function hwLabel(id, count) {
 function hwLabels(s) {
   return ((s && s.hwRefs) || []).map(function (r) { return hwLabel(r.id, r.count); });
 }
+/* Count-aware hardware identity: 1x and 2x of a class are different machines,
+   so they must never be treated as the same hardware for comparability. */
+function hwKey(s) {
+  return ((s && s.hwRefs) || []).map(function (r) {
+    return r.id + (r.count > 1 ? "*" + r.count : "");
+  }).sort().join(",");
+}
 function hwFirstLabel(s) {
   var r = ((s && s.hwRefs) || [])[0];
   return r ? hwLabel(r.id, r.count) : "not recorded";
@@ -555,7 +562,7 @@ function detailBody(s, opts) {
    different speeds with no explanation. */
 var SIBLINGS = {};
 function siblingKey(s) {
-  return (s.variation || {}).checkpoint + "|" + (s.engine || {}).id + "|" + (s.hardware || []).join(",");
+  return (s.variation || {}).checkpoint + "|" + (s.engine || {}).id + "|" + hwKey(s);
 }
 function markSiblings(list) {
   var seen = {};
@@ -1090,21 +1097,26 @@ function mfHero(list, verified) {
     '</header>';
 }
 function pad2(n) { return (n < 10 ? "0" : "") + n; }
-/* The editorial masthead: eyebrow, page title, and the one-line job. The numbered
-   series index that the reference put in the hero now lives in the right column,
-   grouped by model series, so the masthead carries the voice, not the index. */
+/* The editorial masthead, collapsed to one compact single-line row: the contents
+   numeral, the page title, the "what you want to run" guidance and the baseline
+   tally share one band. No eyebrow kicker above the heading and no multi-line
+   lede; the fuller guidance lives in the mast-sub line under the tabs. */
 function mhMast(verified) {
   return '<header class="mf-hero mh-mast">' +
-    '<div class="mf-eyebrow"><span>00.0</span><span>Models</span>' +
-      '<span class="mf-eyebrow-end">' + esc(verified + " / " + D.model_order.length + " with a curated baseline") + '</span></div>' +
-    '<div class="mf-title"><span class="mf-n">01</span><h1>Choose a Qwen model</h1></div>' +
-    '<p class="mf-lede">' + esc("Start with what you want to run. Each model's practical minimum is tied to one reported or measured recipe, and its speed is shown only when that same setup was measured. Every recipe stays at #/recipes.") + '</p>' +
+    '<div class="mh-mast-row">' +
+      '<span class="mf-n">01</span>' +
+      '<h1>Choose a Qwen model</h1>' +
+      '<span class="mh-mast-sep" aria-hidden="true">\u2014</span>' +
+      '<span class="mh-mast-guide">' + esc("start with what you want to run") + '</span>' +
+      '<span class="mh-mast-stat">' + esc(verified + " / " + D.model_order.length + " with a curated baseline") + '</span>' +
+    '</div>' +
     '</header>';
 }
 
 /* The right column: an editorial printed contents grouped by Qwen series, newest
-   first. Each series is a [data-toc-series] chapter; entries keep
-   [data-model-select] and carry data-toc-selected on the active one. */
+   first. Each series is a [data-toc-series] chapter rendered as a dark association
+   band; its entries are numbered sequentially (01, 02, 03...) beside the exact
+   model names and keep [data-model-select] + data-toc-selected on the active one. */
 function seriesSections(list, sel) {
   var gens = [];
   list.forEach(function (m) {
@@ -1114,16 +1126,16 @@ function seriesSections(list, sel) {
     row.models.push(m);
   });
   gens.sort(function (a, b) { return parseFloat(b.g) - parseFloat(a.g); });
-  return gens.map(function (sec, si) {
-    var n = pad2(si + 1);
+  return gens.map(function (sec) {
     var recipes = sec.models.reduce(function (acc, m) { return acc + modelRecipes(m.id).length; }, 0);
-    return '<li class="toc-sec" data-toc-series="' + esc(sec.g) + '"><div class="toc-chapter">' +
-      '<span class="toc-cn">' + esc(n) + '</span>' +
-      '<h2>' + esc("Qwen " + sec.g) + '</h2>' +
-      '<p class="toc-cmeta">' + esc(sec.models.length + (sec.models.length === 1 ? " model" : " models")) +
-      '<br>' + esc(recipes + (recipes === 1 ? " recipe" : " recipes")) + '</p></div>' +
+    return '<li class="toc-sec" data-toc-series="' + esc(sec.g) + '">' +
+      '<div class="toc-chapter">' +
+        '<h2>' + esc("Qwen " + sec.g) + '</h2>' +
+        '<span class="toc-cmeta">' + esc(sec.models.length + (sec.models.length === 1 ? " model" : " models") +
+          " \u00b7 " + recipes + (recipes === 1 ? " recipe" : " recipes")) + '</span>' +
+      '</div>' +
       '<ol class="toc-items">' + sec.models.map(function (m, mi) {
-        return tocItem(m, n + "." + (mi + 1), m.id === sel);
+        return tocItem(m, pad2(mi + 1), m.id === sel);
       }).join("") + '</ol></li>';
   }).join("");
 }
@@ -1208,8 +1220,8 @@ function tocItem(m, num, on) {
     (on ? ' data-toc-selected="true" aria-current="true"' : "") + '>' +
     '<span class="toc-n">' + esc(num) + '</span><span class="toc-sep" aria-hidden="true">/</span>' +
     '<span class="toc-main"><span class="toc-name">' + esc(m.name) + '</span>' +
-    '<span class="toc-meta">' + esc(bits.join(" \u00b7 ")) + '</span>' +
-    (intro ? '<span class="toc-intro">' + esc(intro) + '</span>' : '') +
+    '<span class="toc-sub"><span class="toc-meta">' + esc(bits.join(" \u00b7 ")) + '</span>' +
+    (intro ? '<span class="toc-intro">' + esc(intro) + '</span>' : '') + '</span>' +
     '</span>' +
     '<span class="toc-fig"><b>' + n + '</b><small>' + esc(n === 1 ? "recipe" : "recipes") + '</small></span></a></li>';
 }
@@ -1225,7 +1237,7 @@ function comparability(list) {
   var out = [];
   if (list.length < 2) return out;
   function vals(fn) { return uniq(list.map(fn)); }
-  var hws = vals(function (s) { return (s.hardware || []).join(","); });
+  var hws = vals(function (s) { return hwKey(s); });
   if (hws.length > 1) {
     var bw = list.map(function (s) {
       var h = HW[(s.hardware || [])[0]] || {};
