@@ -1,0 +1,116 @@
+{
+  "title": "Qwen3.8-27B AD-Q4_K_M — 2x RTX 5090 llama.cpp full offload",
+  "slug_note": "AtomicChat's own Dynamic quants measured at 77 tok/s decode / 363 prefill at 8k on two RTX 5090s.",
+  "model": "qwen3-8-27b",
+  "status": "claimed",
+  "variation": {
+    "checkpoint": "AtomicChat/Qwen3.8-27B-GGUF",
+    "publisher": "atomicchat",
+    "quant": "gguf-q4",
+    "quant_detail": "AD-Q4_K_M (~17.1GB), Atomic Dynamic layer allocation; own importance matrix on BF16, perplexity re-measured vs the original weights",
+    "format": "gguf",
+    "size_gb": 17.1,
+    "url": "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF",
+    "license": "Apache-2.0",
+    "downloads": 305686
+  },
+  "engine": {
+    "id": "llama-cpp",
+    "config": "llama.cpp full offload across two RTX 5090s (-ngl 99). The bottleneck model itself has an in-checkpoint MTP head usable via --spec-type draft-mtp.",
+    "requires_fork": false,
+    "image": null,
+    "draft_model": "in-checkpoint MTP head",
+    "spec_decode": "none",
+    "flags": [
+      "-ngl 99",
+      "-c 8192"
+    ]
+  },
+  "hardware": [
+    {
+      "id": "rtx-5090",
+      "count": 2
+    }
+  ],
+  "requirements": {
+    "memory_gb": 20,
+    "disk_gb": 17.1,
+    "min_vram_gb": 18,
+    "notes": "AD-Q4_K_M weights are 17.1GB; the vendor measured full offload on 2x RTX 5090 (64GB total). The model also fits a single 24GB+ card at 8k; the 2x figure is what the vendor published."
+  },
+  "capabilities": {
+    "vision": true,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 32768,
+    "max_context": 262144
+  },
+  "run": {
+    "command": "llama-server -m Qwen3.8-27B-AD-Q4_K_M.gguf -ngl 99 -c 8192",
+    "repo": "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF",
+    "profile": null,
+    "steps": null,
+    "auto_bootable": true
+  },
+  "measurements": [
+    {
+      "metric": "prefill_tok_s",
+      "value": 363,
+      "unit": "tok/s",
+      "provenance": "vendor",
+      "date": "2026-08-18",
+      "source": "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF",
+      "context": "@8k ctx, AD-Q4_K_M full offload on 2x RTX 5090"
+    },
+    {
+      "metric": "decode_per_stream",
+      "value": 77,
+      "unit": "tok/s",
+      "concurrency": 1,
+      "provenance": "vendor",
+      "date": "2026-08-18",
+      "source": "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF",
+      "context": "@8k ctx"
+    },
+    {
+      "metric": "prefill_tok_s",
+      "value": 5244,
+      "unit": "tok/s",
+      "provenance": "vendor",
+      "date": "2026-08-18",
+      "source": "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF",
+      "context": "@32k ctx — likely batched pp across the full prompt; column semantics not restated"
+    },
+    {
+      "metric": "decode_per_stream",
+      "value": 72,
+      "unit": "tok/s",
+      "concurrency": 1,
+      "provenance": "vendor",
+      "date": "2026-08-18",
+      "source": "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF",
+      "context": "@32k ctx"
+    }
+  ],
+  "caveats": [
+    "Vendor-run and vendor-published; \"measured, not estimated\" per the card, but not independently reproduced.",
+    "The 8k/32k table columns are not fully explained (the 5244 tok/s prefill at 32k is likely batched) — verify column semantics against the raw logs before quoting."
+  ],
+  "provenance_tier": "vendor",
+  "builder": "atomicchat",
+  "sources": [
+    {
+      "url": "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF",
+      "kind": "model",
+      "note": "the AD quants and the \"How we measured\" speed table"
+    },
+    {
+      "url": "https://github.com/AtomicBot-ai/Atomic-Chat",
+      "kind": "repo",
+      "note": "the Atomic Chat app that serves it"
+    }
+  ],
+  "id": "qwen38-27b-atomicchat-gguf-q4-2x-rtx5090",
+  "updated": "2026-09-14"
+}

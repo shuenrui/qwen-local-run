@@ -67,9 +67,9 @@ fast it goes *according to whom*, and can run it from the copyable command.
     and the verbatim quote lifted from the mirror payload. `check_links.py`
     verifies the mirror instead of the permalink.
 11. **Scenario B prunes the quant matrix** (owner decision 2026-09-10). Quant
-    artifacts come from whitelisted publishers only (Qwen, unsloth, bartowski,
-    ggml-org, lmstudio-community, mlx-community, QuantTrio, mradermacher,
-    RedHatAI, NVIDIA, AMD; engine-registry lanes carry their registry as
+     artifacts come from whitelisted publishers only (Qwen, unsloth, bartowski,
+     ggml-org, lmstudio-community, mlx-community, QuantTrio, mradermacher,
+     RedHatAI, NVIDIA, AMD, AtomicChat; engine-registry lanes carry their registry as
     publisher, e.g. `ollama` for Ollama library tags); one canonical publisher
     per format+quant level;
     ladder is GGUF Q2/Q4/Q6/Q8 (Q3/Q5 only when measured or at a memory-fit

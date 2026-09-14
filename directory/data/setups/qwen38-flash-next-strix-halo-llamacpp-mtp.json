@@ -1,0 +1,138 @@
+{
+  "title": "Qwen3.8-Flash-Next UD-IQ4_XS — Strix Halo llama.cpp + native MTP",
+  "slug_note": "First reported working native-MTP speculative decoding for the qwen4exp architecture on an AMD iGPU (ROCm), 16.8 -> 47.1 tok/s on a file rewrite.",
+  "model": "qwen3-8-flash-next",
+  "status": "reported",
+  "variation": {
+    "checkpoint": "unsloth/Qwen3.8-Flash-Next-GGUF",
+    "publisher": "unsloth",
+    "quant": "gguf-q4",
+    "quant_detail": "UD-IQ4_XS trunk + a separate Q8_0 MTP sidecar extracted with shard-scalpel (range reads, 5.2GB not 360GB)",
+    "format": "gguf",
+    "size_gb": 93.7,
+    "url": "https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF",
+    "license": "Apache-2.0",
+    "downloads": null
+  },
+  "engine": {
+    "id": "llama-cpp",
+    "config": "llama.cpp branch strix-halo-flash-next (ROCm). Three levers: GPU TOP_K fix (stock HIP falls back to CPU past ne=1024; PR #26592 hipCUB or #27466 native radix), native MTP (#27836) + detached-head loader fix, then ngram-mod: --spec-type draft-mtp,ngram-mod.",
+    "requires_fork": true,
+    "image": null,
+    "draft_model": "drluoto/Qwen3.8-Flash-Next-MTP-GGUF",
+    "spec_decode": "mtp",
+    "flags": [
+      "--spec-type draft-mtp,ngram-mod"
+    ]
+  },
+  "hardware": [
+    "strix-halo"
+  ],
+  "requirements": {
+    "memory_gb": 100,
+    "disk_gb": 94,
+    "min_vram_gb": null,
+    "notes": "~94GB UD-IQ4_XS trunk + MTP sidecar resident in 128GB unified; up to 112GB GPU-allocatable. Builder measured at 8k and 24k context."
+  },
+  "capabilities": {
+    "vision": false,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 24576,
+    "max_context": 262144
+  },
+  "run": {
+    "command": null,
+    "repo": "https://github.com/drluoto/flash-next-strix-halo",
+    "profile": null,
+    "steps": [
+      {
+        "kind": "do",
+        "text": "Build the builder's strix-halo-flash-next llama.cpp branch for ROCm (see the guide repo for exact lines)"
+      },
+      {
+        "kind": "do",
+        "text": "Extract the MTP head with shard-scalpel into a Q8_0 sidecar"
+      },
+      {
+        "kind": "do",
+        "text": "Serve the UD-IQ4_XS trunk plus the sidecar with --spec-type draft-mtp,ngram-mod"
+      }
+    ],
+    "auto_bootable": false
+  },
+  "measurements": [
+    {
+      "metric": "decode_per_stream",
+      "value": 47.1,
+      "unit": "tok/s",
+      "concurrency": 1,
+      "provenance": "forum",
+      "date": "2026-08-29",
+      "source": "https://github.com/ggml-org/llama.cpp/discussions/27950",
+      "context": "file rewrite @8k ctx, full stack, greedy, UD-IQ4_XS; no-speculation baseline 16.8"
+    },
+    {
+      "metric": "decode_code",
+      "value": 31.7,
+      "unit": "tok/s",
+      "concurrency": 1,
+      "provenance": "forum",
+      "date": "2026-08-29",
+      "source": "https://github.com/ggml-org/llama.cpp/discussions/27950",
+      "context": "new code @8k ctx; baseline 16.8"
+    },
+    {
+      "metric": "decode_per_stream",
+      "value": 28.6,
+      "unit": "tok/s",
+      "concurrency": 1,
+      "provenance": "forum",
+      "date": "2026-08-29",
+      "source": "https://github.com/ggml-org/llama.cpp/discussions/27950",
+      "context": "file rewrite @24k ctx; baseline ~15"
+    },
+    {
+      "metric": "decode_code",
+      "value": 25.4,
+      "unit": "tok/s",
+      "concurrency": 1,
+      "provenance": "forum",
+      "date": "2026-08-29",
+      "source": "https://github.com/ggml-org/llama.cpp/discussions/27950",
+      "context": "new code @24k ctx; baseline ~15"
+    }
+  ],
+  "caveats": [
+    "Output verified byte-clean at long prompts, but an earlier community MTP port produced plausible tok/s while emitting multilingual noise above ~1k prompt tokens — read the output, not just the counter.",
+    "Negative result (law 3): a commenter (2026-09-03) could not load the detached MTP sidecar on this branch under ROCm 10.0; the repro is broken on newer ROCm as of that date.",
+    "It is a custom llama.cpp branch with ROCm-specific fixes; it is not mainline and not stock ROCm."
+  ],
+  "provenance_tier": "forum",
+  "builder": "drluoto",
+  "sources": [
+    {
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/27950",
+      "kind": "thread",
+      "note": "the measured, reproducible stack and discussion"
+    },
+    {
+      "url": "https://github.com/drluoto/flash-next-strix-halo",
+      "kind": "repo",
+      "note": "the builder guide: build/run lines and pitfalls"
+    },
+    {
+      "url": "https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF",
+      "kind": "model",
+      "note": "UD-IQ4_XS weights"
+    },
+    {
+      "url": "https://huggingface.co/drluoto/Qwen3.8-Flash-Next-MTP-GGUF",
+      "kind": "model",
+      "note": "detached MTP sidecar"
+    }
+  ],
+  "id": "qwen38-flash-next-strix-halo-llamacpp-mtp",
+  "updated": "2026-09-14"
+}

@@ -1,0 +1,94 @@
+{
+  "id": "rtx-pro-6000",
+  "name": "NVIDIA RTX PRO 6000 Blackwell, 96 GB",
+  "vendor": "NVIDIA",
+  "chip": "GB202 (Blackwell)",
+  "arch": "x86_64 host + discrete workstation GPU, sm_120",
+  "form_factor": "discrete-gpu",
+  "memory_gb": 96,
+  "memory_usable_gb": 92,
+  "memory_type": "GDDR7 with ECC, dedicated VRAM",
+  "bandwidth_gbs": 1792,
+  "bandwidth_range_gbs": [1597, 1792],
+  "cpu": "host CPU varies",
+  "gpu": "96 GB GDDR7, 512-bit; 1792 GB/s (Workstation Edition), 1597 GB/s (Server Edition)",
+  "notes": [
+    "Workstation-class Blackwell with 96 GB GDDR7 — enough to hold a 27B BF16 (51 GB) or a large 4-bit MoE on one card. This is the class the SGLang cookbook targets for a single-GPU Qwen3.8-Flash-Next lane with the PLE table in system RAM.",
+    "Two sub-SKUs with different memory bandwidth: Workstation Edition 1792 GB/s, Server Edition 1597 GB/s. A setup must state which board it used; the variant list carries each.",
+    "Native FP4/FP8 tensor paths (5th-gen), so NVFP4 checkpoints are architecturally supported. sm_120.",
+    "600 W board power (configurable on the Server Edition); MIG up to 4x 24 GB on the Workstation Edition.",
+    "Variant ambiguity is real in social posts ('RTX 6000' vs 'RTX PRO 6000'): a recipe naming one must name the edition, or it stays unresolved."
+  ],
+  "device": {
+    "identity": {
+      "name": "NVIDIA RTX PRO 6000 Blackwell",
+      "chip": "GB202 (Blackwell)",
+      "manufacturer": "NVIDIA",
+      "os": null,
+      "form_factor": "discrete-gpu"
+    },
+    "memory": {
+      "total_gb": 96,
+      "type": "GDDR7 with ECC",
+      "bandwidth_gbs": null,
+      "interface_bits": 512,
+      "channels": null,
+      "unified": false,
+      "usable_gb": 92,
+      "note": "dedicated VRAM. Bandwidth differs by edition: Workstation 1792 GB/s, Server 1597 GB/s (each carried on its variant)."
+    },
+    "compute": {
+      "fp32_tflops": 126,
+      "fp16_dense_tflops": null,
+      "fp8_sparse_tflops": null,
+      "fp4_sparse_pflops": null,
+      "tensor_ai_tops": 4000,
+      "note": "Workstation Edition: 24,064 CUDA cores, 126 TFLOPS single-precision, 382 RT TFLOPS, 4000 AI TOPS (NVIDIA's theoretical FP4-with-sparsity figure), 600 W. Server Edition: 120 TFLOPS FP32, FP4 tensor 4 PFLOPS, 1597 GB/s. FP16/FP8 dense rates are not published as clean figures, so they stay null."
+    },
+    "thermal": {
+      "tdp_watts": 600,
+      "cooling": "double-flow-through (Workstation Edition)",
+      "note": "600 W total board power; Server Edition is configurable up to 600 W."
+    },
+    "variants": [
+      {
+        "id": "rtx-pro-6000-workstation",
+        "name": "RTX PRO 6000 Blackwell Workstation Edition",
+        "chip": "GB202 (Blackwell)",
+        "memory_configs": "96 GB GDDR7 ECC, 512-bit",
+        "bandwidth_gbs": 1792,
+        "fp32_tflops": 126,
+        "tensor_ai_tops": 4000,
+        "tdp_watts": 600,
+        "note": "24,064 CUDA cores; 382 RT TFLOPS; MIG up to 4x 24 GB"
+      },
+      {
+        "id": "rtx-pro-6000-server",
+        "name": "RTX PRO 6000 Blackwell Server Edition",
+        "chip": "GB202 (Blackwell)",
+        "memory_configs": "96 GB GDDR7 ECC, 512-bit",
+        "bandwidth_gbs": 1597,
+        "fp32_tflops": 120,
+        "tdp_watts": 600,
+        "note": "120 TFLOPS FP32, FP4 tensor 4 PFLOPS, FP8 tensor 2 PFLOPS, FP16/BF16 tensor 1 PFLOP"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.nvidia.com/en-gb/products/workstations/professional-desktop-gpus/rtx-pro-6000/",
+        "note": "Workstation Edition: 4000 AI TOPS, 125 TFLOPS single-precision, 380 RT TFLOPS, 96 GB GDDR7 ECC, 1792 GB/s, 600 W, double flow-through"
+      },
+      {
+        "url": "https://www.nvidia.com/content/dam/en-zz/Solutions/data-center/rtx-pro-6000-blackwell-workstation-edition/workstation-blackwell-rtx-pro-6000-workstation-edition-nvidia-us-3519208-web.pdf",
+        "note": "Workstation Edition datasheet: 24,064 CUDA cores, 126 TFLOPS single-precision, 96 GB GDDR7, 512-bit, 1792 GB/s, 600 W, MIG up to 4x 24 GB"
+      },
+      {
+        "url": "https://www.nvidia.com/en-us/data-center/rtx-pro-6000-blackwell-server-edition/",
+        "note": "Server Edition: 24,064 CUDA cores, 120 TFLOPS FP32, FP4 4 PFLOPS, 96 GB GDDR7, 512-bit, 1597 GB/s, up to 600 W configurable"
+      }
+    ]
+  },
+  "measured_by_us": false,
+  "url": "https://www.nvidia.com/en-gb/products/workstations/professional-desktop-gpus/rtx-pro-6000/",
+  "updated": "2026-09-14"
+}

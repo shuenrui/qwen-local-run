@@ -51,21 +51,21 @@ FILES_ALL = FILES + [
 
 WHITELIST = {"qwen", "unsloth", "bartowski", "ggml-org", "lmstudio-community",
              "mlx-community", "quanttrio", "mradermacher", "redhatai",
-             "nvidia", "amd",
+             "nvidia", "amd", "atomicchat",
              # engine-registry lanes carry their registry as publisher
              # (Scenario B: Ollama/LM Studio only where a registry entry exists)
              "ollama"}
 
 # (format, quant) -> publishers in canonical order; the first is the lane owner
 CANON = {
-    ("gguf", "gguf-q2"): ["unsloth", "bartowski", "ggml-org", "mradermacher"],
-    ("gguf", "gguf-q3"): ["unsloth", "bartowski", "mradermacher"],
+    ("gguf", "gguf-q2"): ["unsloth", "bartowski", "ggml-org", "mradermacher", "atomicchat"],
+    ("gguf", "gguf-q3"): ["unsloth", "bartowski", "mradermacher", "atomicchat"],
     ("gguf", "gguf-q4"): ["unsloth", "bartowski", "ggml-org",
-                          "lmstudio-community", "mradermacher"],
-    ("gguf", "gguf-q5"): ["unsloth", "bartowski", "mradermacher"],
-    ("gguf", "gguf-q6"): ["unsloth", "bartowski", "ggml-org", "mradermacher"],
+                          "lmstudio-community", "mradermacher", "atomicchat"],
+    ("gguf", "gguf-q5"): ["unsloth", "bartowski", "mradermacher", "atomicchat"],
+    ("gguf", "gguf-q6"): ["unsloth", "bartowski", "ggml-org", "mradermacher", "atomicchat"],
     ("gguf", "gguf-q8"): ["unsloth", "bartowski", "ggml-org",
-                          "lmstudio-community", "mradermacher"],
+                          "lmstudio-community", "mradermacher", "atomicchat"],
     ("mlx", "mlx-4"): ["mlx-community", "lmstudio-community"],
     ("mlx", "mlx-6"): ["mlx-community"],
     ("mlx", "mlx-8"): ["mlx-community", "lmstudio-community"],
@@ -229,7 +229,12 @@ class Index:
 
     def dataset_idents(self):
         return {(s["variation"]["checkpoint"].lower(), s["engine"]["id"],
-                 tuple(sorted(s["hardware"]))) for _, s in self.setups}
+                 tuple(sorted(self._hw_id(h) for h in s["hardware"]))) for _, s in self.setups}
+
+    @staticmethod
+    def _hw_id(h):
+        # hardware refs are id strings or {"id":...,"count":...}
+        return h.get("id") if isinstance(h, dict) else h
 
     def covered_family_quants(self):
         """(model family name, quant) pairs already present in the dataset."""

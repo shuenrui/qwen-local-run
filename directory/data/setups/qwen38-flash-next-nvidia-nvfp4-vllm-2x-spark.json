@@ -1,0 +1,177 @@
+{
+  "title": "Qwen3.8-Flash-Next NVFP4 — 2x DGX Spark vLLM (TP2 + MTP-3)",
+  "slug_note": "Two GB10 boxes tensor-parallel over RoCE, 52-54 tok/s single-stream and up to 207 tok/s aggregate at 8 concurrent streams.",
+  "model": "qwen3-8-flash-next",
+  "status": "reported",
+  "variation": {
+    "checkpoint": "nvidia/Qwen3.8-Flash-Next-NVFP4",
+    "publisher": "nvidia",
+    "quant": "nvfp4",
+    "quant_detail": "NVIDIA ModelOpt NVFP4 export; FP8 KV cache",
+    "format": "safetensors",
+    "size_gb": 133,
+    "url": "https://huggingface.co/nvidia/Qwen3.8-Flash-Next-NVFP4",
+    "license": "Apache-2.0",
+    "downloads": null
+  },
+  "engine": {
+    "id": "vllm",
+    "config": "vLLM TP2+EP+MTP3 across two DGX Spark nodes over ConnectX RoCE/IB, passwordless SSH, Docker on both (~126GiB free per node; rsync or NFS weight sharing). MAX_MODEL_LEN=262144, GPU_MEMORY_UTILIZATION=0.835, fp8 KV default. start.sh auto-applies checkpoint fixes: PLE-table dtype re-injection, MTP layer-index alias, FP8_BLOCK_SCALES routed-experts patch (missing upstream — without it the MoE loads unquantized and dies ~7min in).",
+    "requires_fork": true,
+    "image": "vllm/vllm-openai:qwen38-flash-next",
+    "draft_model": "in-checkpoint MTP head",
+    "spec_decode": "mtp",
+    "flags": [
+      "--tensor-parallel-size 2",
+      "--max-model-len 262144",
+      "--gpu-memory-utilization 0.835"
+    ]
+  },
+  "hardware": [
+    {
+      "id": "dgx-spark",
+      "count": 2
+    }
+  ],
+  "requirements": {
+    "memory_gb": 64,
+    "disk_gb": 133,
+    "min_vram_gb": null,
+    "notes": "~62.7GB weights resident per node (64.3GiB with MTP), plus a 32GiB fp8 KV pool (~3.65M tokens). Requires two boxes on the same fabric."
+  },
+  "capabilities": {
+    "vision": true,
+    "video": true,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "command": "cp .env.sample .env && ./start.sh",
+    "repo": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
+    "profile": null,
+    "steps": [
+      {
+        "kind": "do",
+        "text": "Provision two DGX Sparks on the same RoCE/IB fabric with passwordless SSH and Docker on both"
+      },
+      {
+        "kind": "cmd",
+        "text": "cp .env.sample .env"
+      },
+      {
+        "kind": "cmd",
+        "text": "./start.sh"
+      }
+    ],
+    "auto_bootable": false
+  },
+  "measurements": [
+    {
+      "metric": "decode_per_stream",
+      "value": 24.5,
+      "unit": "tok/s",
+      "concurrency": 1,
+      "provenance": "forum",
+      "date": "2026-08-26",
+      "source": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
+      "context": "batch-1 greedy, MTP OFF (README checkpoint table)"
+    },
+    {
+      "metric": "decode_per_stream",
+      "value": 52.1,
+      "unit": "tok/s",
+      "concurrency": 1,
+      "provenance": "forum",
+      "date": "2026-08-26",
+      "source": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
+      "context": "batch-1 greedy, MTP=3: 2.13x; draft acceptance 72.8% (823/1131)"
+    },
+    {
+      "metric": "decode_per_stream",
+      "value": 54.4,
+      "unit": "tok/s",
+      "concurrency": 1,
+      "provenance": "forum",
+      "date": "2026-08-26",
+      "source": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
+      "context": "concurrency table x1 (TTFT 160 ms)"
+    },
+    {
+      "metric": "decode_agg",
+      "value": 86.5,
+      "unit": "tok/s",
+      "concurrency": 2,
+      "provenance": "forum",
+      "date": "2026-08-26",
+      "source": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
+      "context": "x2 aggregate; 45.1 per-stream; TTFT 426 ms"
+    },
+    {
+      "metric": "decode_agg",
+      "value": 128.1,
+      "unit": "tok/s",
+      "concurrency": 4,
+      "provenance": "forum",
+      "date": "2026-08-26",
+      "source": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
+      "context": "x4 aggregate; 34.2 per-stream; TTFT 471 ms"
+    },
+    {
+      "metric": "decode_agg",
+      "value": 207.0,
+      "unit": "tok/s",
+      "concurrency": 8,
+      "provenance": "forum",
+      "date": "2026-08-26",
+      "source": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
+      "context": "x8 aggregate (MAX_NUM_SEQS=8); 26.7 per-stream; aggregate scales 3.8x from x1"
+    },
+    {
+      "metric": "prefill_tok_s",
+      "value": 2962.2,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "date": "2026-08-26",
+      "source": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
+      "context": "@32k (flat ~2.96k from 16k-64k, -8% by 128k)"
+    },
+    {
+      "metric": "memory_gb",
+      "value": 62.72,
+      "unit": "GB",
+      "provenance": "forum",
+      "date": "2026-08-26",
+      "source": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
+      "context": "weights resident per node; fp8 KV pool 32.02 GiB = 3,652,200 tokens"
+    }
+  ],
+  "caveats": [
+    "The announcing tweet claims \"~64 tok/s single stream, ~115 tok/s for 2-4 concurrent\" and names SGLang+MTP, but the linked repo is vLLM and its server-read tables show 52.1-54.4 batch-1 / 86.5-128.1 at x2-x4. The numbers here come from the repo, per law 9; the tweet is discovery.",
+    "Requires two DGX Sparks on one fabric — a single Spark cannot run this lane.",
+    "The checkpoint needs three loader fixes applied by start.sh; a stock vLLM will fail or silently load the MoE unquantized.",
+    "MiaAI-Lab is the origin org this project measures against — credit, do not push upstream."
+  ],
+  "provenance_tier": "forum",
+  "builder": "mia-ai-lab",
+  "sources": [
+    {
+      "url": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
+      "kind": "repo",
+      "note": "the recipe and server-read measurement tables"
+    },
+    {
+      "url": "https://huggingface.co/nvidia/Qwen3.8-Flash-Next-NVFP4",
+      "kind": "model",
+      "note": "NVFP4 weights"
+    },
+    {
+      "url": "https://x.com/MiaAI_lab/status/2092670516964270101",
+      "kind": "post",
+      "note": "discovery post (claims differ from the repo — see caveats)"
+    }
+  ],
+  "id": "qwen38-flash-next-nvidia-nvfp4-vllm-2x-spark",
+  "updated": "2026-09-14"
+}

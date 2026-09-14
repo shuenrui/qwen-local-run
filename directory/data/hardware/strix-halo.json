@@ -1,0 +1,77 @@
+{
+  "id": "strix-halo",
+  "name": "AMD Strix Halo APU (Ryzen AI Max+ 395), 128 GB unified",
+  "vendor": "AMD",
+  "chip": "Ryzen AI Max+ 395 (Strix Halo)",
+  "arch": "x86_64 host + RDNA 3.5 integrated GPU",
+  "form_factor": "laptop/desktop",
+  "memory_gb": 128,
+  "memory_usable_gb": 112,
+  "memory_type": "unified LPDDR5X-8000, 256-bit",
+  "bandwidth_gbs": 256,
+  "bandwidth_range_gbs": [256, 256],
+  "cpu": "16x Zen 5 (32 threads)",
+  "gpu": "Radeon 8060S, 40 RDNA 3.5 CUs, shares the unified pool",
+  "notes": [
+    "Unified-memory x86 APU: capacity is generous (up to 128 GB, of which AMD says up to 96 GB is convertible to VRAM via Variable Graphics Memory, and its developer article says up to 112 GB GPU-allocatable), bandwidth is the limiter at 256 GB/s.",
+    "256 GB/s sits just below DGX Spark's 273 GB/s and well below RTX 3090/4090 VRAM, so decode speed for a given model lands in the same band as the Spark rather than a discrete GPU.",
+    "Runtimes are llama.cpp/Vulkan/ROCm or ONNX-GenAI; there is no CUDA, so the CUDA-only speculative forks (DSpark, DFlash2) have no path here. AMD RDNA 3.5 supports FP8/FP16 but not the Blackwell-class FP4 paths.",
+    "System RAM is shared with the OS; the GPU-allocatable ceiling is an OEM BIOS setting, so a setup must state how much was assigned to the iGPU."
+  ],
+  "device": {
+    "identity": {
+      "name": "AMD Ryzen AI Max+ 395 (Strix Halo)",
+      "chip": "Ryzen AI Max+ 395 (Strix Halo)",
+      "manufacturer": "AMD",
+      "os": "Windows / Linux",
+      "form_factor": "laptop/desktop"
+    },
+    "memory": {
+      "total_gb": 128,
+      "type": "LPDDR5X-8000, 256-bit",
+      "bandwidth_gbs": 256,
+      "interface_bits": 256,
+      "unified": true,
+      "usable_gb": 112,
+      "note": "AMD states 256-bit LPDDR5X with up to 128 GB system memory; its blog cites 256 GB/s and its developer article says up to 112 GB is GPU-allocatable (up to 96 GB convertible via Variable Graphics Memory)."
+    },
+    "compute": {
+      "cpu_cores": "16x Zen 5, 32 threads",
+      "fp32_tflops": null,
+      "fp16_dense_tflops": null,
+      "note": "AMD publishes NPU up to 50 TOPS and overall platform up to 126 TOPS; it does not publish a clean GPU FP32/FP16 TFLOPS figure, so they stay null. The iGPU is 40 RDNA 3.5 CUs (Radeon 8060S)."
+    },
+    "thermal": {
+      "tdp_watts": null,
+      "cooling": "varies by OEM chassis",
+      "note": "Configurable TDP set by the OEM; AMD does not publish one figure."
+    },
+    "variants": [
+      {
+        "id": "ryzen-ai-max-395",
+        "name": "Ryzen AI Max+ 395",
+        "chip": "Strix Halo",
+        "memory_configs": "32-128 GB unified",
+        "bandwidth_gbs": 256,
+        "note": "40 RDNA 3.5 CUs; NPU up to 50 TOPS; up to 126 overall TOPS"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://www.amd.com/en/products/processors/laptop/ryzen/ai-300-series/amd-ryzen-ai-max-plus-395.html",
+        "note": "Ryzen AI Max+ 395: 256-bit LPDDR5x, max 128 GB, Radeon 8060S, up to 126 overall TOPS, NPU up to 50 TOPS"
+      },
+      {
+        "url": "https://www.amd.com/en/blogs/2025/amd-ryzen-ai-max-395-processor-breakthrough-ai-.html",
+        "note": "16 Zen 5 cores, 40 RDNA 3.5 CUs, up to 128 GB unified (up to 96 GB convertible to VRAM), and the 256 GB/s memory bandwidth figure"
+      },
+      {
+        "url": "https://www.amd.com/en/developer/resources/technical-articles/2025/amd-ryzen-ai-max-395--a-leap-forward-in-generative-ai-performanc.html",
+        "note": "128 GB unified with up to 112 GB allocatable by the GPU; 40 RDNA 3.5 CUs; on-device 70B-class LLM claim"
+      }
+    ]
+  },
+  "measured_by_us": false,
+  "url": "https://www.amd.com/en/products/processors/laptop/ryzen/ai-300-series/amd-ryzen-ai-max-plus-395.html",
+  "updated": "2026-09-14"
+}

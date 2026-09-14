@@ -109,7 +109,7 @@ def facet_values(s, models):
         "quant": (s.get("variation") or {}).get("quant", "?"),
         "engine": eid,
         "spec decode": engine.get("spec_decode") or "none",
-        "hardware": s.get("hardware") or ["?"],
+        "hardware": [(h.get("id") if isinstance(h, dict) else h) for h in (s.get("hardware") or [])] or ["?"],
         "evidence": evidence_of(s),
         "readiness": ("runnable" if has_command(s) else "no-command")
         + ("+measured" if has_speed(s) else "+unmeasured"),

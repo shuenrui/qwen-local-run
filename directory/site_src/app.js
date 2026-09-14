@@ -9,6 +9,29 @@ var MODELS = D.models, ENG = D.engines, HW = D.hardware, PUB = D.publishers;
 var SETUPS = D.setups;
 var TODAY = new Date(D.generated + "T00:00:00Z");
 
+/* Hardware references are ids, optionally with a unit count:
+   "dgx-spark" or {"id":"dgx-spark","count":2}. Normalize to ids for all
+   downstream logic, and keep the ref list for count-aware labels. */
+function hwRefId(h) { return typeof h === "string" ? h : (h && h.id) || ""; }
+function hwRefCount(h) { return (h && typeof h === "object" && h.count) ? h.count : 1; }
+SETUPS.forEach(function (s) {
+  s.hwRefs = (s.hardware || []).map(function (h) {
+    return { id: hwRefId(h), count: hwRefCount(h) };
+  }).filter(function (r) { return r.id; });
+  s.hardware = s.hwRefs.map(function (r) { return r.id; });
+});
+function hwLabel(id, count) {
+  var n = (HW[id] || {}).name || id;
+  return count > 1 ? count + "\u00d7 " + n : n;
+}
+function hwLabels(s) {
+  return ((s && s.hwRefs) || []).map(function (r) { return hwLabel(r.id, r.count); });
+}
+function hwFirstLabel(s) {
+  var r = ((s && s.hwRefs) || [])[0];
+  return r ? hwLabel(r.id, r.count) : "not recorded";
+}
+
 /* ---------------------------------------------------------------- helpers */
 function esc(s) {
   return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) {
@@ -485,14 +508,14 @@ function detailBody(s, opts) {
     ((e.flags || []).length ? "<dt>Flags</dt><dd><span class=\"mono\">" + esc(e.flags.join("  ")) + "</span></dd>" : "") +
     "</div></div>";
 
-  h += '<div class="sec"><' + H + '>Tested hardware</' + H + '><div class="kv">' + (s.hardware || []).map(function (id) {
-    var hw = HW[id] || {};
+  h += '<div class="sec"><' + H + '>Tested hardware</' + H + '><div class="kv">' + ((s.hwRefs || []).length ? s.hwRefs : (s.hardware || []).map(function (id) { return { id: id, count: 1 }; })).map(function (ref) {
+    var id = ref.id, hw = HW[id] || {};
     var bits = [gb(hw.memory_gb) || "memory not recorded"];
     if (hw.bandwidth_gbs) bits.push(hw.bandwidth_gbs + " GB/s");
     else if (hw.bandwidth_range_gbs) bits.push(hw.bandwidth_range_gbs[0] + "–" + hw.bandwidth_range_gbs[1] + " GB/s");
     if (hw.arch) bits.push(hw.arch);
     bits.push(hw.measured_by_us ? "measured by the owner" : "not measured by the owner");
-    return "<dt>" + esc(hw.name || id) + "</dt><dd>" + esc(bits.join(" · ")) + "</dd>";
+    return "<dt>" + esc(hwLabel(id, ref.count)) + "</dt><dd>" + esc(bits.join(" · ")) + "</dd>";
   }).join("") + "</div></div>";
 
   h += '<div class="sec"><' + H + '>Measurements <span class="g">' +
@@ -646,7 +669,7 @@ function rowLi(s) {
     '<div class="mrow-l">' +
       '<span><span class="lbl">Engine</span>' + esc((ENG[e.id] || {}).name || e.id) + (e.requires_fork ? esc(" ⤴ fork") : "") + "</span>" +
       '<span><span class="lbl">Quant</span>' + esc(v.quant) + " · " + esc(gb(v.size_gb) || "?") + "</span>" +
-      '<span><span class="lbl">Tested on</span>' + esc(String((HW[(s.hardware || [])[0]] || {}).name || "not recorded").split(",")[0]) + "</span>" +
+      '<span><span class="lbl">Tested on</span>' + esc(String(hwFirstLabel(s)).split(",")[0]) + "</span>" +
       '<span><span class="lbl">Needs</span>' + esc(gb(req.memory_gb) || "not recorded") + "</span>" +
     "</div>" +
     '<div class="mrow-dec">' + decodeCell(s) + "</div>" +
@@ -869,14 +892,17 @@ function viewDirectory() {
 /* ------------------------------------------------------ model-first home */
 function modelFloor(s) {
   if (!s) return "Not verified yet";
-  var req = s.requirements || {}, hid = (s.hardware || [])[0], hw = HW[hid] || {};
+  var req = s.requirements || {}, ref = (s.hwRefs || [])[0] || { id: (s.hardware || [])[0], count: 1 };
+  var hid = ref.id, hw = HW[hid] || {};
   if (req.min_vram_gb != null) {
     return gb(req.min_vram_gb) + " VRAM" + (req.memory_gb != null && req.memory_gb > req.min_vram_gb
       ? " · " + gb(req.memory_gb) + " recorded memory" : "");
   }
-  var host = hid === "mac-128gb" ? "128 GB unified Mac" : hid === "mac-64gb" ? "32-64 GB unified Mac" :
-    hid === "dgx-spark" ? "128 GB DGX Spark" : hid === "thinkstation-pgx" ? "128 GB ThinkStation PGX" :
+  var base = hid === "mac-128gb" ? "128 GB unified Mac" : hid === "mac-64gb" ? "32-64 GB unified Mac" :
+    hid === "mac-256gb" ? "256 GB unified Mac" : hid === "dgx-spark" ? "128 GB DGX Spark" :
+    hid === "thinkstation-pgx" ? "128 GB ThinkStation PGX" :
     (hw.name ? String(hw.name).split(",")[0] : "hardware not recorded");
+  var host = ref.count > 1 ? ref.count + "\u00d7 " + base : base;
   return host + " · " + (req.memory_gb != null ? gb(req.memory_gb) + " resident" : "memory not recorded");
 }
 function baselineSpeed(s) { return s ? repDecode(s) : null; }
@@ -977,7 +1003,7 @@ function modelPreview(m) {
     h += '<section class="baseline"><div class="baseline-title"><div><span class="lbl">Practical minimum</span><h3 data-evidence-field="practical-minimum">' +
       esc(modelFloor(s)) + '</h3></div><span class="mark m-est">' + esc("curated · reviewed " + b.reviewed) + '</span></div>' +
       '<p class="baseline-why">' + esc(b.rationale) + '</p><dl class="baseline-spec">' +
-      '<div><dt>Tested hardware</dt><dd>' + esc((s.hardware || []).map(function (id) { return (HW[id] || {}).name || id; }).join(" · ")) + '</dd></div>' +
+      '<div><dt>Tested hardware</dt><dd>' + esc(hwLabels(s).join(" · ")) + '</dd></div>' +
       '<div><dt>Resident memory</dt><dd>' + (gb(req.memory_gb) || na()) + '</dd></div>' +
       '<div><dt>Minimum VRAM</dt><dd>' + (gb(req.min_vram_gb) || na("unified or not separated")) + '</dd></div>' +
       '<div><dt>Disk</dt><dd>' + (gb(req.disk_gb) || na()) + '</dd></div>' +
@@ -1211,7 +1237,7 @@ function comparability(list) {
       if (r >= 1.2) extra = " Memory bandwidth differs by about " + (Math.round(r * 10) / 10) + "×.";
     }
     out.push({ k: "hardware", t: "Measured on different hardware — " + list.map(function (s) {
-      return String((HW[(s.hardware || [])[0]] || {}).name || "unrecorded").split(",")[0];
+      return String(hwFirstLabel(s) || "unrecorded").split(",")[0];
     }).join(" vs ") + "." + extra });
   }
   if (vals(function (s) { return (s.engine || {}).id; }).length > 1)
@@ -1256,7 +1282,7 @@ function renderRail() {
       return '<div class="citem"><div class="cbody"><div class="cn" title="' + esc(s.variation.checkpoint) + '">' +
         esc(tail(s.variation.checkpoint)) + '</div><div class="cs">' +
         esc(((ENG[(s.engine || {}).id] || {}).name || "?") + ((s.engine || {}).requires_fork ? " ⤴" : "") + " · " + s.variation.quant) +
-        '</div><div class="cs">' + esc(String((HW[(s.hardware || [])[0]] || {}).name || "hardware not recorded").split(",")[0]) + "</div></div>" +
+        '</div><div class="cs">' + esc(String(hwFirstLabel(s) || "hardware not recorded").split(",")[0]) + "</div></div>" +
         '<button type="button" class="cx" data-cmp="' + esc(s.id) + '" aria-label="' + esc("Remove " + s.title + " from compare") + '">' + esc("✕") + "</button></div>";
     }).join("") + "</div>" +
     '<span class="crail-end"><button type="button" class="btn" id="cmp-clear">Clear all</button>' +
@@ -1373,9 +1399,9 @@ function viewCompare() {
 
   h += grpRow("Hardware", n);
   h += cmpRow("Tested devices", list, function (s) {
-    return (s.hardware || []).map(function (id) {
-      var hw = HW[id] || {};
-      return esc(hw.name || id) + '<span class="cond">' + esc((hw.measured_by_us ? "measured by the owner" : "not measured by the owner") + " · " + (hw.arch || "")) + "</span>";
+    return ((s.hwRefs || []).length ? s.hwRefs : (s.hardware || []).map(function (id) { return { id: id, count: 1 }; })).map(function (ref) {
+      var hw = HW[ref.id] || {};
+      return esc(hwLabel(ref.id, ref.count)) + '<span class="cond">' + esc((hw.measured_by_us ? "measured by the owner" : "not measured by the owner") + " · " + (hw.arch || "")) + "</span>";
     }).join("");
   });
   h += cmpRow("Recorded resident memory", list, function (s) { return esc(gb((s.requirements || {}).memory_gb) || ""); });
@@ -1515,22 +1541,35 @@ function profileClasses(p) {
   var ram = p.ramGb, out2 = [];
   var chip = (p.chip || "") + " " + (p.gpu || "");
   if (/GB10|Grace|Spark|PGX/i.test(chip)) return ["dgx-spark", "thinkstation-pgx"];
+  if (/Ryzen AI Max|Radeon 8060S|Strix Halo|gfx1151/i.test(chip)) return ["strix-halo"];
   if (p.os === "macos" || /Apple|M[1-9]\b/i.test(chip)) {
-    if (ram != null && ram >= 96) out2.push("mac-128gb");
-    if (ram == null || ram < 96) out2.push("mac-64gb");
-    if (ram != null && ram >= 96) out2.push("mac-64gb");
-    return out2;
+    if (ram != null && ram >= 200) return ["mac-256gb", "mac-128gb", "mac-64gb"];
+    if (ram != null && ram >= 96) return ["mac-128gb", "mac-64gb"];
+    return ["mac-64gb"];
   }
+  if (/\b5090\b/i.test(chip)) {
+    return (p.gpuCount || 1) > 1
+      ? ["rtx-5090", "gpu-multigpu-72gb", "gpu-24gb"]
+      : ["rtx-5090", "gpu-24gb"];
+  }
+  if (/RTX PRO 6000|PRO 6000 Blackwell|RTX 6000/i.test(chip)) return ["rtx-pro-6000"];
   if ((p.gpuCount || 1) > 1) return ["gpu-multigpu-72gb", "gpu-24gb"];
   return ["gpu-24gb"];
 }
 function archFamily(id) {
   var a = (HW[id] || {}).arch || "";
-  return /Metal/i.test(a) ? "apple" : "nvidia";
+  if (/Metal/i.test(a)) return "apple";
+  if (/RDNA|AMD|gfx/i.test(a)) return "amd";
+  return "nvidia";
+}
+function familyLabel(fam) {
+  return fam === "apple" ? "Apple Silicon" : fam === "amd" ? "AMD iGPU" : "NVIDIA hardware";
 }
 function profileArch(p) {
   if (p.deviceId) return archFamily(p.deviceId);
-  if (p.os === "macos" || /Apple|M[1-9]\b/i.test((p.chip || "") + (p.gpu || ""))) return "apple";
+  var t = (p.chip || "") + " " + (p.gpu || "");
+  if (p.os === "macos" || /Apple|M[1-9]\b/i.test(t)) return "apple";
+  if (/Ryzen AI Max|Radeon 8060S|Strix Halo|gfx1151/i.test(t)) return "amd";
   return "nvidia";
 }
 function kvGb(s, assume) {
@@ -1578,8 +1617,8 @@ function classify(s, p) {
   }
   if (!archOk) {
     verdict += " Note: this recipe is only recorded on " +
-      uniq((s.hardware || []).map(function (id) { return archFamily(id) === "apple" ? "Apple Silicon" : "NVIDIA hardware"; })).join(" and ") +
-      ", and your profile is " + (profileArch(p) === "apple" ? "Apple Silicon" : "NVIDIA") +
+      uniq((s.hardware || []).map(function (id) { return familyLabel(archFamily(id)); })).join(" and ") +
+      ", and your profile is " + familyLabel(profileArch(p)) +
       ". Memory is not the binding constraint here — the engine path is.";
     if (group === "estimated") group = "uncertain";
   }
@@ -1692,7 +1731,7 @@ function viewHardware() {
 
   if (!p) {
     h += '<div class="empty"><h2>' + esc("No machine described yet") + "</h2>" +
-      "<p>" + esc("Detect this machine, pick one of the six hardware classes the dataset records, or type your own. Every field is optional — a missing field degrades the result rather than blocking it, and the result says which field it lacked.") + "</p>" +
+      "<p>" + esc("Detect this machine, pick one of the " + D.counts.hardware + " hardware classes the dataset records, or type your own. Every field is optional — a missing field degrades the result rather than blocking it, and the result says which field it lacked.") + "</p>" +
       "<p>" + esc("Whatever you enter stays in this browser. The Directory is unaffected either way: nothing here filters it.") + "</p>" +
       '<div class="acts"><a class="btn" href="#/">Browse the full directory instead</a></div></div>';
     return finishHardware(h);

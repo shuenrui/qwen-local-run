@@ -1,0 +1,91 @@
+{
+  "title": "Qwen3.8-Flash-Next UD-Q4_K_XL — RTX PRO 6000 llama.cpp + MTP",
+  "slug_note": "Vendor-claimed 170 tok/s single-stream on one RTX PRO 6000 with the shared MTP module, up from a ~100 tok/s baseline.",
+  "model": "qwen3-8-flash-next",
+  "status": "claimed",
+  "variation": {
+    "checkpoint": "unsloth/Qwen3.8-Flash-Next-GGUF",
+    "publisher": "unsloth",
+    "quant": "gguf-q4",
+    "quant_detail": "UD-Q4_K_XL (111.3GB) + a shared Q8_0 MTP module (2.79GB); quant mapped from the guide, the vendor chart does not restate it per point",
+    "format": "gguf",
+    "size_gb": 111.3,
+    "url": "https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF",
+    "license": "Apache-2.0",
+    "downloads": null
+  },
+  "engine": {
+    "id": "llama-cpp",
+    "config": "Unsloth GGUFs with the shared MTP module via llama.cpp (or Unsloth Desktop, where MTP is on by default).",
+    "requires_fork": true,
+    "image": null,
+    "draft_model": "unsloth/Qwen3.8-Flash-Next-GGUF MTP/mtp-Qwen3.8-Flash-Next-shared-Q8_0.gguf",
+    "spec_decode": "mtp",
+    "flags": [
+      "--spec-type draft-mtp",
+      "--spec-draft-n-max 5"
+    ]
+  },
+  "hardware": [
+    "rtx-pro-6000"
+  ],
+  "requirements": {
+    "memory_gb": 114,
+    "disk_gb": 114,
+    "min_vram_gb": 114,
+    "notes": "111.3GB UD-Q4_K_XL + ~2.8GB shared MTP module; fits a single 96GB card only with the PLE table offloaded (Unsloth sizes the 4-bit lane at 96-114GB). Treat the 96GB fit as tight."
+  },
+  "capabilities": {
+    "vision": true,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "command": "llama-server -hf unsloth/Qwen3.8-Flash-Next-GGUF:UD-Q4_K_XL -md unsloth/Qwen3.8-Flash-Next-GGUF/MTP/mtp-Qwen3.8-Flash-Next-shared-Q8_0.gguf --spec-type draft-mtp --spec-draft-n-max 5",
+    "repo": "https://unsloth.ai/docs/models/qwen3.8-next",
+    "profile": null,
+    "steps": null,
+    "auto_bootable": true
+  },
+  "measurements": [
+    {
+      "metric": "decode_per_stream",
+      "value": 170.0,
+      "unit": "tok/s",
+      "concurrency": 1,
+      "provenance": "vendor",
+      "date": "2026-09-02",
+      "source": "https://unsloth.ai/docs/models/qwen3.8-next",
+      "context": "vendor chart: '170 tokens/s on 1x RTX 6000 PRO GPU compared to the 100 token baseline', UD-Q4_K_XL + shared Q8_0 MTP; quant mapped from the guide, not restated on the chart"
+    }
+  ],
+  "caveats": [
+    "Vendor claim (unsloth), not an independent reproduction. The docs chart does not re-state quant/context per point.",
+    "RTX PRO 6000 has two editions with different bandwidth (Workstation 1792 GB/s, Server 1597 GB/s); the claim does not say which.",
+    "The 4-bit lane is 111GB of weights; on a 96GB card it needs the PLE table offloaded, so the 170 tok/s figure assumes that configuration."
+  ],
+  "provenance_tier": "vendor",
+  "builder": "unsloth",
+  "sources": [
+    {
+      "url": "https://unsloth.ai/docs/models/qwen3.8-next",
+      "kind": "docs",
+      "note": "the guide: MTP run command and the 170 tok/s on RTX PRO 6000 chart"
+    },
+    {
+      "url": "https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF",
+      "kind": "model",
+      "note": "UD quants and the shared MTP module"
+    },
+    {
+      "url": "https://x.com/UnslothAI/status/2095157074112164072",
+      "kind": "post",
+      "note": "discovery post (vendor)"
+    }
+  ],
+  "id": "qwen38-flash-next-unsloth-gguf-llamacpp-rtx-pro-6000",
+  "updated": "2026-09-14"
+}

@@ -1,0 +1,158 @@
+{
+  "title": "Qwen3.8-27B UD-Q4_K_XL — RTX 4090 llama.cpp + z-lab DFlash2",
+  "slug_note": "A single 24GB 4090 running 90 tok/s at ~30k context with DFlash2 block-diffusion drafting, and up to ~250k context with a 2-bit drafter.",
+  "model": "qwen3-8-27b",
+  "status": "reported",
+  "variation": {
+    "checkpoint": "unsloth/Qwen3.8-27B-GGUF",
+    "publisher": "unsloth",
+    "quant": "gguf-q4",
+    "quant_detail": "UD-Q4_K_XL (16.7GB); custom analogalok Q2_K (~700MB) DFlash2 drafter",
+    "format": "gguf",
+    "size_gb": 16.7,
+    "url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
+    "license": "Apache-2.0",
+    "downloads": null
+  },
+  "engine": {
+    "id": "llama-cpp",
+    "config": "llama.cpp PR #27342 (DFlash2) with z-lab/Qwen3.8-27B-DFlash2 as the draft, run single-GPU with --parallel 1 to free VRAM for KV. Builder swapped the stock Q4_K_M draft for a custom 2-bit Q2_K drafter to unlock ~250k context.",
+    "requires_fork": true,
+    "image": null,
+    "draft_model": "z-lab/Qwen3.8-27B-DFlash2 (+ analogalok 2-bit Q2_K drafter)",
+    "spec_decode": "dflash2",
+    "flags": [
+      "--spec-draft-n-max 4",
+      "--parallel 1"
+    ]
+  },
+  "hardware": [
+    "gpu-24gb"
+  ],
+  "requirements": {
+    "memory_gb": 22,
+    "disk_gb": 17,
+    "min_vram_gb": 22,
+    "notes": "Peak VRAM 22.x GB of 24 at the 30k/n-max-4 point; --parallel 1 is required to free the batching reserve."
+  },
+  "capabilities": {
+    "vision": true,
+    "video": false,
+    "tools": true,
+    "thinking": true,
+    "long_context": 160000,
+    "max_context": 262144
+  },
+  "run": {
+    "command": null,
+    "repo": "https://github.com/ggml-org/llama.cpp/pull/27342",
+    "profile": null,
+    "steps": [
+      {
+        "kind": "do",
+        "text": "Patch llama.cpp with PR #27342 (DFlash2) and build with CUDA"
+      },
+      {
+        "kind": "do",
+        "text": "Download Unsloth UD-Q4_K_XL and the z-lab DFlash2 draft (optionally the 2-bit Q2_K drafter)"
+      },
+      {
+        "kind": "do",
+        "text": "Serve with --spec-draft-n-max 4 and --parallel 1; KV q4_0/q8_0 depending on context"
+      }
+    ],
+    "auto_bootable": false
+  },
+  "measurements": [
+    {
+      "metric": "decode_per_stream",
+      "value": 90.0,
+      "unit": "tok/s",
+      "concurrency": 1,
+      "provenance": "forum",
+      "date": "2026-08-19",
+      "source": "https://x.com/analogalok/status/2089979723166200196",
+      "context": "DFlash2 @ n-max 4, ~30k context"
+    },
+    {
+      "metric": "decode_per_stream",
+      "value": 87.05,
+      "unit": "tok/s",
+      "concurrency": 1,
+      "provenance": "forum",
+      "date": "2026-08-19",
+      "source": "https://x.com/analogalok/status/2089979723166200196",
+      "context": "30k context, DFlash2 n-max 4, 22.x GB VRAM; prefill 1,725 t/s"
+    },
+    {
+      "metric": "decode_per_stream",
+      "value": 75.66,
+      "unit": "tok/s",
+      "concurrency": 1,
+      "provenance": "forum",
+      "date": "2026-08-21",
+      "source": "https://x.com/analogalok/status/2090874243185856971",
+      "context": "26k prompt baseline, custom 2-bit Q2_K drafter; Native MTP = 68.09 on the same box"
+    },
+    {
+      "metric": "decode_per_stream",
+      "value": 59.22,
+      "unit": "tok/s",
+      "concurrency": 1,
+      "provenance": "forum",
+      "date": "2026-08-21",
+      "source": "https://x.com/analogalok/status/2090874243185856971",
+      "context": "80k prompt (160k: 48.93) — DFlash2 throughput decay curve"
+    },
+    {
+      "metric": "prefill_tok_s",
+      "value": 1662.0,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "date": "2026-08-21",
+      "source": "https://x.com/analogalok/status/2090874243185856971",
+      "context": "26k prompt, DFlash2; MTP prefill 2,324 — a negative for DFlash2 (MTP wins prompt ingestion)"
+    },
+    {
+      "metric": "memory_gb",
+      "value": 22.0,
+      "unit": "GB",
+      "provenance": "forum",
+      "date": "2026-08-19",
+      "source": "https://x.com/analogalok/status/2089979723166200196",
+      "context": "peak VRAM at the 30k / n-max-4 operating point"
+    }
+  ],
+  "caveats": [
+    "Multi-GPU tensor splitting and multimodality are broken on PR #27342 — this lane is single-GPU, text-only.",
+    "Native MTP beats DFlash2 on prefill (2,324 vs 1,662 tok/s); DFlash2 only wins decode.",
+    "The builder says \"Q4_K_M\" in the headline but pairs it with UD-Q4_K_XL; the checkpoint here is unsloth UD-Q4_K_XL.",
+    "Reproduced only by the builder; no independent run recorded."
+  ],
+  "provenance_tier": "forum",
+  "builder": "analogalok",
+  "sources": [
+    {
+      "url": "https://x.com/analogalok/status/2089979723166200196",
+      "kind": "post",
+      "note": "primary DFlash2 result (90 tok/s)"
+    },
+    {
+      "url": "https://x.com/analogalok/status/2090874243185856971",
+      "kind": "post",
+      "note": "throughput decay matrix vs native MTP"
+    },
+    {
+      "url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
+      "kind": "model",
+      "note": "UD-Q4_K_XL weights"
+    },
+    {
+      "url": "https://huggingface.co/z-lab/Qwen3.8-27B-DFlash2-GGUF",
+      "kind": "model",
+      "note": "DFlash2 draft model"
+    }
+  ],
+  "id": "qwen38-27b-unsloth-gguf-dflash2-llamacpp-4090",
+  "updated": "2026-09-14"
+}

@@ -1,0 +1,113 @@
+{
+  "title": "Qwen3.8-Flash-Next AD-IQ4_XS — AtomicChat on an M5 Max 64GB Mac",
+  "slug_note": "An 85GB build that exceeds 64GB of RAM by keeping a 39GB n-gram PLE table pageable, at 36 tok/s with vision.",
+  "model": "qwen3-8-flash-next",
+  "status": "claimed",
+  "variation": {
+    "checkpoint": "AtomicChat/Qwen3.8-Flash-Next-GGUF",
+    "publisher": "atomicchat",
+    "quant": "gguf-q4",
+    "quant_detail": "AD-3.84bpw-IQ4_XS-M64: a 45.8GB file plus a 39.1GB pageable n-gram PLE table (84.9GB total)",
+    "format": "gguf",
+    "size_gb": 84.9,
+    "url": "https://huggingface.co/AtomicChat/Qwen3.8-Flash-Next-GGUF",
+    "license": "Apache-2.0",
+    "downloads": null
+  },
+  "engine": {
+    "id": "llama-cpp",
+    "config": "llama.cpp on Apple Silicon (Metal), with the n-gram PLE table left pageable so the build exceeds physical RAM.",
+    "requires_fork": false,
+    "image": null,
+    "draft_model": null,
+    "spec_decode": "none",
+    "flags": []
+  },
+  "hardware": [
+    "mac-64gb"
+  ],
+  "requirements": {
+    "memory_gb": 43.1,
+    "disk_gb": 84.9,
+    "min_vram_gb": null,
+    "notes": "Vendor reports 44,125 MiB model-self (MTL0) with a 57,344 MiB wired limit, plus ~37,279 MiB host for the pageable PLE table — i.e. the file set is larger than 64GB by design and pages from disk."
+  },
+  "capabilities": {
+    "vision": true,
+    "video": true,
+    "tools": true,
+    "thinking": true,
+    "long_context": 262144,
+    "max_context": 262144
+  },
+  "run": {
+    "command": null,
+    "repo": "https://huggingface.co/AtomicChat/Qwen3.8-Flash-Next-GGUF",
+    "profile": null,
+    "steps": [
+      {
+        "kind": "do",
+        "text": "Download the AD-3.84bpw-IQ4_XS-M64 build and its n-gram PLE table"
+      },
+      {
+        "kind": "do",
+        "text": "Serve with llama.cpp on Metal, keeping the PLE table pageable"
+      },
+      {
+        "kind": "do",
+        "text": "Add the mmproj file if vision is needed"
+      }
+    ],
+    "auto_bootable": false
+  },
+  "measurements": [
+    {
+      "metric": "prefill_tok_s",
+      "value": 517.9,
+      "unit": "tok/s",
+      "provenance": "vendor",
+      "date": "2026-09-10",
+      "source": "https://huggingface.co/AtomicChat/Qwen3.8-Flash-Next-GGUF",
+      "context": "pp512 on M5 Max 64GB"
+    },
+    {
+      "metric": "decode_per_stream",
+      "value": 36.0,
+      "unit": "tok/s",
+      "concurrency": 1,
+      "provenance": "vendor",
+      "date": "2026-09-10",
+      "source": "https://huggingface.co/AtomicChat/Qwen3.8-Flash-Next-GGUF",
+      "context": "tg128, with vision, on the 85GB AD build that exceeds machine RAM via the pageable PLE table"
+    },
+    {
+      "metric": "memory_gb",
+      "value": 43.1,
+      "unit": "GB",
+      "provenance": "vendor",
+      "date": "2026-09-10",
+      "source": "https://huggingface.co/AtomicChat/Qwen3.8-Flash-Next-GGUF",
+      "context": "MTL0 model-self 44,125 MiB (wired limit 57,344 MiB); host adds 37,279 MiB for the pageable table"
+    }
+  ],
+  "caveats": [
+    "Vendor-run and vendor-published; not independently reproduced.",
+    "The 85GB file set exceeds 64GB of RAM — it works only because the PLE table is pageable. Expect disk-bound first-token latency."
+  ],
+  "provenance_tier": "vendor",
+  "builder": "atomicchat",
+  "sources": [
+    {
+      "url": "https://huggingface.co/AtomicChat/Qwen3.8-Flash-Next-GGUF",
+      "kind": "model",
+      "note": "the AD build and its measured speed/memory table"
+    },
+    {
+      "url": "https://huggingface.co/collections/AtomicChat/qwen-38-27b-6a7c86fe00e317b78f572767",
+      "kind": "model",
+      "note": "AtomicChat quant collection"
+    }
+  ],
+  "id": "qwen38-flash-next-atomicchat-gguf-llamacpp-mac64",
+  "updated": "2026-09-14"
+}

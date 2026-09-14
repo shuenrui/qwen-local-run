@@ -1,0 +1,85 @@
+{
+  "id": "mac-256gb",
+  "name": "Apple Silicon Mac, 256 GB unified (M3 Ultra class)",
+  "vendor": "Apple",
+  "chip": "M3 Ultra (M2 Ultra below)",
+  "arch": "arm64, Metal",
+  "form_factor": "desktop",
+  "memory_gb": 256,
+  "memory_usable_gb": 245,
+  "memory_type": "unified LPDDR5",
+  "bandwidth_gbs": 819,
+  "bandwidth_range_gbs": [800, 819],
+  "cpu": "Apple M3 Ultra (32-core) / M2 Ultra",
+  "gpu": "up to 80-core integrated GPU, shares the 256 GB unified pool",
+  "notes": [
+    "The 256 GB tier is what separates this from mac-128gb: enough unified memory to hold large MoE builds (and long-context KV) that a 128 GB Mac cannot.",
+    "Bandwidth is the reason it exists for inference: M3 Ultra's 819 GB/s is ~3x a MacBook-class M4 Max (546 GB/s) and ~3x an M4 Pro, so decode scales with it. M2 Ultra is 800 GB/s.",
+    "M3 Ultra configs are 96/128/256/512 GB; this class covers the 256 GB tier reported on. Apple later discontinued some capacity tiers — a setup should state the exact config.",
+    "Runtime is MLX / llama.cpp-Metal (and oMLX-style wrappers); no CUDA, so CUDA-only speculative forks do not apply.",
+    "Memory pressure is configurable (sysctl iogpu.wired_limit_mb); the default GPU wired limit is well below 256 GB."
+  ],
+  "device": {
+    "identity": {
+      "name": "Apple Mac, M3 Ultra / M2 Ultra, 256 GB unified",
+      "chip": "Apple M3 Ultra (32-core CPU, 80-core GPU)",
+      "manufacturer": "Apple",
+      "os": "macOS",
+      "form_factor": "desktop"
+    },
+    "memory": {
+      "total_gb": 256,
+      "type": "unified LPDDR5",
+      "bandwidth_gbs": null,
+      "interface_bits": null,
+      "channels": null,
+      "unified": true,
+      "usable_gb": 245,
+      "note": "per-chip bandwidth: M3 Ultra 819 GB/s, M2 Ultra 800 GB/s (each on its variant); CPU and GPU share one pool."
+    },
+    "compute": {
+      "cpu_cores": "M3 Ultra: up to 32 (24 performance + 8 efficiency)",
+      "fp32_tflops": null,
+      "neural_engine_tops": 32,
+      "note": "M3 Ultra: 32-core Neural Engine, up to 80-core GPU. Apple publishes Neural Engine core counts but no GPU FLOPS, so TFLOPS stay null."
+    },
+    "thermal": {
+      "tdp_watts": null,
+      "cooling": "active fan (Mac Studio)",
+      "note": "Apple does not publish chip TDP."
+    },
+    "variants": [
+      {
+        "id": "m3-ultra",
+        "name": "M3 Ultra (32-core CPU, 80-core GPU)",
+        "chip": "Apple M3 Ultra",
+        "memory_configs": "96-512 GB unified",
+        "bandwidth_gbs": 819,
+        "neural_engine_tops": 32,
+        "note": "32-core Neural Engine; Mac Studio 2025"
+      },
+      {
+        "id": "m2-ultra",
+        "name": "M2 Ultra",
+        "chip": "Apple M2 Ultra",
+        "memory_configs": "64-192 GB unified",
+        "bandwidth_gbs": 800,
+        "neural_engine_tops": 32,
+        "note": "previous-generation Ultra tier"
+      }
+    ],
+    "sources": [
+      {
+        "url": "https://support.apple.com/en-us/122211",
+        "note": "Mac Studio (2025) tech specs: M3 Ultra 32-core CPU / 80-core GPU / 32-core Neural Engine, 819 GB/s memory bandwidth, up to 512 GB unified memory"
+      },
+      {
+        "url": "https://www.apple.com/newsroom/2025/03/apple-reveals-m3-ultra-taking-apple-silicon-to-a-new-extreme/",
+        "note": "M3 Ultra: up to 80-core GPU, 32-core Neural Engine, over 800 GB/s memory bandwidth, unified memory configurable up to 512 GB"
+      }
+    ]
+  },
+  "measured_by_us": false,
+  "url": "https://support.apple.com/en-us/122211",
+  "updated": "2026-09-14"
+}

@@ -42,6 +42,12 @@ console_errors: list[str] = []
 page_errors: list[str] = []
 
 
+def hw_ids(s):
+    """A setup's hardware references are id strings or {"id","count"} objects."""
+    return [(h.get("id") if isinstance(h, dict) else h)
+            for h in (s.get("hardware") or [])]
+
+
 def check(name, ok, detail=""):
     print(f"{'PASS' if ok else 'FAIL'}  {name}" + (f"  -- {detail}" if detail else ""), flush=True)
     if not ok:
@@ -578,7 +584,7 @@ def main():
         groups = _c.defaultdict(list)
         for s in SET:
             groups[(s["variation"]["checkpoint"], s["engine"]["id"],
-                    tuple(s.get("hardware") or []))].append(s["id"])
+                    tuple(hw_ids(s)))].append(s["id"])
         sibling_ids = [i for g in groups.values() if len(g) > 1 for i in g]
         artifact = page.evaluate(r"""() => {
           var out = {};
@@ -743,7 +749,7 @@ def main():
             "arch": lambda s: [MODELS[s["model"]]["architecture"].get("kind", "")],
             "engine": lambda s: [s["engine"]["id"]],
             "quant": lambda s: [s["variation"]["quant"]],
-            "hw": lambda s: s["hardware"],
+            "hw": lambda s: hw_ids(s),
             "evid": lambda s: [s.get("provenance_tier") or "none"],
         }
         bogus = []
@@ -989,7 +995,7 @@ def main():
                 if a["id"] >= b["id"]:
                     continue
                 ra, rb = rep(a), rep(b)
-                if (a["engine"]["id"] == b["engine"]["id"] and a["hardware"] == b["hardware"]
+                if (a["engine"]["id"] == b["engine"]["id"] and hw_ids(a) == hw_ids(b)
                         and ra and rb and ra["metric"] == rb["metric"]
                         and ra.get("stat") == rb.get("stat")
                         and ra.get("concurrency") == rb.get("concurrency")

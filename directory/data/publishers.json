@@ -144,6 +144,12 @@
       "url": "https://ollama.com",
       "note": "Packaged default-quant pulls of open weights."
     },
+    "drluoto": {
+      "name": "drluoto",
+      "kind": "individual",
+      "url": "https://github.com/drluoto/flash-next-strix-halo",
+      "note": "Strix Halo (Ryzen AI Max+ 395) Qwen3.8-Flash-Next stack with native MTP on ROCm, plus the shard-scalpel MTP-head extractor."
+    },
     "entrpi": {
       "name": "Entrpi",
       "kind": "individual",

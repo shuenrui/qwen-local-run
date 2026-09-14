@@ -1,0 +1,110 @@
+{
+  "title": "Qwen3.8-27B MLX 8-bit — Atomic Chat DFlash2 on a 256GB M3 Ultra",
+  "slug_note": "A reported 3.79x lift (23 -> 87.6 tok/s) from DFlash2 speculative decoding on an M3 Ultra 256GB Mac Studio.",
+  "model": "qwen3-8-27b",
+  "status": "reported",
+  "variation": {
+    "checkpoint": "mlx-community/Qwen3.8-27B-8bit",
+    "publisher": "mlx-community",
+    "quant": "mlx-8",
+    "quant_detail": "8-bit MLX conversion (29.5GB)",
+    "format": "mlx",
+    "size_gb": 29.5,
+    "url": "https://huggingface.co/mlx-community/Qwen3.8-27B-8bit",
+    "license": "Apache-2.0",
+    "downloads": null
+  },
+  "engine": {
+    "id": "atomic-chat",
+    "config": "Atomic Chat app on Apple Silicon (MLX-VLM backend), DFlash2 draft on the Auto setting. Context/tasks/flags not stated.",
+    "requires_fork": true,
+    "image": null,
+    "draft_model": null,
+    "spec_decode": "dflash2",
+    "flags": []
+  },
+  "hardware": [
+    "mac-256gb"
+  ],
+  "requirements": {
+    "memory_gb": 30,
+    "disk_gb": 30,
+    "min_vram_gb": null,
+    "notes": "8-bit MLX weights 29.5GB in the 256GB unified pool; KV depends on context (unstated)."
+  },
+  "capabilities": {
+    "vision": true,
+    "video": true,
+    "tools": true,
+    "thinking": true,
+    "long_context": null,
+    "max_context": 262144
+  },
+  "run": {
+    "command": null,
+    "repo": "https://github.com/AtomicBot-ai/Atomic-Chat",
+    "profile": null,
+    "steps": [
+      {
+        "kind": "do",
+        "text": "Install the Atomic Chat app on the M3 Ultra Mac"
+      },
+      {
+        "kind": "do",
+        "text": "Load mlx-community/Qwen3.8-27B-8bit (MLX-VLM backend)"
+      },
+      {
+        "kind": "do",
+        "text": "Enable the DFlash2 draft on Auto"
+      }
+    ],
+    "auto_bootable": false
+  },
+  "measurements": [
+    {
+      "metric": "decode_per_stream",
+      "value": 23.0,
+      "unit": "tok/s",
+      "concurrency": 1,
+      "provenance": "forum",
+      "date": "2026-08-20",
+      "source": "https://x.com/atomic_chat_hq/status/2090436652363665614",
+      "context": "baseline, no spec decode"
+    },
+    {
+      "metric": "decode_per_stream",
+      "value": 87.6,
+      "unit": "tok/s",
+      "concurrency": 1,
+      "provenance": "forum",
+      "date": "2026-08-20",
+      "source": "https://x.com/atomic_chat_hq/status/2090436652363665614",
+      "context": "DFlash2 on Auto; 3.79x vs baseline"
+    }
+  ],
+  "caveats": [
+    "Low-confidence single reply from a third-party builder: no context length, tasks or flags stated, and it runs inside the Atomic Chat app (MLX-VLM backend) rather than bare mlx-lm.",
+    "The \"Up to 4x\" vendor headline is corroborated here as 3.79x on this one run."
+  ],
+  "provenance_tier": "forum",
+  "builder": null,
+  "sources": [
+    {
+      "url": "https://x.com/atomic_chat_hq/status/2090436652363665614",
+      "kind": "post",
+      "note": "the reported result (reply by @TriadDarren)"
+    },
+    {
+      "url": "https://huggingface.co/mlx-community/Qwen3.8-27B-8bit",
+      "kind": "model",
+      "note": "8-bit MLX weights"
+    },
+    {
+      "url": "https://github.com/AtomicBot-ai/Atomic-Chat",
+      "kind": "repo",
+      "note": "the runtime app"
+    }
+  ],
+  "id": "qwen38-27b-mlx-8bit-dflash2-atomic-chat-mac256",
+  "updated": "2026-09-14"
+}

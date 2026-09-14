@@ -111,7 +111,10 @@ Required: `id`, `title`, `model`, `variation`, `engine`, `hardware`,
     "flags": ["--mem-fraction-static 0.90", "--kv-cache-dtype fp8_e4m3"]
   },
 
-  "hardware": ["dgx-spark"],         // -> data/hardware/, one or more
+  "hardware": ["dgx-spark"],         // -> data/hardware/, one or more. A
+                                     // multi-unit system uses an object:
+                                     // [{"id": "dgx-spark", "count": 2}]
+                                     // count defaults to 1 for a bare string.
   "builder": "hasso5703",            // optional -> publishers.json; the person or
                                      // team whose recipe/numbers this setup is,
                                      // when different from the checkpoint publisher
@@ -288,6 +291,11 @@ Rules:
   engine `config` differs (different spec-decode, runtime, or memory profile).
   The config string is part of a setup's identity; the validator's duplicate
   check includes it.
+- **Multi-unit hardware**: a setup on more than one identical unit writes the
+  hardware reference as an object — `[{"id": "dgx-spark", "count": 2}]` — rather
+  than inventing a `dgx-spark-2x` class. `count` is a positive integer and
+  defaults to 1 for a bare id string. The count is part of identity: 1x and 2x
+  of a class are different setups. The site renders it as "2× <class name>".
 - **Family scope**: the model list covers Qwen 3.0/3.5/3.6/3.8 text, vision and
   omni branches that have a plausible local lane. Excluded on purpose:
   cluster-scale models (Qwen3.8-2.4T-A95B, Qwen3-Coder-480B-A35B), sub-4B edge

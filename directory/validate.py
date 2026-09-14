@@ -159,6 +159,16 @@ def check_url(rep: Report, where: str, field: str, value) -> None:
         rep.err(where, f"{field} {value!r} is not an http(s) URL")
 
 
+def hw_ref(ref):
+    """A setup hardware reference is either an id string (count 1) or an object
+    {"id": <id>, "count": <n>} for a multi-unit system. Returns (id, count)."""
+    if isinstance(ref, str):
+        return ref, 1
+    if isinstance(ref, dict):
+        return ref.get("id"), ref.get("count", 1)
+    return None, None
+
+
 def check_device(rep: Report, where: str, dev, hw=None) -> None:
     """Validate a device spec block (data/device-schema.json).
 
@@ -389,11 +399,14 @@ def main() -> int:
         if s.get("status") not in STATUS:
             rep.err(w, f"status {s.get('status')!r} not in {sorted(STATUS)}")
 
-        # A near-duplicate setup is almost always a copy/paste mistake.
+        # A near-duplicate setup is almost always a copy/paste mistake. The
+        # hardware reference includes the unit count, so 1x and 2x of a class
+        # are different identity.
+        hwkey = sorted((hw_ref(x)[0], hw_ref(x)[1]) for x in (s.get("hardware") or []))
         key = json.dumps(
             [s.get("model"), s.get("variation", {}).get("checkpoint"),
              s.get("engine", {}).get("id"), s.get("engine", {}).get("config"),
-             sorted(s.get("hardware", []))],
+             hwkey],
             sort_keys=True,
         )
         if key in seen_titles:
@@ -429,9 +442,20 @@ def main() -> int:
         if not isinstance(hw, list) or not hw:
             rep.err(w, "hardware must be a non-empty list")
         else:
-            for h in hw:
-                if h not in hardware:
-                    rep.err(w, f"unknown hardware id {h!r}")
+            seen_hw = set()
+            for i, ref in enumerate(hw):
+                rw = f"{w} hardware[{i}]"
+                rid, cnt = hw_ref(ref)
+                if not isinstance(rid, str) or not rid:
+                    rep.err(rw, f"hardware reference must be an id string or {{id,count}}, got {ref!r}")
+                    continue
+                if rid not in hardware:
+                    rep.err(rw, f"unknown hardware id {rid!r}")
+                if isinstance(cnt, bool) or not isinstance(cnt, int) or cnt < 1:
+                    rep.err(rw, f"count must be a positive integer, got {cnt!r}")
+                if rid in seen_hw:
+                    rep.err(rw, f"duplicate hardware id {rid!r} — use one entry with a count")
+                seen_hw.add(rid)
         # Optional per-setup device override: a measurement-specific hardware
         # delta (e.g. an overclocked card). Same shape as the hardware block's
         # device spec, without the record cross-checks.
