@@ -160,9 +160,9 @@
     "context": "new code @24k ctx; baseline ~15"
    }
   ],
-  "method_note": "Output verified byte-clean at long prompts — an earlier community MTP port produced genuine-looking tok/s while emitting multilingual noise above ~1k prompt tokens ('read the output, not just the counter'). Raw measurement data lives in the three PR threads. MTP head extracted with HTTP range reads (5.2GB fetched instead of the 360GB checkpoint, shard-scalpel). CAVEAT (negative, law 3): commenter giulio-volpe (2026-09-03) could not load the detached MTP sidecar on the strix-halo-flash-next branch under ROCm 10.0 (n_layer_nextn reads 0 despite KV metadata; tensor blk.0.hc_attn_norm.weight not found) — repro on newer ROCm broken as of that date. Credits in post: rmonsurate (MTP), crusaderky (loader), Geramy (hipCUB diagnosis), jadenmach2 (radix TOP_K), Unsloth (port+quants), JJJYmmm/Qwen (arch).",
+  "method_note": "ADMITTED 2026-09-14 as data/setups/qwen38-flash-next-strix-halo-llamacpp-mtp.json (task #7). Output verified byte-clean at long prompts — an earlier community MTP port produced genuine-looking tok/s while emitting multilingual noise above ~1k prompt tokens ('read the output, not just the counter'). Raw measurement data lives in the three PR threads. MTP head extracted with HTTP range reads (5.2GB fetched instead of the 360GB checkpoint, shard-scalpel). CAVEAT (negative, law 3): commenter giulio-volpe (2026-09-03) could not load the detached MTP sidecar on the strix-halo-flash-next branch under ROCm 10.0 (n_layer_nextn reads 0 despite KV metadata; tensor blk.0.hc_attn_norm.weight not found) — repro on newer ROCm broken as of that date. Credits in post: rmonsurate (MTP), crusaderky (loader), Geramy (hipCUB diagnosis), jadenmach2 (radix TOP_K), Unsloth (port+quants), JJJYmmm/Qwen (arch).",
   "collected": "2026-09-10",
-  "state": "extracted"
+  "state": "merged"
  },
  {
   "channel": "github-discussion",
@@ -1619,9 +1619,9 @@
     "context": "vendor claim 'can reach' with MTP (1.7x) on RTX PRO 6000; quant, context and method not stated — resolve from the guide before merge or keep as claimed-tier only"
    }
   ],
-  "method_note": "QUANT RESOLVED 2026-09-13 from the durable artifact (unsloth.ai/docs/models/qwen3.8-next): 'MTP enables Qwen3.8-Flash to reach 170 tokens/s on 1x RTX 6000 PRO GPU compared to the 100 token baseline.' The documented MTP llama.cpp/lm-studio command uses unsloth/Qwen3.8-Flash-Next-GGUF:UD-Q4_K_XL with the shared Q8_0 MTP module (--spec-type draft-mtp --spec-draft-n-max 5), so gguf-q4 is the lane owner's stated config; the chart itself does not re-state the quant per point, so the q4 mapping is inferred from the artifact, not the tweet. Vendor tier (publisher's own claim). Hardware 'RTX PRO 6000' is a new class = owner decision 4. Dedupe vs candidate 31 (SGLang cookbook 1x RTX PRO 6000 lane): different engine and artifact.",
+  "method_note": "ADMITTED 2026-09-14 as data/setups/qwen38-flash-next-unsloth-gguf-llamacpp-rtx-pro-6000.json (task #7). QUANT RESOLVED 2026-09-13 from the durable artifact (unsloth.ai/docs/models/qwen3.8-next): 'MTP enables Qwen3.8-Flash to reach 170 tokens/s on 1x RTX 6000 PRO GPU compared to the 100 token baseline.' The documented MTP llama.cpp/lm-studio command uses unsloth/Qwen3.8-Flash-Next-GGUF:UD-Q4_K_XL with the shared Q8_0 MTP module (--spec-type draft-mtp --spec-draft-n-max 5), so gguf-q4 is the lane owner's stated config; the chart itself does not re-state the quant per point, so the q4 mapping is inferred from the artifact, not the tweet. Vendor tier (publisher's own claim). Hardware 'RTX PRO 6000' is a new class = owner decision 4. Dedupe vs candidate 31 (SGLang cookbook 1x RTX PRO 6000 lane): different engine and artifact.",
   "collected": "2026-09-10",
-  "state": "extracted"
+  "state": "merged"
  },
  {
   "channel": "x",
@@ -2296,9 +2296,9 @@
     "context": "weights resident per node (64.3 GiB with MTP; 66.14 incl. non-torch); KV fp8 pool 32.02 GiB = 3,652,200 tokens (13.93x at 262K); load ~6:15 weights + 122s engine init"
    }
   ],
-  "method_note": "DISCREPANCY (recorded, not blended): tweet claims '~64 tok/s single stream (structural), ~115 tok/s for 2-4 concurrent' and says SGLang+MTP+SM121 patch, but the linked repo is vLLM and its server-read tables show 52.1-54.4 batch-1 / 86.5-128.1 at x2-x4. Per law 9 the numbers above come from the durable artifact (README, 'measurements, not estimates', bench/decodebench.py, bf16 KV, 400 decoded tokens @1k ctx greedy); the tweet is discovery. Tweet's 'full decode numbers' image (t.co/ze8ly8a84R) not extracted. Reply: 'can probably make it go to 80 tok/s eventually' (speculation, not recorded). FP8 checkpoint option: Qwen/Qwen3.8-Flash-Next-FP8 -> ~500k KV tokens, native 262K YaRN-off (separate lane). Gated abliterated variant ABLIT=1 exists. 900k-ctx-with-vision + 300k prefill stress claims from tweet not in the tables read. Law 6: MiaAI-Lab is the origin org this project measures against — credit, don't push. MERGE QUESTION: 2 units of one hardware class is a new shape for the hardware list field; full README archived at raw/repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md (934 lines).",
+  "method_note": "ADMITTED 2026-09-14 as data/setups/qwen38-flash-next-nvidia-nvfp4-vllm-2x-spark.json (task #7). DISCREPANCY (recorded, not blended): tweet claims '~64 tok/s single stream (structural), ~115 tok/s for 2-4 concurrent' and says SGLang+MTP+SM121 patch, but the linked repo is vLLM and its server-read tables show 52.1-54.4 batch-1 / 86.5-128.1 at x2-x4. Per law 9 the numbers above come from the durable artifact (README, 'measurements, not estimates', bench/decodebench.py, bf16 KV, 400 decoded tokens @1k ctx greedy); the tweet is discovery. Tweet's 'full decode numbers' image (t.co/ze8ly8a84R) not extracted. Reply: 'can probably make it go to 80 tok/s eventually' (speculation, not recorded). FP8 checkpoint option: Qwen/Qwen3.8-Flash-Next-FP8 -> ~500k KV tokens, native 262K YaRN-off (separate lane). Gated abliterated variant ABLIT=1 exists. 900k-ctx-with-vision + 300k prefill stress claims from tweet not in the tables read. Law 6: MiaAI-Lab is the origin org this project measures against — credit, don't push. MERGE QUESTION: 2 units of one hardware class is a new shape for the hardware list field; full README archived at raw/repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md (934 lines).",
   "collected": "2026-09-10",
-  "state": "extracted"
+  "state": "merged"
  },
  {
   "channel": "x",
@@ -2773,9 +2773,9 @@
     "context": "DFlash2 on Auto; 3.79x vs baseline"
    }
   ],
-  "method_note": "Single reply from unknown builder (@TriadDarren) — no ctx, tasks, or flags; treat as reported, low-confidence. DECISIONS: (a) new hardware class mac-256gb (M3 Ultra); (b) quant enum has no mlx-8 (mlx-2/3/4/6 exist) — add mlx-8 or record quant unstated; (c) AtomicChat as MLX-quant publisher too (dropped [62] links their Qwen3.8-27B MLX collection). ENGINE RECLASSIFIED 2026-09-10: ran inside the Atomic Chat app (MLX-VLM backend), not bare mlx-lm — engine=atomic-chat now that it is registered. quant=mlx-8 (enum exists), format=mlx. Still gated: mac-256gb hardware class.",
+  "method_note": "ADMITTED 2026-09-14 as data/setups/qwen38-27b-mlx-8bit-dflash2-atomic-chat-mac256.json (task #7). Single reply from unknown builder (@TriadDarren) — no ctx, tasks, or flags; treat as reported, low-confidence. DECISIONS: (a) new hardware class mac-256gb (M3 Ultra); (b) quant enum has no mlx-8 (mlx-2/3/4/6 exist) — add mlx-8 or record quant unstated; (c) AtomicChat as MLX-quant publisher too (dropped [62] links their Qwen3.8-27B MLX collection). ENGINE RECLASSIFIED 2026-09-10: ran inside the Atomic Chat app (MLX-VLM backend), not bare mlx-lm — engine=atomic-chat now that it is registered. quant=mlx-8 (enum exists), format=mlx. Still gated: mac-256gb hardware class.",
   "collected": "2026-09-10",
-  "state": "extracted"
+  "state": "merged"
  },
  {
   "channel": "x",
@@ -2844,7 +2844,7 @@
  },
  {
   "discovery_url": "https://huggingface.co/AtomicChat/Qwen3.8-Flash-Next-GGUF",
-  "state": "extracted",
+  "state": "merged",
   "channel": "hf",
   "discovery_date": "2026-09-10",
   "author": "AtomicChat (HF org)",
@@ -2896,11 +2896,11 @@
     "context": "MTL0 model-self 44125 MiB (wired limit 57344 MiB); host adds 37279 MiB for the paged table"
    }
   ],
-  "method_note": "Rung 1: durable vendor artifact with numbers + full method. Self-quantized from Qwen BF16 with own imatrix (published as imatrix.gguf, computed on BF16 never on a quant proxy; BF16 ref PPL 4.0445 +/- 0.0216, 87 chunks @4096); competitors' files re-measured, not copied. KL/top-1 table: 3.84bpw 0.2277/82.68%, 4.27bpw 0.0842/89.49% ('the one to take'), 5.00bpw 0.0837/89.55%. Quant ambiguity: 36-tok/s headline is the 85GB=3.84bpw build; run commands show 4.27bpw — merger should split or pick per card. M5 Max = mac-64gb class instance (note CPU in config). Card said quants 'still uploading' as of 2026-08-27; 48,494 downloads since. DECISIONS: atomicchat whitelist; whether AD quant family deserves its own matrix lanes under Scenario B."
+  "method_note": "ADMITTED 2026-09-14 as data/setups/qwen38-flash-next-atomicchat-gguf-llamacpp-mac64.json (task #7). Rung 1: durable vendor artifact with numbers + full method. Self-quantized from Qwen BF16 with own imatrix (published as imatrix.gguf, computed on BF16 never on a quant proxy; BF16 ref PPL 4.0445 +/- 0.0216, 87 chunks @4096); competitors' files re-measured, not copied. KL/top-1 table: 3.84bpw 0.2277/82.68%, 4.27bpw 0.0842/89.49% ('the one to take'), 5.00bpw 0.0837/89.55%. Quant ambiguity: 36-tok/s headline is the 85GB=3.84bpw build; run commands show 4.27bpw — merger should split or pick per card. M5 Max = mac-64gb class instance (note CPU in config). Card said quants 'still uploading' as of 2026-08-27; 48,494 downloads since. DECISIONS: atomicchat whitelist; whether AD quant family deserves its own matrix lanes under Scenario B."
  },
  {
   "discovery_url": "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF",
-  "state": "extracted",
+  "state": "merged",
   "channel": "hf",
   "discovery_date": "2026-09-10",
   "author": "AtomicChat (HF org)",
@@ -2962,7 +2962,7 @@
     "context": "@32k ctx"
    }
   ],
-  "method_note": "Rung 1 vendor artifact; 'How we measured' section: llama-perplexity on held-out neutral set vs BF16 original, llama-imatrix computed on BF16 (sharded), control quant included. 305,686 downloads — one of the most-pulled 27B GGUFs anywhere. DECISIONS: (a) atomicchat whitelist (law 11); (b) rtx-5090 hardware class + 2-unit shape (same multi-unit question as 2x DGX Spark in [57]); (c) whether the app/fork atomic-llama-cpp-turboquant becomes its own engine entry (TurboQuant KV turbo3/turbo4, ~4.3x smaller KV, CUDA/Vulkan/CPU — README archived facts; no Qwen-on-TurboQuant numbers found yet)."
+  "method_note": "ADMITTED 2026-09-14 as data/setups/qwen38-27b-atomicchat-gguf-q4-2x-rtx5090.json (task #7). Rung 1 vendor artifact; 'How we measured' section: llama-perplexity on held-out neutral set vs BF16 original, llama-imatrix computed on BF16 (sharded), control quant included. 305,686 downloads — one of the most-pulled 27B GGUFs anywhere. DECISIONS: (a) atomicchat whitelist (law 11); (b) rtx-5090 hardware class + 2-unit shape (same multi-unit question as 2x DGX Spark in [57]); (c) whether the app/fork atomic-llama-cpp-turboquant becomes its own engine entry (TurboQuant KV turbo3/turbo4, ~4.3x smaller KV, CUDA/Vulkan/CPU — README archived facts; no Qwen-on-TurboQuant numbers found yet)."
  },
  {
   "channel": "x",
@@ -4470,9 +4470,9 @@
     "context": "peak VRAM at the 30k/n-max-4 operating point (22.x GB of 24)"
    }
   ],
-  "method_note": "STAGED (do NOT merge). Consolidates the builder's DFlash2 series: 110 (primary, 90 t/s), 102 (2-bit Q2_K drafter A/B: 75.89 Q4_K_M vs 75.93 Q2_K, 170k ctx), 103 (decay matrix), 104 (--parallel 1 unlocks ~250k ctx at 75 t/s), 106 (DFlash2 vs native MTP; negatives: multi-GPU + multimodality broken on PR #27342, MTP wins prefill), 114/116 (vision/multimodal MTP lane: 73.4 t/s with mmproj-F16, 240k multimodal ctx on Q4 KV). These are one engine+config+hardware lane, so they collapse into this single candidate rather than N rows. Distinct from the existing AtomicChat AD-Q4_K 4090 lanes (kv/mtp) and from candidate 71 (Unsloth MTP, no DFlash2). Candidate 99 (UD-Q8_K_L + MTP command) is a different quant/config lane and is NOT folded. Headline quant: builder says 'Q4_K_M' in 110 but the paired model is UD-Q4_K_XL; record the checkpoint as unsloth, note the ambiguity.",
+  "method_note": "ADMITTED 2026-09-14 as data/setups/qwen38-27b-unsloth-gguf-dflash2-llamacpp-4090.json (task #7). STAGED (do NOT merge). Consolidates the builder's DFlash2 series: 110 (primary, 90 t/s), 102 (2-bit Q2_K drafter A/B: 75.89 Q4_K_M vs 75.93 Q2_K, 170k ctx), 103 (decay matrix), 104 (--parallel 1 unlocks ~250k ctx at 75 t/s), 106 (DFlash2 vs native MTP; negatives: multi-GPU + multimodality broken on PR #27342, MTP wins prefill), 114/116 (vision/multimodal MTP lane: 73.4 t/s with mmproj-F16, 240k multimodal ctx on Q4 KV). These are one engine+config+hardware lane, so they collapse into this single candidate rather than N rows. Distinct from the existing AtomicChat AD-Q4_K 4090 lanes (kv/mtp) and from candidate 71 (Unsloth MTP, no DFlash2). Candidate 99 (UD-Q8_K_L + MTP command) is a different quant/config lane and is NOT folded. Headline quant: builder says 'Q4_K_M' in 110 but the paired model is UD-Q4_K_XL; record the checkpoint as unsloth, note the ambiguity.",
   "collected": "2026-09-13",
-  "state": "extracted"
+  "state": "merged"
  },
  {
   "channel": "x",
