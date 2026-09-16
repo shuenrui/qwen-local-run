@@ -1,0 +1,328 @@
+{
+ "hf_commits": [
+  {
+   "id": "2d9571f8ce46e151f61c6499c99dee6079e1d610",
+   "title": "add dflash.rope.dimension_sections to Qwen3.8-27B-DFlash2-Q8_0.gguf",
+   "message": "",
+   "authors": [
+    {
+     "user": "jianchen0311",
+     "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/65cb103a11a80579a4e08fd5/k-wPvAvMR_HiL71s_A0HO.jpeg"
+    }
+   ],
+   "date": "2026-08-24T23:07:28.000Z"
+  },
+  {
+   "id": "343c7b53e38446de81efd6a25725c7f0fb26728e",
+   "title": "add dflash.rope.dimension_sections to Qwen3.8-27B-DFlash2-Q4_K_M.gguf",
+   "message": "",
+   "authors": [
+    {
+     "user": "jianchen0311",
+     "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/65cb103a11a80579a4e08fd5/k-wPvAvMR_HiL71s_A0HO.jpeg"
+    }
+   ],
+   "date": "2026-08-24T23:07:19.000Z"
+  },
+  {
+   "id": "cb9dfae3f326836ac2557ed653c84478a0392972",
+   "title": "add dflash.rope.dimension_sections to Qwen3.8-27B-DFlash2-BF16.gguf",
+   "message": "",
+   "authors": [
+    {
+     "user": "jianchen0311",
+     "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/65cb103a11a80579a4e08fd5/k-wPvAvMR_HiL71s_A0HO.jpeg"
+    }
+   ],
+   "date": "2026-08-24T23:07:09.000Z"
+  },
+  {
+   "id": "57ab3265056d4024870b0621cfc2c127537020ed",
+   "title": "DFlash 2 release",
+   "message": "\n\n\nCo-authored-by: jianchen0311 <jianchen0311@users.noreply.huggingface.co>\n",
+   "authors": [
+    {
+     "user": "zhijianliu",
+     "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/650dac79b959b0e1d41d7378/mzbN0MFk3k8b94FQ40I7L.jpeg"
+    },
+    {
+     "user": "jianchen0311",
+     "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/65cb103a11a80579a4e08fd5/k-wPvAvMR_HiL71s_A0HO.jpeg"
+    }
+   ],
+   "date": "2026-08-18T21:25:48.000Z"
+  }
+ ],
+ "hf_tree_57ab3265056d": [
+  {
+   "type": "directory",
+   "oid": "46e689b155e29a05bd20d2757f7b55175e5b8359",
+   "size": 0,
+   "path": "assets"
+  },
+  {
+   "type": "file",
+   "oid": "b50a44ed1ebdb9db6bde0251ecd4887960b26818",
+   "size": 1781,
+   "path": ".gitattributes"
+  },
+  {
+   "type": "file",
+   "oid": "b6675deae1f748cd7bdc9bf6287602559974c40f",
+   "size": 3860293152,
+   "lfs": {
+    "oid": "26af33a15b21475d668e4ee55639beea49932e7360b1144c6282721bcd127c14",
+    "size": 3860293152,
+    "pointerSize": 135
+   },
+   "xetHash": "3c0c4ba26e8664734c26f9881e4e81be914eb9b4f43c20adfcdf4c72fc923974",
+   "path": "Qwen3.8-27B-DFlash2-BF16.gguf"
+  },
+  {
+   "type": "file",
+   "oid": "b4219c3f264722f77bfbe8f95f749cc5753b9807",
+   "size": 1143006752,
+   "lfs": {
+    "oid": "18a380efc9b7ed8d88677fc895f5c11ae170653434ee378f7348f715c14d0594",
+    "size": 1143006752,
+    "pointerSize": 135
+   },
+   "xetHash": "25ec1cbb7046ed6aa63f8227da0aca01afe0ed96c18e2f5be8edcef6494b0170",
+   "path": "Qwen3.8-27B-DFlash2-Q4_K_M.gguf"
+  },
+  {
+   "type": "file",
+   "oid": "e8d5ab72dde393081ef9cddc6f8b6b5d3bc1ab1e",
+   "size": 2056414752,
+   "lfs": {
+    "oid": "7f1c9a31a6ed40044c69f6508b50fd63b87abd8e1fb7fe4290303df549153751",
+    "size": 2056414752,
+    "pointerSize": 135
+   },
+   "xetHash": "6fb0e923350b99f9586941e80e0e559b36806d90451dddd8f561ce219cf0e312",
+   "path": "Qwen3.8-27B-DFlash2-Q8_0.gguf"
+  },
+  {
+   "type": "file",
+   "oid": "2378fea6527c7cc0817a01731fb1b91c2f83ddc5",
+   "size": 3600,
+   "path": "README.md"
+  },
+  {
+   "type": "file",
+   "oid": "193b679a468160fbbd79815634125c46fd6fd403",
+   "size": 286889,
+   "lfs": {
+    "oid": "6d8dcc9a9472bddb644c881fe83050b5343d09bf5ffb0912e5598e55fe671e99",
+    "size": 286889,
+    "pointerSize": 131
+   },
+   "xetHash": "4d31304c9a621c66917607706c177b1ce047180c134fac745792a1c7a4cdf6f9",
+   "path": "assets/dflash2-figure.png"
+  }
+ ],
+ "hf_tree_343c7b53e384": [
+  {
+   "type": "directory",
+   "oid": "46e689b155e29a05bd20d2757f7b55175e5b8359",
+   "size": 0,
+   "path": "assets"
+  },
+  {
+   "type": "file",
+   "oid": "b50a44ed1ebdb9db6bde0251ecd4887960b26818",
+   "size": 1781,
+   "path": ".gitattributes"
+  },
+  {
+   "type": "file",
+   "oid": "182c20f9f026a15732a09ebc9f6d35f9edb16c9e",
+   "size": 3860293216,
+   "lfs": {
+    "oid": "26d47ca20ab07688327a63d912acad222d924eaaa92a980cc488de3c67e736bc",
+    "size": 3860293216,
+    "pointerSize": 135
+   },
+   "xetHash": "7f8e636ac4d7c6b6ce3c69890888fdaae24a898f26a89f821924145d81087f0e",
+   "path": "Qwen3.8-27B-DFlash2-BF16.gguf"
+  },
+  {
+   "type": "file",
+   "oid": "fa9b5aee1eac6a94973925e7e5d69a7e9e0d5031",
+   "size": 1143006816,
+   "lfs": {
+    "oid": "1a25c56858e1ebe93f2718ac1d49d1151f9323325c1bbfd6209370f4db131ebd",
+    "size": 1143006816,
+    "pointerSize": 135
+   },
+   "xetHash": "bc4a66ad0cefef152c380383c961c3bd28af36da7c919cc1719f99bb70fc6bea",
+   "path": "Qwen3.8-27B-DFlash2-Q4_K_M.gguf"
+  },
+  {
+   "type": "file",
+   "oid": "e8d5ab72dde393081ef9cddc6f8b6b5d3bc1ab1e",
+   "size": 2056414752,
+   "lfs": {
+    "oid": "7f1c9a31a6ed40044c69f6508b50fd63b87abd8e1fb7fe4290303df549153751",
+    "size": 2056414752,
+    "pointerSize": 135
+   },
+   "xetHash": "6fb0e923350b99f9586941e80e0e559b36806d90451dddd8f561ce219cf0e312",
+   "path": "Qwen3.8-27B-DFlash2-Q8_0.gguf"
+  },
+  {
+   "type": "file",
+   "oid": "2378fea6527c7cc0817a01731fb1b91c2f83ddc5",
+   "size": 3600,
+   "path": "README.md"
+  },
+  {
+   "type": "file",
+   "oid": "193b679a468160fbbd79815634125c46fd6fd403",
+   "size": 286889,
+   "lfs": {
+    "oid": "6d8dcc9a9472bddb644c881fe83050b5343d09bf5ffb0912e5598e55fe671e99",
+    "size": 286889,
+    "pointerSize": 131
+   },
+   "xetHash": "4d31304c9a621c66917607706c177b1ce047180c134fac745792a1c7a4cdf6f9",
+   "path": "assets/dflash2-figure.png"
+  }
+ ],
+ "hf_tree_cb9dfae3f326": [
+  {
+   "type": "directory",
+   "oid": "46e689b155e29a05bd20d2757f7b55175e5b8359",
+   "size": 0,
+   "path": "assets"
+  },
+  {
+   "type": "file",
+   "oid": "b50a44ed1ebdb9db6bde0251ecd4887960b26818",
+   "size": 1781,
+   "path": ".gitattributes"
+  },
+  {
+   "type": "file",
+   "oid": "182c20f9f026a15732a09ebc9f6d35f9edb16c9e",
+   "size": 3860293216,
+   "lfs": {
+    "oid": "26d47ca20ab07688327a63d912acad222d924eaaa92a980cc488de3c67e736bc",
+    "size": 3860293216,
+    "pointerSize": 135
+   },
+   "xetHash": "7f8e636ac4d7c6b6ce3c69890888fdaae24a898f26a89f821924145d81087f0e",
+   "path": "Qwen3.8-27B-DFlash2-BF16.gguf"
+  },
+  {
+   "type": "file",
+   "oid": "b4219c3f264722f77bfbe8f95f749cc5753b9807",
+   "size": 1143006752,
+   "lfs": {
+    "oid": "18a380efc9b7ed8d88677fc895f5c11ae170653434ee378f7348f715c14d0594",
+    "size": 1143006752,
+    "pointerSize": 135
+   },
+   "xetHash": "25ec1cbb7046ed6aa63f8227da0aca01afe0ed96c18e2f5be8edcef6494b0170",
+   "path": "Qwen3.8-27B-DFlash2-Q4_K_M.gguf"
+  },
+  {
+   "type": "file",
+   "oid": "e8d5ab72dde393081ef9cddc6f8b6b5d3bc1ab1e",
+   "size": 2056414752,
+   "lfs": {
+    "oid": "7f1c9a31a6ed40044c69f6508b50fd63b87abd8e1fb7fe4290303df549153751",
+    "size": 2056414752,
+    "pointerSize": 135
+   },
+   "xetHash": "6fb0e923350b99f9586941e80e0e559b36806d90451dddd8f561ce219cf0e312",
+   "path": "Qwen3.8-27B-DFlash2-Q8_0.gguf"
+  },
+  {
+   "type": "file",
+   "oid": "2378fea6527c7cc0817a01731fb1b91c2f83ddc5",
+   "size": 3600,
+   "path": "README.md"
+  },
+  {
+   "type": "file",
+   "oid": "193b679a468160fbbd79815634125c46fd6fd403",
+   "size": 286889,
+   "lfs": {
+    "oid": "6d8dcc9a9472bddb644c881fe83050b5343d09bf5ffb0912e5598e55fe671e99",
+    "size": 286889,
+    "pointerSize": 131
+   },
+   "xetHash": "4d31304c9a621c66917607706c177b1ce047180c134fac745792a1c7a4cdf6f9",
+   "path": "assets/dflash2-figure.png"
+  }
+ ],
+ "hf_tree_2d9571f8ce46": [
+  {
+   "type": "directory",
+   "oid": "46e689b155e29a05bd20d2757f7b55175e5b8359",
+   "size": 0,
+   "path": "assets"
+  },
+  {
+   "type": "file",
+   "oid": "b50a44ed1ebdb9db6bde0251ecd4887960b26818",
+   "size": 1781,
+   "path": ".gitattributes"
+  },
+  {
+   "type": "file",
+   "oid": "182c20f9f026a15732a09ebc9f6d35f9edb16c9e",
+   "size": 3860293216,
+   "lfs": {
+    "oid": "26d47ca20ab07688327a63d912acad222d924eaaa92a980cc488de3c67e736bc",
+    "size": 3860293216,
+    "pointerSize": 135
+   },
+   "xetHash": "7f8e636ac4d7c6b6ce3c69890888fdaae24a898f26a89f821924145d81087f0e",
+   "path": "Qwen3.8-27B-DFlash2-BF16.gguf"
+  },
+  {
+   "type": "file",
+   "oid": "fa9b5aee1eac6a94973925e7e5d69a7e9e0d5031",
+   "size": 1143006816,
+   "lfs": {
+    "oid": "1a25c56858e1ebe93f2718ac1d49d1151f9323325c1bbfd6209370f4db131ebd",
+    "size": 1143006816,
+    "pointerSize": 135
+   },
+   "xetHash": "bc4a66ad0cefef152c380383c961c3bd28af36da7c919cc1719f99bb70fc6bea",
+   "path": "Qwen3.8-27B-DFlash2-Q4_K_M.gguf"
+  },
+  {
+   "type": "file",
+   "oid": "d117acc8e0fbc272b8c2278d38bc67fa20eeae61",
+   "size": 2056414816,
+   "lfs": {
+    "oid": "c18e800daedc59ca68fd13b6a856d795746af6d399a9279ac6a277d1d422f87e",
+    "size": 2056414816,
+    "pointerSize": 135
+   },
+   "xetHash": "30fbb1f66c99b40c5c4dc0db0fbb657b4b1c93f8af7c563301f4b28d4c8e6cf5",
+   "path": "Qwen3.8-27B-DFlash2-Q8_0.gguf"
+  },
+  {
+   "type": "file",
+   "oid": "2378fea6527c7cc0817a01731fb1b91c2f83ddc5",
+   "size": 3600,
+   "path": "README.md"
+  },
+  {
+   "type": "file",
+   "oid": "193b679a468160fbbd79815634125c46fd6fd403",
+   "size": 286889,
+   "lfs": {
+    "oid": "6d8dcc9a9472bddb644c881fe83050b5343d09bf5ffb0912e5598e55fe671e99",
+    "size": 286889,
+    "pointerSize": 131
+   },
+   "xetHash": "4d31304c9a621c66917607706c177b1ce047180c134fac745792a1c7a4cdf6f9",
+   "path": "assets/dflash2-figure.png"
+  }
+ ]
+}

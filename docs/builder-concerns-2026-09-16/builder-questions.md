@@ -47,3 +47,15 @@ section; archive both payloads under
 - If rate limits prevent a reply before the integrated pilot review, the open_question
   entries remain explicitly unanswered and pilots 07/08 keep the current R/I
   marks in the matrix.
+
+## Send status (2026-09-16)
+
+Attempts to push both questions over the authenticated `twitter` CLI
+(`reply`, then a neutral `post`, and a shortened variant that even passed the
+280-byte length check) all fail at the Twitter API layer with
+"Failed to create tweet" even for a trivial standalone post, while reads
+(`tweet`, `user-posts`, `status`, `whoami`) still succeed. The authenticated
+write path on this box is not accepting tweets — i.e., a tooling/
+authorization limit, not a wording problem. Both questions therefore remain
+**drafted and pinned but unsent**; retrying requires either a write-capable
+session or the owner's preferred alternate channel.

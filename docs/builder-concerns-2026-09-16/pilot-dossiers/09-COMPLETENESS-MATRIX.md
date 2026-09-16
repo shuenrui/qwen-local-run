@@ -30,3 +30,21 @@ Legend: **P** already a first-class recorded field, **B** the fact is in the dos
 
 ## Recommended next step (not yet done):
 move every **B** into a field (the corpus already supports it) and reach out for the two **I**-s that block promotion (e.g. the 96 GB fit question on 07, eval_duration on 08).
+
+## Appendix-side resolution (2026-09-16, task #17)
+
+Mapping the five appendix items in `r-artifacts.md` back to the addressee cells:
+
+| R cell (in the matrix) | Closed by which appendix item | Now |
+|---|---|---|
+| 01 kv_cache_gb (R) | none of the five — recovering it needs the run's own server telemetry / docker inspect data, not a repo pin | still open, pending MiaAI-side data (builder question route; X write path currently broken) |
+| 01 concurrency ceiling (R) | none of the five — requires full run metadata | still open |
+| 02 kv_cache_gb (R) | appendix 3 + 5 (z-lab revision list and per-file blob history) | closed as a migration path: pin the anchor Q4_K_M blob, else re-run post-anchor |
+| 03 kv_cache_gb (R) | appendix 1 + 2 (the drluoto guide repo and branch pins) | closed: the value is retraceable from the dated pinned artifacts |
+| 07 kv_cache_gb (R) | none of the five — appendix 4 concerns pilot 01's container only | still open; stays vendor-attributed |
+
+Net effect: pilot 02 and 03 revision/kv_cache cells gain dated, archived pin
+evidence; pilot 01's image digest is now an explicit exhaustion log (public
+tag history insufficient; open_question + promotion gate stand); pilot 07's fit
+and kv_cache questions are untouched by this appendix and remain with
+builder-questions Q1.

@@ -1,0 +1,47 @@
+{
+ "vllm_qwen38_flash-next_tag": {
+  "creator": 34668080,
+  "id": 1284397397,
+  "images": [
+   {
+    "architecture": "amd64",
+    "features": "",
+    "variant": null,
+    "digest": "sha256:0aea30240f3e3d9ffae8526643950e170eb5fa07fc427016a9dd90892afa2aa3",
+    "os": "linux",
+    "os_features": "",
+    "os_version": null,
+    "size": 8634450611,
+    "status": "active",
+    "last_pulled": "2026-09-16T09:48:23.99635139Z",
+    "last_pushed": "2026-08-26T13:04:07.866693039Z"
+   },
+   {
+    "architecture": "arm64",
+    "features": "",
+    "variant": null,
+    "digest": "sha256:3b0e188ffceb3d07e09c3cb5215433a0020eacf02d7f882ed3a8bfd15454477e",
+    "os": "linux",
+    "os_features": "",
+    "os_version": null,
+    "size": 9702868146,
+    "status": "active",
+    "last_pulled": "2026-09-16T09:36:17.821222679Z",
+    "last_pushed": "2026-08-26T13:04:17.498520949Z"
+   }
+  ],
+  "last_updated": "2026-08-26T13:06:10.219275Z",
+  "last_updater": 34668080,
+  "last_updater_username": "vllmbot",
+  "name": "qwen38-flash-next",
+  "repository": 22490489,
+  "full_size": 9702868146,
+  "v2": true,
+  "tag_status": "active",
+  "tag_last_pulled": "2026-09-16T09:48:23.99635139Z",
+  "tag_last_pushed": "2026-08-26T13:06:10.219275Z",
+  "media_type": "application/vnd.docker.distribution.manifest.list.v2+json",
+  "content_type": "image",
+  "digest": "sha256:fc120ece0a388cc0aa1caad4a9f1cd92113484ab7ec2fd0efadd62585be05bf8"
+ }
+}
