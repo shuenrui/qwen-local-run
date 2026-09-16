@@ -1,0 +1,10 @@
+{
+ "url": "https://github.com/unslothai/unsloth/issues/11098",
+ "repo": "unslothai/unsloth",
+ "number": 11098,
+ "title": "Qwen3.8-Next MTP guide (RTX 6000 PRO): which memory tier carried the PLE table behind the 170 tok/s chart?",
+ "body": "**Q on the Qwen3.8-Next MTP guide** (unsloth.ai/docs/models/qwen3.8-next)\n\nThe guide's MTP chart says UD-Q4_K_XL reaches **170 tokens/s on 1× RTX 6000 PRO** (vs a ~100 tok/s baseline). Two things about that specific run aren't stated on the page and we'd like to record them verbatim in a provenance directory of Qwen local-run setups (a public, source-backed companion dataset — so it's builder-facing provenance, not a support ticket):\n\n1. The UD-Q4_K_XL file is ~111.3 GB while the RTX 6000 PRO card is 96 GB. Which tier carried the 51 GB PLE table on that run — page-locked host, pageable host, CPU-RAM offload flag, or `--parallel 1`-freed KV? \n2. Did the ~100 tok/s baseline use the same KV quant / context / driver/runtime versions so the 1.7× is directly attributable to MTP alone? Was the 170 figure a single-stream measurement?\n3. Does the shared Q8_0 MTP module's resident footprint deviate from the \"96–114 GB\" table the page gives for the 4-bit lane?\n\nIf you can share the run's conditions (container / version + offload tier), we'll pin them verbatim with attribution; sensitive-condition granularity is welcome even if it's only \"CPU-RAM offload\".\n",
+ "created_at": "2026-09-16T10:05:47Z",
+ "state": "open",
+ "html_url": "https://github.com/unslothai/unsloth/issues/11098"
+}

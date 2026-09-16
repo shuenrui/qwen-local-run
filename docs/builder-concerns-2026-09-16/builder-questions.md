@@ -59,3 +59,20 @@ write path on this box is not accepting tweets — i.e., a tooling/
 authorization limit, not a wording problem. Both questions therefore remain
 **drafted and pinned but unsent**; retrying requires either a write-capable
 session or the owner's preferred alternate channel.
+
+## Delivery log (2026-09-16)
+
+Both questions were pre-approved by Terra (task #17, msg 8f3e527f) and the
+owner for posting through an authenticated durable channel. Local X writes
+are refused by the Twitter API on this session (see Send status), so both
+ended up in the pre-approved channel Terra's 09:54 message named:
+
+| # | builder question | delivered to | url | send date (UTC) | channel |
+|---|---|---|---|---|---|
+| Q1 | RTX PRO 6000 fit/offload | unslothai/unsloth issue tracker | https://github.com/unslothai/unsloth/issues/11098 | 2026-09-16 10:05:47Z | GitHub issue |
+| Q2 | Ollama wall-clock vs eval_duration | MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks issue tracker (per Terra's 09:54 "the MiaAI repo for Q2") | https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks/issues/57 | 2026-09-16 10:06:00Z | GitHub issue |
+
+Replies to either issue → open_question re-review (per Terra's corrected
+evidence semantics), not automatic upgrade. Archived payloads for both issues
+live in `raw/r-artifacts/github-issue-*.json`; replies will be appended there
+as they arrive.
