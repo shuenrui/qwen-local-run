@@ -52,6 +52,7 @@
   },
   "measurements": [
     {
+      "id": "m001",
       "metric": "decode_per_stream",
       "value": 31,
       "unit": "tok/s",
@@ -67,6 +68,7 @@
       "source": "https://github.com/blazux"
     },
     {
+      "id": "m002",
       "metric": "decode_chat",
       "value": 31,
       "unit": "tok/s",
@@ -78,6 +80,7 @@
       "note": "single-stream greedy decode on real answers, hybrid mode (NVFP4 experts + fp8 side layers), MTP=2; ~26 tok/s in plain NVFP4 mode, ~22 tok/s for llama.cpp IQ4_XS with no MTP"
     },
     {
+      "id": "m003",
       "metric": "decode_chat",
       "value": 32.5,
       "unit": "tok/s",
@@ -88,6 +91,7 @@
       "note": "kernel-level decode with DET_TOPK=1 deterministic top-k, hybrid, MTP=2, prefix caching on (same as stock non-deterministic kernel)"
     },
     {
+      "id": "m004",
       "metric": "decode_agg",
       "value": 266.8,
       "unit": "tok/s",
@@ -99,6 +103,7 @@
       "note": "48 concurrent streams, RadixArk NVFP4, 8k ctx, no speculative decoding, vLLM native PLE CPU offload (1 stream 17.1, 8 -> 87.5, 16 -> 131.6, 32 -> 212.0)"
     },
     {
+      "id": "m005",
       "metric": "decode_per_stream",
       "value": 5.6,
       "unit": "tok/s",
@@ -110,6 +115,7 @@
       "note": "per-stream at 48 concurrent (major page faults/token fall 4.4x from c=1 to c=48, so the paged table argues FOR concurrency)"
     },
     {
+      "id": "m006",
       "metric": "ttft_ms",
       "value": 1400,
       "unit": "ms",
@@ -120,6 +126,7 @@
       "note": "prefix-cache hit on a 20k-token prefix, vs ~14 s cold (x10); with 8 concurrent conversations ~80 s -> ~4-6 s"
     },
     {
+      "id": "m007",
       "metric": "ttft_ms",
       "value": 1190,
       "unit": "ms",
@@ -130,6 +137,7 @@
       "note": "TTFT at 32 concurrent streams (0.22 s at 1, 0.53 s at 8, 0.83 s at 16, 1.60 s at 48)"
     },
     {
+      "id": "m008",
       "metric": "task_time_min",
       "value": 48,
       "unit": "s",
@@ -140,6 +148,7 @@
       "note": "needle-in-haystack retrieval at a 92k-token prompt"
     },
     {
+      "id": "m009",
       "metric": "memory_gb",
       "value": 19,
       "unit": "GB",
@@ -150,6 +159,7 @@
       "note": "KV cache pool at GPU_MEM=0.80 with 500k YaRN + MTP: ~580k tokens in NVFP4 mode (~630k in hybrid, +8%), about 19 GB at the ~32.8 KB/token the 27B lane measures"
     },
     {
+      "id": "m010",
       "metric": "disk_gb",
       "value": 130,
       "unit": "GB",
@@ -160,6 +170,7 @@
       "note": "free disk for the checkpoint (+13 GB for the hybrid variant), NVMe strongly recommended since the table is read at runtime"
     },
     {
+      "id": "m011",
       "metric": "task_time_min",
       "value": 13,
       "unit": "min",
@@ -170,6 +181,7 @@
       "note": "boot/load time for scripts/serve.sh (~8-13 min), plus ~1 min docker build and ~10 min one-time prepare-hybrid.sh"
     },
     {
+      "id": "m012",
       "metric": "quality_index",
       "value": 45,
       "unit": "score",
@@ -180,6 +192,7 @@
       "note": "17-scenario agentic tournament x 3 repeats = 45/51, identical for NVFP4 and hybrid modes; the AutoRound int4 variant scored 44/51 at ~34 tok/s but is non-deterministic"
     },
     {
+      "id": "m013",
       "metric": "memory_gb",
       "value": 76,
       "unit": "GB",

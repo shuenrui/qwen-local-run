@@ -50,6 +50,7 @@
   },
   "measurements": [
     {
+      "id": "m001",
       "metric": "decode_chat",
       "value": 60.2,
       "unit": "tok/s",
@@ -61,6 +62,7 @@
       "note": "qwen3.6:35b-a3b MoE (3B active) decode at 0.5k prompt, reasoning off - fastest of the 11 models tested"
     },
     {
+      "id": "m002",
       "metric": "ttft_ms",
       "value": 17000,
       "unit": "ms",
@@ -71,6 +73,7 @@
       "note": "qwen3.6:35b-a3b TTFT at 32k prompt with caching defeated (175000 ms at 128k)"
     },
     {
+      "id": "m003",
       "metric": "memory_gb",
       "value": 27,
       "unit": "GB",
@@ -81,6 +84,7 @@
       "note": "qwen3.6:35b-a3b model footprint from ollama ps at 32k context (30 GB at 128k); qwen3.6:27b 25 GB at 32k, 32 GB at 128k"
     },
     {
+      "id": "m004",
       "metric": "disk_gb",
       "value": 23,
       "unit": "GB",

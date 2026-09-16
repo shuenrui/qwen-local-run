@@ -51,6 +51,7 @@
   },
   "measurements": [
     {
+      "id": "m001",
       "metric": "decode_agg",
       "value": 431.42,
       "unit": "tok/s",
@@ -61,6 +62,7 @@
       "method": "vllm bench serve, 1000 requests, max concurrency 100, 128K-context unit"
     },
     {
+      "id": "m002",
       "metric": "ttft_ms",
       "value": 2242.31,
       "unit": "ms",

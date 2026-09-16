@@ -62,6 +62,7 @@
   },
   "measurements": [
     {
+      "id": "m001",
       "metric": "decode_code",
       "value": 50.9,
       "unit": "tok/s",
@@ -77,6 +78,7 @@
       "note": "LRUCache + small test probe. Ties DSpark's 51.5 inside the <15% noise band."
     },
     {
+      "id": "m002",
       "metric": "decode_essay",
       "value": 25.4,
       "unit": "tok/s",
@@ -92,6 +94,7 @@
       "note": "Babbage-to-GPUs long essay. Beats both DSpark (18.3) and MTP (24.1)."
     },
     {
+      "id": "m003",
       "metric": "decode_chat",
       "value": 66.6,
       "unit": "tok/s",
@@ -107,6 +110,7 @@
       "note": "Short chat with thinking on. This image batches ~3.75 tokens per SSE event at a fixed ~8 events/s, so a client that counts events as tokens reads ~9 tok/s. Always count completion_tokens."
     },
     {
+      "id": "m004",
       "metric": "ttft_ms",
       "value": 8200,
       "unit": "ms",

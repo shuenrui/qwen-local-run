@@ -67,6 +67,7 @@
   },
   "measurements": [
     {
+      "id": "m001",
       "metric": "decode_per_stream",
       "value": 22.52,
       "unit": "tok/s",
@@ -79,6 +80,7 @@
       "source": "https://x.com/analogalok/status/2092697021790708148"
     },
     {
+      "id": "m002",
       "metric": "prefill_tok_s",
       "value": 383.85,
       "unit": "tok/s",
@@ -91,6 +93,7 @@
       "source": "https://x.com/analogalok/status/2092697021790708148"
     },
     {
+      "id": "m003",
       "metric": "memory_gb",
       "value": 23.85,
       "unit": "GB",

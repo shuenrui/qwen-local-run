@@ -8,6 +8,8 @@ Reads whichever candidate files exist:
 
 Checks, per AGENTS laws 1 and 9-11:
     enums — imported from validate.py so they cannot drift
+    schema v2 — optional evidence/condition/technique shapes are vetted with the
+        same validator helpers before a candidate may use them
     URL liveness — reddit permalinks are checked via mirror_url (law 10)
     duplicates — against the current dataset (checkpoint + engine + hardware)
     Scenario B gates (law 11) — publisher whitelist, canonical publisher per
@@ -189,6 +191,13 @@ class Index:
             if n.endswith(".json"):
                 obj = json.load(open(os.path.join(d, n), encoding="utf-8"))
                 self.models.append(obj)
+        self.techniques = {}
+        d = os.path.join(DATA, "techniques")
+        if os.path.isdir(d):
+            for n in sorted(os.listdir(d)):
+                if n.endswith(".json") and not n.startswith("_"):
+                    obj = json.load(open(os.path.join(d, n), encoding="utf-8"))
+                    self.techniques[obj.get("id", n[:-5])] = obj
 
     def hw_blackwell(self, hwval):
         if hwval in self.hw:
@@ -277,6 +286,7 @@ def fields(r):
     f["discovery_url"] = r.get("discovery_url") or ""
     f["mirror_url"] = r.get("mirror_url") or ""
     f["title"] = r.get("title") or r.get("thread") or ""
+    f["raw"] = r
     return f
 
 
@@ -400,6 +410,16 @@ def vet_one(idx, f, have, covered, url_cache):
                 elif val > ceiling * warn_x:
                     warns.append(f"ROOFLINE? {val} tok/s vs ceiling ~{ceiling:.1f} "
                                  f"(spec_decode={'on' if spec else 'off'})")
+
+    # --- schema-v2 optional shapes -------------------------------------------
+    raw = f.get("raw") or {}
+    setup_like = dict(raw)
+    setup_like["measurements"] = f["measurements"]
+    if raw.get("schema_version") is not None or V.has_v2_fields(setup_like):
+        rep = V.Report()
+        V.check_setup_v2(rep, "candidate", setup_like, idx.techniques, idx.hw, set())
+        probs.extend(rep.errors)
+        warns.extend(rep.warnings)
 
     # --- social ladder (laws 1, 9, 10) ----------------------------------------
     if f["channel"]:

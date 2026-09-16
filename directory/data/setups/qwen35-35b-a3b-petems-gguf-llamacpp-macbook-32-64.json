@@ -51,6 +51,7 @@
   },
   "measurements": [
     {
+      "id": "m001",
       "metric": "memory_gb",
       "value": 22,
       "unit": "GB",
@@ -61,6 +62,7 @@
       "note": "RAM for Qwen3.5-35B-A3B at Q4_K_M on a 32 GB Mac, which is why all 99 layers can go to the Metal GPU"
     },
     {
+      "id": "m002",
       "metric": "disk_gb",
       "value": 50,
       "unit": "GB",

@@ -1,0 +1,39 @@
+{
+  "id": "kv-quant-ladder",
+  "name": "KV quantization ladder",
+  "category": "memory_strategy",
+  "canonical_description": "Selects key/value cache precision and size to fit a context target.",
+  "mechanism": "Selects KV-cache precision or quantization—such as fp16, q8_0, q4_0, or an engine-specific FP8 KV setting—to trade cache memory against usable context and concurrency.",
+  "constraints": [
+    "Requires engine/runtime support for the selected KV dtype or cache-quantization setting.",
+    "The usable context ceiling depends on total memory, weight footprint, speculative/MTP state, and the selected KV precision."
+  ],
+  "tradeoffs": [
+    "Lower KV precision reduces cache memory, but quality effects require same-scope correctness or quality measurements.",
+    "A recorded context ceiling is setup-specific and may not be compared across different weights, engines, or KV settings without explicit conditions."
+  ],
+  "re_review_triggers": [
+    "Engine KV-cache dtype support or defaults change.",
+    "A setup compares KV-ladder context ceilings without recording both cache precision and context/workload conditions.",
+    "A setup claims a quality effect from KV quantization without linked same-scope quality evidence."
+  ],
+  "canonical_sources": [
+    {
+      "url": "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF",
+      "kind": "model",
+      "archive_path": "directory/tools/history/inputs/pass4-social/raw/hf_AtomicChat_27B-GGUF.md",
+      "locator": "'Which one fits your card' and the attention-cache-per-token/context budget table",
+      "note": "Vendor card recording that both file and context must fit, with explicit context-memory budgeting."
+    },
+    {
+      "url": "https://x.com/analogalok/status/2088625914682941719",
+      "kind": "post",
+      "archive_path": "directory/tools/history/inputs/pass4-social/raw/x_thread_2088625914682941719.json",
+      "locator": "Context Scaling Matrix for fp16/Q8/Q4 KV and MTP Overdrive",
+      "note": "Archived builder thread recording an fp16/Q8/Q4 KV ladder and the resulting context ceilings on a single RTX 4090."
+    }
+  ],
+  "status": "proposed",
+  "updated": "2026-09-16",
+  "note": "Canonical technique identity only. A setup-specific claim must still carry its own statement, source, locator, lineage, evidence level, and contrast kind."
+}

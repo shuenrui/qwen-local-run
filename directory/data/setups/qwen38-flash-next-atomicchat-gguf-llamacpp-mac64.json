@@ -62,6 +62,7 @@
   },
   "measurements": [
     {
+      "id": "m001",
       "metric": "prefill_tok_s",
       "value": 517.9,
       "unit": "tok/s",
@@ -71,6 +72,7 @@
       "context": "pp512 on M5 Max 64GB"
     },
     {
+      "id": "m002",
       "metric": "decode_per_stream",
       "value": 36.0,
       "unit": "tok/s",
@@ -81,6 +83,7 @@
       "context": "tg128, with vision, on the 85GB AD build that exceeds machine RAM via the pageable PLE table"
     },
     {
+      "id": "m003",
       "metric": "memory_gb",
       "value": 43.1,
       "unit": "GB",

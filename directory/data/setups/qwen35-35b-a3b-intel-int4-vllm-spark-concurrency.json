@@ -55,6 +55,7 @@
   },
   "measurements": [
     {
+      "id": "m001",
       "metric": "decode_agg",
       "value": 60.87,
       "unit": "tok/s",
@@ -65,6 +66,7 @@
       "method": "vllm bench serve, 5x concurrency, 100 prompts, 42K input tokens total"
     },
     {
+      "id": "m002",
       "metric": "ttft_ms",
       "value": 15715.12,
       "unit": "ms",
@@ -74,6 +76,7 @@
       "method": "mean TTFT at 5x concurrency with prefix caching (median 12491 ms)"
     },
     {
+      "id": "m003",
       "metric": "decode_agg",
       "value": 66.27,
       "unit": "tok/s",
@@ -84,6 +87,7 @@
       "method": "same prompt set at 10x concurrency"
     },
     {
+      "id": "m004",
       "metric": "bench_other",
       "value": 82.32,
       "unit": "%",

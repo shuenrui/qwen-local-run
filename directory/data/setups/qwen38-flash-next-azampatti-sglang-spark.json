@@ -52,6 +52,7 @@
   },
   "measurements": [
     {
+      "id": "m001",
       "metric": "decode_code",
       "value": 43,
       "unit": "tok/s",

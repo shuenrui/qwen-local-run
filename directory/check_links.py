@@ -25,7 +25,13 @@ from concurrent.futures import ThreadPoolExecutor
 from threading import Lock
 from urllib.parse import urlparse
 
-DATA = os.path.join(os.path.dirname(os.path.abspath(__file__)), "data")
+HERE = os.path.dirname(os.path.abspath(__file__))
+if HERE not in sys.path:
+    sys.path.insert(0, HERE)
+
+import validate as vmod
+
+DATA = os.path.join(HERE, "data")
 HOST_LOCKS = defaultdict(Lock)
 LAST_REQUEST = defaultdict(float)
 
@@ -103,10 +109,16 @@ def main():
     setups = load_dir("setups")
     models = load_dir("models")
     hardware = load_dir("hardware")
+    techniques = vmod.load_dir("techniques")
     publishers = json.load(open(os.path.join(DATA, "publishers.json"),
                                 encoding="utf-8"))["publishers"]
 
     urls = defaultdict(list)
+
+    def add_url(url, where):
+        if url and where not in urls[url]:
+            urls[url].append(where)
+
     for sid, s in setups.items():
         for src in s.get("sources", []):
             u = src["url"]
@@ -114,23 +126,30 @@ def main():
             if m and urlparse(u).netloc.endswith("reddit.com"):
                 # Reddit hard-403s this environment (AGENTS law 10): the mirror
                 # is the verifiable evidence, the permalink the human citation.
-                urls[m].append(f"setups/{sid} (mirror of {u})")
+                add_url(m, f"setups/{sid} (mirror of {u})")
             else:
-                urls[u].append(f"setups/{sid}")
+                add_url(u, f"setups/{sid}")
         for m in s.get("measurements", []):
             if m.get("source"):
-                urls[m["source"]].append(f"setups/{sid}:measurement")
-        urls[s["variation"]["url"]].append(f"setups/{sid}:checkpoint")
+                add_url(m["source"], f"setups/{sid}:measurement")
+        add_url(s["variation"]["url"], f"setups/{sid}:checkpoint")
         if s["run"].get("repo"):
-            urls[s["run"]["repo"]].append(f"setups/{sid}:run")
+            add_url(s["run"]["repo"], f"setups/{sid}:run")
+        for url, wheres in vmod.collect_setup_v2_urls(s, sid).items():
+            for where in wheres:
+                add_url(url, where)
     for mid, m in models.items():
-        urls[m["url"]].append(f"models/{mid}")
+        add_url(m["url"], f"models/{mid}")
     for hid, h in hardware.items():
         if h.get("url"):
-            urls[h["url"]].append(f"hardware/{hid}")
+            add_url(h["url"], f"hardware/{hid}")
     for pid, p in publishers.items():
         if p.get("url"):
-            urls[p["url"]].append(f"publishers/{pid}")
+            add_url(p["url"], f"publishers/{pid}")
+    for tid, technique in techniques.items():
+        for url, wheres in vmod.collect_technique_urls(tid, technique).items():
+            for where in wheres:
+                add_url(url, where)
 
     if not args.quiet:
         print(f"checking {len(urls)} distinct URLs with {args.workers} workers")

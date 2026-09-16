@@ -58,6 +58,7 @@
   },
   "measurements": [
     {
+      "id": "m001",
       "metric": "decode_per_stream",
       "value": 56.6,
       "unit": "tok/s",
@@ -68,6 +69,7 @@
       "method": "synthetic structural-decode fixture, single stream, first post-fix boot at the 0.90/16 profile"
     },
     {
+      "id": "m002",
       "metric": "decode_agg",
       "value": 227.6,
       "unit": "tok/s",
@@ -79,6 +81,7 @@
       "note": "Per-stream degrades gracefully 56.6 -> 28.2 tok/s as concurrency rises 1 -> 16."
     },
     {
+      "id": "m003",
       "metric": "ttft_ms",
       "value": 127,
       "unit": "ms",

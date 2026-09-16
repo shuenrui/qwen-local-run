@@ -13,6 +13,7 @@ data/
 ├── models/<id>.json        the brain: architecture, context, modalities, license
 ├── hardware/<id>.json      the box: memory, bandwidth, arch + device spec
 ├── engines/<id>.json       the server: SGLang, vLLM, llama.cpp, ...
+├── techniques/<id>.json    canonical technique packets for evidence claims
 ├── publishers.json         who made things: labs, quant shops, individuals
 ├── setups/<id>.json        one runnable setup  <- the main entity
 ├── device-schema.json      the contract for hardware[].device blocks
@@ -204,6 +205,103 @@ derive it from request counts, prompt counts, capacity claims, or config names.
 `decode_agg` is total decode throughput across those parallel streams, while
 `prefill_tok_s` is prompt-processing/read throughput and is not decode speed.
 
+## Schema version 2 — Phase A foundation (added 2026-09-16)
+
+`schema_version: 2` is optional and additive. Legacy setup records remain valid
+without it, and Phase A does not migrate pilot evidence. The authoritative
+design document is `docs/EVIDENCE-SCHEMA-2026-09-16.md`; this file records the
+implemented directory-side contract.
+
+### Measurement IDs and the lone-ID exemption
+
+Phase A assigned a stable local `id` to every existing measurement:
+
+```jsonc
+"measurements": [
+  {
+    "id": "m001",
+    "metric": "decode_per_stream",
+    "value": 90.0,
+    "unit": "tok/s"
+  }
+]
+```
+
+- IDs are local to one setup, match `validate.py`'s `ID_RE`, and must be unique
+  within that setup.
+- The initial IDs are mechanical `m001`, `m002`, ... values assigned from the
+  current measurement order by `tools/assign_measurement_ids.py`. They are
+  identity metadata for later evidence links; they do not reorder, edit, or
+  reinterpret any existing measurement.
+- **A lone `measurements[].id` does NOT trigger `schema_version: 2`.** The
+  exemption exists so all 190 legacy measurements can gain stable references
+  without changing their prose, values, or evidence status.
+- Any other schema-v2 block — `measurements[].conditions`,
+  `measurements[].evidence`, setup-level `evidence`, `interconnect`, `serving`,
+  `correctness`, `known_failures`, or `capability_observations` — requires
+  `schema_version: 2`.
+
+### Canonical technique registry
+
+Technique identity lives in `data/techniques/<id>.json`, one packet per
+technique. Task #16 chose the per-file directory form rather than the proposal
+document's single `data/techniques.json` file because it matches the existing
+`data/<collection>/<id>.json` pattern used by models, hardware, engines, and
+setups.
+
+```jsonc
+{
+  "id": "native-mtp",
+  "name": "llama.cpp native MTP",
+  "category": "speculative_decode",
+  "canonical_description": "Uses the target model’s multi-token-prediction path rather than a separate block-diffusion drafter.",
+  "mechanism": "...",
+  "constraints": ["..."],
+  "tradeoffs": ["..."],
+  "re_review_triggers": ["..."],
+  "canonical_sources": [
+    {
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/27950",
+      "kind": "thread",
+      "archive_path": "directory/tools/history/inputs/pass4-social/raw/gh-discussion_ggml-org_llama.cpp_27950.json",
+      "locator": "title, body, and comments",
+      "note": "Durable source-backed provenance for the canonical packet."
+    }
+  ],
+  "status": "proposed",
+  "updated": "2026-09-16"
+}
+```
+
+Rules:
+
+- `validate.py` validates the registry and rejects any unknown `technique_id`
+  referenced from a schema-v2 claim.
+- `check_links.py` fetches technique `canonical_sources[].url` values. Each
+  source may alternatively cite a durable `archive_path`; at least one of
+  `url` or `archive_path` is required.
+- A packet supplies canonical technique identity only. It may not create a
+  setup-specific causal, fit, quality, performance, or reproduction claim by
+  itself.
+- Phase A does not modify `build.py` or `site_src/`, so the technique registry
+  is not yet inlined into the generated site payload. It is currently a
+  validator/link-checked data collection. A later build/UI phase can expose it
+  through the existing `build.py` collection pattern.
+
+### Derived evidence properties
+
+The validator derives display-only properties; it never writes them back into
+`data/` and never auto-populates missing facts:
+
+- `condition_completeness` for measurements and comparisons is derived from the
+  recorded conditions/method/source fields. A stored `condition_completeness`
+  value is a validation error.
+- `wall_clock_division` measurements require a method note. They remain visible
+  as C2 observations, but the validator/build-visible derived flags mark them
+  `headline_eligible: false` and `comparability_eligible: false`.
+- Quality status is separate from causal evidence level. There is no C5 level,
+  and quality status never upgrades evidence level.
+
 ## device specs (hardware records, added 2026-09-10)
 
 Hardware records carry an optional `device` block (contract:
@@ -339,7 +437,10 @@ through this ladder — the higher the rung, the more of the number survives:
 
 ## Maintenance tools
 
-- `validate.py` — schema and enum enforcement; runs inside `build.py`.
+- `validate.py` — schema and enum enforcement; runs inside `build.py`. Use
+  `--legacy-pin-warnings` in fixture/migration work to show the advisory pin
+  warnings for unmigrated legacy records; the publish gate omits it so the
+  live gate stays on the single known hardware warning.
 - `check_links.py` — re-fetches every cited URL; exit 1 on any dead link.
   Run it before publishing: a dead source URL is a provenance failure.
 - `import_bench.py` — regenerates `box` measurements from `bench/ab.py`
@@ -355,4 +456,12 @@ through this ladder — the higher the rung, the more of the number survives:
   Discourse forums (HF, NVIDIA) into
   `tools/history/inputs/pass4-social/` (raw payloads + ledger).
 - `tools/coverage.py` — facet coverage tables (generation, format, quant,
-  engine, hardware, provenance, status) from the current dataset.
+  engine, hardware, provenance, status) from the current dataset, plus
+  schema-v2 state, v2 evidence blocks, technique-id use, and technique count.
+- `tools/assign_measurement_ids.py` — idempotent Phase A sweep that inserts
+  mechanical `measurements[].id` values and proves byte/parsed equality for
+  every existing field. Run `--check` first; `apply` is the only live-data
+  change authorized by Phase A.
+- `tools/check_schema_v2_fixtures.py` — reproducible positive/negative schema-v2
+  fixture suite. It copies the dataset into temporary scratch directories and
+  never mutates live `data/`.

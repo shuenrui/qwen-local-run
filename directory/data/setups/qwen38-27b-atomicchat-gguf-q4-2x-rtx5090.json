@@ -55,6 +55,7 @@
   },
   "measurements": [
     {
+      "id": "m001",
       "metric": "prefill_tok_s",
       "value": 363,
       "unit": "tok/s",
@@ -64,6 +65,7 @@
       "context": "@8k ctx, AD-Q4_K_M full offload on 2x RTX 5090"
     },
     {
+      "id": "m002",
       "metric": "decode_per_stream",
       "value": 77,
       "unit": "tok/s",
@@ -74,6 +76,7 @@
       "context": "@8k ctx"
     },
     {
+      "id": "m003",
       "metric": "prefill_tok_s",
       "value": 5244,
       "unit": "tok/s",
@@ -83,6 +86,7 @@
       "context": "@32k ctx — likely batched pp across the full prompt; column semantics not restated"
     },
     {
+      "id": "m004",
       "metric": "decode_per_stream",
       "value": 72,
       "unit": "tok/s",

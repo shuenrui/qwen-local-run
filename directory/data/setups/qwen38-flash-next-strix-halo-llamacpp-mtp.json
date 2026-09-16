@@ -64,6 +64,7 @@
   },
   "measurements": [
     {
+      "id": "m001",
       "metric": "decode_per_stream",
       "value": 47.1,
       "unit": "tok/s",
@@ -74,6 +75,7 @@
       "context": "file rewrite @8k ctx, full stack, greedy, UD-IQ4_XS; no-speculation baseline 16.8"
     },
     {
+      "id": "m002",
       "metric": "decode_code",
       "value": 31.7,
       "unit": "tok/s",
@@ -84,6 +86,7 @@
       "context": "new code @8k ctx; baseline 16.8"
     },
     {
+      "id": "m003",
       "metric": "decode_per_stream",
       "value": 28.6,
       "unit": "tok/s",
@@ -94,6 +97,7 @@
       "context": "file rewrite @24k ctx; baseline ~15"
     },
     {
+      "id": "m004",
       "metric": "decode_code",
       "value": 25.4,
       "unit": "tok/s",

@@ -51,6 +51,7 @@
   },
   "measurements": [
     {
+      "id": "m001",
       "metric": "decode_chat",
       "value": 57,
       "unit": "tok/s",

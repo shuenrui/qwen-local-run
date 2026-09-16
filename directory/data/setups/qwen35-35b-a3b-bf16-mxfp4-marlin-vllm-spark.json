@@ -52,6 +52,7 @@
   },
   "measurements": [
     {
+      "id": "m001",
       "metric": "decode_per_stream",
       "value": 69.45,
       "unit": "tok/s",
@@ -62,6 +63,7 @@
       "method": "1 concurrent request, 1024 input / 128 output tokens, DGX Spark"
     },
     {
+      "id": "m002",
       "metric": "ttft_ms",
       "value": 167.71,
       "unit": "ms",
@@ -71,6 +73,7 @@
       "method": "mean TTFT at 1 concurrent request"
     },
     {
+      "id": "m003",
       "metric": "decode_agg",
       "value": 253.53,
       "unit": "tok/s",
@@ -81,6 +84,7 @@
       "method": "10 concurrent requests (mean TTFT 935.12 ms)"
     },
     {
+      "id": "m004",
       "metric": "decode_agg",
       "value": 339.5,
       "unit": "tok/s",

@@ -1,0 +1,32 @@
+{
+  "id": "pageable-ple",
+  "name": "Pageable PLE / n-gram cache table",
+  "category": "memory_strategy",
+  "canonical_description": "Keeps part of the prediction/lookup table pageable or outside resident memory to run an oversize build.",
+  "mechanism": "Keeps the Qwen3.8-Flash-Next n-gram/PLE lookup table pageable or outside resident memory, typically through mmap, so a build whose total file set exceeds physical memory can run with the table fetched from host memory or disk.",
+  "constraints": [
+    "The AtomicChat Flash-Next GGUF source records that mmap must stay on, --load-mode none must not be used, and -fit off is required for the recorded Metal lane.",
+    "A setup may record intentional pageability only when the source states it; silence about offload is not evidence of pageability or of no offload."
+  ],
+  "tradeoffs": [
+    "The source may establish an intentional memory-shape mechanism without measuring cold-start behavior.",
+    "Expected cold-start behavior must remain a C1 mechanism claim or an open question; it may not be stored as an observed cold_start_effect."
+  ],
+  "re_review_triggers": [
+    "llama.cpp or Metal changes PLE/mmap loading behavior.",
+    "The vendor card or build instructions change the PLE residency requirements.",
+    "A setup records a cold-start effect without a measured source."
+  ],
+  "canonical_sources": [
+    {
+      "url": "https://huggingface.co/AtomicChat/Qwen3.8-Flash-Next-GGUF",
+      "kind": "model",
+      "archive_path": "directory/tools/history/inputs/pass4-social/raw/hf_AtomicChat_Flash-Next-GGUF.md",
+      "locator": "'Why this is possible', the AD-3.84bpw-IQ4_XS-M64 quant table, and the three run-requirement notes after the Metal command",
+      "note": "Vendor card recording the 51B n-gram lookup table, 45.8 GB in-memory plus 39.1 GB SSD/table totals, mmap pageability, and -fit off."
+    }
+  ],
+  "status": "proposed",
+  "updated": "2026-09-16",
+  "note": "Canonical technique identity only. A setup-specific claim must still carry its own statement, source, locator, lineage, evidence level, and contrast kind."
+}

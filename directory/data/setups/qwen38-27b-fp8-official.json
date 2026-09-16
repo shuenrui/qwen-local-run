@@ -54,6 +54,7 @@
   },
   "measurements": [
     {
+      "id": "m001",
       "metric": "decode_agg",
       "value": 108,
       "unit": "tok/s",
@@ -65,6 +66,7 @@
       "note": "Against 135-148 tok/s for the NVFP4 export at the same concurrency: FP8 weights cost KV pool, not just disk."
     },
     {
+      "id": "m002",
       "metric": "memory_gb",
       "value": 30.9,
       "unit": "GB",

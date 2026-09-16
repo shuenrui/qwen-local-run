@@ -60,6 +60,7 @@
   },
   "measurements": [
     {
+      "id": "m001",
       "metric": "decode_code",
       "value": 51.5,
       "unit": "tok/s",
@@ -75,6 +76,7 @@
       "note": "Block-7 is the measured code peak. Block-5 trades -16% code for +8% prose."
     },
     {
+      "id": "m002",
       "metric": "decode_essay",
       "value": 18.3,
       "unit": "tok/s",
@@ -90,6 +92,7 @@
       "note": "The essay is what DSpark gives back versus MTP."
     },
     {
+      "id": "m003",
       "metric": "decode_chat",
       "value": 23.2,
       "unit": "tok/s",

@@ -62,6 +62,7 @@
   },
   "measurements": [
     {
+      "id": "m001",
       "metric": "decode_code",
       "value": 34.5,
       "unit": "tok/s",
@@ -76,6 +77,7 @@
       ]
     },
     {
+      "id": "m002",
       "metric": "decode_essay",
       "value": 24.1,
       "unit": "tok/s",
@@ -91,6 +93,7 @@
       "note": "The MTP prose win is specifically the long essay."
     },
     {
+      "id": "m003",
       "metric": "decode_chat",
       "value": 21.0,
       "unit": "tok/s",

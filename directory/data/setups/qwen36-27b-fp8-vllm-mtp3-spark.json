@@ -51,6 +51,7 @@
   },
   "measurements": [
     {
+      "id": "m001",
       "metric": "decode_code",
       "value": 7.8,
       "unit": "tok/s",
@@ -60,6 +61,7 @@
       "method": "'write me a commented quicksort function in Python', baseline without MTP"
     },
     {
+      "id": "m002",
       "metric": "decode_essay",
       "value": 7.8,
       "unit": "tok/s",
@@ -69,6 +71,7 @@
       "method": "'2-page essay on phone addiction', baseline without MTP"
     },
     {
+      "id": "m003",
       "metric": "decode_code",
       "value": 14.5,
       "unit": "tok/s",
@@ -78,6 +81,7 @@
       "method": "same quicksort prompt with MTP num_speculative_tokens=3"
     },
     {
+      "id": "m004",
       "metric": "decode_essay",
       "value": 15.8,
       "unit": "tok/s",

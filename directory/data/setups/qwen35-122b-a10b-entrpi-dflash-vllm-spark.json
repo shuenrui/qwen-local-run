@@ -51,6 +51,7 @@
   },
   "measurements": [
     {
+      "id": "m001",
       "metric": "decode_chat",
       "value": 81,
       "unit": "tok/s",
@@ -63,6 +64,7 @@
       "note": "median DFlash decode on 10 real agent tool-call turns regenerated from a live agent state.db (73% tool calls, accept length 8.3), vs ~40 tok/s for the native MTP-2 head and 51.58 for albond's fully-patched MTP recipe"
     },
     {
+      "id": "m002",
       "metric": "decode_agg",
       "value": 200,
       "unit": "tok/s",
@@ -74,6 +76,7 @@
       "note": "agentic workload aggregate at 3 concurrent streams (per-stream 121.8 / 98.9 / 66.7)"
     },
     {
+      "id": "m003",
       "metric": "decode_code",
       "value": 54.5,
       "unit": "tok/s",
@@ -85,6 +88,7 @@
       "note": "code workload single stream, DFlash n=12 (accept ~5.4) vs MTP-2 40.5 and base 28.2; at 3 streams 43.0 per stream, 129 aggregate"
     },
     {
+      "id": "m004",
       "metric": "decode_chat",
       "value": 124.5,
       "unit": "tok/s",
@@ -96,6 +100,7 @@
       "note": "counting workload single stream, accept length ~11 (MTP-2 caps at 43.7 because sequential drafting limits acceptance to ~3)"
     },
     {
+      "id": "m005",
       "metric": "decode_essay",
       "value": 48.8,
       "unit": "tok/s",
@@ -107,6 +112,7 @@
       "note": "prose workload single stream (38.4 at 2 streams, 30.8 at 3, aggregate 92.5); DFlash only ties MTP-2 (33.2 vs 33.7) on low-acceptance prose"
     },
     {
+      "id": "m006",
       "metric": "decode_per_stream",
       "value": 59.0,
       "unit": "tok/s",
@@ -118,6 +124,7 @@
       "note": "dense profile on albond's end-to-end harness (completion tokens / total wallclock incl. prefill, 5 prompts, run 1 discarded): 53.7 for the plain dflash profile, +14% and +4% over albond's published 51.58"
     },
     {
+      "id": "m007",
       "metric": "decode_chat",
       "value": 36.0,
       "unit": "tok/s",
@@ -129,6 +136,7 @@
       "note": "dense profile base decode with both levers (+28% over the 28.2 INT4 baseline; hybrid-FP8 alone 30.4, int8 lm-head alone 32.7)"
     },
     {
+      "id": "m008",
       "metric": "memory_gb",
       "value": 16,
       "unit": "GB",
@@ -139,6 +147,7 @@
       "note": "free unified memory at READY on the default dense profile at gpu-mem 0.82 (~15 GiB under peak 3-stream load); 0.88-0.89 leaves only ~5 GiB and the host swaps"
     },
     {
+      "id": "m009",
       "metric": "task_time_min",
       "value": 3,
       "unit": "min",
@@ -149,6 +158,7 @@
       "note": "time to READY with --load-format fastsafetensors (vs ~12 min on the default loader); weight read ~32 s vs ~8 min, remaining ~2.5 min is torch.compile (~42 s) + CUDA-graph capture (~2 min)"
     },
     {
+      "id": "m010",
       "metric": "disk_gb",
       "value": 75,
       "unit": "GB",

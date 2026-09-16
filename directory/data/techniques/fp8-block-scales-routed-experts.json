@@ -1,0 +1,33 @@
+{
+  "id": "fp8-block-scales-routed-experts",
+  "name": "FP8 block-scales routed-experts patch",
+  "category": "runtime_patch",
+  "canonical_description": "Patch required to keep routed MoE expert execution on the intended FP8 block-scales path.",
+  "mechanism": "Adds the missing FP8_BLOCK_SCALES routed-experts branch to vLLM's ModelOpt mixed-precision dispatch so 128x128 block-scaled FP8 MTP routed experts are routed to Fp8MoEMethod with the checkpoint's group_size/block-size metadata.",
+  "constraints": [
+    "Upstream vLLM lacks the FP8_BLOCK_SCALES branch at the recorded commit and current main; upgrading alone does not enable MTP for this checkpoint.",
+    "The patch reads the block size from the checkpoint metadata rather than guessing, because a wrong block shape can apply misaligned scales silently.",
+    "The recorded MiaAI-Lab lane applies the patch through start.sh/bind-mount at runtime; it is not an image rebuild."
+  ],
+  "tradeoffs": [
+    "Without the patch, the MoE can load unquantized and fail roughly seven minutes into load with a missing w2_weight_scale_inv parameter.",
+    "This packet records a runtime-correctness mechanism; it does not by itself establish a speed, fit, or quality effect."
+  ],
+  "re_review_triggers": [
+    "Upstream vLLM adds an FP8_BLOCK_SCALES routed-experts branch.",
+    "The checkpoint's MTP routed-expert quantization metadata changes.",
+    "A setup claims the patch caused a performance or quality effect without a matching comparison object."
+  ],
+  "canonical_sources": [
+    {
+      "url": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
+      "kind": "repo",
+      "archive_path": "directory/tools/history/inputs/pass4-social/raw/repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+      "locator": "FP8_BLOCK_SCALES routed experts checkpoint-patch section and the upstream-gap note",
+      "note": "Builder README recording the missing vLLM dispatch branch, the failure mode, and the runtime patch behavior."
+    }
+  ],
+  "status": "proposed",
+  "updated": "2026-09-16",
+  "note": "Canonical technique identity only. A setup-specific claim must still carry its own statement, source, locator, lineage, evidence level, and contrast kind."
+}

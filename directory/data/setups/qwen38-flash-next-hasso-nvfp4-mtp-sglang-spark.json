@@ -52,6 +52,7 @@
   },
   "measurements": [
     {
+      "id": "m001",
       "metric": "decode_chat",
       "value": 34.2,
       "unit": "tok/s",
@@ -63,6 +64,7 @@
       "note": "README headline number."
     },
     {
+      "id": "m002",
       "metric": "decode_essay",
       "value": 20.3,
       "unit": "tok/s",
@@ -73,6 +75,7 @@
       "method": "two-call wall-clock decode, free prose, single Spark"
     },
     {
+      "id": "m003",
       "metric": "decode_chat",
       "value": 28,
       "unit": "tok/s",
@@ -83,6 +86,7 @@
       "note": "Stated as 'near 28-31' at depth; a depth point, not a fresh-context number."
     },
     {
+      "id": "m004",
       "metric": "task_time_min",
       "value": 18.4,
       "unit": "s",
@@ -93,6 +97,7 @@
       "note": "The differentiator of this lane: prefix caching works here."
     },
     {
+      "id": "m005",
       "metric": "bench_other",
       "value": 1500,
       "unit": "tok/s",
@@ -102,6 +107,7 @@
       "method": "cold prefill with real QSA sparse kernels, stated ~1500-2000 tok/s"
     },
     {
+      "id": "m006",
       "metric": "quality_index",
       "value": 9,
       "unit": "score",

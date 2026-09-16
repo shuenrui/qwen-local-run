@@ -51,6 +51,7 @@
   },
   "measurements": [
     {
+      "id": "m001",
       "metric": "decode_chat",
       "value": 66.2,
       "unit": "tok/s",
@@ -60,6 +61,7 @@
       "method": "llama.cpp server cuda12 b8124, ctx 131072, parallel 2 slots"
     },
     {
+      "id": "m002",
       "metric": "ttft_ms",
       "value": 1322.38,
       "unit": "ms",

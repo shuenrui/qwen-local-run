@@ -69,6 +69,7 @@
   },
   "measurements": [
     {
+      "id": "m001",
       "metric": "decode_per_stream",
       "value": 24.5,
       "unit": "tok/s",
@@ -79,6 +80,7 @@
       "context": "batch-1 greedy, MTP OFF (README checkpoint table)"
     },
     {
+      "id": "m002",
       "metric": "decode_per_stream",
       "value": 52.1,
       "unit": "tok/s",
@@ -89,6 +91,7 @@
       "context": "batch-1 greedy, MTP=3: 2.13x; draft acceptance 72.8% (823/1131)"
     },
     {
+      "id": "m003",
       "metric": "decode_per_stream",
       "value": 54.4,
       "unit": "tok/s",
@@ -99,6 +102,7 @@
       "context": "concurrency table x1 (TTFT 160 ms)"
     },
     {
+      "id": "m004",
       "metric": "decode_agg",
       "value": 86.5,
       "unit": "tok/s",
@@ -109,6 +113,7 @@
       "context": "x2 aggregate; 45.1 per-stream; TTFT 426 ms"
     },
     {
+      "id": "m005",
       "metric": "decode_agg",
       "value": 128.1,
       "unit": "tok/s",
@@ -119,6 +124,7 @@
       "context": "x4 aggregate; 34.2 per-stream; TTFT 471 ms"
     },
     {
+      "id": "m006",
       "metric": "decode_agg",
       "value": 207.0,
       "unit": "tok/s",
@@ -129,6 +135,7 @@
       "context": "x8 aggregate (MAX_NUM_SEQS=8); 26.7 per-stream; aggregate scales 3.8x from x1"
     },
     {
+      "id": "m007",
       "metric": "prefill_tok_s",
       "value": 2962.2,
       "unit": "tok/s",
@@ -138,6 +145,7 @@
       "context": "@32k (flat ~2.96k from 16k-64k, -8% by 128k)"
     },
     {
+      "id": "m008",
       "metric": "memory_gb",
       "value": 62.72,
       "unit": "GB",

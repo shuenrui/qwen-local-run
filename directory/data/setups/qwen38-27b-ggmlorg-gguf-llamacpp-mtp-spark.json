@@ -63,6 +63,7 @@
   },
   "measurements": [
     {
+      "id": "m001",
       "metric": "decode_per_stream",
       "value": 18.08,
       "unit": "tok/s",
@@ -75,6 +76,7 @@
       "source": "https://github.com/ggml-org/llama.cpp/discussions/27080"
     },
     {
+      "id": "m002",
       "metric": "prefill_tok_s",
       "value": 488.55,
       "unit": "tok/s",

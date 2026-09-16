@@ -58,6 +58,7 @@
   },
   "measurements": [
     {
+      "id": "m001",
       "metric": "decode_per_stream",
       "value": 37,
       "unit": "tok/s",
@@ -70,6 +71,7 @@
       "source": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Single-DGX-Spark"
     },
     {
+      "id": "m002",
       "metric": "decode_agg",
       "value": 86,
       "unit": "tok/s",

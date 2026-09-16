@@ -65,6 +65,7 @@
   },
   "measurements": [
     {
+      "id": "m001",
       "metric": "decode_per_stream",
       "value": 58.88,
       "unit": "tok/s",
@@ -77,6 +78,7 @@
       "source": "https://x.com/analogalok/status/2088625914682941719"
     },
     {
+      "id": "m002",
       "metric": "decode_per_stream",
       "value": 59.65,
       "unit": "tok/s",
@@ -89,6 +91,7 @@
       "source": "https://x.com/analogalok/status/2088625914682941719"
     },
     {
+      "id": "m003",
       "metric": "prefill_tok_s",
       "value": 2249.9,
       "unit": "tok/s",

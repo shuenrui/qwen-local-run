@@ -1,0 +1,34 @@
+{
+  "id": "roce-tensor-parallel",
+  "name": "RoCE/IB tensor parallelism",
+  "category": "interconnect",
+  "canonical_description": "Distributes tensor-parallel work across nodes over RDMA-class networking.",
+  "mechanism": "Runs vLLM tensor parallelism across two DGX Spark nodes over ConnectX RoCE/IB, with NCCL configured through IB HCA, GID index, socket interfaces, and distributed coordination addresses.",
+  "constraints": [
+    "The recorded MiaAI-Lab dual-Spark kit requires two nodes connected via ConnectX RoCE/IB and passwordless SSH.",
+    "The recorded start.sh configures NCCL_IB_HCA, NCCL_IB_GID_INDEX=3, NCCL_IB_DISABLE=0, and GLOO/NCCL/TP_SOCKET_IFNAME.",
+    "The source notes that IB_GID_INDEX=3 does not come up on every ConnectX/RoCE setup.",
+    "Checkpoint distribution through rsync or NFS and head-node availability are part of the serving topology."
+  ],
+  "tradeoffs": [
+    "Tensor-parallel measurements are node-, interface-, and NCCL-configuration dependent.",
+    "A dual-node RoCE result is not a single-box equivalent and must retain its topology and runtime conditions."
+  ],
+  "re_review_triggers": [
+    "The ConnectX/RoCE interface, NCCL settings, or distributed launch path changes.",
+    "Weight distribution changes between local rsync and NFS sharing.",
+    "A setup attributes a speed or fit effect to tensor parallelism without recording node count, interconnect, and runtime conditions."
+  ],
+  "canonical_sources": [
+    {
+      "url": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
+      "kind": "repo",
+      "archive_path": "directory/tools/history/inputs/pass4-social/raw/repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+      "locator": "Prerequisites, What Happens, environment-variable table, NCCL/RoCE notes, and the vllm serve tensor-parallel example",
+      "note": "Builder README recording TP2 across two DGX Sparks over ConnectX RoCE/IB and the NCCL/SSH/distribution requirements."
+    }
+  ],
+  "status": "proposed",
+  "updated": "2026-09-16",
+  "note": "Canonical technique identity only. A setup-specific claim must still carry its own statement, source, locator, lineage, evidence level, and contrast kind."
+}

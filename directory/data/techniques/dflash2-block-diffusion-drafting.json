@@ -1,0 +1,40 @@
+{
+  "id": "dflash2-block-diffusion-drafting",
+  "name": "DFlash2 block-diffusion drafting",
+  "category": "speculative_decode",
+  "canonical_description": "Uses a block-diffusion drafter to propose multiple tokens for target-model verification.",
+  "mechanism": "A separate DFlash2 drafter predicts blocks of candidate tokens in one pass, and the target model verifies the proposed tokens. The recorded llama.cpp lane requires the PR #27342 build and a DFlash2 draft checkpoint.",
+  "constraints": [
+    "Requires a llama.cpp build containing DFlash2 PR #27342.",
+    "Requires a compatible DFlash2 draft checkpoint.",
+    "The recorded PR #27342 lane reports broken multi-GPU tensor splitting and multimodality, so it is a single-GPU text-only recipe."
+  ],
+  "tradeoffs": [
+    "Block-diffusion draft states consume VRAM that would otherwise be available for KV/context.",
+    "Recorded author-reported lanes compare DFlash2 with native MTP on decode and prefill; this packet supplies technique identity only, not a general causal result."
+  ],
+  "re_review_triggers": [
+    "PR #27342 changes, merges, or is superseded.",
+    "The DFlash2 draft checkpoint family or quantization ladder changes.",
+    "A setup claims DFlash2 caused a performance or quality effect without a matching comparison object."
+  ],
+  "canonical_sources": [
+    {
+      "url": "https://github.com/ggml-org/llama.cpp/pull/27342",
+      "kind": "repo",
+      "archive_path": "directory/tools/history/inputs/pass4-social/raw/xsweep_analogalok.json",
+      "locator": "posts 2089979723166200196 and 2090400471458759145",
+      "note": "Builder source recording PR #27342, parallel block-diffusion drafting, draft-state VRAM tradeoff, and the single-GPU/multimodal caveat."
+    },
+    {
+      "url": "https://huggingface.co/z-lab/Qwen3.8-27B-DFlash2-GGUF",
+      "kind": "model",
+      "archive_path": "directory/tools/history/inputs/pass4-social/raw/xsweep_analogalok.json",
+      "locator": "post 2089980145125990649",
+      "note": "DFlash2 draft checkpoint referenced by the recorded lane."
+    }
+  ],
+  "status": "proposed",
+  "updated": "2026-09-16",
+  "note": "Canonical technique identity only. A setup-specific claim must still carry its own statement, source, locator, lineage, evidence level, and contrast kind."
+}

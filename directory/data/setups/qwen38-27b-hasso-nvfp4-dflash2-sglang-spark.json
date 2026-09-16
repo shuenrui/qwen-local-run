@@ -54,6 +54,7 @@
   },
   "measurements": [
     {
+      "id": "m001",
       "metric": "decode_chat",
       "value": 50,
       "unit": "tok/s",
@@ -66,6 +67,7 @@
       "note": "Thinking on, single stream; code 41-47, reasoning 52-57, math peak 60."
     },
     {
+      "id": "m002",
       "metric": "decode_code",
       "value": 40,
       "unit": "tok/s",
@@ -81,6 +83,7 @@
       ]
     },
     {
+      "id": "m003",
       "metric": "decode_essay",
       "value": 22,
       "unit": "tok/s",
@@ -96,6 +99,7 @@
       ]
     },
     {
+      "id": "m004",
       "metric": "decode_agg",
       "value": 135,
       "unit": "tok/s",
@@ -111,6 +115,7 @@
       ]
     },
     {
+      "id": "m005",
       "metric": "decode_agg",
       "value": 258,
       "unit": "tok/s",
@@ -122,6 +127,7 @@
       "note": "32 concurrent streams aggregate."
     },
     {
+      "id": "m006",
       "metric": "bench_gsm8k",
       "value": 94.0,
       "unit": "%",
@@ -132,6 +138,7 @@
       "note": "Quality canary, not a speed number."
     },
     {
+      "id": "m007",
       "metric": "bench_toolcall",
       "value": 91,
       "unit": "score",

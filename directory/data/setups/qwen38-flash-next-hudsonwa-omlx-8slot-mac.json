@@ -51,6 +51,7 @@
   },
   "measurements": [
     {
+      "id": "m001",
       "metric": "task_time_min",
       "value": 483.6,
       "unit": "s",
@@ -61,6 +62,7 @@
       "note": "W1 dual ~252K concurrent cold prefill wall (488.4 s for the second, spread 4.73 s = true concurrency), measured prompt_tokens 240,393 each, 2026-08-31"
     },
     {
+      "id": "m002",
       "metric": "memory_gb",
       "value": 102,
       "unit": "GB",
@@ -71,6 +73,7 @@
       "note": "peak phys_footprint during dual-252K cold fill (G1 run) = the planning number against the 107.5 GB Metal cap; W1 peaked at 98 GB"
     },
     {
+      "id": "m003",
       "metric": "memory_gb",
       "value": 69,
       "unit": "GB",
@@ -81,6 +84,7 @@
       "note": "booted idle footprint with the flash oQ4e weights paged in; ~73 GB steady with all 8 HTTP slots resident after orchestrator KV auto-tiers to SSD"
     },
     {
+      "id": "m004",
       "metric": "task_time_min",
       "value": 8.7,
       "unit": "s",
@@ -91,6 +95,7 @@
       "note": "re-promoting a 252K prefix from the SSD tier (a self-managed 185.8 GB LRU) vs ~229 s for a full re-prefill on an LRU miss"
     },
     {
+      "id": "m005",
       "metric": "decode_chat",
       "value": 60.9,
       "unit": "tok/s",
@@ -102,6 +107,7 @@
       "note": "solo decode with MTP speculative decode ON for this checkpoint on this box, vs ~86 tok/s with it off - the measured reason mtp_enabled=false"
     },
     {
+      "id": "m006",
       "metric": "task_time_min",
       "value": 939,
       "unit": "s",
@@ -112,6 +118,7 @@
       "note": "27B dense 4x118K per-stream wall spread with chunked prefill OFF (304/1225/1240/1243 s FIFO staircase); with chunked ON the spread is 25.6 s and every stream TTFT ~4 s"
     },
     {
+      "id": "m007",
       "metric": "ttft_ms",
       "value": 660,
       "unit": "ms",
@@ -122,6 +129,7 @@
       "note": "worst TTFT across six worker prefills over hot orchestrators (range 0.05-0.66 s, measured prompt_tokens 30,585 TDD and 61,089 coder/auditor)"
     },
     {
+      "id": "m008",
       "metric": "memory_gb",
       "value": 9.25,
       "unit": "GB",
@@ -132,6 +140,7 @@
       "note": "KV slot rate per ~252K orchestrator slot (~1.2 GB per 32K slot, ~2.3 GB per 64K slot); static worst case with nothing tiered ~97-99 GB"
     },
     {
+      "id": "m009",
       "metric": "task_time_min",
       "value": 11.26,
       "unit": "s",

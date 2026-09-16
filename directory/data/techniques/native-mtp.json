@@ -1,0 +1,38 @@
+{
+  "id": "native-mtp",
+  "name": "llama.cpp native MTP",
+  "category": "speculative_decode",
+  "canonical_description": "Uses the target model’s multi-token-prediction path rather than a separate block-diffusion drafter.",
+  "mechanism": "Uses the checkpoint's built-in multi-token-prediction head/path as the speculative drafter. Recorded llama.cpp lanes select it with --spec-type draft-mtp; some Qwen3.8-Flash-Next lanes use a shared MTP GGUF sidecar.",
+  "constraints": [
+    "Requires an engine/runtime path and checkpoint or sidecar that supports native MTP drafting.",
+    "The recorded Strix Halo ROCm lane is branch/patch-specific; native MTP support is not guaranteed across every backend or runtime revision."
+  ],
+  "tradeoffs": [
+    "MTP state buffers consume memory that would otherwise be available for KV/context.",
+    "Native MTP and DFlash2 are distinct drafter mechanisms; this packet does not establish which one is faster for a particular setup."
+  ],
+  "re_review_triggers": [
+    "llama.cpp native MTP support changes in a relevant backend or branch.",
+    "The MTP head/sidecar checkpoint or loading path changes.",
+    "A setup claims MTP caused a performance or quality effect without a matching comparison object."
+  ],
+  "canonical_sources": [
+    {
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/27950",
+      "kind": "thread",
+      "archive_path": "directory/tools/history/inputs/pass4-social/raw/gh-discussion_ggml-org_llama.cpp_27950.json",
+      "locator": "title, body, and comments for the Strix Halo ROCm MTP stack",
+      "note": "Builder discussion recording working native MTP on a branch/patch-specific ROCm lane."
+    },
+    {
+      "kind": "post",
+      "archive_path": "directory/tools/history/inputs/pass4-social/raw/x_2088326480669667699.json",
+      "locator": "post 2088326480669667699 body and the reply about MTP state buffers",
+      "note": "Archived builder post recording built-in MTP heads, --spec-type draft-mtp, and the MTP memory/context tradeoff."
+    }
+  ],
+  "status": "proposed",
+  "updated": "2026-09-16",
+  "note": "Canonical technique identity only. A setup-specific claim must still carry its own statement, source, locator, lineage, evidence level, and contrast kind."
+}

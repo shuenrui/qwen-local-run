@@ -18,6 +18,9 @@ drift between reports:
     spec decode   engine.spec_decode
     hardware      each id in hardware[] (a setup can appear under several)
     evidence      provenance_tier
+    schema state  legacy | legacy-with-measurement-ids | schema-v2
+    v2 blocks     optional schema-v2 blocks present in a setup
+    technique ids canonical technique packets referenced by setup claims
     readiness     has-command x has-decode-measurement
 
     python3 directory/tools/coverage.py            # human-readable tables
@@ -28,6 +31,12 @@ import os
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
+PARENT = os.path.dirname(HERE)
+if PARENT not in sys.path:
+    sys.path.insert(0, PARENT)
+
+import validate as V  # noqa: E402  shared schema-v2 enums and field names
+
 DATA = os.path.join(HERE, os.pardir, "data")
 
 SPEED_PREFIXES = ("decode_", "prefill_", "ttft_")
@@ -43,7 +52,14 @@ def load():
     for fn in sorted(os.listdir(os.path.join(DATA, "setups"))):
         if fn.endswith(".json") and not fn.startswith("_"):
             setups.append(json.load(open(os.path.join(DATA, "setups", fn))))
-    return models, setups
+    techniques = {}
+    tech_dir = os.path.join(DATA, "techniques")
+    if os.path.isdir(tech_dir):
+        for fn in sorted(os.listdir(tech_dir)):
+            if fn.endswith(".json") and not fn.startswith("_"):
+                t = json.load(open(os.path.join(tech_dir, fn)))
+                techniques[t.get("id", fn[:-5])] = t
+    return models, setups, techniques
 
 
 def line_of(model):
@@ -95,6 +111,75 @@ def evidence_of(s):
     return s.get("provenance_tier") or "untested"
 
 
+def schema_state_of(s):
+    if s.get("schema_version") == 2:
+        return "schema-v2"
+    if has_v2_evidence_blocks(s):
+        return "v2-block-without-version"
+    if has_measurement_ids(s):
+        return "legacy-with-measurement-ids"
+    return "legacy"
+
+
+def has_measurement_ids(s):
+    measurements = s.get("measurements") or []
+    return bool(measurements) and all(
+        isinstance(m, dict) and m.get("id") for m in measurements
+    )
+
+
+def has_v2_evidence_blocks(s):
+    setup_keys = V.V2_SETUP_KEYS - {"schema_version"}
+    if any(k in s for k in setup_keys):
+        return True
+    for m in s.get("measurements") or []:
+        if isinstance(m, dict) and any(k in m for k in ("conditions", "evidence")):
+            return True
+    for src in s.get("sources") or []:
+        if isinstance(src, dict) and any(k in src for k in ("locator", "archive_path", "lineage_id", "retrieved")):
+            return True
+    return False
+
+
+def v2_blocks_of(s):
+    blocks = []
+    if s.get("schema_version") == 2:
+        blocks.append("schema_version")
+    if has_measurement_ids(s):
+        blocks.append("measurement-ids")
+    if any(isinstance(m, dict) and m.get("conditions") for m in s.get("measurements") or []):
+        blocks.append("measurement-conditions")
+    if any(isinstance(m, dict) and m.get("evidence") for m in s.get("measurements") or []):
+        blocks.append("measurement-evidence")
+    for key in ("interconnect", "serving", "correctness", "known_failures",
+                "capability_observations", "evidence"):
+        if s.get(key):
+            blocks.append(key)
+    req = s.get("requirements") or {}
+    if req.get("memory_profile"):
+        blocks.append("requirements.memory_profile")
+    if req.get("offload"):
+        blocks.append("requirements.offload")
+    engine = s.get("engine") or {}
+    if engine.get("spec_decode_profile"):
+        blocks.append("engine.spec_decode_profile")
+    if engine.get("fork_revision") or engine.get("kernel_patches"):
+        blocks.append("engine.revision-or-patches")
+    run = s.get("run") or {}
+    if run.get("repo_revision"):
+        blocks.append("run.repo_revision")
+    return blocks or ["none"]
+
+
+def technique_ids_of(s):
+    ids = set()
+    evidence = s.get("evidence") or {}
+    for claim in evidence.get("claims") or []:
+        if isinstance(claim, dict) and claim.get("technique_id"):
+            ids.add(claim["technique_id"])
+    return sorted(ids)
+
+
 def facet_values(s, models):
     model = models.get(s.get("model"), {})
     engine = s.get("engine") or {}
@@ -111,6 +196,9 @@ def facet_values(s, models):
         "spec decode": engine.get("spec_decode") or "none",
         "hardware": [(h.get("id") if isinstance(h, dict) else h) for h in (s.get("hardware") or [])] or ["?"],
         "evidence": evidence_of(s),
+        "schema state": schema_state_of(s),
+        "v2 blocks": v2_blocks_of(s),
+        "technique ids": technique_ids_of(s) or ["none"],
         "readiness": ("runnable" if has_command(s) else "no-command")
         + ("+measured" if has_speed(s) else "+unmeasured"),
     }
@@ -120,7 +208,8 @@ def facet_values(s, models):
 def report(models, setups):
     facets = [
         "generation", "line", "size class", "format", "quant",
-        "engine", "spec decode", "hardware", "evidence", "readiness",
+        "engine", "spec decode", "hardware", "evidence", "schema state",
+        "v2 blocks", "technique ids", "readiness",
     ]
     tables = {}
     for f in facets:
@@ -156,12 +245,12 @@ def print_tables(tables):
 
 
 def main():
-    models, setups = load()
+    models, setups, techniques = load()
     tables = report(models, setups)
     if "--json" in sys.argv:
-        print(json.dumps(tables, indent=1))
+        print(json.dumps({"techniques": len(techniques), "tables": tables}, indent=1))
     else:
-        print(f"{len(setups)} setups, {len(models)} models")
+        print(f"{len(setups)} setups, {len(models)} models, {len(techniques)} techniques")
         print_tables(tables)
 
 

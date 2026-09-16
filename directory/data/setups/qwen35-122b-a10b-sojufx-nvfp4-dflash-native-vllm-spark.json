@@ -51,6 +51,7 @@
   },
   "measurements": [
     {
+      "id": "m001",
       "metric": "decode_chat",
       "value": 36.0,
       "unit": "tok/s",
@@ -62,6 +63,7 @@
       "note": "single-stream decode, fixed 256-token benchmark at temperature 0 through the OpenAI-compatible vLLM endpoint, 'generic' prompt"
     },
     {
+      "id": "m002",
       "metric": "decode_code",
       "value": 27.0,
       "unit": "tok/s",
@@ -73,6 +75,7 @@
       "note": "code_edit prompt in the same 256-token single-stream fixture (long_context_code 20.6, agent_tool 19.7)"
     },
     {
+      "id": "m003",
       "metric": "decode_agg",
       "value": 34.3,
       "unit": "tok/s",
@@ -84,6 +87,7 @@
       "note": "agent-shaped concurrency 2 aggregate (17.2 per stream); 34.4 at concurrency 4 (8.6/8.6/17.1/18.4), 20.8 at concurrency 1"
     },
     {
+      "id": "m004",
       "metric": "memory_gb",
       "value": 17.83,
       "unit": "GB",
@@ -94,6 +98,7 @@
       "note": "available KV cache memory at the stable config = 498,866 KV tokens, 3.81x maximum concurrency for 131,072 tokens/request"
     },
     {
+      "id": "m005",
       "metric": "memory_gb",
       "value": 102,
       "unit": "GB",

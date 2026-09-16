@@ -51,6 +51,7 @@
   },
   "measurements": [
     {
+      "id": "m001",
       "metric": "decode_chat",
       "value": 127.7,
       "unit": "tok/s",
@@ -62,6 +63,7 @@
       "note": "Qwen3-30B-A3B-4bit LLM decode on M4 Max 128 GB, greedy, single stream, ~18 GB memory"
     },
     {
+      "id": "m002",
       "metric": "memory_gb",
       "value": 18,
       "unit": "GB",

@@ -52,6 +52,7 @@
   },
   "measurements": [
     {
+      "id": "m001",
       "metric": "decode_per_stream",
       "value": 170.0,
       "unit": "tok/s",
