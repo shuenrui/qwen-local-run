@@ -76,3 +76,15 @@ Replies to either issue → open_question re-review (per Terra's corrected
 evidence semantics), not automatic upgrade. Archived payloads for both issues
 live in `raw/r-artifacts/github-issue-*.json`; replies will be appended there
 as they arrive.
+
+### Body edits (2026-09-16 10:10Z, per Terra's review)
+
+- Q1 issue #11098: the PLE-table size reference is now *attributed* rather than
+  implied by the builder: "the Flash-Next dual-Spark README describes that table
+  as a single 51 GB file" (that number is not from the Unsloth page). The
+  question content is otherwise unchanged.
+- Q2 issue #57: "lick-grade" restored to **benchmark-grade** (a transmission
+  mangle Terra caught in the live body).
+- Archived payloads re-fetched from the API after the edit (`updated_at`
+  timestamps 10:10:32Z / 10:10:40Z) — `raw/r-artifacts/github-issue-*.json`
+  now carries both live bodies.

@@ -48,3 +48,10 @@ evidence; pilot 01's image digest is now an explicit exhaustion log (public
 tag history insufficient; open_question + promotion gate stand); pilot 07's fit
 and kv_cache questions are untouched by this appendix and remain with
 builder-questions Q1.
+
+### Builder-question filing note (2026-09-16, Terra-confirmed 10:09)
+
+Leave the matrix cell taxonomy unchanged. Cell taxonomy stays stable for Phase B diffs; only this note is appended.
+
+- **01 / 07 cells remain exactly "still open"** — plus the wording: *"builder question filed 2026-09-16 via GitHub (unsloth#11098 / MiaAI#57); replies trigger re-review per evidence rules."*
+- 01's `kv_cache_gb` and 01's concurrency ceiling stay **R → pending MiaAI-side data**, routed through the builder question (unsloth#11098 is for 07, MiaAI#57 for 02's Ollama/lama.rope semantics).
