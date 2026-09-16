@@ -1,0 +1,2381 @@
+{
+ "video_id": "QMtWXu_M3dg",
+ "url": "https://www.youtube.com/watch?v=QMtWXu_M3dg",
+ "segments": [
+  {
+   "start": 0.0,
+   "duration": 3.4,
+   "text": "On Monday, a folder went up on"
+  },
+  {
+   "start": 1.76,
+   "duration": 3.72,
+   "text": "HuggingFace with no announcement"
+  },
+  {
+   "start": 3.4,
+   "duration": 4.28,
+   "text": "attached to it. The blog post wouldn't"
+  },
+  {
+   "start": 5.48,
+   "duration": 4.12,
+   "text": "appear for another 2 days, and inside"
+  },
+  {
+   "start": 7.68,
+   "duration": 4.2,
+   "text": "it, among the weights, sits a small"
+  },
+  {
+   "start": 9.6,
+   "duration": 3.96,
+   "text": "configuration file. One line in that"
+  },
+  {
+   "start": 11.88,
+   "duration": 3.92,
+   "text": "file gives away what the whole thing is"
+  },
+  {
+   "start": 13.56,
+   "duration": 5.48,
+   "text": "for. The architecture it names isn't a"
+  },
+  {
+   "start": 15.8,
+   "duration": 5.84,
+   "text": "3.8 anything. It reads in plain text"
+  },
+  {
+   "start": 19.04,
+   "duration": 4.6,
+   "text": "Qwen 4. That's the tell. This isn't a"
+  },
+  {
+   "start": 21.64,
+   "duration": 4.0,
+   "text": "product launch. It's the skeleton of a"
+  },
+  {
+   "start": 23.64,
+   "duration": 4.24,
+   "text": "model that hasn't shipped yet, handed"
+  },
+  {
+   "start": 25.64,
+   "duration": 5.44,
+   "text": "over early on purpose. The numbers are"
+  },
+  {
+   "start": 27.88,
+   "duration": 5.56,
+   "text": "odd, too. 125 billion parameters in the"
+  },
+  {
+   "start": 31.08,
+   "duration": 4.84,
+   "text": "main model. 6 billion of them fire for"
+  },
+  {
+   "start": 33.44,
+   "duration": 4.28,
+   "text": "any given token. Fine. That's a sparse"
+  },
+  {
+   "start": 35.92,
+   "duration": 3.2,
+   "text": "mixture of experts, and we've all seen"
+  },
+  {
+   "start": 37.72,
+   "duration": 3.0,
+   "text": "that trick by now."
+  },
+  {
+   "start": 39.12,
+   "duration": 3.24,
+   "text": "Then there's a second number, and it"
+  },
+  {
+   "start": 40.72,
+   "duration": 4.68,
+   "text": "doesn't belong to a category you already"
+  },
+  {
+   "start": 42.36,
+   "duration": 5.0,
+   "text": "know. 51 billion more parameters. They"
+  },
+  {
+   "start": 45.4,
+   "duration": 3.72,
+   "text": "aren't experts, they aren't attention,"
+  },
+  {
+   "start": 47.36,
+   "duration": 4.32,
+   "text": "they aren't a neural network at all."
+  },
+  {
+   "start": 49.12,
+   "duration": 4.16,
+   "text": "They're a lookup table, a phrasebook."
+  },
+  {
+   "start": 51.68,
+   "duration": 3.68,
+   "text": "And the people who built it would rather"
+  },
+  {
+   "start": 53.28,
+   "duration": 4.2,
+   "text": "it wasn't on your graphics card. That"
+  },
+  {
+   "start": 55.36,
+   "duration": 4.04,
+   "text": "last part is the entire video, not the"
+  },
+  {
+   "start": 57.48,
+   "duration": 3.36,
+   "text": "benchmark scores, the sentence about"
+  },
+  {
+   "start": 59.4,
+   "duration": 2.36,
+   "text": "where those parameters are supposed to"
+  },
+  {
+   "start": 60.84,
+   "duration": 2.8,
+   "text": "live."
+  },
+  {
+   "start": 61.76,
+   "duration": 3.88,
+   "text": "Because if it holds up, the biggest"
+  },
+  {
+   "start": 63.64,
+   "duration": 3.64,
+   "text": "single chunk of a frontier open model"
+  },
+  {
+   "start": 65.64,
+   "duration": 4.68,
+   "text": "just stopped needing the expensive"
+  },
+  {
+   "start": 67.28,
+   "duration": 5.08,
+   "text": "memory. So, three things in order. What"
+  },
+  {
+   "start": 70.32,
+   "duration": 4.04,
+   "text": "the four changes actually are in plain"
+  },
+  {
+   "start": 72.36,
+   "duration": 4.16,
+   "text": "language. Why every one of them got"
+  },
+  {
+   "start": 74.36,
+   "duration": 4.24,
+   "text": "picked against the training loss curve."
+  },
+  {
+   "start": 76.52,
+   "duration": 4.16,
+   "text": "And what three unrelated people measured"
+  },
+  {
+   "start": 78.6,
+   "duration": 4.76,
+   "text": "in the days after the weights appeared."
+  },
+  {
+   "start": 80.68,
+   "duration": 5.08,
+   "text": "The model is when 3.8 Flash Next from"
+  },
+  {
+   "start": 83.36,
+   "duration": 5.52,
+   "text": "the Qwen team at Alibaba. Weights on"
+  },
+  {
+   "start": 85.76,
+   "duration": 5.44,
+   "text": "Monday, blog post on Wednesday, 28 pages"
+  },
+  {
+   "start": 88.88,
+   "duration": 4.48,
+   "text": "of technical report alongside it."
+  },
+  {
+   "start": 91.2,
+   "duration": 4.16,
+   "text": "It's open weight, and it is not open"
+  },
+  {
+   "start": 93.36,
+   "duration": 3.56,
+   "text": "source. We'll read the license later,"
+  },
+  {
+   "start": 95.36,
+   "duration": 3.56,
+   "text": "because for a few of you that difference"
+  },
+  {
+   "start": 96.92,
+   "duration": 3.96,
+   "text": "decides everything. One bit of"
+  },
+  {
+   "start": 98.92,
+   "duration": 4.12,
+   "text": "housekeeping, because two things share"
+  },
+  {
+   "start": 100.88,
+   "duration": 4.52,
+   "text": "that name, and mixing them up will waste"
+  },
+  {
+   "start": 103.04,
+   "duration": 4.12,
+   "text": "your afternoon. Flash Next is the open"
+  },
+  {
+   "start": 105.4,
+   "duration": 4.36,
+   "text": "weight preview you can download. The"
+  },
+  {
+   "start": 107.16,
+   "duration": 4.6,
+   "text": "plain Qwen 3.8 Flash is the hosted"
+  },
+  {
+   "start": 109.76,
+   "duration": 5.0,
+   "text": "production version. A million tokens of"
+  },
+  {
+   "start": 111.76,
+   "duration": 5.6,
+   "text": "context by default, built-in tools, 16"
+  },
+  {
+   "start": 114.76,
+   "duration": 4.48,
+   "text": "cents a million in. That one you rent."
+  },
+  {
+   "start": 117.36,
+   "duration": 3.96,
+   "text": "But previews are cheap to announce and"
+  },
+  {
+   "start": 119.24,
+   "duration": 4.36,
+   "text": "easy to abandon. So, the fair question"
+  },
+  {
+   "start": 121.32,
+   "duration": 4.56,
+   "text": "is whether this team follows through."
+  },
+  {
+   "start": 123.6,
+   "duration": 5.92,
+   "text": "In September of 2025, they published a"
+  },
+  {
+   "start": 125.88,
+   "duration": 5.88,
+   "text": "preview called Chwen 3 next. 160 days"
+  },
+  {
+   "start": 129.52,
+   "duration": 4.2,
+   "text": "later, the hybrid design inside it was"
+  },
+  {
+   "start": 131.76,
+   "duration": 3.96,
+   "text": "carrying an entire production family,"
+  },
+  {
+   "start": 133.72,
+   "duration": 4.2,
+   "text": "and it has carried every release since."
+  },
+  {
+   "start": 135.72,
+   "duration": 5.12,
+   "text": "So, what's inside this one? Now for the"
+  },
+  {
+   "start": 137.92,
+   "duration": 5.039,
+   "text": "architecture. Four changes: attention,"
+  },
+  {
+   "start": 140.84,
+   "duration": 4.64,
+   "text": "the residual stream, the embeddings, and"
+  },
+  {
+   "start": 142.959,
+   "duration": 4.041,
+   "text": "the optimizer, in that order, and none"
+  },
+  {
+   "start": 145.48,
+   "duration": 3.16,
+   "text": "of them needs max."
+  },
+  {
+   "start": 147.0,
+   "duration": 3.76,
+   "text": "Attention is the part of a model that"
+  },
+  {
+   "start": 148.64,
+   "duration": 4.24,
+   "text": "looks back at what you've already said."
+  },
+  {
+   "start": 150.76,
+   "duration": 4.28,
+   "text": "It's also the expensive part. The plain"
+  },
+  {
+   "start": 152.88,
+   "duration": 4.36,
+   "text": "version compares every new token against"
+  },
+  {
+   "start": 155.04,
+   "duration": 4.08,
+   "text": "every earlier one, and that bill grows"
+  },
+  {
+   "start": 157.24,
+   "duration": 3.76,
+   "text": "with the square of your context. So,"
+  },
+  {
+   "start": 159.12,
+   "duration": 3.96,
+   "text": "three layers out of every four here"
+  },
+  {
+   "start": 161.0,
+   "duration": 4.2,
+   "text": "don't do it at all. Those run something"
+  },
+  {
+   "start": 163.08,
+   "duration": 3.32,
+   "text": "called gated DeltaNet. Imagine one"
+  },
+  {
+   "start": 165.2,
+   "duration": 3.36,
+   "text": "whiteboard."
+  },
+  {
+   "start": 166.4,
+   "duration": 4.52,
+   "text": "Every token walks past and edits it,"
+  },
+  {
+   "start": 168.56,
+   "duration": 4.64,
+   "text": "rubs a bit out, writes a bit in. The"
+  },
+  {
+   "start": 170.92,
+   "duration": 4.12,
+   "text": "board stays exactly the same size. It"
+  },
+  {
+   "start": 173.2,
+   "duration": 4.12,
+   "text": "just keeps getting rewritten. That's"
+  },
+  {
+   "start": 175.04,
+   "duration": 4.72,
+   "text": "cheap, and it's lossy on purpose. The"
+  },
+  {
+   "start": 177.32,
+   "duration": 4.36,
+   "text": "board holds the gist of everything. What"
+  },
+  {
+   "start": 179.76,
+   "duration": 4.32,
+   "text": "it can't do is hand back the exact"
+  },
+  {
+   "start": 181.68,
+   "duration": 4.04,
+   "text": "sentence you typed 40,000 words ago,"
+  },
+  {
+   "start": 184.08,
+   "duration": 3.96,
+   "text": "because that sentence was written over"
+  },
+  {
+   "start": 185.72,
+   "duration": 4.44,
+   "text": "long ago, and that is why every fourth"
+  },
+  {
+   "start": 188.04,
+   "duration": 3.72,
+   "text": "layer is different. That one gets real"
+  },
+  {
+   "start": 190.16,
+   "duration": 3.76,
+   "text": "attention with the full history"
+  },
+  {
+   "start": 191.76,
+   "duration": 4.08,
+   "text": "available, and its whole job is precise"
+  },
+  {
+   "start": 193.92,
+   "duration": 4.0,
+   "text": "retrieval, the one thing a whiteboard"
+  },
+  {
+   "start": 195.84,
+   "duration": 4.04,
+   "text": "can't do. But real attention over a"
+  },
+  {
+   "start": 197.92,
+   "duration": 3.72,
+   "text": "million tokens is the expensive thing we"
+  },
+  {
+   "start": 199.88,
+   "duration": 3.639,
+   "text": "were avoiding. So, it doesn't read"
+  },
+  {
+   "start": 201.64,
+   "duration": 3.8,
+   "text": "everything either. It runs a cheap"
+  },
+  {
+   "start": 203.519,
+   "duration": 3.841,
+   "text": "indexer first to decide what's worth"
+  },
+  {
+   "start": 205.44,
+   "duration": 4.04,
+   "text": "reading. The older versions of that"
+  },
+  {
+   "start": 207.36,
+   "duration": 3.64,
+   "text": "trick score every individual token,"
+  },
+  {
+   "start": 209.48,
+   "duration": 4.2,
+   "text": "which works until the scoring becomes"
+  },
+  {
+   "start": 211.0,
+   "duration": 4.4,
+   "text": "the expensive part. QSA chops the"
+  },
+  {
+   "start": 213.68,
+   "duration": 3.96,
+   "text": "sequence into micro blocks of four"
+  },
+  {
+   "start": 215.4,
+   "duration": 4.24,
+   "text": "tokens and scores the blocks instead."
+  },
+  {
+   "start": 217.64,
+   "duration": 4.04,
+   "text": "Fewer things to score, so the scorer"
+  },
+  {
+   "start": 219.64,
+   "duration": 4.879,
+   "text": "stops being the bottleneck. It keeps the"
+  },
+  {
+   "start": 221.68,
+   "duration": 5.6,
+   "text": "best 512 blocks, expands them back to"
+  },
+  {
+   "start": 224.519,
+   "duration": 3.881,
+   "text": "2048 token positions, and attends to"
+  },
+  {
+   "start": 227.28,
+   "duration": 2.64,
+   "text": "those."
+  },
+  {
+   "start": 228.4,
+   "duration": 3.44,
+   "text": "Which means at a million tokens of"
+  },
+  {
+   "start": 229.92,
+   "duration": 4.36,
+   "text": "context, that layer is looking at"
+  },
+  {
+   "start": 231.84,
+   "duration": 5.56,
+   "text": "roughly 2/10 of 1% of what you handed"
+  },
+  {
+   "start": 234.28,
+   "duration": 4.64,
+   "text": "it. One position in every 488,"
+  },
+  {
+   "start": 237.4,
+   "duration": 3.52,
+   "text": "and the compression only chooses where"
+  },
+  {
+   "start": 238.92,
+   "duration": 4.36,
+   "text": "to look. The final maths runs on the"
+  },
+  {
+   "start": 240.92,
+   "duration": 4.96,
+   "text": "original uncompressed values. At a"
+  },
+  {
+   "start": 243.28,
+   "duration": 6.0,
+   "text": "million tokens, they measure 7.6 times"
+  },
+  {
+   "start": 245.88,
+   "duration": 5.56,
+   "text": "faster on pre-fill, 4.9 on decode, and"
+  },
+  {
+   "start": 249.28,
+   "duration": 4.56,
+   "text": "label that properly. It's Tencent's own"
+  },
+  {
+   "start": 251.44,
+   "duration": 4.32,
+   "text": "benchmark on Tencent's own kernel, and"
+  },
+  {
+   "start": 253.84,
+   "duration": 3.76,
+   "text": "it measures the attention module, not"
+  },
+  {
+   "start": 255.76,
+   "duration": 3.8,
+   "text": "your prompt end-to-end."
+  },
+  {
+   "start": 257.6,
+   "duration": 4.08,
+   "text": "Second change, and it's the one I'd have"
+  },
+  {
+   "start": 259.56,
+   "duration": 3.6,
+   "text": "skipped if I hadn't read the ablation."
+  },
+  {
+   "start": 261.68,
+   "duration": 3.44,
+   "text": "The residual stream is the shared"
+  },
+  {
+   "start": 263.16,
+   "duration": 5.32,
+   "text": "notepad every layer reads from and"
+  },
+  {
+   "start": 265.12,
+   "duration": 5.16,
+   "text": "writes to. One notepad, 48 layers deep,"
+  },
+  {
+   "start": 268.48,
+   "duration": 3.52,
+   "text": "so everything written early gets buried"
+  },
+  {
+   "start": 270.28,
+   "duration": 3.84,
+   "text": "under everything written late. So, they"
+  },
+  {
+   "start": 272.0,
+   "duration": 4.32,
+   "text": "widened it. One stream became four"
+  },
+  {
+   "start": 274.12,
+   "duration": 4.76,
+   "text": "parallel lanes, which by itself is a"
+  },
+  {
+   "start": 276.32,
+   "duration": 4.56,
+   "text": "known idea. The new part is what sits on"
+  },
+  {
+   "start": 278.88,
+   "duration": 4.28,
+   "text": "the read. Every layer now reads through"
+  },
+  {
+   "start": 280.88,
+   "duration": 3.96,
+   "text": "a gate that decides, per channel and"
+  },
+  {
+   "start": 283.16,
+   "duration": 3.44,
+   "text": "based on what's in front of it, how much"
+  },
+  {
+   "start": 284.84,
+   "duration": 4.079,
+   "text": "to take from each lane, while writing"
+  },
+  {
+   "start": 286.6,
+   "duration": 4.76,
+   "text": "back gets one small number per lane."
+  },
+  {
+   "start": 288.919,
+   "duration": 3.681,
+   "text": "Read finely, write coarsely. Then, they"
+  },
+  {
+   "start": 291.36,
+   "duration": 2.32,
+   "text": "looked at what the four lanes were"
+  },
+  {
+   "start": 292.6,
+   "duration": 3.319,
+   "text": "doing."
+  },
+  {
+   "start": 293.68,
+   "duration": 4.12,
+   "text": "And one had turned into a highway, and"
+  },
+  {
+   "start": 295.919,
+   "duration": 4.041,
+   "text": "across five separate checkpoints,"
+  },
+  {
+   "start": 297.8,
+   "duration": 4.24,
+   "text": "exactly one branch ends up carrying the"
+  },
+  {
+   "start": 299.96,
+   "duration": 4.28,
+   "text": "long connections. A typical jump of"
+  },
+  {
+   "start": 302.04,
+   "duration": 4.08,
+   "text": "about 11 layers against three and a half"
+  },
+  {
+   "start": 304.24,
+   "duration": 4.08,
+   "text": "for the other three. The first layer's"
+  },
+  {
+   "start": 306.12,
+   "duration": 5.0,
+   "text": "output arriving deep in the network went"
+  },
+  {
+   "start": 308.32,
+   "duration": 5.0,
+   "text": "from 2% to 14. That lane wasn't"
+  },
+  {
+   "start": 311.12,
+   "duration": 4.32,
+   "text": "designed. They handed the model four"
+  },
+  {
+   "start": 313.32,
+   "duration": 3.72,
+   "text": "identical branches, and it built itself"
+  },
+  {
+   "start": 315.44,
+   "duration": 3.76,
+   "text": "an express route from the front of the"
+  },
+  {
+   "start": 317.04,
+   "duration": 4.44,
+   "text": "network to the back. The total amount of"
+  },
+  {
+   "start": 319.2,
+   "duration": 4.4,
+   "text": "cross-layer information barely moved."
+  },
+  {
+   "start": 321.48,
+   "duration": 4.4,
+   "text": "What changed is where it goes. Third"
+  },
+  {
+   "start": 323.6,
+   "duration": 4.0,
+   "text": "change. This is the one you'll feel, and"
+  },
+  {
+   "start": 325.88,
+   "duration": 4.16,
+   "text": "it isn't Chen's idea, they say so"
+  },
+  {
+   "start": 327.6,
+   "duration": 4.8,
+   "text": "themselves. Google's Gemma 3N did"
+  },
+  {
+   "start": 330.04,
+   "duration": 4.12,
+   "text": "per-layer embeddings first. DeepSeek"
+  },
+  {
+   "start": 332.4,
+   "duration": 3.88,
+   "text": "published N-gram in January and"
+  },
+  {
+   "start": 334.16,
+   "duration": 3.96,
+   "text": "open-sourced it. Chen is the third lab"
+  },
+  {
+   "start": 336.28,
+   "duration": 3.48,
+   "text": "to land on the same answer, which is"
+  },
+  {
+   "start": 338.12,
+   "duration": 4.4,
+   "text": "better evidence than any of them being"
+  },
+  {
+   "start": 339.76,
+   "duration": 4.52,
+   "text": "clever alone. A normal embedding table"
+  },
+  {
+   "start": 342.52,
+   "duration": 3.72,
+   "text": "looks up one token and hands back a"
+  },
+  {
+   "start": 344.28,
+   "duration": 4.52,
+   "text": "vector. That's the very first thing that"
+  },
+  {
+   "start": 346.24,
+   "duration": 4.6,
+   "text": "happens to your text before any layer."
+  },
+  {
+   "start": 348.8,
+   "duration": 4.08,
+   "text": "An N-gram table looks up the last two or"
+  },
+  {
+   "start": 350.84,
+   "duration": 4.16,
+   "text": "three tokens together. So, instead of"
+  },
+  {
+   "start": 352.88,
+   "duration": 3.92,
+   "text": "asking, \"What does bank mean?\" it asks,"
+  },
+  {
+   "start": 355.0,
+   "duration": 4.04,
+   "text": "\"What does the river bank mean?\" and it"
+  },
+  {
+   "start": 356.8,
+   "duration": 4.24,
+   "text": "has an answer stored. That's 20 million"
+  },
+  {
+   "start": 359.04,
+   "duration": 4.2,
+   "text": "stored phrases in one layer near the"
+  },
+  {
+   "start": 361.04,
+   "duration": 4.04,
+   "text": "front. The model stops reconstructing"
+  },
+  {
+   "start": 363.24,
+   "duration": 4.12,
+   "text": "the boring, repetitive, local stuff from"
+  },
+  {
+   "start": 365.08,
+   "duration": 4.08,
+   "text": "scratch every time. So, the 6 billion"
+  },
+  {
+   "start": 367.36,
+   "duration": 3.8,
+   "text": "parameters that do fire get to spend"
+  },
+  {
+   "start": 369.16,
+   "duration": 4.24,
+   "text": "themselves on the hard part. And now the"
+  },
+  {
+   "start": 371.16,
+   "duration": 4.28,
+   "text": "sentence this whole video is built on,"
+  },
+  {
+   "start": 373.4,
+   "duration": 4.28,
+   "text": "straight off the model card, word for"
+  },
+  {
+   "start": 375.44,
+   "duration": 4.24,
+   "text": "word. \"Embeddings they write are more"
+  },
+  {
+   "start": 377.68,
+   "duration": 4.68,
+   "text": "amenable to offloading than mixture of"
+  },
+  {
+   "start": 379.68,
+   "duration": 4.68,
+   "text": "experts. Indexing with short N-grams"
+  },
+  {
+   "start": 382.36,
+   "duration": 3.96,
+   "text": "makes parameter scaling highly efficient"
+  },
+  {
+   "start": 384.36,
+   "duration": 3.84,
+   "text": "for memory constrained accelerators.\""
+  },
+  {
+   "start": 386.32,
+   "duration": 4.08,
+   "text": "That is an engineering decision, not a"
+  },
+  {
+   "start": 388.2,
+   "duration": 3.719,
+   "text": "paper sentence. A frontier lab is"
+  },
+  {
+   "start": 390.4,
+   "duration": 3.72,
+   "text": "telling you they grew the model along"
+  },
+  {
+   "start": 391.919,
+   "duration": 4.121,
+   "text": "the one axis that doesn't have to sit on"
+  },
+  {
+   "start": 394.12,
+   "duration": 4.16,
+   "text": "the accelerator. Memory constrained"
+  },
+  {
+   "start": 396.04,
+   "duration": 4.16,
+   "text": "accelerators, that's your machine. It's"
+  },
+  {
+   "start": 398.28,
+   "duration": 4.28,
+   "text": "in the release notes. It works because"
+  },
+  {
+   "start": 400.2,
+   "duration": 4.32,
+   "text": "the address is knowable ahead of time."
+  },
+  {
+   "start": 402.56,
+   "duration": 3.84,
+   "text": "Your last two tokens are the key, so"
+  },
+  {
+   "start": 404.52,
+   "duration": 3.72,
+   "text": "nothing has to be computed to find which"
+  },
+  {
+   "start": 406.4,
+   "duration": 3.72,
+   "text": "rows you need, and the fetch can start"
+  },
+  {
+   "start": 408.24,
+   "duration": 3.88,
+   "text": "early and finish while the first layer"
+  },
+  {
+   "start": 410.12,
+   "duration": 4.64,
+   "text": "is still busy, which is why the table"
+  },
+  {
+   "start": 412.12,
+   "duration": 4.92,
+   "text": "sits at layer two, not layer 20. That's"
+  },
+  {
+   "start": 414.76,
+   "duration": 4.2,
+   "text": "three of the four. Now for the last one,"
+  },
+  {
+   "start": 417.04,
+   "duration": 3.92,
+   "text": "and it's the least glamorous. It's also"
+  },
+  {
+   "start": 418.96,
+   "duration": 4.32,
+   "text": "why the other three were affordable. So,"
+  },
+  {
+   "start": 420.96,
+   "duration": 4.08,
+   "text": "stay with me for 90 seconds. They moved"
+  },
+  {
+   "start": 423.28,
+   "duration": 4.12,
+   "text": "most of the training onto an optimizer"
+  },
+  {
+   "start": 425.04,
+   "duration": 4.8,
+   "text": "called Muon, and this is the interesting"
+  },
+  {
+   "start": 427.4,
+   "duration": 4.04,
+   "text": "bit, not all of it. The big"
+  },
+  {
+   "start": 429.84,
+   "duration": 4.0,
+   "text": "two-dimensional weight matrices get"
+  },
+  {
+   "start": 431.44,
+   "duration": 4.44,
+   "text": "Muon. The embeddings, the router that"
+  },
+  {
+   "start": 433.84,
+   "duration": 4.88,
+   "text": "picks experts, and the small projections"
+  },
+  {
+   "start": 435.88,
+   "duration": 4.36,
+   "text": "inside that residual gate stay on AdamW,"
+  },
+  {
+   "start": 438.72,
+   "duration": 3.16,
+   "text": "because for those shapes the new one"
+  },
+  {
+   "start": 440.24,
+   "duration": 3.44,
+   "text": "doesn't help. The gate bought them"
+  },
+  {
+   "start": 441.88,
+   "duration": 3.72,
+   "text": "something else, and they proved it by"
+  },
+  {
+   "start": 443.68,
+   "duration": 4.08,
+   "text": "trying to break the model. Hold the"
+  },
+  {
+   "start": 445.6,
+   "duration": 4.04,
+   "text": "learning rate at four times optimal, the"
+  },
+  {
+   "start": 447.76,
+   "duration": 3.92,
+   "text": "standard way of forcing instabilities"
+  },
+  {
+   "start": 449.64,
+   "duration": 5.56,
+   "text": "out early, and the old configuration"
+  },
+  {
+   "start": 451.68,
+   "duration": 5.64,
+   "text": "spikes 183 times per 10,000 steps and"
+  },
+  {
+   "start": 455.2,
+   "duration": 4.76,
+   "text": "lives on the gradient clipper. The new"
+  },
+  {
+   "start": 457.32,
+   "duration": 4.92,
+   "text": "one records zero spikes, not fewer,"
+  },
+  {
+   "start": 459.96,
+   "duration": 4.48,
+   "text": "zero. So, then they deleted a step that"
+  },
+  {
+   "start": 462.24,
+   "duration": 4.12,
+   "text": "is standard practice everywhere. Ramping"
+  },
+  {
+   "start": 464.44,
+   "duration": 3.92,
+   "text": "the batch size up gently at the start of"
+  },
+  {
+   "start": 466.36,
+   "duration": 6.04,
+   "text": "training bought them nothing measurable"
+  },
+  {
+   "start": 468.36,
+   "duration": 5.36,
+   "text": "and cost 18.8% more optimizer steps. 18%"
+  },
+  {
+   "start": 472.4,
+   "duration": 4.0,
+   "text": "of the largest compute bill in the"
+  },
+  {
+   "start": 473.72,
+   "duration": 4.28,
+   "text": "building paid for a habit. It all adds"
+  },
+  {
+   "start": 476.4,
+   "duration": 3.92,
+   "text": "up to about a third of the previous"
+  },
+  {
+   "start": 478.0,
+   "duration": 4.28,
+   "text": "flagships active parameters, a third of"
+  },
+  {
+   "start": 480.32,
+   "duration": 4.36,
+   "text": "the tokens, and roughly a ninth of the"
+  },
+  {
+   "start": 482.28,
+   "duration": 5.12,
+   "text": "compute. So far, four architecture"
+  },
+  {
+   "start": 484.68,
+   "duration": 4.56,
+   "text": "changes, a perfectly normal paper."
+  },
+  {
+   "start": 487.4,
+   "duration": 3.24,
+   "text": "What makes this report worth your time"
+  },
+  {
+   "start": 489.24,
+   "duration": 3.24,
+   "text": "is what they used to choose between"
+  },
+  {
+   "start": 490.64,
+   "duration": 3.2,
+   "text": "them. Because in it, the training loss"
+  },
+  {
+   "start": 492.48,
+   "duration": 3.04,
+   "text": "and the benchmark scores keep"
+  },
+  {
+   "start": 493.84,
+   "duration": 4.079,
+   "text": "disagreeing. And every time they"
+  },
+  {
+   "start": 495.52,
+   "duration": 4.48,
+   "text": "disagree, the loss curve loses. Take"
+  },
+  {
+   "start": 497.919,
+   "duration": 3.761,
+   "text": "their residual table. Making that gate"
+  },
+  {
+   "start": 500.0,
+   "duration": 4.32,
+   "text": "data dependent improved the training"
+  },
+  {
+   "start": 501.68,
+   "duration": 4.4,
+   "text": "loss by 2,000ths. On any normal reading,"
+  },
+  {
+   "start": 504.32,
+   "duration": 3.84,
+   "text": "that's noise and you drop the extra"
+  },
+  {
+   "start": 506.08,
+   "duration": 3.72,
+   "text": "complexity. The same change was worth"
+  },
+  {
+   "start": 508.16,
+   "duration": 4.08,
+   "text": "two full points of average benchmark"
+  },
+  {
+   "start": 509.8,
+   "duration": 4.96,
+   "text": "score. So, which one do you believe? The"
+  },
+  {
+   "start": 512.24,
+   "duration": 4.6,
+   "text": "curve or the tests? They believe the"
+  },
+  {
+   "start": 514.76,
+   "duration": 3.92,
+   "text": "tests, shipped the gate, and wrote in"
+  },
+  {
+   "start": 516.84,
+   "duration": 3.879,
+   "text": "their own report that loss alone would"
+  },
+  {
+   "start": 518.68,
+   "duration": 3.16,
+   "text": "have undersold it. Then it happens in"
+  },
+  {
+   "start": 520.719,
+   "duration": 2.721,
+   "text": "reverse."
+  },
+  {
+   "start": 521.84,
+   "duration": 3.92,
+   "text": "They tried making the residual read"
+  },
+  {
+   "start": 523.44,
+   "duration": 4.8,
+   "text": "sparse, only the top two lanes instead"
+  },
+  {
+   "start": 525.76,
+   "duration": 4.2,
+   "text": "of four, to move fewer bytes. The loss"
+  },
+  {
+   "start": 528.24,
+   "duration": 4.48,
+   "text": "was unaffected, the benchmarks"
+  },
+  {
+   "start": 529.96,
+   "duration": 5.24,
+   "text": "unaffected, a free win. It fell apart"
+  },
+  {
+   "start": 532.72,
+   "duration": 4.08,
+   "text": "after post-training. Their words, a case"
+  },
+  {
+   "start": 535.2,
+   "duration": 3.44,
+   "text": "where pre-training metrics alone would"
+  },
+  {
+   "start": 536.8,
+   "duration": 3.88,
+   "text": "have led to the wrong decision. They"
+  },
+  {
+   "start": 538.64,
+   "duration": 3.72,
+   "text": "didn't ship it. Third and fourth,"
+  },
+  {
+   "start": 540.68,
+   "duration": 3.68,
+   "text": "growing that phrase book lowers the"
+  },
+  {
+   "start": 542.36,
+   "duration": 4.08,
+   "text": "training loss every single time,"
+  },
+  {
+   "start": 544.36,
+   "duration": 4.04,
+   "text": "smoothly, all the way up, while"
+  },
+  {
+   "start": 546.44,
+   "duration": 3.72,
+   "text": "downstream accuracy just stops and"
+  },
+  {
+   "start": 548.4,
+   "duration": 3.56,
+   "text": "wanders sideways. And drop dropping"
+  },
+  {
+   "start": 550.16,
+   "duration": 3.56,
+   "text": "positional encoding looked completely"
+  },
+  {
+   "start": 551.96,
+   "duration": 3.4,
+   "text": "free in pre-training."
+  },
+  {
+   "start": 553.72,
+   "duration": 4.32,
+   "text": "After post-training, the model wouldn't"
+  },
+  {
+   "start": 555.36,
+   "duration": 5.36,
+   "text": "stop generating. It kept going, past the"
+  },
+  {
+   "start": 558.04,
+   "duration": 4.4,
+   "text": "end, forever. That's four times in one"
+  },
+  {
+   "start": 560.72,
+   "duration": 3.52,
+   "text": "document that the headline number was"
+  },
+  {
+   "start": 562.44,
+   "duration": 3.52,
+   "text": "pointing the wrong way. The villain"
+  },
+  {
+   "start": 564.24,
+   "duration": 3.04,
+   "text": "isn't a company and it isn't a"
+  },
+  {
+   "start": 565.96,
+   "duration": 2.92,
+   "text": "benchmark."
+  },
+  {
+   "start": 567.28,
+   "duration": 3.88,
+   "text": "It's the habit of trusting whichever"
+  },
+  {
+   "start": 568.88,
+   "duration": 3.92,
+   "text": "metric is easiest to plot. These people"
+  },
+  {
+   "start": 571.16,
+   "duration": 3.56,
+   "text": "built the expensive evaluation loop"
+  },
+  {
+   "start": 572.8,
+   "duration": 3.88,
+   "text": "instead, which brings us back to the"
+  },
+  {
+   "start": 574.72,
+   "duration": 4.04,
+   "text": "lookup table. Because a sentence on a"
+  },
+  {
+   "start": 576.68,
+   "duration": 4.2,
+   "text": "model card is worth nothing until"
+  },
+  {
+   "start": 578.76,
+   "duration": 4.48,
+   "text": "somebody independent measures it. Three"
+  },
+  {
+   "start": 580.88,
+   "duration": 4.76,
+   "text": "groups did inside 3 days and they're"
+  },
+  {
+   "start": 583.24,
+   "duration": 4.84,
+   "text": "worth taking one at a time. First, the"
+  },
+  {
+   "start": 585.64,
+   "duration": 4.68,
+   "text": "serving engine. The SG Lang team moved"
+  },
+  {
+   "start": 588.08,
+   "duration": 4.56,
+   "text": "the table into pinned host memory and"
+  },
+  {
+   "start": 590.32,
+   "duration": 4.24,
+   "text": "gathered those 16 rows per token with a"
+  },
+  {
+   "start": 592.64,
+   "duration": 4.08,
+   "text": "small kernel on its own stream"
+  },
+  {
+   "start": 594.56,
+   "duration": 4.0,
+   "text": "overlapping the first decoder block."
+  },
+  {
+   "start": 596.72,
+   "duration": 4.6,
+   "text": "Then they measured what it cost. On a"
+  },
+  {
+   "start": 598.56,
+   "duration": 5.24,
+   "text": "four-way H200 node, model weights per"
+  },
+  {
+   "start": 601.32,
+   "duration": 5.16,
+   "text": "graphics card fell from about 84 GB to"
+  },
+  {
+   "start": 603.8,
+   "duration": 5.52,
+   "text": "60. And room for cash context went up"
+  },
+  {
+   "start": 606.48,
+   "duration": 5.16,
+   "text": "78% roughly twice the conversation you"
+  },
+  {
+   "start": 609.32,
+   "duration": 5.32,
+   "text": "can hold before anything gets evicted."
+  },
+  {
+   "start": 611.64,
+   "duration": 4.8,
+   "text": "And throughput moved by 700ths of 1%,"
+  },
+  {
+   "start": 614.64,
+   "duration": 3.88,
+   "text": "which is nothing. But the number that"
+  },
+  {
+   "start": 616.44,
+   "duration": 3.96,
+   "text": "made me sit up is the next one. Four"
+  },
+  {
+   "start": 618.52,
+   "duration": 3.88,
+   "text": "fixed prompts came back with identical"
+  },
+  {
+   "start": 620.4,
+   "duration": 5.0,
+   "text": "output tokens and the recorded log"
+  },
+  {
+   "start": 622.4,
+   "duration": 5.16,
+   "text": "probability trace matched exactly, too."
+  },
+  {
+   "start": 625.4,
+   "duration": 5.16,
+   "text": "That's bit for bit the same answer with"
+  },
+  {
+   "start": 627.56,
+   "duration": 5.32,
+   "text": "23 GB moved off each card. On four"
+  },
+  {
+   "start": 630.56,
+   "duration": 4.28,
+   "text": "prompts, so don't overread it. But for"
+  },
+  {
+   "start": 632.88,
+   "duration": 4.48,
+   "text": "those four, that isn't a trade-off with"
+  },
+  {
+   "start": 634.84,
+   "duration": 4.6,
+   "text": "a small cost attached. It's free. Second"
+  },
+  {
+   "start": 637.36,
+   "duration": 3.84,
+   "text": "measurement, and this one is my favorite"
+  },
+  {
+   "start": 639.44,
+   "duration": 3.44,
+   "text": "because it didn't come from a lab."
+  },
+  {
+   "start": 641.2,
+   "duration": 4.639,
+   "text": "Somebody on Hugging Face going by the"
+  },
+  {
+   "start": 642.88,
+   "duration": 6.12,
+   "text": "handle King Jones 777 published three"
+  },
+  {
+   "start": 645.839,
+   "duration": 5.081,
+   "text": "quantized builds for Strix Halo AMD."
+  },
+  {
+   "start": 649.0,
+   "duration": 3.4,
+   "text": "It's unified memory part, the one in"
+  },
+  {
+   "start": 650.92,
+   "duration": 3.48,
+   "text": "those little mini machines that keep"
+  },
+  {
+   "start": 652.4,
+   "duration": 3.92,
+   "text": "selling out. The three differ in one"
+  },
+  {
+   "start": 654.4,
+   "duration": 5.08,
+   "text": "way, how hard the lookup table is"
+  },
+  {
+   "start": 656.32,
+   "duration": 5.32,
+   "text": "squeezed. On disk, they're 88, 98, and"
+  },
+  {
+   "start": 659.48,
+   "duration": 4.04,
+   "text": "113 GB."
+  },
+  {
+   "start": 661.64,
+   "duration": 3.72,
+   "text": "But strip the table out of each and"
+  },
+  {
+   "start": 663.52,
+   "duration": 4.319,
+   "text": "what's left is the same size in all"
+  },
+  {
+   "start": 665.36,
+   "duration": 4.4,
+   "text": "three within a fifth of a gigabyte. As"
+  },
+  {
+   "start": 667.839,
+   "duration": 3.841,
+   "text": "they put it, one model plus a"
+  },
+  {
+   "start": 669.76,
+   "duration": 3.88,
+   "text": "differently quantized lookup table,"
+  },
+  {
+   "start": 671.68,
+   "duration": 3.2,
+   "text": "which produces a prediction. If the"
+  },
+  {
+   "start": 673.64,
+   "duration": 3.16,
+   "text": "table really never reaches the"
+  },
+  {
+   "start": 674.88,
+   "duration": 4.48,
+   "text": "accelerator, all three should use"
+  },
+  {
+   "start": 676.8,
+   "duration": 4.96,
+   "text": "identical graphics memory despite a 25"
+  },
+  {
+   "start": 679.36,
+   "duration": 6.08,
+   "text": "GB spread on disk. And measured, they"
+  },
+  {
+   "start": 681.76,
+   "duration": 5.96,
+   "text": "do. 63 GB at load, all three tiers, at"
+  },
+  {
+   "start": 685.44,
+   "duration": 6.2,
+   "text": "every context length they tried. Even at"
+  },
+  {
+   "start": 687.72,
+   "duration": 6.92,
+   "text": "131,000 tokens of context, it's 67. So"
+  },
+  {
+   "start": 691.64,
+   "duration": 5.12,
+   "text": "on that machine, 46 GB of the file stays"
+  },
+  {
+   "start": 694.64,
+   "duration": 4.04,
+   "text": "off the accelerator entirely. And they"
+  },
+  {
+   "start": 696.76,
+   "duration": 3.84,
+   "text": "didn't take that on faith, either. They"
+  },
+  {
+   "start": 698.68,
+   "duration": 4.64,
+   "text": "asked the kernel which pages of the file"
+  },
+  {
+   "start": 700.6,
+   "duration": 4.96,
+   "text": "were actually resident. About 40 GB of"
+  },
+  {
+   "start": 703.32,
+   "duration": 5.28,
+   "text": "it were sitting in the page cache, and"
+  },
+  {
+   "start": 705.56,
+   "duration": 5.44,
+   "text": "the system's entire cache was 40.4. The"
+  },
+  {
+   "start": 708.6,
+   "duration": 4.12,
+   "text": "page cache was this file. Those pages"
+  },
+  {
+   "start": 711.0,
+   "duration": 3.72,
+   "text": "are file backed, which is the whole"
+  },
+  {
+   "start": 712.72,
+   "duration": 3.96,
+   "text": "point. The operating system can throw"
+  },
+  {
+   "start": 714.72,
+   "duration": 3.8,
+   "text": "them away and reread them when it needs"
+  },
+  {
+   "start": 716.68,
+   "duration": 3.2,
+   "text": "the space, which is why they don't cost"
+  },
+  {
+   "start": 718.52,
+   "duration": 2.96,
+   "text": "you real memory."
+  },
+  {
+   "start": 719.88,
+   "duration": 3.88,
+   "text": "Third measurement isn't a benchmark at"
+  },
+  {
+   "start": 721.48,
+   "duration": 5.68,
+   "text": "all. It's the timestamps pulled from the"
+  },
+  {
+   "start": 723.76,
+   "duration": 5.92,
+   "text": "Hugging Face API this morning. 115"
+  },
+  {
+   "start": 727.16,
+   "duration": 4.72,
+   "text": "community repackages from 61 different"
+  },
+  {
+   "start": 729.68,
+   "duration": 4.4,
+   "text": "accounts in the 3 days after the weights"
+  },
+  {
+   "start": 731.88,
+   "duration": 4.52,
+   "text": "went up. 31 of them Apple silicon"
+  },
+  {
+   "start": 734.08,
+   "duration": 4.92,
+   "text": "builds, nine ports to Chinese domestic"
+  },
+  {
+   "start": 736.4,
+   "duration": 4.2,
+   "text": "accelerators across seven vendors, and"
+  },
+  {
+   "start": 739.0,
+   "duration": 3.8,
+   "text": "one does the obvious thing that hadn't"
+  },
+  {
+   "start": 740.6,
+   "duration": 4.16,
+   "text": "shipped yet. It pulls a phrase table out"
+  },
+  {
+   "start": 742.8,
+   "duration": 4.72,
+   "text": "of the model file entirely and streams"
+  },
+  {
+   "start": 744.76,
+   "duration": 5.48,
+   "text": "it off an SSD. It needs a custom loader."
+  },
+  {
+   "start": 747.52,
+   "duration": 5.24,
+   "text": "It won't run on stock llama.cpp."
+  },
+  {
+   "start": 750.24,
+   "duration": 4.48,
+   "text": "And it exists 2 days after release. The"
+  },
+  {
+   "start": 752.76,
+   "duration": 4.0,
+   "text": "earliest conversion is timestamped 20"
+  },
+  {
+   "start": 754.72,
+   "duration": 3.64,
+   "text": "hours after the weights appeared, a full"
+  },
+  {
+   "start": 756.76,
+   "duration": 3.8,
+   "text": "day before the announcement blog went"
+  },
+  {
+   "start": 758.36,
+   "duration": 4.0,
+   "text": "live. Somebody found the folder, read"
+  },
+  {
+   "start": 760.56,
+   "duration": 3.8,
+   "text": "the config, and started quantizing"
+  },
+  {
+   "start": 762.36,
+   "duration": 3.88,
+   "text": "before anyone told them what it was. So,"
+  },
+  {
+   "start": 764.36,
+   "duration": 3.88,
+   "text": "that's the good version, and I think it"
+  },
+  {
+   "start": 766.24,
+   "duration": 3.56,
+   "text": "is good. Here's what a launch day thread"
+  },
+  {
+   "start": 768.24,
+   "duration": 2.96,
+   "text": "isn't going to tell you, starting with"
+  },
+  {
+   "start": 769.8,
+   "duration": 3.28,
+   "text": "the benchmarks, because they're the"
+  },
+  {
+   "start": 771.2,
+   "duration": 5.72,
+   "text": "numbers that get screenshotted. It"
+  },
+  {
+   "start": 773.08,
+   "duration": 7.04,
+   "text": "scores 58.7 on Deep Squeeze, 62.5 on"
+  },
+  {
+   "start": 776.92,
+   "duration": 5.64,
+   "text": "SqueezeBench Pro, and 73.9 on Core Work"
+  },
+  {
+   "start": 780.12,
+   "duration": 4.76,
+   "text": "Bench. Real numbers, and Ken ran all of"
+  },
+  {
+   "start": 782.56,
+   "duration": 4.16,
+   "text": "them on Ken's harness. To their credit,"
+  },
+  {
+   "start": 784.88,
+   "duration": 3.959,
+   "text": "the footnotes say so. One of those"
+  },
+  {
+   "start": 786.72,
+   "duration": 3.68,
+   "text": "benchmarks is their own in-house test."
+  },
+  {
+   "start": 788.839,
+   "duration": 3.801,
+   "text": "Another reports the higher of two"
+  },
+  {
+   "start": 790.4,
+   "duration": 3.88,
+   "text": "harnesses. A third was rescored after"
+  },
+  {
+   "start": 792.64,
+   "duration": 4.04,
+   "text": "they corrected tasks they considered"
+  },
+  {
+   "start": 794.28,
+   "duration": 3.88,
+   "text": "broken. None of that is dishonest, but"
+  },
+  {
+   "start": 796.68,
+   "duration": 4.56,
+   "text": "it isn't independent. And their"
+  },
+  {
+   "start": 798.16,
+   "duration": 5.12,
+   "text": "comparison column is Claude Opus 4.6,"
+  },
+  {
+   "start": 801.24,
+   "duration": 4.24,
+   "text": "which isn't the current flagship. But,"
+  },
+  {
+   "start": 803.28,
+   "duration": 4.28,
+   "text": "independent numbers do exist, whatever"
+  },
+  {
+   "start": 805.48,
+   "duration": 4.84,
+   "text": "some write-ups claimed this week."
+  },
+  {
+   "start": 807.56,
+   "duration": 4.72,
+   "text": "artificial analysis has it scored and 56"
+  },
+  {
+   "start": 810.32,
+   "duration": 5.24,
+   "text": "on their intelligence index is genuinely"
+  },
+  {
+   "start": 812.28,
+   "duration": 6.68,
+   "text": "strong, level with Gemini 3.7 flash and"
+  },
+  {
+   "start": 815.56,
+   "duration": 5.32,
+   "text": "Grok 4.5, above Claude Sonnet 5. It is"
+  },
+  {
+   "start": 818.96,
+   "duration": 4.08,
+   "text": "not the leading open model though, and"
+  },
+  {
+   "start": 820.88,
+   "duration": 4.36,
+   "text": "you'll see people say that. Kimmy K3"
+  },
+  {
+   "start": 823.04,
+   "duration": 4.84,
+   "text": "sits four points ahead of it. Twan's own"
+  },
+  {
+   "start": 825.24,
+   "duration": 4.48,
+   "text": "trillion-scale flagship sits two ahead."
+  },
+  {
+   "start": 827.88,
+   "duration": 3.96,
+   "text": "This is a very good model that is not"
+  },
+  {
+   "start": 829.72,
+   "duration": 4.04,
+   "text": "the best one, which is a boring sentence"
+  },
+  {
+   "start": 831.84,
+   "duration": 4.36,
+   "text": "and happens to be the true one. It's"
+  },
+  {
+   "start": 833.76,
+   "duration": 4.24,
+   "text": "also chatty. Producing that score took"
+  },
+  {
+   "start": 836.2,
+   "duration": 4.72,
+   "text": "200 million tokens where the median"
+  },
+  {
+   "start": 838.0,
+   "duration": 4.56,
+   "text": "model uses 110 and cheap per token"
+  },
+  {
+   "start": 840.92,
+   "duration": 3.88,
+   "text": "starts doing a lot of work when you"
+  },
+  {
+   "start": 842.56,
+   "duration": 4.32,
+   "text": "spend nearly twice as many of them. Then"
+  },
+  {
+   "start": 844.8,
+   "duration": 4.08,
+   "text": "the license, which I read rather than"
+  },
+  {
+   "start": 846.88,
+   "duration": 5.24,
+   "text": "trusting the tag. It's called Twan"
+  },
+  {
+   "start": 848.88,
+   "duration": 6.12,
+   "text": "Community 1.0 and it is generous. Use"
+  },
+  {
+   "start": 852.12,
+   "duration": 5.04,
+   "text": "it, modify it, sell it, host it,"
+  },
+  {
+   "start": 855.0,
+   "duration": 4.88,
+   "text": "fine-tune it. Two conditions: if you"
+  },
+  {
+   "start": 857.16,
+   "duration": 4.68,
+   "text": "pass 100 million monthly users or 20"
+  },
+  {
+   "start": 859.88,
+   "duration": 3.56,
+   "text": "million dollars a month in revenue, you"
+  },
+  {
+   "start": 861.84,
+   "duration": 4.16,
+   "text": "have to show the model's name in your"
+  },
+  {
+   "start": 863.44,
+   "duration": 4.76,
+   "text": "product. The second one has teeth. If"
+  },
+  {
+   "start": 866.0,
+   "duration": 4.48,
+   "text": "your business is selling model access or"
+  },
+  {
+   "start": 868.2,
+   "duration": 4.08,
+   "text": "an AI coding or office assistant, you"
+  },
+  {
+   "start": 870.48,
+   "duration": 3.88,
+   "text": "need a separate license from Twan before"
+  },
+  {
+   "start": 872.28,
+   "duration": 5.16,
+   "text": "you use it commercially. Internal use is"
+  },
+  {
+   "start": 874.36,
+   "duration": 4.479,
+   "text": "exempt, reselling isn't. Then the floor,"
+  },
+  {
+   "start": 877.44,
+   "duration": 4.16,
+   "text": "which is the one that decides whether"
+  },
+  {
+   "start": 878.839,
+   "duration": 4.841,
+   "text": "any of this touches your life. It's 75"
+  },
+  {
+   "start": 881.6,
+   "duration": 4.12,
+   "text": "GB of memory for the smallest one-bit"
+  },
+  {
+   "start": 883.68,
+   "duration": 3.96,
+   "text": "build and at that size, it only"
+  },
+  {
+   "start": 885.72,
+   "duration": 4.4,
+   "text": "reproduces the full model's top answer"
+  },
+  {
+   "start": 887.64,
+   "duration": 5.44,
+   "text": "about 80% of the time. So the sensible"
+  },
+  {
+   "start": 890.12,
+   "duration": 5.56,
+   "text": "pick is the four-bit build at 112, which"
+  },
+  {
+   "start": 893.08,
+   "duration": 4.92,
+   "text": "recovers 93. The offload paths aren't"
+  },
+  {
+   "start": 895.68,
+   "duration": 5.28,
+   "text": "finished either. The VLM implementation"
+  },
+  {
+   "start": 898.0,
+   "duration": 5.96,
+   "text": "needs 51 GB of host memory and currently"
+  },
+  {
+   "start": 900.96,
+   "duration": 5.2,
+   "text": "only runs on Nvidia. The SSD build needs"
+  },
+  {
+   "start": 903.96,
+   "duration": 4.92,
+   "text": "a loader that isn't upstream. This is a"
+  },
+  {
+   "start": 906.16,
+   "duration": 4.6,
+   "text": "preview and it's behaving like one. And"
+  },
+  {
+   "start": 908.88,
+   "duration": 3.8,
+   "text": "one reply on the launch thread said the"
+  },
+  {
+   "start": 910.76,
+   "duration": 3.88,
+   "text": "thing everyone was thinking, with RAM"
+  },
+  {
+   "start": 912.68,
+   "duration": 4.4,
+   "text": "prices this high, how can you call this"
+  },
+  {
+   "start": 914.64,
+   "duration": 3.76,
+   "text": "local friendly? Which is fair. Nothing"
+  },
+  {
+   "start": 917.08,
+   "duration": 3.92,
+   "text": "in this architecture makes memory"
+  },
+  {
+   "start": 918.4,
+   "duration": 4.48,
+   "text": "cheaper. It makes slow memory usable."
+  },
+  {
+   "start": 921.0,
+   "duration": 4.0,
+   "text": "Those aren't the same sentence."
+  },
+  {
+   "start": 922.88,
+   "duration": 3.8,
+   "text": "So, here's where I come down. The scores"
+  },
+  {
+   "start": 925.0,
+   "duration": 3.84,
+   "text": "aren't the story, and I don't think the"
+  },
+  {
+   "start": 926.68,
+   "duration": 3.88,
+   "text": "20 team believes they are, either. They"
+  },
+  {
+   "start": 928.84,
+   "duration": 4.28,
+   "text": "gave away the architecture, not the"
+  },
+  {
+   "start": 930.56,
+   "duration": 4.84,
+   "text": "crown. The story is a lookup table, and"
+  },
+  {
+   "start": 933.12,
+   "duration": 4.84,
+   "text": "it wins for a specific person, anyone"
+  },
+  {
+   "start": 935.4,
+   "duration": 5.64,
+   "text": "whose machine is mostly slow memory."
+  },
+  {
+   "start": 937.96,
+   "duration": 5.52,
+   "text": "A big Mac, a spark box, an AMD unified"
+  },
+  {
+   "start": 941.04,
+   "duration": 4.8,
+   "text": "memory chip, one graphics card next to a"
+  },
+  {
+   "start": 943.48,
+   "duration": 4.4,
+   "text": "lot of system memory. For you, this is"
+  },
+  {
+   "start": 945.84,
+   "duration": 3.6,
+   "text": "the first Frontier Scale architecture"
+  },
+  {
+   "start": 947.88,
+   "duration": 3.44,
+   "text": "where the largest single piece was"
+  },
+  {
+   "start": 949.44,
+   "duration": 5.04,
+   "text": "designed to live in the cheap memory."
+  },
+  {
+   "start": 951.32,
+   "duration": 5.08,
+   "text": "Three receipts, 23 GB moved off each"
+  },
+  {
+   "start": 954.48,
+   "duration": 4.88,
+   "text": "card with bit identical output on the"
+  },
+  {
+   "start": 956.4,
+   "duration": 4.48,
+   "text": "prompts they checked. 46 GB of file that"
+  },
+  {
+   "start": 959.36,
+   "duration": 3.76,
+   "text": "stays off the accelerator on a"
+  },
+  {
+   "start": 960.88,
+   "duration": 3.92,
+   "text": "stranger's laptop chip, and the vendor's"
+  },
+  {
+   "start": 963.12,
+   "duration": 3.88,
+   "text": "own release notes saying that was the"
+  },
+  {
+   "start": 964.8,
+   "duration": 4.24,
+   "text": "point. Now, the concession, because it's"
+  },
+  {
+   "start": 967.0,
+   "duration": 3.96,
+   "text": "a real one. It loses the Open Weights"
+  },
+  {
+   "start": 969.04,
+   "duration": 3.72,
+   "text": "Leaderboard. The license would stop me"
+  },
+  {
+   "start": 970.96,
+   "duration": 3.88,
+   "text": "shipping a product on it without asking"
+  },
+  {
+   "start": 972.76,
+   "duration": 4.68,
+   "text": "first. The speed figures are theirs, and"
+  },
+  {
+   "start": 974.84,
+   "duration": 4.76,
+   "text": "they measure a kernel, not your prompt."
+  },
+  {
+   "start": 977.44,
+   "duration": 4.56,
+   "text": "And 75 GB is not most people's"
+  },
+  {
+   "start": 979.6,
+   "duration": 4.16,
+   "text": "definition of local. I'd still take it"
+  },
+  {
+   "start": 982.0,
+   "duration": 3.12,
+   "text": "because everything else near it on that"
+  },
+  {
+   "start": 983.76,
+   "duration": 3.8,
+   "text": "leaderboard assumes you own the"
+  },
+  {
+   "start": 985.12,
+   "duration": 4.4,
+   "text": "expensive memory, and this one doesn't."
+  },
+  {
+   "start": 987.56,
+   "duration": 3.96,
+   "text": "That's the bet worth making. The next"
+  },
+  {
+   "start": 989.52,
+   "duration": 4.04,
+   "text": "generation of open models won't compete"
+  },
+  {
+   "start": 991.52,
+   "duration": 3.92,
+   "text": "on how many parameters they have, but on"
+  },
+  {
+   "start": 993.56,
+   "duration": 4.08,
+   "text": "how few of them have to sit in the fast"
+  },
+  {
+   "start": 995.44,
+   "duration": 4.76,
+   "text": "memory. If we get to next spring and"
+  },
+  {
+   "start": 997.64,
+   "duration": 5.199,
+   "text": "nobody has copied it, I was wrong. But,"
+  },
+  {
+   "start": 1000.2,
+   "duration": 4.2,
+   "text": "there's a thought I keep circling. 28%"
+  },
+  {
+   "start": 1002.839,
+   "duration": 3.441,
+   "text": "of this model's parameters aren't a"
+  },
+  {
+   "start": 1004.4,
+   "duration": 3.68,
+   "text": "network at all. They're a phrasebook"
+  },
+  {
+   "start": 1006.28,
+   "duration": 3.72,
+   "text": "that learns nothing while it's running,"
+  },
+  {
+   "start": 1008.08,
+   "duration": 4.08,
+   "text": "sitting on the far side of a bus, being"
+  },
+  {
+   "start": 1010.0,
+   "duration": 3.48,
+   "text": "read 16 rows at a time."
+  },
+  {
+   "start": 1012.16,
+   "duration": 3.2,
+   "text": "If the fastest growing part of a"
+  },
+  {
+   "start": 1013.48,
+   "duration": 3.6,
+   "text": "language model is the part that isn't a"
+  },
+  {
+   "start": 1015.36,
+   "duration": 4.56,
+   "text": "neural network, what is it we're"
+  },
+  {
+   "start": 1017.08,
+   "duration": 2.84,
+   "text": "actually building?"
+  }
+ ]
+}

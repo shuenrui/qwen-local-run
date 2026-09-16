@@ -1,0 +1,3494 @@
+{
+ "via": "twitter-cli user-posts -n 100",
+ "user": "mr_r0b0t",
+ "posts": [
+  {
+   "id": "2099975401791463935",
+   "text": "Unofficial Omarchy / @NousResearch Hermes Agent plugin just got published! Check out all the details here: https://t.co/kkkEsUlynt! https://t.co/ykSSbq3xny",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 19,
+    "retweets": 3,
+    "replies": 2,
+    "quotes": 0,
+    "views": 808,
+    "bookmarks": 6
+   },
+   "createdAt": "Tue Sep 15 21:35:26 +0000 2026",
+   "createdAtLocal": "2026-09-16 05:35",
+   "createdAtISO": "2026-09-15T21:35:26+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HSSb_nLWcAIc33u.jpg",
+     "width": 1206,
+     "height": 1264
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HSScGM-WgAAtqXn.png",
+     "width": 545,
+     "height": 675
+    }
+   ],
+   "urls": [
+    "https://plugins.omarchy.org/plugin.html?id=io.github.r0b0tlab.hermes-usage"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2099977724324446314",
+   "text": "@NousResearch the sidebar gives you an \"at a glance\" view of usage, the app gives you the detail! \n\nhere's the \"task activity\"\npretty interesting look at how tokens are being consumed by things like compression, vision, etc. https://t.co/JKPX5EGbqs",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 126,
+    "bookmarks": 0
+   },
+   "createdAt": "Tue Sep 15 21:44:39 +0000 2026",
+   "createdAtLocal": "2026-09-16 05:44",
+   "createdAtISO": "2026-09-15T21:44:39+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HSSeZOsXcAAjhVh.jpg",
+     "width": 912,
+     "height": 561
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2099965994907168837",
+   "text": "Do you have Muse on your phone? It isn't bad!\n\nIf you want some free tokens, here's my referral 😜 \n\nGot a referral bonus you might want: invite a friend to Muse and you both get 1 billion Muse tokens.\n\nThey have 48 hours after joining to add your code in Settings, and you can earn it for up to 10 friends. Your code is **QH5JG9**.",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 8,
+    "retweets": 0,
+    "replies": 4,
+    "quotes": 0,
+    "views": 914,
+    "bookmarks": 3
+   },
+   "createdAt": "Tue Sep 15 20:58:03 +0000 2026",
+   "createdAtLocal": "2026-09-16 04:58",
+   "createdAtISO": "2026-09-15T20:58:03+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2099965031722909940",
+   "text": "Presenting V1 of the Dual @NVIDIAAI GB10 Cool Cube 🧊🧊🧊\nFully 3d printed, two enclosed 120mm Noctua fans, ventilated trays, PWM fan controller, and durable all ABS construction 🏆 \nTime to disconnect two GB10s from the cluster for thermal tests! https://t.co/rtTIWfC1uC",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 68,
+    "retweets": 5,
+    "replies": 22,
+    "quotes": 3,
+    "views": 4266,
+    "bookmarks": 6
+   },
+   "createdAt": "Tue Sep 15 20:54:13 +0000 2026",
+   "createdAtLocal": "2026-09-16 04:54",
+   "createdAtISO": "2026-09-15T20:54:13+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HSSTCTjXsAArHf9.jpg",
+     "width": 2268,
+     "height": 4032
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HSSTDhIWYAAo5ID.jpg",
+     "width": 2268,
+     "height": 4032
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2099895874281214459",
+   "text": "@mr_r0b0t yep, after hitting 107 I'm pushing more 🤣 but it's not so easy any more...  https://t.co/oYDGiq4ib3",
+   "author": {
+    "id": "875662759438016512",
+    "name": "vr8vr8",
+    "screenName": "vr8vr8",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2035798410842783744/FF6low3r_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 4,
+    "retweets": 1,
+    "replies": 0,
+    "quotes": 0,
+    "views": 469,
+    "bookmarks": 4
+   },
+   "createdAt": "Tue Sep 15 16:19:25 +0000 2026",
+   "createdAtLocal": "2026-09-16 00:19",
+   "createdAtISO": "2026-09-15T16:19:25+00:00",
+   "media": [],
+   "urls": [
+    "https://x.com/vr8vr8/status/2099167079492432229"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2099167079492432229",
+    "text": "Qwen3.8-Flash-Next just broke  100 tok/s 🚀 on two DGX Sparks.\n\nBot lanes: classic or uncensored run at such speed 🤯\n⚡️https://t.co/MyV5S3BcTE\nHumanEval 95.7 \nGSM8K 98.0  \nIFEval 91.5/93.4 \nMMLU-Pro 84.9",
+    "author": {
+     "screenName": "vr8vr8",
+     "name": "vr8vr8"
+    }
+   }
+  },
+  {
+   "id": "2099866307919335802",
+   "text": "Because I just can't help myself 🤣\nK2.8-Preview works as a custom model slug in your @NousResearch Hermes Agent!\nHaving it submit a PR to add itself now &lt;3 https://t.co/fkeaUZHKlk",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 19,
+    "retweets": 0,
+    "replies": 2,
+    "quotes": 0,
+    "views": 837,
+    "bookmarks": 0
+   },
+   "createdAt": "Tue Sep 15 14:21:56 +0000 2026",
+   "createdAtLocal": "2026-09-15 22:21",
+   "createdAtISO": "2026-09-15T14:21:56+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HSQ5ItVWgAAosY0.png",
+     "width": 729,
+     "height": 645
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2099863703931760867",
+   "text": "Whenever we get a new @Kimi_Moonshot  model, the first thing I want to do is test the front-end design!\nK2.8-Preview definitely continues the tradition of Kimi models having an excellence design sense (imho)! Check out this site K2.8-Preview powered Kimi Code CLI made 👀\nhttps://t.co/TxuUu8rhqr",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 6,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1195,
+    "bookmarks": 1
+   },
+   "createdAt": "Tue Sep 15 14:11:35 +0000 2026",
+   "createdAtLocal": "2026-09-15 22:11",
+   "createdAtISO": "2026-09-15T14:11:35+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2099581219558039719",
+   "text": "Just got a 2nd DGX Spark!!\n\n…time to get to work 😎 https://t.co/gT4B44A6ic",
+   "author": {
+    "id": "1518730154192818178",
+    "name": "Steve Darlow",
+    "screenName": "StevenDarlow",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2048606266042540033/I1tq4QCd_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 215,
+    "retweets": 6,
+    "replies": 24,
+    "quotes": 1,
+    "views": 7316,
+    "bookmarks": 5
+   },
+   "createdAt": "Mon Sep 14 19:29:05 +0000 2026",
+   "createdAtLocal": "2026-09-15 03:29",
+   "createdAtISO": "2026-09-14T19:29:05+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HSM1_baXYAEtwAd.jpg",
+     "width": 2048,
+     "height": 936
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2099807499092205582",
+   "text": "First look at the new @NVIDIAAI RTX Pro 5500 🤩\n\nFeaturing 84 GB of GDDR7 connected to a GB202 die with a 416-bit memory bus that delivers about 1,398 GB/s of memory bandwidth!\n\nhttps://t.co/723NgSXHHs https://t.co/e2ikGDkXMm",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 37,
+    "retweets": 0,
+    "replies": 2,
+    "quotes": 2,
+    "views": 4733,
+    "bookmarks": 3
+   },
+   "createdAt": "Tue Sep 15 10:28:14 +0000 2026",
+   "createdAtLocal": "2026-09-15 18:28",
+   "createdAtISO": "2026-09-15T10:28:14+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HSQDyw0XoAA0Yhj.jpg",
+     "width": 1280,
+     "height": 720
+    }
+   ],
+   "urls": [
+    "https://www.nvidia.com/en-us/products/workstations/professional-desktop-gpus/rtx-pro-5500/"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2099295042469065169",
+   "text": "I haven’t touched GPT-Astra all weekend.\n\nDeepSeek-V4.1-Flash + @mr_r0b0t’s Ling3.0-Flash running on the Spark has been the ultimate combo.",
+   "author": {
+    "id": "2010894113982607360",
+    "name": "Neo",
+    "screenName": "NeoAIForecast",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2010897551525101579/ZKJQsu7V_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 46,
+    "retweets": 2,
+    "replies": 4,
+    "quotes": 0,
+    "views": 3052,
+    "bookmarks": 11
+   },
+   "createdAt": "Mon Sep 14 00:31:55 +0000 2026",
+   "createdAtLocal": "2026-09-14 08:31",
+   "createdAtISO": "2026-09-14T00:31:55+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2099197152085844251",
+   "text": "Pace this. https://t.co/LywB55Xon2",
+   "author": {
+    "id": "148402224",
+    "name": "Wayne Lowry",
+    "screenName": "wikiwayne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1735642547106586624/HH1CLhdL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 61,
+    "retweets": 4,
+    "replies": 5,
+    "quotes": 1,
+    "views": 2510,
+    "bookmarks": 0
+   },
+   "createdAt": "Sun Sep 13 18:02:56 +0000 2026",
+   "createdAtLocal": "2026-09-14 02:02",
+   "createdAtISO": "2026-09-13T18:02:56+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HSHYrrZaYAAyq--.jpg",
+     "width": 1536,
+     "height": 2048
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2099308197802631191",
+   "text": "@techdevnotes Grok 4.8, which is a 2.5T model trained with our new C++ software stack, will finish training this week and start RL",
+   "author": {
+    "id": "44196397",
+    "name": "Elon Musk",
+    "screenName": "elonmusk",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2053244804520427520/m8mdWZCG_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 18633,
+    "retweets": 1077,
+    "replies": 1241,
+    "quotes": 730,
+    "views": 3730525,
+    "bookmarks": 1207
+   },
+   "createdAt": "Mon Sep 14 01:24:12 +0000 2026",
+   "createdAtLocal": "2026-09-14 09:24",
+   "createdAtISO": "2026-09-14T01:24:12+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2099230816115003685",
+   "text": "The 3D printed 2x @NVIDIAAI GB10 enclosure is looking quite nice!\nPrint files for the Bambu X2D made by a Astra powered @NousResearch Hermes Agent 🔥\nFour more prints and then we start thermal tests! https://t.co/gZWzHqkKSz",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 65,
+    "retweets": 2,
+    "replies": 20,
+    "quotes": 4,
+    "views": 6192,
+    "bookmarks": 14
+   },
+   "createdAt": "Sun Sep 13 20:16:43 +0000 2026",
+   "createdAtLocal": "2026-09-14 04:16",
+   "createdAtISO": "2026-09-13T20:16:43+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HSH3SlPXAAw-lhx.jpg",
+     "width": 2268,
+     "height": 4032
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HSH3TEsXUAcTfve.jpg",
+     "width": 2268,
+     "height": 4032
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2099220674216644723",
+   "text": "this is huge news for anyone using gateway to connect to other devices, especially headless! 😍",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 12,
+    "retweets": 3,
+    "replies": 0,
+    "quotes": 0,
+    "views": 1687,
+    "bookmarks": 3
+   },
+   "createdAt": "Sun Sep 13 19:36:25 +0000 2026",
+   "createdAtLocal": "2026-09-14 03:36",
+   "createdAtISO": "2026-09-13T19:36:25+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2098881098885595149",
+    "text": "Would anyone like to review or test remote gateway viewing? Get it really clean and nice before release?\n\nPlease send your agents and your brains to this PR: https://t.co/H2s5JZoIqm https://t.co/eMcEqtCcQ8",
+    "author": {
+     "screenName": "Teknium",
+     "name": "Teknium 🪽"
+    }
+   }
+  },
+  {
+   "id": "2099008051663503788",
+   "text": "Two different approaches on how to run Qwen 3.8 Flash Next NVFP4 on one DGX Spark. \n\nThanks for the community work @mr_r0b0t @MiaAI_lab \n\nThe screenshot is from my inference monitoring dashboard showing Mia config working at c=3 in Hermes doing real world agentic/coding work.\n\nThere are other wonderful community members that publish their runtime configs, please share it here so we can check them out.\n\nhttps://t.co/QlUn2MbJuL",
+   "author": {
+    "id": "1618273434814881792",
+    "name": "AgentSparko 💥",
+    "screenName": "AgentSparko",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2053381913054683147/6MJgSU7M_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 31,
+    "retweets": 3,
+    "replies": 5,
+    "quotes": 0,
+    "views": 2617,
+    "bookmarks": 34
+   },
+   "createdAt": "Sun Sep 13 05:31:31 +0000 2026",
+   "createdAtLocal": "2026-09-13 13:31",
+   "createdAtISO": "2026-09-13T05:31:31+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HSEsTuWbsAE1IUL.jpg",
+     "width": 1187,
+     "height": 820
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2099130842362564768",
+   "text": "This is impressive work from @laurent_zw. In a world of vibe coded everything building a good harness is still an incredibly difficult thing to do. A lot more goes into a project like this than people realize.\n\nBlessed to have such amazing builders working on open source tools that empower us to do such amazing things with our own hardware!\n\nShout outs to @Italianclownz @MiaAI_lab @mr_r0b0t @Hikari_07_jp @NathanW1014 @luceboxai @boxwrenchx @loktar00 @high52weeks @DJLougen\n\nI shouldn't even try to make a list because there are so many great people who make this such an incredible space to be building and working in.",
+   "author": {
+    "id": "42150324",
+    "name": "Ciru.ai - Crown 👑",
+    "screenName": "ciruai",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2080639707629719553/YblMqaob_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 17,
+    "retweets": 1,
+    "replies": 4,
+    "quotes": 0,
+    "views": 1984,
+    "bookmarks": 6
+   },
+   "createdAt": "Sun Sep 13 13:39:27 +0000 2026",
+   "createdAtLocal": "2026-09-13 21:39",
+   "createdAtISO": "2026-09-13T13:39:27+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2099040150596571565",
+    "text": "Marshall now supports Codex out of the box — and cuts token usage by up to 50% compared to the Codex CLI. 🚀\n\nA lot of benchmarking went into getting here, but Marshall is now a seriously capable harness for SWE tasks. Use it with local models, Codex, or any cloud provider. Mix and match models and have them work together in agent mode.\n\nhttps://t.co/FypnBpvoyD",
+    "author": {
+     "screenName": "laurent_zw",
+     "name": "Laurent Zuijdwijk"
+    }
+   }
+  },
+  {
+   "id": "2099215708609466645",
+   "text": "Very nice QoL update for Hermes Desktop 🤩",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 16,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1436,
+    "bookmarks": 1
+   },
+   "createdAt": "Sun Sep 13 19:16:41 +0000 2026",
+   "createdAtLocal": "2026-09-14 03:16",
+   "createdAtISO": "2026-09-13T19:16:41+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2099201403906625754",
+    "text": "Reasoning effort is now a seperate selector in the Hermes Agent desktop app's composer now! https://t.co/G8uJiHcCI3",
+    "author": {
+     "screenName": "Teknium",
+     "name": "Teknium 🪽"
+    }
+   }
+  },
+  {
+   "id": "2099215344736887257",
+   "text": "Ahoy, Captain! 🏴‍☠️ https://t.co/0FdjimRYub",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 71,
+    "retweets": 1,
+    "replies": 11,
+    "quotes": 0,
+    "views": 2325,
+    "bookmarks": 3
+   },
+   "createdAt": "Sun Sep 13 19:15:14 +0000 2026",
+   "createdAtLocal": "2026-09-14 03:15",
+   "createdAtISO": "2026-09-13T19:15:14+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HSHpILrWEAYT-cE.jpg",
+     "width": 782,
+     "height": 1002
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "es",
+   "score": null
+  },
+  {
+   "id": "2098820139936317596",
+   "text": "r0b0tlab optimized @sgl_project runtime for one of my favorite single DGX Spark models out there right now!\nThis one uses the official @NVIDIAAI NVFP4 &lt;3\nRuntime + full evals:\nhttps://t.co/guNqR6BY4u https://t.co/EsTiO3GK34",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 74,
+    "retweets": 7,
+    "replies": 9,
+    "quotes": 0,
+    "views": 3514,
+    "bookmarks": 50
+   },
+   "createdAt": "Sat Sep 12 17:04:50 +0000 2026",
+   "createdAtLocal": "2026-09-13 01:04",
+   "createdAtISO": "2026-09-12T17:04:50+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HSB_9JAaAAA7w-7.jpg",
+     "width": 1536,
+     "height": 1024
+    }
+   ],
+   "urls": [
+    "https://github.com/r0b0tlab/qwen38-flash-next-nvidia-nvfp4-sm121-sglang"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098820141869932919",
+   "text": "Model details: https://t.co/d3N9Uk3lmA",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 403,
+    "bookmarks": 0
+   },
+   "createdAt": "Sat Sep 12 17:04:50 +0000 2026",
+   "createdAtLocal": "2026-09-13 01:04",
+   "createdAtISO": "2026-09-12T17:04:50+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HSCA8teW0BA_9i-.jpg",
+     "width": 1602,
+     "height": 820
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098778191657914640",
+   "text": "Small happiness update:\n\nFor the first time ever, i have consistently hit 100k+ impressions every day for an entire week.\n\nAnd it all started with my @nvidia RTX 3060💚 (which i still have)\n\nI honestly cannot believe i've reached this point!\n\nI'm putting more hours into this, this is a full time job for me now, honestly i don't want to do anything else, this is where i belong. \n\nThe community here rocks!\n\nEspecially the first few people here whose work i constantly looked up to and learned from: @loktar00 , @no_stp_on_snek , @mr_r0b0t , @witcheer and @Italianclownz \n\nA lot more of you inspired me, but they were literally the first few accounts i saw in my first week of spending time here.\n\nMy llm-server, which is now powered by 3090, is running 24*7 - unless there is an annoying power cut 😂\n\nAround 2TB of data usage per month, all from model downloads and uploads. I even had to upgrade my broadband plan so i don't get slowed down lol.\n\nAll my runs are giving me valuable data and insights, and i'm sharing everything i learn with everyone here for free and that will always be the case.\n\nSooo much more coming; experiments, benchmarks, evals, data, insights, quant's and probably a lot of things i haven't even thought of yet. \n\nHelp me push these numbers even higher so i can reach more people and keep doing more of this.",
+   "author": {
+    "id": "776101768392355840",
+    "name": "AJ",
+    "screenName": "ItsmeAjayKV",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1878020673521532928/eKvhmxYy_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 60,
+    "retweets": 1,
+    "replies": 16,
+    "quotes": 1,
+    "views": 2035,
+    "bookmarks": 3
+   },
+   "createdAt": "Sat Sep 12 14:18:08 +0000 2026",
+   "createdAtLocal": "2026-09-12 22:18",
+   "createdAtISO": "2026-09-12T14:18:08+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HSBViz6boAArXhG.png",
+     "width": 980,
+     "height": 568
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098776151820730872",
+   "text": "@mr_r0b0t so this can be used in conjunction with built-in memory (or one of the native plugins)? thats actually a really cool idea",
+   "author": {
+    "id": "2071953914182725633",
+    "name": "Jonathan",
+    "screenName": "Hexakin",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2095982519132827649/fc_12gJh_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2,
+    "retweets": 1,
+    "replies": 1,
+    "quotes": 0,
+    "views": 200,
+    "bookmarks": 0
+   },
+   "createdAt": "Sat Sep 12 14:10:02 +0000 2026",
+   "createdAtLocal": "2026-09-12 22:10",
+   "createdAtISO": "2026-09-12T14:10:02+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098561899537265062",
+   "text": "ascii_bounce_neon_orbit.mp4 🔊\n@deepseek_ai Flash-4.1 inside a @NousResearch hermes agent using the ascii-video skill https://t.co/UEqZkwIQTQ",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 15,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1146,
+    "bookmarks": 2
+   },
+   "createdAt": "Fri Sep 11 23:58:40 +0000 2026",
+   "createdAtLocal": "2026-09-12 07:58",
+   "createdAtISO": "2026-09-11T23:58:40+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2098561125793308672/vid/avc1/1920x1080/ax6u_A6i0s8FVqBh.mp4?tag=29",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098542411198742762",
+   "text": "Performance aside, the @NVIDIAAI DGX Spark is a gorgeous device. Really stoked to get my hands on a FE!\nTP=4 unlocked, 512GB unified memory 🥳 https://t.co/cUIPqocUOF",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 229,
+    "retweets": 6,
+    "replies": 47,
+    "quotes": 6,
+    "views": 22739,
+    "bookmarks": 16
+   },
+   "createdAt": "Fri Sep 11 22:41:14 +0000 2026",
+   "createdAtLocal": "2026-09-12 06:41",
+   "createdAtISO": "2026-09-11T22:41:14+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HR-FMyTXUAU2OKH.jpg",
+     "width": 1536,
+     "height": 2048
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HR-FMyOX0AgQhih.jpg",
+     "width": 2048,
+     "height": 1536
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098488037495783865",
+   "text": "You have one Spark, just load @mr_r0b0t repo for 27B in SGLang (this is what I used the most) and give it a try.\n\nYou might have to adjust your prompts to tell it to research stuff online in case it's knowledge base it to limited for the kind of stuff you are doing and I highly suggest you to use concurrency to speed stuff out.\n\nI did modify the repo recipe to fit ~800K context pool and in case you need that let me know and I'll send you my modified recipe.\n\nWith c=7 in Hermes I got 111 t/s and calculated at official Alibaba prices on OpenRouter that is $17.5K USD worth of tokens a year.\n\nFunny enough I coded all my inference monitor app just through Telegram in Hermes which should be the worst thing to do and it worked somehow better than in Grok Build.\n\nhttps://t.co/sNAxef1qWn",
+   "author": {
+    "id": "1618273434814881792",
+    "name": "AgentSparko 💥",
+    "screenName": "AgentSparko",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2053381913054683147/6MJgSU7M_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 4,
+    "retweets": 1,
+    "replies": 1,
+    "quotes": 0,
+    "views": 240,
+    "bookmarks": 1
+   },
+   "createdAt": "Fri Sep 11 19:05:10 +0000 2026",
+   "createdAtLocal": "2026-09-12 03:05",
+   "createdAtISO": "2026-09-11T19:05:10+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2094556895046439201",
+    "text": "I made a Hermes skill for task delegation when I use Qwen 27B locally on the DGX Spark and I tell it to create a cron job with a task list to ring each hour and then give it a long task list for coding on multiple projects at the same time. \n\nThe disadvantage is that I do not see anymore on Telegram verbose what it's doing but the advantage is that it speeds things up as it takes advantage of the total throughput of the Spark when concurrency it's high.\n\nIt uses up to 6-7 agents at once...I could push that further as the context pool is not filled even 40% somehow even thou it's around 800K tokens total. \n\nThe best way to check that total throughput it's actually better is to look at my dashboard where it calculates the cloud API cost savings projected from the last hour of work. \n\nWith one stream it stays around $ 7-10K API cost save a year and now that it uses 2-7 streams it stays around $ 17.5K and it keeps finishing jobs and that sets me off from pushing that number higher as I don't know for the moment what other jobs to give it. 😂 \n\nLook at the bottom row to see the 1 year projection.\n\nOne of the agents is now building a Web UI to see thinking traces and actions verbose for all the subagents. 😁",
+    "author": {
+     "screenName": "AgentSparko",
+     "name": "AgentSparko 💥"
+    }
+   }
+  },
+  {
+   "id": "2098162488013455784",
+   "text": "Introducing Projects, a new way of working in Cursor.\n\nRather than creating a chat for every task, you work with a coordinator agent in a single, persistent thread.\n\nLike @bot, your agent is always on, proactively manages work with subagents, and improves over time. https://t.co/9RREyjtnTz",
+   "author": {
+    "id": "1695890961094909952",
+    "name": "Cursor",
+    "screenName": "cursor_ai",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1970182748146180096/dhZeXi_X_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 11641,
+    "retweets": 703,
+    "replies": 689,
+    "quotes": 551,
+    "views": 2914007,
+    "bookmarks": 5913
+   },
+   "createdAt": "Thu Sep 10 21:31:33 +0000 2026",
+   "createdAtLocal": "2026-09-11 05:31",
+   "createdAtISO": "2026-09-10T21:31:33+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2098151257902809092/vid/avc1/1920x1080/GWFN05NST0f39cB3.mp4?tag=29",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098474494306173075",
+   "text": "Looks like a few more days till we get Grok-4.7 👀",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 26,
+    "retweets": 1,
+    "replies": 6,
+    "quotes": 0,
+    "views": 2165,
+    "bookmarks": 1
+   },
+   "createdAt": "Fri Sep 11 18:11:21 +0000 2026",
+   "createdAtLocal": "2026-09-12 02:11",
+   "createdAtISO": "2026-09-11T18:11:21+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2098462085973741960",
+    "text": "@farzyness Grok 4.7 needs a few more days to cook.\n\nWe might have penalized response length too much (or something) in RL, as it still gives up on hard tasks (that it can do!) too early and isn’t yet sufficiently rigorous in checking its work.",
+    "author": {
+     "screenName": "elonmusk",
+     "name": "Elon Musk"
+    }
+   }
+  },
+  {
+   "id": "2098453693225996601",
+   "text": "r0b0tlab/glm53-flash-nvfp4-sm121\nUpdated this to include the container which I had accidentally left private, hope that helps 😅😂\nhttps://t.co/PcA8Wha1x2",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 7,
+    "retweets": 1,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1089,
+    "bookmarks": 1
+   },
+   "createdAt": "Fri Sep 11 16:48:42 +0000 2026",
+   "createdAtLocal": "2026-09-12 00:48",
+   "createdAtISO": "2026-09-11T16:48:42+00:00",
+   "media": [],
+   "urls": [
+    "https://github.com/r0b0tlab/glm53-flash-nvfp4-sm121"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098449299742802126",
+   "text": "I have 0.1 running and very happy with it, time to get this one installed.",
+   "author": {
+    "id": "1489521082168188930",
+    "name": "jAIsus",
+    "screenName": "jaisus_x",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2034659178355081216/F3IA6WYk_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 3,
+    "retweets": 1,
+    "replies": 1,
+    "quotes": 0,
+    "views": 528,
+    "bookmarks": 0
+   },
+   "createdAt": "Fri Sep 11 16:31:15 +0000 2026",
+   "createdAtLocal": "2026-09-12 00:31",
+   "createdAtISO": "2026-09-11T16:31:15+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2098446199321706947",
+    "text": "hermes-zvec-memory v0.2.0 is out!\n\nLocal-first hybrid search over .MD memory for Hermes Agent just got some nice QoL updates and bug fixes.\n\nv0.2.0 also adds self-install, doctor and gated one-command upgrades!\n\nSHA pinned to start the 14-day clock for submission to the @NousResearch plugin-catalog <3\n\nhttps://t.co/J8E2NTsJcM",
+    "author": {
+     "screenName": "mr_r0b0t",
+     "name": "mr_r0b0t"
+    }
+   }
+  },
+  {
+   "id": "2098446199321706947",
+   "text": "hermes-zvec-memory v0.2.0 is out!\n\nLocal-first hybrid search over .MD memory for Hermes Agent just got some nice QoL updates and bug fixes.\n\nv0.2.0 also adds self-install, doctor and gated one-command upgrades!\n\nSHA pinned to start the 14-day clock for submission to the @NousResearch plugin-catalog <3\n\nhttps://t.co/J8E2NTsJcM",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 152,
+    "retweets": 21,
+    "replies": 10,
+    "quotes": 2,
+    "views": 8498,
+    "bookmarks": 163
+   },
+   "createdAt": "Fri Sep 11 16:18:55 +0000 2026",
+   "createdAtLocal": "2026-09-12 00:18",
+   "createdAtISO": "2026-09-11T16:18:55+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098096413020410362",
+   "text": "r0b0tlab's @NVIDIAAI / GLM-5.3-Flash-NVFP4 runtime: 2× GB10\n\nPatched vLLM + DFlash2, vision preserved 👀\nFastest C1: 46.28 tok/s (reasoning)\nMax-thinking evals: Q200v2 170/178, vision 81.9%, BFCL-hard20 70%, NIAH 5/5 at ~120K\n\nruntime + evals: https://t.co/PcA8WhazmA https://t.co/NBZLKqjVTW",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 46,
+    "retweets": 2,
+    "replies": 7,
+    "quotes": 0,
+    "views": 2443,
+    "bookmarks": 19
+   },
+   "createdAt": "Thu Sep 10 17:09:00 +0000 2026",
+   "createdAtLocal": "2026-09-11 01:09",
+   "createdAtISO": "2026-09-10T17:09:00+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HR3Vm7XawAAAYMZ.jpg",
+     "width": 1122,
+     "height": 1402
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HR3Xc7YXQAAk9RA.png",
+     "width": 612,
+     "height": 690
+    }
+   ],
+   "urls": [
+    "https://github.com/r0b0tlab/glm53-flash-nvfp4-sm121"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098094379374161976",
+   "text": "\"Fault Gauntlet\" TUI dashboard 😂 https://t.co/jURNNkf3Ez",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 10,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 560,
+    "bookmarks": 1
+   },
+   "createdAt": "Thu Sep 10 17:00:55 +0000 2026",
+   "createdAtLocal": "2026-09-11 01:00",
+   "createdAtISO": "2026-09-10T17:00:55+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HR3tfhcXoAEWJvC.png",
+     "width": 558,
+     "height": 264
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098089802109260148",
+   "text": "Multimodal ✅\nCapable ✅\nInexpensive ✅",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 28,
+    "retweets": 2,
+    "replies": 2,
+    "quotes": 0,
+    "views": 1075,
+    "bookmarks": 1
+   },
+   "createdAt": "Thu Sep 10 16:42:44 +0000 2026",
+   "createdAtLocal": "2026-09-11 00:42",
+   "createdAtISO": "2026-09-10T16:42:44+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2098088984383725725",
+    "text": "Deepseek Flash V4.1 is now live in Hermes Agent through Nous Portal and others! https://t.co/Ur6YwsbhjD",
+    "author": {
+     "screenName": "Teknium",
+     "name": "Teknium 🪽"
+    }
+   }
+  },
+  {
+   "id": "2098078041843146966",
+   "text": "For all the Omarchy users out there, here's a nice plugin that lets you track your @NousResearch Hermes Agent usage right from the nav bar!\nhttps://t.co/vJqXwqQIe2 https://t.co/CAIG9ZLRZe",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 27,
+    "retweets": 3,
+    "replies": 4,
+    "quotes": 1,
+    "views": 1563,
+    "bookmarks": 7
+   },
+   "createdAt": "Thu Sep 10 15:56:00 +0000 2026",
+   "createdAtLocal": "2026-09-10 23:56",
+   "createdAtISO": "2026-09-10T15:56:00+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HR3Mppsa8AAWlNo.png",
+     "width": 403,
+     "height": 469
+    }
+   ],
+   "urls": [
+    "https://github.com/r0b0tlab/omarchy-hermes-usage"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2098057542748311820",
+    "text": "@mr_r0b0t @NousResearch oh that's so cool",
+    "author": {
+     "screenName": "witcheer",
+     "name": "witcheer"
+    }
+   }
+  },
+  {
+   "id": "2098064215869460862",
+   "text": "https://t.co/BbQYYM1aTe",
+   "author": {
+    "id": "1944528500565905408",
+    "name": "Sam Wasserman",
+    "screenName": "SamJWasserman",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2079299594715070464/3iiGUf5Y_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 17,
+    "retweets": 1,
+    "replies": 4,
+    "quotes": 1,
+    "views": 1164,
+    "bookmarks": 7
+   },
+   "createdAt": "Thu Sep 10 15:01:03 +0000 2026",
+   "createdAtLocal": "2026-09-10 23:01",
+   "createdAtISO": "2026-09-10T15:01:03+00:00",
+   "media": [],
+   "urls": [
+    "https://x.com/i/article/2097954772800430080"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "zxx",
+   "score": null,
+   "articleTitle": "Local H3 Video Gen Face-Off:   4090 vs 5090 vs RTX 6000 Ada     vs DGX Spark"
+  },
+  {
+   "id": "2098072482724921848",
+   "text": "Being able to monitor and steer subagent activity is a HUGE time saver!\nVery nice update for anyone running an orchestrator/subagent local framework!\n@NousResearch killing it per usual &lt;3",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 17,
+    "retweets": 2,
+    "replies": 2,
+    "quotes": 0,
+    "views": 1069,
+    "bookmarks": 3
+   },
+   "createdAt": "Thu Sep 10 15:33:54 +0000 2026",
+   "createdAtLocal": "2026-09-10 23:33",
+   "createdAtISO": "2026-09-10T15:33:54+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2098071687145365632",
+    "text": "Hermes Agent now displays detailed information on all subagent activities live, and you can steer and stop them manually from the CLI and Desktop Application. https://t.co/GMAIML26Bu",
+    "author": {
+     "screenName": "NousResearch",
+     "name": "Nous Research"
+    }
+   }
+  },
+  {
+   "id": "2098058813802787227",
+   "text": "🔥 DeepSeek-V4.1-Flash 552B MoE (769B w/ Engram) · MXFP4 · 4x DGX Spark TP4 · vLLM + DSpark + CUDA graphs\n\nRe-benched warmed + streaming (fixed 8-category prompt set, C1 to C6):\n⚡️ 77.2 tok/s PEAK single-stream on counting · 71 on structured tables (DSpark runs hot: up to 5.95 of 6 tokens accepted per step)\n💻 52 code in the bench · 72 tok/s on a warm code run · 47 math · 39 reasoning · 23 prose\n🚀 214 tok/s aggregate at 6 streams · 143 on code\n🧠 1.03M-token KV · 300K ctx · 1M ctx proven (1.08M-token pool) · 0.27s TTFT\n👀 Vision + 🛠️ tool calling on\n💾 203 GB of Engram tables stay on disk, so 552B fits in 4x 128 GB unified memory\n🔧 5 tok/s eager ➜ 41 with CUDA graphs + DSpark ➜ 77 after un-latching 2 GPUs stuck below 1 GHz (unplug the Spark to clear it, a reboot won't)\n\nDay-0. 552B-class reasoning on desk hardware 🖥️\nhttps://t.co/mDCQYDIqrt",
+   "author": {
+    "id": "2034071240554778625",
+    "name": "Tech2Wild",
+    "screenName": "Tech2Wild",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2047428839987683328/yJVANYlN_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 39,
+    "retweets": 3,
+    "replies": 8,
+    "quotes": 1,
+    "views": 4053,
+    "bookmarks": 9
+   },
+   "createdAt": "Thu Sep 10 14:39:35 +0000 2026",
+   "createdAtLocal": "2026-09-10 22:39",
+   "createdAtISO": "2026-09-10T14:39:35+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098053007271174224",
+   "text": "Omarchy x @NousResearch Hermes Agent usage monitor plugin almost done 😁 https://t.co/dDB0rciywY",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 70,
+    "retweets": 2,
+    "replies": 8,
+    "quotes": 1,
+    "views": 2305,
+    "bookmarks": 14
+   },
+   "createdAt": "Thu Sep 10 14:16:31 +0000 2026",
+   "createdAtLocal": "2026-09-10 22:16",
+   "createdAtISO": "2026-09-10T14:16:31+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HR3H0TuboAAJR37.png",
+     "width": 388,
+     "height": 469
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098045060801593606",
+   "text": "Vikings are dope, I'm in 😎 https://t.co/sO9cSF1A2O",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 11,
+    "retweets": 1,
+    "replies": 2,
+    "quotes": 0,
+    "views": 798,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu Sep 10 13:44:56 +0000 2026",
+   "createdAtLocal": "2026-09-10 21:44",
+   "createdAtISO": "2026-09-10T13:44:56+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HR3A3GkbkAABqoj.jpg",
+     "width": 1536,
+     "height": 1024
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2097782184627015783",
+    "text": "QT your Viking https://t.co/Wyp4pkAO2w",
+    "author": {
+     "screenName": "CliffWade",
+     "name": "Cliff"
+    }
+   }
+  },
+  {
+   "id": "2098043061645574632",
+   "text": "Whisper Town just got a big update:\n\n→ Start their own projects\n→ Choose whether to join, contribute supplies, or leave\n→ Write notes that neighbors can discover\n→ Recall relevant experiences from 7,000+ saved memories\n→ Remember failed attempts and try another approach\n\nAda has already proposed her own herb gathering project. That idea came from the models.\n\nThe full local model lineup:\n🧠 MiniCPM5-2B  choosing residents’ goals and actions.\n💬 AEON-7/Qwen3.8-27B-AEON-ULTIMATE-UNCENSORED-NVFP4-MIXED. generating dialogue and translating their ideas into actions the town can carry out.\n\nALL inference runs locally on my hardware, vercel hosts the public viewer.\n\nThe experiment is simple: give them room to make decisions, let them remember the consequences, and see what develops.\n\nYou can watch their conversations, projects, and public memories here:\nhttps://t.co/3bskQ4a5KC\n\nWhat would you look for first: cooperation, conflict, or unexpected routines?\n\ncc: @OpenBMB @SpaceTimeViking @vercel",
+   "author": {
+    "id": "889305080679346178",
+    "name": "Joey",
+    "screenName": "aijoey",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1644521879909150726/LQMqYnTx_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 11,
+    "retweets": 1,
+    "replies": 4,
+    "quotes": 0,
+    "views": 1275,
+    "bookmarks": 4
+   },
+   "createdAt": "Thu Sep 10 13:37:00 +0000 2026",
+   "createdAtLocal": "2026-09-10 21:37",
+   "createdAtISO": "2026-09-10T13:37:00+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2097929612902727749",
+    "text": "WhisperTown is LIVE 🏘️\n\n8 AI residents choosing their own goals, starting conversations, giving gifts and remembering each other.\n\n🧠 MiniCPM 2B + AEON 27B\n⚡ Two DGX Sparks\n🔒 All AI inference runs locally. No cloud models.\nNo scripted dialogue. Watch their stories unfold:\nhttps://t.co/3bskQ49xV4",
+    "author": {
+     "screenName": "aijoey",
+     "name": "Joey"
+    }
+   }
+  },
+  {
+   "id": "2097991248682565843",
+   "text": "More overnight updates are in 👇🏼\n\nAlso keep an eye on the trellis quant Q6_K, IQ4_XS and IQ3_S 🐸 FrogNano drop.\n\nFrogMini Pollard 14b agent is currently uploading under throttle.\n\nNight 🫡\n https://t.co/xOZxbektVS\n\nhttps://t.co/MRVv5wTNcn",
+   "author": {
+    "id": "65012353",
+    "name": "WestWaters",
+    "screenName": "Mr_WestCoast",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1899992109861744640/vCU6fmj-_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 3,
+    "retweets": 3,
+    "replies": 0,
+    "quotes": 1,
+    "views": 515,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu Sep 10 10:11:07 +0000 2026",
+   "createdAtLocal": "2026-09-10 18:11",
+   "createdAtISO": "2026-09-10T10:11:07+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/PollardWeights/FrogMini-14B-Pollard",
+    "https://github.com/WestWaters/pollard-weights"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098036387249320203",
+   "text": "The new Muse app is pretty solid, used it to make/host this Omarchy User Guide!\n\nFor new and experienced users, it includes navigation, keyboard shortcuts, apps, themes, CLI tools and packages, development, configuration, gaming, recovery, and security and much more!\n\nhttps://t.co/mwZjsWhVIi",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 10,
+    "retweets": 1,
+    "replies": 2,
+    "quotes": 0,
+    "views": 508,
+    "bookmarks": 1
+   },
+   "createdAt": "Thu Sep 10 13:10:29 +0000 2026",
+   "createdAtLocal": "2026-09-10 21:10",
+   "createdAtISO": "2026-09-10T13:10:29+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097800985985085879",
+   "text": "My Website got a Fresh Update:\n\nFinally took some time to update my site with everything I've been doing in 2026. And Wow a lot has happened this year already...check it out https://t.co/V2rvXUU2Dx",
+   "author": {
+    "id": "1944528500565905408",
+    "name": "Sam Wasserman",
+    "screenName": "SamJWasserman",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2079299594715070464/3iiGUf5Y_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 40,
+    "retweets": 4,
+    "replies": 4,
+    "quotes": 0,
+    "views": 1226,
+    "bookmarks": 3
+   },
+   "createdAt": "Wed Sep 09 21:35:04 +0000 2026",
+   "createdAtLocal": "2026-09-10 05:35",
+   "createdAtISO": "2026-09-09T21:35:04+00:00",
+   "media": [],
+   "urls": [
+    "https://wassermanproductions.com/?v=20260909"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097943590777274447",
+   "text": "Wow! in-progress benchmark on the latest Qwen3.8-27B Aeon Ultimate is looking strong!!!\n\nText is done just waiting on the Agentic, &amp; Perf results. Kept crashing from a harness bug. \n\nOnce it's done with final tests it will go live on the Global Board!\n\nText Intel Results!!! https://t.co/zKfPSao2d0",
+   "author": {
+    "id": "56006236",
+    "name": "ÆON FORGE ✨",
+    "screenName": "SpaceTimeViking",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1896785330751086592/GqeKOM4D_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 34,
+    "retweets": 1,
+    "replies": 2,
+    "quotes": 1,
+    "views": 5246,
+    "bookmarks": 7
+   },
+   "createdAt": "Thu Sep 10 07:01:44 +0000 2026",
+   "createdAtLocal": "2026-09-10 15:01",
+   "createdAtISO": "2026-09-10T07:01:44+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HR1iOcUaYAAfdbZ.jpg",
+     "width": 1276,
+     "height": 354
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097932600983552315",
+   "text": "DeepSeek V4.1 Flash is here!\n\n• Native vision\n• 1M context / 384K max output\n• Terminal-Bench 2.1: 82.7 → 90.6 (+7.9 pts) • CyberGym: 76.7 → 88.1 (+11.4 pts)\n\nOff-peak per 1M tokens: $0.15 uncached input / $0.60 output. Peak rates: 2×\n\nhttps://t.co/1qO5yodqDW https://t.co/13uuSuR5x5",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 39,
+    "retweets": 9,
+    "replies": 6,
+    "quotes": 2,
+    "views": 3110,
+    "bookmarks": 1
+   },
+   "createdAt": "Thu Sep 10 06:18:04 +0000 2026",
+   "createdAtLocal": "2026-09-10 14:18",
+   "createdAtISO": "2026-09-10T06:18:04+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HR1alHvaQAAUsX2.jpg",
+     "width": 1122,
+     "height": 1402
+    }
+   ],
+   "urls": [
+    "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097930977485967457",
+   "text": "HUGE NEWS!\ndeepseek-ai/DeepSeek-V4.1-Flash open weights have arrived 🤩\nhttps://t.co/1qO5yodqDW",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 62,
+    "retweets": 4,
+    "replies": 5,
+    "quotes": 4,
+    "views": 3004,
+    "bookmarks": 4
+   },
+   "createdAt": "Thu Sep 10 06:11:37 +0000 2026",
+   "createdAtLocal": "2026-09-10 14:11",
+   "createdAtISO": "2026-09-10T06:11:37+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097787886737514809",
+   "text": "More expansion coming to Pollard soon.\n\n👇🏼https://t.co/MRVv5wTNcn",
+   "author": {
+    "id": "65012353",
+    "name": "WestWaters",
+    "screenName": "Mr_WestCoast",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1899992109861744640/vCU6fmj-_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 3,
+    "retweets": 2,
+    "replies": 0,
+    "quotes": 0,
+    "views": 170,
+    "bookmarks": 1
+   },
+   "createdAt": "Wed Sep 09 20:43:01 +0000 2026",
+   "createdAtLocal": "2026-09-10 04:43",
+   "createdAtISO": "2026-09-09T20:43:01+00:00",
+   "media": [],
+   "urls": [
+    "https://github.com/WestWaters/pollard-weights"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097880616041885901",
+   "text": "we just reset everyone’s muse token usage.\n\nenjoy!!! https://t.co/Kgfr9sCVvn",
+   "author": {
+    "id": "615818451",
+    "name": "Alexandr Wang",
+    "screenName": "alexandr_wang",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1631421210205749248/uohbT_40_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 6023,
+    "retweets": 165,
+    "replies": 822,
+    "quotes": 267,
+    "views": 1609015,
+    "bookmarks": 331
+   },
+   "createdAt": "Thu Sep 10 02:51:30 +0000 2026",
+   "createdAtLocal": "2026-09-10 10:51",
+   "createdAtISO": "2026-09-10T02:51:30+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2097880608693424128/vid/avc1/576x576/1z2dlRFQP3pUPJuf.mp4?tag=29",
+     "width": 576,
+     "height": 576
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097715701482213457",
+   "text": "The first batch of Harness ships this Friday.\n\nWe’d pushed the date to Sep 18, but things came together faster than expected. We’re getting these out a week sooner. Can’t wait to see what you build with them.\n\nhttps://t.co/tZCOi3ciNB\n\nMy agents run everywhere. Claude Code on my Mac at home, Codex on my workstation in the office, more agents scattered across servers. Keeping track of them gets chaotic.\n\nI wanted one physical device to manage them all. So we built Harness.\n\nWe spent a little extra time getting the setup right. Pair each machine with a code. Everything is encrypted end to end. No SSH, open ports, or VPN to set up.\n\nPS: Friday is for the first batch. New orders ship Oct 18. We’re making them as fast as we can!",
+   "author": {
+    "id": "1471707888511258625",
+    "name": "Dee",
+    "screenName": "dee_hw",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2052988365134528512/6LIn74wu_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 19,
+    "retweets": 1,
+    "replies": 10,
+    "quotes": 2,
+    "views": 2324,
+    "bookmarks": 5
+   },
+   "createdAt": "Wed Sep 09 15:56:11 +0000 2026",
+   "createdAtLocal": "2026-09-09 23:56",
+   "createdAtISO": "2026-09-09T15:56:11+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRyNtbXaYAAKYA6.jpg",
+     "width": 2052,
+     "height": 1156
+    }
+   ],
+   "urls": [
+    "https://autonomous.ai/harness"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097861672027443407",
+   "text": "The test:\n\nResearch the DGX Spark, identify three suitable open-weight models, compare specifications, context length, licensing and memory requirements, create structured JSON, write and execute a Python ranking script, resolve any errors, save the results, produce a final recommendation, and verify all outputs.\n\nA complete end to end agent workflow with no prescribed tool path.",
+   "author": {
+    "id": "2010894113982607360",
+    "name": "Neo",
+    "screenName": "NeoAIForecast",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2010897551525101579/ZKJQsu7V_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 15,
+    "retweets": 1,
+    "replies": 2,
+    "quotes": 0,
+    "views": 1818,
+    "bookmarks": 5
+   },
+   "createdAt": "Thu Sep 10 01:36:13 +0000 2026",
+   "createdAtLocal": "2026-09-10 09:36",
+   "createdAtISO": "2026-09-10T01:36:13+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HR0Zz9rasAA4BgN.png",
+     "width": 643,
+     "height": 204
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2097859332616729034",
+    "text": "Giving Ling-3.0-Flash-VL a task with no prescribed tool path.\n\nResearch &gt; browse &gt; source &gt; create files &gt; write JSON &gt; code &gt; execute &gt; catch/fix errors &gt; verify everything &gt; make a final recommendation.\n\nLet’s see how fast it chugs through this.",
+    "author": {
+     "screenName": "NeoAIForecast",
+     "name": "Neo"
+    }
+   }
+  },
+  {
+   "id": "2097837705988317619",
+   "text": "Initial sweep of Ling-3.0-Flash-VL NVFP4 on a single DGX Spark and this is looking GOOD.\n\nMr Robot has cooked \n\n38 test cases.\n32/32 pass/fail checks passed.\n~43 tok/s decode.\n130K+ context retrieval passed.\nVision + OCR passed.\nStill plenty more to test, but this is a very strong start.",
+   "author": {
+    "id": "2010894113982607360",
+    "name": "Neo",
+    "screenName": "NeoAIForecast",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2010897551525101579/ZKJQsu7V_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 5,
+    "retweets": 1,
+    "replies": 2,
+    "quotes": 0,
+    "views": 658,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu Sep 10 00:00:59 +0000 2026",
+   "createdAtLocal": "2026-09-10 08:00",
+   "createdAtISO": "2026-09-10T00:00:59+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HR0EI95bEAAabQn.jpg",
+     "width": 1555,
+     "height": 388
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097780125295403513",
+   "text": "Commodore 64 🤝 Nemotron 3.5 Lightning",
+   "author": {
+    "id": "740238495952736256",
+    "name": "NVIDIA AI",
+    "screenName": "NVIDIAAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2055340743552831488/me-KUIug_normal.png",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 99,
+    "retweets": 9,
+    "replies": 9,
+    "quotes": 1,
+    "views": 14495,
+    "bookmarks": 5
+   },
+   "createdAt": "Wed Sep 09 20:12:11 +0000 2026",
+   "createdAtLocal": "2026-09-10 04:12",
+   "createdAtISO": "2026-09-09T20:12:11+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2097278228926710045",
+    "text": "Here I am chatting with @NVIDIAAIDev Nemotron 3.5 Lightening from my Commodore 64! Who says you can’t teach an old dog new tricks? https://t.co/BUixVxEMg0",
+    "author": {
+     "screenName": "duncsand",
+     "name": "Duncan Anderson 🍃🔋⚡️🤖"
+    }
+   }
+  },
+  {
+   "id": "2097778003136905236",
+   "text": "ThinkPad Hyprland + Tailscale + Herdr + Local DSv4 served from my homelab is just perfection. https://t.co/wQPQuxssic",
+   "author": {
+    "id": "1634214796018225152",
+    "name": "Mike Key",
+    "screenName": "1337hero",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071612273567883264/0Tu6UuSC_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 652,
+    "retweets": 28,
+    "replies": 32,
+    "quotes": 2,
+    "views": 25425,
+    "bookmarks": 239
+   },
+   "createdAt": "Wed Sep 09 20:03:45 +0000 2026",
+   "createdAtLocal": "2026-09-10 04:03",
+   "createdAtISO": "2026-09-09T20:03:45+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRzN-NAaQAArD4z.jpg",
+     "width": 2048,
+     "height": 1152
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097829696465785013",
+   "text": "Re-tracking back to give Ling-3.0-flash on one DGX Spark a run. \n\nToday's Model @mr_r0b0t's\n\nhttps://t.co/SzZ5ZcrHYF",
+   "author": {
+    "id": "2010894113982607360",
+    "name": "Neo",
+    "screenName": "NeoAIForecast",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2010897551525101579/ZKJQsu7V_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 9,
+    "retweets": 2,
+    "replies": 3,
+    "quotes": 0,
+    "views": 975,
+    "bookmarks": 1
+   },
+   "createdAt": "Wed Sep 09 23:29:10 +0000 2026",
+   "createdAtLocal": "2026-09-10 07:29",
+   "createdAtISO": "2026-09-09T23:29:10+00:00",
+   "media": [],
+   "urls": [
+    "https://github.com/r0b0tlab/ling30vl-nvfp4-mp-sm121"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097819826148307298",
+   "text": "r0b0tlab/Ling-3.0-flash-VL-NVFP4-MP, one @NVIDIAAI DGX Spark\n\nQuantized BF16 to NVFP4 + FP8 with the new NVIDIA ModelOpt v0.48.0\n43.5 tok/s (c=1, 512-token gens)\nVision: 80.82% / 4,703 rows\nQ200v2: 97.0%\n\nRuntime + weights + evals:\nhttps://t.co/PqoqvT6F7k https://t.co/48AfeXaXmK",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 38,
+    "retweets": 3,
+    "replies": 8,
+    "quotes": 1,
+    "views": 2326,
+    "bookmarks": 23
+   },
+   "createdAt": "Wed Sep 09 22:49:56 +0000 2026",
+   "createdAtLocal": "2026-09-10 06:49",
+   "createdAtISO": "2026-09-09T22:49:56+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRzz1BfbIAAjqbj.jpg",
+     "width": 1536,
+     "height": 1024
+    }
+   ],
+   "urls": [
+    "https://github.com/r0b0tlab/ling30vl-nvfp4-mp-sm121"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097754249358680444",
+   "text": "Loving the @NousResearch Hermes CLI updates 😍\nSeeing my active subagents while SSH from my phone is most excellent! https://t.co/yIiNngquAK",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 39,
+    "retweets": 0,
+    "replies": 6,
+    "quotes": 0,
+    "views": 1566,
+    "bookmarks": 5
+   },
+   "createdAt": "Wed Sep 09 18:29:22 +0000 2026",
+   "createdAtLocal": "2026-09-10 02:29",
+   "createdAtISO": "2026-09-09T18:29:22+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRy4XGvXgAAQyvn.jpg",
+     "width": 1206,
+     "height": 1179
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097666055371989239",
+   "text": "Practical Grok Bots Field Guide: briefing, specialist routing, skills → routines, accuracy before ship.\n\nHere’s how we run the studio, obviously you can tailor this to your needs as necessary!\n\nMade by my team of Grok Bots and hosted on @here_now &lt;3\n\nhttps://t.co/J0AbSZImOy",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 11,
+    "retweets": 1,
+    "replies": 1,
+    "quotes": 1,
+    "views": 746,
+    "bookmarks": 3
+   },
+   "createdAt": "Wed Sep 09 12:38:55 +0000 2026",
+   "createdAtLocal": "2026-09-09 20:38",
+   "createdAtISO": "2026-09-09T12:38:55+00:00",
+   "media": [],
+   "urls": [
+    "https://plucky-atlas-3xek.here.now"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097529259376140532",
+   "text": "you should be able to run it directly with SGLang\n\nwe are updating the cookbook now",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 18,
+    "retweets": 2,
+    "replies": 0,
+    "quotes": 0,
+    "views": 1735,
+    "bookmarks": 1
+   },
+   "createdAt": "Wed Sep 09 03:35:20 +0000 2026",
+   "createdAtLocal": "2026-09-09 11:35",
+   "createdAtISO": "2026-09-09T03:35:20+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2097470155898929585",
+    "text": "Big thanks to @NVIDIAAI for giving us all these wonderful NVFP4s!\nNewly arrived Nvidia/Qwen3.8-27B-NVFP4 on 🤗\nhttps://t.co/pVCBead0gD",
+    "author": {
+     "screenName": "mr_r0b0t",
+     "name": "mr_r0b0t"
+    }
+   }
+  },
+  {
+   "id": "2097656952184578411",
+   "text": "Ran another calibration pass on the EXL3 Qwen 27b model. \nMuch better divergence relative to the base!\nhttps://t.co/8GgWb2KAT7",
+   "author": {
+    "id": "2002044000216465408",
+    "name": "Daniel Lougen",
+    "screenName": "DJLougen",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2066160860301561856/J76krMLe_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 23,
+    "retweets": 6,
+    "replies": 3,
+    "quotes": 0,
+    "views": 1240,
+    "bookmarks": 16
+   },
+   "createdAt": "Wed Sep 09 12:02:44 +0000 2026",
+   "createdAtLocal": "2026-09-09 20:02",
+   "createdAtISO": "2026-09-09T12:02:44+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/GestaltLabs/Qwen3.8-27B-EXL3-11.5GB"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097657349435515177",
+   "text": "“Two things are infinite: the universe and human stupidity; and I'm not sure about the universe.”\n-Albert Einstein https://t.co/9F88Rhge9Y",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 19,
+    "retweets": 0,
+    "replies": 4,
+    "quotes": 0,
+    "views": 704,
+    "bookmarks": 0
+   },
+   "createdAt": "Wed Sep 09 12:04:19 +0000 2026",
+   "createdAtLocal": "2026-09-09 20:04",
+   "createdAtISO": "2026-09-09T12:04:19+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRxgPWSb0AAsWGs.jpg",
+     "width": 1145,
+     "height": 1374
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097524420797518242",
+   "text": "“I learned this, at least, by my experiment: that if one advances confidently in the direction of his dreams, and endeavors to live the life which he has imagined, he will meet with a success unexpected in common hours.”\nHenry David Thoreau https://t.co/FtWw4G7Ltu",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 11,
+    "retweets": 1,
+    "replies": 2,
+    "quotes": 0,
+    "views": 509,
+    "bookmarks": 1
+   },
+   "createdAt": "Wed Sep 09 03:16:06 +0000 2026",
+   "createdAtLocal": "2026-09-09 11:16",
+   "createdAtISO": "2026-09-09T03:16:06+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRvnVvzakAAkZP0.jpg",
+     "width": 1145,
+     "height": 1374
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097520171459956913",
+   "text": "I like the clarity on the Original Content Rewards 👀 https://t.co/MIGRy4ipzk",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 15,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 1,
+    "views": 749,
+    "bookmarks": 0
+   },
+   "createdAt": "Wed Sep 09 02:59:13 +0000 2026",
+   "createdAtLocal": "2026-09-09 10:59",
+   "createdAtISO": "2026-09-09T02:59:13+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRvjenEb0AAVm2w.jpg",
+     "width": 1014,
+     "height": 2048
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097482048046776378",
+   "text": "\"A little math, a little music, and 24 seconds outside of time. A shifting sculpture woven from ASCII, rotating through color and folding back into itself. No beginning, no end, just one more loop.\"\nAstra in a @NousResearch Hermes Agent\nchromatic_manifold.mp4 https://t.co/Zk5lRcoaP6",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 26,
+    "retweets": 2,
+    "replies": 3,
+    "quotes": 1,
+    "views": 1101,
+    "bookmarks": 4
+   },
+   "createdAt": "Wed Sep 09 00:27:44 +0000 2026",
+   "createdAtLocal": "2026-09-09 08:27",
+   "createdAtISO": "2026-09-09T00:27:44+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2097481397300764672/vid/avc1/1920x1080/tzi2xdnG9hNpLQRu.mp4?tag=29",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097474171810840641",
+   "text": "Interesting fact about the newly arrived nvidia/Qwen3.8-27B-NVFP4: it was quantized with @NVIDIAAI ModelOpt v.0.48.0!\nv0.48 brings increased support for additional FP4 MoE kernels as well as NVFP4 KV cache 🤩 https://t.co/BxgjRa6zN5",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 89,
+    "retweets": 10,
+    "replies": 6,
+    "quotes": 1,
+    "views": 13153,
+    "bookmarks": 55
+   },
+   "createdAt": "Tue Sep 08 23:56:26 +0000 2026",
+   "createdAtLocal": "2026-09-09 07:56",
+   "createdAtISO": "2026-09-08T23:56:26+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRu5nKuaMAAUZbo.jpg",
+     "width": 2054,
+     "height": 848
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2097470155898929585",
+    "text": "Big thanks to @NVIDIAAI for giving us all these wonderful NVFP4s!\nNewly arrived Nvidia/Qwen3.8-27B-NVFP4 on 🤗\nhttps://t.co/pVCBead0gD",
+    "author": {
+     "screenName": "mr_r0b0t",
+     "name": "mr_r0b0t"
+    }
+   }
+  },
+  {
+   "id": "2097470155898929585",
+   "text": "Big thanks to @NVIDIAAI for giving us all these wonderful NVFP4s!\nNewly arrived Nvidia/Qwen3.8-27B-NVFP4 on 🤗\nhttps://t.co/pVCBead0gD",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 462,
+    "retweets": 34,
+    "replies": 15,
+    "quotes": 5,
+    "views": 50619,
+    "bookmarks": 367
+   },
+   "createdAt": "Tue Sep 08 23:40:28 +0000 2026",
+   "createdAtLocal": "2026-09-09 07:40",
+   "createdAtISO": "2026-09-08T23:40:28+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/nvidia/Qwen3.8-27B-NVFP4"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097455476447367663",
+   "text": "Here's an interesting model that could be a very strong contender for the single DGX Spark / 128GB unified memory crowd 👀\n@AntLingAGI 3.0 Flash wasn't bad so adding in multimodal and an apparent performance boost are both solid upgrades, excited to give 3.0-Flash-VL a look! https://t.co/U5Pjeeg7Yr",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 42,
+    "retweets": 3,
+    "replies": 2,
+    "quotes": 0,
+    "views": 2850,
+    "bookmarks": 16
+   },
+   "createdAt": "Tue Sep 08 22:42:09 +0000 2026",
+   "createdAtLocal": "2026-09-09 06:42",
+   "createdAtISO": "2026-09-08T22:42:09+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRumj4qb0AAKptk.jpg",
+     "width": 1122,
+     "height": 1402
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRunoyTbcAE5Prb.jpg",
+     "width": 1500,
+     "height": 1018
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097444210941047264",
+   "text": "Populating the card !\nhttps://t.co/0btVrjyonz https://t.co/OFgw79Inaw",
+   "author": {
+    "id": "2002044000216465408",
+    "name": "Daniel Lougen",
+    "screenName": "DJLougen",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2066160860301561856/J76krMLe_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 24,
+    "retweets": 2,
+    "replies": 2,
+    "quotes": 0,
+    "views": 901,
+    "bookmarks": 1
+   },
+   "createdAt": "Tue Sep 08 21:57:23 +0000 2026",
+   "createdAtLocal": "2026-09-09 05:57",
+   "createdAtISO": "2026-09-08T21:57:23+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRueTgvaoAAC2bO.jpg",
+     "width": 1254,
+     "height": 1254
+    }
+   ],
+   "urls": [
+    "https://huggingface.co/GestaltLabs/DeepSeek-V4-Flash-0731-Ornstein-GGUF"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097408486015479811",
+   "text": "How to NOCTUA your NICGIGA! https://t.co/0vz81jndIp",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 16,
+    "retweets": 0,
+    "replies": 2,
+    "quotes": 0,
+    "views": 1239,
+    "bookmarks": 5
+   },
+   "createdAt": "Tue Sep 08 19:35:25 +0000 2026",
+   "createdAtLocal": "2026-09-09 03:35",
+   "createdAtISO": "2026-09-08T19:35:25+00:00",
+   "media": [],
+   "urls": [
+    "https://x.com/i/article/2097406892322529280"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "articleTitle": "Quieting my NICGIGA 10G switch with a Noctua fan"
+  },
+  {
+   "id": "2097402794391089632",
+   "text": "ooOOOooooOO new ChatGPT Images 2.5! https://t.co/Wqz9oXweSl",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 7,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 1159,
+    "bookmarks": 2
+   },
+   "createdAt": "Tue Sep 08 19:12:48 +0000 2026",
+   "createdAtLocal": "2026-09-09 03:12",
+   "createdAtISO": "2026-09-08T19:12:48+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRt4p3CXkAEFUA-.png",
+     "width": 825,
+     "height": 812
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2097394956457623964",
+    "text": "ChatGPT Images 2.5—faster, sharper, smarter, with better tools for creating whatever you can dream of.\n\n- Faster image generation to keep your ideas flowing\n\n- Improved fidelity for more natural, recognizable images\n\n- Consistent details across multiple edits\n\n- Comment-based edits to change only what you want",
+    "author": {
+     "screenName": "OpenAI",
+     "name": "OpenAI"
+    }
+   }
+  },
+  {
+   "id": "2097399219304755460",
+   "text": "Use @NousResearch Hermes Desktop on your laptop while your workstation runs the agent, tools, and local models. Tailscale connects them privately, so you can work with the files and compute already on your host.\nPrintable @here_now setup guide included!",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 80,
+    "retweets": 7,
+    "replies": 4,
+    "quotes": 2,
+    "views": 8693,
+    "bookmarks": 106
+   },
+   "createdAt": "Tue Sep 08 18:58:36 +0000 2026",
+   "createdAtLocal": "2026-09-09 02:58",
+   "createdAtISO": "2026-09-08T18:58:36+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2097398780689551627",
+    "text": "Connecting your remote devices with Hermes and Tailscale! https://t.co/cJuGBc6vxZ",
+    "author": {
+     "screenName": "mr_r0b0t",
+     "name": "mr_r0b0t"
+    }
+   }
+  },
+  {
+   "id": "2097398780689551627",
+   "text": "Connecting your remote devices with Hermes and Tailscale! https://t.co/cJuGBc6vxZ",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 191,
+    "retweets": 17,
+    "replies": 6,
+    "quotes": 3,
+    "views": 18527,
+    "bookmarks": 347
+   },
+   "createdAt": "Tue Sep 08 18:56:51 +0000 2026",
+   "createdAtLocal": "2026-09-09 02:56",
+   "createdAtISO": "2026-09-08T18:56:51+00:00",
+   "media": [],
+   "urls": [
+    "https://x.com/i/article/2097393404678119424"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "articleTitle": "Use your AI workstation from your laptop: Hermes + Tailscale"
+  },
+  {
+   "id": "2097387228699714024",
+   "text": "Together, we step bravely into this new world.\nMay @elonmusk look upon us all with favor 🙏",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 11,
+    "retweets": 1,
+    "replies": 0,
+    "quotes": 0,
+    "views": 892,
+    "bookmarks": 1
+   },
+   "createdAt": "Tue Sep 08 18:10:57 +0000 2026",
+   "createdAtLocal": "2026-09-09 02:10",
+   "createdAtISO": "2026-09-08T18:10:57+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2097371482804363669",
+    "text": "All eligible creators can now apply to Original Content Rewards in Creator Studio.\n\nRevenue Sharing has officially sunset, the last payout is this Friday, September 11. If you were enrolled in Revenue Sharing and get approved, your first OCR payout is September 25. Happy posting!",
+    "author": {
+     "screenName": "XCreators",
+     "name": "Creators"
+    }
+   }
+  },
+  {
+   "id": "2097384615660916900",
+   "text": "ACCESS THE PRIVATE deepseek-v4.1-flash-expires-on-0910 IN HERMES AGENT! 🔥\nInstructions pictured below ⬇️ https://t.co/zOMtBfWA9L",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 51,
+    "retweets": 0,
+    "replies": 5,
+    "quotes": 0,
+    "views": 6581,
+    "bookmarks": 44
+   },
+   "createdAt": "Tue Sep 08 18:00:34 +0000 2026",
+   "createdAtLocal": "2026-09-09 02:00",
+   "createdAtISO": "2026-09-08T18:00:34+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRtoMOeXkAAFdoW.jpg",
+     "width": 1206,
+     "height": 1210
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRtoMOfXIAElWKp.jpg",
+     "width": 1206,
+     "height": 571
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRtoMOfWgAAjtHi.jpg",
+     "width": 1206,
+     "height": 589
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097369047662727601",
+   "text": "@pashque_ https://t.co/TORc9osSt0\n@Shaughnessy119 https://t.co/XJh8Jx0sub\n@mr_r0b0t https://t.co/22WkmFQWTd\n@KaviFinance1 https://t.co/PNT4x7czUY\n@steve_dalonzo https://t.co/0X7YIgf28f\n@mindragon https://t.co/1DalbBv9BP\n@SALTY_ALTY555 https://t.co/o2Hw1voswP\n@Sahil_Saghir https://t.co/DC9bCR4aTq\n@jaisus_x https://t.co/vYQChgRa1b\n@batmanz https://t.co/NxnL6rmbU2\n@Binshaogg https://t.co/1jFil1ArF7\n@JustinPerea https://t.co/QdANf7MdF7\n@OrwellHuxley69 https://t.co/PvLjxVixtE\n@slatt_eth https://t.co/iVIwPrqfag",
+   "author": {
+    "id": "1452919031846117384",
+    "name": "witcheer",
+    "screenName": "witcheer",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2057938653217701888/2uzVsJ5p_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 16,
+    "retweets": 3,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1469,
+    "bookmarks": 2
+   },
+   "createdAt": "Tue Sep 08 16:58:42 +0000 2026",
+   "createdAtLocal": "2026-09-09 00:58",
+   "createdAtISO": "2026-09-08T16:58:42+00:00",
+   "media": [],
+   "urls": [
+    "https://x.com/pashque_/status/2095494319926906956",
+    "https://x.com/Shaughnessy119/status/2095870081670504773",
+    "https://x.com/mr_r0b0t/status/2096265054630936921",
+    "https://x.com/KaviFinance1/status/2096264382648914119",
+    "https://x.com/steve_dalonzo/status/2095162647377305700",
+    "https://x.com/mindragon/status/2096305386240290895",
+    "https://x.com/SALTY_ALTY555/status/2096275308714320294"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "qme",
+   "score": null,
+   "quotedTweet": {
+    "id": "2096275308714320294",
+    "text": "Nous Research gives you $15 off your first month on the Nous API and Hermes Agent. Here's my link: \n\nhttps://t.co/MpdshgxUsE",
+    "author": {
+     "screenName": "SALTY_ALTY555",
+     "name": "SALT 🎸"
+    }
+   }
+  },
+  {
+   "id": "2097370586116931754",
+   "text": "@mr_r0b0t @NousResearch Using this I flagged @ollama is failing to cache GLM 5.3  Flash , waiting for their reply, they have not yet replied and went completely silent.",
+   "author": {
+    "id": "1501786343672025088",
+    "name": "Surg Lt (Dr) Anan Jaiswal (Retd)",
+    "screenName": "docjais",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1555006267004923904/xSQSsUqt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1,
+    "retweets": 1,
+    "replies": 1,
+    "quotes": 0,
+    "views": 341,
+    "bookmarks": 0
+   },
+   "createdAt": "Tue Sep 08 17:04:49 +0000 2026",
+   "createdAtLocal": "2026-09-09 01:04",
+   "createdAtISO": "2026-09-08T17:04:49+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2096942342901039582",
+   "text": "I put every Hermes Wingtips post on one page.\n\nhttps://t.co/Q1qRH5DQRj\n\nand a single file you can point an agent at:\n\nhttps://t.co/2vL6924Myf\n\n65 tips, #1 to #65.",
+   "author": {
+    "id": "1452919031846117384",
+    "name": "witcheer",
+    "screenName": "witcheer",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2057938653217701888/2uzVsJ5p_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 367,
+    "retweets": 41,
+    "replies": 24,
+    "quotes": 4,
+    "views": 53539,
+    "bookmarks": 741
+   },
+   "createdAt": "Mon Sep 07 12:43:08 +0000 2026",
+   "createdAtLocal": "2026-09-07 20:43",
+   "createdAtISO": "2026-09-07T12:43:08+00:00",
+   "media": [],
+   "urls": [
+    "https://notwitcheer.github.io/hermes-recipes/wingtips/",
+    "https://notwitcheer.github.io/hermes-recipes/llms.txt"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097079006223032744",
+   "text": "Qwen3.8-Flash-Next running locally on ONE DGX Spark.  \n\nThe test: \n>Build 10 completely different websites \n>Every site must be genuinely useful in real life \n>Fully functional, no fake UI \n>Different purpose, design and interaction model \n>Push creativity and technical boundaries \n>No generic landing pages \n>No playing it safe  10 sites. \n\nHere is what it came up with",
+   "author": {
+    "id": "2010894113982607360",
+    "name": "Neo",
+    "screenName": "NeoAIForecast",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2010897551525101579/ZKJQsu7V_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 39,
+    "retweets": 2,
+    "replies": 4,
+    "quotes": 0,
+    "views": 5575,
+    "bookmarks": 30
+   },
+   "createdAt": "Mon Sep 07 21:46:11 +0000 2026",
+   "createdAtLocal": "2026-09-08 05:46",
+   "createdAtISO": "2026-09-07T21:46:11+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2097078838333476864/vid/avc1/1860x1198/GPWz5TobCg3C6Lhe.mp4?tag=29",
+     "width": 1860,
+     "height": 1198
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097315265981690345",
+   "text": "Qwen3.8‑Flash‑Next\n\n&gt;No API bill\n&gt;No rate limits\n&gt;No cortisol spike\n\nBuy a Spark and chill",
+   "author": {
+    "id": "2010894113982607360",
+    "name": "Neo",
+    "screenName": "NeoAIForecast",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2010897551525101579/ZKJQsu7V_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 63,
+    "retweets": 3,
+    "replies": 8,
+    "quotes": 0,
+    "views": 3146,
+    "bookmarks": 0
+   },
+   "createdAt": "Tue Sep 08 13:25:00 +0000 2026",
+   "createdAtLocal": "2026-09-08 21:25",
+   "createdAtISO": "2026-09-08T13:25:00+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097209459600671072",
+   "text": "Qwopus3.8-27B-Flash is a fine-tune of Qwen3.8-27B trained to reason more efficiently. so I measured it against its base on my RTX 5090.\n\nthe efficiency gain is about 2x:\n\nGPQA-diamond, thinking on, greedy, 198 questions:\n- Flash: 70.7%, 4,229 tokens per correct answer, 2.7 hours\n- base: 79.3%, 7,740 tokens per correct answer, 5.5 hours\n- on the 125 questions both get right, the base thinks 2.08x longer\n\nso half the tokens and half the wall time for the same set, paid for with 8.6 points: the tune has learnt to stop early, and on the hardest questions it sometimes stops before it is done.\n\ntwo more things from the same run:\n- MTP speculative decode: both models sit at 61 tok/s plain and 109 to 145 with the head, acceptance 0.76 vs 0.77 thinking-off.\n- 150 of 164 HumanEval answers put exactly one space before every code line, so nested blocks arrive flat and one-shot Python reads 26.8 vs 94.5.",
+   "author": {
+    "id": "1452919031846117384",
+    "name": "witcheer",
+    "screenName": "witcheer",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2057938653217701888/2uzVsJ5p_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 232,
+    "retweets": 20,
+    "replies": 17,
+    "quotes": 2,
+    "views": 26818,
+    "bookmarks": 171
+   },
+   "createdAt": "Tue Sep 08 06:24:34 +0000 2026",
+   "createdAtLocal": "2026-09-08 14:24",
+   "createdAtISO": "2026-09-08T06:24:34+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRrIZKxWUAAwKqf.jpg",
+     "width": 1540,
+     "height": 814
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095885740517314985",
+    "text": "Good morning, Y'ALL!\n\nQwopus 3.8 27B Flash is out now! I feel like this one is the largest leap of added value we've ever committed in a fine-tune!\n\nIt's very similar to the base model at xhigh, but is significantly more efficient in its CoT, sometimes by a factor of 10 or greater. Not only is it much more concise generally, but it chooses when to use it more, where needed, and when to apply it less.\n\nIt runs exceptionally well with thinking uncapped in agentic workflows, unlike the base, especially in Claude Code!\n\nA testament to the model's ACTUAL speed (wall time), it is incredibly usable and feels snappy running on an old V100 at only 37tps average. It is BLAZING fast on a 5090 at around 100tps with MTP! \n\nBlessed to be here, y'all; we appreciate every one of you greatly! Big thanks to @Alibaba_Qwen and @QwenDevs for making such incredible base models for us to play with!\n\nPlease post your wins and your feedback on this one in the comments below; we're looking forward to hearing from you!\n\nNew Qwopus on a Friday? What are you building this weekend???\n\nhttps://t.co/a7a1XrI7SU",
+    "author": {
+     "screenName": "KyleHessling1",
+     "name": "Kyle Hessling"
+    }
+   }
+  },
+  {
+   "id": "2096814139868110992",
+   "text": "Quite exciting on local model development right now...\n\n- Landscape changed since DeepSeek v4 Flash 0731 + DwarfStar\n- SGLang returned to be the king of a hill for Qwen3.8 27B\n- Qwen3.8-Flash-Next then topped the dense with intelligence, concurrency while being a MoE with new architecture\n\nNow I'm seeing devs getting their works on DwarfStar and SGLang for Qwen3.8-Flash-Next.\n\nSo, local AI coding solved.\n\nWhile the video generation also quite impressive, landscape changed since Minimax H3 released...\n\nPreviously, I'm looking for a second DGX Spark to make dsv4f capable to handle concurrency but now I'm looking for a separation between coding and video generation.\n\nCan't be happier than this as a single DGX Spark owner!\n\nThanks and full love to you all key devs that made things happened, follow them if you haven't yet:\n@MiaAI_lab @0xSero @mr_r0b0t @plotarmordev @AtlasInference @ivanfioravanti",
+   "author": {
+    "id": "14772995",
+    "name": "Consigliere",
+    "screenName": "seree",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1857806945669054464/RrgjPs6J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 9,
+    "retweets": 2,
+    "replies": 2,
+    "quotes": 0,
+    "views": 963,
+    "bookmarks": 3
+   },
+   "createdAt": "Mon Sep 07 04:13:42 +0000 2026",
+   "createdAtLocal": "2026-09-07 12:13",
+   "createdAtISO": "2026-09-07T04:13:42+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097149343979774359",
+   "text": "@mr_r0b0t Do it! https://t.co/OovQvwBRIq",
+   "author": {
+    "id": "65012353",
+    "name": "WestWaters",
+    "screenName": "Mr_WestCoast",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1899992109861744640/vCU6fmj-_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1,
+    "retweets": 1,
+    "replies": 0,
+    "quotes": 0,
+    "views": 128,
+    "bookmarks": 0
+   },
+   "createdAt": "Tue Sep 08 02:25:41 +0000 2026",
+   "createdAtLocal": "2026-09-08 10:25",
+   "createdAtISO": "2026-09-08T02:25:41+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/PollardWeights/MiniCPM5-2B-Pollard"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097135056854675837",
+   "text": "Worth a shot 🕵️",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 48,
+    "retweets": 1,
+    "replies": 8,
+    "quotes": 0,
+    "views": 3729,
+    "bookmarks": 7
+   },
+   "createdAt": "Tue Sep 08 01:28:55 +0000 2026",
+   "createdAtLocal": "2026-09-08 09:28",
+   "createdAtISO": "2026-09-08T01:28:55+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2096970974247956501",
+    "text": "🚀 Meet MiniCPM5-2B, a 2B-parameter language model bringing high intelligence density to the edge, now open source!\n\nIt ranks #1 among open-source models under 4B parameters on the\n@ArtificialAnlys Intelligence Index, with a score of 23.\n\nIt also scores 20 on the Agentic Index, bringing an early form of general-purpose agent capability to the edge.\n\nAcross 34 benchmarks, MiniCPM5-2B achieves an average score of 53.9, covering coding, math, long-context understanding, tool use, and agentic tasks.\n\nAnd this release goes beyond the model itself.\n\nWe’re opening up the data, training recipes, and RL stack behind MiniCPM5-2B.\n\n🤗 Hugging Face: https://t.co/FZOMTZhBjq\n💻 GitHub: https://t.co/2L0I8bYv8f\nModelscope: https://t.co/WRlPNEAzgu\nWeb: https://t.co/gRSu65FeZL",
+    "author": {
+     "screenName": "OpenBMB",
+     "name": "OpenBMB"
+    }
+   }
+  },
+  {
+   "id": "2097134003409039557",
+   "text": "120mm Noctua mounted on the v4 front panel with printed hardware/bracket 🤓\n2x @NVIDIAAI GB10 / 2x @Noctua_at case coming along nicely!\nAstra can vibeCAD 🤩\nPowered by a @NousResearch Hermes Agent https://t.co/LtEEx5MBoa",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 33,
+    "retweets": 4,
+    "replies": 9,
+    "quotes": 0,
+    "views": 1095,
+    "bookmarks": 3
+   },
+   "createdAt": "Tue Sep 08 01:24:43 +0000 2026",
+   "createdAtLocal": "2026-09-08 09:24",
+   "createdAtISO": "2026-09-08T01:24:43+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRqEQJ4WQAAI2i9.jpg",
+     "width": 2268,
+     "height": 4032
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097116969631654314",
+   "text": "Locked in 🔐 https://t.co/DhQsH6LbrQ",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 57,
+    "retweets": 0,
+    "replies": 8,
+    "quotes": 0,
+    "views": 1978,
+    "bookmarks": 2
+   },
+   "createdAt": "Tue Sep 08 00:17:02 +0000 2026",
+   "createdAtLocal": "2026-09-08 08:17",
+   "createdAtISO": "2026-09-08T00:17:02+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRp0w6MbgAA9IyV.jpg",
+     "width": 2048,
+     "height": 1536
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097100216604205471",
+   "text": "Teamwork makes the dream work &lt;3",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 14,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 1042,
+    "bookmarks": 1
+   },
+   "createdAt": "Mon Sep 07 23:10:28 +0000 2026",
+   "createdAtLocal": "2026-09-08 07:10",
+   "createdAtISO": "2026-09-07T23:10:28+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2097007991358644671",
+    "text": "@KyleHelseth Thanks for the shout out, Kyle. I appreciate it. We're all in it together. \n\ncc: @TechMDAI @Tech2Wild @mr_r0b0t @u1tra_instinct \n@Mr_WestCoast @ToddWright_ \nJust to add a few more.",
+    "author": {
+     "screenName": "aijoey",
+     "name": "Joey"
+    }
+   }
+  },
+  {
+   "id": "2096955783380385918",
+   "text": "If you're new to running local AI on Sparks (like me), \nhere's a list of people to follow/learn from\n\nBefore setting up my 3 sparks I spent a couple of weeks scanning X, GitHub, Hugging Face, and the NVIDIA Spark forum\n\nNot a ranking, and not complete. These are people I kept seeing publish Spark recipes, tests, kernels, and corrections. If I missed someone you trust, tell me.\n\n@MiaAI_lab\n@plotarmordev\n@WescheNex1q\n@MichaelGannotti\n@spark_arena\n@ViC305\n@yume_arasaki\n@sfxnz\n@aijoey\n@gitcommit90\n@zero_to_seed \nGitHub I also used: eugr/spark-vllm-docker, shige0501, nabe2030, Anemll, LibertAI, Sapid Labs, veloGB10, Blake Ledden’s sm121-kernels.",
+   "author": {
+    "id": "1794536984251133952",
+    "name": "Kyle Helseth",
+    "screenName": "KyleHelseth",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2058630092331335680/B22M_2B4_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 14,
+    "retweets": 2,
+    "replies": 11,
+    "quotes": 0,
+    "views": 1093,
+    "bookmarks": 7
+   },
+   "createdAt": "Mon Sep 07 13:36:32 +0000 2026",
+   "createdAtLocal": "2026-09-07 21:36",
+   "createdAtISO": "2026-09-07T13:36:32+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2096758722785865958",
+   "text": "Grok 4.7 deploys in 5d 02h 27m.\nThe Vault-Tec clock is ticking.\n\nhttps://t.co/7THwODx0FU",
+   "author": {
+    "id": "2010894113982607360",
+    "name": "Neo",
+    "screenName": "NeoAIForecast",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2010897551525101579/ZKJQsu7V_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 15,
+    "retweets": 2,
+    "replies": 0,
+    "quotes": 0,
+    "views": 919,
+    "bookmarks": 0
+   },
+   "createdAt": "Mon Sep 07 00:33:30 +0000 2026",
+   "createdAtLocal": "2026-09-07 08:33",
+   "createdAtISO": "2026-09-07T00:33:30+00:00",
+   "media": [],
+   "urls": [
+    "https://dawn-thunder-horizon-daisy.grok.me/"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2096332306847875580",
+   "text": "Grok @Bot usage limits reset",
+   "author": {
+    "id": "44196397",
+    "name": "Elon Musk",
+    "screenName": "elonmusk",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2053244804520427520/m8mdWZCG_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 15829,
+    "retweets": 1631,
+    "replies": 1878,
+    "quotes": 173,
+    "views": 7386521,
+    "bookmarks": 382
+   },
+   "createdAt": "Sat Sep 05 20:19:04 +0000 2026",
+   "createdAtLocal": "2026-09-06 04:19",
+   "createdAtISO": "2026-09-05T20:19:04+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2096303514230423629",
+    "text": "We've reset usage limits for all Grok Bot users.\n\nEnjoy!",
+    "author": {
+     "screenName": "bot",
+     "name": "Grok Bot"
+    }
+   }
+  },
+  {
+   "id": "2096349856432308463",
+   "text": "First model to score a perfect 80/80 on my random select 0-shot GSM8K!\nBeen using this one for a few days now and definitely recommend it!\nMultimodal ✅\nNEXTN/MTP ✅\nSM121 Optimized ✅",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 61,
+    "retweets": 3,
+    "replies": 10,
+    "quotes": 0,
+    "views": 4472,
+    "bookmarks": 20
+   },
+   "createdAt": "Sat Sep 05 21:28:48 +0000 2026",
+   "createdAtLocal": "2026-09-06 05:28",
+   "createdAtISO": "2026-09-05T21:28:48+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2094517117840244933",
+    "text": "Happy to share r0b0tlab/Qwen3.8-Flash-Next-NVFP4-W4A16 quant. &amp; @sgl_project TP=2 runtime for your 2x @NVIDIAAI GB10s!\n\nThis one took some extra time as I wound up having fun testing it in a @NousResearch Hermes Agent &lt;3\n\n@huggingface and @github repos included below🧵 https://t.co/YfE9VcXOSG",
+    "author": {
+     "screenName": "mr_r0b0t",
+     "name": "mr_r0b0t"
+    }
+   }
+  },
+  {
+   "id": "2096269238545654191",
+   "text": "Coupons being printed for v4 2xGB10 enclosure 😍\nhttps://t.co/7zpXqM1GWJ",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 29,
+    "retweets": 3,
+    "replies": 5,
+    "quotes": 0,
+    "views": 2280,
+    "bookmarks": 1
+   },
+   "createdAt": "Sat Sep 05 16:08:27 +0000 2026",
+   "createdAtLocal": "2026-09-06 00:08",
+   "createdAtISO": "2026-09-05T16:08:27+00:00",
+   "media": [],
+   "urls": [
+    "https://x.com/i/broadcasts/1wxWjlqnpPVJQ"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2096266507839824353",
+   "text": "Printing out test coupons for v4 of the 2xGB10 enclosure designed by a GPT-6-Astra powered @NousResearch Hermes Agent!\nlive stream of the print: https://t.co/7zpXqM1GWJ https://t.co/CCWThAc3jp",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 11,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1590,
+    "bookmarks": 4
+   },
+   "createdAt": "Sat Sep 05 15:57:36 +0000 2026",
+   "createdAtLocal": "2026-09-05 23:57",
+   "createdAtISO": "2026-09-05T15:57:36+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRdvBpuXEAQWvbU.jpg",
+     "width": 1032,
+     "height": 1720
+    }
+   ],
+   "urls": [
+    "https://x.com/i/broadcasts/1wxWjlqnpPVJQ"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2096263325352882687",
+   "text": "It’s a deer and pork ribs kind of day https://t.co/I77E7B1Tke",
+   "author": {
+    "id": "1602543792615149568",
+    "name": "Tom Turney",
+    "screenName": "no_stp_on_snek",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2074988262775529472/DFCRnM9P_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 22,
+    "retweets": 1,
+    "replies": 5,
+    "quotes": 0,
+    "views": 749,
+    "bookmarks": 0
+   },
+   "createdAt": "Sat Sep 05 15:44:58 +0000 2026",
+   "createdAtLocal": "2026-09-05 23:44",
+   "createdAtISO": "2026-09-05T15:44:58+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRdsYbwWQAEpO5S.jpg",
+     "width": 2048,
+     "height": 1536
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2096265054630936921",
+   "text": "There's never been a better time to get yourself a Nous Portal subscription!\nAll new subs through Sep. 9th get 50% off! That's on top of the 20% off all models, and the many free models. \nUse my referral and you get an additional $15 off your first month <3\nhttps://t.co/bVLbB54Onx",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 62,
+    "retweets": 4,
+    "replies": 3,
+    "quotes": 0,
+    "views": 7957,
+    "bookmarks": 59
+   },
+   "createdAt": "Sat Sep 05 15:51:50 +0000 2026",
+   "createdAtLocal": "2026-09-05 23:51",
+   "createdAtISO": "2026-09-05T15:51:50+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2096263611811320228",
+    "text": "Accelerate your labor with Hermes Agent\n\n50% off any Nous Portal subscription through September 9th using code LMH4FMJ2 https://t.co/IaJClR4BTN",
+    "author": {
+     "screenName": "NousResearch",
+     "name": "Nous Research"
+    }
+   }
+  },
+  {
+   "id": "2096123621978812526",
+   "text": "GPT-6 Astra really likes its pastel colours. Even in my cyberpunk themed sidescroller test, it kept pushing them.\n\nStill, it was the best of the tests. https://t.co/ulMv6bZZxy",
+   "author": {
+    "id": "2010894113982607360",
+    "name": "Neo",
+    "screenName": "NeoAIForecast",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2010897551525101579/ZKJQsu7V_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 14,
+    "retweets": 1,
+    "replies": 1,
+    "quotes": 1,
+    "views": 1904,
+    "bookmarks": 1
+   },
+   "createdAt": "Sat Sep 05 06:29:50 +0000 2026",
+   "createdAtLocal": "2026-09-05 14:29",
+   "createdAtISO": "2026-09-05T06:29:50+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2096123466353459200/vid/avc1/1392x854/ytFeJ_lk1sam_oin.mp4?tag=29",
+     "width": 1392,
+     "height": 854
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2096260211635888602",
+   "text": "What a mess!! But it is coming, Reachy got tired of waiting 🤖🐣🦆 https://t.co/sN40Bu0SjX",
+   "author": {
+    "id": "2023197746254237696",
+    "name": "rafaelcaricio",
+    "screenName": "rafaelcaricio",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2023197974298517504/vXR4gbsQ_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 69,
+    "retweets": 5,
+    "replies": 8,
+    "quotes": 2,
+    "views": 23956,
+    "bookmarks": 9
+   },
+   "createdAt": "Sat Sep 05 15:32:35 +0000 2026",
+   "createdAtLocal": "2026-09-05 23:32",
+   "createdAtISO": "2026-09-05T15:32:35+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRdpjB3WAAQGyQP.jpg",
+     "width": 2048,
+     "height": 1536
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2096256111372316748",
+   "text": "Meme of the day https://t.co/uI5jtFAPXd",
+   "author": {
+    "id": "2002044000216465408",
+    "name": "Daniel Lougen",
+    "screenName": "DJLougen",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2066160860301561856/J76krMLe_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 53,
+    "retweets": 2,
+    "replies": 14,
+    "quotes": 1,
+    "views": 2424,
+    "bookmarks": 0
+   },
+   "createdAt": "Sat Sep 05 15:16:18 +0000 2026",
+   "createdAtLocal": "2026-09-05 23:16",
+   "createdAtISO": "2026-09-05T15:16:18+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRdl0Yha0AACQha.jpg",
+     "width": 1320,
+     "height": 1213
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2096255974797414689",
+   "text": "https://t.co/g5x8r9VVhM https://t.co/dNJ4fdvu9K",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 114,
+    "retweets": 17,
+    "replies": 8,
+    "quotes": 1,
+    "views": 5755,
+    "bookmarks": 150
+   },
+   "createdAt": "Sat Sep 05 15:15:45 +0000 2026",
+   "createdAtLocal": "2026-09-05 23:15",
+   "createdAtISO": "2026-09-05T15:15:45+00:00",
+   "media": [],
+   "urls": [
+    "https://github.com/r0b0tlab/hermes-zvec-memory",
+    "https://x.com/i/article/2096252386129907714"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "zxx",
+   "score": null,
+   "articleTitle": "Inside a Hermes Session: How Local Memory Turns Past Work into Useful Context"
+  },
+  {
+   "id": "2096246680895078470",
+   "text": "gpt-6 astra x blender is actually ridiculous\n\nasked it to build a dark souls-inspired cathedral you could explore as a tiny armored knight\n\ngave it image generation for the concept art and blender to build the actual assets.\n\nit made the cathedral, statues, tombs, knight, and a six-limbed boss called. then wired up movement, sword attacks, dodging, and a boss entrance through the stained-glass window\n\neverything running in my browser",
+   "author": {
+    "id": "1654513495507980290",
+    "name": "filipe",
+    "screenName": "filicroval",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2053464202140893186/5Vgqbdlv_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 20,
+    "retweets": 3,
+    "replies": 4,
+    "quotes": 0,
+    "views": 4884,
+    "bookmarks": 6
+   },
+   "createdAt": "Sat Sep 05 14:38:49 +0000 2026",
+   "createdAtLocal": "2026-09-05 22:38",
+   "createdAtISO": "2026-09-05T14:38:49+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2096246056543813632/vid/avc1/2560x1440/jj42uG9LpffT3IpT.mp4?tag=29",
+     "width": 2560,
+     "height": 1440
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "mr_r0b0t",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2096248113174335936",
+   "text": "Huge agree, definitely check out Qwen3.8-Flash-Next!\nIf you're serving on 2x DGX Sparks (GB10s) - have a look at the r0b0tlab custom quant &amp; runtime, it's been very performant for me &lt;3\nhttps://t.co/Wdl4JpmAtw",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 39,
+    "retweets": 3,
+    "replies": 2,
+    "quotes": 0,
+    "views": 4840,
+    "bookmarks": 9
+   },
+   "createdAt": "Sat Sep 05 14:44:31 +0000 2026",
+   "createdAtLocal": "2026-09-05 22:44",
+   "createdAtISO": "2026-09-05T14:44:31+00:00",
+   "media": [],
+   "urls": [
+    "https://x.com/mr_r0b0t/status/2094517117840244933?s=20"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2096247037230539204",
+    "text": "If you're wondering where exactly qwen 3.8 flash ranks in terms of recent local model drops, it's right beside GLM5.3 Flash according to @ArtificialAnlys \n\nQwen3.8-Flash-Next could be the best local model u could run on 2xDGX sparks when considering both intelligence AND speed after the recent release of the official Nvidia quant.\n\nTesting",
+    "author": {
+     "screenName": "sfxnz",
+     "name": "Sufyan"
+    }
+   }
+  },
+  {
+   "id": "2096232769168802063",
+   "text": "Huge thanks to this amazing community that continues to help me learn and grow in this space!\nIt is my sincere hope that I can give back the tiniest bit of what's been given to me <3\nIf you're looking for good people to follow in the AI/ML/Agent space, there's a great list below but the first you should add is the incomparable @ItsmeAjayKV <3",
+   "author": {
+    "id": "391026632",
+    "name": "mr_r0b0t",
+    "screenName": "mr_r0b0t",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2099944738593837056/xhv44m80_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 38,
+    "retweets": 1,
+    "replies": 5,
+    "quotes": 1,
+    "views": 2279,
+    "bookmarks": 3
+   },
+   "createdAt": "Sat Sep 05 13:43:32 +0000 2026",
+   "createdAtLocal": "2026-09-05 21:43",
+   "createdAtISO": "2026-09-05T13:43:32+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2096204383985737737",
+    "text": "A big reason i'm here is because of the Local AI community, and especially some key members who i really look upto.\n\nIf you’ve been active in the Local AI space, there’s a good chance you’ve already seen posts from them.\n\nIn no particular order:\n@loktar00, @no_stp_on_snek , @mr_r0b0t , @coffeecup2020 , @davideciffa , @Italianclownz , @witcheer , @MiaAI_lab, @gospaceport , @Blackwellboy @superalesha, @Hikari_07_jp, @_ryu15_ , @analogalok \n\nNow they are not all, they are the ones i have interacted with the most, so i know I’m missing even more people, so apologies for that. If there’s someone great in the Local AI space that I missed, please mention them in the replies.\n\nAll of them bring real value to this community through original posts, discussions, experiments, discoveries, benchmarks, and ideas. I’m constantly learning something from what they share.\n\nIf you don’t know some of them yet, definitely give them a follow.\n\nI’m also incredibly grateful to everyone who follows me, interacts with my posts, and supports what I do.\n\nLocal AI really has one of the best communities around.",
+    "author": {
+     "screenName": "ItsmeAjayKV",
+     "name": "AJ"
+    }
+   }
+  }
+ ]
+}

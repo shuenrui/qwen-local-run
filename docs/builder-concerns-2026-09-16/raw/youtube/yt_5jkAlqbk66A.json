@@ -1,0 +1,2776 @@
+{
+ "video_id": "5jkAlqbk66A",
+ "url": "https://www.youtube.com/watch?v=5jkAlqbk66A",
+ "segments": [
+  {
+   "start": 0.0,
+   "duration": 4.76,
+   "text": "I had so many issues trying to get local"
+  },
+  {
+   "start": 2.32,
+   "duration": 4.8,
+   "text": "LLM's working with Claude code, with"
+  },
+  {
+   "start": 4.76,
+   "duration": 4.68,
+   "text": "Kilo code, with Open Claw. I kept"
+  },
+  {
+   "start": 7.12,
+   "duration": 5.12,
+   "text": "getting this pesky client timeout error"
+  },
+  {
+   "start": 9.44,
+   "duration": 4.92,
+   "text": "in LM Studio and Ollama would just wipe"
+  },
+  {
+   "start": 12.24,
+   "duration": 4.28,
+   "text": "over my Open Claw setting. But I wanted"
+  },
+  {
+   "start": 14.36,
+   "duration": 4.52,
+   "text": "to get to the bottom of what how I can"
+  },
+  {
+   "start": 16.52,
+   "duration": 4.48,
+   "text": "get the purest setup running local"
+  },
+  {
+   "start": 18.88,
+   "duration": 4.56,
+   "text": "models on my computer and I found the"
+  },
+  {
+   "start": 21.0,
+   "duration": 4.24,
+   "text": "answer in Llama.cpp. So today we're"
+  },
+  {
+   "start": 23.44,
+   "duration": 3.4,
+   "text": "going to get that set up and how you can"
+  },
+  {
+   "start": 25.24,
+   "duration": 3.68,
+   "text": "run it and follow it carefully I can"
+  },
+  {
+   "start": 26.84,
+   "duration": 3.28,
+   "text": "guarantee you'll have zero issues. Now"
+  },
+  {
+   "start": 28.92,
+   "duration": 2.64,
+   "text": "what a lot of people don't realize is"
+  },
+  {
+   "start": 30.12,
+   "duration": 3.92,
+   "text": "that LM Studio and Ollama are actually"
+  },
+  {
+   "start": 31.56,
+   "duration": 5.32,
+   "text": "just wrappers of Llama.cpp. They just"
+  },
+  {
+   "start": 34.04,
+   "duration": 4.64,
+   "text": "provide a new nicely user interface and"
+  },
+  {
+   "start": 36.88,
+   "duration": 4.0,
+   "text": "we'll get into this but Ollama just"
+  },
+  {
+   "start": 38.68,
+   "duration": 5.0,
+   "text": "added this but LM Studio have had it for"
+  },
+  {
+   "start": 40.88,
+   "duration": 4.96,
+   "text": "quite a while is the option to run MLX"
+  },
+  {
+   "start": 43.68,
+   "duration": 4.32,
+   "text": "models. Ollama only have it for one"
+  },
+  {
+   "start": 45.84,
+   "duration": 4.68,
+   "text": "model whereas you get all of the models"
+  },
+  {
+   "start": 48.0,
+   "duration": 4.72,
+   "text": "you can find on Hugging Face"
+  },
+  {
+   "start": 50.52,
+   "duration": 3.68,
+   "text": "downloadable through LM Studio. And with"
+  },
+  {
+   "start": 52.72,
+   "duration": 3.4,
+   "text": "this method we're going to leverage what"
+  },
+  {
+   "start": 54.2,
+   "duration": 4.44,
+   "text": "they call Turbo Quant. Turbo Quant was"
+  },
+  {
+   "start": 56.12,
+   "duration": 5.8,
+   "text": "something Google announced this year"
+  },
+  {
+   "start": 58.64,
+   "duration": 6.32,
+   "text": "which inevitably is a new way to quantal"
+  },
+  {
+   "start": 61.92,
+   "duration": 4.24,
+   "text": "quantisize quantisize quantisization of"
+  },
+  {
+   "start": 64.96,
+   "duration": 3.24,
+   "text": "is that a"
+  },
+  {
+   "start": 66.16,
+   "duration": 4.88,
+   "text": "a real word? It's an efficient way to"
+  },
+  {
+   "start": 68.2,
+   "duration": 4.76,
+   "text": "extreme compression. Again, I'm not an"
+  },
+  {
+   "start": 71.04,
+   "duration": 4.4,
+   "text": "expert in all this but it's an"
+  },
+  {
+   "start": 72.96,
+   "duration": 4.84,
+   "text": "interesting way to optimize key value or"
+  },
+  {
+   "start": 75.44,
+   "duration": 7.16,
+   "text": "KV cache and whilst it hasn't been"
+  },
+  {
+   "start": 77.8,
+   "duration": 7.8,
+   "text": "incorporated into Llama.cpp yet Tom here"
+  },
+  {
+   "start": 82.6,
+   "duration": 5.28,
+   "text": "has gone ahead and created a branch that"
+  },
+  {
+   "start": 85.6,
+   "duration": 5.44,
+   "text": "enables this. Eventually in time I've no"
+  },
+  {
+   "start": 87.88,
+   "duration": 5.28,
+   "text": "doubt that we'll get it in Llama.cpp"
+  },
+  {
+   "start": 91.04,
+   "duration": 4.64,
+   "text": "now Tom is the one who's done this so"
+  },
+  {
+   "start": 93.16,
+   "duration": 4.72,
+   "text": "give him a give him a thanks up give his"
+  },
+  {
+   "start": 95.68,
+   "duration": 3.64,
+   "text": "give his repo a star there. So whilst"
+  },
+  {
+   "start": 97.88,
+   "duration": 3.64,
+   "text": "we've got the base model and"
+  },
+  {
+   "start": 99.32,
+   "duration": 4.08,
+   "text": "quantization happens"
+  },
+  {
+   "start": 101.52,
+   "duration": 4.0,
+   "text": "on the model itself we can't really do"
+  },
+  {
+   "start": 103.4,
+   "duration": 4.92,
+   "text": "anything about that we just choose the"
+  },
+  {
+   "start": 105.52,
+   "duration": 4.8,
+   "text": "model we want to use is that KV storage"
+  },
+  {
+   "start": 108.32,
+   "duration": 4.52,
+   "text": "that we want to optimize and that's"
+  },
+  {
+   "start": 110.32,
+   "duration": 4.2,
+   "text": "exactly what Turbo Quant does. Now the"
+  },
+  {
+   "start": 112.84,
+   "duration": 4.36,
+   "text": "first thing you're going to want to do"
+  },
+  {
+   "start": 114.52,
+   "duration": 4.64,
+   "text": "is head on over to the Tom and Turbo"
+  },
+  {
+   "start": 117.2,
+   "duration": 4.88,
+   "text": "Quant plus. I'll leave everything linked"
+  },
+  {
+   "start": 119.16,
+   "duration": 5.08,
+   "text": "below and there's a lot to take in here"
+  },
+  {
+   "start": 122.08,
+   "duration": 4.48,
+   "text": "and I'm not going to claim to know all"
+  },
+  {
+   "start": 124.24,
+   "duration": 4.32,
+   "text": "of this stuff but we'll go through it"
+  },
+  {
+   "start": 126.56,
+   "duration": 4.24,
+   "text": "step by step and I'll try and point out"
+  },
+  {
+   "start": 128.56,
+   "duration": 3.76,
+   "text": "the things you should really care about."
+  },
+  {
+   "start": 130.8,
+   "duration": 2.96,
+   "text": "This is the section you're going to want"
+  },
+  {
+   "start": 132.32,
+   "duration": 4.32,
+   "text": "to really care about and the first thing"
+  },
+  {
+   "start": 133.76,
+   "duration": 5.36,
+   "text": "you want to do is actually clone the Git"
+  },
+  {
+   "start": 136.64,
+   "duration": 4.48,
+   "text": "repo. And this won't be a lesson on the"
+  },
+  {
+   "start": 139.12,
+   "duration": 4.04,
+   "text": "terminal but I'll do my best to explain"
+  },
+  {
+   "start": 141.12,
+   "duration": 3.84,
+   "text": "it here. Do yourself a favor and"
+  },
+  {
+   "start": 143.16,
+   "duration": 3.48,
+   "text": "download Warp links are down below in"
+  },
+  {
+   "start": 144.96,
+   "duration": 3.52,
+   "text": "the description. This will make it"
+  },
+  {
+   "start": 146.64,
+   "duration": 4.4,
+   "text": "things go wrong a hell of a lot easier"
+  },
+  {
+   "start": 148.48,
+   "duration": 4.28,
+   "text": "because it's an AI powered terminal and"
+  },
+  {
+   "start": 151.04,
+   "duration": 3.6,
+   "text": "it will just help you figure it out. It"
+  },
+  {
+   "start": 152.76,
+   "duration": 3.48,
+   "text": "did so on one of my old machines which"
+  },
+  {
+   "start": 154.64,
+   "duration": 4.2,
+   "text": "obviously had some sort of conflicts or"
+  },
+  {
+   "start": 156.24,
+   "duration": 4.64,
+   "text": "something like that. So, within terminal"
+  },
+  {
+   "start": 158.84,
+   "duration": 3.88,
+   "text": "you want to CD which is change direction"
+  },
+  {
+   "start": 160.88,
+   "duration": 3.92,
+   "text": "to the direct the directory that you"
+  },
+  {
+   "start": 162.72,
+   "duration": 3.56,
+   "text": "want to store this app in. Now it's not"
+  },
+  {
+   "start": 164.8,
+   "duration": 3.6,
+   "text": "going to be a traditional app which you"
+  },
+  {
+   "start": 166.28,
+   "duration": 3.56,
+   "text": "double click and then it opens up. It"
+  },
+  {
+   "start": 168.4,
+   "duration": 3.64,
+   "text": "you're literally going to be downloading"
+  },
+  {
+   "start": 169.84,
+   "duration": 4.96,
+   "text": "the raw files that build this"
+  },
+  {
+   "start": 172.04,
+   "duration": 4.16,
+   "text": "application. So what I'd suggest is CD"
+  },
+  {
+   "start": 174.8,
+   "duration": 3.72,
+   "text": "and if you know the location of the"
+  },
+  {
+   "start": 176.2,
+   "duration": 4.32,
+   "text": "directory just type it in here. I know"
+  },
+  {
+   "start": 178.52,
+   "duration": 3.96,
+   "text": "mine is in sites as an example that's"
+  },
+  {
+   "start": 180.52,
+   "duration": 3.4,
+   "text": "where I want to download mine or if"
+  },
+  {
+   "start": 182.48,
+   "duration": 4.28,
+   "text": "you're brand new to this open up your"
+  },
+  {
+   "start": 183.92,
+   "duration": 5.08,
+   "text": "finder literally just drag the folder in"
+  },
+  {
+   "start": 186.76,
+   "duration": 4.44,
+   "text": "there and click enter and it will change"
+  },
+  {
+   "start": 189.0,
+   "duration": 3.52,
+   "text": "that directory. Press enter I've already"
+  },
+  {
+   "start": 191.2,
+   "duration": 3.2,
+   "text": "got it so it's probably going to fail"
+  },
+  {
+   "start": 192.52,
+   "duration": 4.0,
+   "text": "there but it will"
+  },
+  {
+   "start": 194.4,
+   "duration": 4.24,
+   "text": "it will download that code. Next we're"
+  },
+  {
+   "start": 196.52,
+   "duration": 3.44,
+   "text": "going to CD into that folder but Warp's"
+  },
+  {
+   "start": 198.64,
+   "duration": 3.28,
+   "text": "probably going to help us out when this"
+  },
+  {
+   "start": 199.96,
+   "duration": 3.96,
+   "text": "is done."
+  },
+  {
+   "start": 201.92,
+   "duration": 5.64,
+   "text": "And sure enough it does."
+  },
+  {
+   "start": 203.92,
+   "duration": 5.24,
+   "text": "And then you check out the branch"
+  },
+  {
+   "start": 207.56,
+   "duration": 4.6,
+   "text": "because this is all stored on GitHub"
+  },
+  {
+   "start": 209.16,
+   "duration": 4.92,
+   "text": "where as I say all the code lives this"
+  },
+  {
+   "start": 212.16,
+   "duration": 4.52,
+   "text": "is a special feature that they've made"
+  },
+  {
+   "start": 214.08,
+   "duration": 3.88,
+   "text": "off of the main branch that makes sense."
+  },
+  {
+   "start": 216.68,
+   "duration": 3.36,
+   "text": "Basically you're going to want to check"
+  },
+  {
+   "start": 217.96,
+   "duration": 4.16,
+   "text": "out that branch here which again I"
+  },
+  {
+   "start": 220.04,
+   "duration": 4.76,
+   "text": "already have so just copy that line of"
+  },
+  {
+   "start": 222.12,
+   "duration": 4.16,
+   "text": "code there paste it in and it should"
+  },
+  {
+   "start": 224.8,
+   "duration": 2.4,
+   "text": "just check that out. I'm not going to do"
+  },
+  {
+   "start": 226.28,
+   "duration": 3.12,
+   "text": "that."
+  },
+  {
+   "start": 227.2,
+   "duration": 5.28,
+   "text": "And obviously we're Apple silicon here"
+  },
+  {
+   "start": 229.4,
+   "duration": 4.32,
+   "text": "but if you're Nvidia or AMD you're going"
+  },
+  {
+   "start": 232.48,
+   "duration": 3.36,
+   "text": "to want to follow the relevant"
+  },
+  {
+   "start": 233.72,
+   "duration": 4.52,
+   "text": "instructions but as I say a metal and"
+  },
+  {
+   "start": 235.84,
+   "duration": 4.44,
+   "text": "this is where on my other machine Warp"
+  },
+  {
+   "start": 238.24,
+   "duration": 3.56,
+   "text": "came in clutch cuz it couldn't find"
+  },
+  {
+   "start": 240.28,
+   "duration": 3.84,
+   "text": "something or there was a conflict"
+  },
+  {
+   "start": 241.8,
+   "duration": 4.4,
+   "text": "elsewhere doing this command and I was"
+  },
+  {
+   "start": 244.12,
+   "duration": 4.04,
+   "text": "able to step through that using Warp as"
+  },
+  {
+   "start": 246.2,
+   "duration": 3.8,
+   "text": "a as as a helpful tool. And then you're"
+  },
+  {
+   "start": 248.16,
+   "duration": 4.16,
+   "text": "going to want to actually run the build"
+  },
+  {
+   "start": 250.0,
+   "duration": 4.48,
+   "text": "script which again I already have but"
+  },
+  {
+   "start": 252.32,
+   "duration": 4.08,
+   "text": "just copy that back into that and this"
+  },
+  {
+   "start": 254.48,
+   "duration": 3.72,
+   "text": "might take a little bit of time and then"
+  },
+  {
+   "start": 256.4,
+   "duration": 4.64,
+   "text": "what you'll be left with this is the"
+  },
+  {
+   "start": 258.2,
+   "duration": 6.68,
+   "text": "folder that got checked out here"
+  },
+  {
+   "start": 261.04,
+   "duration": 5.52,
+   "text": "and in build bin this is basically what"
+  },
+  {
+   "start": 264.88,
+   "duration": 2.8,
+   "text": "you just created all of these different"
+  },
+  {
+   "start": 266.56,
+   "duration": 3.12,
+   "text": "little applications. We're not"
+  },
+  {
+   "start": 267.68,
+   "duration": 4.6,
+   "text": "interested in most of these we're only"
+  },
+  {
+   "start": 269.68,
+   "duration": 4.68,
+   "text": "interested in Llama.cpp"
+  },
+  {
+   "start": 272.28,
+   "duration": 4.04,
+   "text": "and we're we're interested in Llama"
+  },
+  {
+   "start": 274.36,
+   "duration": 3.84,
+   "text": "server here. It's worth saying here this"
+  },
+  {
+   "start": 276.32,
+   "duration": 3.88,
+   "text": "will only need to be done once and then"
+  },
+  {
+   "start": 278.2,
+   "duration": 3.72,
+   "text": "you navigate to this folder with CD to"
+  },
+  {
+   "start": 280.2,
+   "duration": 4.04,
+   "text": "do everything from this point onwards so"
+  },
+  {
+   "start": 281.92,
+   "duration": 3.96,
+   "text": "you only do that build step once. So now"
+  },
+  {
+   "start": 284.24,
+   "duration": 3.92,
+   "text": "with all that done we're going to"
+  },
+  {
+   "start": 285.88,
+   "duration": 5.32,
+   "text": "actually want to choose a model that we"
+  },
+  {
+   "start": 288.16,
+   "duration": 5.2,
+   "text": "want to use. So for this we're going to"
+  },
+  {
+   "start": 291.2,
+   "duration": 3.48,
+   "text": "go to Hugging Face which is basically"
+  },
+  {
+   "start": 293.36,
+   "duration": 3.28,
+   "text": "where everyone uploads all of their"
+  },
+  {
+   "start": 294.68,
+   "duration": 3.92,
+   "text": "models and you've got some of the raw"
+  },
+  {
+   "start": 296.64,
+   "duration": 4.36,
+   "text": "models"
+  },
+  {
+   "start": 298.6,
+   "duration": 4.48,
+   "text": "such as Qwen 3.6 which is what we're"
+  },
+  {
+   "start": 301.0,
+   "duration": 4.52,
+   "text": "going to deal with today. This is the"
+  },
+  {
+   "start": 303.08,
+   "duration": 5.04,
+   "text": "raw files. We go in here and there's a"
+  },
+  {
+   "start": 305.52,
+   "duration": 4.44,
+   "text": "bunch of just all of these safe tensor"
+  },
+  {
+   "start": 308.12,
+   "duration": 4.08,
+   "text": "files and stuff like that. We're not"
+  },
+  {
+   "start": 309.96,
+   "duration": 4.28,
+   "text": "going to be touching all that today cuz"
+  },
+  {
+   "start": 312.2,
+   "duration": 5.16,
+   "text": "what people have kindly done and if we"
+  },
+  {
+   "start": 314.24,
+   "duration": 5.04,
+   "text": "search Qwen 3.6 the thing that we're"
+  },
+  {
+   "start": 317.36,
+   "duration": 5.56,
+   "text": "going to want to make sure we include is"
+  },
+  {
+   "start": 319.28,
+   "duration": 3.64,
+   "text": "you'll want to download"
+  },
+  {
+   "start": 322.96,
+   "duration": 4.96,
+   "text": "one of these here. Now a popular one a"
+  },
+  {
+   "start": 325.56,
+   "duration": 5.64,
+   "text": "trusted one is Unsloth they're another"
+  },
+  {
+   "start": 327.92,
+   "duration": 6.76,
+   "text": "AI app and they have"
+  },
+  {
+   "start": 331.2,
+   "duration": 5.84,
+   "text": "built the model as GGUF"
+  },
+  {
+   "start": 334.68,
+   "duration": 4.56,
+   "text": "which is basically a a model just"
+  },
+  {
+   "start": 337.04,
+   "duration": 4.24,
+   "text": "condensed down to a single file that we"
+  },
+  {
+   "start": 339.24,
+   "duration": 4.48,
+   "text": "can then use. And just to break down the"
+  },
+  {
+   "start": 341.28,
+   "duration": 5.4,
+   "text": "actual naming here the the model is"
+  },
+  {
+   "start": 343.72,
+   "duration": 4.44,
+   "text": "obviously Qwen 3.6 it's a 35 billion"
+  },
+  {
+   "start": 346.68,
+   "duration": 4.04,
+   "text": "parameter model and because it's a"
+  },
+  {
+   "start": 348.16,
+   "duration": 4.56,
+   "text": "mixture of expert model it has 3 billion"
+  },
+  {
+   "start": 350.72,
+   "duration": 5.24,
+   "text": "active parameters. We don't have any"
+  },
+  {
+   "start": 352.72,
+   "duration": 7.28,
+   "text": "other model of Qwen 3.6 but if we look"
+  },
+  {
+   "start": 355.96,
+   "duration": 5.8,
+   "text": "at Qwen 3.5 we've got 27 billion model"
+  },
+  {
+   "start": 360.0,
+   "duration": 3.28,
+   "text": "here we've got a 9 billion parameter"
+  },
+  {
+   "start": 361.76,
+   "duration": 2.96,
+   "text": "model here we've got a 27 billion"
+  },
+  {
+   "start": 363.28,
+   "duration": 3.8,
+   "text": "parameter model here. That's kind of how"
+  },
+  {
+   "start": 364.72,
+   "duration": 4.28,
+   "text": "to read these model names. And with that"
+  },
+  {
+   "start": 367.08,
+   "duration": 3.84,
+   "text": "you want to take a look at this section"
+  },
+  {
+   "start": 369.0,
+   "duration": 4.52,
+   "text": "here. Now this will be entirely"
+  },
+  {
+   "start": 370.92,
+   "duration": 4.96,
+   "text": "dependent on how much VRAM that you"
+  },
+  {
+   "start": 373.52,
+   "duration": 4.52,
+   "text": "have. If you've got bucket loads"
+  },
+  {
+   "start": 375.88,
+   "duration": 4.12,
+   "text": "hundreds of gigs of VRAM then you're"
+  },
+  {
+   "start": 378.04,
+   "duration": 4.56,
+   "text": "really looking at the 16-bit which is"
+  },
+  {
+   "start": 380.0,
+   "duration": 4.36,
+   "text": "the unquantized version there's been no"
+  },
+  {
+   "start": 382.6,
+   "duration": 4.28,
+   "text": "sort of compression added to the model"
+  },
+  {
+   "start": 384.36,
+   "duration": 3.52,
+   "text": "it's a full fat version you're probably"
+  },
+  {
+   "start": 386.88,
+   "duration": 2.72,
+   "text": "want to be"
+  },
+  {
+   "start": 387.88,
+   "duration": 5.44,
+   "text": "you're going to be safe to download this"
+  },
+  {
+   "start": 389.6,
+   "duration": 6.44,
+   "text": "one. I have 64 gigabytes of RAM so I'll"
+  },
+  {
+   "start": 393.32,
+   "duration": 4.4,
+   "text": "start to look into all of these versions"
+  },
+  {
+   "start": 396.04,
+   "duration": 4.0,
+   "text": "of the model. These are quantization"
+  },
+  {
+   "start": 397.72,
+   "duration": 4.8,
+   "text": "levels how much they've been compressed"
+  },
+  {
+   "start": 400.04,
+   "duration": 4.64,
+   "text": "in order to an attempt to maintain"
+  },
+  {
+   "start": 402.52,
+   "duration": 4.96,
+   "text": "quality but reduce the size but"
+  },
+  {
+   "start": 404.68,
+   "duration": 5.28,
+   "text": "realistically the more quantized you get"
+  },
+  {
+   "start": 407.48,
+   "duration": 4.04,
+   "text": "the more sacrifice the more detriment to"
+  },
+  {
+   "start": 409.96,
+   "duration": 3.68,
+   "text": "the model is going to take place. So the"
+  },
+  {
+   "start": 411.52,
+   "duration": 4.08,
+   "text": "higher up you can get the better which"
+  },
+  {
+   "start": 413.64,
+   "duration": 4.68,
+   "text": "is why we talk about the more VRAM the"
+  },
+  {
+   "start": 415.6,
+   "duration": 4.76,
+   "text": "better. However, there's another layer"
+  },
+  {
+   "start": 418.32,
+   "duration": 4.48,
+   "text": "that we need to think of which is again"
+  },
+  {
+   "start": 420.36,
+   "duration": 5.16,
+   "text": "that KV storage which is why Turbo Quant"
+  },
+  {
+   "start": 422.8,
+   "duration": 4.92,
+   "text": "comes into so much handy is because it"
+  },
+  {
+   "start": 425.52,
+   "duration": 4.08,
+   "text": "compresses that and reduces that in"
+  },
+  {
+   "start": 427.72,
+   "duration": 4.08,
+   "text": "order to squeeze more out of a model."
+  },
+  {
+   "start": 429.6,
+   "duration": 5.92,
+   "text": "Whereas traditionally you might look to"
+  },
+  {
+   "start": 431.8,
+   "duration": 5.64,
+   "text": "reserve another 15 gig on top of the"
+  },
+  {
+   "start": 435.52,
+   "duration": 4.88,
+   "text": "actual model size that you need in your"
+  },
+  {
+   "start": 437.44,
+   "duration": 5.92,
+   "text": "VRAM to support it we can now think of"
+  },
+  {
+   "start": 440.4,
+   "duration": 6.24,
+   "text": "about adding about 10 gig more. So as an"
+  },
+  {
+   "start": 443.36,
+   "duration": 6.12,
+   "text": "example my 64 gig can can't even run"
+  },
+  {
+   "start": 446.64,
+   "duration": 7.08,
+   "text": "this model however the 8-bit version"
+  },
+  {
+   "start": 449.48,
+   "duration": 7.08,
+   "text": "the 38 gig model plus 10 gig between 48"
+  },
+  {
+   "start": 453.72,
+   "duration": 5.44,
+   "text": "and 50 gig let's say this will fit on my"
+  },
+  {
+   "start": 456.56,
+   "duration": 4.36,
+   "text": "machine with the full context is that"
+  },
+  {
+   "start": 459.16,
+   "duration": 4.04,
+   "text": "context amount that we're dealing with."
+  },
+  {
+   "start": 460.92,
+   "duration": 4.04,
+   "text": "However, again depending how much VRAM"
+  },
+  {
+   "start": 463.2,
+   "duration": 3.88,
+   "text": "you do you might have to go lower and"
+  },
+  {
+   "start": 464.96,
+   "duration": 4.04,
+   "text": "lower and lower which starts to become"
+  },
+  {
+   "start": 467.08,
+   "duration": 4.8,
+   "text": "arguable when you're quantizing it at"
+  },
+  {
+   "start": 469.0,
+   "duration": 4.96,
+   "text": "3-bit 2-bit and 1-bit. So"
+  },
+  {
+   "start": 471.88,
+   "duration": 4.76,
+   "text": "this will be dependent on you however"
+  },
+  {
+   "start": 473.96,
+   "duration": 5.32,
+   "text": "much RAM you've got will determine what"
+  },
+  {
+   "start": 476.64,
+   "duration": 5.48,
+   "text": "quantization level you can go to. Now"
+  },
+  {
+   "start": 479.28,
+   "duration": 5.8,
+   "text": "the excel so we've got quantized eight"
+  },
+  {
+   "start": 482.12,
+   "duration": 5.48,
+   "text": "and K is the way that they've quantized"
+  },
+  {
+   "start": 485.08,
+   "duration": 5.48,
+   "text": "it. You've got some other ones here IQ"
+  },
+  {
+   "start": 487.6,
+   "duration": 4.28,
+   "text": "you've got MXFP4"
+  },
+  {
+   "start": 490.56,
+   "duration": 3.88,
+   "text": "you've got all of these different types"
+  },
+  {
+   "start": 491.88,
+   "duration": 4.12,
+   "text": "of quantization. Honestly I always just"
+  },
+  {
+   "start": 494.44,
+   "duration": 4.92,
+   "text": "look to the K ones. This is the more"
+  },
+  {
+   "start": 496.0,
+   "duration": 5.56,
+   "text": "modern way to quantize a model. And then"
+  },
+  {
+   "start": 499.36,
+   "duration": 6.52,
+   "text": "within that you've got another sort of"
+  },
+  {
+   "start": 501.56,
+   "duration": 6.76,
+   "text": "extra large or medium or small again"
+  },
+  {
+   "start": 505.88,
+   "duration": 4.96,
+   "text": "sort of micro adjustments made to the"
+  },
+  {
+   "start": 508.32,
+   "duration": 4.159,
+   "text": "type of quantization that further brings"
+  },
+  {
+   "start": 510.84,
+   "duration": 4.24,
+   "text": "down the"
+  },
+  {
+   "start": 512.479,
+   "duration": 4.281,
+   "text": "the amount of space it takes up. Long"
+  },
+  {
+   "start": 515.08,
+   "duration": 4.8,
+   "text": "story short you're going to want to go"
+  },
+  {
+   "start": 516.76,
+   "duration": 6.12,
+   "text": "as high bit rate as you possibly can as"
+  },
+  {
+   "start": 519.88,
+   "duration": 5.44,
+   "text": "larger sort of size as you possibly can"
+  },
+  {
+   "start": 522.88,
+   "duration": 5.36,
+   "text": "and basically just looking at the number"
+  },
+  {
+   "start": 525.32,
+   "duration": 4.16,
+   "text": "of gigabytes in relation to your RAM is"
+  },
+  {
+   "start": 528.24,
+   "duration": 3.28,
+   "text": "the thing that you're going to want to"
+  },
+  {
+   "start": 529.48,
+   "duration": 4.28,
+   "text": "care about. So you simply click the"
+  },
+  {
+   "start": 531.52,
+   "duration": 3.64,
+   "text": "version you've you want to download I've"
+  },
+  {
+   "start": 533.76,
+   "duration": 2.64,
+   "text": "already again I've already done that"
+  },
+  {
+   "start": 535.16,
+   "duration": 5.0,
+   "text": "it'll take some time. I've just"
+  },
+  {
+   "start": 536.4,
+   "duration": 5.92,
+   "text": "downloaded 30 gig worth 38 gigs worth of"
+  },
+  {
+   "start": 540.16,
+   "duration": 4.8,
+   "text": "model and it should just download as a"
+  },
+  {
+   "start": 542.32,
+   "duration": 6.16,
+   "text": "single file into your downloads folder."
+  },
+  {
+   "start": 544.96,
+   "duration": 6.16,
+   "text": "Now coming back into our app folder here"
+  },
+  {
+   "start": 548.48,
+   "duration": 4.48,
+   "text": "if we navigate backwards and there"
+  },
+  {
+   "start": 551.12,
+   "duration": 3.52,
+   "text": "should be a little models folder. This"
+  },
+  {
+   "start": 552.96,
+   "duration": 3.68,
+   "text": "model can be stored anywhere but I just"
+  },
+  {
+   "start": 554.64,
+   "duration": 4.36,
+   "text": "find it's a lot easier and a lot simpler"
+  },
+  {
+   "start": 556.64,
+   "duration": 6.28,
+   "text": "just to store it in this area here. I'm"
+  },
+  {
+   "start": 559.0,
+   "duration": 5.92,
+   "text": "going to download my GGUF model Qwen 3.6"
+  },
+  {
+   "start": 562.92,
+   "duration": 5.64,
+   "text": "into that folder there. You can see it's"
+  },
+  {
+   "start": 564.92,
+   "duration": 5.44,
+   "text": "38.45 gig and this is just a nice place"
+  },
+  {
+   "start": 568.56,
+   "duration": 3.04,
+   "text": "for us to work. This is where the fun"
+  },
+  {
+   "start": 570.36,
+   "duration": 4.56,
+   "text": "begins."
+  },
+  {
+   "start": 571.6,
+   "duration": 5.32,
+   "text": "So if we come to this build script here"
+  },
+  {
+   "start": 574.92,
+   "duration": 4.2,
+   "text": "which is"
+  },
+  {
+   "start": 576.92,
+   "duration": 4.0,
+   "text": "let's just run the CLI first this is"
+  },
+  {
+   "start": 579.12,
+   "duration": 3.28,
+   "text": "nice and easy. Now I'm going to go"
+  },
+  {
+   "start": 580.92,
+   "duration": 4.36,
+   "text": "through all of these parameters here"
+  },
+  {
+   "start": 582.4,
+   "duration": 4.84,
+   "text": "with you. If you paste that in this is"
+  },
+  {
+   "start": 585.28,
+   "duration": 5.28,
+   "text": "this is what it takes to run it. Now we"
+  },
+  {
+   "start": 587.24,
+   "duration": 5.68,
+   "text": "are not going to be passing in a query"
+  },
+  {
+   "start": 590.56,
+   "duration": 5.04,
+   "text": "so we can already delete that. We don't"
+  },
+  {
+   "start": 592.92,
+   "duration": 5.36,
+   "text": "need ginger and we don't need N100 being"
+  },
+  {
+   "start": 595.6,
+   "duration": 4.92,
+   "text": "on a Mac. This is how much G G how many"
+  },
+  {
+   "start": 598.28,
+   "duration": 4.16,
+   "text": "GPU cores you're going to designate to"
+  },
+  {
+   "start": 600.52,
+   "duration": 3.396,
+   "text": "the model. We don't really worry about"
+  },
+  {
+   "start": 602.44,
+   "duration": 1.48,
+   "text": "that because we're on a Mac."
+  },
+  {
+   "start": 603.916,
+   "duration": 2.164,
+   "text": ">> [snorts]"
+  },
+  {
+   "start": 603.92,
+   "duration": 4.04,
+   "text": ">> Now, the this is the KV storage that we"
+  },
+  {
+   "start": 606.08,
+   "duration": 3.76,
+   "text": "talk about. Now, Tom has done the"
+  },
+  {
+   "start": 607.96,
+   "duration": 3.76,
+   "text": "research here. I'm not going to claim to"
+  },
+  {
+   "start": 609.84,
+   "duration": 3.88,
+   "text": "be Jesus. Tom should be Jesus, but he's"
+  },
+  {
+   "start": 611.72,
+   "duration": 5.72,
+   "text": "done a lot of testing here into"
+  },
+  {
+   "start": 613.72,
+   "duration": 6.76,
+   "text": "different ways to quantize the model."
+  },
+  {
+   "start": 617.44,
+   "duration": 6.76,
+   "text": "And long story short, the result of that"
+  },
+  {
+   "start": 620.48,
+   "duration": 5.28,
+   "text": "is asymmetric quantization gets the"
+  },
+  {
+   "start": 624.2,
+   "duration": 4.12,
+   "text": "uncompromised"
+  },
+  {
+   "start": 625.76,
+   "duration": 5.04,
+   "text": "performance out of the model whilst"
+  },
+  {
+   "start": 628.32,
+   "duration": 5.04,
+   "text": "leveraging Turbo Quant. Symmetrical"
+  },
+  {
+   "start": 630.8,
+   "duration": 5.04,
+   "text": "Turbo Quant, you would sacrifice the the"
+  },
+  {
+   "start": 633.36,
+   "duration": 4.92,
+   "text": "model performance, which is interesting."
+  },
+  {
+   "start": 635.84,
+   "duration": 5.0,
+   "text": "So, coming [snorts] back into here, the"
+  },
+  {
+   "start": 638.28,
+   "duration": 6.48,
+   "text": "V storage he recommends leaving it as"
+  },
+  {
+   "start": 640.84,
+   "duration": 6.52,
+   "text": "Turbo 3, but the K storage actually"
+  },
+  {
+   "start": 644.76,
+   "duration": 6.36,
+   "text": "quantizing it asymmetrically. So,"
+  },
+  {
+   "start": 647.36,
+   "duration": 6.44,
+   "text": "quantizing it at 8-bit here or and Turbo"
+  },
+  {
+   "start": 651.12,
+   "duration": 5.72,
+   "text": "3 or Turbo 4 with the V storage. Now,"
+  },
+  {
+   "start": 653.8,
+   "duration": 5.72,
+   "text": "this is the default. So, long we can"
+  },
+  {
+   "start": 656.84,
+   "duration": 5.24,
+   "text": "just delete that there and we can be"
+  },
+  {
+   "start": 659.52,
+   "duration": 4.28,
+   "text": "quite happy with that. Now,"
+  },
+  {
+   "start": 662.08,
+   "duration": 4.72,
+   "text": "this allows us to break onto a new line,"
+  },
+  {
+   "start": 663.8,
+   "duration": 5.24,
+   "text": "so don't worry about that. We want FA on"
+  },
+  {
+   "start": 666.8,
+   "duration": 5.0,
+   "text": "and we are going to want to actually"
+  },
+  {
+   "start": 669.04,
+   "duration": 6.36,
+   "text": "delete this one here and we're left with"
+  },
+  {
+   "start": 671.8,
+   "duration": 5.08,
+   "text": "basically that. Now, C is going to be"
+  },
+  {
+   "start": 675.4,
+   "duration": 4.32,
+   "text": "very important. This is the amount of"
+  },
+  {
+   "start": 676.88,
+   "duration": 4.72,
+   "text": "context you're allowing the model to"
+  },
+  {
+   "start": 679.72,
+   "duration": 3.52,
+   "text": "have. Now, if you're running into"
+  },
+  {
+   "start": 681.6,
+   "duration": 3.92,
+   "text": "issues, you might need to reduce the"
+  },
+  {
+   "start": 683.24,
+   "duration": 4.0,
+   "text": "context. So, you might be able to Again,"
+  },
+  {
+   "start": 685.52,
+   "duration": 3.64,
+   "text": "fit the model on your on your hard"
+  },
+  {
+   "start": 687.24,
+   "duration": 3.96,
+   "text": "drive, but can you fit the full context"
+  },
+  {
+   "start": 689.16,
+   "duration": 4.4,
+   "text": "amount? You might be able to squeeze a"
+  },
+  {
+   "start": 691.2,
+   "duration": 5.44,
+   "text": "little bit more juice by Let's say, for"
+  },
+  {
+   "start": 693.56,
+   "duration": 4.84,
+   "text": "example, you've got 40 gig of RAM here."
+  },
+  {
+   "start": 696.64,
+   "duration": 3.96,
+   "text": "Um you might be able to download this"
+  },
+  {
+   "start": 698.4,
+   "duration": 4.24,
+   "text": "level, but reduce the context so much"
+  },
+  {
+   "start": 700.6,
+   "duration": 3.72,
+   "text": "that only takes a couple of gig of"
+  },
+  {
+   "start": 702.64,
+   "duration": 3.88,
+   "text": "space. So, you're you're managing your"
+  },
+  {
+   "start": 704.32,
+   "duration": 6.519,
+   "text": "context like that. I'm fortunate enough"
+  },
+  {
+   "start": 706.52,
+   "duration": 9.0,
+   "text": "to have 64 GB of RAM on this M1 Max. So,"
+  },
+  {
+   "start": 710.839,
+   "duration": 7.961,
+   "text": "what I recommend doing, if we go to"
+  },
+  {
+   "start": 715.52,
+   "duration": 5.76,
+   "text": "Quen 3.6 here, is finding out the"
+  },
+  {
+   "start": 718.8,
+   "duration": 4.6,
+   "text": "context size of the window of the of the"
+  },
+  {
+   "start": 721.28,
+   "duration": 4.559,
+   "text": "model. So, if I just search context"
+  },
+  {
+   "start": 723.4,
+   "duration": 2.439,
+   "text": "here,"
+  },
+  {
+   "start": 726.0,
+   "duration": 4.32,
+   "text": "the context length here is 262,144."
+  },
+  {
+   "start": 730.44,
+   "duration": 3.88,
+   "text": "Can extend up to a million tokens. We're"
+  },
+  {
+   "start": 732.88,
+   "duration": 3.84,
+   "text": "not going to push that. I'm going to"
+  },
+  {
+   "start": 734.32,
+   "duration": 5.72,
+   "text": "copy that number there and actually give"
+  },
+  {
+   "start": 736.72,
+   "duration": 5.64,
+   "text": "myself the maximum number of context"
+  },
+  {
+   "start": 740.04,
+   "duration": 4.36,
+   "text": "size. And honestly,"
+  },
+  {
+   "start": 742.36,
+   "duration": 4.08,
+   "text": "having done this quite a few times now,"
+  },
+  {
+   "start": 744.4,
+   "duration": 3.68,
+   "text": "it's always a balancing act depending on"
+  },
+  {
+   "start": 746.44,
+   "duration": 3.48,
+   "text": "what you're doing, how much context you"
+  },
+  {
+   "start": 748.08,
+   "duration": 3.8,
+   "text": "want to give it. Obviously, simple chat"
+  },
+  {
+   "start": 749.92,
+   "duration": 4.0,
+   "text": "applications don't need a lot of"
+  },
+  {
+   "start": 751.88,
+   "duration": 5.0,
+   "text": "context. However, if you're doing code,"
+  },
+  {
+   "start": 753.92,
+   "duration": 5.6,
+   "text": "if you're doing like multi-step"
+  },
+  {
+   "start": 756.88,
+   "duration": 4.44,
+   "text": "like file reading and things like that,"
+  },
+  {
+   "start": 759.52,
+   "duration": 3.2,
+   "text": "the more context you can get, the"
+  },
+  {
+   "start": 761.32,
+   "duration": 3.16,
+   "text": "better."
+  },
+  {
+   "start": 762.72,
+   "duration": 3.52,
+   "text": "Now, finally, we're just going to pass"
+  },
+  {
+   "start": 764.48,
+   "duration": 3.64,
+   "text": "in the actual model. Now, we're already"
+  },
+  {
+   "start": 766.24,
+   "duration": 6.36,
+   "text": "navigating to the models folder, which"
+  },
+  {
+   "start": 768.12,
+   "duration": 6.8,
+   "text": "we moved our model file in. So, if I go"
+  },
+  {
+   "start": 772.6,
+   "duration": 5.28,
+   "text": "here, I literally just copy the name of"
+  },
+  {
+   "start": 774.92,
+   "duration": 5.16,
+   "text": "the file, paste that in instead of that,"
+  },
+  {
+   "start": 777.88,
+   "duration": 3.88,
+   "text": "and it's going to turn blue there. Now,"
+  },
+  {
+   "start": 780.08,
+   "duration": 4.16,
+   "text": "hit enter. This is going to actually"
+  },
+  {
+   "start": 781.76,
+   "duration": 5.84,
+   "text": "enable us to run this model. Maybe I can"
+  },
+  {
+   "start": 784.24,
+   "duration": 6.76,
+   "text": "bring in my GPU history here"
+  },
+  {
+   "start": 787.6,
+   "duration": 5.52,
+   "text": "and even my activity monitor."
+  },
+  {
+   "start": 791.0,
+   "duration": 5.24,
+   "text": "You can already see that our RAM has"
+  },
+  {
+   "start": 793.12,
+   "duration": 4.48,
+   "text": "just been filled up totally with our"
+  },
+  {
+   "start": 796.24,
+   "duration": 2.8,
+   "text": "model."
+  },
+  {
+   "start": 797.6,
+   "duration": 3.08,
+   "text": "Uh"
+  },
+  {
+   "start": 799.04,
+   "duration": 5.52,
+   "text": "All right."
+  },
+  {
+   "start": 800.68,
+   "duration": 5.84,
+   "text": "And now I'm using Quen 3.6 35 billion"
+  },
+  {
+   "start": 804.56,
+   "duration": 3.76,
+   "text": "parameters model."
+  },
+  {
+   "start": 806.52,
+   "duration": 4.68,
+   "text": "It's not the fastest and this is what we"
+  },
+  {
+   "start": 808.32,
+   "duration": 5.88,
+   "text": "need to come to expect of local models,"
+  },
+  {
+   "start": 811.2,
+   "duration": 4.52,
+   "text": "but at a modest 53 tokens per second,"
+  },
+  {
+   "start": 814.2,
+   "duration": 4.04,
+   "text": "it's not so bad."
+  },
+  {
+   "start": 815.72,
+   "duration": 3.96,
+   "text": "And if you're happy using llama.cpp in"
+  },
+  {
+   "start": 818.24,
+   "duration": 3.8,
+   "text": "this way and using the model in this"
+  },
+  {
+   "start": 819.68,
+   "duration": 4.36,
+   "text": "way, more power to you, you're done. But"
+  },
+  {
+   "start": 822.04,
+   "duration": 3.28,
+   "text": "if you want to use another application,"
+  },
+  {
+   "start": 824.04,
+   "duration": 3.64,
+   "text": "you want to bring it into another app,"
+  },
+  {
+   "start": 825.32,
+   "duration": 4.28,
+   "text": "you want to build your own app or"
+  },
+  {
+   "start": 827.68,
+   "duration": 3.76,
+   "text": "something like that, what we really want"
+  },
+  {
+   "start": 829.6,
+   "duration": 4.2,
+   "text": "to do, if we cancel that and press up,"
+  },
+  {
+   "start": 831.44,
+   "duration": 6.36,
+   "text": "which will go to the previous"
+  },
+  {
+   "start": 833.8,
+   "duration": 6.8,
+   "text": "command that we ran, if we change CLI to"
+  },
+  {
+   "start": 837.8,
+   "duration": 4.48,
+   "text": "server, which if you remember correctly"
+  },
+  {
+   "start": 840.6,
+   "duration": 5.04,
+   "text": "inside of"
+  },
+  {
+   "start": 842.28,
+   "duration": 7.0,
+   "text": "build bin, I said we'd be interested in"
+  },
+  {
+   "start": 845.64,
+   "duration": 4.72,
+   "text": "the llama server or llama CLI, wherever"
+  },
+  {
+   "start": 849.28,
+   "duration": 3.28,
+   "text": "it is."
+  },
+  {
+   "start": 850.36,
+   "duration": 4.2,
+   "text": "We're actually going to use the server"
+  },
+  {
+   "start": 852.56,
+   "duration": 3.279,
+   "text": "application, let's call it. So, if we"
+  },
+  {
+   "start": 854.56,
+   "duration": 3.44,
+   "text": "hit that there, it's going to do"
+  },
+  {
+   "start": 855.839,
+   "duration": 5.401,
+   "text": "everything it needs to do to enable us"
+  },
+  {
+   "start": 858.0,
+   "duration": 5.52,
+   "text": "to serve this model across our local"
+  },
+  {
+   "start": 861.24,
+   "duration": 4.36,
+   "text": "machine or across the network, if we"
+  },
+  {
+   "start": 863.52,
+   "duration": 3.52,
+   "text": "choose to. So, we're waiting for this."
+  },
+  {
+   "start": 865.6,
+   "duration": 4.239,
+   "text": "Main server is listening on"
+  },
+  {
+   "start": 867.04,
+   "duration": 4.72,
+   "text": "127.0.0.1:8080."
+  },
+  {
+   "start": 869.839,
+   "duration": 4.881,
+   "text": "If I click that, open it up in my"
+  },
+  {
+   "start": 871.76,
+   "duration": 5.72,
+   "text": "browser, and we have a simple user"
+  },
+  {
+   "start": 874.72,
+   "duration": 3.76,
+   "text": "interface running the Quen 3.6 model"
+  },
+  {
+   "start": 877.48,
+   "duration": 2.52,
+   "text": "here."
+  },
+  {
+   "start": 878.48,
+   "duration": 2.96,
+   "text": "And you can chat with it and do all the"
+  },
+  {
+   "start": 880.0,
+   "duration": 4.44,
+   "text": "rest of it, but we're really not that"
+  },
+  {
+   "start": 881.44,
+   "duration": 4.76,
+   "text": "interested in using a UI for our use"
+  },
+  {
+   "start": 884.44,
+   "duration": 4.36,
+   "text": "case. What I'm going to do now is"
+  },
+  {
+   "start": 886.2,
+   "duration": 5.72,
+   "text": "actually bring it into VS Code to enable"
+  },
+  {
+   "start": 888.8,
+   "duration": 5.0,
+   "text": "us to run this on across codebases and"
+  },
+  {
+   "start": 891.92,
+   "duration": 4.56,
+   "text": "actually code with it."
+  },
+  {
+   "start": 893.8,
+   "duration": 5.68,
+   "text": "So, if you download VS Code, it's"
+  },
+  {
+   "start": 896.48,
+   "duration": 5.04,
+   "text": "completely free, and what I recommend is"
+  },
+  {
+   "start": 899.48,
+   "duration": 4.24,
+   "text": "downloading the Kilo Code extension,"
+  },
+  {
+   "start": 901.52,
+   "duration": 3.559,
+   "text": "which again is completely free. They are"
+  },
+  {
+   "start": 903.72,
+   "duration": 3.359,
+   "text": "a silver sponsor of the channel, but"
+  },
+  {
+   "start": 905.079,
+   "duration": 3.241,
+   "text": "they are not sponsoring this episode"
+  },
+  {
+   "start": 907.079,
+   "duration": 4.401,
+   "text": "whatsoever."
+  },
+  {
+   "start": 908.32,
+   "duration": 4.96,
+   "text": "Um we If you go into your settings here"
+  },
+  {
+   "start": 911.48,
+   "duration": 4.359,
+   "text": "and providers,"
+  },
+  {
+   "start": 913.28,
+   "duration": 5.559,
+   "text": "this is what the different providers"
+  },
+  {
+   "start": 915.839,
+   "duration": 5.801,
+   "text": "that provide AI. And we're going to want"
+  },
+  {
+   "start": 918.839,
+   "duration": 5.041,
+   "text": "to add our own custom provider. Now, we"
+  },
+  {
+   "start": 921.64,
+   "duration": 4.0,
+   "text": "can put llama.cpp,"
+  },
+  {
+   "start": 923.88,
+   "duration": 3.52,
+   "text": "really anything you want, and then a"
+  },
+  {
+   "start": 925.64,
+   "duration": 4.4,
+   "text": "human-readable"
+  },
+  {
+   "start": 927.4,
+   "duration": 5.12,
+   "text": "version of that is in the display name."
+  },
+  {
+   "start": 930.04,
+   "duration": 5.32,
+   "text": "If we paste in our URL here, which is"
+  },
+  {
+   "start": 932.52,
+   "duration": 5.28,
+   "text": "127.0.0.1:8080,"
+  },
+  {
+   "start": 935.36,
+   "duration": 3.84,
+   "text": "the thing that you saw in the terminal"
+  },
+  {
+   "start": 937.8,
+   "duration": 3.039,
+   "text": "here,"
+  },
+  {
+   "start": 939.2,
+   "duration": 3.879,
+   "text": "/v1,"
+  },
+  {
+   "start": 940.839,
+   "duration": 4.761,
+   "text": "this is automatically going to pick up"
+  },
+  {
+   "start": 943.079,
+   "duration": 4.561,
+   "text": "the fact that we're running llama.cpp"
+  },
+  {
+   "start": 945.6,
+   "duration": 3.76,
+   "text": "and it's found the model that we've"
+  },
+  {
+   "start": 947.64,
+   "duration": 3.52,
+   "text": "already got loaded. So, we're going to"
+  },
+  {
+   "start": 949.36,
+   "duration": 5.44,
+   "text": "add that there"
+  },
+  {
+   "start": 951.16,
+   "duration": 5.64,
+   "text": "and submit that. And now, when we click"
+  },
+  {
+   "start": 954.8,
+   "duration": 5.08,
+   "text": "on the model selector down here, you've"
+  },
+  {
+   "start": 956.8,
+   "duration": 7.08,
+   "text": "got all the models under llama.cpp, we"
+  },
+  {
+   "start": 959.88,
+   "duration": 7.64,
+   "text": "have Quen 3.6 35 billion. And I'm just"
+  },
+  {
+   "start": 963.88,
+   "duration": 5.68,
+   "text": "going to say, \"What does this codebase"
+  },
+  {
+   "start": 967.52,
+   "duration": 4.439,
+   "text": "do?\""
+  },
+  {
+   "start": 969.56,
+   "duration": 4.48,
+   "text": "If we flip back into the terminal here,"
+  },
+  {
+   "start": 971.959,
+   "duration": 4.281,
+   "text": "you'll see this progress build up. Now,"
+  },
+  {
+   "start": 974.04,
+   "duration": 4.2,
+   "text": "this is the prefill. This is it loading"
+  },
+  {
+   "start": 976.24,
+   "duration": 4.08,
+   "text": "up and getting ready to answer our"
+  },
+  {
+   "start": 978.24,
+   "duration": 4.719,
+   "text": "question. Now, I have an old machine."
+  },
+  {
+   "start": 980.32,
+   "duration": 5.16,
+   "text": "This is an M1 Max. This is where the"
+  },
+  {
+   "start": 982.959,
+   "duration": 5.801,
+   "text": "actual performance of your chip comes"
+  },
+  {
+   "start": 985.48,
+   "duration": 5.04,
+   "text": "into play over the actual VRAM size."
+  },
+  {
+   "start": 988.76,
+   "duration": 3.56,
+   "text": "This is an old chip. It's going to take"
+  },
+  {
+   "start": 990.52,
+   "duration": 3.559,
+   "text": "a long time to do this. We're already at"
+  },
+  {
+   "start": 992.32,
+   "duration": 3.36,
+   "text": "0.27"
+  },
+  {
+   "start": 994.079,
+   "duration": 3.961,
+   "text": "and this might seem fast in the"
+  },
+  {
+   "start": 995.68,
+   "duration": 5.24,
+   "text": "beginning, but we'll start to see the"
+  },
+  {
+   "start": 998.04,
+   "duration": 6.56,
+   "text": "GPU start ramping up. We'll start to see"
+  },
+  {
+   "start": 1000.92,
+   "duration": 6.24,
+   "text": "the RAM just the memory pressure and the"
+  },
+  {
+   "start": 1004.6,
+   "duration": 4.2,
+   "text": "memory use ramp up a little bit there."
+  },
+  {
+   "start": 1007.16,
+   "duration": 4.12,
+   "text": "And this will go round and round and"
+  },
+  {
+   "start": 1008.8,
+   "duration": 6.2,
+   "text": "round and eventually, we will get a"
+  },
+  {
+   "start": 1011.28,
+   "duration": 5.72,
+   "text": "response inside of Kilo Code. You with a"
+  },
+  {
+   "start": 1015.0,
+   "duration": 4.0,
+   "text": "newer machine, a newer chip, this will"
+  },
+  {
+   "start": 1017.0,
+   "duration": 3.36,
+   "text": "be a lot faster for you, but for me,"
+  },
+  {
+   "start": 1019.0,
+   "duration": 3.24,
+   "text": "this takes a while. So, we're not going"
+  },
+  {
+   "start": 1020.36,
+   "duration": 3.32,
+   "text": "to sit around and do it here, but you"
+  },
+  {
+   "start": 1022.24,
+   "duration": 3.959,
+   "text": "can pat yourself on the back and know"
+  },
+  {
+   "start": 1023.68,
+   "duration": 5.519,
+   "text": "that you've got a local LLM running"
+  },
+  {
+   "start": 1026.199,
+   "duration": 4.961,
+   "text": "inside of Kilo Code ready to start"
+  },
+  {
+   "start": 1029.199,
+   "duration": 3.721,
+   "text": "coding completely free and completely"
+  },
+  {
+   "start": 1031.16,
+   "duration": 4.24,
+   "text": "privately. You will see I've done videos"
+  },
+  {
+   "start": 1032.92,
+   "duration": 4.84,
+   "text": "on the M5 MacBook Pro and the MacBook"
+  },
+  {
+   "start": 1035.4,
+   "duration": 3.679,
+   "text": "Air, so go check those out as well and"
+  },
+  {
+   "start": 1037.76,
+   "duration": 3.76,
+   "text": "you'll start to see the performance on"
+  },
+  {
+   "start": 1039.079,
+   "duration": 3.88,
+   "text": "some of the newer chips, but honestly, I"
+  },
+  {
+   "start": 1041.52,
+   "duration": 3.679,
+   "text": "showed you on here just cuz it's a bit"
+  },
+  {
+   "start": 1042.959,
+   "duration": 4.321,
+   "text": "easier to set up. Now, here in Open"
+  },
+  {
+   "start": 1045.199,
+   "duration": 4.48,
+   "text": "Claw, it's a similar deal. Now, I"
+  },
+  {
+   "start": 1047.28,
+   "duration": 3.96,
+   "text": "wouldn't go and run any auto"
+  },
+  {
+   "start": 1049.679,
+   "duration": 4.0,
+   "text": "configurators or anything like that. I"
+  },
+  {
+   "start": 1051.24,
+   "duration": 5.36,
+   "text": "would literally just go into config and"
+  },
+  {
+   "start": 1053.679,
+   "duration": 4.721,
+   "text": "open the raw config. And [snorts]"
+  },
+  {
+   "start": 1056.6,
+   "duration": 4.84,
+   "text": "looking here,"
+  },
+  {
+   "start": 1058.4,
+   "duration": 5.76,
+   "text": "you're concerned with models, providers,"
+  },
+  {
+   "start": 1061.44,
+   "duration": 4.2,
+   "text": "and you can see I've got LM Studio here."
+  },
+  {
+   "start": 1064.16,
+   "duration": 4.6,
+   "text": "I've got Ollama, I've got MiniMax"
+  },
+  {
+   "start": 1065.64,
+   "duration": 4.52,
+   "text": "Portal, and I've also got llama.cpp"
+  },
+  {
+   "start": 1068.76,
+   "duration": 3.2,
+   "text": "added. This can be anything you want."
+  },
+  {
+   "start": 1070.16,
+   "duration": 3.64,
+   "text": "It's just a human It's just a readable"
+  },
+  {
+   "start": 1071.96,
+   "duration": 3.84,
+   "text": "name just to name the set of"
+  },
+  {
+   "start": 1073.8,
+   "duration": 4.76,
+   "text": "configurations here."
+  },
+  {
+   "start": 1075.8,
+   "duration": 6.72,
+   "text": "And just copy these. So, you've got the"
+  },
+  {
+   "start": 1078.56,
+   "duration": 6.72,
+   "text": "base URL is the exactly the same one as"
+  },
+  {
+   "start": 1082.52,
+   "duration": 5.48,
+   "text": "we put into Kilo Code with the the V1"
+  },
+  {
+   "start": 1085.28,
+   "duration": 4.48,
+   "text": "there. API key can be anything that you"
+  },
+  {
+   "start": 1088.0,
+   "duration": 4.88,
+   "text": "want. It doesn't actually need to be"
+  },
+  {
+   "start": 1089.76,
+   "duration": 5.24,
+   "text": "there. API needs to be OpenAI responses"
+  },
+  {
+   "start": 1092.88,
+   "duration": 4.72,
+   "text": "because that's the the format that"
+  },
+  {
+   "start": 1095.0,
+   "duration": 6.08,
+   "text": "llama.cpp expects. And then you're going"
+  },
+  {
+   "start": 1097.6,
+   "duration": 6.12,
+   "text": "to want to add the these model format."
+  },
+  {
+   "start": 1101.08,
+   "duration": 4.08,
+   "text": "Now, if you copy and paste this,"
+  },
+  {
+   "start": 1103.72,
+   "duration": 4.8,
+   "text": "couple of things you want to"
+  },
+  {
+   "start": 1105.16,
+   "duration": 8.519,
+   "text": "uh know is the ID. And the way we get an"
+  },
+  {
+   "start": 1108.52,
+   "duration": 8.84,
+   "text": "ID is if I just curl request HTTP colon"
+  },
+  {
+   "start": 1113.679,
+   "duration": 3.681,
+   "text": "um 127.0.0.1:8080,"
+  },
+  {
+   "start": 1118.64,
+   "duration": 4.0,
+   "text": "we can actually just hit"
+  },
+  {
+   "start": 1120.4,
+   "duration": 4.4,
+   "text": "models. And this will be the models that"
+  },
+  {
+   "start": 1122.64,
+   "duration": 4.0,
+   "text": "we have. It's a little bit hard to see,"
+  },
+  {
+   "start": 1124.8,
+   "duration": 4.119,
+   "text": "but if you look carefully, there's an ID"
+  },
+  {
+   "start": 1126.64,
+   "duration": 3.8,
+   "text": "here. You can have multiple"
+  },
+  {
+   "start": 1128.919,
+   "duration": 3.681,
+   "text": "here depending on if you just want to"
+  },
+  {
+   "start": 1130.44,
+   "duration": 4.4,
+   "text": "save that information. Uh so, you want"
+  },
+  {
+   "start": 1132.6,
+   "duration": 4.16,
+   "text": "to put the ID in here and then name it a"
+  },
+  {
+   "start": 1134.84,
+   "duration": 3.88,
+   "text": "human-readable name. And then the next"
+  },
+  {
+   "start": 1136.76,
+   "duration": 3.68,
+   "text": "bit will be unique to the model itself."
+  },
+  {
+   "start": 1138.72,
+   "duration": 3.48,
+   "text": "And you'll remember the context size cuz"
+  },
+  {
+   "start": 1140.44,
+   "duration": 3.6,
+   "text": "we actually passed it in here. So, if"
+  },
+  {
+   "start": 1142.2,
+   "duration": 3.08,
+   "text": "you just select that and copy it in. And"
+  },
+  {
+   "start": 1144.04,
+   "duration": 2.92,
+   "text": "those are the only values you're going"
+  },
+  {
+   "start": 1145.28,
+   "duration": 2.879,
+   "text": "to want to touch. And with that, you can"
+  },
+  {
+   "start": 1146.96,
+   "duration": 3.32,
+   "text": "save"
+  },
+  {
+   "start": 1148.159,
+   "duration": 3.841,
+   "text": "that file,"
+  },
+  {
+   "start": 1150.28,
+   "duration": 3.639,
+   "text": "go into Open Claw and literally just"
+  },
+  {
+   "start": 1152.0,
+   "duration": 3.64,
+   "text": "refresh."
+  },
+  {
+   "start": 1153.919,
+   "duration": 4.041,
+   "text": "And when you go into your chat, you"
+  },
+  {
+   "start": 1155.64,
+   "duration": 3.96,
+   "text": "should see down the bottom of this list"
+  },
+  {
+   "start": 1157.96,
+   "duration": 3.8,
+   "text": "here,"
+  },
+  {
+   "start": 1159.6,
+   "duration": 3.68,
+   "text": "your model. On top of that, if we scroll"
+  },
+  {
+   "start": 1161.76,
+   "duration": 4.72,
+   "text": "down here,"
+  },
+  {
+   "start": 1163.28,
+   "duration": 5.48,
+   "text": "if we go to agents default model"
+  },
+  {
+   "start": 1166.48,
+   "duration": 4.199,
+   "text": "primary, this is where you're going to"
+  },
+  {
+   "start": 1168.76,
+   "duration": 3.96,
+   "text": "want to set up the whether you want it"
+  },
+  {
+   "start": 1170.679,
+   "duration": 4.281,
+   "text": "to be your primary model or you want it"
+  },
+  {
+   "start": 1172.72,
+   "duration": 3.88,
+   "text": "to be a fallback. And you basically just"
+  },
+  {
+   "start": 1174.96,
+   "duration": 4.6,
+   "text": "copy the provider name, which which we"
+  },
+  {
+   "start": 1176.6,
+   "duration": 5.76,
+   "text": "named C llama.cpp, and then you're going"
+  },
+  {
+   "start": 1179.56,
+   "duration": 5.8,
+   "text": "to want to copy the ID"
+  },
+  {
+   "start": 1182.36,
+   "duration": 4.799,
+   "text": "and put that in after a slash."
+  },
+  {
+   "start": 1185.36,
+   "duration": 3.64,
+   "text": "Now, this means every time you start up"
+  },
+  {
+   "start": 1187.159,
+   "duration": 4.241,
+   "text": "a new chat, start to feel the machine"
+  },
+  {
+   "start": 1189.0,
+   "duration": 4.28,
+   "text": "get chuggy."
+  },
+  {
+   "start": 1191.4,
+   "duration": 4.2,
+   "text": "19%"
+  },
+  {
+   "start": 1193.28,
+   "duration": 4.68,
+   "text": "29%. Now, generally, you're going to"
+  },
+  {
+   "start": 1195.6,
+   "duration": 4.24,
+   "text": "want not a lot of stuff running on your"
+  },
+  {
+   "start": 1197.96,
+   "duration": 4.56,
+   "text": "laptop during this time cuz everything"
+  },
+  {
+   "start": 1199.84,
+   "duration": 4.16,
+   "text": "you use will take up VRAM, will take up"
+  },
+  {
+   "start": 1202.52,
+   "duration": 5.04,
+   "text": "because it's unified, it's going to take"
+  },
+  {
+   "start": 1204.0,
+   "duration": 4.92,
+   "text": "up the RAM as well. So, I tend to think"
+  },
+  {
+   "start": 1207.56,
+   "duration": 4.44,
+   "text": "that"
+  },
+  {
+   "start": 1208.92,
+   "duration": 5.48,
+   "text": "having a separate computer, whether it's"
+  },
+  {
+   "start": 1212.0,
+   "duration": 4.2,
+   "text": "a Mac mini, for Open Claw, we start to"
+  },
+  {
+   "start": 1214.4,
+   "duration": 3.6,
+   "text": "get a little bit more justifiable to get"
+  },
+  {
+   "start": 1216.2,
+   "duration": 3.96,
+   "text": "a separate Mac mini. So, I just have it"
+  },
+  {
+   "start": 1218.0,
+   "duration": 4.32,
+   "text": "running on a separate computer just in"
+  },
+  {
+   "start": 1220.16,
+   "duration": 5.64,
+   "text": "the back there. And for coding, I really"
+  },
+  {
+   "start": 1222.32,
+   "duration": 5.64,
+   "text": "want to set up a remote a local server"
+  },
+  {
+   "start": 1225.8,
+   "duration": 2.88,
+   "text": "so that I can do I can"
+  },
+  {
+   "start": 1227.96,
+   "duration": 2.44,
+   "text": "um"
+  },
+  {
+   "start": 1228.68,
+   "duration": 3.28,
+   "text": "that I can connect to and actually code"
+  },
+  {
+   "start": 1230.4,
+   "duration": 3.32,
+   "text": "on my main machine, but the processing"
+  },
+  {
+   "start": 1231.96,
+   "duration": 3.2,
+   "text": "is happening on a different computer."
+  },
+  {
+   "start": 1233.72,
+   "duration": 2.72,
+   "text": "Let us know if you want that video, but"
+  },
+  {
+   "start": 1235.16,
+   "duration": 3.56,
+   "text": "in the meantime, this is how to get it"
+  },
+  {
+   "start": 1236.44,
+   "duration": 4.6,
+   "text": "all set up on your main machine."
+  },
+  {
+   "start": 1238.72,
+   "duration": 3.84,
+   "text": "And there we go. There is uh"
+  },
+  {
+   "start": 1241.04,
+   "duration": 3.32,
+   "text": "I just came online. I'm your AI"
+  },
+  {
+   "start": 1242.56,
+   "duration": 3.72,
+   "text": "assistant. We're good to go with Open"
+  },
+  {
+   "start": 1244.36,
+   "duration": 4.36,
+   "text": "Claw. So, there you go. I hope you"
+  },
+  {
+   "start": 1246.28,
+   "duration": 4.72,
+   "text": "enjoyed that getting local AI set up on"
+  },
+  {
+   "start": 1248.72,
+   "duration": 4.12,
+   "text": "your machine. I've had zero problems"
+  },
+  {
+   "start": 1251.0,
+   "duration": 4.28,
+   "text": "with Open Claw. I've had zero problems"
+  },
+  {
+   "start": 1252.84,
+   "duration": 4.64,
+   "text": "with Kobold Claw running local models"
+  },
+  {
+   "start": 1255.28,
+   "duration": 3.96,
+   "text": "using this method. And on top of that,"
+  },
+  {
+   "start": 1257.48,
+   "duration": 3.4,
+   "text": "using some cutting-edge technology like"
+  },
+  {
+   "start": 1259.24,
+   "duration": 3.56,
+   "text": "Turbo Quant. Let me know what you're"
+  },
+  {
+   "start": 1260.88,
+   "duration": 4.72,
+   "text": "using your local LLMs for, and I'll see"
+  },
+  {
+   "start": 1262.8,
+   "duration": 2.8,
+   "text": "you in the next one."
+  }
+ ]
+}

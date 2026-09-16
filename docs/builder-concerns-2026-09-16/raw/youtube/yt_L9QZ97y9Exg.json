@@ -1,0 +1,1591 @@
+{
+ "video_id": "L9QZ97y9Exg",
+ "url": "https://www.youtube.com/watch?v=L9QZ97y9Exg",
+ "segments": [
+  {
+   "start": 0.16,
+   "duration": 3.6,
+   "text": "You're probably familiar with Olama,"
+  },
+  {
+   "start": 2.159,
+   "duration": 3.441,
+   "text": "right? This is what it looks like. You"
+  },
+  {
+   "start": 3.76,
+   "duration": 3.999,
+   "text": "can launch it. You can talk to it. Never"
+  },
+  {
+   "start": 5.6,
+   "duration": 3.6,
+   "text": "mind that we're using Quen 34B. That's"
+  },
+  {
+   "start": 7.759,
+   "duration": 2.8,
+   "text": "just standardized thing that I'm [music]"
+  },
+  {
+   "start": 9.2,
+   "duration": 3.2,
+   "text": "doing. And the prompt doesn't matter"
+  },
+  {
+   "start": 10.559,
+   "duration": 4.481,
+   "text": "what it is. 100 tokens per second is"
+  },
+  {
+   "start": 12.4,
+   "duration": 4.639,
+   "text": "what Olama gives us. Lama runs on Llama"
+  },
+  {
+   "start": 15.04,
+   "duration": 4.399,
+   "text": "CPP. It has a little bit of overhead,"
+  },
+  {
+   "start": 17.039,
+   "duration": 4.32,
+   "text": "but you can also run Llama CPP directly"
+  },
+  {
+   "start": 19.439,
+   "duration": 2.961,
+   "text": "and query it remotely, which is what"
+  },
+  {
+   "start": 21.359,
+   "duration": 2.08,
+   "text": "software developers are going to be"
+  },
+  {
+   "start": 22.4,
+   "duration": 2.48,
+   "text": "interested in if they're going to be"
+  },
+  {
+   "start": 23.439,
+   "duration": 4.0,
+   "text": "using it as a code assistant, for"
+  },
+  {
+   "start": 24.88,
+   "duration": 3.68,
+   "text": "example, or with agents. Hold on a"
+  },
+  {
+   "start": 27.439,
+   "duration": 2.561,
+   "text": "minute. And that's going to be key here"
+  },
+  {
+   "start": 28.56,
+   "duration": 2.959,
+   "text": "in a moment. I'm going to start up Llama"
+  },
+  {
+   "start": 30.0,
+   "duration": 3.44,
+   "text": "Server pointing to the same model by the"
+  },
+  {
+   "start": 31.519,
+   "duration": 4.001,
+   "text": "way. And Llama Server has this nice user"
+  },
+  {
+   "start": 33.44,
+   "duration": 4.56,
+   "text": "interface that we can also say hello to."
+  },
+  {
+   "start": 35.52,
+   "duration": 4.32,
+   "text": "And this one gives us tokens per second."
+  },
+  {
+   "start": 38.0,
+   "duration": 4.16,
+   "text": "124. So a little bit better. So that's"
+  },
+  {
+   "start": 39.84,
+   "duration": 4.08,
+   "text": "chat. We're chatting with one model, one"
+  },
+  {
+   "start": 42.16,
+   "duration": 3.04,
+   "text": "request at a time. And it's not even how"
+  },
+  {
+   "start": 43.92,
+   "duration": 2.88,
+   "text": "code assistants [music] work because"
+  },
+  {
+   "start": 45.2,
+   "duration": 2.96,
+   "text": "code assistance requires a lot of"
+  },
+  {
+   "start": 46.8,
+   "duration": 3.279,
+   "text": "different chats going on at the same"
+  },
+  {
+   "start": 48.16,
+   "duration": 3.52,
+   "text": "time. What if I query this remotely"
+  },
+  {
+   "start": 50.079,
+   "duration": 3.521,
+   "text": "here? I wrote a little script."
+  },
+  {
+   "start": 51.68,
+   "duration": 4.0,
+   "text": "Basically, this is from my race to 1"
+  },
+  {
+   "start": 53.6,
+   "duration": 3.2,
+   "text": "million episode, but this one would do a"
+  },
+  {
+   "start": 55.68,
+   "duration": 3.76,
+   "text": "thousand. And I'm going to be"
+  },
+  {
+   "start": 56.8,
+   "duration": 4.8,
+   "text": "communicating from my laptop here to my"
+  },
+  {
+   "start": 59.44,
+   "duration": 4.48,
+   "text": "Mac Studio that's running Llama Server."
+  },
+  {
+   "start": 61.6,
+   "duration": 5.6,
+   "text": "Boom. And there it goes. And now I'm"
+  },
+  {
+   "start": 63.92,
+   "duration": 5.28,
+   "text": "twiddling my thumbs. Boom. Boom. Boom."
+  },
+  {
+   "start": 67.2,
+   "duration": 3.52,
+   "text": "Look at that. 120 tokens per second."
+  },
+  {
+   "start": 69.2,
+   "duration": 3.36,
+   "text": "Very close numbers, right? You know who"
+  },
+  {
+   "start": 70.72,
+   "duration": 4.0,
+   "text": "you don't want to twiddle their thumbs?"
+  },
+  {
+   "start": 72.56,
+   "duration": 4.239,
+   "text": "Your agents that are working away at"
+  },
+  {
+   "start": 74.72,
+   "duration": 3.6,
+   "text": "your code base. Sometimes tens of them"
+  },
+  {
+   "start": 76.799,
+   "duration": 3.441,
+   "text": "or hundreds of them. And we're even"
+  },
+  {
+   "start": 78.32,
+   "duration": 4.64,
+   "text": "going to increase our target tokens to"
+  },
+  {
+   "start": 80.24,
+   "duration": 4.8,
+   "text": "1,000 so we have a little bit of room to"
+  },
+  {
+   "start": 82.96,
+   "duration": 3.68,
+   "text": "walk around. Boom. I'm going to watch"
+  },
+  {
+   "start": 85.04,
+   "duration": 5.04,
+   "text": "this in real time. Check this out. This"
+  },
+  {
+   "start": 86.64,
+   "duration": 7.28,
+   "text": "is going to be insane. [laughter]"
+  },
+  {
+   "start": 90.08,
+   "duration": 5.92,
+   "text": "What? 826 tokens per second from Llama"
+  },
+  {
+   "start": 93.92,
+   "duration": 3.76,
+   "text": "CPP. And you might think, \"Oh, okay."
+  },
+  {
+   "start": 96.0,
+   "duration": 4.32,
+   "text": ">> I've seen this trick before, right,"
+  },
+  {
+   "start": 97.68,
+   "duration": 5.119,
+   "text": ">> on my channel probably.\" Uh, concurrency"
+  },
+  {
+   "start": 100.32,
+   "duration": 5.36,
+   "text": "is set to 128. Well, I'm about to show"
+  },
+  {
+   "start": 102.799,
+   "duration": 5.521,
+   "text": "you a new trick because even with"
+  },
+  {
+   "start": 105.68,
+   "duration": 5.04,
+   "text": "concurrency 128, without that trick, you"
+  },
+  {
+   "start": 108.32,
+   "duration": 4.64,
+   "text": "still get 231 tokens per second, which"
+  },
+  {
+   "start": 110.72,
+   "duration": 5.039,
+   "text": "is still better, but we're limited to"
+  },
+  {
+   "start": 112.96,
+   "duration": 4.88,
+   "text": "what Llama CPP is capable of just by"
+  },
+  {
+   "start": 115.759,
+   "duration": 4.64,
+   "text": "itself. It can't handle as many"
+  },
+  {
+   "start": 117.84,
+   "duration": 4.559,
+   "text": "concurrent connections as something like"
+  },
+  {
+   "start": 120.399,
+   "duration": 3.36,
+   "text": "VLM, for example. And I've got other"
+  },
+  {
+   "start": 122.399,
+   "duration": 4.161,
+   "text": "videos to show that. So, what am I"
+  },
+  {
+   "start": 123.759,
+   "duration": 4.48,
+   "text": "doing? Well, I wrote this little"
+  },
+  {
+   "start": 126.56,
+   "duration": 4.24,
+   "text": "launcher. This is actually inspired by"
+  },
+  {
+   "start": 128.239,
+   "duration": 4.321,
+   "text": "Donato Capitella's distributed launcher."
+  },
+  {
+   "start": 130.8,
+   "duration": 3.76,
+   "text": "I recently featured that in a video"
+  },
+  {
+   "start": 132.56,
+   "duration": 3.28,
+   "text": "about this thing. Separate video. You"
+  },
+  {
+   "start": 134.56,
+   "duration": 2.96,
+   "text": "can watch that if you want. But here"
+  },
+  {
+   "start": 135.84,
+   "duration": 3.36,
+   "text": "we're just running this on one machine."
+  },
+  {
+   "start": 137.52,
+   "duration": 5.12,
+   "text": "So I created this launcher which allows"
+  },
+  {
+   "start": 139.2,
+   "duration": 5.44,
+   "text": "you to tweak a few knobs that Llama CPP"
+  },
+  {
+   "start": 142.64,
+   "duration": 4.4,
+   "text": "provides for tweaking along with"
+  },
+  {
+   "start": 144.64,
+   "duration": 4.319,
+   "text": "sweeping and exploring what your machine"
+  },
+  {
+   "start": 147.04,
+   "duration": 3.44,
+   "text": "is capable of. For example, I have this"
+  },
+  {
+   "start": 148.959,
+   "duration": 3.92,
+   "text": "running on the Mac Studio, but what if"
+  },
+  {
+   "start": 150.48,
+   "duration": 4.24,
+   "text": "you have a Mac Mini for example? Well,"
+  },
+  {
+   "start": 152.879,
+   "duration": 4.161,
+   "text": "you can run this on there. If you have a"
+  },
+  {
+   "start": 154.72,
+   "duration": 4.879,
+   "text": "Windows laptop or another Linux laptop"
+  },
+  {
+   "start": 157.04,
+   "duration": 5.36,
+   "text": "or an Nvidia one, it doesn't matter"
+  },
+  {
+   "start": 159.599,
+   "duration": 4.241,
+   "text": "because Llama CPP will run on all those."
+  },
+  {
+   "start": 162.4,
+   "duration": 2.64,
+   "text": "And this launcher is going to run on any"
+  },
+  {
+   "start": 163.84,
+   "duration": 2.479,
+   "text": "of those as well because it's just"
+  },
+  {
+   "start": 165.04,
+   "duration": 3.36,
+   "text": "Python. And it'll find the best"
+  },
+  {
+   "start": 166.319,
+   "duration": 5.601,
+   "text": "combination for you to run Llama CPP as"
+  },
+  {
+   "start": 168.4,
+   "duration": 5.28,
+   "text": "a server while twisting those knobs. I"
+  },
+  {
+   "start": 171.92,
+   "duration": 4.16,
+   "text": "probably shouldn't say that on YouTube."
+  },
+  {
+   "start": 173.68,
+   "duration": 6.16,
+   "text": "Um, somebody might complain."
+  },
+  {
+   "start": 176.08,
+   "duration": 5.76,
+   "text": ">> FBI, open up."
+  },
+  {
+   "start": 179.84,
+   "duration": 3.44,
+   "text": "Some sensitive soul out there. Let me"
+  },
+  {
+   "start": 181.84,
+   "duration": 3.28,
+   "text": "show you how this works. First, we've"
+  },
+  {
+   "start": 183.28,
+   "duration": 3.92,
+   "text": "got some tests. We can do a single"
+  },
+  {
+   "start": 185.12,
+   "duration": 3.6,
+   "text": "request. Select your model, select where"
+  },
+  {
+   "start": 187.2,
+   "duration": 4.72,
+   "text": "you're running it, and run. And now,"
+  },
+  {
+   "start": 188.72,
+   "duration": 4.64,
+   "text": "this will just query Llama CPP, get your"
+  },
+  {
+   "start": 191.92,
+   "duration": 3.36,
+   "text": "tokens per second for that"
+  },
+  {
+   "start": 193.36,
+   "duration": 3.28,
+   "text": "configuration, which is 127, very close"
+  },
+  {
+   "start": 195.28,
+   "duration": 2.959,
+   "text": "to what we've seen. You can do"
+  },
+  {
+   "start": 196.64,
+   "duration": 3.44,
+   "text": "concurrent requests. There we go."
+  },
+  {
+   "start": 198.239,
+   "duration": 4.08,
+   "text": "Concurrent requests, count 128,"
+  },
+  {
+   "start": 200.08,
+   "duration": 4.0,
+   "text": "concurrency 128, total tokens, average"
+  },
+  {
+   "start": 202.319,
+   "duration": 4.321,
+   "text": "request tokens per second, and then"
+  },
+  {
+   "start": 204.08,
+   "duration": 4.48,
+   "text": "throughput. So, we got a throughput 240"
+  },
+  {
+   "start": 206.64,
+   "duration": 4.48,
+   "text": "tokens per second on the same model. By"
+  },
+  {
+   "start": 208.56,
+   "duration": 4.239,
+   "text": "the way, all this stuff is documented in"
+  },
+  {
+   "start": 211.12,
+   "duration": 3.679,
+   "text": "the repository. If you're getting into"
+  },
+  {
+   "start": 212.799,
+   "duration": 4.481,
+   "text": "cyber right now, there's an awkward gap"
+  },
+  {
+   "start": 214.799,
+   "duration": 4.8,
+   "text": "between I watch the videos and I can"
+  },
+  {
+   "start": 217.28,
+   "duration": 5.039,
+   "text": "handle real situations. And the gap is"
+  },
+  {
+   "start": 219.599,
+   "duration": 4.961,
+   "text": "exactly what this is for. This is try"
+  },
+  {
+   "start": 222.319,
+   "duration": 5.521,
+   "text": "hackme where you learn cyber by doing"
+  },
+  {
+   "start": 224.56,
+   "duration": 5.599,
+   "text": "it. Interactive labs real scenarios all"
+  },
+  {
+   "start": 227.84,
+   "duration": 4.399,
+   "text": "browserbased with a global community of"
+  },
+  {
+   "start": 230.159,
+   "duration": 3.921,
+   "text": "over 6 million people. They just"
+  },
+  {
+   "start": 232.239,
+   "duration": 5.441,
+   "text": "launched an entry-level search called"
+  },
+  {
+   "start": 234.08,
+   "duration": 5.92,
+   "text": "cyber security 101 also known as sec 1."
+  },
+  {
+   "start": 237.68,
+   "duration": 4.96,
+   "text": "Quick tour only. No exam spoilers. The"
+  },
+  {
+   "start": 240.0,
+   "duration": 5.599,
+   "text": "big idea here is applied fundamentals."
+  },
+  {
+   "start": 242.64,
+   "duration": 5.04,
+   "text": "You train hands-on, then sew one checks"
+  },
+  {
+   "start": 245.599,
+   "duration": 4.401,
+   "text": "you can actually perform the basics in"
+  },
+  {
+   "start": 247.68,
+   "duration": 4.24,
+   "text": "realistic situations, not just memorized"
+  },
+  {
+   "start": 250.0,
+   "duration": 4.0,
+   "text": "definitions. This is for students going"
+  },
+  {
+   "start": 251.92,
+   "duration": 4.559,
+   "text": "for their first cyber role, career"
+  },
+  {
+   "start": 254.0,
+   "duration": 4.88,
+   "text": "switchers, and interns or junior folks"
+  },
+  {
+   "start": 256.479,
+   "duration": 3.921,
+   "text": "like 0 to2 years who want proof they can"
+  },
+  {
+   "start": 258.88,
+   "duration": 3.44,
+   "text": "actually do the fundamentals. High"
+  },
+  {
+   "start": 260.4,
+   "duration": 4.72,
+   "text": "level, it touches what you'll actually"
+  },
+  {
+   "start": 262.32,
+   "duration": 4.879,
+   "text": "run into. operating systems, networking,"
+  },
+  {
+   "start": 265.12,
+   "duration": 3.84,
+   "text": "web-based security basics, a little bit"
+  },
+  {
+   "start": 267.199,
+   "duration": 3.921,
+   "text": "of blue team fundamentals, a little bit"
+  },
+  {
+   "start": 268.96,
+   "duration": 4.4,
+   "text": "of red team fundamentals, and malware"
+  },
+  {
+   "start": 271.12,
+   "duration": 3.68,
+   "text": "analysis at a beginner level. And this"
+  },
+  {
+   "start": 273.36,
+   "duration": 3.6,
+   "text": "is what makes it different. A lot of"
+  },
+  {
+   "start": 274.8,
+   "duration": 4.08,
+   "text": "beginner searchs feel like vocabulary"
+  },
+  {
+   "start": 276.96,
+   "duration": 3.92,
+   "text": "quizzes. SEC 1 is trying to be a"
+  },
+  {
+   "start": 278.88,
+   "duration": 4.16,
+   "text": "hands-on checkpoint instead. When you"
+  },
+  {
+   "start": 280.88,
+   "duration": 4.56,
+   "text": "finish, you get an instant result, a"
+  },
+  {
+   "start": 283.04,
+   "duration": 3.92,
+   "text": "digital certificate, and a sharable"
+  },
+  {
+   "start": 285.44,
+   "duration": 3.28,
+   "text": "badge. If you're getting started in"
+  },
+  {
+   "start": 286.96,
+   "duration": 3.36,
+   "text": "cyber security and want a hands-on way"
+  },
+  {
+   "start": 288.72,
+   "duration": 4.32,
+   "text": "to prove your fundamentals, check out"
+  },
+  {
+   "start": 290.32,
+   "duration": 4.48,
+   "text": "Try HackMe CyberC 101 certification"
+  },
+  {
+   "start": 293.04,
+   "duration": 3.76,
+   "text": "using the link below. And if you use my"
+  },
+  {
+   "start": 294.8,
+   "duration": 4.48,
+   "text": "code for launch, nonpremium users get"
+  },
+  {
+   "start": 296.8,
+   "duration": 4.959,
+   "text": "40% off their certification plus 3"
+  },
+  {
+   "start": 299.28,
+   "duration": 5.44,
+   "text": "months of free premium subscription link"
+  },
+  {
+   "start": 301.759,
+   "duration": 4.801,
+   "text": "below. All this stuff is documented in"
+  },
+  {
+   "start": 304.72,
+   "duration": 3.919,
+   "text": "the repository. It's called Llama"
+  },
+  {
+   "start": 306.56,
+   "duration": 3.919,
+   "text": "Throughput Lab. There's other tests in"
+  },
+  {
+   "start": 308.639,
+   "duration": 4.081,
+   "text": "here, but there's one really interesting"
+  },
+  {
+   "start": 310.479,
+   "duration": 4.081,
+   "text": "one and it's called Full Sweep. This"
+  },
+  {
+   "start": 312.72,
+   "duration": 4.479,
+   "text": "takes a while. There's 308 different"
+  },
+  {
+   "start": 314.56,
+   "duration": 5.12,
+   "text": "combinations of how many instances of"
+  },
+  {
+   "start": 317.199,
+   "duration": 5.121,
+   "text": "Llama server you start. That's the key"
+  },
+  {
+   "start": 319.68,
+   "duration": 5.12,
+   "text": "here. Hint hint. So, you run multiple"
+  },
+  {
+   "start": 322.32,
+   "duration": 4.8,
+   "text": "instances of Llama server to be able to"
+  },
+  {
+   "start": 324.8,
+   "duration": 4.72,
+   "text": "reply because a machine that's as"
+  },
+  {
+   "start": 327.12,
+   "duration": 5.28,
+   "text": "powerful as this has a lot of memory"
+  },
+  {
+   "start": 329.52,
+   "duration": 4.959,
+   "text": "these days. This one has 64 gigs of VRAM"
+  },
+  {
+   "start": 332.4,
+   "duration": 4.799,
+   "text": "or it's called unified memory in Apple"
+  },
+  {
+   "start": 334.479,
+   "duration": 4.401,
+   "text": "silicon terms. This Mac Studio has 512."
+  },
+  {
+   "start": 337.199,
+   "duration": 3.44,
+   "text": "But that's not the limiting factor when"
+  },
+  {
+   "start": 338.88,
+   "duration": 4.56,
+   "text": "it comes to running these. The limiting"
+  },
+  {
+   "start": 340.639,
+   "duration": 4.081,
+   "text": "factor here is the compute on the GPU."
+  },
+  {
+   "start": 343.44,
+   "duration": 2.24,
+   "text": "We're running all this on the GPU"
+  },
+  {
+   "start": 344.72,
+   "duration": 2.72,
+   "text": "because we don't want to do it on the"
+  },
+  {
+   "start": 345.68,
+   "duration": 3.68,
+   "text": "CPU. It's going to be extra slow. That's"
+  },
+  {
+   "start": 347.44,
+   "duration": 4.4,
+   "text": "why we're using the GPU here. And you"
+  },
+  {
+   "start": 349.36,
+   "duration": 4.8,
+   "text": "can only do so much when you're running"
+  },
+  {
+   "start": 351.84,
+   "duration": 3.919,
+   "text": "multiple llama servers at the same time."
+  },
+  {
+   "start": 354.16,
+   "duration": 3.68,
+   "text": "You're no longer limited by memory,"
+  },
+  {
+   "start": 355.759,
+   "duration": 4.641,
+   "text": "obviously, unless [music] you're running"
+  },
+  {
+   "start": 357.84,
+   "duration": 5.44,
+   "text": "huge models, which you can do here. You"
+  },
+  {
+   "start": 360.4,
+   "duration": 5.76,
+   "text": "can run on a 512 GB machine. You can run"
+  },
+  {
+   "start": 363.28,
+   "duration": 5.039,
+   "text": "like four llama 70 billion parameter"
+  },
+  {
+   "start": 366.16,
+   "duration": 4.08,
+   "text": "models at the same time in four"
+  },
+  {
+   "start": 368.319,
+   "duration": 4.641,
+   "text": "instances of llama server. So those are"
+  },
+  {
+   "start": 370.24,
+   "duration": 5.519,
+   "text": "instances. Then parallel llama server"
+  },
+  {
+   "start": 372.96,
+   "duration": 4.64,
+   "text": "exposes a parameter called parallel. And"
+  },
+  {
+   "start": 375.759,
+   "duration": 4.72,
+   "text": "this has been documented pretty well on"
+  },
+  {
+   "start": 377.6,
+   "duration": 5.12,
+   "text": "the GitHub repository under Llama CPP by"
+  },
+  {
+   "start": 380.479,
+   "duration": 4.0,
+   "text": "the creator of Llama CPP himself,"
+  },
+  {
+   "start": 382.72,
+   "duration": 3.28,
+   "text": "Georgio Ganov. Another knob you can"
+  },
+  {
+   "start": 384.479,
+   "duration": 2.801,
+   "text": "twist."
+  },
+  {
+   "start": 386.0,
+   "duration": 3.84,
+   "text": "All right, maybe I should stop it with"
+  },
+  {
+   "start": 387.28,
+   "duration": 4.72,
+   "text": "that. Um, somebody's gonna get mad. I'm"
+  },
+  {
+   "start": 389.84,
+   "duration": 4.4,
+   "text": "not twisting any knob. Concurrency is"
+  },
+  {
+   "start": 392.0,
+   "duration": 3.919,
+   "text": "another uh parameter you can alter and"
+  },
+  {
+   "start": 394.24,
+   "duration": 3.28,
+   "text": "that's what I showed before in my videos"
+  },
+  {
+   "start": 395.919,
+   "duration": 3.361,
+   "text": "where we can send multiple requests to"
+  },
+  {
+   "start": 397.52,
+   "duration": 3.92,
+   "text": "Llama server. Why do we care about that?"
+  },
+  {
+   "start": 399.28,
+   "duration": 4.16,
+   "text": "Well, if you're just doing chat, then by"
+  },
+  {
+   "start": 401.44,
+   "duration": 3.68,
+   "text": "all means go ahead and chat and wait for"
+  },
+  {
+   "start": 403.44,
+   "duration": 3.52,
+   "text": "it to finish. But a lot of times we want"
+  },
+  {
+   "start": 405.12,
+   "duration": 3.28,
+   "text": "to go beyond that. Imagine a folder with"
+  },
+  {
+   "start": 406.96,
+   "duration": 3.6,
+   "text": "thousands of photographs that you want"
+  },
+  {
+   "start": 408.4,
+   "duration": 3.44,
+   "text": "to analyze or a video with millions of"
+  },
+  {
+   "start": 410.56,
+   "duration": 2.88,
+   "text": "frames. You don't want to be sitting"
+  },
+  {
+   "start": 411.84,
+   "duration": 3.52,
+   "text": "there and waiting for one frame at a"
+  },
+  {
+   "start": 413.44,
+   "duration": 3.84,
+   "text": "time to be analyzed, do you? Or imagine"
+  },
+  {
+   "start": 415.36,
+   "duration": 4.239,
+   "text": "another scenario where you have a bunch"
+  },
+  {
+   "start": 417.28,
+   "duration": 4.0,
+   "text": "of agents orchestrated together. Some"
+  },
+  {
+   "start": 419.599,
+   "duration": 3.761,
+   "text": "are doing planning, some are doing"
+  },
+  {
+   "start": 421.28,
+   "duration": 3.28,
+   "text": "implementation. You want them working at"
+  },
+  {
+   "start": 423.36,
+   "duration": 2.72,
+   "text": "the same time. So that's where"
+  },
+  {
+   "start": 424.56,
+   "duration": 3.84,
+   "text": "concurrency comes in. Getting back to"
+  },
+  {
+   "start": 426.08,
+   "duration": 4.399,
+   "text": "the sweep, this will do a full sweep. So"
+  },
+  {
+   "start": 428.4,
+   "duration": 3.84,
+   "text": "instances, parallel, and concurrencies,"
+  },
+  {
+   "start": 430.479,
+   "duration": 4.0,
+   "text": "and it'll find out where the optimal"
+  },
+  {
+   "start": 432.24,
+   "duration": 3.679,
+   "text": "spot is on your computer, whatever"
+  },
+  {
+   "start": 434.479,
+   "duration": 4.881,
+   "text": "computer you're using. You can select"
+  },
+  {
+   "start": 435.919,
+   "duration": 5.921,
+   "text": "that test sweeps, and then click on run"
+  },
+  {
+   "start": 439.36,
+   "duration": 4.72,
+   "text": "selected test, and off it goes. There it"
+  },
+  {
+   "start": 441.84,
+   "duration": 4.72,
+   "text": "goes. Uh, just keep in mind that this"
+  },
+  {
+   "start": 444.08,
+   "duration": 4.88,
+   "text": "will take a while. Also, on a slower"
+  },
+  {
+   "start": 446.56,
+   "duration": 4.88,
+   "text": "system, it'll take a real long while. So"
+  },
+  {
+   "start": 448.96,
+   "duration": 4.079,
+   "text": "right now we're on four out of 308"
+  },
+  {
+   "start": 451.44,
+   "duration": 3.12,
+   "text": "different combinations. But as it's"
+  },
+  {
+   "start": 453.039,
+   "duration": 5.521,
+   "text": "sweeping, you can see the numbers coming"
+  },
+  {
+   "start": 454.56,
+   "duration": 6.56,
+   "text": "in. 128 tokens per second, 193, 263,"
+  },
+  {
+   "start": 458.56,
+   "duration": 5.12,
+   "text": "314. So you can see how these different"
+  },
+  {
+   "start": 461.12,
+   "duration": 4.639,
+   "text": "parameters are affecting that output. If"
+  },
+  {
+   "start": 463.68,
+   "duration": 3.84,
+   "text": "I go to my results folder here, I did a"
+  },
+  {
+   "start": 465.759,
+   "duration": 3.601,
+   "text": "full sweep on this Mac Studio, of"
+  },
+  {
+   "start": 467.52,
+   "duration": 3.76,
+   "text": "course. Now, I should probably create a"
+  },
+  {
+   "start": 469.36,
+   "duration": 4.559,
+   "text": "nice looking chart, but this is also on"
+  },
+  {
+   "start": 471.28,
+   "duration": 4.319,
+   "text": "GitHub and open source, so feel free to"
+  },
+  {
+   "start": 473.919,
+   "duration": 4.72,
+   "text": "muck with it if you want to. Look at"
+  },
+  {
+   "start": 475.599,
+   "duration": 5.201,
+   "text": "these numbers. 1,226 tokens per second."
+  },
+  {
+   "start": 478.639,
+   "duration": 4.56,
+   "text": "That's with 16 instances. In other"
+  },
+  {
+   "start": 480.8,
+   "duration": 5.6,
+   "text": "words, I started Llama server 16 times."
+  },
+  {
+   "start": 483.199,
+   "duration": 5.041,
+   "text": "Parallel flag set to 64. 1,024"
+  },
+  {
+   "start": 486.4,
+   "duration": 3.84,
+   "text": "concurrency. Now, keep in mind this is"
+  },
+  {
+   "start": 488.24,
+   "duration": 3.44,
+   "text": "just a benchmark. If you want to do real"
+  },
+  {
+   "start": 490.24,
+   "duration": 3.2,
+   "text": "world cases, this will only give you"
+  },
+  {
+   "start": 491.68,
+   "duration": 3.44,
+   "text": "some guidance and point you in the right"
+  },
+  {
+   "start": 493.44,
+   "duration": 3.599,
+   "text": "direction, but always make sure you"
+  },
+  {
+   "start": 495.12,
+   "duration": 4.0,
+   "text": "actually test your real world scenarios."
+  },
+  {
+   "start": 497.039,
+   "duration": 3.921,
+   "text": "And finally, let's discuss how I"
+  },
+  {
+   "start": 499.12,
+   "duration": 3.28,
+   "text": "actually run this. Well, I run it by"
+  },
+  {
+   "start": 500.96,
+   "duration": 3.6,
+   "text": "using this command right here. It's an"
+  },
+  {
+   "start": 502.4,
+   "duration": 4.479,
+   "text": "executable Python command. Run llama"
+  },
+  {
+   "start": 504.56,
+   "duration": 4.0,
+   "text": "tests. Boom. Not very creative, I know."
+  },
+  {
+   "start": 506.879,
+   "duration": 3.76,
+   "text": "And here you can select the test, select"
+  },
+  {
+   "start": 508.56,
+   "duration": 4.24,
+   "text": "the model. Boom. And there's one more"
+  },
+  {
+   "start": 510.639,
+   "duration": 3.361,
+   "text": "thing, which is this number six here."
+  },
+  {
+   "start": 512.8,
+   "duration": 2.56,
+   "text": "It's number six for now, but it's"
+  },
+  {
+   "start": 514.0,
+   "duration": 4.159,
+   "text": "probably going to change. Configure and"
+  },
+  {
+   "start": 515.36,
+   "duration": 4.4,
+   "text": "run round robin. Well, this is the thing"
+  },
+  {
+   "start": 518.159,
+   "duration": 3.36,
+   "text": "that's actually going to start up"
+  },
+  {
+   "start": 519.76,
+   "duration": 3.12,
+   "text": "multiple servers for you. You can do it"
+  },
+  {
+   "start": 521.519,
+   "duration": 4.32,
+   "text": "manually, of course, but that's going to"
+  },
+  {
+   "start": 522.88,
+   "duration": 4.72,
+   "text": "be not fun. Uh, so here you can"
+  },
+  {
+   "start": 525.839,
+   "duration": 4.241,
+   "text": "configure how many instances you want to"
+  },
+  {
+   "start": 527.6,
+   "duration": 4.16,
+   "text": "start. Let's say I want to start up 16."
+  },
+  {
+   "start": 530.08,
+   "duration": 3.04,
+   "text": "Parallelism, that's llama servers"
+  },
+  {
+   "start": 531.76,
+   "duration": 3.68,
+   "text": "parameter. This is going to be the"
+  },
+  {
+   "start": 533.12,
+   "duration": 3.839,
+   "text": "starting port of the first llama server."
+  },
+  {
+   "start": 535.44,
+   "duration": 3.2,
+   "text": "And that is going to plus one for each"
+  },
+  {
+   "start": 536.959,
+   "duration": 4.401,
+   "text": "one of the servers you start up. So this"
+  },
+  {
+   "start": 538.64,
+   "duration": 4.639,
+   "text": "is going to go up to 9,15. And then"
+  },
+  {
+   "start": 541.36,
+   "duration": 3.76,
+   "text": "finally, this is the key right here,"
+  },
+  {
+   "start": 543.279,
+   "duration": 3.841,
+   "text": "Engine X. This is the thing you should"
+  },
+  {
+   "start": 545.12,
+   "duration": 4.159,
+   "text": "not be afraid of. I was for a long time,"
+  },
+  {
+   "start": 547.12,
+   "duration": 4.08,
+   "text": "but this is really cool because it's a"
+  },
+  {
+   "start": 549.279,
+   "duration": 3.761,
+   "text": "little server that sits in front of your"
+  },
+  {
+   "start": 551.2,
+   "duration": 3.759,
+   "text": "llama servers that you talk to. It's"
+  },
+  {
+   "start": 553.04,
+   "duration": 3.76,
+   "text": "just pass through basically, but it has"
+  },
+  {
+   "start": 554.959,
+   "duration": 4.401,
+   "text": "the nice little capability of doing"
+  },
+  {
+   "start": 556.8,
+   "duration": 4.0,
+   "text": "roundroin, which means imagine you have"
+  },
+  {
+   "start": 559.36,
+   "duration": 2.88,
+   "text": "llama servers running on each one of"
+  },
+  {
+   "start": 560.8,
+   "duration": 3.2,
+   "text": "these things. The first request comes"
+  },
+  {
+   "start": 562.24,
+   "duration": 3.68,
+   "text": "in, it goes here. The second request"
+  },
+  {
+   "start": 564.0,
+   "duration": 4.48,
+   "text": "comes in, send it here, and so on. And"
+  },
+  {
+   "start": 565.92,
+   "duration": 4.64,
+   "text": "it's going to round robin these requests"
+  },
+  {
+   "start": 568.48,
+   "duration": 5.039,
+   "text": "so that they're not all handled by one"
+  },
+  {
+   "start": 570.56,
+   "duration": 6.32,
+   "text": "server. So, let's set that up. I like to"
+  },
+  {
+   "start": 573.519,
+   "duration": 4.641,
+   "text": "use 8,000 because it's easy. Now, host,"
+  },
+  {
+   "start": 576.88,
+   "duration": 4.16,
+   "text": "this is local host if you're running"
+  },
+  {
+   "start": 578.16,
+   "duration": 4.08,
+   "text": "locally, but you can set it to 000 if"
+  },
+  {
+   "start": 581.04,
+   "duration": 3.2,
+   "text": "you're going to be quering this"
+  },
+  {
+   "start": 582.24,
+   "duration": 4.0,
+   "text": "remotely. And then you have start round"
+  },
+  {
+   "start": 584.24,
+   "duration": 4.24,
+   "text": "robin servers and stop roundroin"
+  },
+  {
+   "start": 586.24,
+   "duration": 4.159,
+   "text": "servers. Let's try that. Now, here's Mac"
+  },
+  {
+   "start": 588.48,
+   "duration": 4.72,
+   "text": "Studio and there's activity monitor. and"
+  },
+  {
+   "start": 590.399,
+   "duration": 5.041,
+   "text": "you'll see 16 happy little llama servers"
+  },
+  {
+   "start": 593.2,
+   "duration": 4.16,
+   "text": "running there waiting to handle"
+  },
+  {
+   "start": 595.44,
+   "duration": 4.32,
+   "text": "requests. Now, you might be familiar"
+  },
+  {
+   "start": 597.36,
+   "duration": 4.0,
+   "text": "with Open Web UI. I actually made a"
+  },
+  {
+   "start": 599.76,
+   "duration": 4.24,
+   "text": "tutorial, a whole tutorial setting this"
+  },
+  {
+   "start": 601.36,
+   "duration": 4.64,
+   "text": "up with Olama at the time, but Open Web"
+  },
+  {
+   "start": 604.0,
+   "duration": 4.959,
+   "text": "UI can work with a bunch of different"
+  },
+  {
+   "start": 606.0,
+   "duration": 4.88,
+   "text": "servers. So, I pointed it at my EngineX"
+  },
+  {
+   "start": 608.959,
+   "duration": 4.0,
+   "text": "endpoint, which is basically the IP"
+  },
+  {
+   "start": 610.88,
+   "duration": 4.48,
+   "text": "address and port 8000 like we configured"
+  },
+  {
+   "start": 612.959,
+   "duration": 4.641,
+   "text": "it. Let's do a new chat. Hello. Boom."
+  },
+  {
+   "start": 615.36,
+   "duration": 4.64,
+   "text": "And there it is. It's responding. Now, I"
+  },
+  {
+   "start": 617.6,
+   "duration": 4.32,
+   "text": "didn't exactly configure this to handle"
+  },
+  {
+   "start": 620.0,
+   "duration": 4.16,
+   "text": "long stories, which is why a short"
+  },
+  {
+   "start": 621.92,
+   "duration": 3.919,
+   "text": "prompt works like say hello because it"
+  },
+  {
+   "start": 624.16,
+   "duration": 3.359,
+   "text": "doesn't have to think for a long time."
+  },
+  {
+   "start": 625.839,
+   "duration": 3.68,
+   "text": "But the thinking is actually part of"
+  },
+  {
+   "start": 627.519,
+   "duration": 3.521,
+   "text": "inference. It's actually generating"
+  },
+  {
+   "start": 629.519,
+   "duration": 3.76,
+   "text": "tokens while it's thinking. So, that's"
+  },
+  {
+   "start": 631.04,
+   "duration": 4.0,
+   "text": "using up tokens. And I set a maximum of"
+  },
+  {
+   "start": 633.279,
+   "duration": 3.441,
+   "text": "tokens that need to be generated, which"
+  },
+  {
+   "start": 635.04,
+   "duration": 3.359,
+   "text": "you can adjust if you need to. What's"
+  },
+  {
+   "start": 636.72,
+   "duration": 3.76,
+   "text": "the capital of France? Say hi to me in"
+  },
+  {
+   "start": 638.399,
+   "duration": 4.321,
+   "text": "Espanol. And they're doing this pretty"
+  },
+  {
+   "start": 640.48,
+   "duration": 4.0,
+   "text": "much at the same time. So, go on, go"
+  },
+  {
+   "start": 642.72,
+   "duration": 3.84,
+   "text": "check this out. Play with Llama"
+  },
+  {
+   "start": 644.48,
+   "duration": 3.599,
+   "text": "Throughput Lab and see what you think."
+  },
+  {
+   "start": 646.56,
+   "duration": 2.959,
+   "text": "let me know. You can open issues, do"
+  },
+  {
+   "start": 648.079,
+   "duration": 2.641,
+   "text": "pull requests, and so on. If you like"
+  },
+  {
+   "start": 649.519,
+   "duration": 2.481,
+   "text": "this video, you're probably going to"
+  },
+  {
+   "start": 650.72,
+   "duration": 2.72,
+   "text": "like the video I did about this"
+  },
+  {
+   "start": 652.0,
+   "duration": 2.8,
+   "text": "framework cluster. That's going to be"
+  },
+  {
+   "start": 653.44,
+   "duration": 5.079,
+   "text": "right over here. Thanks for watching,"
+  },
+  {
+   "start": 654.8,
+   "duration": 3.719,
+   "text": "and I'll see you next time."
+  }
+ ]
+}

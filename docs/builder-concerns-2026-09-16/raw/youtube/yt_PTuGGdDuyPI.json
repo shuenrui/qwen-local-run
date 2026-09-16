@@ -1,0 +1,2276 @@
+{
+ "video_id": "PTuGGdDuyPI",
+ "url": "https://www.youtube.com/watch?v=PTuGGdDuyPI",
+ "segments": [
+  {
+   "start": 0.0,
+   "duration": 5.6,
+   "text": "Okay, so last week Quen dropped the"
+  },
+  {
+   "start": 2.64,
+   "duration": 5.88,
+   "text": "weights for Quen 3.8 max and it's"
+  },
+  {
+   "start": 5.6,
+   "duration": 5.32,
+   "text": "undeniable that this model is pretty"
+  },
+  {
+   "start": 8.52,
+   "duration": 5.24,
+   "text": "amazing at what it can do. But the key"
+  },
+  {
+   "start": 10.92,
+   "duration": 5.4,
+   "text": "problem with this is it's 2.4 trillion"
+  },
+  {
+   "start": 13.76,
+   "duration": 3.88,
+   "text": "parameters. So there are very few people"
+  },
+  {
+   "start": 16.32,
+   "duration": 3.16,
+   "text": "that are going to be able to run this"
+  },
+  {
+   "start": 17.64,
+   "duration": 3.84,
+   "text": "locally. What everyone was actually"
+  },
+  {
+   "start": 19.48,
+   "duration": 7.32,
+   "text": "waiting for was the model that dropped"
+  },
+  {
+   "start": 21.48,
+   "duration": 6.72,
+   "text": "on Friday and this is the Quen 3.8 27B."
+  },
+  {
+   "start": 26.8,
+   "duration": 3.72,
+   "text": "So in this video I'm going to look at"
+  },
+  {
+   "start": 28.2,
+   "duration": 4.2,
+   "text": "the model and the benchmarks etc. But"
+  },
+  {
+   "start": 30.52,
+   "duration": 3.8,
+   "text": "more importantly I want to talk about"
+  },
+  {
+   "start": 32.4,
+   "duration": 4.24,
+   "text": "which version of this model you should"
+  },
+  {
+   "start": 34.32,
+   "duration": 4.6,
+   "text": "be running and how you should be running"
+  },
+  {
+   "start": 36.64,
+   "duration": 6.04,
+   "text": "it. Now I've talked a lot on the channel"
+  },
+  {
+   "start": 38.92,
+   "duration": 6.12,
+   "text": "about the Quen 3.6 27B. That really in"
+  },
+  {
+   "start": 42.68,
+   "duration": 5.08,
+   "text": "many ways that was sort of the darling"
+  },
+  {
+   "start": 45.04,
+   "duration": 5.76,
+   "text": "model of a lot of people doing local"
+  },
+  {
+   "start": 47.76,
+   "duration": 4.64,
+   "text": "coding, running local agents etc. And"
+  },
+  {
+   "start": 50.8,
+   "duration": 4.0,
+   "text": "we've even looked at things like"
+  },
+  {
+   "start": 52.4,
+   "duration": 5.16,
+   "text": "thinking cap which was a fine tune of"
+  },
+  {
+   "start": 54.8,
+   "duration": 5.72,
+   "text": "that 3.6 model to basically get it to be"
+  },
+  {
+   "start": 57.56,
+   "duration": 4.2,
+   "text": "more succinct in its reasoning tokens"
+  },
+  {
+   "start": 60.52,
+   "duration": 3.56,
+   "text": "but still keep the same amount of"
+  },
+  {
+   "start": 61.76,
+   "duration": 6.04,
+   "text": "intelligence. And even last week we"
+  },
+  {
+   "start": 64.08,
+   "duration": 7.0,
+   "text": "looked at Glimmer 30B from Meta which"
+  },
+  {
+   "start": 67.8,
+   "duration": 7.0,
+   "text": "was benchmarking against the Quen 3.6"
+  },
+  {
+   "start": 71.08,
+   "duration": 5.64,
+   "text": "27B model in a lot of their examples."
+  },
+  {
+   "start": 74.8,
+   "duration": 3.4,
+   "text": "And I made the comment at the time that"
+  },
+  {
+   "start": 76.72,
+   "duration": 5.44,
+   "text": "they were possibly just trying to rush"
+  },
+  {
+   "start": 78.2,
+   "duration": 6.2,
+   "text": "this out knowing that the 3.8 27B was on"
+  },
+  {
+   "start": 82.16,
+   "duration": 4.12,
+   "text": "the way and was likely to drop any day"
+  },
+  {
+   "start": 84.4,
+   "duration": 3.44,
+   "text": "after that. Well sure enough that is"
+  },
+  {
+   "start": 86.28,
+   "duration": 4.2,
+   "text": "pretty true. If we look at the"
+  },
+  {
+   "start": 87.84,
+   "duration": 5.12,
+   "text": "benchmarks that actually came out for"
+  },
+  {
+   "start": 90.48,
+   "duration": 4.2,
+   "text": "this from Quen, we can see that this"
+  },
+  {
+   "start": 92.96,
+   "duration": 4.48,
+   "text": "model is doing substantially better than"
+  },
+  {
+   "start": 94.68,
+   "duration": 4.2,
+   "text": "Meta's music Glimmer model in here. And"
+  },
+  {
+   "start": 97.44,
+   "duration": 3.56,
+   "text": "not only that, obviously it's doing"
+  },
+  {
+   "start": 98.88,
+   "duration": 4.2,
+   "text": "quite a lot better than the Quen 3.6"
+  },
+  {
+   "start": 101.0,
+   "duration": 4.76,
+   "text": "model. Now I mentioned at the time that"
+  },
+  {
+   "start": 103.08,
+   "duration": 6.0,
+   "text": "Meta was probably rushing that out"
+  },
+  {
+   "start": 105.76,
+   "duration": 5.6,
+   "text": "knowing that the Quen 3.8 27B was going"
+  },
+  {
+   "start": 109.08,
+   "duration": 3.68,
+   "text": "to drop any day now. And while I'm going"
+  },
+  {
+   "start": 111.36,
+   "duration": 4.0,
+   "text": "to go through the benchmarks and have a"
+  },
+  {
+   "start": 112.76,
+   "duration": 5.04,
+   "text": "look at this, most of this video I I to"
+  },
+  {
+   "start": 115.36,
+   "duration": 4.48,
+   "text": "look at which version of the model"
+  },
+  {
+   "start": 117.8,
+   "duration": 3.64,
+   "text": "should you be running because already"
+  },
+  {
+   "start": 119.84,
+   "duration": 3.24,
+   "text": "there are lots of different fine-tunes"
+  },
+  {
+   "start": 121.44,
+   "duration": 4.12,
+   "text": "of the model. There are also lots of"
+  },
+  {
+   "start": 123.08,
+   "duration": 4.68,
+   "text": "different quantizations of the model and"
+  },
+  {
+   "start": 125.56,
+   "duration": 4.08,
+   "text": "perhaps more importantly, how should you"
+  },
+  {
+   "start": 127.76,
+   "duration": 3.8,
+   "text": "be setting the model up to get the right"
+  },
+  {
+   "start": 129.64,
+   "duration": 3.92,
+   "text": "balance so that it actually runs locally"
+  },
+  {
+   "start": 131.56,
+   "duration": 4.24,
+   "text": "on your system. All right, so if we come"
+  },
+  {
+   "start": 133.56,
+   "duration": 3.44,
+   "text": "in and look at Quen's own benchmarks,"
+  },
+  {
+   "start": 135.8,
+   "duration": 3.8,
+   "text": "you can see that the comments that I"
+  },
+  {
+   "start": 137.0,
+   "duration": 4.4,
+   "text": "made back then about the music llama"
+  },
+  {
+   "start": 139.6,
+   "duration": 3.84,
+   "text": "were pretty much true that this model"
+  },
+  {
+   "start": 141.4,
+   "duration": 4.0,
+   "text": "pretty much surpasses music llama. Now,"
+  },
+  {
+   "start": 143.44,
+   "duration": 3.84,
+   "text": "I wouldn't totally dismiss music llama."
+  },
+  {
+   "start": 145.4,
+   "duration": 3.4,
+   "text": "I think it's still a very good model."
+  },
+  {
+   "start": 147.28,
+   "duration": 3.44,
+   "text": "It's been trained a lot more for"
+  },
+  {
+   "start": 148.8,
+   "duration": 4.12,
+   "text": "generalization than the actual"
+  },
+  {
+   "start": 150.72,
+   "duration": 4.72,
+   "text": "benchmarks. So, it's still worth testing"
+  },
+  {
+   "start": 152.92,
+   "duration": 4.16,
+   "text": "for your actual use cases and like I"
+  },
+  {
+   "start": 155.44,
+   "duration": 3.44,
+   "text": "said in the video, I feel that that team"
+  },
+  {
+   "start": 157.08,
+   "duration": 3.92,
+   "text": "is just getting started. So, we're going"
+  },
+  {
+   "start": 158.88,
+   "duration": 4.24,
+   "text": "to see a lot more versions of that going"
+  },
+  {
+   "start": 161.0,
+   "duration": 4.84,
+   "text": "forward in the future. But back to Quen"
+  },
+  {
+   "start": 163.12,
+   "duration": 6.24,
+   "text": "3.8. So, if we look at this, it's a"
+  },
+  {
+   "start": 165.84,
+   "duration": 5.72,
+   "text": "substantial bump over 3.6 in pretty much"
+  },
+  {
+   "start": 169.36,
+   "duration": 4.16,
+   "text": "every area here. So, if you were happy"
+  },
+  {
+   "start": 171.56,
+   "duration": 4.64,
+   "text": "using 3.6, you're definitely going to"
+  },
+  {
+   "start": 173.52,
+   "duration": 4.0,
+   "text": "get a nice drop-in replacement here. On"
+  },
+  {
+   "start": 176.2,
+   "duration": 3.12,
+   "text": "top of that, they seem to have put a lot"
+  },
+  {
+   "start": 177.52,
+   "duration": 3.8,
+   "text": "of effort into the vision performance in"
+  },
+  {
+   "start": 179.32,
+   "duration": 3.68,
+   "text": "here and we can see even things like"
+  },
+  {
+   "start": 181.32,
+   "duration": 5.6,
+   "text": "computer use and stuff like that. This"
+  },
+  {
+   "start": 183.0,
+   "duration": 5.6,
+   "text": "is actually beating out Opus 4.6 max,"
+  },
+  {
+   "start": 186.92,
+   "duration": 3.68,
+   "text": "which to be fair, those previous Opus"
+  },
+  {
+   "start": 188.6,
+   "duration": 4.28,
+   "text": "models weren't heavily focused as much"
+  },
+  {
+   "start": 190.6,
+   "duration": 4.16,
+   "text": "on computer use and browser use as the"
+  },
+  {
+   "start": 192.88,
+   "duration": 3.8,
+   "text": "newer versions have been. All right, so"
+  },
+  {
+   "start": 194.76,
+   "duration": 5.56,
+   "text": "just as I've been recording, Artificial"
+  },
+  {
+   "start": 196.68,
+   "duration": 7.6,
+   "text": "Analysis has released their intelligence"
+  },
+  {
+   "start": 200.32,
+   "duration": 6.36,
+   "text": "index scores for this Quen 3.8 27B"
+  },
+  {
+   "start": 204.28,
+   "duration": 6.84,
+   "text": "model. And I got to say the results are"
+  },
+  {
+   "start": 206.68,
+   "duration": 7.16,
+   "text": "pretty insane. This is scoring 52,"
+  },
+  {
+   "start": 211.12,
+   "duration": 8.399,
+   "text": "which puts it not far behind models like"
+  },
+  {
+   "start": 213.84,
+   "duration": 10.28,
+   "text": "the GLM 5.2 at 53, DeepSeek V4 Pro, and"
+  },
+  {
+   "start": 219.519,
+   "duration": 7.44,
+   "text": "also just way ahead of the Quen 3.6 27B"
+  },
+  {
+   "start": 224.12,
+   "duration": 5.36,
+   "text": "model and pretty much any other open"
+  },
+  {
+   "start": 226.959,
+   "duration": 4.681,
+   "text": "model that you even have a chance of"
+  },
+  {
+   "start": 229.48,
+   "duration": 4.08,
+   "text": "running without a serious investment in"
+  },
+  {
+   "start": 231.64,
+   "duration": 5.0,
+   "text": "the hardware. The other thing is when we"
+  },
+  {
+   "start": 233.56,
+   "duration": 7.0,
+   "text": "look at the agentic index here, this is"
+  },
+  {
+   "start": 236.64,
+   "duration": 7.4,
+   "text": "actually beating out GLM 5.2, beating"
+  },
+  {
+   "start": 240.56,
+   "duration": 6.04,
+   "text": "out some of the GPT 5.6 models. Again,"
+  },
+  {
+   "start": 244.04,
+   "duration": 5.24,
+   "text": "this is pretty insane for a model that"
+  },
+  {
+   "start": 246.6,
+   "duration": 4.72,
+   "text": "you can run locally and get a decent"
+  },
+  {
+   "start": 249.28,
+   "duration": 4.08,
+   "text": "token speed out of it. But the key thing"
+  },
+  {
+   "start": 251.32,
+   "duration": 4.36,
+   "text": "I think is really interesting here is"
+  },
+  {
+   "start": 253.36,
+   "duration": 4.12,
+   "text": "which version of the model do you"
+  },
+  {
+   "start": 255.68,
+   "duration": 4.48,
+   "text": "actually pick? Now, if we come into the"
+  },
+  {
+   "start": 257.48,
+   "duration": 4.96,
+   "text": "Qwen 3.8 family on Hugging Face, you can"
+  },
+  {
+   "start": 260.16,
+   "duration": 5.04,
+   "text": "see the 2.4 trillion parameter models"
+  },
+  {
+   "start": 262.44,
+   "duration": 5.4,
+   "text": "there. But under the 27B, they've both"
+  },
+  {
+   "start": 265.2,
+   "duration": 4.68,
+   "text": "got a BFloat16 version, so that's kind"
+  },
+  {
+   "start": 267.84,
+   "duration": 4.76,
+   "text": "of like their full resolution version,"
+  },
+  {
+   "start": 269.88,
+   "duration": 4.6,
+   "text": "and they've got an FP8 version. On top"
+  },
+  {
+   "start": 272.6,
+   "duration": 4.76,
+   "text": "of that, there are already 4-bit"
+  },
+  {
+   "start": 274.48,
+   "duration": 5.84,
+   "text": "versions out from Unsloth using the"
+  },
+  {
+   "start": 277.36,
+   "duration": 4.64,
+   "text": "NVFP4 quantization, and you should"
+  },
+  {
+   "start": 280.32,
+   "duration": 4.36,
+   "text": "remember that not all the GPUs can"
+  },
+  {
+   "start": 282.0,
+   "duration": 4.8,
+   "text": "actually run this quantization as well."
+  },
+  {
+   "start": 284.68,
+   "duration": 5.36,
+   "text": "And on top of this, there are already"
+  },
+  {
+   "start": 286.8,
+   "duration": 5.76,
+   "text": "lots of different fine-tunes of this"
+  },
+  {
+   "start": 290.04,
+   "duration": 4.64,
+   "text": "model already out there, where people"
+  },
+  {
+   "start": 292.56,
+   "duration": 4.8,
+   "text": "are both training it on different data"
+  },
+  {
+   "start": 294.68,
+   "duration": 4.44,
+   "text": "sets to get new results out of it, and"
+  },
+  {
+   "start": 297.36,
+   "duration": 4.04,
+   "text": "then also where people are making sort"
+  },
+  {
+   "start": 299.12,
+   "duration": 3.76,
+   "text": "of uncensored versions of the models."
+  },
+  {
+   "start": 301.4,
+   "duration": 3.36,
+   "text": "So, there are some examples where people"
+  },
+  {
+   "start": 302.88,
+   "duration": 3.52,
+   "text": "have done that through fine-tuning, and"
+  },
+  {
+   "start": 304.76,
+   "duration": 3.68,
+   "text": "there are other examples of where people"
+  },
+  {
+   "start": 306.4,
+   "duration": 3.76,
+   "text": "have done that through obliteration. So,"
+  },
+  {
+   "start": 308.44,
+   "duration": 4.2,
+   "text": "the Blackfrost AI team was one of the"
+  },
+  {
+   "start": 310.16,
+   "duration": 4.6,
+   "text": "first groups to do this, but since then,"
+  },
+  {
+   "start": 312.64,
+   "duration": 4.16,
+   "text": "there are also multiple obliterated"
+  },
+  {
+   "start": 314.76,
+   "duration": 4.52,
+   "text": "versions out there. And of course, if"
+  },
+  {
+   "start": 316.8,
+   "duration": 4.8,
+   "text": "you don't have access to an AMD or an"
+  },
+  {
+   "start": 319.28,
+   "duration": 5.08,
+   "text": "Nvidia GPU, and you're running it on a"
+  },
+  {
+   "start": 321.6,
+   "duration": 6.76,
+   "text": "Mac, the MLX community has already"
+  },
+  {
+   "start": 324.36,
+   "duration": 6.2,
+   "text": "released multiple versions of Qwen 3.8"
+  },
+  {
+   "start": 328.36,
+   "duration": 5.04,
+   "text": "for MLX, and that includes things like"
+  },
+  {
+   "start": 330.56,
+   "duration": 5.44,
+   "text": "the BFloat16 ones, 8-bit ones, 4-bit"
+  },
+  {
+   "start": 333.4,
+   "duration": 4.72,
+   "text": "ones, as well as MLX versions of the"
+  },
+  {
+   "start": 336.0,
+   "duration": 3.68,
+   "text": "different kinds of quantization people"
+  },
+  {
+   "start": 338.12,
+   "duration": 2.56,
+   "text": "have tried as well. So, what I'm going"
+  },
+  {
+   "start": 339.68,
+   "duration": 2.72,
+   "text": "to do is go through a few of the"
+  },
+  {
+   "start": 340.68,
+   "duration": 4.0,
+   "text": "different versions I've been testing"
+  },
+  {
+   "start": 342.4,
+   "duration": 4.28,
+   "text": "over the weekend. But more importantly,"
+  },
+  {
+   "start": 344.68,
+   "duration": 4.36,
+   "text": "I'm going to show you that actually how"
+  },
+  {
+   "start": 346.68,
+   "duration": 4.16,
+   "text": "you set up the reasoning is going to be"
+  },
+  {
+   "start": 349.04,
+   "duration": 3.8,
+   "text": "one of the key things that determines"
+  },
+  {
+   "start": 350.84,
+   "duration": 4.2,
+   "text": "whether this is a good model or a bad"
+  },
+  {
+   "start": 352.84,
+   "duration": 4.24,
+   "text": "model for you. Okay, so I've been trying"
+  },
+  {
+   "start": 355.04,
+   "duration": 4.84,
+   "text": "out five different versions of this"
+  },
+  {
+   "start": 357.08,
+   "duration": 5.36,
+   "text": "model and I'm running them on a Dell T2"
+  },
+  {
+   "start": 359.88,
+   "duration": 4.44,
+   "text": "Pro Max, which has kindly sponsored the"
+  },
+  {
+   "start": 362.44,
+   "duration": 5.8,
+   "text": "compute for this. So all of these are"
+  },
+  {
+   "start": 364.32,
+   "duration": 6.04,
+   "text": "actually running on an RTX Pro 6000 GPU"
+  },
+  {
+   "start": 368.24,
+   "duration": 5.4,
+   "text": "from Nvidia in here. And that's a pretty"
+  },
+  {
+   "start": 370.36,
+   "duration": 5.24,
+   "text": "beefy GPU. So I've got 96 GB of VRAM"
+  },
+  {
+   "start": 373.64,
+   "duration": 4.2,
+   "text": "here to play with. So in my particular"
+  },
+  {
+   "start": 375.6,
+   "duration": 4.28,
+   "text": "case, I have no problems being able to"
+  },
+  {
+   "start": 377.84,
+   "duration": 3.6,
+   "text": "load the model, right? Obviously, that's"
+  },
+  {
+   "start": 379.88,
+   "duration": 5.16,
+   "text": "a luxury many people are not going to be"
+  },
+  {
+   "start": 381.44,
+   "duration": 5.76,
+   "text": "able to load the full 16-bit BFloat"
+  },
+  {
+   "start": 385.04,
+   "duration": 3.56,
+   "text": "resolution version of this model. But"
+  },
+  {
+   "start": 387.2,
+   "duration": 5.0,
+   "text": "I'm going to try out that version. I'm"
+  },
+  {
+   "start": 388.6,
+   "duration": 5.24,
+   "text": "going to try out Quen's own FP8 version"
+  },
+  {
+   "start": 392.2,
+   "duration": 4.04,
+   "text": "in here. And then I'm also going to try"
+  },
+  {
+   "start": 393.84,
+   "duration": 3.68,
+   "text": "out Unsloth's quantization. And I'll"
+  },
+  {
+   "start": 396.24,
+   "duration": 3.36,
+   "text": "talk a little bit about some of the"
+  },
+  {
+   "start": 397.52,
+   "duration": 3.08,
+   "text": "Obliterator models that I tested out as"
+  },
+  {
+   "start": 399.6,
+   "duration": 3.44,
+   "text": "well."
+  },
+  {
+   "start": 400.6,
+   "duration": 4.76,
+   "text": "So first up, whatever model that you"
+  },
+  {
+   "start": 403.04,
+   "duration": 5.08,
+   "text": "pick, you're going to realize that it's"
+  },
+  {
+   "start": 405.36,
+   "duration": 4.32,
+   "text": "not just about the quantization"
+  },
+  {
+   "start": 408.12,
+   "duration": 3.48,
+   "text": "that determines whether this model is"
+  },
+  {
+   "start": 409.68,
+   "duration": 5.0,
+   "text": "good or not. So let me show you a little"
+  },
+  {
+   "start": 411.6,
+   "duration": 5.44,
+   "text": "simple exercise. So here is my standard"
+  },
+  {
+   "start": 414.68,
+   "duration": 5.44,
+   "text": "sort of HTML test where I ask it to"
+  },
+  {
+   "start": 417.04,
+   "duration": 5.32,
+   "text": "basically make a website. The joke is"
+  },
+  {
+   "start": 420.12,
+   "duration": 3.52,
+   "text": "that it's Dario Wellness Retreat. I"
+  },
+  {
+   "start": 422.36,
+   "duration": 4.04,
+   "text": "think a number of you can remember where"
+  },
+  {
+   "start": 423.64,
+   "duration": 5.44,
+   "text": "that came from. But you'll see here that"
+  },
+  {
+   "start": 426.4,
+   "duration": 6.44,
+   "text": "this is a version of the website that"
+  },
+  {
+   "start": 429.08,
+   "duration": 7.28,
+   "text": "was made with no thinking at all in"
+  },
+  {
+   "start": 432.84,
+   "duration": 6.24,
+   "text": "here. So it's done a pretty good job at"
+  },
+  {
+   "start": 436.36,
+   "duration": 4.76,
+   "text": "just basically thinking turned off"
+  },
+  {
+   "start": 439.08,
+   "duration": 3.28,
+   "text": "completely. And you can see when we come"
+  },
+  {
+   "start": 441.12,
+   "duration": 3.08,
+   "text": "in and look at the results here, there"
+  },
+  {
+   "start": 442.36,
+   "duration": 4.4,
+   "text": "are no thinking tokens, right? It just"
+  },
+  {
+   "start": 444.2,
+   "duration": 5.08,
+   "text": "goes straight into generation for this"
+  },
+  {
+   "start": 446.76,
+   "duration": 6.12,
+   "text": "one. If we look at the same thing for"
+  },
+  {
+   "start": 449.28,
+   "duration": 5.32,
+   "text": "reasoning on with low thinking, you can"
+  },
+  {
+   "start": 452.88,
+   "duration": 3.32,
+   "text": "see we get quite a different website,"
+  },
+  {
+   "start": 454.6,
+   "duration": 3.24,
+   "text": "right? We're getting something that's"
+  },
+  {
+   "start": 456.2,
+   "duration": 3.76,
+   "text": "still very nice. There's a lot of"
+  },
+  {
+   "start": 457.84,
+   "duration": 4.6,
+   "text": "perhaps effects in it. And you may"
+  },
+  {
+   "start": 459.96,
+   "duration": 4.48,
+   "text": "actually even like the version that had"
+  },
+  {
+   "start": 462.44,
+   "duration": 3.64,
+   "text": "no thinking at all in here. And this is"
+  },
+  {
+   "start": 464.44,
+   "duration": 3.68,
+   "text": "sort of what I'm trying to get at is"
+  },
+  {
+   "start": 466.08,
+   "duration": 5.4,
+   "text": "that the different levels of thinking"
+  },
+  {
+   "start": 468.12,
+   "duration": 5.24,
+   "text": "consume hugely amounts different tokens."
+  },
+  {
+   "start": 471.48,
+   "duration": 5.2,
+   "text": "So here, if we look at the code, we can"
+  },
+  {
+   "start": 473.36,
+   "duration": 5.76,
+   "text": "see we've got 512 thinking tokens, and"
+  },
+  {
+   "start": 476.68,
+   "duration": 4.12,
+   "text": "this seems to be reasonably consistent"
+  },
+  {
+   "start": 479.12,
+   "duration": 3.68,
+   "text": "when I've run it a few different times."
+  },
+  {
+   "start": 480.8,
+   "duration": 3.72,
+   "text": "Occasionally it gets quite a bit less,"
+  },
+  {
+   "start": 482.8,
+   "duration": 3.32,
+   "text": "occasionally it gets more, and it will"
+  },
+  {
+   "start": 484.52,
+   "duration": 3.92,
+   "text": "depend on what sort of task you're"
+  },
+  {
+   "start": 486.12,
+   "duration": 4.52,
+   "text": "actually asking it to do. But here low"
+  },
+  {
+   "start": 488.44,
+   "duration": 4.2,
+   "text": "is getting 512."
+  },
+  {
+   "start": 490.64,
+   "duration": 5.04,
+   "text": "So if we come in here and look at the"
+  },
+  {
+   "start": 492.64,
+   "duration": 5.12,
+   "text": "medium thinking, you can see that this"
+  },
+  {
+   "start": 495.68,
+   "duration": 4.08,
+   "text": "is kind of similar actually to the low"
+  },
+  {
+   "start": 497.76,
+   "duration": 3.52,
+   "text": "one, right? So you would presume here"
+  },
+  {
+   "start": 499.76,
+   "duration": 4.48,
+   "text": "that this is going to actually be using"
+  },
+  {
+   "start": 501.28,
+   "duration": 5.6,
+   "text": "more thinking tokens, but actually it"
+  },
+  {
+   "start": 504.24,
+   "duration": 4.88,
+   "text": "ends up using less. And I've run this"
+  },
+  {
+   "start": 506.88,
+   "duration": 5.08,
+   "text": "sort of four or five times. I'm not sure"
+  },
+  {
+   "start": 509.12,
+   "duration": 5.96,
+   "text": "why on this particular task medium"
+  },
+  {
+   "start": 511.96,
+   "duration": 5.639,
+   "text": "thinking seems to be using less than low"
+  },
+  {
+   "start": 515.08,
+   "duration": 4.56,
+   "text": "thinking here. Now, the question should"
+  },
+  {
+   "start": 517.599,
+   "duration": 4.041,
+   "text": "be, well, what about high? Well, they"
+  },
+  {
+   "start": 519.64,
+   "duration": 4.64,
+   "text": "don't really have high. They have X high"
+  },
+  {
+   "start": 521.64,
+   "duration": 5.0,
+   "text": "thinking. And this is where the model"
+  },
+  {
+   "start": 524.28,
+   "duration": 4.52,
+   "text": "goes nuts. You'll see here that I don't"
+  },
+  {
+   "start": 526.64,
+   "duration": 4.44,
+   "text": "have a finished website to show you on"
+  },
+  {
+   "start": 528.8,
+   "duration": 5.28,
+   "text": "this one because the issue here is that"
+  },
+  {
+   "start": 531.08,
+   "duration": 5.84,
+   "text": "while I've limited it to 32K max tokens"
+  },
+  {
+   "start": 534.08,
+   "duration": 5.6,
+   "text": "out, I've actually run out because I've"
+  },
+  {
+   "start": 536.92,
+   "duration": 5.64,
+   "text": "spent 17,500"
+  },
+  {
+   "start": 539.68,
+   "duration": 5.12,
+   "text": "tokens on thinking. Now, I've run this"
+  },
+  {
+   "start": 542.56,
+   "duration": 4.76,
+   "text": "multiple times trying to get one that"
+  },
+  {
+   "start": 544.8,
+   "duration": 6.24,
+   "text": "actually finished, and I've had the"
+  },
+  {
+   "start": 547.32,
+   "duration": 6.64,
+   "text": "thinking tokens be as high as 22,000"
+  },
+  {
+   "start": 551.04,
+   "duration": 6.12,
+   "text": "thinking tokens. And if we look at them,"
+  },
+  {
+   "start": 553.96,
+   "duration": 5.64,
+   "text": "it goes into insane detail in here. So"
+  },
+  {
+   "start": 557.16,
+   "duration": 5.36,
+   "text": "while it actually produces a lot of the"
+  },
+  {
+   "start": 559.6,
+   "duration": 5.32,
+   "text": "similar sort of colors and stuff as the"
+  },
+  {
+   "start": 562.52,
+   "duration": 5.48,
+   "text": "other ones, it just talks to itself a"
+  },
+  {
+   "start": 564.92,
+   "duration": 5.4,
+   "text": "lot about this. And this is a general"
+  },
+  {
+   "start": 568.0,
+   "duration": 4.52,
+   "text": "consistent thing that I've noticed is"
+  },
+  {
+   "start": 570.32,
+   "duration": 4.72,
+   "text": "that if you're going to run this model"
+  },
+  {
+   "start": 572.52,
+   "duration": 4.64,
+   "text": "on X high, you've got to be prepared"
+  },
+  {
+   "start": 575.04,
+   "duration": 5.08,
+   "text": "that one, you want to make the context"
+  },
+  {
+   "start": 577.16,
+   "duration": 4.88,
+   "text": "window very big, but two, you're also"
+  },
+  {
+   "start": 580.12,
+   "duration": 4.96,
+   "text": "going to be sitting around waiting for"
+  },
+  {
+   "start": 582.04,
+   "duration": 4.84,
+   "text": "the thinking tokens to actually process."
+  },
+  {
+   "start": 585.08,
+   "duration": 3.92,
+   "text": "And this seems to be true whether I'm"
+  },
+  {
+   "start": 586.88,
+   "duration": 4.48,
+   "text": "running on the FP8, which I've done"
+  },
+  {
+   "start": 589.0,
+   "duration": 4.44,
+   "text": "these examples on, but I've also tried"
+  },
+  {
+   "start": 591.36,
+   "duration": 5.08,
+   "text": "this on the 16-bit model and on the"
+  },
+  {
+   "start": 593.44,
+   "duration": 5.12,
+   "text": "unsloth model. And you'll see that for"
+  },
+  {
+   "start": 596.44,
+   "duration": 5.24,
+   "text": "each of these on X high thinking, you"
+  },
+  {
+   "start": 598.56,
+   "duration": 5.12,
+   "text": "get insanely long amounts of thinking."
+  },
+  {
+   "start": 601.68,
+   "duration": 4.92,
+   "text": "Now, if we look at the same thing for"
+  },
+  {
+   "start": 603.68,
+   "duration": 5.96,
+   "text": "the SVG test, right? So, this is the"
+  },
+  {
+   "start": 606.6,
+   "duration": 5.32,
+   "text": "generate a pelican SVG test. I've taken"
+  },
+  {
+   "start": 609.64,
+   "duration": 4.56,
+   "text": "this from Simon Wilson's test, and you"
+  },
+  {
+   "start": 611.92,
+   "duration": 6.24,
+   "text": "can see this is on X high. So, we've got"
+  },
+  {
+   "start": 614.2,
+   "duration": 5.72,
+   "text": "11,000 tokens of thinking to get this."
+  },
+  {
+   "start": 618.16,
+   "duration": 4.24,
+   "text": "And it's not a bad version out, but if"
+  },
+  {
+   "start": 619.92,
+   "duration": 4.96,
+   "text": "we look at the medium thinking here,"
+  },
+  {
+   "start": 622.4,
+   "duration": 5.6,
+   "text": "we're down from 11,000 down to just"
+  },
+  {
+   "start": 624.88,
+   "duration": 4.8,
+   "text": "under 1,000 tokens, but we can see that"
+  },
+  {
+   "start": 628.0,
+   "duration": 5.04,
+   "text": "here we've still got a pretty good"
+  },
+  {
+   "start": 629.68,
+   "duration": 6.52,
+   "text": "pelican going on here. If we look at the"
+  },
+  {
+   "start": 633.04,
+   "duration": 5.2,
+   "text": "low one, actually, again, we're over the"
+  },
+  {
+   "start": 636.2,
+   "duration": 4.0,
+   "text": "number of thinking tokens of the medium"
+  },
+  {
+   "start": 638.24,
+   "duration": 3.72,
+   "text": "one, and we've got a sort of similar"
+  },
+  {
+   "start": 640.2,
+   "duration": 4.0,
+   "text": "one, although we've definitely starting"
+  },
+  {
+   "start": 641.96,
+   "duration": 3.879,
+   "text": "to miss some of the details there. And"
+  },
+  {
+   "start": 644.2,
+   "duration": 3.92,
+   "text": "sure enough, if we turn the reasoning"
+  },
+  {
+   "start": 645.839,
+   "duration": 4.561,
+   "text": "off and just have a look at the straight"
+  },
+  {
+   "start": 648.12,
+   "duration": 4.76,
+   "text": "one out with no thinking, we've got a"
+  },
+  {
+   "start": 650.4,
+   "duration": 3.72,
+   "text": "pretty ugly pelican. Although, at one"
+  },
+  {
+   "start": 652.88,
+   "duration": 3.16,
+   "text": "stage this probably would have been"
+  },
+  {
+   "start": 654.12,
+   "duration": 3.719,
+   "text": "considered really good. So, the sweet"
+  },
+  {
+   "start": 656.04,
+   "duration": 4.16,
+   "text": "spot for me seems to be having the"
+  },
+  {
+   "start": 657.839,
+   "duration": 4.521,
+   "text": "reasoning on medium. And just to show"
+  },
+  {
+   "start": 660.2,
+   "duration": 5.32,
+   "text": "you quickly how much it's over-fitting"
+  },
+  {
+   "start": 662.36,
+   "duration": 6.16,
+   "text": "on the pelican example, here I've"
+  },
+  {
+   "start": 665.52,
+   "duration": 5.44,
+   "text": "changed it to a red dragon. And you can"
+  },
+  {
+   "start": 668.52,
+   "duration": 5.04,
+   "text": "see that it still can get the bike right"
+  },
+  {
+   "start": 670.96,
+   "duration": 6.04,
+   "text": "on no tokens out, but our red dragon is"
+  },
+  {
+   "start": 673.56,
+   "duration": 5.36,
+   "text": "kind of childish. If we go up to low"
+  },
+  {
+   "start": 677.0,
+   "duration": 5.32,
+   "text": "thinking, we've got something that's a"
+  },
+  {
+   "start": 678.92,
+   "duration": 5.04,
+   "text": "bit better. If we go up to medium"
+  },
+  {
+   "start": 682.32,
+   "duration": 4.48,
+   "text": "thinking, you could even say that it's"
+  },
+  {
+   "start": 683.96,
+   "duration": 4.64,
+   "text": "kind of regressed a bit on the dragon."
+  },
+  {
+   "start": 686.8,
+   "duration": 3.8,
+   "text": "Still pretty good on the bicycle, but"
+  },
+  {
+   "start": 688.6,
+   "duration": 4.36,
+   "text": "not on the dragon there. And by the way,"
+  },
+  {
+   "start": 690.6,
+   "duration": 5.68,
+   "text": "this time the low thinking actually is"
+  },
+  {
+   "start": 692.96,
+   "duration": 5.68,
+   "text": "quite low. It's 420 tokens as opposed to"
+  },
+  {
+   "start": 696.28,
+   "duration": 4.44,
+   "text": "medium where it's actually doing 2,000"
+  },
+  {
+   "start": 698.64,
+   "duration": 4.92,
+   "text": "tokens here for the thinking. Now, you"
+  },
+  {
+   "start": 700.72,
+   "duration": 6.88,
+   "text": "can see when we go to X high, we're"
+  },
+  {
+   "start": 703.56,
+   "duration": 6.84,
+   "text": "using 35,000 tokens of which 21,000 were"
+  },
+  {
+   "start": 707.6,
+   "duration": 4.6,
+   "text": "for thinking. Is it better? Yeah, it's"
+  },
+  {
+   "start": 710.4,
+   "duration": 5.28,
+   "text": "probably better. I don't think I would"
+  },
+  {
+   "start": 712.2,
+   "duration": 6.08,
+   "text": "say it is great. We've got a moon, we've"
+  },
+  {
+   "start": 715.68,
+   "duration": 4.16,
+   "text": "got some sort of city back scape. We've"
+  },
+  {
+   "start": 718.28,
+   "duration": 4.88,
+   "text": "still probably got a better bicycle and"
+  },
+  {
+   "start": 719.84,
+   "duration": 6.12,
+   "text": "stuff like that. So, yes, the the X high"
+  },
+  {
+   "start": 723.16,
+   "duration": 5.0,
+   "text": "will get you better results, but the"
+  },
+  {
+   "start": 725.96,
+   "duration": 3.96,
+   "text": "amount of tokens is just kind of insane."
+  },
+  {
+   "start": 728.16,
+   "duration": 4.4,
+   "text": "So, you can see that overall I had to"
+  },
+  {
+   "start": 729.92,
+   "duration": 7.04,
+   "text": "extend the token window and it's used up"
+  },
+  {
+   "start": 732.56,
+   "duration": 7.92,
+   "text": "35,000 tokens of which 21,000"
+  },
+  {
+   "start": 736.96,
+   "duration": 6.72,
+   "text": "here were thinking tokens just to get"
+  },
+  {
+   "start": 740.48,
+   "duration": 4.84,
+   "text": "the dragon which is I guess is okay"
+  },
+  {
+   "start": 743.68,
+   "duration": 3.2,
+   "text": "looking, but it's certainly not great"
+  },
+  {
+   "start": 745.32,
+   "duration": 3.04,
+   "text": "looking here. All right, so now that you"
+  },
+  {
+   "start": 746.88,
+   "duration": 3.76,
+   "text": "know setting the number of thinking"
+  },
+  {
+   "start": 748.36,
+   "duration": 4.16,
+   "text": "tokens is really important. The other"
+  },
+  {
+   "start": 750.64,
+   "duration": 4.6,
+   "text": "thing is which version of the model do"
+  },
+  {
+   "start": 752.52,
+   "duration": 6.24,
+   "text": "you actually go for? So, first off I"
+  },
+  {
+   "start": 755.24,
+   "duration": 6.56,
+   "text": "tested the basic Bfloat16 original"
+  },
+  {
+   "start": 758.76,
+   "duration": 5.76,
+   "text": "version of it and that was getting me"
+  },
+  {
+   "start": 761.8,
+   "duration": 4.64,
+   "text": "somewhere around sort of 30 tokens per"
+  },
+  {
+   "start": 764.52,
+   "duration": 4.24,
+   "text": "second and that was just pure"
+  },
+  {
+   "start": 766.44,
+   "duration": 5.0,
+   "text": "generation. Now, at that point I had no"
+  },
+  {
+   "start": 768.76,
+   "duration": 4.68,
+   "text": "speculative decoding going on, right?"
+  },
+  {
+   "start": 771.44,
+   "duration": 3.8,
+   "text": "From there it became pretty clear that"
+  },
+  {
+   "start": 773.44,
+   "duration": 4.32,
+   "text": "you want to basically have the"
+  },
+  {
+   "start": 775.24,
+   "duration": 5.48,
+   "text": "speculative decoding on and you probably"
+  },
+  {
+   "start": 777.76,
+   "duration": 4.72,
+   "text": "want to set it to MTP equals three. So,"
+  },
+  {
+   "start": 780.72,
+   "duration": 4.2,
+   "text": "it's doing multi token prediction for"
+  },
+  {
+   "start": 782.48,
+   "duration": 5.0,
+   "text": "three tokens there and that alone got me"
+  },
+  {
+   "start": 784.92,
+   "duration": 4.6,
+   "text": "a good speed bump in actually running"
+  },
+  {
+   "start": 787.48,
+   "duration": 4.6,
+   "text": "the model. Now, for running these mostly"
+  },
+  {
+   "start": 789.52,
+   "duration": 5.16,
+   "text": "I've been running them on VLLM and the"
+  },
+  {
+   "start": 792.08,
+   "duration": 4.56,
+   "text": "next version I went to was the FP8"
+  },
+  {
+   "start": 794.68,
+   "duration": 3.8,
+   "text": "version of the model from Quen"
+  },
+  {
+   "start": 796.64,
+   "duration": 4.52,
+   "text": "themselves and this was speculative"
+  },
+  {
+   "start": 798.48,
+   "duration": 4.68,
+   "text": "decoding was getting me around 80 to 120"
+  },
+  {
+   "start": 801.16,
+   "duration": 4.04,
+   "text": "tokens per second and it works very"
+  },
+  {
+   "start": 803.16,
+   "duration": 3.84,
+   "text": "nicely. I didn't really notice much of a"
+  },
+  {
+   "start": 805.2,
+   "duration": 4.6,
+   "text": "quality difference compared to the"
+  },
+  {
+   "start": 807.0,
+   "duration": 6.36,
+   "text": "Bfloat 16 version. Again, this was using"
+  },
+  {
+   "start": 809.8,
+   "duration": 5.68,
+   "text": "their built-in MTP model for speculative"
+  },
+  {
+   "start": 813.36,
+   "duration": 4.4,
+   "text": "decoding. And if you've got that set up"
+  },
+  {
+   "start": 815.48,
+   "duration": 4.68,
+   "text": "right, vLLM can just take care of that"
+  },
+  {
+   "start": 817.76,
+   "duration": 4.36,
+   "text": "for you. Now, around this time I also"
+  },
+  {
+   "start": 820.16,
+   "duration": 4.12,
+   "text": "tried out some of the obliterated"
+  },
+  {
+   "start": 822.12,
+   "duration": 4.24,
+   "text": "versions of the model, and while I found"
+  },
+  {
+   "start": 824.28,
+   "duration": 3.92,
+   "text": "them interesting, and yes, they sort of"
+  },
+  {
+   "start": 826.36,
+   "duration": 4.56,
+   "text": "open things up, I find that these"
+  },
+  {
+   "start": 828.2,
+   "duration": 5.2,
+   "text": "versions often get into repeated loops"
+  },
+  {
+   "start": 830.92,
+   "duration": 4.4,
+   "text": "on the thinking and just get stuck in"
+  },
+  {
+   "start": 833.4,
+   "duration": 3.16,
+   "text": "that repeated loop. So, honestly,"
+  },
+  {
+   "start": 835.32,
+   "duration": 3.76,
+   "text": "probably at the moment, I wouldn't"
+  },
+  {
+   "start": 836.56,
+   "duration": 5.52,
+   "text": "bother with using the obliterated ones."
+  },
+  {
+   "start": 839.08,
+   "duration": 4.92,
+   "text": "Next up was the Unsloth model, and this"
+  },
+  {
+   "start": 842.08,
+   "duration": 4.84,
+   "text": "had really good token rates. With the"
+  },
+  {
+   "start": 844.0,
+   "duration": 6.0,
+   "text": "MTP, I was getting around 120 tokens per"
+  },
+  {
+   "start": 846.92,
+   "duration": 4.64,
+   "text": "second. Here is very nice quantization"
+  },
+  {
+   "start": 850.0,
+   "duration": 3.56,
+   "text": "of the model. I found it worked for a"
+  },
+  {
+   "start": 851.56,
+   "duration": 4.0,
+   "text": "lot of the different tasks. And I kind"
+  },
+  {
+   "start": 853.56,
+   "duration": 4.48,
+   "text": "of thought at this point 120 tokens per"
+  },
+  {
+   "start": 855.56,
+   "duration": 4.8,
+   "text": "second was doing pretty well. And that's"
+  },
+  {
+   "start": 858.04,
+   "duration": 4.56,
+   "text": "when I came across SG Lang's version of"
+  },
+  {
+   "start": 860.36,
+   "duration": 4.12,
+   "text": "serving this model. So, they are not"
+  },
+  {
+   "start": 862.6,
+   "duration": 3.76,
+   "text": "supporting all the different hardware."
+  },
+  {
+   "start": 864.48,
+   "duration": 4.08,
+   "text": "They really focused a lot more on the"
+  },
+  {
+   "start": 866.36,
+   "duration": 3.76,
+   "text": "Blackwell GPUs. And you can see here"
+  },
+  {
+   "start": 868.56,
+   "duration": 5.16,
+   "text": "that I've got it configured for doing"
+  },
+  {
+   "start": 870.12,
+   "duration": 5.88,
+   "text": "the RTX Pro 6000, the FP4, and the D"
+  },
+  {
+   "start": 873.72,
+   "duration": 4.44,
+   "text": "Spark. And it turns out that taking"
+  },
+  {
+   "start": 876.0,
+   "duration": 5.08,
+   "text": "everything else off the GPU and loading"
+  },
+  {
+   "start": 878.16,
+   "duration": 5.56,
+   "text": "that in a Docker configuration was able"
+  },
+  {
+   "start": 881.08,
+   "duration": 4.36,
+   "text": "to get me very fast speeds. And if you"
+  },
+  {
+   "start": 883.72,
+   "duration": 4.84,
+   "text": "look at their X account, they are kind"
+  },
+  {
+   "start": 885.44,
+   "duration": 4.16,
+   "text": "of showing this on their account, right?"
+  },
+  {
+   "start": 888.56,
+   "duration": 4.44,
+   "text": "They're claiming here that you can get"
+  },
+  {
+   "start": 889.6,
+   "duration": 5.44,
+   "text": "up to 206 tokens per second. And to do"
+  },
+  {
+   "start": 893.0,
+   "duration": 4.96,
+   "text": "that, they're using a very particular NV"
+  },
+  {
+   "start": 895.04,
+   "duration": 5.4,
+   "text": "FP4 model. I found that when I used"
+  },
+  {
+   "start": 897.96,
+   "duration": 4.84,
+   "text": "their setup with the Unsloth"
+  },
+  {
+   "start": 900.44,
+   "duration": 3.8,
+   "text": "quantization, it didn't work as well."
+  },
+  {
+   "start": 902.8,
+   "duration": 4.2,
+   "text": "But with their model weights, sure"
+  },
+  {
+   "start": 904.24,
+   "duration": 4.36,
+   "text": "enough, I'm getting much faster tokens"
+  },
+  {
+   "start": 907.0,
+   "duration": 5.92,
+   "text": "per second. So, you can see here, this"
+  },
+  {
+   "start": 908.6,
+   "duration": 6.48,
+   "text": "is 36,000 tokens with an average of 173"
+  },
+  {
+   "start": 912.92,
+   "duration": 3.88,
+   "text": "tokens per second. And you can see that"
+  },
+  {
+   "start": 915.08,
+   "duration": 4.12,
+   "text": "for things that are not too long like"
+  },
+  {
+   "start": 916.8,
+   "duration": 5.0,
+   "text": "this, I can often actually get around"
+  },
+  {
+   "start": 919.2,
+   "duration": 5.36,
+   "text": "200 to 220 tokens per second. Now, I"
+  },
+  {
+   "start": 921.8,
+   "duration": 6.2,
+   "text": "would say the average is probably a bit"
+  },
+  {
+   "start": 924.56,
+   "duration": 5.64,
+   "text": "under 200 tokens per second, round 200,"
+  },
+  {
+   "start": 928.0,
+   "duration": 4.92,
+   "text": "maybe a little bit below that. But, at"
+  },
+  {
+   "start": 930.2,
+   "duration": 5.44,
+   "text": "that speed, that's flying. I've got it"
+  },
+  {
+   "start": 932.92,
+   "duration": 5.36,
+   "text": "running in a Docker container, which is"
+  },
+  {
+   "start": 935.64,
+   "duration": 6.52,
+   "text": "using their particular image from their"
+  },
+  {
+   "start": 938.28,
+   "duration": 6.44,
+   "text": "cookbook. It's the NVFP4 quant from them"
+  },
+  {
+   "start": 942.16,
+   "duration": 5.8,
+   "text": "with the DSpark speculative decoding in"
+  },
+  {
+   "start": 944.72,
+   "duration": 6.16,
+   "text": "there. And, it's got the full 262K"
+  },
+  {
+   "start": 947.96,
+   "duration": 4.64,
+   "text": "context window running beautifully in"
+  },
+  {
+   "start": 950.88,
+   "duration": 2.84,
+   "text": "there. And, you can see even for things"
+  },
+  {
+   "start": 952.6,
+   "duration": 3.04,
+   "text": "where it's using a lot of different"
+  },
+  {
+   "start": 953.72,
+   "duration": 6.24,
+   "text": "tokens, I'm still getting average speeds"
+  },
+  {
+   "start": 955.64,
+   "duration": 5.84,
+   "text": "of 150, 160, 170 tokens per second. So,"
+  },
+  {
+   "start": 959.96,
+   "duration": 3.08,
+   "text": "overall, just to finish up, I would say"
+  },
+  {
+   "start": 961.48,
+   "duration": 3.84,
+   "text": "you really need to experiment with"
+  },
+  {
+   "start": 963.04,
+   "duration": 3.52,
+   "text": "different versions of the model to see"
+  },
+  {
+   "start": 965.32,
+   "duration": 4.0,
+   "text": "how it's going to work for your"
+  },
+  {
+   "start": 966.56,
+   "duration": 4.28,
+   "text": "particular use cases. And, then once"
+  },
+  {
+   "start": 969.32,
+   "duration": 3.64,
+   "text": "you've got that model, the different"
+  },
+  {
+   "start": 970.84,
+   "duration": 4.56,
+   "text": "configurations of the amount of"
+  },
+  {
+   "start": 972.96,
+   "duration": 4.32,
+   "text": "reasoning tokens that you want to set,"
+  },
+  {
+   "start": 975.4,
+   "duration": 4.08,
+   "text": "and it even turns out what inference"
+  },
+  {
+   "start": 977.28,
+   "duration": 5.64,
+   "text": "library you want to use. So, I tested"
+  },
+  {
+   "start": 979.48,
+   "duration": 4.84,
+   "text": "vLLM in here. I tested SG Lang. SG Lang"
+  },
+  {
+   "start": 982.92,
+   "duration": 4.0,
+   "text": "was the winner for this final"
+  },
+  {
+   "start": 984.32,
+   "duration": 5.36,
+   "text": "configuration in here. But, if you've"
+  },
+  {
+   "start": 986.92,
+   "duration": 3.96,
+   "text": "got a GPU with a lot lower VRAM, you"
+  },
+  {
+   "start": 989.68,
+   "duration": 3.28,
+   "text": "probably also want to test out"
+  },
+  {
+   "start": 990.88,
+   "duration": 4.56,
+   "text": "llama.cpp. And, I've got to say, on"
+  },
+  {
+   "start": 992.96,
+   "duration": 4.92,
+   "text": "whatever you're doing the testing, give"
+  },
+  {
+   "start": 995.44,
+   "duration": 4.0,
+   "text": "these pages of where people are talking"
+  },
+  {
+   "start": 997.88,
+   "duration": 4.56,
+   "text": "about how to set it up and stuff like"
+  },
+  {
+   "start": 999.44,
+   "duration": 6.08,
+   "text": "that to your coding agent and have it"
+  },
+  {
+   "start": 1002.44,
+   "duration": 5.52,
+   "text": "test out different configurations to see"
+  },
+  {
+   "start": 1005.52,
+   "duration": 5.28,
+   "text": "what works best for you. For me"
+  },
+  {
+   "start": 1007.96,
+   "duration": 5.84,
+   "text": "currently, if you can serve this model,"
+  },
+  {
+   "start": 1010.8,
+   "duration": 5.48,
+   "text": "this is the model to beat for local AI."
+  },
+  {
+   "start": 1013.8,
+   "duration": 4.28,
+   "text": "It really is doing so well. The fact"
+  },
+  {
+   "start": 1016.28,
+   "duration": 4.44,
+   "text": "that artificial analysis intelligence"
+  },
+  {
+   "start": 1018.08,
+   "duration": 4.48,
+   "text": "test shows it to be so high just"
+  },
+  {
+   "start": 1020.72,
+   "duration": 4.359,
+   "text": "confirms for me a lot of things I felt"
+  },
+  {
+   "start": 1022.56,
+   "duration": 3.879,
+   "text": "using it and testing it out. And, I'd"
+  },
+  {
+   "start": 1025.079,
+   "duration": 3.161,
+   "text": "finish up by saying that I think it's"
+  },
+  {
+   "start": 1026.439,
+   "duration": 3.241,
+   "text": "going to get even better. I'm really"
+  },
+  {
+   "start": 1028.24,
+   "duration": 4.32,
+   "text": "looking forward to see do we get a"
+  },
+  {
+   "start": 1029.68,
+   "duration": 5.08,
+   "text": "thinking cap version of this where it"
+  },
+  {
+   "start": 1032.56,
+   "duration": 4.56,
+   "text": "uses less tokens for the same amount of"
+  },
+  {
+   "start": 1034.76,
+   "duration": 4.48,
+   "text": "intelligence? Do we get other fine tunes"
+  },
+  {
+   "start": 1037.12,
+   "duration": 4.839,
+   "text": "that actually improve the intelligence?"
+  },
+  {
+   "start": 1039.24,
+   "duration": 4.16,
+   "text": "And do we get things like fuse kernels"
+  },
+  {
+   "start": 1041.959,
+   "duration": 4.641,
+   "text": "where this ends up being able to be"
+  },
+  {
+   "start": 1043.4,
+   "duration": 4.559,
+   "text": "served at even faster tokens per second?"
+  },
+  {
+   "start": 1046.6,
+   "duration": 3.08,
+   "text": "So, let me know in the comments how"
+  },
+  {
+   "start": 1047.959,
+   "duration": 4.121,
+   "text": "you're running this, what your current"
+  },
+  {
+   "start": 1049.68,
+   "duration": 4.68,
+   "text": "setup is, how many tokens per second. I"
+  },
+  {
+   "start": 1052.08,
+   "duration": 5.36,
+   "text": "may revisit this model with some tests"
+  },
+  {
+   "start": 1054.36,
+   "duration": 5.52,
+   "text": "on the DGX Sparks or the GB10s and show"
+  },
+  {
+   "start": 1057.44,
+   "duration": 4.36,
+   "text": "you with one, two, maybe even three"
+  },
+  {
+   "start": 1059.88,
+   "duration": 3.76,
+   "text": "machines what you can do there for this"
+  },
+  {
+   "start": 1061.8,
+   "duration": 4.72,
+   "text": "kind of thing. But, clearly this is"
+  },
+  {
+   "start": 1063.64,
+   "duration": 6.2,
+   "text": "taking a huge step forward both not only"
+  },
+  {
+   "start": 1066.52,
+   "duration": 5.2,
+   "text": "in open weights, but in local AI where"
+  },
+  {
+   "start": 1069.84,
+   "duration": 4.12,
+   "text": "you can run these things on sort of"
+  },
+  {
+   "start": 1071.72,
+   "duration": 3.72,
+   "text": "prosumer hardware. So, anyway, as"
+  },
+  {
+   "start": 1073.96,
+   "duration": 3.44,
+   "text": "always, if you like the video, please"
+  },
+  {
+   "start": 1075.44,
+   "duration": 3.56,
+   "text": "click like and subscribe, and I will"
+  },
+  {
+   "start": 1077.4,
+   "duration": 4.0,
+   "text": "talk to you in the next video. Bye for"
+  },
+  {
+   "start": 1079.0,
+   "duration": 2.4,
+   "text": "now."
+  }
+ ]
+}

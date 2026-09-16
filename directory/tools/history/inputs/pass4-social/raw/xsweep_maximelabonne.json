@@ -1,0 +1,3621 @@
+{
+ "via": "twitter-cli user-posts -n 100",
+ "user": "maximelabonne",
+ "posts": [
+  {
+   "id": "2099970062266286288",
+   "text": "If you have an 8gb GPU or Mac this is the best model to be running",
+   "author": {
+    "id": "1341331548566654977",
+    "name": "0xSero",
+    "screenName": "0xSero",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1976266803211890688/JZffMMYs_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 477,
+    "retweets": 11,
+    "replies": 24,
+    "quotes": 0,
+    "views": 33887,
+    "bookmarks": 388
+   },
+   "createdAt": "Tue Sep 15 21:14:13 +0000 2026",
+   "createdAtLocal": "2026-09-16 05:14",
+   "createdAtISO": "2026-09-15T21:14:13+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "maximelabonne",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2099526059418939778",
+    "text": "Please stop using LFM2.5-2.6B for coding guys https://t.co/NwsPHraCrW",
+    "author": {
+     "screenName": "maximelabonne",
+     "name": "Maxime Labonne"
+    }
+   }
+  },
+  {
+   "id": "2099882133284098425",
+   "text": "models can get stuck in \"doom loops\" when\n• the model is small,\n• it has thinking capabilities,\n• and the task is complex\n\nto overcome this issue, at @liquidai we use \"antidoom\" training using a technique called final token preference optimization (ftpo).\n\nin this tutorial, you will learn:\n• what is a doom loop \n• how to reduce doom loops with ftpo\n• how to implement a custom DPOTrainer class TRL for ftpo\n\ntutorial: https://t.co/FlJpSkibkG",
+   "author": {
+    "id": "1559465561796579328",
+    "name": "Leonie",
+    "screenName": "helloiamleonie",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1559465709008297985/1Q_wkd4i_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 288,
+    "retweets": 34,
+    "replies": 15,
+    "quotes": 1,
+    "views": 10315,
+    "bookmarks": 249
+   },
+   "createdAt": "Tue Sep 15 15:24:49 +0000 2026",
+   "createdAtLocal": "2026-09-15 23:24",
+   "createdAtISO": "2026-09-15T15:24:49+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HSQ-4SzW0AAIyGQ.jpg",
+     "width": 2002,
+     "height": 2068
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "maximelabonne",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2099479767623811111",
+   "text": "@apolloaiapp for Android now has Live Updates 🚀\n\nYou can track the progress and see the result as soon as it’s ready — without keeping the app open\n\nAnd the best part? You can try it with the latest @liquidai models https://t.co/g9ZTa46Xrz",
+   "author": {
+    "id": "2970022252",
+    "name": "Roman Khrupa",
+    "screenName": "romankhrupa",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/909500469617283072/JSVCmhvi_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 10,
+    "retweets": 4,
+    "replies": 0,
+    "quotes": 0,
+    "views": 928,
+    "bookmarks": 1
+   },
+   "createdAt": "Mon Sep 14 12:45:57 +0000 2026",
+   "createdAtLocal": "2026-09-14 20:45",
+   "createdAtISO": "2026-09-14T12:45:57+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2099478342504525825/vid/avc1/1080x1920/23kq5FL1JTCflQPp.mp4?tag=29",
+     "width": 1080,
+     "height": 1920
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "maximelabonne",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2099574284339331239",
+   "text": "First, great initiative. I'm really happy it exists.\n\nMy main concern is that the proposal explicitly tries to reverse-engineer a lab based on the desired outcome (thousands of employees, multi-GW compute capacity, major acquisitions).\n\nBut reaching the frontier once isn't really the objective. What you want is an engine that can repeatedly produce great models with fast cycles. The first model will be bad, the second one a bit better, the third one will be decent, etc. You only get good at building models by iterating a lot.\n\nTo be fair, the proposal mentions the risk of overcommitting: it suggest independent technical reviews after ~18 months and then more frequently. But it also pre-commits GWs of compute in the first three years (with a goal of 16 GW).\n\nI would structure the commitment differently. Political commitment (money, compute, etc.) is mandatory from day one, so the next election can't (easily) stop the project. Operationally, however, you probably want to start with 50-100 people, 100s of MW and start shipping. If that team can ship competitive models every few months, use its compute efficiently, attract users, and show that scaling is the bottleneck, then scaling toward 1 GW and beyond makes sense.\n\nDecoupling political commitment and operational footprint matters because compute won't be a bottleneck at the beginning anyway. You'll need to build all the infra and learn to work together. It also derisks the most expensive part of the project. This leaves room to grow organically.\n\nMore specifically, I'd also assign 99% of the compute to research and training, 1% to inference. The reason is you need guaranteed access to compute to train models, but you don't necessarily need to serve them to millions of users. If you have good models, every inference provider will serve it for you anyway. You can always commit more compute to it later (good problem to have).\n\nThis is also why I think an open-weight strategy should be central to the project. Model releases are the best possible forcing function: fixed deadlines, external evaluation, real-world usage, and user feedback at a scale you can't reproduce with technical reviews. They push the organization to build models that people actually want to use instead of overfitting internal evals.\n\nEven if you don't want to open-weight your frontier checkpoints, you can still release smaller models and previous generations by default. I really believe this should be essential and not an afterthought. The value you get from open-source adoption is really that insane.\n\nOverall, this is a good start but the objective function feels slightly off. It should optimize for building the fastest possible learning loop. Compute, headcount, acquisitions, and infrastructure should only scale when there's evidence they'd make the loop faster.",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 47,
+    "retweets": 5,
+    "replies": 7,
+    "quotes": 0,
+    "views": 6431,
+    "bookmarks": 12
+   },
+   "createdAt": "Mon Sep 14 19:01:32 +0000 2026",
+   "createdAtLocal": "2026-09-15 03:01",
+   "createdAtISO": "2026-09-14T19:01:32+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2099398013613375793",
+    "text": "Today, we publish a Transformative AI Strategy for Europe.\n\nOver the last few months, we’ve rallied researchers and engaged with governments to develop a plan for protecting the prosperity, sovereignty, and security of Europeans in a time of rapid AI progress.\n\nhttps://t.co/Jc34ptCRMc\n\n@MonikaSchnitzer and I are honored to have convened an all-star team of thinkers and researchers contributing ambitious near-term objectives to make Europe relevant again, including:\n\n— Creating a Member State Alliance for Supply Chain Security (@anton_d_leicht et al)\n— Making European institutions ready to act in a transformative AI world (Conor McGlynn et al)\n— Securing Europe's share of global AI compute, in a ‘European Way’ that benefits local communities (@philip_fox_ et al)\n— Ensuring resilience to AI crises (@ben_s_bucknall et al)\n— Making Europe the global leader in assurance technology \n— And more objectives around security of supply and leverage (@milorignell et al), economic strength (@FraukeStehr et al), and safety/security (@NoemiDreksler et al)\n\nOur all-star senior expert council of Europe’s best and brightest (and non-European friends) reviewed drafts, provided strategic advice, and made suggestions for how to make the strategy more useful: @Ph_Aghion @Christophkw @bakkermichiel @ischinger @vestager @aleks_madry @FuestClemens Marta Kwiatkowska @LeoVaradkar @antonosika @DAcemogluMIT @Yoshua_Bengio \n\nIt’s never been more clear: AI is real, and Europe needs to act. We’ve had all the warning shots and wake-up calls we need. Now the question is ‘what must be done?’ This strategy is our answer.\n\nhttps://t.co/Jc34ptCRMc",
+    "author": {
+     "screenName": "privitera_",
+     "name": "Daniel Privitera"
+    }
+   }
+  },
+  {
+   "id": "2099526059418939778",
+   "text": "Please stop using LFM2.5-2.6B for coding guys https://t.co/NwsPHraCrW",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1072,
+    "retweets": 15,
+    "replies": 59,
+    "quotes": 1,
+    "views": 143164,
+    "bookmarks": 485
+   },
+   "createdAt": "Mon Sep 14 15:49:54 +0000 2026",
+   "createdAtLocal": "2026-09-14 23:49",
+   "createdAtISO": "2026-09-14T15:49:54+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HSMDs4zWgAA-R6e.jpg",
+     "width": 1014,
+     "height": 694
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2099547452843995427",
+   "text": "I'm kidding, break stuff and create unholy codebases with it for free https://t.co/nqSRJHsJoW",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 141,
+    "retweets": 5,
+    "replies": 5,
+    "quotes": 0,
+    "views": 13762,
+    "bookmarks": 68
+   },
+   "createdAt": "Mon Sep 14 17:14:55 +0000 2026",
+   "createdAtLocal": "2026-09-15 01:14",
+   "createdAtISO": "2026-09-14T17:14:55+00:00",
+   "media": [],
+   "urls": [
+    "https://openrouter.ai/liquid"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098046295231418880",
+   "text": "Nice to see how they converted their distribution moat into RL env/data synthesis. It's not super automated yet, but solid first step in this direction.\n\nAlso, the full-vocabulary MOPD with 40 teachers and different architectures cracks me up. https://t.co/OF1pwK2Tpw",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 110,
+    "retweets": 8,
+    "replies": 5,
+    "quotes": 1,
+    "views": 8902,
+    "bookmarks": 28
+   },
+   "createdAt": "Thu Sep 10 13:49:51 +0000 2026",
+   "createdAtLocal": "2026-09-10 21:49",
+   "createdAtISO": "2026-09-10T13:49:51+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HR3ANerXEAY907f.jpg",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2097930608790167907",
+    "text": "🚀 Introducing DeepSeek-V4.1-Flash: smarter, faster, more efficient.\n\n🔹 Introducing the smallest model in our new architecture family, with native visual understanding.\n🔹 Designed for greater capability, faster inference, higher throughput, and scaling to larger models.\n\n1/6",
+    "author": {
+     "screenName": "deepseek_ai",
+     "name": "DeepSeek"
+    }
+   }
+  },
+  {
+   "id": "2098088130259664919",
+   "text": "Remember you're not merging enough https://t.co/IDV3yrOVbC",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 3,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 794,
+    "bookmarks": 1
+   },
+   "createdAt": "Thu Sep 10 16:36:05 +0000 2026",
+   "createdAtLocal": "2026-09-11 00:36",
+   "createdAtISO": "2026-09-10T16:36:05+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HR3n_CzX0A0_-j4.jpg",
+     "width": 1630,
+     "height": 410
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097389565409742941",
+   "text": "🚨 The #SFTechWeek @techweek_ calendar is live\n\nOct 6 in SF: @liquidai  × @zeticai_ present “Houston, We Have No Cloud.” 🧑‍🚀📱\n\nBring a laptop, phone + data cable. Deploy an AI model directly on your device, no cloud required! \n\nLimited spots: https://t.co/FOH75CHbcH https://t.co/EDS3DqhW7m",
+   "author": {
+    "id": "256037354",
+    "name": "Viviana Márquez",
+    "screenName": "vivmarquez",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1724489702919544832/HKHhEXhk_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 8,
+    "retweets": 2,
+    "replies": 1,
+    "quotes": 0,
+    "views": 827,
+    "bookmarks": 1
+   },
+   "createdAt": "Tue Sep 08 18:20:14 +0000 2026",
+   "createdAtLocal": "2026-09-09 02:20",
+   "createdAtISO": "2026-09-08T18:20:14+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRtsOkXaQAADA_k.jpg",
+     "width": 1874,
+     "height": 1880
+    }
+   ],
+   "urls": [
+    "https://partiful.com/e/kzDyZMh8g9rdbuuFviyh"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "maximelabonne",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2096849446529098049",
+   "text": "I wrote a third book: The Generative AI Career Masterplan\n\nWe wanted to offer a guide for people who want to build a career in AI and answer questions like:\n\n- What roles fit your background?\n\n- Which skills should you focus on?\n\n- How do you turn what you’ve learned into something that gets you hired?\n\nThe book follows that journey: exploring different career paths, identifying the skills you need, building a portfolio, preparing for interviews, and continuing to grow once you land a role.\n\nIt's so big we needed five people and five different perspectives to write this book, with @AliArsanjani (Google Cloud), Sadid Hasan (Microsoft), @andreas_horn1, (IBM), and Leonid Kuligin (Google Cloud).\n\nA big thank you to my co-authors and to the team at @PacktPublishing for bringing this book to life!",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 121,
+    "retweets": 11,
+    "replies": 11,
+    "quotes": 0,
+    "views": 7132,
+    "bookmarks": 80
+   },
+   "createdAt": "Mon Sep 07 06:34:00 +0000 2026",
+   "createdAtLocal": "2026-09-07 14:34",
+   "createdAtISO": "2026-09-07T06:34:00+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRlvSqDakAAE3ML.jpg",
+     "width": 2823,
+     "height": 3689
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2096456605076476239",
+   "text": "In-browser fine-tuning is coming 🔥",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 100,
+    "retweets": 14,
+    "replies": 5,
+    "quotes": 0,
+    "views": 9654,
+    "bookmarks": 43
+   },
+   "createdAt": "Sun Sep 06 04:32:59 +0000 2026",
+   "createdAtLocal": "2026-09-06 12:32",
+   "createdAtISO": "2026-09-06T04:32:59+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2096379210939994573",
+    "text": "You heard about LLM inference on WebGPU, but what about... finetuning LLM on WebGPU? 🤯\n\nI put together a super earlier PoC that proves it's possible, backed by llama.cpp / wllama 😁\n\nWorking on LoRA next...",
+    "author": {
+     "screenName": "ngxson",
+     "name": "Xuan-Son Nguyen"
+    }
+   }
+  },
+  {
+   "id": "2096338434680082547",
+   "text": "I honestly didn't think you could get such good code performance from this model. Need to look more into this for future releases",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 87,
+    "retweets": 7,
+    "replies": 5,
+    "quotes": 0,
+    "views": 10219,
+    "bookmarks": 43
+   },
+   "createdAt": "Sat Sep 05 20:43:25 +0000 2026",
+   "createdAtLocal": "2026-09-06 04:43",
+   "createdAtISO": "2026-09-05T20:43:25+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2096135579603800437",
+    "text": "Goal: Improve LFM2.5 2.6B model performance in Pi coding agent\n\nGEPA Optimization: 564/1000\n\nWe are at 0.52 🤓\n\nThis is already a huge jump from initial run where we jumped 0.17 to 0.32 in just 100 steps. Now, we are halfway through the 1,000-run milestone. 🤠 https://t.co/EIt3y9ARP2",
+    "author": {
+     "screenName": "mtasic85",
+     "name": "Marko Tasic"
+    }
+   }
+  },
+  {
+   "id": "2096029594206019708",
+   "text": "Neat app to understand and explore VLM evals https://t.co/x0YNKdqfe3",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 45,
+    "retweets": 5,
+    "replies": 3,
+    "quotes": 0,
+    "views": 4384,
+    "bookmarks": 24
+   },
+   "createdAt": "Sat Sep 05 00:16:12 +0000 2026",
+   "createdAtLocal": "2026-09-05 08:16",
+   "createdAtISO": "2026-09-05T00:16:12+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRaXrEdaUAAN2vc.jpg",
+     "width": 2540,
+     "height": 1738
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095943242093113501",
+    "text": "\"look at the data\" has to be the highest alpha advice for working on LLMs; \nI'm currently working on optimizing LFM VL models and I realized I could improve my intuitions on vision datasets; \na thread where I go through the popular vision benchmarks, 1/x https://t.co/CHOKR7KEW5",
+    "author": {
+     "screenName": "tugot17",
+     "name": "Piotr Mazurek (in Boston 🇺🇸)"
+    }
+   }
+  },
+  {
+   "id": "2095899775526949192",
+   "text": "Average prefill speed on a Raspberry Pi",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 34,
+    "retweets": 1,
+    "replies": 1,
+    "quotes": 0,
+    "views": 4796,
+    "bookmarks": 3
+   },
+   "createdAt": "Fri Sep 04 15:40:21 +0000 2026",
+   "createdAtLocal": "2026-09-04 23:40",
+   "createdAtISO": "2026-09-04T15:40:21+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095667335566696497",
+    "text": "https://t.co/iC58Y4H5aq",
+    "author": {
+     "screenName": "usr_bin_roygbiv",
+     "name": "Roy"
+    }
+   }
+  },
+  {
+   "id": "2095874692028522538",
+   "text": "we published a blog on hugging face at possibly the worst time yesterday lol\n\ncongrats to the HF team on the big news! 💚 \n\nhere's a fine-tuning tutorial showing how to\n• fine-tune a tiny LFM2.5-350M model\n• in 100 GRPO steps using TRL\n• for better structured outputs\n\nblog: https://t.co/0ijRPNQdzH\ncolab: https://t.co/QAAPY5a6Vn",
+   "author": {
+    "id": "1559465561796579328",
+    "name": "Leonie",
+    "screenName": "helloiamleonie",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1559465709008297985/1Q_wkd4i_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1002,
+    "retweets": 114,
+    "replies": 13,
+    "quotes": 7,
+    "views": 52587,
+    "bookmarks": 1008
+   },
+   "createdAt": "Fri Sep 04 14:00:40 +0000 2026",
+   "createdAtLocal": "2026-09-04 22:00",
+   "createdAtISO": "2026-09-04T14:00:40+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRYJBoQagAA0XzS.jpg",
+     "width": 1724,
+     "height": 1678
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "maximelabonne",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095482998674112733",
+    "text": "Super happy to share our intention to join forces with NVIDIA in a $12,930,300,000 acquisition  💛💚\n\n10 years after starting Hugging Face, open-source AI is at an inflection point. Thanks to the community, we’ve shown that it can be a complement, and even an alternative, to closed-source APIs. But for it to happen at larger scale, it needs more compute, more support, more collaboration and more visibility. That’s why we went to talk to Jensen, who offered to do exactly that with us.\n\nIn addition to doubling down on NVIDIA’s massive contributions to open-source AI (I called them the “King of American open-source AI” earlier this year), they’ve committed to strongly supporting Hugging Face and our mission while keeping the platform open, independent and compute agnostic. The founders and the team are all staying to keep pushing this mission forward.\n\nTogether, we think we can make open source the default way to build AI, with the goal of empowering 100 million AI builders to own their intelligence rather than rent it.\n\nExcited about the next 10 years! 🤗🤗🤗",
+    "author": {
+     "screenName": "ClementDelangue",
+     "name": "clem 🤗"
+    }
+   }
+  },
+  {
+   "id": "2094825342427185218",
+   "text": "I'm sorry, maybe abliteration was a bad idea.",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 98,
+    "retweets": 2,
+    "replies": 15,
+    "quotes": 1,
+    "views": 29736,
+    "bookmarks": 46
+   },
+   "createdAt": "Tue Sep 01 16:30:56 +0000 2026",
+   "createdAtLocal": "2026-09-02 00:30",
+   "createdAtISO": "2026-09-01T16:30:56+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2094458081451393287",
+    "text": "Today we're releasing abliterated-model-large-v2.\n\nBased on GLM-5.3, which is #3 on Terminal-Bench 4.0 (behind only Opus 5 and Fable), with 2× the cyber exploitation of 5.2.\n\nWe abliterated and hosted it so it does the offensive cyber, red teaming, and agent testing work other models refuse to do.\n\n- US-hosted \n- FP8\n- 1 million context window\n- Zero input/output prompt retention\n\nLive now. 🧵",
+    "author": {
+     "screenName": "abliteration_ai",
+     "name": "Abliteration.ai"
+    }
+   }
+  },
+  {
+   "id": "2094928979295924717",
+   "text": "If you don't get the joke: abliteration is less expressive than training.\n\nIn other words, there's nothing you can do with abliteration that you can't do with training.\n\nAbliteration is not to blame in any case",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 10,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 1882,
+    "bookmarks": 0
+   },
+   "createdAt": "Tue Sep 01 23:22:45 +0000 2026",
+   "createdAtLocal": "2026-09-02 07:22",
+   "createdAtISO": "2026-09-01T23:22:45+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2093448949223088360",
+   "text": "I read three lines and recognized good taste",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 59,
+    "retweets": 1,
+    "replies": 5,
+    "quotes": 0,
+    "views": 17762,
+    "bookmarks": 36
+   },
+   "createdAt": "Fri Aug 28 21:21:38 +0000 2026",
+   "createdAtLocal": "2026-08-29 05:21",
+   "createdAtISO": "2026-08-28T21:21:38+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2093355502927269933",
+    "text": "Top Models For your Hardware 2026\n\n-- 8GB -- \n\n- lfm-2.6B: very solid, trained on tons of data, obviously limited by good place to start \n\nUse this for snippet tool calls, or to play around and build infra https://t.co/nCsHG1Zmrx\n\n-- 16GB -- \n\nI am a big fan of Ornith models, they do well at tool calling and they certainly push models farther \n\nGemma is a more well rounded model for chat, and vision IMO\nhttps://t.co/tc6IBTrbc3\nhttps://t.co/n9HS0emaKR\n\n-- 24GB up to 96GB -- \n\nQwen3.8-27B is IMO the first model here you can code with, it's really strong. Use the exl3 versions. \nhttps://t.co/n5avYaHKD2\n\n-- 96GB up to 196GB --\n\nQwen3.8-Flash-Next is where it's at. Phenomenal model, very fast even on slower hardware, kv cache is smaller and part of the model is basic enough to be offloaded to ram https://t.co/ZHF8HdNBG7 \n\n-- 196GB up to 384GB -- \n\nGLM-5.3-Flash is frontier at home, built to run on 10,000$ of hardware. It's really a gift. It is natively multimodal, image/video/ audio? \n\nIt hold up over 1 million tokens in context, and is hybrid attention, it holds on higher concurrency. Very good for 3D, coding, hacking, art. \n\nhttps://t.co/hf9ZjwGtca\n\n-- 384GB up to 512GB --\n\nSacrifice speed for intelligence, GLM-5.3 is tied for #1 Open Weight model, and is the best for pure coding and systems work. \n\nhttps://t.co/ujKpGbAwGN\n\nI told you August was going to be awesome, now we go to slower months. \n\n-------------\n\nIt's not Local AI we have to worry about anymore.",
+    "author": {
+     "screenName": "0xSero",
+     "name": "0xSero"
+    }
+   }
+  },
+  {
+   "id": "2093412741801533848",
+   "text": "Antidoom is now in TRL! Remove your doom loops with this one simple trick.",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 60,
+    "retweets": 10,
+    "replies": 4,
+    "quotes": 0,
+    "views": 5602,
+    "bookmarks": 21
+   },
+   "createdAt": "Fri Aug 28 18:57:46 +0000 2026",
+   "createdAtLocal": "2026-08-29 02:57",
+   "createdAtISO": "2026-08-28T18:57:46+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2093345360211317217",
+    "text": "catching up on some bookmarked reads from the summer, reading Antidoom from @liquidai \n\nsmall reasoning models get stuck more easily when the task involves a long thinking trace and a hard problem. It starts repeating the same word over and over again (\"Wait\", \"Alternatively\"…), each repetition makes the next one likelier, and the generation is spent before it reaches an answer\n\nthey measured it, 10.2% of completions for an early LFM2.5-2.6B checkpoint and 22.9% for Qwen3.5-4B at greedy. After training those drop to 1.4% and 1.0%\n\nthe fix is FTPO (final token preference optimization). What I like is how narrow it is, it only touches the single token where the loop starts\n\nthree ways it differs from DPO:\n> trains one token position, mid-generation, instead of whole sequences\n> spreads probability across ~20 plausible alternatives instead of swapping one overtrained token for another\n> keeps the regularizer in logit space, no softmax, so the rest of the vocabulary stays put\n\nthe third one is what makes it usable. If you want to edit one position without disturbing the model, you can't have a loss that reshuffles the other 150k logits on the way\n\nand their explanation abt the result: the training teaches the model nothing new about math or code, it clears the failure mode that was blocking answers the model could already produce\n\nfull blog > https://t.co/SkXWzdiF6D\n\nFTPO itself comes from Antislop, where it was built to strip overused phrasing. LiquidAI retargeted it to doom loops\n\nand under the hood it's a subclass of TRL's DPOTrainer with compute_loss overridden, around 90 lines of loss and no new trainer\n\nwe documented that pattern in TRL's docs\nhttps://t.co/ozLy7ZnHrq",
+    "author": {
+     "screenName": "SergioPaniego",
+     "name": "Sergio Paniego"
+    }
+   }
+  },
+  {
+   "id": "2093269906049437751",
+   "text": "i'm gonna get shredded to pieces like tibo and jarred when they see what i actually look like now...\n\ni'll be speaking at the 2nd edition of @aiDotEngineer paris on sep 24th 🇫🇷\n\ni'll be talking about:\n• current state of post-training\n• how our team built the first reliable on-device agentic model\n• and a demo running a local agent with LFM2.5-2.6B \n\ncome say hi (if you can recognize me)",
+   "author": {
+    "id": "1559465561796579328",
+    "name": "Leonie",
+    "screenName": "helloiamleonie",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1559465709008297985/1Q_wkd4i_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 162,
+    "retweets": 11,
+    "replies": 11,
+    "quotes": 3,
+    "views": 15320,
+    "bookmarks": 19
+   },
+   "createdAt": "Fri Aug 28 09:30:11 +0000 2026",
+   "createdAtLocal": "2026-08-28 17:30",
+   "createdAtISO": "2026-08-28T09:30:11+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQzGAFJX0AAae2D.jpg",
+     "width": 3840,
+     "height": 2160
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "maximelabonne",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2091926369701859469",
+   "text": "Great to see on-device evaluations!\n\nVery proud of LFM2.5-2.6B. The way it generalizes beyond agentic tasks is crazy.",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 85,
+    "retweets": 5,
+    "replies": 6,
+    "quotes": 1,
+    "views": 6802,
+    "bookmarks": 8
+   },
+   "createdAt": "Mon Aug 24 16:31:27 +0000 2026",
+   "createdAtLocal": "2026-08-25 00:31",
+   "createdAtISO": "2026-08-24T16:31:27+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2091922042459406560",
+    "text": "Which model should you run on the iPhone 17 Pro?\n\nAnnouncing our new intelligence and inference testing for small models on mobile devices: independent measurement of how capable small models are in typical on-device tasks, and how they perform on popular phones - in partnership with @liquidai \n\nWe have partnered with @liquidai to deliver mobile device inference benchmarking, covering a range of models in 4-bit or lower precision on the iPhone 17 Pro and Galaxy S26 Ultra\n\nWe’re publishing our phone-scale intelligence evaluation results in combination with @liquidai's inference performance benchmarks to give users and developers a holistic view of how small models are performing on phones\n\nInference benchmarking is conducted in a controlled environment using Liquid AI’s inference benchmarking software, which Artificial Analysis has examined and is open-sourced on Liquid AI’s GitHub. Results cover end-to-end generation time, output speed, peak memory usage and other metrics. The inference benchmarking app, ‘Pipette’, is available to download for free on iOS and Android, allowing users to test a variety of models on their own devices\n\nWe are ranking phone-scale model intelligence based on each model’s average score in five evaluations chosen for the task-based work these models do in practice: BFCL, IFBench, AA-Omniscience, GPQA Diamond and MATH-500. These evaluations are run by Artificial Analysis using our independent methodology. By default, we limit models to 16K context on each of these evaluations, representing the lack of memory space for significant KV cache on mobile devices. This leads to some intelligent but verbose models dipping in relative score - they were not designed for the constraints that phone memory imposes on token use\n\nWe are defining our portable device category as including models that fit within 8 GB of memory after quantization, including KV cache, at 8K context\n\nWe expect both the intelligence and inference benchmarks to evolve over time, as new models, devices, inference frameworks and quantization techniques are released. Our pages will remain up to date with these new additions\n\nInitial results:\n\n➤ Nanbeige4.2-3B and LFM2.5-2.6B share the top average evaluation score at 63 (with a 16K context limit), ahead of Ornith-1.0-9B at 62 and Qwen3.5 9B (Reasoning) at 61. LFM2.5-2.6B achieves its score more efficiently: on an iPhone 17 Pro it answers a standard 1,024-token prompt in 8.0s using 2.3 GB of memory, against 21.4s and 4.0 GB for Nanbeige4.2-3B and 25+ seconds and 6.9 GB for the two 9B models\n\n➤ The 16K context limit shapes the leaderboard: as an example, Qwen3.5 9B (Reasoning) spends 74.5M output tokens across one pass of the benchmark set, hitting the 16K limit on 29% of its generations and landing in fourth place overall. With the limit raised to 64K, Ling 3.0 Tiny takes first place with a score of 66, ahead of Nanbeige4.2-3B (65), Qwen3.5 9B (Reasoning, 64), and LFM2.5 2.6B (64). But a 64K window does not fit in mobile phone memory, and at 55 output tokens/s on an iPhone, generating 64K tokens could mean a 20+ minute wait and a lot of battery use. This is why our primary results are capped at 16K, but we're also publishing a set of results capped at 64K, and another capped at one minute of generation time\n\n➤ The speed-intelligence Pareto frontier is short: six models are unbeaten on both intelligence and speed on an iPhone 17 Pro: LFM2.5-230M (27 at 0.9s), MiniCPM5-1B (45 at 2.9s), LFM2.5-8B-A1B (58 at 5.7s), Ling 3.0 Tiny (59 at 5.7s), LFM2.5-2.6B (63 at 8.0s) and Nanbeige4.2-3B (63 at 21.4s). LFM2.5-8B-A1B and Ling 3.0 Tiny are mixture-of-experts models that activate ~1B parameters per token, which is how they answer in under 6s with 8B-class weights\n\n➤ Leading models have opposite strengths: Nanbeige4.2-3B is the most balanced (76% on BFCL, 96% on MATH-500, 67% on GPQA Diamond); Qwen3.5 9B (Non-reasoning) is the strongest tool caller (77% on BFCL) and scientific reasoner (79% on GPQA Diamond); LFM2.5-2.6B follows instructions best of any model measured on the iPhone (59% on IFBench), clears 90% on MATH-500 and hallucinates far less on AA-Omniscience (79% non-hallucination, against 33% for Nanbeige4.2-3B and 24% for Qwen3.5 9B (Reasoning))\n\nMore details below in thread ⬇️",
+    "author": {
+     "screenName": "ArtificialAnlys",
+     "name": "Artificial Analysis"
+    }
+   }
+  },
+  {
+   "id": "2091906366428598284",
+   "text": "Today we release Pipette, a model evaluation suite for on-device intelligence, in partnership with @ArtificialAnlys \n\nMost benchmarking platforms are optimized to measure core capabilities and speed profile of foundation models served in the cloud. Pipette gives the field a common, reproducible way to measure the quality, speed, latency, and memory use of AI models on devices such as phones, laptops, PCs, AI boxes, and embedded hardware.\n\n> Pipette is open source\n> In Pipette, models get compated as model + quantization + runtime + device from one interface.\n> It comes with a warehouse of verified benchmark results, currently with 10k+ results across 35 model classes, 7 quants, llama.cpp runtimes, and 4 devices.\n> Pipette is a dynamic platform, allowing new contributions from day one, adding new devices, runtimes, model families, and quantization levels. \n\n🧵",
+   "author": {
+    "id": "1635809139808141320",
+    "name": "Liquid AI",
+    "screenName": "liquidai",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1702611993327251456/PUUuOA4W_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 728,
+    "retweets": 113,
+    "replies": 30,
+    "quotes": 37,
+    "views": 80083,
+    "bookmarks": 314
+   },
+   "createdAt": "Mon Aug 24 15:11:58 +0000 2026",
+   "createdAtLocal": "2026-08-24 23:11",
+   "createdAtISO": "2026-08-24T15:11:58+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQfxwNma4AETD1r.jpg",
+     "width": 1200,
+     "height": 584
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "maximelabonne",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2091640323986370737",
+   "text": "study notes on speculative decoding\n\nhttps://t.co/tsIYoxzsqd https://t.co/LUCSi5Cl2y",
+   "author": {
+    "id": "1559465561796579328",
+    "name": "Leonie",
+    "screenName": "helloiamleonie",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1559465709008297985/1Q_wkd4i_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1197,
+    "retweets": 147,
+    "replies": 15,
+    "quotes": 12,
+    "views": 85894,
+    "bookmarks": 1219
+   },
+   "createdAt": "Sun Aug 23 21:34:48 +0000 2026",
+   "createdAtLocal": "2026-08-24 05:34",
+   "createdAtISO": "2026-08-23T21:34:48+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQb5myHWEAARXVh.jpg",
+     "width": 3072,
+     "height": 4096
+    }
+   ],
+   "urls": [
+    "https://leoniemonigatti.com/blog/speculative-decoding.html"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "maximelabonne",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2090840302625955996",
+   "text": "LFM2.5 DSpark by @liquidai is coming to mlx-vlm in v0.6.16 ⚡️\n\nExact speculative decoding on M5 Max, delivering up to 3.7× faster generation with zero output drift.\n\nOn-device speed, zero output drift.\nhttps://t.co/yWWqjvspr1\n\nBenchmarks below 🧵 https://t.co/7wXCFl849B",
+   "author": {
+    "id": "726009698",
+    "name": "Prince Canuma",
+    "screenName": "Prince_Canuma",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2018690435636510720/Aq3-a3Mv_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 103,
+    "retweets": 16,
+    "replies": 7,
+    "quotes": 5,
+    "views": 17520,
+    "bookmarks": 55
+   },
+   "createdAt": "Fri Aug 21 16:35:48 +0000 2026",
+   "createdAtLocal": "2026-08-22 00:35",
+   "createdAtISO": "2026-08-21T16:35:48+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2090838529295142912/vid/avc1/1920x1080/Z9xi755fnkdID3UC.mp4?tag=29",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [
+    "https://github.com/Blaizzy/mlx-vlm/pull/1987"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "maximelabonne",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2090715082481353169",
+   "text": "Nature healed: LFM2.5-2.6B is free on OpenRouter and has good throughput!\n\nTry it in your favorite agentic harness today.",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 119,
+    "retweets": 5,
+    "replies": 10,
+    "quotes": 2,
+    "views": 5448,
+    "bookmarks": 13
+   },
+   "createdAt": "Fri Aug 21 08:18:13 +0000 2026",
+   "createdAtLocal": "2026-08-21 16:18",
+   "createdAtISO": "2026-08-21T08:18:13+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQO14XrbUAAANTi.jpg",
+     "width": 2114,
+     "height": 822
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2090586292241445343",
+   "text": "This week, we made LFMs both smaller with QAD and now faster with DSpark.\n\nYou can now run it on even more hardware at full speed! https://t.co/FOBZGbrRlv",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 74,
+    "retweets": 8,
+    "replies": 4,
+    "quotes": 1,
+    "views": 6556,
+    "bookmarks": 14
+   },
+   "createdAt": "Thu Aug 20 23:46:27 +0000 2026",
+   "createdAtLocal": "2026-08-21 07:46",
+   "createdAtISO": "2026-08-20T23:46:27+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQNAkvqa8AANT82.jpg",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2090491703652458564",
+    "text": "Today, we release DSpark draft models for LFM2.5-1.2B-Instruct, LFM2.5-2.6B, and LFM2.5-8B-A1B. These add a speculative decoding path that trades a minimal memory increase for a large decoding speedup without changing output quality.\n\nA lightweight draft model proposes a block of candidate tokens and the target model verifies them in a single forward pass. Across MATH500, GSM8K, HumanEval, MBPP, and MT-Bench at batch size 1:\n\n> Up to 3.18x throughput on an H100: LFM2.5-8B-A1B on MATH500, 428 → 1362 tok/s\n> Up to 2.87x on an M4 Max MacBook Pro: LFM2.5-1.2B-Instruct on HumanEval, 136 → 389 tok/s\n> LFM2.5-2.6B means: 2.67x on the H100 (323 → 864 tok/s), 2.27x on device (61 → 139 tok/s)\n> Under greedy decoding, the emitted sequence is identical to baseline by construction, so benchmark accuracy is unchanged.\n\nEach draft model is around 300M parameters, with embedding and LM head tied to its target model. The gain shows most in agentic workloads, where the model reasons before every tool call and the user waits through it all: on BFCL multi-tool scenarios, DSpark cuts LFM2.5-2.6B latency by nearly 50% on average.\n\n🧵",
+    "author": {
+     "screenName": "liquidai",
+     "name": "Liquid AI"
+    }
+   }
+  },
+  {
+   "id": "2090383214993158200",
+   "text": "I'm at the biggest AI conference in Korea 🇰🇷\n\nIt was my first time signing so many books. Thank you to everyone who came by!\n\nI also finally met Woocheol Cho, who translated the LLM Engineer’s Handbook into Korean. It took him 6 months, thanks for your hard work! https://t.co/PghdhgDbxv",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 102,
+    "retweets": 1,
+    "replies": 10,
+    "quotes": 1,
+    "views": 4626,
+    "bookmarks": 5
+   },
+   "createdAt": "Thu Aug 20 10:19:30 +0000 2026",
+   "createdAtLocal": "2026-08-20 18:19",
+   "createdAtISO": "2026-08-20T10:19:30+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQKEIfraMAACuBX.jpg",
+     "width": 1280,
+     "height": 960
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQKEIf6aEAAgfP5.jpg",
+     "width": 960,
+     "height": 1280
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQKEIfqbMAE_L_k.jpg",
+     "width": 1280,
+     "height": 960
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2090383431410897167",
+   "text": "I also found an LFM power user. Very good taste! https://t.co/tkaGIijZgk",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 10,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 893,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu Aug 20 10:20:22 +0000 2026",
+   "createdAtLocal": "2026-08-20 18:20",
+   "createdAtISO": "2026-08-20T10:20:22+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQKIkiBbIAAi_-L.jpg",
+     "width": 4080,
+     "height": 3072
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQKIkh9aMAAAgFL.jpg",
+     "width": 4080,
+     "height": 3072
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2090301726398222617",
+   "text": "Trump confirmed local models will be big.",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 46,
+    "retweets": 2,
+    "replies": 1,
+    "quotes": 0,
+    "views": 4323,
+    "bookmarks": 1
+   },
+   "createdAt": "Thu Aug 20 04:55:42 +0000 2026",
+   "createdAtLocal": "2026-08-20 12:55",
+   "createdAtISO": "2026-08-20T04:55:42+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2090160423072882912",
+    "text": "NEW: President Trump says the AI industry may become “bigger than the internet.” https://t.co/ROIEkqDDig",
+    "author": {
+     "screenName": "CoinDesk",
+     "name": "CoinDesk"
+    }
+   }
+  },
+  {
+   "id": "2090363430003978363",
+   "text": "ok niche joke but thanks for the pity likes",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 3,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 660,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu Aug 20 09:00:53 +0000 2026",
+   "createdAtLocal": "2026-08-20 17:00",
+   "createdAtISO": "2026-08-20T09:00:53+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2090100548335022327",
+   "text": "🔥 Thank you, Liquid AI, for this new quant method. Unsloth, Google, and Nvidia aren't the only ones pushing smaller quantizations.\n\nLiquid AI released new Q4_0 GGUFs that were trained to survive 4-bit quantization.\n\nAnd they're retaining roughly 97% of their BF16 performance.\n\nLiquid calls the technique 👉 Quantization-Aware Distillation (QAD) 🧠\n\nNormal quantization:\n1️⃣ Train a model in high precision\n2️⃣ Quantize it afterward\n3️⃣ Accept some intelligence loss to make it smaller\n\nQAD changed step #2 \nThe quantized model is trained while experiencing the errors introduced by 4-bit quantization, with the high-precision model acting as its teacher.\n\nSo it learns to compensate for being Q4.\n\nLiquid applied it to their LFM2.5 models:\n🧠 LFM2.5-230M\n🧠 LFM2.5-350M\n🧠 LFM2.5-1.2B\n🧠 LFM2.5-2.6B\n\nThe resulting Q4 models retain:\n⚡ 230M → 97.1% of BF16 performance\n⚡ 350M → 96.5%\n⚡ 1.2B → 97.4%\n⚡ 2.6B → 96.6%\n\nAnd these models are TINY:\n📦 350M → 219MB\n📦 1.2B → 696MB\n📦 2.6B → 1.59GB\n\nThe 230M and 350M QAD models reportedly reach roughly Q5_K_M quality while keeping the faster Q4_0 inference path.\n\nAnd they're available right now as GGUFs and the Local AI ecosystem can already run them\n🦙 llama.cpp\n🟢 Ollama\n🖥️ LM Studio\n🍋 Lemonade\n🤖 Hermes Agent\n🦞 OpenClaw\nRun them on:\n📱 Phones\n💻 Laptops\n🥧 Raspberry Pi\n🖥️ Mini PCs\n\nAnd now I really want Liquid to do this to LFM2.5-8B-A1B. 👀",
+   "author": {
+    "id": "1682428283135336449",
+    "name": "David Hendrickson",
+    "screenName": "TeksEdge",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1682428434792980485/Z3VcwEl7_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 214,
+    "retweets": 30,
+    "replies": 3,
+    "quotes": 1,
+    "views": 13275,
+    "bookmarks": 92
+   },
+   "createdAt": "Wed Aug 19 15:36:17 +0000 2026",
+   "createdAtLocal": "2026-08-19 23:36",
+   "createdAtISO": "2026-08-19T15:36:17+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQGFy_Ea8AAjqVh.jpg",
+     "width": 4082,
+     "height": 2296
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "maximelabonne",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2090078070929760295",
+    "text": "Today, we release updated 4-bit checkpoints for LFM2.5-230M, LFM2.5-350M, LFM2.5-1.2B-Instruct, and LFM2.5-2.6B trained with Quantization-Aware Distillation (QAD). These checkpoints recover accuracy lost to 4-bit quantization while retaining the low memory footprint and high decode throughput of the Q4_0 format.\n\nAll four checkpoints reach roughly 97% of their BF16 averages.\n\n🧵",
+    "author": {
+     "screenName": "liquidai",
+     "name": "Liquid AI"
+    }
+   }
+  },
+  {
+   "id": "2090300380173459495",
+   "text": "You can't stop us from going smaller.",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 181,
+    "retweets": 13,
+    "replies": 9,
+    "quotes": 2,
+    "views": 10284,
+    "bookmarks": 23
+   },
+   "createdAt": "Thu Aug 20 04:50:21 +0000 2026",
+   "createdAtLocal": "2026-08-20 12:50",
+   "createdAtISO": "2026-08-20T04:50:21+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2090122490316272056",
+    "text": "So you’re telling me I can swap my local LFM2.5-2.6B from F16 to QAD Q4_0 and go from:\n\n5.4 GB → 1.6 GB\n21 → 64 tok/s\n3.0s → 1.2s tool-call latency\n\nwhile keeping ~97% of BF16 performance?\n\n@LiquidAI what did you just do 😭 https://t.co/YEV9iFcdKH",
+    "author": {
+     "screenName": "noctus91",
+     "name": "Noctus"
+    }
+   }
+  },
+  {
+   "id": "2089949545853763675",
+   "text": "LFM2.5-2.6B and LFM2.5-Embedding-350M are now available for free on @OpenRouter 🚀 https://t.co/OMNMZ7IB2y",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 129,
+    "retweets": 13,
+    "replies": 8,
+    "quotes": 3,
+    "views": 6233,
+    "bookmarks": 21
+   },
+   "createdAt": "Wed Aug 19 05:36:15 +0000 2026",
+   "createdAtLocal": "2026-08-19 13:36",
+   "createdAtISO": "2026-08-19T05:36:15+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQD91uuaYAA46D4.jpg",
+     "width": 1570,
+     "height": 1414
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2089853045714952340",
+   "text": "Great application of local models where privacy is a requirement.",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 39,
+    "retweets": 4,
+    "replies": 3,
+    "quotes": 0,
+    "views": 4150,
+    "bookmarks": 11
+   },
+   "createdAt": "Tue Aug 18 23:12:48 +0000 2026",
+   "createdAtLocal": "2026-08-19 07:12",
+   "createdAtISO": "2026-08-18T23:12:48+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2089748246650331194",
+    "text": "We gave LFM2.5-VL-3B from @LiquidAI a generated skin-like image and let it choose tools.\n\nIt mapped 6 regions, drew the contours, measured L04 at 8.8 × 8.1 mm, then picked what to review first.\n\nLocal on a Mac Studio. Visual review, not diagnosis. 🧵 https://t.co/wA4c4UzOvl",
+    "author": {
+     "screenName": "OpenMed_AI",
+     "name": "OpenMed"
+    }
+   }
+  },
+  {
+   "id": "2088063334000275526",
+   "text": "Our poor free LFM2.5-2.6B checkpoint got hammered on OpenRouter (4.3B tokens in two days) but nature is healing. https://t.co/l4uYRwwOeG",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 136,
+    "retweets": 6,
+    "replies": 6,
+    "quotes": 0,
+    "views": 7925,
+    "bookmarks": 15
+   },
+   "createdAt": "Fri Aug 14 00:41:07 +0000 2026",
+   "createdAtLocal": "2026-08-14 08:41",
+   "createdAtISO": "2026-08-14T00:41:07+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HPpJ1wRakAA9kY-.jpg",
+     "width": 2010,
+     "height": 924
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2088364007535358059",
+   "text": "Oh no it died again 🚒 https://t.co/dtonXEpV9r",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 4,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 689,
+    "bookmarks": 0
+   },
+   "createdAt": "Fri Aug 14 20:35:53 +0000 2026",
+   "createdAtLocal": "2026-08-15 04:35",
+   "createdAtISO": "2026-08-14T20:35:53+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HPtbxGdaYAA6E78.png",
+     "width": 882,
+     "height": 377
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2088063809449824321",
+   "text": "https://t.co/XPhpMH9y9h",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 10,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 1118,
+    "bookmarks": 3
+   },
+   "createdAt": "Fri Aug 14 00:43:01 +0000 2026",
+   "createdAtLocal": "2026-08-14 08:43",
+   "createdAtISO": "2026-08-14T00:43:01+00:00",
+   "media": [],
+   "urls": [
+    "https://openrouter.ai/liquid/lfm-2.5-2.6b:free"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "zxx",
+   "score": null
+  },
+  {
+   "id": "2087559912687862240",
+   "text": "DeepSeek V4 Flash + LFM2.5-VL-3B as the vision auxiliary in Hermes Agent is a deadly combo.\n\nDeepSeek handles the agentic work. LFM2.5-VL-3B gives it the eyes.\n\nI told it to use only its local vision model to browse. It read Hacker News, picked the top story, opened the eclipse map, found an Iceland webcam marker and opened the live feed.\n\nEvery step seen through a 3B model running locally. No cloud vision API.",
+   "author": {
+    "id": "1960747924843061253",
+    "name": "Noctus",
+    "screenName": "noctus91",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1981652074468122624/OlGU7cPE_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 971,
+    "retweets": 75,
+    "replies": 25,
+    "quotes": 5,
+    "views": 67826,
+    "bookmarks": 1076
+   },
+   "createdAt": "Wed Aug 12 15:20:42 +0000 2026",
+   "createdAtLocal": "2026-08-12 23:20",
+   "createdAtISO": "2026-08-12T15:20:42+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2087559816357294080/vid/avc1/3024x1964/L8rmFgZS0gDz4G8V.mp4?tag=29",
+     "width": 3024,
+     "height": 1964
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "maximelabonne",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2087539876929441983",
+    "text": "Today, we release LFM2.5-VL-3B, a lightweight vision-language model that reads screens, documents, and the physical world. It handles digital screens across mobile, web, and desktop, grounds objects to coordinates, reads text and charts, and calls tools from either text or image input.\n\nBuilt on LFM2.5-2.6B base, with a SigLIP2 400M NaFlex vision encoder\n\n> Pre-trained on ~34T tokens\n> Vocab size: 128K\nComparable or better scores compared to models up to 2.6x its size:\n> ScreenSpot-v2 80.7, ahead of Gemma-4-E4B at 51.2\n> RealWorldQA 73.1, ahead of InternVL-3.5-4B at 67.7\n> TextVQA 84.3, ahead of Qwen3.5-4B at 81.2\n> RefCOCO-avg 87.9, up from 57.1 on LFM2-VL-3B\n> ToolSandbox 59.5, up from 26.4 on LFM2-VL-3B\n\n🧵",
+    "author": {
+     "screenName": "liquidai",
+     "name": "Liquid AI"
+    }
+   }
+  },
+  {
+   "id": "2087556633102873019",
+   "text": "New 3B VLM available today on @huggingface!\n\nIt's a fast instruct model with excellent grounding and OCR capabilities. \n\nYou can try the WebGPU demo directly in your browser. https://t.co/1hn99rgHgB",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 222,
+    "retweets": 22,
+    "replies": 5,
+    "quotes": 1,
+    "views": 11727,
+    "bookmarks": 54
+   },
+   "createdAt": "Wed Aug 12 15:07:40 +0000 2026",
+   "createdAtLocal": "2026-08-12 23:07",
+   "createdAtISO": "2026-08-12T15:07:40+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HPh8yT0bgAAwq7y.jpg",
+     "width": 1486,
+     "height": 1798
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2087539876929441983",
+    "text": "Today, we release LFM2.5-VL-3B, a lightweight vision-language model that reads screens, documents, and the physical world. It handles digital screens across mobile, web, and desktop, grounds objects to coordinates, reads text and charts, and calls tools from either text or image input.\n\nBuilt on LFM2.5-2.6B base, with a SigLIP2 400M NaFlex vision encoder\n\n> Pre-trained on ~34T tokens\n> Vocab size: 128K\nComparable or better scores compared to models up to 2.6x its size:\n> ScreenSpot-v2 80.7, ahead of Gemma-4-E4B at 51.2\n> RealWorldQA 73.1, ahead of InternVL-3.5-4B at 67.7\n> TextVQA 84.3, ahead of Qwen3.5-4B at 81.2\n> RefCOCO-avg 87.9, up from 57.1 on LFM2-VL-3B\n> ToolSandbox 59.5, up from 26.4 on LFM2-VL-3B\n\n🧵",
+    "author": {
+     "screenName": "liquidai",
+     "name": "Liquid AI"
+    }
+   }
+  },
+  {
+   "id": "2086806187572355388",
+   "text": "The @liquidai  cookbook is such an underrated developer resource:\n\nCurious about fine-tuning text, vision, audio, or encoder models?\nCurious about fine-tuning with CPT, SFT, DPO, or GRPO?\nCurious about fine-tuning LFMs with Unsloth or TRL?\n\nIt has it all.\n\nI just did a little cleanup. Enjoy!\nhttps://t.co/y4mJxrQwDC",
+   "author": {
+    "id": "1559465561796579328",
+    "name": "Leonie",
+    "screenName": "helloiamleonie",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1559465709008297985/1Q_wkd4i_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 882,
+    "retweets": 120,
+    "replies": 29,
+    "quotes": 6,
+    "views": 65862,
+    "bookmarks": 1233
+   },
+   "createdAt": "Mon Aug 10 13:25:40 +0000 2026",
+   "createdAtLocal": "2026-08-10 21:25",
+   "createdAtISO": "2026-08-10T13:25:40+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HPXRmvwXkAEK0oY.jpg",
+     "width": 1320,
+     "height": 1632
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "maximelabonne",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2085100067539632219",
+   "text": "Can a 2.6B model earn permission to edit the @huggingface Hub?\n\nI put @liquidai's LFM2.5 on library duty. It investigates datasets with tools, then gets exactly ONE sentence to describe them.\n\nTraces are stored in a Bucket with human ratings of quality.  If the community gives it 500 ratings, I'll let it start proposing dataset-card PRs!\n\nhttps://t.co/zXS8Iuf5Sb",
+   "author": {
+    "id": "2828117077",
+    "name": "Daniel van Strien",
+    "screenName": "vanstriendaniel",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1274680904217251840/N_svCCtg_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 32,
+    "retweets": 3,
+    "replies": 0,
+    "quotes": 1,
+    "views": 15630,
+    "bookmarks": 10
+   },
+   "createdAt": "Wed Aug 05 20:26:10 +0000 2026",
+   "createdAtLocal": "2026-08-06 04:26",
+   "createdAtISO": "2026-08-05T20:26:10+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HO_CUtEXUAEtP_B.jpg",
+     "width": 1846,
+     "height": 1438
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "maximelabonne",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2085495603245564045",
+   "text": "Great demo! For simple tool calling, you definitely don't need DeepSeek-V4-Flash.\n\nEdge models can do it for free. And, with a harness, you can go even further.",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 66,
+    "retweets": 6,
+    "replies": 4,
+    "quotes": 0,
+    "views": 7092,
+    "bookmarks": 18
+   },
+   "createdAt": "Thu Aug 06 22:37:53 +0000 2026",
+   "createdAtLocal": "2026-08-07 06:37",
+   "createdAtISO": "2026-08-06T22:37:53+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2085405031474343963",
+    "text": "New LFM2.5-2.6B hits DeepSeek-V4 level on tool calling and runs 3.7x faster!\n\nWe ran @liquidai 's new LFM2.5-2.6B against DeepSeek-V4-Flash on one box with 4x RTX 5090. Both got the same three jobs, and each one only completes if the model fires every tool call\n\nTopics:\n-weather and local time in six cities\n-one budget into six currencies\n-four hotels checked and booked for one date\n\nOutputs:\nLFM2.5-2.6B: 35/35 tool-calls, 366 tok/s, 19s\nDeepSeek-V4-Flash: 35/35 tool-calls, 77 tok/s, 70s\n\nBoth models made all 35 calls, and both fired twelve of them in one turn. LFM was trained for agents, and tool calling is where that shows. Strong result for a model you can run right on your phone",
+    "author": {
+     "screenName": "atomic_chat_hq",
+     "name": "atomic.chat"
+    }
+   }
+  },
+  {
+   "id": "2085384100416782828",
+   "text": "Wow, this gives me flashbacks of early model merging. \n\nComplete insanity, I love it! https://t.co/qyWSrq5Vmp",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 259,
+    "retweets": 13,
+    "replies": 7,
+    "quotes": 0,
+    "views": 28586,
+    "bookmarks": 159
+   },
+   "createdAt": "Thu Aug 06 15:14:48 +0000 2026",
+   "createdAtLocal": "2026-08-06 23:14",
+   "createdAtISO": "2026-08-06T15:14:48+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HPDFsDuXQAER-zr.png",
+     "width": 741,
+     "height": 627
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2085061406534037806",
+    "text": "Hey everyone! \n\nI just released a sub-6B sparse activation AI model which was built with a brand new architecture : fusion.\n\nI fused weights from @liquidai's LFM2.5-2.6B & @Alibaba_Qwen's Qwen3.6-35B-A3B.\n\nIt's capable of near Qwen3.6-35B-A3B performances, while being around a fifth of the size. \n\nThis is the first model of a new series, which has been over 6 weeks of work so far fully dedicated on this.\n\nI have two models coming soon with this architecture : \n- a mini version of minimax m3 ( already built btw ) \n- a mini version of deepseek v4 flash ( already built too ).\n\n26B and 12B. \n\nWould deffinitely love to have more compute though in order benchmark those and run more experiments and make them even better. This is I believe the fastest way for us to achieve frontier intelligence locally.\n\n@0xSero you have a lot of compute, maybe you could help me out finish my work in order to release these models opensource for everyone to use. \n\nThen I can move on to the big boys ( glm 5.2, kimi k3 and soon qwen 3.8 hehehe ).\n\nLink to the model : https://t.co/7p4SopmulE\n\nStill working on a lot of quantizations, and a checkpoint with better sparse activation.",
+    "author": {
+     "screenName": "RoliumGens",
+     "name": "Vasko"
+    }
+   }
+  },
+  {
+   "id": "2085309927589925148",
+   "text": "It didn't take two days to get the first fine-tunes of LFM2.5-2.6B. This one looks cool! https://t.co/JFY4rZasXD",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 222,
+    "retweets": 15,
+    "replies": 6,
+    "quotes": 0,
+    "views": 17469,
+    "bookmarks": 115
+   },
+   "createdAt": "Thu Aug 06 10:20:04 +0000 2026",
+   "createdAtLocal": "2026-08-06 18:20",
+   "createdAtISO": "2026-08-06T10:20:04+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HPCCLqPWwAA2xc7.jpg",
+     "width": 1071,
+     "height": 762
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2085116113881366782",
+    "text": "Releasing BTL-4 35B and Macaw 2.7B  a frontier agentic reasoning model and an on-device Mac agent. Both open weights, both available now.\n\n• 73.5% BFCL v4 (AST) — +4.3 over the base model, paired: identical harness, identical decoding, only the weights differ, all 1240 cases \n\n• 78.4% SWE-bench Verified\n• 66.1% LiveCodeBench v6 — 99.1% easy · 86.7% medium, full 442-problem window \n• 262K native context, and it uses it: raising the output budget 16K → 32K moved LiveCodeBench +5.2 points on its own. Long problems need room to finish.\n\nMacaw 2.7B — the assistant your Mac should have shipped with. 97 verified macOS tools, chained from one sentence.\n• 1.5 GB on disk, ~2 GB running, ~2s per request on a base M2 • Reads your screen and your documents — no vision model(uses esp as vision), no cloud • 100% local. No account, no telemetry, no server to send anything to \n\nOpen weights, deploy anywhere:🤗 https://t.co/DZY9RVHL4E 🤗 https://t.co/Gr7rrmnoTd 💻 https://t.co/grXlnOVnny 🔗 https://t.co/2N8oeWAMDf\n\nvLLM and MLX supported day one.",
+    "author": {
+     "screenName": "Badtheorylabs",
+     "name": "Bad theory labs"
+    }
+   }
+  },
+  {
+   "id": "2084979489323266176",
+   "text": "On-device agents are coming fr fr",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 71,
+    "retweets": 2,
+    "replies": 4,
+    "quotes": 1,
+    "views": 5986,
+    "bookmarks": 11
+   },
+   "createdAt": "Wed Aug 05 12:27:01 +0000 2026",
+   "createdAtLocal": "2026-08-05 20:27",
+   "createdAtISO": "2026-08-05T12:27:01+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2084972856350245098",
+    "text": "We’re entering a partnership with @MacPaw to bring on-device AI to millions of Mac users. Our goal: to make the everyday intelligence people rely on run on their personal computers.\n\nWe’re designing specialized Liquid Foundation Models (LFMs) for macOS AI assistance, paired with Elix and Mnemos, MacPaw’s own on-device inference and memory technologies. Eney, MacPaw’s AI assistant for macOS, is the first product built on the stack, with production release planned for later this year.\n\nFor Mac users, that means personal data stays on their device, responses come back fast, and core tasks work without an internet connection.\n\nThe models, inference framework, and memory layer are built as shared infrastructure for the MacPaw ecosystem and beyond, with a path to thousands of Mac developers through Setapp.\n\nRead the full announcement: https://t.co/PEGVCZPT8Y",
+    "author": {
+     "screenName": "liquidai",
+     "name": "Liquid AI"
+    }
+   }
+  },
+  {
+   "id": "2084957678413991994",
+   "text": "I never thought that people would be so into abliteration when I wrote my article in June 2024.\n\nReally fun to see how this ecosystem has evolved. Now all Liquid models get immediately abliterated. It's a full cycle 🙃 https://t.co/eLZoQ290nl",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 106,
+    "retweets": 1,
+    "replies": 5,
+    "quotes": 0,
+    "views": 4583,
+    "bookmarks": 20
+   },
+   "createdAt": "Wed Aug 05 11:00:21 +0000 2026",
+   "createdAtLocal": "2026-08-05 19:00",
+   "createdAtISO": "2026-08-05T11:00:21+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HO9BagTXIAAUtmk.jpg",
+     "width": 905,
+     "height": 603
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2084957726296232020",
+   "text": "The og article https://t.co/fkBA1EYWNH",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 10,
+    "retweets": 1,
+    "replies": 0,
+    "quotes": 0,
+    "views": 1001,
+    "bookmarks": 5
+   },
+   "createdAt": "Wed Aug 05 11:00:33 +0000 2026",
+   "createdAtLocal": "2026-08-05 19:00",
+   "createdAtISO": "2026-08-05T11:00:33+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/blog/mlabonne/abliteration"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2084734492699512854",
+   "text": "\"Tell me about the sales actuals.\"\n\nIt opened the folder, read the spreadsheet, and broke down Q1 revenue by region.\n\nA 2.6B model. 2.3 GB on disk.\n\nRunning in Osaurus, day one. https://t.co/wbsuZCyw6V",
+   "author": {
+    "id": "1920310210587209731",
+    "name": "Osaurus",
+    "screenName": "OsaurusAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2050221598146527232/R4R-aGXp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 320,
+    "retweets": 26,
+    "replies": 15,
+    "quotes": 1,
+    "views": 34732,
+    "bookmarks": 197
+   },
+   "createdAt": "Tue Aug 04 20:13:30 +0000 2026",
+   "createdAtLocal": "2026-08-05 04:13",
+   "createdAtISO": "2026-08-04T20:13:30+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2084734103396732928/vid/avc1/1660x1080/H86T7NUuPV03TpDQ.mp4?tag=29",
+     "width": 1660,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "maximelabonne",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2084640701669613906",
+    "text": "Today we release LFM2.5-2.6B, an agentic model that runs entirely on-device. It plans, calls tools, and works through multi-step tasks on phones, laptops, PCs, and robots. Data never leaves the device, and the marginal cost of each run is essentially zero.\n\n> Pre-trained on ~34T tokens\n> LFM2.5 flagship hybrid architecture\n> Context length: 128K\n> Vocab size: 128K\n> balanced intelligence per watt\n> customizable on a single GPU for any specialized task\n> LFM2 open-weight license\n\nComparable or better scores compared to models up to nearly 4x its size:\n> ToolSandbox 77.83, ahead of Qwen3.5-9B at 76.44\n> Multi-IF 80.07, ahead of Gemma-4-E4B-it at 77.35\n> IFStruct 85.49, ahead of Qwen3.5-9B at 78.50\n\n🧵",
+    "author": {
+     "screenName": "liquidai",
+     "name": "Liquid AI"
+    }
+   }
+  },
+  {
+   "id": "2084650589279977550",
+   "text": "Liquid AI (@liquidai) just released LFM2.5-2.6B, and it is wild what this compact model can do.\n\nI built a fully in-browser research agent that creates a plan, reasons, calls tools, and loops until the job is done.\n\n🤏 2.6B parameters.\n🚀 Fast.\n💻 On-device.\n🤖 Agentic. https://t.co/zcWngMtOzY",
+   "author": {
+    "id": "3138153393",
+    "name": "🤷 Nico Martin",
+    "screenName": "nicodotdev",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2089086242008801280/scvfAfwW_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 405,
+    "retweets": 37,
+    "replies": 20,
+    "quotes": 6,
+    "views": 25437,
+    "bookmarks": 242
+   },
+   "createdAt": "Tue Aug 04 14:40:06 +0000 2026",
+   "createdAtLocal": "2026-08-04 22:40",
+   "createdAtISO": "2026-08-04T14:40:06+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2084650174144544768/vid/avc1/1920x1080/dgn7KviloIIIphyC.mp4?tag=29",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "maximelabonne",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2084651297131606040",
+   "text": "Background agents running your calendar locally with LFM2.5-2.6B.\n\nInference is free, so you can burn &gt;1M tokens/hr at no marginal cost. https://t.co/XF1oDLxxdD",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 303,
+    "retweets": 24,
+    "replies": 11,
+    "quotes": 1,
+    "views": 18507,
+    "bookmarks": 174
+   },
+   "createdAt": "Tue Aug 04 14:42:54 +0000 2026",
+   "createdAtLocal": "2026-08-04 22:42",
+   "createdAtISO": "2026-08-04T14:42:54+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2084650504584351744/vid/avc1/1014x720/J0p_KZEwOKxhUNEW.mp4?tag=29",
+     "width": 1014,
+     "height": 720
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2084641970757013902",
+   "text": "LFM2.5-2.6B is available today on @huggingface \n\nFirst agentic model of its kind, it destroys our previous release on EVERYTHING 🥲\n\nMOPD and agentic RL unlocked new capabilities we didn't think were possible. Try it today in your favorite harness!",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 132,
+    "retweets": 18,
+    "replies": 9,
+    "quotes": 0,
+    "views": 7303,
+    "bookmarks": 13
+   },
+   "createdAt": "Tue Aug 04 14:05:51 +0000 2026",
+   "createdAtLocal": "2026-08-04 22:05",
+   "createdAtISO": "2026-08-04T14:05:51+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2084640701669613906",
+    "text": "Today we release LFM2.5-2.6B, an agentic model that runs entirely on-device. It plans, calls tools, and works through multi-step tasks on phones, laptops, PCs, and robots. Data never leaves the device, and the marginal cost of each run is essentially zero.\n\n> Pre-trained on ~34T tokens\n> LFM2.5 flagship hybrid architecture\n> Context length: 128K\n> Vocab size: 128K\n> balanced intelligence per watt\n> customizable on a single GPU for any specialized task\n> LFM2 open-weight license\n\nComparable or better scores compared to models up to nearly 4x its size:\n> ToolSandbox 77.83, ahead of Qwen3.5-9B at 76.44\n> Multi-IF 80.07, ahead of Gemma-4-E4B-it at 77.35\n> IFStruct 85.49, ahead of Qwen3.5-9B at 78.50\n\n🧵",
+    "author": {
+     "screenName": "liquidai",
+     "name": "Liquid AI"
+    }
+   }
+  },
+  {
+   "id": "2083949590735143374",
+   "text": "Highly recommended presentation by the great @maximelabonne  for those interested in learning how Small LMs are built.",
+   "author": {
+    "id": "1408789941040058369",
+    "name": "Pau Labarta Bajo",
+    "screenName": "paulabartabajo_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1658534276441202695/kIUUmbk9_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 392,
+    "retweets": 45,
+    "replies": 3,
+    "quotes": 0,
+    "views": 42440,
+    "bookmarks": 566
+   },
+   "createdAt": "Sun Aug 02 16:14:34 +0000 2026",
+   "createdAtLocal": "2026-08-03 00:14",
+   "createdAtISO": "2026-08-02T16:14:34+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "maximelabonne",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2082852068071530868",
+    "text": "Liquid AI's head of post-training explained how they built a small model that runs on-device under 1 GB in 20 minutes - better than $2500 small-model bootcamps.\n\npick LFM2.5 base -> on-policy preference alignment -> agentic reinforcement learning -> curriculum training -> iterative model merging -> ship a 1B model that reliably calls tools on your phone.\n\nThat loop is why frontier small models now beat 70B models on the tasks that actually matter.\n\nLFM2.5 + on-policy DPO + agentic RL + curriculum training + iterative merging - that's the stack.\n\nWatch and save it, then run a 1B agent on your phone tonight.",
+    "author": {
+     "screenName": "h100envy",
+     "name": "h100envy"
+    }
+   }
+  },
+  {
+   "id": "2082852068071530868",
+   "text": "Liquid AI's head of post-training explained how they built a small model that runs on-device under 1 GB in 20 minutes - better than $2500 small-model bootcamps.\n\npick LFM2.5 base -> on-policy preference alignment -> agentic reinforcement learning -> curriculum training -> iterative model merging -> ship a 1B model that reliably calls tools on your phone.\n\nThat loop is why frontier small models now beat 70B models on the tasks that actually matter.\n\nLFM2.5 + on-policy DPO + agentic RL + curriculum training + iterative merging - that's the stack.\n\nWatch and save it, then run a 1B agent on your phone tonight.",
+   "author": {
+    "id": "2036772545131585536",
+    "name": "h100envy",
+    "screenName": "h100envy",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2047054153990516736/UqUBF2QO_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 632,
+    "retweets": 78,
+    "replies": 8,
+    "quotes": 2,
+    "views": 87163,
+    "bookmarks": 997
+   },
+   "createdAt": "Thu Jul 30 15:33:25 +0000 2026",
+   "createdAtLocal": "2026-07-30 23:33",
+   "createdAtISO": "2026-07-30T15:33:25+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2082851857068695552/vid/avc1/614x338/9AtpqmQB5bhSIru4.mp4?tag=29",
+     "width": 614,
+     "height": 338
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "maximelabonne",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2082064768844837357",
+    "text": "https://t.co/I1tKdzxeRt",
+    "author": {
+     "screenName": "h100envy",
+     "name": "h100envy"
+    }
+   }
+  },
+  {
+   "id": "2083136468927623392",
+   "text": "I recorded a 30-min presentation for @Cohere_Labs Summer School.\n\nI'm also sharing  40 slides on designing and post-training edge agentic models with Multi-Domain On-Policy Distillation (MOPD) and agentic reinforcement learning. https://t.co/LYUw9gt0Cu",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 53,
+    "retweets": 13,
+    "replies": 2,
+    "quotes": 0,
+    "views": 3521,
+    "bookmarks": 29
+   },
+   "createdAt": "Fri Jul 31 10:23:31 +0000 2026",
+   "createdAtLocal": "2026-07-31 18:23",
+   "createdAtISO": "2026-07-31T10:23:31+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HOjJJ4aWoAAazDa.jpg",
+     "width": 1280,
+     "height": 719
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2083136958176367071",
+   "text": "@Cohere_Labs @AhmadMustafaAn1 https://t.co/NN7I0I3Xt8",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 11,
+    "retweets": 0,
+    "replies": 3,
+    "quotes": 0,
+    "views": 1112,
+    "bookmarks": 3
+   },
+   "createdAt": "Fri Jul 31 10:25:28 +0000 2026",
+   "createdAtLocal": "2026-07-31 18:25",
+   "createdAtISO": "2026-07-31T10:25:28+00:00",
+   "media": [],
+   "urls": [
+    "https://www.youtube.com/watch?v=Vn5ObtR2SVA"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "qme",
+   "score": null
+  },
+  {
+   "id": "2083136991504249174",
+   "text": "@Cohere_Labs @AhmadMustafaAn1 https://t.co/YiNZlrYF1B",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 7,
+    "retweets": 1,
+    "replies": 0,
+    "quotes": 0,
+    "views": 612,
+    "bookmarks": 4
+   },
+   "createdAt": "Fri Jul 31 10:25:36 +0000 2026",
+   "createdAtLocal": "2026-07-31 18:25",
+   "createdAtISO": "2026-07-31T10:25:36+00:00",
+   "media": [],
+   "urls": [
+    "https://www.slideshare.net/slideshow/building-the-first-agentic-model-for-edge-devices/288921903"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "qme",
+   "score": null
+  },
+  {
+   "id": "2082547480391008383",
+   "text": "Train encoders today like it's 2020 again!",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 68,
+    "retweets": 4,
+    "replies": 4,
+    "quotes": 2,
+    "views": 5146,
+    "bookmarks": 11
+   },
+   "createdAt": "Wed Jul 29 19:23:05 +0000 2026",
+   "createdAtLocal": "2026-07-30 03:23",
+   "createdAtISO": "2026-07-29T19:23:05+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2082459985204625832",
+    "text": "Multi-label classification. One forward pass. Zero completion tokens.\n\nWe fine-tuned LFM2.5-Encoder-230M and LFM2.5-Encoder-350M to score every label at once: no decoding loop, nothing to parse or repair. First in a new encoder demo series, watch it in action.\n\nCheck out the cookbook: https://t.co/H5CWMTJp6u",
+    "author": {
+     "screenName": "liquidai",
+     "name": "Liquid AI"
+    }
+   }
+  },
+  {
+   "id": "2082421230372556936",
+   "text": "I'll give a talk about how we built our upcoming edge agentic model at @liquidai \n\nBeyond model training, we'll also explore how to co-design the agentic harness with the model. https://t.co/ZEtInHQCOF",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 57,
+    "retweets": 10,
+    "replies": 4,
+    "quotes": 1,
+    "views": 4382,
+    "bookmarks": 7
+   },
+   "createdAt": "Wed Jul 29 11:01:25 +0000 2026",
+   "createdAtLocal": "2026-07-29 19:01",
+   "createdAtISO": "2026-07-29T11:01:25+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HOY-qO-WcAAYVZe.jpg",
+     "width": 1280,
+     "height": 1385
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2082421248345165838",
+   "text": "@liquidai https://t.co/6g0GoEQMRC",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 4,
+    "retweets": 1,
+    "replies": 0,
+    "quotes": 0,
+    "views": 810,
+    "bookmarks": 2
+   },
+   "createdAt": "Wed Jul 29 11:01:29 +0000 2026",
+   "createdAtLocal": "2026-07-29 19:01",
+   "createdAtISO": "2026-07-29T11:01:29+00:00",
+   "media": [],
+   "urls": [
+    "https://luma.com/MLSummerSchool"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "qme",
+   "score": null
+  },
+  {
+   "id": "2082136107047612529",
+   "text": "New set of LFM2.5-Encoders just dropped.\n\nThese are super fast, even at long context and on CPU.\n\nOur team adapted them from their LFM2.5 backbones:\n1. Replaced the causal attention mask with a bidirectional one\n2. Made the LFM short convolutions non-causal\n3. Trained with a masked language modeling objective\n\nThe result is a set of two tiny, super fast encoders.\nEncoding a document of 12 to 15 pages (about 8k tokens) takes less than 30s on a CPU.\n\nRelease blog: https://t.co/pw7ZtVupwO\n\nModels on Hugging Face:\nhttps://t.co/UFcW2fju7h\nhttps://t.co/nKiOTe4yFd",
+   "author": {
+    "id": "1559465561796579328",
+    "name": "Leonie",
+    "screenName": "helloiamleonie",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1559465709008297985/1Q_wkd4i_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 162,
+    "retweets": 23,
+    "replies": 2,
+    "quotes": 1,
+    "views": 7378,
+    "bookmarks": 88
+   },
+   "createdAt": "Tue Jul 28 16:08:26 +0000 2026",
+   "createdAtLocal": "2026-07-29 00:08",
+   "createdAtISO": "2026-07-28T16:08:26+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HOU7uoKWQAAsTpT.jpg",
+     "width": 1140,
+     "height": 1278
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "maximelabonne",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2082122012726608345",
+   "text": "We just released two new encoder models (MLM) in 2026 🚀🚀🚀\n\nThey're super fast, easy to train, and strongly multilingual.\n\nTry them today: we created 5 demos on @huggingface",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 117,
+    "retweets": 14,
+    "replies": 3,
+    "quotes": 0,
+    "views": 8406,
+    "bookmarks": 23
+   },
+   "createdAt": "Tue Jul 28 15:12:26 +0000 2026",
+   "createdAtLocal": "2026-07-28 23:12",
+   "createdAtISO": "2026-07-28T15:12:26+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2082120814732653037",
+    "text": "Today we release LFM2.5-Encoder-230M and LFM2.5-Encoder-350M: bidirectional encoders that stay fast at long context, even on CPU.\n\n> LFM2.5-Encoder-230M: about 3.7x faster than ModernBERT-base on CPU at 8,192 tokens. Under 30s per forward pass, versus over a minute and a half.\n> LFM2.5-Encoder-350M: 4th of 14 models on GLUE, SuperGLUE, and multilingual classification, behind only three larger models, one of them nearly 10x its size.\n\n🧵",
+    "author": {
+     "screenName": "liquidai",
+     "name": "Liquid AI"
+    }
+   }
+  },
+  {
+   "id": "2081100065913848072",
+   "text": "In strong support of open-weight AI and American AI leadership, we are proud contributors to the open-source community and excited to announce that Liquid Foundation Models (LFMs) have surpassed 40 million downloads by the community! \n\nGoing forward, we remain committed to accelerating the open-weight release of the next generation of lightweight, powerful LFMs to the world. excited to see what you build with them! \n\nhttps://t.co/vUaEPzXSeJ",
+   "author": {
+    "id": "1635809139808141320",
+    "name": "Liquid AI",
+    "screenName": "liquidai",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1702611993327251456/PUUuOA4W_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 696,
+    "retweets": 68,
+    "replies": 20,
+    "quotes": 7,
+    "views": 48042,
+    "bookmarks": 80
+   },
+   "createdAt": "Sat Jul 25 19:31:35 +0000 2026",
+   "createdAtLocal": "2026-07-26 03:31",
+   "createdAtISO": "2026-07-25T19:31:35+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HOGNKFyWwAAA45t.jpg",
+     "width": 1672,
+     "height": 941
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "maximelabonne",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2079952040294281253",
+   "text": "Wow, very good model!",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 28,
+    "retweets": 1,
+    "replies": 2,
+    "quotes": 0,
+    "views": 5026,
+    "bookmarks": 5
+   },
+   "createdAt": "Wed Jul 22 15:29:44 +0000 2026",
+   "createdAtLocal": "2026-07-22 23:29",
+   "createdAtISO": "2026-07-22T15:29:44+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2079940993869041921",
+    "text": "this local model has less than 3.14B params https://t.co/05sTh1Komw",
+    "author": {
+     "screenName": "helloiamleonie",
+     "name": "Leonie"
+    }
+   }
+  },
+  {
+   "id": "2079585887109943431",
+   "text": "New report + blog: we increased LFM2.5-8B-A1B's tokenizer vocab from 65K to 128K to fix languages the original split too finely. Result: 2.2–3.7× faster per-character decoding on-device for Hindi, Thai, &amp; Vietnamese.\n\nReport: https://t.co/1zJKfFPbio\nBlog: https://t.co/qKqnTfA3Iz",
+   "author": {
+    "id": "918650497258741760",
+    "name": "Jimmy Smith",
+    "screenName": "jimmysmith1919",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1587263836721016832/1zPChRR9_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 24,
+    "retweets": 5,
+    "replies": 0,
+    "quotes": 0,
+    "views": 3576,
+    "bookmarks": 6
+   },
+   "createdAt": "Tue Jul 21 15:14:46 +0000 2026",
+   "createdAtLocal": "2026-07-21 23:14",
+   "createdAtISO": "2026-07-21T15:14:46+00:00",
+   "media": [],
+   "urls": [
+    "https://arxiv.org/abs/2607.15232",
+    "https://www.liquid.ai/blog/tokenizer-expansion"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "maximelabonne",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2079580467804635226",
+    "text": "We doubled LFM2.5-8B-A1B's tokenizer from 65K to 128K to fix the languages it split too finely. Today we're sharing the recipe for upgrading a pretrained model's tokenizer in place.\n\n> Thai now takes 4.0× fewer tokens, Vietnamese 2.6×, Hindi 2.4×\n> Est. 2.2 to 3.7× faster per-character decoding on-device for these languages\n\n🧵",
+    "author": {
+     "screenName": "liquidai",
+     "name": "Liquid AI"
+    }
+   }
+  },
+  {
+   "id": "2079582400019931633",
+   "text": "How do you add new languages to a model?\n\nEfficient tokenization plays a major role here. In this new blog post, we talk about how we expanded LFM2's tokenizer to add new languages.",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 39,
+    "retweets": 7,
+    "replies": 6,
+    "quotes": 0,
+    "views": 3639,
+    "bookmarks": 10
+   },
+   "createdAt": "Tue Jul 21 15:00:55 +0000 2026",
+   "createdAtLocal": "2026-07-21 23:00",
+   "createdAtISO": "2026-07-21T15:00:55+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2079580467804635226",
+    "text": "We doubled LFM2.5-8B-A1B's tokenizer from 65K to 128K to fix the languages it split too finely. Today we're sharing the recipe for upgrading a pretrained model's tokenizer in place.\n\n> Thai now takes 4.0× fewer tokens, Vietnamese 2.6×, Hindi 2.4×\n> Est. 2.2 to 3.7× faster per-character decoding on-device for these languages\n\n🧵",
+    "author": {
+     "screenName": "liquidai",
+     "name": "Liquid AI"
+    }
+   }
+  },
+  {
+   "id": "2075675224477954101",
+   "text": "i spy a freshly baked engineering blog 👀\n\ncurious if there's any topic you'd be interested in seeing\n\nhttps://t.co/jpOrJeoI9e https://t.co/KXGOe6CYJv",
+   "author": {
+    "id": "1559465561796579328",
+    "name": "Leonie",
+    "screenName": "helloiamleonie",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1559465709008297985/1Q_wkd4i_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 30,
+    "retweets": 2,
+    "replies": 2,
+    "quotes": 0,
+    "views": 4031,
+    "bookmarks": 10
+   },
+   "createdAt": "Fri Jul 10 20:15:12 +0000 2026",
+   "createdAtLocal": "2026-07-11 04:15",
+   "createdAtISO": "2026-07-10T20:15:12+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HM5HEwrXMAABeFf.jpg",
+     "width": 1380,
+     "height": 812
+    }
+   ],
+   "urls": [
+    "https://www.liquid.ai/engineering"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "maximelabonne",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2075157939262783539",
+   "text": "Trust me, that's A LOT of tokens 👀",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 49,
+    "retweets": 3,
+    "replies": 5,
+    "quotes": 1,
+    "views": 8046,
+    "bookmarks": 6
+   },
+   "createdAt": "Thu Jul 09 09:59:41 +0000 2026",
+   "createdAtLocal": "2026-07-09 17:59",
+   "createdAtISO": "2026-07-09T09:59:41+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2075020862160298235",
+    "text": "We're celebrating an exciting milestone in our partnership with @Shopify : our LFMs have now processed 1 billion requests on Shopify’s platform!\n\nRead more about our multi-year partnership here: https://t.co/t8mH7AcPxq https://t.co/FXt1ugSs1M",
+    "author": {
+     "screenName": "liquidai",
+     "name": "Liquid AI"
+    }
+   }
+  },
+  {
+   "id": "2074816087380709435",
+   "text": "Three datasets trending on @huggingface!\n\nWhat dataset would you like to see next? 👀 https://t.co/Ti2PFd3ztW",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 105,
+    "retweets": 7,
+    "replies": 8,
+    "quotes": 0,
+    "views": 13295,
+    "bookmarks": 22
+   },
+   "createdAt": "Wed Jul 08 11:21:18 +0000 2026",
+   "createdAtLocal": "2026-07-08 19:21",
+   "createdAtISO": "2026-07-08T11:21:18+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HMs6ED0XIAA3ur6.png",
+     "width": 855,
+     "height": 394
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2074498103982408044",
+   "text": "Working with the @liquidai team on these engineering blogs is just so much fun!\n\nHere's what we've been working on:\n\nReasoning models can get stuck mid-thought.\n\nThat's what we call a \"doom loop\".\n\nA doom loop happens when the model repeats the same token (\"Wait\", \"Let me reconsider\") until the context window fills up. \n\n3 things cause this: \n• 𝗢𝘃𝗲𝗿𝘁𝗿𝗮𝗶𝗻𝗲𝗱 𝘁𝗼𝗸𝗲𝗻𝘀: \"Wait\" and \"Alternatively\" dominate under uncertainty \n• 𝗦𝗲𝗹𝗳-𝗿𝗲𝗶𝗻𝗳𝗼𝗿𝗰𝗶𝗻𝗴 𝗰𝗼𝗻𝘁𝗲𝘅𝘁: each repeat raises the probability of the next one\n• 𝗚𝗿𝗲𝗲𝗱𝘆 𝘀𝗮𝗺𝗽𝗹𝗶𝗻𝗴: at low temperature, the most likely token always wins \n\nThe standard fix is repetition_penalty at inference. \nIt patches the symptom, not the root cause (and degrades performance). \n\nBut the actual root cause is this: \n𝗼𝗻𝗲 𝘁𝗼𝗸𝗲𝗻 𝘁𝗿𝗶𝗴𝗴𝗲𝗿𝘀 𝘁𝗵𝗲 𝗲𝗻𝘁𝗶𝗿𝗲 𝗹𝗼𝗼𝗽. \n\nSo they built FTPO (Final Token Preference Optimization) to fix it at training time: \n\n1. Identify the token that starts the loop mid-generation 2. Label it as rejected and sample up to 20 alternatives from the base model \n3. Redistribute probability\n\nDoom-loop rate after training: \nLFM2.5-2.6B: 10.2% → 1.4% \nQwen3.5-4B: 22.9% → 1% \n\nCode: https://t.co/MBI3nAvua4 \nBlog: https://t.co/UiRNtUTEb3",
+   "author": {
+    "id": "1559465561796579328",
+    "name": "Leonie",
+    "screenName": "helloiamleonie",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1559465709008297985/1Q_wkd4i_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 86,
+    "retweets": 10,
+    "replies": 4,
+    "quotes": 1,
+    "views": 7176,
+    "bookmarks": 47
+   },
+   "createdAt": "Tue Jul 07 14:17:44 +0000 2026",
+   "createdAtLocal": "2026-07-07 22:17",
+   "createdAtISO": "2026-07-07T14:17:44+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2074497452342734849/vid/avc1/1164x1268/MKWBw7UxwlSaonHt.mp4?tag=28",
+     "width": 1164,
+     "height": 1268
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "maximelabonne",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2074495376204210388",
+   "text": "New training technique to reduce doom loops!\n\nWe applied it to LFM2.5-2.6B (SFT checkpoint) Qwen3.5-4B.\n\nBy reducing doom loops, it also improves downstream evals.\n\nWe open-source the training code and training dataset on @huggingface",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 493,
+    "retweets": 46,
+    "replies": 23,
+    "quotes": 2,
+    "views": 49325,
+    "bookmarks": 250
+   },
+   "createdAt": "Tue Jul 07 14:06:54 +0000 2026",
+   "createdAtLocal": "2026-07-07 22:06",
+   "createdAtISO": "2026-07-07T14:06:54+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2074494130126811473",
+    "text": "Today we release Antidoom, an open-source method that removes a common failure mode in reasoning models: the doom loop.\n\nDoom-loop rates before and after, with eval scores up across the board:\n\n> Early LFM2.5-2.6B checkpoint: 10.2% → 1.4%\n\n> Qwen3.5-4B: 22.9% → 1% (greedy sampling)\n\n🧵",
+    "author": {
+     "screenName": "liquidai",
+     "name": "Liquid AI"
+    }
+   }
+  },
+  {
+   "id": "2072694744778493957",
+   "text": "DeepSeek effect https://t.co/qt0sRctv0i https://t.co/i14yrbzekU",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 116,
+    "retweets": 7,
+    "replies": 3,
+    "quotes": 0,
+    "views": 14891,
+    "bookmarks": 31
+   },
+   "createdAt": "Thu Jul 02 14:51:50 +0000 2026",
+   "createdAtLocal": "2026-07-02 22:51",
+   "createdAtISO": "2026-07-02T14:51:50+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HMOwxXeXAAAhC86.png",
+     "width": 790,
+     "height": 630
+    }
+   ],
+   "urls": [
+    "https://x.com/maximelabonne/status/2070867418377818542"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2070867418377818542",
+    "text": "Fun surprise: DeepSeek used my open-perfectblend dataset to train their new DSpark drafter\n\nTime to promote it again! It's an open-source reproduction of \"The Perfect Blend\" paper.\n\nIf you ever need &gt;1M diverse prompts in math, chat, and code, it does the job. https://t.co/eWrwoGCqSI",
+    "author": {
+     "screenName": "maximelabonne",
+     "name": "Maxime Labonne"
+    }
+   }
+  },
+  {
+   "id": "2072617642024698361",
+   "text": "IFStruct now has a leaderboard on @huggingface! 🎉",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 43,
+    "retweets": 10,
+    "replies": 0,
+    "quotes": 0,
+    "views": 5411,
+    "bookmarks": 7
+   },
+   "createdAt": "Thu Jul 02 09:45:27 +0000 2026",
+   "createdAtLocal": "2026-07-02 17:45",
+   "createdAtISO": "2026-07-02T09:45:27+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2072614181052809304",
+    "text": "ifstruct by @liquidai, an instruction-following benchmark for structured output.\n\nWhy is this important?\nBecause smaller models can struggle with exactly this.\n\nThis will push the field in the direction of better small models that can run locally, making correct tool call, write good config file and so much more!\nI'm super excited for the future of local models..\n\nWinners🏆\n🥇 @Google's gemma4 31B\n🥈 @OpenAI's gpt-oss-20b\n🥉 @NVIDIAAI nemotron-3-Nano",
+    "author": {
+     "screenName": "nathanhabib1011",
+     "name": "Nathan"
+    }
+   }
+  },
+  {
+   "id": "2071978110476579044",
+   "text": "Getting LLMs to output valid JSON is one of the most common production tasks.\n\nBut most benchmarks can't tell if your model actually does it well.\n\nHere's how the team at @LiquidAI built IFStruct to measure exactly this (and how they trained a 350M model to beat models 10x its size). 🧵",
+   "author": {
+    "id": "1559465561796579328",
+    "name": "Leonie",
+    "screenName": "helloiamleonie",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1559465709008297985/1Q_wkd4i_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 66,
+    "retweets": 14,
+    "replies": 3,
+    "quotes": 0,
+    "views": 4504,
+    "bookmarks": 21
+   },
+   "createdAt": "Tue Jun 30 15:24:11 +0000 2026",
+   "createdAtLocal": "2026-06-30 23:24",
+   "createdAtISO": "2026-06-30T15:24:11+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HMD9NC-XkAATAkB.jpg",
+     "width": 4096,
+     "height": 2304
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "maximelabonne",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2071959400596586702",
+   "text": "@huggingface https://t.co/yN0ybigIrk",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 7,
+    "retweets": 1,
+    "replies": 0,
+    "quotes": 0,
+    "views": 798,
+    "bookmarks": 3
+   },
+   "createdAt": "Tue Jun 30 14:09:50 +0000 2026",
+   "createdAtLocal": "2026-06-30 22:09",
+   "createdAtISO": "2026-06-30T14:09:50+00:00",
+   "media": [],
+   "urls": [
+    "https://www.liquid.ai/blog/ifstruct-v1.0"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "qme",
+   "score": null
+  },
+  {
+   "id": "2071959319923380481",
+   "text": "We're open-sourcing a new benchmark on @huggingface: IFStruct\n\nThe goal is to measure output validity and schema following across diverse prompts.\n\nWe also detail how we generated it and the design choices behind it in our blog post. https://t.co/0ZnKHleolE",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 106,
+    "retweets": 14,
+    "replies": 5,
+    "quotes": 0,
+    "views": 6122,
+    "bookmarks": 18
+   },
+   "createdAt": "Tue Jun 30 14:09:31 +0000 2026",
+   "createdAtLocal": "2026-06-30 22:09",
+   "createdAtISO": "2026-06-30T14:09:31+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HMETNO8XoAAi9Jg.jpg",
+     "width": 1800,
+     "height": 1606
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2070878278848553113",
+   "text": "Thanks @eliebakouch for notifying me! https://t.co/53sgJufwx0",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 24,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 4021,
+    "bookmarks": 1
+   },
+   "createdAt": "Sat Jun 27 14:33:51 +0000 2026",
+   "createdAtLocal": "2026-06-27 22:33",
+   "createdAtISO": "2026-06-27T14:33:51+00:00",
+   "media": [],
+   "urls": [
+    "https://x.com/eliebakouch/status/2070762702205776316"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2070762702205776316",
+    "text": "@deepseek_ai cc @maximelabonne btw 👀 https://t.co/TN6ro9th2X",
+    "author": {
+     "screenName": "eliebakouch",
+     "name": "elie"
+    }
+   }
+  },
+  {
+   "id": "2070867436761387448",
+   "text": "https://t.co/KGq0rOJTFp",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 53,
+    "retweets": 1,
+    "replies": 1,
+    "quotes": 1,
+    "views": 6120,
+    "bookmarks": 24
+   },
+   "createdAt": "Sat Jun 27 13:50:46 +0000 2026",
+   "createdAtLocal": "2026-06-27 21:50",
+   "createdAtISO": "2026-06-27T13:50:46+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/datasets/mlabonne/open-perfectblend"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "zxx",
+   "score": null
+  },
+  {
+   "id": "2070867418377818542",
+   "text": "Fun surprise: DeepSeek used my open-perfectblend dataset to train their new DSpark drafter\n\nTime to promote it again! It's an open-source reproduction of \"The Perfect Blend\" paper.\n\nIf you ever need &gt;1M diverse prompts in math, chat, and code, it does the job. https://t.co/eWrwoGCqSI",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1333,
+    "retweets": 120,
+    "replies": 36,
+    "quotes": 4,
+    "views": 70291,
+    "bookmarks": 647
+   },
+   "createdAt": "Sat Jun 27 13:50:42 +0000 2026",
+   "createdAtLocal": "2026-06-27 21:50",
+   "createdAtISO": "2026-06-27T13:50:42+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HL0yndTWwAADwvJ.png",
+     "width": 863,
+     "height": 900
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2070865660041650401",
+   "text": "It's the best career advice that nobody follows 🥲",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 71,
+    "retweets": 3,
+    "replies": 5,
+    "quotes": 0,
+    "views": 15154,
+    "bookmarks": 42
+   },
+   "createdAt": "Sat Jun 27 13:43:42 +0000 2026",
+   "createdAtLocal": "2026-06-27 21:43",
+   "createdAtISO": "2026-06-27T13:43:42+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2070831256116342935",
+    "text": "i started writing on the internet exactly 4 years ago.\n\nit's one of the best decisions i've made (and i wish i would have started earlier).\n\nif you've been waiting for a sign, let it be this.",
+    "author": {
+     "screenName": "helloiamleonie",
+     "name": "Leonie"
+    }
+   }
+  },
+  {
+   "id": "2070444420365693261",
+   "text": "Working on small models is so much fun",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 99,
+    "retweets": 4,
+    "replies": 10,
+    "quotes": 1,
+    "views": 7064,
+    "bookmarks": 1
+   },
+   "createdAt": "Fri Jun 26 09:49:51 +0000 2026",
+   "createdAtLocal": "2026-06-26 17:49",
+   "createdAtISO": "2026-06-26T09:49:51+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2070213795184611634",
+   "text": "LFM2.5-230M running at 1400 tokens/s locally with WebGPU 🚀🚀🚀",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 53,
+    "retweets": 3,
+    "replies": 2,
+    "quotes": 0,
+    "views": 4586,
+    "bookmarks": 14
+   },
+   "createdAt": "Thu Jun 25 18:33:26 +0000 2026",
+   "createdAtLocal": "2026-06-26 02:33",
+   "createdAtISO": "2026-06-25T18:33:26+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2070210622239707568",
+    "text": "While we eagerly await Fable 5's return, our agentic WebGPU kernel optimization framework kept running.\n\nOpus 4.8 picked up where Fable left off, pushing Liquid AI's new LFM2.5 230M to an unbelievable 1,400 tok/s... running locally in your browser.\n\nDon't blink or you'll miss it. https://t.co/27WARZwTcD",
+    "author": {
+     "screenName": "xenovacom",
+     "name": "Xenova"
+    }
+   }
+  },
+  {
+   "id": "2070177129979941290",
+   "text": "you can now train @liquidai's LFM2-VL in TRL\n\nGRPO and RLOO included, with an example script https://t.co/H65pK20Q7H",
+   "author": {
+    "id": "330572456",
+    "name": "Sergio Paniego",
+    "screenName": "SergioPaniego",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1697156955603673088/uoaqJ13T_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 74,
+    "retweets": 15,
+    "replies": 5,
+    "quotes": 1,
+    "views": 14547,
+    "bookmarks": 28
+   },
+   "createdAt": "Thu Jun 25 16:07:44 +0000 2026",
+   "createdAtLocal": "2026-06-26 00:07",
+   "createdAtISO": "2026-06-25T16:07:44+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HLq96GSWkAALICq.jpg",
+     "width": 2600,
+     "height": 1300
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "maximelabonne",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2070168574849945721",
+   "text": "🎉 Meet LFM2.5-230M from @liquidai, their smallest model yet at 230M params, but it punches way above its weight. Day 0 Support is live on SGLang!\n\nBuilt on the LFM2 architecture for on-device deployment:\n> Blazing-fast inference, runs everywhere, from cloud GPUs to low-cost CPUs\n> Capable of tool use and structured data extraction\n> Outperforms models twice its size\nTry it now on SGLang!",
+   "author": {
+    "id": "1822588444046249984",
+    "name": "LMSYS Org",
+    "screenName": "lmsysorg",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1823251762243121152/0cgIY6yc_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 38,
+    "retweets": 6,
+    "replies": 0,
+    "quotes": 1,
+    "views": 5252,
+    "bookmarks": 4
+   },
+   "createdAt": "Thu Jun 25 15:33:44 +0000 2026",
+   "createdAtLocal": "2026-06-25 23:33",
+   "createdAtISO": "2026-06-25T15:33:44+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HLq3RbubAAATfj_.jpg",
+     "width": 1280,
+     "height": 403
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "maximelabonne",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2070148140368318884",
+    "text": "Introducing LFM2.5-230M: our smallest model yet, built to run fast anywhere (CPUs, NPUs, and GPUs) to enable agentic tasks on phones, robots, home and network automation devices. \n\n> 230M parameters, built on the LFM2 architecture\n> Pre-trained on 19T tokens, with a 32K context extension\n> Post-trained with distillation from LFM2.5-350M\n> 213 tok/s decode speed on Galaxy S25 Ultra (CPU)\n> 42 tok/s on a Raspberry Pi 5 (CPU) \n> Competes with and often beats models more than twice its size on instruction following, data extraction, and tool use.\n> use it for large-scale data extraction pipelines or lightweight on-device agentic workloads.\n\n🧵",
+    "author": {
+     "screenName": "liquidai",
+     "name": "Liquid AI"
+    }
+   }
+  },
+  {
+   "id": "2070149175006617682",
+   "text": "Here's our new, tiniest model: LFM2.5-230M! 🥳\n\nWe went even smaller to power ultra-low latency use cases like e-commerce and robotics.\n\nHere's a demo of LFM2.5-230M running on a Unitree G1, decomposing user prompts into a sequence of tool calls.\n\nAvailable today on @huggingface! https://t.co/5PuSamwZLR",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 222,
+    "retweets": 23,
+    "replies": 11,
+    "quotes": 5,
+    "views": 25510,
+    "bookmarks": 98
+   },
+   "createdAt": "Thu Jun 25 14:16:39 +0000 2026",
+   "createdAtLocal": "2026-06-25 22:16",
+   "createdAtISO": "2026-06-25T14:16:39+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2070148282135855104/vid/avc1/1080x1920/4Hl2DbukPwjofpyZ.mp4?tag=28",
+     "width": 1080,
+     "height": 1920
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2070148140368318884",
+    "text": "Introducing LFM2.5-230M: our smallest model yet, built to run fast anywhere (CPUs, NPUs, and GPUs) to enable agentic tasks on phones, robots, home and network automation devices. \n\n> 230M parameters, built on the LFM2 architecture\n> Pre-trained on 19T tokens, with a 32K context extension\n> Post-trained with distillation from LFM2.5-350M\n> 213 tok/s decode speed on Galaxy S25 Ultra (CPU)\n> 42 tok/s on a Raspberry Pi 5 (CPU) \n> Competes with and often beats models more than twice its size on instruction following, data extraction, and tool use.\n> use it for large-scale data extraction pipelines or lightweight on-device agentic workloads.\n\n🧵",
+    "author": {
+     "screenName": "liquidai",
+     "name": "Liquid AI"
+    }
+   }
+  },
+  {
+   "id": "2068075220406317231",
+   "text": "Storing too many tools in your context window increases latency and can lead to wrong tool selection.\n\nIn this demo, we used LFM2.5-ColBERT-350M as a filter to only select the five most relevant tools among 151 options.\n\nIt's fast and reliable, even without any specific fine-tuning. \n\nTry the demo on @huggingface! https://t.co/XhAMqTDzKT\n\nAnd learn more on our blog: https://t.co/OG5MXl6Kuu",
+   "author": {
+    "id": "1635809139808141320",
+    "name": "Liquid AI",
+    "screenName": "liquidai",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1702611993327251456/PUUuOA4W_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 446,
+    "retweets": 36,
+    "replies": 15,
+    "quotes": 5,
+    "views": 33795,
+    "bookmarks": 247
+   },
+   "createdAt": "Fri Jun 19 20:55:30 +0000 2026",
+   "createdAtLocal": "2026-06-20 04:55",
+   "createdAtISO": "2026-06-19T20:55:30+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2068073750981947392/vid/avc1/1280x720/rM49AgMPNOe9MVfA.mp4?tag=28",
+     "width": 1280,
+     "height": 720
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "maximelabonne",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2067623287270539775",
+   "text": "💧 @liquidai released 2 multilingual retrieval models, the first bidirectional members of the LFM family.\n\nBoth 350M params, 11 languages (ar, de, en, es, fr, it, ja, ko, no, pt, sv):\n\n- LFM2.5-Embedding-350M (bi-encoder)\n- LFM2.5-ColBERT-350M (multi-vector, late interaction)\n\n🧵 https://t.co/PUrsWW1u9N",
+   "author": {
+    "id": "1731643060683988992",
+    "name": "tomaarsen",
+    "screenName": "tomaarsen",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1731648253618233344/ikRZwAqv_normal.jpg",
+    "verified": false
+   },
+   "metrics": {
+    "likes": 53,
+    "retweets": 10,
+    "replies": 1,
+    "quotes": 0,
+    "views": 4060,
+    "bookmarks": 23
+   },
+   "createdAt": "Thu Jun 18 14:59:40 +0000 2026",
+   "createdAtLocal": "2026-06-18 22:59",
+   "createdAtISO": "2026-06-18T14:59:40+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HLGqvl1X0AAr9uW.jpg",
+     "width": 1770,
+     "height": 1120
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "maximelabonne",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2067613659136700587",
+   "text": "We patched LFM2.5-350M (pre-trained on 28T tokens) to transform a causal decoder into a bidirectional encoder.\n\nIt worked extremely well: both Embedding and ColBERT models get best-in-class performance, especially for multi/cross-lingual tasks.",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 117,
+    "retweets": 10,
+    "replies": 4,
+    "quotes": 0,
+    "views": 9895,
+    "bookmarks": 33
+   },
+   "createdAt": "Thu Jun 18 14:21:25 +0000 2026",
+   "createdAtLocal": "2026-06-18 22:21",
+   "createdAtISO": "2026-06-18T14:21:25+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2067610173024219225",
+    "text": "Introducing LFM2.5-Embedding-350M and LFM2.5-ColBERT-350M: two multilingual retrieval models built for ultra-fast and accurate search across 11 languages.\n\n> End-to-end retrieval latency as low as 1.5ms with our enterprise stack! 🚀\n\n> Consistently best-in-class multilingual and cross-lingual performance across Arabic, German, English, Spanish, French, Italian, Japanese, Korean, Norwegian, Portuguese, and Swedish.\n\n🧵",
+    "author": {
+     "screenName": "liquidai",
+     "name": "Liquid AI"
+    }
+   }
+  },
+  {
+   "id": "2067614027438518444",
+   "text": "Special thanks to the @LightOnIO crew (cc @antoine_chaffin) who inspired the staged structure used for training. Check out their excellent work!",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 13,
+    "retweets": 2,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1165,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu Jun 18 14:22:53 +0000 2026",
+   "createdAtLocal": "2026-06-18 22:22",
+   "createdAtISO": "2026-06-18T14:22:53+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2067618314390540710",
+   "text": "@LightOnIO @antoine_chaffin See it in action here https://t.co/0JvQRaHlDo",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 10,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 1159,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu Jun 18 14:39:55 +0000 2026",
+   "createdAtLocal": "2026-06-18 22:39",
+   "createdAtISO": "2026-06-18T14:39:55+00:00",
+   "media": [],
+   "urls": [
+    "https://x.com/maximelabonne/status/2067618140100419734"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2067618140100419734",
+    "text": "LFM2.5-ColBERT-350M is a surprisingly reliable smart tool selector.\n\nWe gave it 151 tools, and it consistently surfaces the 5 most relevant ones based on the user prompt.\n\nThis saves tokens and improves accuracy. Ideal for hmmmm agentic edge models? 👀 https://t.co/IPyizctesU",
+    "author": {
+     "screenName": "maximelabonne",
+     "name": "Maxime Labonne"
+    }
+   }
+  },
+  {
+   "id": "2067618140100419734",
+   "text": "LFM2.5-ColBERT-350M is a surprisingly reliable smart tool selector.\n\nWe gave it 151 tools, and it consistently surfaces the 5 most relevant ones based on the user prompt.\n\nThis saves tokens and improves accuracy. Ideal for hmmmm agentic edge models? 👀 https://t.co/IPyizctesU",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 294,
+    "retweets": 33,
+    "replies": 16,
+    "quotes": 4,
+    "views": 19376,
+    "bookmarks": 238
+   },
+   "createdAt": "Thu Jun 18 14:39:13 +0000 2026",
+   "createdAtLocal": "2026-06-18 22:39",
+   "createdAtISO": "2026-06-18T14:39:13+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2067618020587945984/vid/avc1/1080x1080/aMfjRc3vsTR1b5v_.mp4?tag=28",
+     "width": 1080,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2064743159427469716",
+   "text": "Parallax is a parametrized form of Local Linear Attention that drops the numerical solvers and matches FA 2/3 on decode.\n\nThe most impressive part is that the architecture's benefit works with Muon but disappears under AdamW because the model learns to suppress it.\n\nIt's conditional on optimizer geometry!\n\nLots of high-quality papers coming from Tilde, great work!",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 73,
+    "retweets": 4,
+    "replies": 9,
+    "quotes": 0,
+    "views": 5869,
+    "bookmarks": 34
+   },
+   "createdAt": "Wed Jun 10 16:15:04 +0000 2026",
+   "createdAtLocal": "2026-06-11 00:15",
+   "createdAtISO": "2026-06-10T16:15:04+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HKdu_IcXMAAdylU.jpg",
+     "width": 1486,
+     "height": 967
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2064397688746176557",
+    "text": "https://t.co/p1KMYyRmLi",
+    "author": {
+     "screenName": "tilderesearch",
+     "name": "Tilde"
+    }
+   }
+  },
+  {
+   "id": "2064692113736962453",
+   "text": "Fun fact: this model has never seen this harness during training, this is pure generalization.",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 56,
+    "retweets": 5,
+    "replies": 7,
+    "quotes": 0,
+    "views": 3947,
+    "bookmarks": 9
+   },
+   "createdAt": "Wed Jun 10 12:52:14 +0000 2026",
+   "createdAtLocal": "2026-06-10 20:52",
+   "createdAtISO": "2026-06-10T12:52:14+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2064610448855707764",
+    "text": "I recently switched from Qwen 3.5 9B to LFM2.5-8B-A1B by @liquidai, and it's quickly become my default local model in Hermes Agent Desktop.\n\nFor agentic tasks, it's one of the strongest local models I've used so far. It's surprisingly fast, reliable, and works really well with tools.\n\nCoding is still where it struggles the most.\n\nOther than that, it's been consistently solid and easily one of my favorite local models right now.",
+    "author": {
+     "screenName": "noctus91",
+     "name": "Noctus"
+    }
+   }
+  },
+  {
+   "id": "2064104498214187265",
+   "text": "For LFM2.5 8B A1B, the MoQ GGUFs are the best\n\nThey have the best ratio accuracy/size\n\nAgain, it's interesting to see the performance difference for low-bit versions, but I wouldn't use any version that doesn't achieve a minimum of 95% accuracy recovery. https://t.co/GfXB2re4xQ",
+   "author": {
+    "id": "1136844645491589120",
+    "name": "Benjamin Marie",
+    "screenName": "bnjmn_marie",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1159727932178255872/KsB_2Khx_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 61,
+    "retweets": 3,
+    "replies": 7,
+    "quotes": 2,
+    "views": 9216,
+    "bookmarks": 23
+   },
+   "createdAt": "Mon Jun 08 21:57:16 +0000 2026",
+   "createdAtLocal": "2026-06-09 05:57",
+   "createdAtISO": "2026-06-08T21:57:16+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HKUrO23XkAA6pbS.png",
+     "width": 1012,
+     "height": 570
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "maximelabonne",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2063943256719687750",
+   "text": "Nemotron 3 Ultra can't recover perf on HLE, code, etc. via OPD\n\nThe teacher was trained on DeepSeek-V4-Pro traces (DSV4 Max achieves 37.7% on HLE!). Looks like the MOPD warmup failed to properly init the student?\n\nNo good trajectory → No improvement via OPD https://t.co/3IoAFixfzG",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 59,
+    "retweets": 5,
+    "replies": 10,
+    "quotes": 0,
+    "views": 3999,
+    "bookmarks": 23
+   },
+   "createdAt": "Mon Jun 08 11:16:33 +0000 2026",
+   "createdAtLocal": "2026-06-08 19:16",
+   "createdAtISO": "2026-06-08T11:16:33+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HKSWqe_XIAA3Cc9.jpg",
+     "width": 1234,
+     "height": 869
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2063943769548800357",
+   "text": "Could it be linked to the (very) low 20T token pre-training budget? DSV4 was trained on 33T tokens. More room for knowledge in the case of HLE.\n\nLooks like they had to stop it early due to a bug they never root-caused. (Not a great demo for NVFP4 pre-training to be honest.) https://t.co/jQsaXaj20D",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 10,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1450,
+    "bookmarks": 1
+   },
+   "createdAt": "Mon Jun 08 11:18:35 +0000 2026",
+   "createdAtLocal": "2026-06-08 19:18",
+   "createdAtISO": "2026-06-08T11:18:35+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HKSZghBWEAAAldP.jpg",
+     "width": 1548,
+     "height": 577
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2063944276971516341",
+   "text": "Anyways, that was a cool paper. I took some high-level notes and comparisons here.\n\nPivotRL all the things!\n\nhttps://t.co/GEotVAfOfZ",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 9,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 872,
+    "bookmarks": 1
+   },
+   "createdAt": "Mon Jun 08 11:20:36 +0000 2026",
+   "createdAtLocal": "2026-06-08 19:20",
+   "createdAtISO": "2026-06-08T11:20:36+00:00",
+   "media": [],
+   "urls": [
+    "https://maximelabonne.substack.com/p/nemotron-3-ultra-what-distillation"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2062165807531262456",
+   "text": "@LiquidAI said device-optimized.\n\nSo I put it in airplane mode.\n\nRead my files. Parsed a PDF. Pulled the contact. Zero internet.\n\nLFM2.5-8B-A1B. ~100 tok/s. https://t.co/YXHFI5e9kJ",
+   "author": {
+    "id": "1920310210587209731",
+    "name": "Osaurus",
+    "screenName": "OsaurusAI",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2050221598146527232/R4R-aGXp_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 56,
+    "retweets": 9,
+    "replies": 3,
+    "quotes": 0,
+    "views": 6189,
+    "bookmarks": 36
+   },
+   "createdAt": "Wed Jun 03 13:33:36 +0000 2026",
+   "createdAtLocal": "2026-06-03 21:33",
+   "createdAtISO": "2026-06-03T13:33:36+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2062165223591780352/vid/avc1/1660x1080/gLMMaK6WXdJEtqx3.mp4?tag=27",
+     "width": 1660,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "maximelabonne",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2063335929138360659",
+   "text": "Glorious New Nippon Models, folded over 1000 times. 👺",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 62,
+    "retweets": 3,
+    "replies": 4,
+    "quotes": 0,
+    "views": 6512,
+    "bookmarks": 2
+   },
+   "createdAt": "Sat Jun 06 19:03:15 +0000 2026",
+   "createdAtLocal": "2026-06-07 03:03",
+   "createdAtISO": "2026-06-06T19:03:15+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2063095523318415744",
+    "text": "本日、日本語向けの新モデルを2つ公開しました🇯🇵 音声モデル：LFM2.5-Audio-1.5B-JP 言語モデル：LFM2.5-1.2B-JP-202606\n\nLFM2.5-Audio-1.5B-JP は、Liquid AI 初の日本語音声モデルです。\n日本語で話しかけると、日本語の音声で応答します。ASR・TTS を別々に組み合わせるのではなく、単一のモデルで完結するエンドツーエンドの音声モデルです。\n> 日本語に対応した、このスケールでは初の汎用エンドツーエンド音声モデル\n> 15億（1.5B）パラメータで、J-Moshi（約77億）を上回る性能\n> Qwen2.5-Omni-3B（約55億）にも匹敵する性能\n> 追加学習を想定したベースモデル\n\nLFM2.5-1.2B-JP-202606 は、最新版の日本語言語モデルです。\n前バージョン（LFM2.5-1.2B-JP）はすでに、JMMLU、M-IFEval、GSM8K において Qwen3-1.7B や Llama 3.2 1B を上回っていました。\n今回のアップデートでは、日本語データミックスの改善と新しい中間・事後学習により、さらに広範な日本語ベンチマークで 最高性能を達成しています。\n\nどちらのモデルも本日より利用できます。\nモデル:\n音声: https://t.co/okF9tWGB5l\n言語: https://t.co/5F69Z7obPS\nドキュメント: https://t.co/DyoBE2zOJQ",
+    "author": {
+     "screenName": "liquidai",
+     "name": "Liquid AI"
+    }
+   }
+  },
+  {
+   "id": "2062824006412079554",
+   "text": "We released two new specialized VLMs 🎉\n\nThey extract structured outputs from images quickly and reliably.\n\nYou can customize your fields directly in the system prompt.",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 164,
+    "retweets": 15,
+    "replies": 15,
+    "quotes": 0,
+    "views": 13971,
+    "bookmarks": 43
+   },
+   "createdAt": "Fri Jun 05 09:09:03 +0000 2026",
+   "createdAtLocal": "2026-06-05 17:09",
+   "createdAtISO": "2026-06-05T09:09:03+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2062686748291846307",
+    "text": "Introducing LFM2.5-VL-1.6B-Extract and LFM2.5-VL-450M-Extract: Vision-language models that return structured JSON, not free-form text.\n\nPass in an image and a list of fields. Get back a clean JSON object.\n\n> Two sizes: 1.6B parameters and 450M\n> open-weight\n> run on any device SoC\n\n🧵",
+    "author": {
+     "screenName": "liquidai",
+     "name": "Liquid AI"
+    }
+   }
+  },
+  {
+   "id": "2062263559216648351",
+   "text": "Oh fun! The LFM2/2.5 architecture is a joy to play with.\n\nConvolution is (almost) all you need.",
+   "author": {
+    "id": "923114064460558336",
+    "name": "Maxime Labonne",
+    "screenName": "maximelabonne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1513463763806138368/MusJGk5J_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 68,
+    "retweets": 1,
+    "replies": 6,
+    "quotes": 0,
+    "views": 4210,
+    "bookmarks": 22
+   },
+   "createdAt": "Wed Jun 03 20:02:02 +0000 2026",
+   "createdAtLocal": "2026-06-04 04:02",
+   "createdAtISO": "2026-06-03T20:02:02+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2062235700636873082",
+    "text": "It's been a while! 4 nice additions to the open-weight local-LLM-on-consumer-hardware ecosystem: https://t.co/8cTXF3aStp",
+    "author": {
+     "screenName": "rasbt",
+     "name": "Sebastian Raschka"
+    }
+   }
+  }
+ ]
+}

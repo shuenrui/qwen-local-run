@@ -1,0 +1,1341 @@
+{
+ "video_id": "dTutfoSVMq4",
+ "url": "https://www.youtube.com/watch?v=dTutfoSVMq4",
+ "segments": [
+  {
+   "start": 0.4,
+   "duration": 5.68,
+   "text": "Guanaco 3.8 is a new open model with 27"
+  },
+  {
+   "start": 3.76,
+   "duration": 4.72,
+   "text": "billion parameters and today I'm not"
+  },
+  {
+   "start": 6.08,
+   "duration": 4.96,
+   "text": "going to try to find out whether it can"
+  },
+  {
+   "start": 8.48,
+   "duration": 4.84,
+   "text": "replace Opus or Gemini. In my opinion,"
+  },
+  {
+   "start": 11.04,
+   "duration": 4.44,
+   "text": "comparing them directly isn't really the"
+  },
+  {
+   "start": 13.32,
+   "duration": 4.8,
+   "text": "right approach. I'm much more interested"
+  },
+  {
+   "start": 15.48,
+   "duration": 4.84,
+   "text": "in something else. How complex the real"
+  },
+  {
+   "start": 18.12,
+   "duration": 4.76,
+   "text": "world task be that you can give to a"
+  },
+  {
+   "start": 20.32,
+   "duration": 4.88,
+   "text": "local model of this size while still"
+  },
+  {
+   "start": 22.88,
+   "duration": 4.96,
+   "text": "being confident that it can handle them."
+  },
+  {
+   "start": 25.2,
+   "duration": 4.88,
+   "text": "So I prepared several tests from a very"
+  },
+  {
+   "start": 27.84,
+   "duration": 4.72,
+   "text": "simple project to a complex application"
+  },
+  {
+   "start": 30.08,
+   "duration": 5.0,
+   "text": "with a front end, back end and database."
+  },
+  {
+   "start": 32.56,
+   "duration": 5.16,
+   "text": "And as you will see later, at some point"
+  },
+  {
+   "start": 35.08,
+   "duration": 4.64,
+   "text": "the model really did hit its limit, but"
+  },
+  {
+   "start": 37.72,
+   "duration": 4.16,
+   "text": "I want to remind you that I don't see"
+  },
+  {
+   "start": 39.72,
+   "duration": 4.44,
+   "text": "local models as a complete replacement"
+  },
+  {
+   "start": 41.88,
+   "duration": 4.68,
+   "text": "for paid ones. For me, they are an"
+  },
+  {
+   "start": 44.16,
+   "duration": 5.08,
+   "text": "additional tools for relatively simple"
+  },
+  {
+   "start": 46.56,
+   "duration": 4.88,
+   "text": "and routine tasks as well as for cases"
+  },
+  {
+   "start": 49.24,
+   "duration": 4.92,
+   "text": "where I don't want my data to leave my"
+  },
+  {
+   "start": 51.44,
+   "duration": 5.08,
+   "text": "computer. So today I want to determine"
+  },
+  {
+   "start": 54.16,
+   "duration": 5.44,
+   "text": "what tasks I can already safely trust"
+  },
+  {
+   "start": 56.52,
+   "duration": 5.76,
+   "text": "Guanaco 3.8 with and what it's still"
+  },
+  {
+   "start": 59.6,
+   "duration": 4.56,
+   "text": "better to left to larger models."
+  },
+  {
+   "start": 62.28,
+   "duration": 4.28,
+   "text": "By the way, the main computer I'm"
+  },
+  {
+   "start": 64.16,
+   "duration": 6.04,
+   "text": "currently working on is a MacBook, but"
+  },
+  {
+   "start": 66.56,
+   "duration": 5.4,
+   "text": "it has only 24 GB of unified memory and"
+  },
+  {
+   "start": 70.2,
+   "duration": 4.4,
+   "text": "unfortunately that's not enough to"
+  },
+  {
+   "start": 71.96,
+   "duration": 4.56,
+   "text": "comfortably run today's model. The model"
+  },
+  {
+   "start": 74.6,
+   "duration": 3.92,
+   "text": "does run on it, but it works very"
+  },
+  {
+   "start": 76.52,
+   "duration": 5.32,
+   "text": "slowly, which is clearly not enough for"
+  },
+  {
+   "start": 78.52,
+   "duration": 5.44,
+   "text": "normal use. So I'll be using Guanaco 3.8"
+  },
+  {
+   "start": 81.84,
+   "duration": 4.48,
+   "text": "on my desktop and using it from my"
+  },
+  {
+   "start": 83.96,
+   "duration": 4.6,
+   "text": "MacBook over the local network. On the"
+  },
+  {
+   "start": 86.32,
+   "duration": 4.52,
+   "text": "screen you can see the specs of this"
+  },
+  {
+   "start": 88.56,
+   "duration": 5.16,
+   "text": "desktop. If you also decide to run"
+  },
+  {
+   "start": 90.84,
+   "duration": 5.48,
+   "text": "Guanaco 3.8, the main thing to pay"
+  },
+  {
+   "start": 93.72,
+   "duration": 4.84,
+   "text": "attention to is having a GPU with as"
+  },
+  {
+   "start": 96.32,
+   "duration": 4.72,
+   "text": "much memory as possible. This is the"
+  },
+  {
+   "start": 98.56,
+   "duration": 5.12,
+   "text": "most important parameter for running LLM"
+  },
+  {
+   "start": 101.04,
+   "duration": 4.96,
+   "text": "models. So first I download this model"
+  },
+  {
+   "start": 103.68,
+   "duration": 4.36,
+   "text": "to my desktop. To run the model, I'll be"
+  },
+  {
+   "start": 106.0,
+   "duration": 4.64,
+   "text": "using Ollama, but you can use any other"
+  },
+  {
+   "start": 108.04,
+   "duration": 5.28,
+   "text": "inference tool. For example, LM Studio"
+  },
+  {
+   "start": 110.64,
+   "duration": 5.24,
+   "text": "or Ollama CPP, which I also use quite"
+  },
+  {
+   "start": 113.32,
+   "duration": 4.84,
+   "text": "often. Now, just to make sure I check"
+  },
+  {
+   "start": 115.88,
+   "duration": 4.44,
+   "text": "whether it works. Yes, everything is"
+  },
+  {
+   "start": 118.16,
+   "duration": 4.36,
+   "text": "fine. The model has been downloaded,"
+  },
+  {
+   "start": 120.32,
+   "duration": 4.88,
+   "text": "launched it and is working. Now I'll"
+  },
+  {
+   "start": 122.52,
+   "duration": 5.32,
+   "text": "create a separate folder where I run the"
+  },
+  {
+   "start": 125.2,
+   "duration": 4.6,
+   "text": "tests with this model. For the tests,"
+  },
+  {
+   "start": 127.84,
+   "duration": 4.28,
+   "text": "I'll use my repository with a collection"
+  },
+  {
+   "start": 129.8,
+   "duration": 5.36,
+   "text": "of prompts. They are grouped from simple"
+  },
+  {
+   "start": 132.12,
+   "duration": 5.24,
+   "text": "to complex and I run them in that order."
+  },
+  {
+   "start": 135.16,
+   "duration": 4.48,
+   "text": "By the way, this repository is available"
+  },
+  {
+   "start": 137.36,
+   "duration": 4.88,
+   "text": "on GitHub. So you can download it and"
+  },
+  {
+   "start": 139.64,
+   "duration": 4.96,
+   "text": "experiment with it. As the agent, I'll"
+  },
+  {
+   "start": 142.24,
+   "duration": 4.719,
+   "text": "be using pie. I really like it because"
+  },
+  {
+   "start": 144.6,
+   "duration": 4.88,
+   "text": "of how minimalistic and extensible it"
+  },
+  {
+   "start": 146.959,
+   "duration": 4.801,
+   "text": "is. And in my opinion, it gives you the"
+  },
+  {
+   "start": 149.48,
+   "duration": 4.2,
+   "text": "most direct access to the model, if I"
+  },
+  {
+   "start": 151.76,
+   "duration": 4.32,
+   "text": "can put it that way."
+  },
+  {
+   "start": 153.68,
+   "duration": 5.08,
+   "text": "So for the first test, I'll use a task"
+  },
+  {
+   "start": 156.08,
+   "duration": 4.56,
+   "text": "to create an HTML page with a clock,"
+  },
+  {
+   "start": 158.76,
+   "duration": 4.12,
+   "text": "stopwatch and timer. And [clears throat]"
+  },
+  {
+   "start": 160.64,
+   "duration": 5.36,
+   "text": "I simply ask the model to implement this"
+  },
+  {
+   "start": 162.88,
+   "duration": 5.4,
+   "text": "project. Since this is the easiest task,"
+  },
+  {
+   "start": 166.0,
+   "duration": 4.68,
+   "text": "I won't create any plan and will just"
+  },
+  {
+   "start": 168.28,
+   "duration": 5.32,
+   "text": "ask it to build the project based on the"
+  },
+  {
+   "start": 170.68,
+   "duration": 5.04,
+   "text": "description. Okay, the model has started"
+  },
+  {
+   "start": 173.6,
+   "duration": 4.32,
+   "text": "thinking and while we're waiting for the"
+  },
+  {
+   "start": 175.72,
+   "duration": 4.64,
+   "text": "result, I'll open a new tab and check"
+  },
+  {
+   "start": 177.92,
+   "duration": 5.08,
+   "text": "how much load actively using this model"
+  },
+  {
+   "start": 180.36,
+   "duration": 4.32,
+   "text": "put on my desktop. So ignore the graph"
+  },
+  {
+   "start": 183.0,
+   "duration": 4.2,
+   "text": "on the left. It belongs to the"
+  },
+  {
+   "start": 184.68,
+   "duration": 4.8,
+   "text": "integrated GPU, which is not being used"
+  },
+  {
+   "start": 187.2,
+   "duration": 5.16,
+   "text": "right now. The graph on the right shows"
+  },
+  {
+   "start": 189.48,
+   "duration": 5.16,
+   "text": "the load on the dedicated GPU, which is"
+  },
+  {
+   "start": 192.36,
+   "duration": 4.68,
+   "text": "the one running the quant model. As you"
+  },
+  {
+   "start": 194.64,
+   "duration": 5.08,
+   "text": "can see, the entire model fits into the"
+  },
+  {
+   "start": 197.04,
+   "duration": 5.24,
+   "text": "GPU memory and there is still plenty of"
+  },
+  {
+   "start": 199.72,
+   "duration": 5.84,
+   "text": "room left for a large context window."
+  },
+  {
+   "start": 202.28,
+   "duration": 5.239,
+   "text": "The GPU is fully loaded. Great."
+  },
+  {
+   "start": 205.56,
+   "duration": 4.399,
+   "text": "Okay, I won't show the entire response"
+  },
+  {
+   "start": 207.519,
+   "duration": 5.041,
+   "text": "generation process because it may take a"
+  },
+  {
+   "start": 209.959,
+   "duration": 5.521,
+   "text": "while. I'll just tell you at the end how"
+  },
+  {
+   "start": 212.56,
+   "duration": 4.959,
+   "text": "long it took. So quant says that it has"
+  },
+  {
+   "start": 215.48,
+   "duration": 4.16,
+   "text": "finished working on this project."
+  },
+  {
+   "start": 217.519,
+   "duration": 4.921,
+   "text": "Generating the response and creating the"
+  },
+  {
+   "start": 219.64,
+   "duration": 5.44,
+   "text": "file took in just over 3 minutes. Pretty"
+  },
+  {
+   "start": 222.44,
+   "duration": 4.96,
+   "text": "fast. Okay, let me open the file in the"
+  },
+  {
+   "start": 225.08,
+   "duration": 4.56,
+   "text": "browser and take a look at the result."
+  },
+  {
+   "start": 227.4,
+   "duration": 4.96,
+   "text": "Well, it looks pretty good. There is"
+  },
+  {
+   "start": 229.64,
+   "duration": 4.64,
+   "text": "clock, a stopwatch and a timer. The"
+  },
+  {
+   "start": 232.36,
+   "duration": 4.4,
+   "text": "buttons work and everything behaves"
+  },
+  {
+   "start": 234.28,
+   "duration": 4.8,
+   "text": "exactly as I expected. It looks like all"
+  },
+  {
+   "start": 236.76,
+   "duration": 5.04,
+   "text": "the functionality works correctly. We"
+  },
+  {
+   "start": 239.08,
+   "duration": 5.04,
+   "text": "can confidently say that Gwen completed"
+  },
+  {
+   "start": 241.8,
+   "duration": 5.24,
+   "text": "this project successfully. So, it's time"
+  },
+  {
+   "start": 244.12,
+   "duration": 5.0,
+   "text": "to move on to a more difficult task. And"
+  },
+  {
+   "start": 247.04,
+   "duration": 4.68,
+   "text": "for a more difficult task, I'll use a"
+  },
+  {
+   "start": 249.12,
+   "duration": 4.8,
+   "text": "Pomodoro timer project. There is a"
+  },
+  {
+   "start": 251.72,
+   "duration": 4.04,
+   "text": "reason why this project is one level"
+  },
+  {
+   "start": 253.92,
+   "duration": 3.92,
+   "text": "more complex. It has a hidden"
+  },
+  {
+   "start": 255.76,
+   "duration": 4.56,
+   "text": "difficulty. The timer has several"
+  },
+  {
+   "start": 257.84,
+   "duration": 4.68,
+   "text": "different states and the app needs to"
+  },
+  {
+   "start": 260.32,
+   "duration": 4.0,
+   "text": "detect them correctly and transition"
+  },
+  {
+   "start": 262.52,
+   "duration": 3.96,
+   "text": "between them properly. Browser"
+  },
+  {
+   "start": 264.32,
+   "duration": 4.76,
+   "text": "notifications also need to work."
+  },
+  {
+   "start": 266.48,
+   "duration": 4.96,
+   "text": "Analytics and settings need to be saved."
+  },
+  {
+   "start": 269.08,
+   "duration": 5.2,
+   "text": "And of course, nice animations are also"
+  },
+  {
+   "start": 271.44,
+   "duration": 5.04,
+   "text": "one of the requirements. Usually, for"
+  },
+  {
+   "start": 274.28,
+   "duration": 4.08,
+   "text": "medium complexity task that I give to"
+  },
+  {
+   "start": 276.48,
+   "duration": 4.12,
+   "text": "local models, I first create an"
+  },
+  {
+   "start": 278.36,
+   "duration": 4.92,
+   "text": "implementation plan. Then, the model"
+  },
+  {
+   "start": 280.6,
+   "duration": 4.84,
+   "text": "follows that plan step by step and"
+  },
+  {
+   "start": 283.28,
+   "duration": 4.16,
+   "text": "implement the project. However, for"
+  },
+  {
+   "start": 285.44,
+   "duration": 3.84,
+   "text": "today's model, I want to make it a bit"
+  },
+  {
+   "start": 287.44,
+   "duration": 4.2,
+   "text": "more challenging and try to implement"
+  },
+  {
+   "start": 289.28,
+   "duration": 4.48,
+   "text": "this task without a plan as well, just"
+  },
+  {
+   "start": 291.64,
+   "duration": 4.48,
+   "text": "based on the description. Let's see if"
+  },
+  {
+   "start": 293.76,
+   "duration": 4.4,
+   "text": "it can handle it. Again, let's quickly"
+  },
+  {
+   "start": 296.12,
+   "duration": 4.56,
+   "text": "check the system load while it is"
+  },
+  {
+   "start": 298.16,
+   "duration": 4.84,
+   "text": "generating the response. Yes, everything"
+  },
+  {
+   "start": 300.68,
+   "duration": 5.32,
+   "text": "looks the same as the first time. The"
+  },
+  {
+   "start": 303.0,
+   "duration": 4.56,
+   "text": "GPU is handling all the load. Excellent."
+  },
+  {
+   "start": 306.0,
+   "duration": 5.6,
+   "text": "Now, we just need to wait for the"
+  },
+  {
+   "start": 307.56,
+   "duration": 6.56,
+   "text": "result. Okay, so Gwen 3.8 says that it"
+  },
+  {
+   "start": 311.6,
+   "duration": 4.92,
+   "text": "has finished. This time, generating the"
+  },
+  {
+   "start": 314.12,
+   "duration": 5.24,
+   "text": "response took twice as long as with the"
+  },
+  {
+   "start": 316.52,
+   "duration": 5.56,
+   "text": "simple task, around 6 minutes. I think"
+  },
+  {
+   "start": 319.36,
+   "duration": 5.559,
+   "text": "it's a good result. Now, I open it in"
+  },
+  {
+   "start": 322.08,
+   "duration": 4.8,
+   "text": "the browser. Wow, it looks great. I"
+  },
+  {
+   "start": 324.919,
+   "duration": 4.761,
+   "text": "didn't expect the design to look this"
+  },
+  {
+   "start": 326.88,
+   "duration": 5.56,
+   "text": "good and apparently, everything works."
+  },
+  {
+   "start": 329.68,
+   "duration": 4.92,
+   "text": "There are no errors. I'm very happy that"
+  },
+  {
+   "start": 332.44,
+   "duration": 4.44,
+   "text": "the model managed to do this literally"
+  },
+  {
+   "start": 334.6,
+   "duration": 4.44,
+   "text": "from the first prompt. To be honest, I"
+  },
+  {
+   "start": 336.88,
+   "duration": 4.92,
+   "text": "didn't expect such a good result. I am"
+  },
+  {
+   "start": 339.04,
+   "duration": 5.68,
+   "text": "impressed. So, I think now it's time to"
+  },
+  {
+   "start": 341.8,
+   "duration": 4.92,
+   "text": "move on to an even more difficult task."
+  },
+  {
+   "start": 344.72,
+   "duration": 4.76,
+   "text": "After today's model handled the first"
+  },
+  {
+   "start": 346.72,
+   "duration": 4.32,
+   "text": "tasks without any problems. I decided to"
+  },
+  {
+   "start": 349.48,
+   "duration": 4.12,
+   "text": "give it a much more difficult"
+  },
+  {
+   "start": 351.04,
+   "duration": 4.84,
+   "text": "assignment. This time, I need to create"
+  },
+  {
+   "start": 353.6,
+   "duration": 4.76,
+   "text": "not only the front end, but also the"
+  },
+  {
+   "start": 355.88,
+   "duration": 5.24,
+   "text": "back end. It will also require active"
+  },
+  {
+   "start": 358.36,
+   "duration": 5.28,
+   "text": "work with a database. So, the project"
+  },
+  {
+   "start": 361.12,
+   "duration": 4.6,
+   "text": "will be a news feed aggregator. But to"
+  },
+  {
+   "start": 363.64,
+   "duration": 4.48,
+   "text": "make the task even more difficult, I"
+  },
+  {
+   "start": 365.72,
+   "duration": 5.32,
+   "text": "decided that the entry project should be"
+  },
+  {
+   "start": 368.12,
+   "duration": 4.44,
+   "text": "written in the Nim programming language."
+  },
+  {
+   "start": 371.04,
+   "duration": 3.52,
+   "text": "If you have never heard of this"
+  },
+  {
+   "start": 372.56,
+   "duration": 3.84,
+   "text": "language, that's perfectly fine."
+  },
+  {
+   "start": 374.56,
+   "duration": 4.96,
+   "text": "Unfortunately, it is still not very"
+  },
+  {
+   "start": 376.4,
+   "duration": 5.8,
+   "text": "popular. However, I really like it, so I"
+  },
+  {
+   "start": 379.52,
+   "duration": 4.48,
+   "text": "experiment with it from time to time."
+  },
+  {
+   "start": 382.2,
+   "duration": 4.28,
+   "text": "Okay, since trying to implement a"
+  },
+  {
+   "start": 384.0,
+   "duration": 4.36,
+   "text": "project like this with a single prompt"
+  },
+  {
+   "start": 386.48,
+   "duration": 3.92,
+   "text": "would be pointless, I'll organize the"
+  },
+  {
+   "start": 388.36,
+   "duration": 4.68,
+   "text": "work in the following way. I have a"
+  },
+  {
+   "start": 390.4,
+   "duration": 5.0,
+   "text": "project description. First, I'll use the"
+  },
+  {
+   "start": 393.04,
+   "duration": 5.16,
+   "text": "model to create an implementation plan"
+  },
+  {
+   "start": 395.4,
+   "duration": 5.84,
+   "text": "based on it, and then I'll split that"
+  },
+  {
+   "start": 398.2,
+   "duration": 4.84,
+   "text": "plan into separate small tasks. Okay,"
+  },
+  {
+   "start": 401.24,
+   "duration": 4.0,
+   "text": "following this approach, I'll ask the"
+  },
+  {
+   "start": 403.04,
+   "duration": 4.48,
+   "text": "model to create an implementation plan"
+  },
+  {
+   "start": 405.24,
+   "duration": 4.679,
+   "text": "for the project described in the file."
+  },
+  {
+   "start": 407.52,
+   "duration": 4.24,
+   "text": "So, after a few minutes, the plan is"
+  },
+  {
+   "start": 409.919,
+   "duration": 3.881,
+   "text": "ready. First, let me show you the"
+  },
+  {
+   "start": 411.76,
+   "duration": 4.0,
+   "text": "original project description. As I"
+  },
+  {
+   "start": 413.8,
+   "duration": 4.48,
+   "text": "mentioned earlier, it is available on"
+  },
+  {
+   "start": 415.76,
+   "duration": 4.76,
+   "text": "GitHub. And now, let's take a look at"
+  },
+  {
+   "start": 418.28,
+   "duration": 4.24,
+   "text": "the plan created by the model. As you"
+  },
+  {
+   "start": 420.52,
+   "duration": 4.24,
+   "text": "can see, it is quite detailed and"
+  },
+  {
+   "start": 422.52,
+   "duration": 4.52,
+   "text": "includes a lot of specifics. At first"
+  },
+  {
+   "start": 424.76,
+   "duration": 4.28,
+   "text": "glance, it looks pretty good. But let's"
+  },
+  {
+   "start": 427.04,
+   "duration": 4.4,
+   "text": "check it with a larger model to make"
+  },
+  {
+   "start": 429.04,
+   "duration": 4.44,
+   "text": "sure everything is correct. For this, I"
+  },
+  {
+   "start": 431.44,
+   "duration": 5.12,
+   "text": "give the project description and the"
+  },
+  {
+   "start": 433.48,
+   "duration": 6.68,
+   "text": "generated plan to OpenAI's newest model,"
+  },
+  {
+   "start": 436.56,
+   "duration": 5.6,
+   "text": "GPT 5.6. So, let's see if there are any"
+  },
+  {
+   "start": 440.16,
+   "duration": 4.12,
+   "text": "flaws in the plan."
+  },
+  {
+   "start": 442.16,
+   "duration": 4.2,
+   "text": "Yeah, unfortunately, the larger model"
+  },
+  {
+   "start": 444.28,
+   "duration": 4.639,
+   "text": "found six critical issues in the"
+  },
+  {
+   "start": 446.36,
+   "duration": 4.72,
+   "text": "proposed plan. Overall, it rated the"
+  },
+  {
+   "start": 448.919,
+   "duration": 4.201,
+   "text": "plan as conceptually good, which is"
+  },
+  {
+   "start": 451.08,
+   "duration": 3.72,
+   "text": "already not bad, but not ready for"
+  },
+  {
+   "start": 453.12,
+   "duration": 4.04,
+   "text": "implementation."
+  },
+  {
+   "start": 454.8,
+   "duration": 5.4,
+   "text": "Well, it looks like I have found the"
+  },
+  {
+   "start": 457.16,
+   "duration": 5.0,
+   "text": "first limitation of today's model. It is"
+  },
+  {
+   "start": 460.2,
+   "duration": 4.08,
+   "text": "not suitable for complex architecture"
+  },
+  {
+   "start": 462.16,
+   "duration": 4.04,
+   "text": "and project planning tasks, which is"
+  },
+  {
+   "start": 464.28,
+   "duration": 4.04,
+   "text": "basically what I expected considering"
+  },
+  {
+   "start": 466.2,
+   "duration": 4.32,
+   "text": "its size, but it was still interesting"
+  },
+  {
+   "start": 468.32,
+   "duration": 4.28,
+   "text": "to test. Now, I want to test it on the"
+  },
+  {
+   "start": 470.52,
+   "duration": 4.4,
+   "text": "kind of task I usually give to models"
+  },
+  {
+   "start": 472.6,
+   "duration": 4.56,
+   "text": "like this, namely the sequential"
+  },
+  {
+   "start": 474.92,
+   "duration": 4.6,
+   "text": "implementation of many clearly defined"
+  },
+  {
+   "start": 477.16,
+   "duration": 4.4,
+   "text": "programming tasks as part of building a"
+  },
+  {
+   "start": 479.52,
+   "duration": 4.08,
+   "text": "project. For this, I refined the"
+  },
+  {
+   "start": 481.56,
+   "duration": 4.44,
+   "text": "implementation plan together with"
+  },
+  {
+   "start": 483.6,
+   "duration": 3.6,
+   "text": "ChatGPT, and I split it into small"
+  },
+  {
+   "start": 486.0,
+   "duration": 3.12,
+   "text": "tasks."
+  },
+  {
+   "start": 487.2,
+   "duration": 4.52,
+   "text": "Now, I simply go through the list of"
+  },
+  {
+   "start": 489.12,
+   "duration": 4.96,
+   "text": "task with the model and give them to it"
+  },
+  {
+   "start": 491.72,
+   "duration": 5.16,
+   "text": "one by one. Let's see how well Gwen"
+  },
+  {
+   "start": 494.08,
+   "duration": 4.88,
+   "text": "handled this. So, the whole process is"
+  },
+  {
+   "start": 496.88,
+   "duration": 4.32,
+   "text": "finally complete. Overall, it took me"
+  },
+  {
+   "start": 498.96,
+   "duration": 4.04,
+   "text": "around 2 hours. Sometimes I had to"
+  },
+  {
+   "start": 501.2,
+   "duration": 3.48,
+   "text": "correct the model and help it with"
+  },
+  {
+   "start": 503.0,
+   "duration": 3.84,
+   "text": "certain things, but overall, it"
+  },
+  {
+   "start": 504.68,
+   "duration": 4.48,
+   "text": "performed very well. Now, let's run the"
+  },
+  {
+   "start": 506.84,
+   "duration": 4.96,
+   "text": "application, and I'll show you what we"
+  },
+  {
+   "start": 509.16,
+   "duration": 4.84,
+   "text": "ended up with. But, I want to point out"
+  },
+  {
+   "start": 511.8,
+   "duration": 4.56,
+   "text": "that this is more of prototype than a"
+  },
+  {
+   "start": 514.0,
+   "duration": 4.12,
+   "text": "finished application. So, after"
+  },
+  {
+   "start": 516.36,
+   "duration": 4.28,
+   "text": "launching it, the front end opened"
+  },
+  {
+   "start": 518.12,
+   "duration": 5.24,
+   "text": "successfully. But, since I haven't added"
+  },
+  {
+   "start": 520.64,
+   "duration": 4.88,
+   "text": "any sources yet, the page is empty. Let"
+  },
+  {
+   "start": 523.36,
+   "duration": 4.16,
+   "text": "me add a few. Just a reminder that"
+  },
+  {
+   "start": 525.52,
+   "duration": 3.64,
+   "text": "according to the task, the service"
+  },
+  {
+   "start": 527.52,
+   "duration": 5.0,
+   "text": "should support fetching and saving"
+  },
+  {
+   "start": 529.16,
+   "duration": 6.04,
+   "text": "articles from RSS feeds. So, let's go"
+  },
+  {
+   "start": 532.52,
+   "duration": 4.48,
+   "text": "back to the main page. Oh, the articles"
+  },
+  {
+   "start": 535.2,
+   "duration": 4.32,
+   "text": "from the feeds I added have already"
+  },
+  {
+   "start": 537.0,
+   "duration": 5.36,
+   "text": "loaded. That means the back end worked"
+  },
+  {
+   "start": 539.52,
+   "duration": 4.88,
+   "text": "as expected, too. Great. I won't go into"
+  },
+  {
+   "start": 542.36,
+   "duration": 4.72,
+   "text": "the project source code in the detail."
+  },
+  {
+   "start": 544.4,
+   "duration": 4.56,
+   "text": "I'll just upload it to GitHub, and if"
+  },
+  {
+   "start": 547.08,
+   "duration": 4.16,
+   "text": "you are interested, you'll be able to"
+  },
+  {
+   "start": 548.96,
+   "duration": 4.96,
+   "text": "explore it there. But, what about the"
+  },
+  {
+   "start": 551.24,
+   "duration": 5.44,
+   "text": "third task? Did the model handle it? In"
+  },
+  {
+   "start": 553.92,
+   "duration": 4.76,
+   "text": "my opinion, yes. Despite the unusual"
+  },
+  {
+   "start": 556.68,
+   "duration": 4.84,
+   "text": "programming language, it successfully"
+  },
+  {
+   "start": 558.68,
+   "duration": 4.92,
+   "text": "completed all the tasks, and in the end,"
+  },
+  {
+   "start": 561.52,
+   "duration": 4.28,
+   "text": "we got a fully working prototype of the"
+  },
+  {
+   "start": 563.6,
+   "duration": 4.76,
+   "text": "service. It includes asynchronous"
+  },
+  {
+   "start": 565.8,
+   "duration": 5.6,
+   "text": "network operations, as well as database"
+  },
+  {
+   "start": 568.36,
+   "duration": 5.0,
+   "text": "work. I think that is excellent result."
+  },
+  {
+   "start": 571.4,
+   "duration": 4.24,
+   "text": "The fact that it couldn't design the"
+  },
+  {
+   "start": 573.36,
+   "duration": 4.68,
+   "text": "entire service on its own is completely"
+  },
+  {
+   "start": 575.64,
+   "duration": 4.88,
+   "text": "fine. After all, this is a relatively"
+  },
+  {
+   "start": 578.04,
+   "duration": 4.0,
+   "text": "small model that runs locally. It would"
+  },
+  {
+   "start": 580.52,
+   "duration": 4.12,
+   "text": "be strange to expect the same"
+  },
+  {
+   "start": 582.04,
+   "duration": 5.28,
+   "text": "capabilities from it as from large cloud"
+  },
+  {
+   "start": 584.64,
+   "duration": 5.04,
+   "text": "models. I also want to compare it"
+  },
+  {
+   "start": 587.32,
+   "duration": 4.48,
+   "text": "separately with its predecessor. In my"
+  },
+  {
+   "start": 589.68,
+   "duration": 4.72,
+   "text": "experience, this model is much more"
+  },
+  {
+   "start": 591.8,
+   "duration": 5.72,
+   "text": "capable. In my previous tests, Guanaco"
+  },
+  {
+   "start": 594.4,
+   "duration": 5.76,
+   "text": "3.6 struggled with my medium complexity"
+  },
+  {
+   "start": 597.52,
+   "duration": 5.12,
+   "text": "tasks. And even there, I already had to"
+  },
+  {
+   "start": 600.16,
+   "duration": 5.4,
+   "text": "split the work into smaller tasks. The"
+  },
+  {
+   "start": 602.64,
+   "duration": 5.64,
+   "text": "new Guanaco 3.8 handled them without any"
+  },
+  {
+   "start": 605.56,
+   "duration": 5.44,
+   "text": "problems, even from a single prompt. So,"
+  },
+  {
+   "start": 608.28,
+   "duration": 4.92,
+   "text": "the progress is obvious. And as a result"
+  },
+  {
+   "start": 611.0,
+   "duration": 4.04,
+   "text": "of today's tests, I can say that I"
+  },
+  {
+   "start": 613.2,
+   "duration": 3.84,
+   "text": "really like the model, and I'll"
+  },
+  {
+   "start": 615.04,
+   "duration": 3.72,
+   "text": "definitely upgrade to it from the"
+  },
+  {
+   "start": 617.04,
+   "duration": 3.48,
+   "text": "previous version. Let me know if you"
+  },
+  {
+   "start": 618.76,
+   "duration": 4.04,
+   "text": "have any comments if you already tried"
+  },
+  {
+   "start": 620.52,
+   "duration": 3.96,
+   "text": "it, and what your impressions are. And"
+  },
+  {
+   "start": 622.8,
+   "duration": 3.44,
+   "text": "that's all for today. Don't forget to"
+  },
+  {
+   "start": 624.48,
+   "duration": 3.48,
+   "text": "subscribe to the channel and to my"
+  },
+  {
+   "start": 626.24,
+   "duration": 6.04,
+   "text": "newsletter. The link is in the"
+  },
+  {
+   "start": 627.96,
+   "duration": 4.32,
+   "text": "description. See you soon. Take care."
+  }
+ ]
+}

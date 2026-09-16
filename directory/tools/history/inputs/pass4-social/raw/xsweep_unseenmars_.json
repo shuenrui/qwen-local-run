@@ -1,0 +1,3626 @@
+{
+ "via": "twitter-cli user-posts -n 100",
+ "user": "unseenmars_",
+ "posts": [
+  {
+   "id": "2099913517923192866",
+   "text": "Congrats @hsu_byron and the team! This is seriously impactful work and will save hours per sample for scientists!\n\nAlso very very proud to see SGLang and Miles become the open stack for team to trust, adapt and build on 🫡🫡",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 16,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1344,
+    "bookmarks": 1
+   },
+   "createdAt": "Tue Sep 15 17:29:31 +0000 2026",
+   "createdAtLocal": "2026-09-16 01:29",
+   "createdAtISO": "2026-09-15T17:29:31+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2099896055030501702",
+    "text": "We built high-throughput materials labs in Menlo Park to create a loop between experiments and models. The labs generate fresh data, the models learn from it, and then help us decide what to try next.\n\nUsing only 1,300 H200s, plus months of our experimental data, we mid-trained and RL’d an open-source model to surpass GPT-6 Astra on our analysis benchmark. We call it Neon.\n\nThis is real footage from our lab. We’re focusing first on hard problems in materials science, including superconductors, magnets, and semiconductor materials.\n\nRead our blog posts below.",
+    "author": {
+     "screenName": "LiamFedus",
+     "name": "Liam Fedus"
+    }
+   }
+  },
+  {
+   "id": "2099599467314114818",
+   "text": "do you know sglang cookbook for minimax h3 looks like this now?\n\nthanks for @mick_qian took lots of efforts to make minimax h3 runnable on consumer GPUs\n\nCookbook: https://t.co/ajA5fzaXlX https://t.co/vY3hbdhOmn",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 18,
+    "retweets": 1,
+    "replies": 0,
+    "quotes": 0,
+    "views": 1753,
+    "bookmarks": 5
+   },
+   "createdAt": "Mon Sep 14 20:41:36 +0000 2026",
+   "createdAtLocal": "2026-09-15 04:41",
+   "createdAtISO": "2026-09-14T20:41:36+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HSNGSsIa8AAadI3.jpg",
+     "width": 1400,
+     "height": 1464
+    }
+   ],
+   "urls": [
+    "https://docs.sglang.io/cookbook/diffusion/MiniMax/MiniMax-H3"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2099536367508402480",
+    "text": "SGLang-Diffusion with VDN-H3 now generates 14.4s of 768p video in just 9.0s 🚀\n\nOn 8× B200, 8 step denoising takes just 6.9s, reaching over 2× real time. The 9.0s figure covers the full generation request after warmup.\n\nNo measured quality regression versus dense 50-step H3 across 103 test prompts. 🧵",
+    "author": {
+     "screenName": "sgl_project",
+     "name": "SGLang"
+    }
+   }
+  },
+  {
+   "id": "2098535522352451964",
+   "text": "We should print and frame this masterpiece by @lsyincs",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 7,
+    "retweets": 1,
+    "replies": 0,
+    "quotes": 0,
+    "views": 1444,
+    "bookmarks": 1
+   },
+   "createdAt": "Fri Sep 11 22:13:52 +0000 2026",
+   "createdAtLocal": "2026-09-12 06:13",
+   "createdAtISO": "2026-09-11T22:13:52+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2098534686851313715",
+    "text": "Day 0 support was only the beginning. ⚡  \n\nWithin 24 hours of launch, we pushed performance to 873 tok/s at BS=1 on 4×GB300 through FP8 GEMM fast paths, kernel fusion and overlap, DSpark optimization, and MoE TP4.\n\nDeepSeek V4.1 Flash introduced major architectural changes, including a causal encoder-decoder design, CSA2 shared KV, Engram, mHC, and DSpark. SGLang supported them all from Day 0.  \n\nOur new hands-on engineering guide documents the full optimization journey, with step-by-step instructions to reproduce the results.  \n\nDeepGEMM, FlashMLA, and more optimizations are coming next!",
+    "author": {
+     "screenName": "sgl_project",
+     "name": "SGLang"
+    }
+   }
+  },
+  {
+   "id": "2098505666055074266",
+   "text": "We pushed an update to the @sgl_project Qwen3.8-27B cookbook:\n\n- Added @NVIDIAAI NVFP4 recipes for RTX PRO 6000, RTX 5090, DGX Spark and GB300\n- Install and Docker both follow the latest SGLang release now\n\nCookbook👇\n\nhttps://t.co/X9meVrbOAx",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 86,
+    "retweets": 8,
+    "replies": 8,
+    "quotes": 1,
+    "views": 14121,
+    "bookmarks": 42
+   },
+   "createdAt": "Fri Sep 11 20:15:13 +0000 2026",
+   "createdAtLocal": "2026-09-12 04:15",
+   "createdAtISO": "2026-09-11T20:15:13+00:00",
+   "media": [],
+   "urls": [
+    "https://docs.sglang.io/cookbook/autoregressive/Qwen/Qwen3.8-27B"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2098142936055890025",
+   "text": "For dpsk v4.1 flash, sm120 will get higher priority than gb10.\n\nI will closely monitor what community is looking for and figure out what we should do next.",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 16,
+    "retweets": 0,
+    "replies": 2,
+    "quotes": 0,
+    "views": 1821,
+    "bookmarks": 1
+   },
+   "createdAt": "Thu Sep 10 20:13:52 +0000 2026",
+   "createdAtLocal": "2026-09-11 04:13",
+   "createdAtISO": "2026-09-10T20:13:52+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097933177587446206",
+   "text": "We worked extremely hard on this one. And there are lots of crazy updates we will be sharing soon!\n\nInto the unknown!",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 76,
+    "retweets": 4,
+    "replies": 4,
+    "quotes": 0,
+    "views": 4751,
+    "bookmarks": 3
+   },
+   "createdAt": "Thu Sep 10 06:20:21 +0000 2026",
+   "createdAtLocal": "2026-09-10 14:20",
+   "createdAtISO": "2026-09-10T06:20:21+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2097931604027187248",
+    "text": "DeepSeek V4.1 Flash weights are out! We are shipping day-0 inference and RL support in SGLang and Miles.\n\nV4.1 extends the V4 stack with compressed KV shared across layers, a two-stage sparse indexer, and a 196B Engram lookup memory.\n\nIt is natively multimodal with 552B backbone parameters, 16B active decode and 8B prefill, and supports up to 1M context.\n\nThere will be some very exciting performance upgrades for this model in the next few days. Stay tuned!\n\nSupported features, blog and cookbook in the comments ⬇️",
+    "author": {
+     "screenName": "sgl_project",
+     "name": "SGLang"
+    }
+   }
+  },
+  {
+   "id": "2097805118876082526",
+   "text": "Better than two iPhone Duo(s) https://t.co/c9RgfzNBOg",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 17,
+    "retweets": 1,
+    "replies": 2,
+    "quotes": 0,
+    "views": 452,
+    "bookmarks": 0
+   },
+   "createdAt": "Wed Sep 09 21:51:30 +0000 2026",
+   "createdAtLocal": "2026-09-10 05:51",
+   "createdAtISO": "2026-09-09T21:51:30+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRzmorNacAArCTj.jpg",
+     "width": 1536,
+     "height": 2048
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2097782637238829363",
+   "text": "added a PR tracker for our plans for Qwen3.8-Flash-Next\n\nfeel free to drop requests!\n\nhttps://t.co/NyEyBSKiQz",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 12,
+    "retweets": 2,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1757,
+    "bookmarks": 2
+   },
+   "createdAt": "Wed Sep 09 20:22:10 +0000 2026",
+   "createdAtLocal": "2026-09-10 04:22",
+   "createdAtISO": "2026-09-09T20:22:10+00:00",
+   "media": [],
+   "urls": [
+    "https://github.com/sgl-project/sglang/issues/38731"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2097098034601693302",
+    "text": "We're adding a few Qwen3.8-Flash-Next recipes to the SGLang cookbook, each verified on the hardware:\n\n- 1x RTX PRO 6000, PLE table in system RAM\n- 1x DGX Spark, PLE table on local NVMe\n- 2x DGX Spark, TP=2\n- NVFP4 support for both the RadixArk export and @NVIDIAAI's ModelOpt export\n\nCookbook: https://t.co/XtdY5WidJz\n\nThanks to everyone who has been testing and sharing feedback. We've been following the community reports closely and fixed a number of issues that came with this new architecture.\n\nMore performance work is on the way, and we want to be ready for what comes next from the Qwen family!",
+    "author": {
+     "screenName": "sgl_project",
+     "name": "SGLang"
+    }
+   }
+  },
+  {
+   "id": "2097724289449689246",
+   "text": "The full technical report for Miles is now available.\n\nMiles is built for production-level post-training, with stability, efficiency, and flexibility at its core. The report covers its system design and how it works in practice. https://t.co/468aqnSANf",
+   "author": {
+    "id": "1994288895320838149",
+    "name": "RadixArk",
+    "screenName": "radixark",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1996396384120086528/UzE4Waox_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 539,
+    "retweets": 86,
+    "replies": 7,
+    "quotes": 12,
+    "views": 97813,
+    "bookmarks": 501
+   },
+   "createdAt": "Wed Sep 09 16:30:19 +0000 2026",
+   "createdAtLocal": "2026-09-10 00:30",
+   "createdAtISO": "2026-09-09T16:30:19+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRycvN6acAAmNTB.jpg",
+     "width": 1560,
+     "height": 2016
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "unseenmars_",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2089746481339384068",
+    "text": "Today we're launching Miles v0.1, an open-source RL framework for LLMs and multimodal models.\n\nRL training is easy to start and hard to debug. Miles helps you ensure your run is correct, use hardware efficiently, and keep RL running at scale.\n\nOver the past 9 months, 72 contributors have landed 1,326 commits, 85 GPU E2E CI tests, battle-testing Miles on frontier open models like Kimi K3, DeepSeek V4, Qwen 3.8, GLM 5.2, Inkling, MiniMax H3, etc.\n\nMiles powers frontier-model development and production RL workloads at @humansand, @periodiclabs, @modal, @DecagonAI, @Eigent_AI, @nebiusai, @IBM and more, on both @NVIDIAAI and @AIatAMD hardware.\n\nHere is what we built, and why teams picked Miles🧵",
+    "author": {
+     "screenName": "radixark",
+     "name": "RadixArk"
+    }
+   }
+  },
+  {
+   "id": "2097529259376140532",
+   "text": "you should be able to run it directly with SGLang\n\nwe are updating the cookbook now",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 18,
+    "retweets": 2,
+    "replies": 0,
+    "quotes": 0,
+    "views": 1735,
+    "bookmarks": 1
+   },
+   "createdAt": "Wed Sep 09 03:35:20 +0000 2026",
+   "createdAtLocal": "2026-09-09 11:35",
+   "createdAtISO": "2026-09-09T03:35:20+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2097470155898929585",
+    "text": "Big thanks to @NVIDIAAI for giving us all these wonderful NVFP4s!\nNewly arrived Nvidia/Qwen3.8-27B-NVFP4 on 🤗\nhttps://t.co/pVCBead0gD",
+    "author": {
+     "screenName": "mr_r0b0t",
+     "name": "mr_r0b0t"
+    }
+   }
+  },
+  {
+   "id": "2097401203999310311",
+   "text": "lots of updates for this one",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 24,
+    "retweets": 1,
+    "replies": 2,
+    "quotes": 0,
+    "views": 2065,
+    "bookmarks": 0
+   },
+   "createdAt": "Tue Sep 08 19:06:29 +0000 2026",
+   "createdAtLocal": "2026-09-09 03:06",
+   "createdAtISO": "2026-09-08T19:06:29+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2097399101797384323",
+    "text": "SGLang v0.5.19 is out! We have 786 PRs from 214 contributors, and 51 new contributors!\n\nHighlights:\n\n🔸 New models: Qwen3.8 and Qwen3.8-27B, dots3.note, Ling-3.0-flash and Ling-3.0-tiny, Spark2.5, and Granite 4.2, plus LongCat-Image-Edit on SGLang-Diffusion\n\n🔸 Beam search is now in SGLang: request the top n answers to a prompt in one call\n\n🔸 DeepEP v2 support: DeepSeek's new expert-parallel library, with CUDA graphs across GPUs and nodes\n\n🔸 Decode context parallelism on Blackwell: split the KV cache across GPUs and keep scaling at 128K input where plain TP stalls\n\n🔸 The unified radix tree is now the default: one KV cache design for every model, and PD decode can reuse cached prefixes for hybrid models\n\n🔸 DFlash2 speculative decoding support: higher acceptance than MTP and up to 3.4x faster than autoregressive on Qwen3.8-27B at small batch sizes\n\n🔸 Faster speculative decoding kernels: DeepSeek Sparse Attention top-k up to 1.8x faster on B200, Kimi-Linear MTP verify up to 2.7x\n\n🔸 MiniMax-H3 video and audio on one 24 GB GPU: 1.34x faster with INT8, up to 2.48x with approximate attention\n\n🔸 W4A8 MoE on Hopper: FP8 activations give DeepSeek-V4-Flash 11.7% more throughput at the same accuracy\n\n🔸 Lean attention on AMD MI355X: a new decode kernel for long-context serving, up to 1.52x higher throughput\n\n🔸 DeepSeek Sparse Attention on AMD MI355X: GLM-5.2 disaggregated decode TPOT from 23 ms to 8 ms, DeepSeek-V4 top-k up to 3x faster\n\n🔸 New images: CUDA 13.4 preview for Rubin, and ROCm 10 for MI300X, MI355X, and MI45x\n\nThanks again to our amazing partners and model makers: @NVIDIAAI @AIatAMD @intel @Alibaba_Qwen @MiniMax_AI @AntLingAGI @inco_ai @IBMResearch @Meituan_LongCat  @reddotsstudio @SparkLLM\n\nFull release note👇",
+    "author": {
+     "screenName": "sgl_project",
+     "name": "SGLang"
+    }
+   }
+  },
+  {
+   "id": "2097099577312911683",
+   "text": "Thank you for your patience on this. This is a relatively new architecture and there is still a lot for us to explore and learn. @Jiminator31 has been working nights and days on the testing and on the issues we found.\n\nWe're trying to ship steadily and make sure things are implemented in the right direction. Our goal is to be in good shape for day-0 support when the new Qwen family lands.\n\nPlease give it a try and let us know what we could do better 🧡",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 18,
+    "retweets": 4,
+    "replies": 0,
+    "quotes": 0,
+    "views": 1654,
+    "bookmarks": 3
+   },
+   "createdAt": "Mon Sep 07 23:07:56 +0000 2026",
+   "createdAtLocal": "2026-09-08 07:07",
+   "createdAtISO": "2026-09-07T23:07:56+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2097098034601693302",
+    "text": "We're adding a few Qwen3.8-Flash-Next recipes to the SGLang cookbook, each verified on the hardware:\n\n- 1x RTX PRO 6000, PLE table in system RAM\n- 1x DGX Spark, PLE table on local NVMe\n- 2x DGX Spark, TP=2\n- NVFP4 support for both the RadixArk export and @NVIDIAAI's ModelOpt export\n\nCookbook: https://t.co/XtdY5WidJz\n\nThanks to everyone who has been testing and sharing feedback. We've been following the community reports closely and fixed a number of issues that came with this new architecture.\n\nMore performance work is on the way, and we want to be ready for what comes next from the Qwen family!",
+    "author": {
+     "screenName": "sgl_project",
+     "name": "SGLang"
+    }
+   }
+  },
+  {
+   "id": "2096975922805297549",
+   "text": "We've been working through the night to add recipes for sm120 and gb10. I also ran a few local tasks I'd previously only trusted a ~30B model with, and this 2B model finished most of them. Incredible.",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 24,
+    "retweets": 4,
+    "replies": 0,
+    "quotes": 0,
+    "views": 2007,
+    "bookmarks": 4
+   },
+   "createdAt": "Mon Sep 07 14:56:34 +0000 2026",
+   "createdAtLocal": "2026-09-07 22:56",
+   "createdAtISO": "2026-09-07T14:56:34+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2096973451307401577",
+    "text": "Congrats @OpenBMB on launching MiniCPM5-2B! SGLang has day-0 serving support, with recipes for @NVIDIAAI RTX PRO 6000, RTX 5090, DGX Spark, and Hopper cards.\n\nWe are seeing over 250 tok/s/user decode at bs=1 on coding tasks with DSpark enabled on a 5090.\n\nIt's an ultra-efficient 2B with incredible intelligence density. As of today it leads Artificial Analysis's Intelligence Index among open models under 4B, and scores above models more than 4x its size.\n\nThis is another step toward general-purpose models running 24x7 on device, even on phones.\n\nRun MiniCPM5-2B with SGLang 👇",
+    "author": {
+     "screenName": "sgl_project",
+     "name": "SGLang"
+    }
+   }
+  },
+  {
+   "id": "2096481565190852902",
+   "text": "Finally got my @maticrobots\n\n- The new Cues feature and sink summon make it a very lovable robot\n- Object avoidance is genuinely SOTA, and 100% on device\n- It’s not the best vacuum you can buy at this budget\n- I like that it’s self-contained without a huge dock, but I still really miss having a mop dryer\n- Cleaning routines aren’t as efficient as the round-shaped competitors, and it occasionally misses some spots, but not a big deal\n- It’s bigger than I expected\n\nOverall I’d give it an 8/10. Again, it is a very good robot.\n\nIt’s always great to see something different from everyone else in the market, and the Matic team clearly knows what they’re doing. I believe they’re directionally right on a lot of things.",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 10,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 619,
+    "bookmarks": 0
+   },
+   "createdAt": "Sun Sep 06 06:12:10 +0000 2026",
+   "createdAtLocal": "2026-09-06 14:12",
+   "createdAtISO": "2026-09-06T06:12:10+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRgyuxVbgAAMyaU.jpg",
+     "width": 1536,
+     "height": 2048
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2096036307785171419",
+   "text": "working on the support now",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 12,
+    "retweets": 1,
+    "replies": 0,
+    "quotes": 1,
+    "views": 1486,
+    "bookmarks": 2
+   },
+   "createdAt": "Sat Sep 05 00:42:52 +0000 2026",
+   "createdAtLocal": "2026-09-05 08:42",
+   "createdAtISO": "2026-09-05T00:42:52+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095973698356609037",
+    "text": "NVIDIA just released the NVFP4 quantized Qwen3.8-Flash-Next on Hugging Face\n\n125B MoE with hybrid attention, now 63% smaller with minimal accuracy loss. https://t.co/U7b8EbWbFl",
+    "author": {
+     "screenName": "HuggingPapers",
+     "name": "DailyPapers"
+    }
+   }
+  },
+  {
+   "id": "2095781580510015617",
+   "text": "We've been working closely with partners and @zai_org to improve production serving for the GLM-5.3 family. \n\nShout out to @Cloudflare for reporting the issues that led to the fix 🧡☁️",
+   "author": {
+    "id": "1923440305703092226",
+    "name": "SGLang",
+    "screenName": "sgl_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1923445139319685126/pyjcWZU7_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 49,
+    "retweets": 7,
+    "replies": 2,
+    "quotes": 3,
+    "views": 7326,
+    "bookmarks": 8
+   },
+   "createdAt": "Fri Sep 04 07:50:41 +0000 2026",
+   "createdAtLocal": "2026-09-04 15:50",
+   "createdAtISO": "2026-09-04T07:50:41+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "unseenmars_",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095772157452357696",
+    "text": "Shoutout to the @sgl_project community for catching an issue in our chat template👂\n\nWe've optimized the tool-result reordering logic (early exits instead of scanning every block) and updated the templates for GLM-5.3 and GLM-5.3-Flash.\n\nFix is live — thanks for making it better. 💪",
+    "author": {
+     "screenName": "zRdianjiao",
+     "name": "zR"
+    }
+   }
+  },
+  {
+   "id": "2095759589279187069",
+   "text": "We should make t-shirts with these. Too cool!\n\n@thelocalblender @mingyilu123 https://t.co/poLezSvjkU",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 9,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1598,
+    "bookmarks": 2
+   },
+   "createdAt": "Fri Sep 04 06:23:18 +0000 2026",
+   "createdAtLocal": "2026-09-04 14:23",
+   "createdAtISO": "2026-09-04T06:23:18+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRWiPY1aIAAfzUq.jpg",
+     "width": 1260,
+     "height": 810
+    },
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HRWiPY1aAAAGyzS.jpg",
+     "width": 1041,
+     "height": 1052
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095559827154227698",
+    "text": "The real world is multimodal. For AI to understand and recreate it, models need to learn across modalities.\n\nIn our latest blog, we show how Miles supports that learning with a shared post-training design for VLMs and diffusion models.\n\nLink in the comments. 🔗 https://t.co/wu4Gq0hUdA",
+    "author": {
+     "screenName": "radixark",
+     "name": "RadixArk"
+    }
+   }
+  },
+  {
+   "id": "2095652625689837893",
+   "text": "Enjoy and some loves for Qwen and GLM next!",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 23,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1629,
+    "bookmarks": 5
+   },
+   "createdAt": "Thu Sep 03 23:18:15 +0000 2026",
+   "createdAtLocal": "2026-09-04 07:18",
+   "createdAtISO": "2026-09-03T23:18:15+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2095649421258334274",
+    "text": "We just added recipes for DeepSeek-V4-Flash-Vision & DeepSeek-V4-Flash-0731 on 2x DGX Spark.\n\nhttps://t.co/LBlNRSf59t\n\n- Flash-Vision comes with native vision support\n- Flash-0731 supports both fp4 and @NVIDIAAI official nvfp4\n- Both run on the b12x kernel library\n\nEnjoy!",
+    "author": {
+     "screenName": "sgl_project",
+     "name": "SGLang"
+    }
+   }
+  },
+  {
+   "id": "2095579848723050842",
+   "text": "Qwen3.8-Flash-Next now runs on a single RTX 5090 at 68.3 tok/s — no extreme quantization, no speculative decoding.\n\n· Production-level checkpoint: GB300-validated NVFP4 checkpoint from RadixArk\n\n· 63GB host RAM — less than what 1-bit quants of this model need\n\n· The 51GB n-gram table? It lives on your NVMe, at ~0.5% throughput cost\n\nIn the video: one prompt → a playable minecraft-style world, then FreeToken on my 5090 desktop fixing a real FreeToken bug in 10.5 minutes.\n\nMeet FreeToken 🧵",
+   "author": {
+    "id": "1629407863440539649",
+    "name": "Shuo Yang",
+    "screenName": "Andy_ShuoYang",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1629407935326732288/5I-3J0Ai_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 473,
+    "retweets": 40,
+    "replies": 39,
+    "quotes": 11,
+    "views": 62184,
+    "bookmarks": 399
+   },
+   "createdAt": "Thu Sep 03 18:29:04 +0000 2026",
+   "createdAtLocal": "2026-09-04 02:29",
+   "createdAtISO": "2026-09-03T18:29:04+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2095578980309213184/vid/avc1/1440x1080/m6_yRFX6xdHf5FHf.mp4?tag=29",
+     "width": 1440,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "unseenmars_",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2094486103323488476",
+   "text": "@sgl_project \n\nThank you, you kept your word. There has been tremendous progress on the Sglang front regarding the latest local models. I commend you for that.",
+   "author": {
+    "id": "231030656",
+    "name": "baris",
+    "screenName": "GBminA",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2081722305395191808/PxP1ehr9_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 11,
+    "retweets": 1,
+    "replies": 0,
+    "quotes": 1,
+    "views": 2001,
+    "bookmarks": 0
+   },
+   "createdAt": "Mon Aug 31 18:02:55 +0000 2026",
+   "createdAtLocal": "2026-09-01 02:02",
+   "createdAtISO": "2026-08-31T18:02:55+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "unseenmars_",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2082717243742556193",
+    "text": "@GBminA @TechMDAI Appreciate the detail here, and sorry it was this painful. sm121 just hasn't had enough attention from us. Noted, and we're starting to fix it.  @sgl_project",
+    "author": {
+     "screenName": "mingyilu123",
+     "name": "Mingyi Lu"
+    }
+   }
+  },
+  {
+   "id": "2094581193945846227",
+   "text": "Working on more updates!!! And DGX Spark recipe is our P0.",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 31,
+    "retweets": 2,
+    "replies": 1,
+    "quotes": 0,
+    "views": 2324,
+    "bookmarks": 2
+   },
+   "createdAt": "Tue Sep 01 00:20:46 +0000 2026",
+   "createdAtLocal": "2026-09-01 08:20",
+   "createdAtISO": "2026-09-01T00:20:46+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2094580411099926635",
+    "text": "Update: we've added support for DeepSeek-V4-Flash-Vision-Exp! It's in the cookbook now. \n\nhttps://t.co/LBlNRSf59t\n\nWe're working through different configs and hardware to verify it properly🫡",
+    "author": {
+     "screenName": "sgl_project",
+     "name": "SGLang"
+    }
+   }
+  },
+  {
+   "id": "2094378481006387610",
+   "text": "Just about the right time that we have our recipe for DeepSeek V4 Flash on DGX Spark ready! Will update it with the new vision one!",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 31,
+    "retweets": 2,
+    "replies": 2,
+    "quotes": 1,
+    "views": 5107,
+    "bookmarks": 2
+   },
+   "createdAt": "Mon Aug 31 10:55:16 +0000 2026",
+   "createdAtLocal": "2026-08-31 18:55",
+   "createdAtISO": "2026-08-31T10:55:16+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2094377989362663811",
+    "text": "Congrats @deepseek_ai on releasing the weights for DeepSeek-V4-Flash-Vision-Exp!\n\nHF link: https://t.co/1966Yy9I3t\n\nWe're working on support now, with an updated cookbook coming ASAP!\n\nWelcome to a new era of native vision from DeepSeek 🐋👀",
+    "author": {
+     "screenName": "sgl_project",
+     "name": "SGLang"
+    }
+   }
+  },
+  {
+   "id": "2093420866290016390",
+   "text": "Btw I vibed the pinwheel and text as winds with p5.js. \n\nThanks @thelocalblender for giving me a quick 10 minutes lesson and tons of resources to start 🫡🫡",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 7,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1076,
+    "bookmarks": 1
+   },
+   "createdAt": "Fri Aug 28 19:30:03 +0000 2026",
+   "createdAtLocal": "2026-08-29 03:30",
+   "createdAtISO": "2026-08-28T19:30:03+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2093355026223874067",
+    "text": "GLM-5.3 weights from @Zai_org are live, with SGLang powering day-0 serving support!\n\nGLM-5.3 inherits every optimization and feature we battle-tested for GLM-5.2 over the past months.\n\nOn real-world multi-turn agentic workloads, we measured 537.6 tok/s/user on NVFP4 and 413 tok/s/user on FP8, at BS=1 with TP8 on 8x B300.\n\nIt's fast, efficient, and production-ready today on @NVIDIAAI Blackwell and Hopper, and @AIatAMD MI300X/325X/355X.\n\nWe believe this is a big step forward for GLM-Series in agentic tasks, with a path toward mythos-class cyber capability.\n\nCan't wait to see what people build with GLM-5.3 and SGLang🚀\n\nCookbook👇",
+    "author": {
+     "screenName": "sgl_project",
+     "name": "SGLang"
+    }
+   }
+  },
+  {
+   "id": "2093383798318887056",
+   "text": "We've addressed the issues the community reported when running Qwen3.8-Flash on SM120 (RTX 6000). We also tested RTX 6000 with PLE offloaded to RAM, and that setup works well.\n\nThe DGX Spark fix will take a bit longer. I'll post the pending hotfix in the comments, though it still needs work before the performance is properly optimized.\n\nhttps://t.co/hrOUxeP64y",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 28,
+    "retweets": 1,
+    "replies": 3,
+    "quotes": 0,
+    "views": 2241,
+    "bookmarks": 8
+   },
+   "createdAt": "Fri Aug 28 17:02:45 +0000 2026",
+   "createdAtLocal": "2026-08-29 01:02",
+   "createdAtISO": "2026-08-28T17:02:45+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2093384399358419180",
+   "text": "There are lots of context in the PRs. We will update the image and cookbook once everything is settled",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 129,
+    "bookmarks": 0
+   },
+   "createdAt": "Fri Aug 28 17:05:08 +0000 2026",
+   "createdAtLocal": "2026-08-29 01:05",
+   "createdAtISO": "2026-08-28T17:05:08+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2093383913423147137",
+   "text": "Fix for dgx spark (wip)\n\nhttps://t.co/TqcCLVfqmL",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 4,
+    "retweets": 1,
+    "replies": 0,
+    "quotes": 0,
+    "views": 418,
+    "bookmarks": 1
+   },
+   "createdAt": "Fri Aug 28 17:03:12 +0000 2026",
+   "createdAtLocal": "2026-08-29 01:03",
+   "createdAtISO": "2026-08-28T17:03:12+00:00",
+   "media": [],
+   "urls": [
+    "https://github.com/sgl-project/sglang/pull/36845"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "in",
+   "score": null
+  },
+  {
+   "id": "2093380370326798819",
+   "text": "our nvfp4 for glm5.3 is really good at accuracy and speed\n\nhttps://t.co/KU7rsACcxd",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 42,
+    "retweets": 1,
+    "replies": 3,
+    "quotes": 0,
+    "views": 4849,
+    "bookmarks": 13
+   },
+   "createdAt": "Fri Aug 28 16:49:08 +0000 2026",
+   "createdAtLocal": "2026-08-29 00:49",
+   "createdAtISO": "2026-08-28T16:49:08+00:00",
+   "media": [],
+   "urls": [
+    "https://huggingface.co/RadixArk/GLM-5.3-NVFP4"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2093358870152560761",
+    "text": "GLM-5.2 on SGLang was battle-tested and is currently serving hundreds of thousands of people in production with our partners. GLM-5.3 carries all the great things we built for it👏\n\nWe've added an experimental NVFP4 checkpoint for GLM-5.3, and Miles support for GLM-5.3 is on the way!\n\nhttps://t.co/0Ukg8yzKPA",
+    "author": {
+     "screenName": "radixark",
+     "name": "RadixArk"
+    }
+   }
+  },
+  {
+   "id": "2093356124825432105",
+   "text": "what a week!",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 6,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1519,
+    "bookmarks": 1
+   },
+   "createdAt": "Fri Aug 28 15:12:47 +0000 2026",
+   "createdAtLocal": "2026-08-28 23:12",
+   "createdAtISO": "2026-08-28T15:12:47+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2093355026223874067",
+    "text": "GLM-5.3 weights from @Zai_org are live, with SGLang powering day-0 serving support!\n\nGLM-5.3 inherits every optimization and feature we battle-tested for GLM-5.2 over the past months.\n\nOn real-world multi-turn agentic workloads, we measured 537.6 tok/s/user on NVFP4 and 413 tok/s/user on FP8, at BS=1 with TP8 on 8x B300.\n\nIt's fast, efficient, and production-ready today on @NVIDIAAI Blackwell and Hopper, and @AIatAMD MI300X/325X/355X.\n\nWe believe this is a big step forward for GLM-Series in agentic tasks, with a path toward mythos-class cyber capability.\n\nCan't wait to see what people build with GLM-5.3 and SGLang🚀\n\nCookbook👇",
+    "author": {
+     "screenName": "sgl_project",
+     "name": "SGLang"
+    }
+   }
+  },
+  {
+   "id": "2093114899102925222",
+   "text": "GLM-5.3-Flash⚡️&amp; DFlash 2⚡️",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 20,
+    "retweets": 0,
+    "replies": 2,
+    "quotes": 0,
+    "views": 1963,
+    "bookmarks": 5
+   },
+   "createdAt": "Thu Aug 27 23:14:14 +0000 2026",
+   "createdAtLocal": "2026-08-28 07:14",
+   "createdAtISO": "2026-08-27T23:14:14+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2093114118836486174",
+    "text": "Congrats @inco_ai on launching DFlash 2 for GLM-5.3-Flash! We are proud to be the launch partner⚡️\n\nWe've added the DFlash 2 option to the playground section of our GLM-5.3-Flash cookbook👇\nhttps://t.co/cPqN4BZ4qc",
+    "author": {
+     "screenName": "sgl_project",
+     "name": "SGLang"
+    }
+   }
+  },
+  {
+   "id": "2092644693717000251",
+   "text": "Congrats @Zai_org on unveiling Ox Alpha and launching GLM 5.3 Flash!\n\nWe're working on an NVFP4 checkpoint for it. It'll be around 200GB and should add a promising speedup for deployment on @NVIDIAAI Blackwell🚀",
+   "author": {
+    "id": "1994288895320838149",
+    "name": "RadixArk",
+    "screenName": "radixark",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1996396384120086528/UzE4Waox_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 28,
+    "retweets": 3,
+    "replies": 0,
+    "quotes": 0,
+    "views": 3307,
+    "bookmarks": 1
+   },
+   "createdAt": "Wed Aug 26 16:05:49 +0000 2026",
+   "createdAtLocal": "2026-08-27 00:05",
+   "createdAtISO": "2026-08-26T16:05:49+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "unseenmars_",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2092616826853503263",
+    "text": "GLM-5.3-Flash (320B-A18B) from @Zai_org drops today with day-0 support in SGLang. You may know it as ox-alpha from the past few days!\n\n👀 It's the first native multimodal model in the GLM-5 series, able to review its own output visually and fix what's wrong.\n🚀 It outperforms GLM-5.2 at 1/10 the cost. Hybrid sparse plus linear attention enables stable 1M long-context performance at extreme cost efficiency.\n💻 It goes beyond coding into professional work: slides, documents, spreadsheets, and finance research, all handled end to end.\n\nRun GLM-5.3-Flash with SGLang, and welcome to a new era of efficient, production-ready open intelligence!",
+    "author": {
+     "screenName": "sgl_project",
+     "name": "SGLang"
+    }
+   }
+  },
+  {
+   "id": "2092622000351281614",
+   "text": "We are working on our NVFP4🫡",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 70,
+    "retweets": 6,
+    "replies": 5,
+    "quotes": 1,
+    "views": 7320,
+    "bookmarks": 12
+   },
+   "createdAt": "Wed Aug 26 14:35:38 +0000 2026",
+   "createdAtLocal": "2026-08-26 22:35",
+   "createdAtISO": "2026-08-26T14:35:38+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2092616826853503263",
+    "text": "GLM-5.3-Flash (320B-A18B) from @Zai_org drops today with day-0 support in SGLang. You may know it as ox-alpha from the past few days!\n\n👀 It's the first native multimodal model in the GLM-5 series, able to review its own output visually and fix what's wrong.\n🚀 It outperforms GLM-5.2 at 1/10 the cost. Hybrid sparse plus linear attention enables stable 1M long-context performance at extreme cost efficiency.\n💻 It goes beyond coding into professional work: slides, documents, spreadsheets, and finance research, all handled end to end.\n\nRun GLM-5.3-Flash with SGLang, and welcome to a new era of efficient, production-ready open intelligence!",
+    "author": {
+     "screenName": "sgl_project",
+     "name": "SGLang"
+    }
+   }
+  },
+  {
+   "id": "2092619202557542812",
+   "text": "GLM-5.3-Flash painted this with code!",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 9,
+    "retweets": 1,
+    "replies": 2,
+    "quotes": 0,
+    "views": 1398,
+    "bookmarks": 0
+   },
+   "createdAt": "Wed Aug 26 14:24:31 +0000 2026",
+   "createdAtLocal": "2026-08-26 22:24",
+   "createdAtISO": "2026-08-26T14:24:31+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2092616826853503263",
+    "text": "GLM-5.3-Flash (320B-A18B) from @Zai_org drops today with day-0 support in SGLang. You may know it as ox-alpha from the past few days!\n\n👀 It's the first native multimodal model in the GLM-5 series, able to review its own output visually and fix what's wrong.\n🚀 It outperforms GLM-5.2 at 1/10 the cost. Hybrid sparse plus linear attention enables stable 1M long-context performance at extreme cost efficiency.\n💻 It goes beyond coding into professional work: slides, documents, spreadsheets, and finance research, all handled end to end.\n\nRun GLM-5.3-Flash with SGLang, and welcome to a new era of efficient, production-ready open intelligence!",
+    "author": {
+     "screenName": "sgl_project",
+     "name": "SGLang"
+    }
+   }
+  },
+  {
+   "id": "2092595046189310135",
+   "text": "The PLE offload (for the 51B N-gram embeddings) actually unlocks a lot of new deployment combinations. We'll need some more time to test and see if we can find optimal recipes for sm120 and DGX Spark🤞",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 24,
+    "retweets": 0,
+    "replies": 6,
+    "quotes": 0,
+    "views": 2504,
+    "bookmarks": 2
+   },
+   "createdAt": "Wed Aug 26 12:48:32 +0000 2026",
+   "createdAtLocal": "2026-08-26 20:48",
+   "createdAtISO": "2026-08-26T12:48:32+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2092593561258897700",
+    "text": "Congrats to @Alibaba_Qwen on launching Qwen3.8-Flash! SGLang is proud to be a day-0 partner supporting the new architecture preview for Qwen4.\n\nIt's a 125B main model with 51B of N-gram embeddings and 6B activated per token.\n\nThe 51B N-gram embeddings scale model capacity with almost no extra compute per token, and can sit in host memory with async prefetch instead of occupying GPU memory.\n\nThe GDN + QSA hybrid attention gives you efficient memory and precise retrieval at the same time on long-horizon tasks, while Gated Residual gives the model 4 lanes instead of 1 to pass information between layers. And it's trained with Muon!\n\nWe're excited for what's next with Qwen4, and we already have plenty of ideas for how to use the N-gram embeddings in new deployment setups. Stay tuned!\n\nBlog and cookbook in the comments👇",
+    "author": {
+     "screenName": "sgl_project",
+     "name": "SGLang"
+    }
+   }
+  },
+  {
+   "id": "2092122536507273310",
+   "text": "Qwen 3.8 plays CRPG itself! Very cool!",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1354,
+    "bookmarks": 1
+   },
+   "createdAt": "Tue Aug 25 05:30:57 +0000 2026",
+   "createdAtLocal": "2026-08-25 13:30",
+   "createdAtISO": "2026-08-25T05:30:57+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2092111346653688115",
+    "text": "让qwen3.8-27b-nvfp4自己玩《金庸群侠传》，模型使用的是 @sgl_project + @radixark 等大神优化后的版本bf16-lmhead 今天刚发布的那个版本。游戏搞个最小的e2-micro直接跑dosbox + 前端stream 然后把游戏按键通过api暴露出来放到一个skills文件。最后本地pi-dev 绑定qwen3.8-27b-nvfp4，直接把skills 复制粘贴过去就可以了。大家可以感受一下1/2的rtx-6000-pro的vision+thinking的速度。打算让他这么跑一晚，看看明天一早能收集到几本天书。（比较搞的是，只是一上来起人名那个注音符号输入法就浪费一堆时间，跟我当年一样）",
+    "author": {
+     "screenName": "hxiao",
+     "name": "Han Xiao"
+    }
+   }
+  },
+  {
+   "id": "2092069451546112097",
+   "text": "Lots of new diffusion models supported!",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 12,
+    "retweets": 1,
+    "replies": 2,
+    "quotes": 0,
+    "views": 1747,
+    "bookmarks": 1
+   },
+   "createdAt": "Tue Aug 25 02:00:00 +0000 2026",
+   "createdAtLocal": "2026-08-25 10:00",
+   "createdAtISO": "2026-08-25T02:00:00+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2092025354148090310",
+    "text": "SGLang v0.5.18 is out! We have 710 PRs from 212 contributors, and 61 of them were new contributors. Welcome🧡\n\nHighlights:\n🔸 New models: Muse Glimmer and Intern-S2-Mobius, plus SANA-Video, LTX-2.5, LingBot-Video, Cosmos3, and LongCat-Image on SGLang-Diffusion \n🔸 Engine startup is up to 2.38x faster: checkpoints stream from disk while CUDA graphs capture, so the two longest waits happen at once \n🔸 All compiled kernels (Triton, FlashInfer, Inductor, DeepGEMM) now live in one directory: SGLANG_CACHE_DIR \n🔸 NVFP4 checkpoints now run on AMD GPUs via online MXFP4 requantization, with 97.5-100% accuracy retention across MiniMax-M2.7, GLM-5.1, Kimi-K2.6, Qwen3.5-397B, and DeepSeek-R1 \n🔸 Kimi K3 runs much faster on AMD MI355X: 1.37-1.77x throughput and up to 2.42x faster ITL \n🔸 DeepSeek-V4 decode gets faster on NVIDIA: TP LMHead all-to-all cuts LMHead time from 320us to 169us, and FlashInfer MNNVL allreduce turns on automatically for DeepSeek models  \n\nThanks again to our amazing partners and model makers: @NVIDIAAI @AIatAMD @intel @AIatMeta @intern_lm @Lightricks @AntLingAGI @robbyant_brain @Meituan_LongCat  \n\nFull release note👇",
+    "author": {
+     "screenName": "sgl_project",
+     "name": "SGLang"
+    }
+   }
+  },
+  {
+   "id": "2092002117762625862",
+   "text": "We took community feedback seriously and built what people asked for🧡",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 19,
+    "retweets": 0,
+    "replies": 3,
+    "quotes": 0,
+    "views": 2322,
+    "bookmarks": 2
+   },
+   "createdAt": "Mon Aug 24 21:32:27 +0000 2026",
+   "createdAtLocal": "2026-08-25 05:32",
+   "createdAtISO": "2026-08-24T21:32:27+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2092001140179431523",
+    "text": "We just added a new NVFP4 checkpoint for Qwen3.8 27B with a BF16 lm_head  \n\nhttps://t.co/bOR5n7EyCr \n\nIn our testing, pairing FP8 KV cache with a BF16 lm_head gave a significant accuracy improvement.  \n\nWe've also updated the cookbook to reflect this new option for users with stricter accuracy requirements🫡",
+    "author": {
+     "screenName": "sgl_project",
+     "name": "SGLang"
+    }
+   }
+  },
+  {
+   "id": "2090889766195913087",
+   "text": "We will work closely with Ant to make this model great on DGX Spark",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 11,
+    "retweets": 1,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1523,
+    "bookmarks": 1
+   },
+   "createdAt": "Fri Aug 21 19:52:21 +0000 2026",
+   "createdAtLocal": "2026-08-22 03:52",
+   "createdAtISO": "2026-08-21T19:52:21+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2090861625964376153",
+    "text": "Congrats to @AntLingAGI  on the release of Ling-3.0-flash-dspark!  \n\nLing-3.0-flash-dspark was trained with SGLang running the target model, and it serves on SGLang today. \n\nRead full details: https://t.co/mmJK7UHYpK",
+    "author": {
+     "screenName": "sgl_project",
+     "name": "SGLang"
+    }
+   }
+  },
+  {
+   "id": "2090734361348063457",
+   "text": "👀",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 11,
+    "retweets": 0,
+    "replies": 2,
+    "quotes": 0,
+    "views": 1145,
+    "bookmarks": 0
+   },
+   "createdAt": "Fri Aug 21 09:34:50 +0000 2026",
+   "createdAtLocal": "2026-08-21 17:34",
+   "createdAtISO": "2026-08-21T09:34:50+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "art",
+   "score": null,
+   "quotedTweet": {
+    "id": "2090730032574631962",
+    "text": "DeepSeek-V4-Flash-Vision-Exp is now live on the DeepSeek API Platform! 🚀\n\n🔹 This experimental multimodal model matches DeepSeek-V4-Flash on text capabilities—including agents, reasoning, and world knowledge.\n🔹 On multimodal agent benchmarks, V4-Flash-Vision-Exp makes a major leap over V4-Flash, bringing multimodal agent performance close to Opus-4.8.\n\nTry it with model='deepseek-v4-flash-vision-exp'. DeepSeek Harness 0.1.1 was released today with out-of-the-box support for the new model.\n\n1/n",
+    "author": {
+     "screenName": "deepseek_ai",
+     "name": "DeepSeek"
+    }
+   }
+  },
+  {
+   "id": "2090588240189530508",
+   "text": "We will update our NVFP4 and DSpark ckpt soon. \n\nNeed some time for proper testing 👏",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 19,
+    "retweets": 0,
+    "replies": 3,
+    "quotes": 0,
+    "views": 2210,
+    "bookmarks": 2
+   },
+   "createdAt": "Thu Aug 20 23:54:12 +0000 2026",
+   "createdAtLocal": "2026-08-21 07:54",
+   "createdAtISO": "2026-08-20T23:54:12+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2090587564545806719",
+    "text": "Just pushed DFlash2 (@inco_ai) recipes to the Qwen3.8 27B cookbook⚡️\n\nhttps://t.co/eAe1dFO5Sr\n\nThe community has been seeing great results with NVFP4 + DFlash2, and these recipes should be some very good starting points to play with.\n\nMore Qwen3.8 27B updates on the way 🫡 https://t.co/ciqw77qstt",
+    "author": {
+     "screenName": "sgl_project",
+     "name": "SGLang"
+    }
+   }
+  },
+  {
+   "id": "2090517711571095604",
+   "text": "SGLang Omni v0.1.3 has just been released:\n\n1. Performance: Core models including Qwen3-ASR, Qwen3-TTS, Whisper, MOSS-TD, and Higgs have all completed a round of significant optimizations, with notable improvements especially in high-concurrency throughput, latency, and resource utilization.\n\n2. Key capabilities added: True streaming TTS, long-form audio ASR, deterministic inference, and real-time barge-in are now fully supported.\n\n3. Hardware support enhanced: Expanded support for consumer-grade GPUs, XPU NPU, while strengthening overload protection and high-concurrency stability.\n\n4. Runtime expansion: Prefill CUDA Graph, pre-LM encoder, KV transfer, MPS-DP / CUDA IPC weight sharing and other capabilities are progressively extended to the complete Omni serving runtime and integrated with the SGLang main project CLI.\n\nWe welcome everyone to keep an eye on this—let's build it together!\n\nhttps://t.co/KAyUTf8BRb 🌟",
+   "author": {
+    "id": "1783397360259006464",
+    "name": "Guitar Cat + LLM",
+    "screenName": "GenAI_is_real",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1927428988839890944/-Q8itXt9_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 12,
+    "retweets": 2,
+    "replies": 0,
+    "quotes": 0,
+    "views": 936,
+    "bookmarks": 3
+   },
+   "createdAt": "Thu Aug 20 19:13:57 +0000 2026",
+   "createdAtLocal": "2026-08-21 03:13",
+   "createdAtISO": "2026-08-20T19:13:57+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "unseenmars_",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2090323982298092009",
+   "text": "Thank you for testing. We are updating the NVFP4 ckpt soon",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 3,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 493,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu Aug 20 06:24:08 +0000 2026",
+   "createdAtLocal": "2026-08-20 14:24",
+   "createdAtISO": "2026-08-20T06:24:08+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2090102346667733041",
+    "text": "If you're having a bad experience with Qwen3.8-27B on NVFP4, it's likely due to some of them quantizing the lm_head, for some reason.. https://t.co/sg4RWqVP8p",
+    "author": {
+     "screenName": "selim_aktas2",
+     "name": "Zeus"
+    }
+   }
+  },
+  {
+   "id": "2090301300559012048",
+   "text": "I think Ling-3.0-flash has the potential to be the current best model you could run with one DGX Spark?",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 8,
+    "retweets": 0,
+    "replies": 3,
+    "quotes": 0,
+    "views": 1168,
+    "bookmarks": 2
+   },
+   "createdAt": "Thu Aug 20 04:54:00 +0000 2026",
+   "createdAtLocal": "2026-08-20 12:54",
+   "createdAtISO": "2026-08-20T04:54:00+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2090097017456590879",
+    "text": "🧵 We’ve open-sourced 6 Base Model checkpoints for Ling-3.0-tiny & Ling-3.0-flash, covering pre-trained, mid-trained, and WSM-merged stages. None has undergone post-training, giving researchers flexible starting points for continued pre-training, fine-tuning, and further research.\n\nTwo key highlights:\n- We use WSM to replace LR decay with weighted checkpoint merging, making the training process better suited for continual pre-training while enabling offline exploration of different LR decay strategies.\n- With one shared training recipe, the community can validate strategies on tiny-base, then scale them to flash-base.",
+    "author": {
+     "screenName": "AntLingAGI",
+     "name": "Ant Ling"
+    }
+   }
+  },
+  {
+   "id": "2090248001713483844",
+   "text": "Great launch! We will look into this model as well!",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 17,
+    "retweets": 1,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1315,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu Aug 20 01:22:13 +0000 2026",
+   "createdAtLocal": "2026-08-20 09:22",
+   "createdAtISO": "2026-08-20T01:22:13+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2090074077084127302",
+    "text": "Aloha! 🌺Introducing Ornith-1.5, a family of open-source LLMs spanning 9B Dense, 35B MoE, and 397B MoE, trained with self-improving strategies.\n\nIt achieves state-of-the-art performance among open-source models of comparable size and delivers performance comparable to Claude Opus 4.8 across reasoning, agentic, and coding tasks:\n✅Terminal-Bench 2.1 (86.1)\n✅SWE-Bench (86 on verified, 65.1 on pro, 79.6 on Multilingual)\n✅DeepSWE (56)\n✅HLE (44.6)\n✅ClawEval (81.4)\n✅Tool Decathlon (71.2)\n\nOrnith-1.5 takes a major step toward training foundation models through end-to-end self-improvement, extending the self-scaffolding strategies introduced in Ornith-1.0 into a more complete self-improvement loop: the model proposes new tasks, generates task-specific scaffolds, and produces solution rollouts for reinforcement learning, continuously creating new learning experiences from which it can improve.\n\nAll models, along with their quantized versions (FP8, GGUF, MLX, and NVFP4), have been released under the MIT License, enabling unrestricted commercial and research use.\n📘Tech Blog: https://t.co/OZ63scRWLB\n🤗Huggingface: https://t.co/mGJLwhrQOM",
+    "author": {
+     "screenName": "ornith_",
+     "name": "Ornith"
+    }
+   }
+  },
+  {
+   "id": "2089934835670544494",
+   "text": "ART",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 277,
+    "bookmarks": 0
+   },
+   "createdAt": "Wed Aug 19 04:37:48 +0000 2026",
+   "createdAtLocal": "2026-08-19 12:37",
+   "createdAtISO": "2026-08-19T04:37:48+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "qst",
+   "score": null,
+   "quotedTweet": {
+    "id": "2089873927191572590",
+    "text": "Robert Frost knew all along: the beauty of RL.\n\n\"The woods are lovely, dark and deep,\nBut I have promises to keep,\nAnd Miles to go before I sleep,\nAnd Miles to go before I sleep.\"",
+    "author": {
+     "screenName": "ShiDong14",
+     "name": "Shi Dong"
+    }
+   }
+  },
+  {
+   "id": "2089875785880686679",
+   "text": "We put slime at the center of our partner wall 🫡🧡\n\nContext: slime is the RL framework behind GLM-5.3, GLM-5.2, GLM-5.1, GLM-5, GLM-4.7, GLM-4.6, and GLM-4.5 https://t.co/hOY3gi5mVu",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 20,
+    "retweets": 1,
+    "replies": 1,
+    "quotes": 0,
+    "views": 2243,
+    "bookmarks": 3
+   },
+   "createdAt": "Wed Aug 19 00:43:10 +0000 2026",
+   "createdAtLocal": "2026-08-19 08:43",
+   "createdAtISO": "2026-08-19T00:43:10+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HQC689BbgAAnequ.jpg",
+     "width": 2048,
+     "height": 931
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2089866368682471590",
+    "text": "Congrats 🎉🎉🎉 Amazing work by the great @radixark team!",
+    "author": {
+     "screenName": "slime_framework",
+     "name": "slime"
+    }
+   }
+  },
+  {
+   "id": "2089846618682204637",
+   "text": "We're testing DFlash2 on Qwen3.8-27B and Muse Glimmer, and will add new recipes to the @sgl_project cookbooks very soon",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 40,
+    "retweets": 5,
+    "replies": 5,
+    "quotes": 0,
+    "views": 3548,
+    "bookmarks": 6
+   },
+   "createdAt": "Tue Aug 18 22:47:16 +0000 2026",
+   "createdAtLocal": "2026-08-19 06:47",
+   "createdAtISO": "2026-08-18T22:47:16+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2089836737132650504",
+    "text": "DFlash 2 is here! Qwen3.8-27B at 70 tok/s on an M5 Max MacBook Pro.\n\n⚡ Up to 4.6× the speed of autoregressive decoding, with the same output.\n\nThis is the next generation of DFlash, seeded at Z Lab and upgraded at Inco AI. Get one more accepted token on every pass, for free!\n\nhttps://t.co/We0lwYPSBl",
+    "author": {
+     "screenName": "zhijianliu_",
+     "name": "Zhijian Liu"
+    }
+   }
+  },
+  {
+   "id": "2089767030656528819",
+   "text": "Very cool projects! We should use Miles more to do some small model post training for vertical use cases",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 15,
+    "retweets": 1,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1659,
+    "bookmarks": 3
+   },
+   "createdAt": "Tue Aug 18 17:31:00 +0000 2026",
+   "createdAtLocal": "2026-08-19 01:31",
+   "createdAtISO": "2026-08-18T17:31:00+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2089746481339384068",
+    "text": "Today we're launching Miles v0.1, an open-source RL framework for LLMs and multimodal models.\n\nRL training is easy to start and hard to debug. Miles helps you ensure your run is correct, use hardware efficiently, and keep RL running at scale.\n\nOver the past 9 months, 72 contributors have landed 1,326 commits, 85 GPU E2E CI tests, battle-testing Miles on frontier open models like Kimi K3, DeepSeek V4, Qwen 3.8, GLM 5.2, Inkling, MiniMax H3, etc.\n\nMiles powers frontier-model development and production RL workloads at @humansand, @periodiclabs, @modal, @DecagonAI, @Eigent_AI, @nebiusai, @IBM and more, on both @NVIDIAAI and @AIatAMD hardware.\n\nHere is what we built, and why teams picked Miles🧵",
+    "author": {
+     "screenName": "radixark",
+     "name": "RadixArk"
+    }
+   }
+  },
+  {
+   "id": "2089502794948763820",
+   "text": "DGX Spark recipes are also updated!!\n\nEnjoy! https://t.co/OqkzcRmBti",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 171,
+    "retweets": 16,
+    "replies": 5,
+    "quotes": 0,
+    "views": 16797,
+    "bookmarks": 171
+   },
+   "createdAt": "Tue Aug 18 00:01:02 +0000 2026",
+   "createdAtLocal": "2026-08-18 08:01",
+   "createdAtISO": "2026-08-18T00:01:02+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HP9no1CbYAAV15S.jpg",
+     "width": 1362,
+     "height": 1700
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2089337991181598989",
+    "text": "We pushed some updates to the RTX 5090 / RTX Pro 6000 recipes in the Qwen3.8-27B cookbook 👇\nhttps://t.co/6WRv1cs24z\n\n• Added recipe variants for non-spec, MTP, and DSpark\n• Included high throughput and low latency options\n\nAll recipes are good starting points to tinker. Expect to tune flags and configs for the use case you actually care about.\n\nThanks for all the feedback from the community!",
+    "author": {
+     "screenName": "sgl_project",
+     "name": "SGLang"
+    }
+   }
+  },
+  {
+   "id": "2089340602999844944",
+   "text": "I tested every new recipe combination on the RTX 5090. These should be solid starting points to play with.",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 12,
+    "retweets": 2,
+    "replies": 4,
+    "quotes": 0,
+    "views": 1493,
+    "bookmarks": 1
+   },
+   "createdAt": "Mon Aug 17 13:16:32 +0000 2026",
+   "createdAtLocal": "2026-08-17 21:16",
+   "createdAtISO": "2026-08-17T13:16:32+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2089337991181598989",
+    "text": "We pushed some updates to the RTX 5090 / RTX Pro 6000 recipes in the Qwen3.8-27B cookbook 👇\nhttps://t.co/6WRv1cs24z\n\n• Added recipe variants for non-spec, MTP, and DSpark\n• Included high throughput and low latency options\n\nAll recipes are good starting points to tinker. Expect to tune flags and configs for the use case you actually care about.\n\nThanks for all the feedback from the community!",
+    "author": {
+     "screenName": "sgl_project",
+     "name": "SGLang"
+    }
+   }
+  },
+  {
+   "id": "2089343388164526285",
+   "text": "We've also seen community feedback about KV cache headroom when turning on spec decoding (MTP or DSpark). We're looking at options like FP4 KV cache.",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 73,
+    "bookmarks": 0
+   },
+   "createdAt": "Mon Aug 17 13:27:36 +0000 2026",
+   "createdAtLocal": "2026-08-17 21:27",
+   "createdAtISO": "2026-08-17T13:27:36+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2089098635179114761",
+   "text": "🚀🚀🔥🔥",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 3,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 737,
+    "bookmarks": 0
+   },
+   "createdAt": "Sun Aug 16 21:15:02 +0000 2026",
+   "createdAtLocal": "2026-08-17 05:15",
+   "createdAtISO": "2026-08-16T21:15:02+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "art",
+   "score": null,
+   "quotedTweet": {
+    "id": "2089084344015200280",
+    "text": "Qwen3.8-27B on DGX Spark (GX10/GB10) — two bake-offs, same box, thinking off.\n\nPic 1 = engine bake-off (matched prompts):\nA  Unsloth NVFP4 · vLLM+MTP     ~26 tok/s  (Test1 decode)\nB  RadixArk NVFP4 · SGLang+EAGLE ~31–32 tok/s  (+19–24%) · TTFT ~1.8× better\n\nSingle-stream speed crown still goes to the SGLang path.\n\nPic 2 = checkpoint bake-off on vLLM 0.27 (Marlin FP4, MTP K=3):\n\nr0b0tlab ModelOpt+MTP  long ~21.7 tok/s\nvs Unsloth MTP (hist)  20.0  →  +8%\nvs Unsloth no-MTP      10.4  →  2.08×\nrecipe c1 band         19–28  (matched)\nrecipe peak claim      161    ≠ single-stream chat (not reproduced)\n\nDifferent question than pic 1.\nr0b0tlab ≈ small bump on the vLLM ladder — not a leap past Unsloth Test1 ~26, and not past SGLang ~31–32.\n\nHonest split:\n• fastest Spark path we measured → SGLang+EAGLE\n• r0b0tlab vs Unsloth on vLLM → real, modest; card is the full stats\n\n@mr_r0b0t @MiaAI_lab @QwenDevs",
+    "author": {
+     "screenName": "wikiwayne",
+     "name": "Wayne Lowry"
+    }
+   }
+  },
+  {
+   "id": "2089078428532383931",
+   "text": "We love local ai community",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 11,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1123,
+    "bookmarks": 0
+   },
+   "createdAt": "Sun Aug 16 19:54:45 +0000 2026",
+   "createdAtLocal": "2026-08-17 03:54",
+   "createdAtISO": "2026-08-16T19:54:45+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2089040508106457193",
+    "text": "I love sglang \n\nI’m going to spend a lot more time optimizing on it \n\nFastest highest quality of inference, nothing less. https://t.co/g0xqcanVPA",
+    "author": {
+     "screenName": "0xSero",
+     "name": "0xSero"
+    }
+   }
+  },
+  {
+   "id": "2089023483091243122",
+   "text": "🫡",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 4,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 687,
+    "bookmarks": 0
+   },
+   "createdAt": "Sun Aug 16 16:16:25 +0000 2026",
+   "createdAtLocal": "2026-08-17 00:16",
+   "createdAtISO": "2026-08-16T16:16:25+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "art",
+   "score": null,
+   "quotedTweet": {
+    "id": "2088917237230932186",
+    "text": "Run Qwen3.8-27B NVFP4 on your @NVIDIAAI RTX 6000 PRO ✨\n\nRuns on SGLang + DSpark, and ships by default with 256k context and 8 concurrencies.\n\nYou'll get around 200-223 tok/s  single stream🤯\n\nGet it here: https://t.co/E1e2PuWa8l",
+    "author": {
+     "screenName": "MiaAI_lab",
+     "name": "Mia"
+    }
+   }
+  },
+  {
+   "id": "2088786873473028406",
+   "text": "big is small, small is big",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 358,
+    "bookmarks": 1
+   },
+   "createdAt": "Sun Aug 16 00:36:13 +0000 2026",
+   "createdAtLocal": "2026-08-16 08:36",
+   "createdAtISO": "2026-08-16T00:36:13+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2088718103186374740",
+    "text": "可能很多人对27B模型没什么概念。\n\n27B听起来好像也没多大啊，现在普通玩家128G内存都开始普及了。\n\n但我讲几个冷知识。\n\nGoogle训练Gemma 3 27B的时候，预训练数据是14万亿Token。\n\n不是140亿，也不是1400亿。\n\n是14万亿。\n\n训练它的集群用了6144颗TPU v5p。\n\n而27B这个数字，只代表它有大约270亿个参数。\n\n光把BF16原始权重放进内存，大概就是54GB。\n\n32K上下文跑起来，加上KV Cache，大概72.7GB。\n\n注意，这还只是推理。\n\n真正训练的时候还要塞梯度，优化器状态，激活值，各种通信Buffer。\n\n所以你看到一个27B模型只有几十GB，很容易产生一种错觉。\n\n这玩意我电脑都装得下，我是不是也能训练。\n\n完全是两回事。\n\n还有一个更离谱的地方。\n\n14万亿Token是什么概念。\n\n假如一个人一天非常夸张地读10万个Token，而且一天不休息。\n\n读完这些训练数据，大概需要38万年。\n\n而机器要做的也不只是把这些字读一遍。\n\n它要一层一层做矩阵运算，算损失，反向传播，再一点一点修改270亿个参数。\n\n所以我现在越来越觉得，本地能跑27B，甚至70B，是一件非常牛逼的事情。\n\n不是因为我们的电脑已经可以训练它们了。\n\n而是因为人类把一个需要几千颗AI芯片训练出来的东西，压缩，量化，优化之后，居然可以塞进一台桌子下面的小电脑里。\n\n这个过程本身就挺赛博朋克的。",
+    "author": {
+     "screenName": "dashen_wang",
+     "name": "AI最严厉的父亲"
+    }
+   }
+  },
+  {
+   "id": "2088579343156924888",
+   "text": "Do you like more speed? I know I do ⚡️\n\nRun Qwen3.8-27B on your @NVIDIAAI DGX Spark with @sgl_project ✨\n\nSGLang • up to 1M context • MTP\n\n~33-35 tok/s single stream (structural)\n~195-210 tok/s with 10 concurrent streams\n\nNo difference in speed when running with 256k or 1M context. Default is 256k to support 10 concurrencies with full kv cache.\n\nGet it here:\nhttps://t.co/rooS9ykL91",
+   "author": {
+    "id": "1550009227493752834",
+    "name": "Mia",
+    "screenName": "MiaAI_lab",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2063908041691484160/5XsJBn7I_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 434,
+    "retweets": 42,
+    "replies": 45,
+    "quotes": 13,
+    "views": 108728,
+    "bookmarks": 412
+   },
+   "createdAt": "Sat Aug 15 10:51:33 +0000 2026",
+   "createdAtLocal": "2026-08-15 18:51",
+   "createdAtISO": "2026-08-15T10:51:33+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HPwdFa5WYAA0p_o.jpg",
+     "width": 1089,
+     "height": 969
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "unseenmars_",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2088301780312441236",
+    "text": "Run Qwen3.8-27B on your @NVIDIAAI DGX Spark & RTX 6000 PRO with @UnslothAI NVFP4 with ease ✨\n\nShips with 1M context, MTP, 4 concurrencies\n\nThis is an initial release with no optimizations yet, so expect better performance in future releases. I just wanted to get it out ASAP.\n\nDGX Spark:\n~20 tok/s on a single stream\n~70 tok/s with 4 concurrent streams\n\nGet it here:\n\nhttps://t.co/OS0KGaLvDA",
+    "author": {
+     "screenName": "MiaAI_lab",
+     "name": "Mia"
+    }
+   }
+  },
+  {
+   "id": "2088355187224186927",
+   "text": "Compared Qwen3.8 NVFP4 MTP from Unsloth and Radix\n\nRadix + SGLang + DSpark was the clear winner for single stream decode on dual and single PRO 6000.\n\n2x PRO 6000: 171 tok/s\n1x PRO 6000: 115 tok/s\n\nhttps://t.co/b4IjVHa1sd https://t.co/kiyeZgWdIO",
+   "author": {
+    "id": "1271133970332352512",
+    "name": "Espen JD",
+    "screenName": "Snixtp",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2023037653801680896/X9gkgX58_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 25,
+    "retweets": 4,
+    "replies": 7,
+    "quotes": 1,
+    "views": 6191,
+    "bookmarks": 17
+   },
+   "createdAt": "Fri Aug 14 20:00:51 +0000 2026",
+   "createdAtLocal": "2026-08-15 04:00",
+   "createdAtISO": "2026-08-14T20:00:51+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HPtRVgeX0AECt_s.jpg",
+     "width": 1582,
+     "height": 772
+    }
+   ],
+   "urls": [
+    "https://huggingface.co/RadixArk/Qwen3.8-27B-NVFP4"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "unseenmars_",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2088334289846911389",
+    "text": "First MTP Results for Qwen3.8 27B NVFP4 by Unsloth on single and dual RTX PRO 6000\n\nDecode:\n1x PRO 6000: +54% single stream, -15%* cc8\n2x PRO 6000: +26% single stream, +20% cc8\n\n*Outlier, needs further investigation.\nKeep in mind these are \"raw\" results with no optimizations https://t.co/ZvRbl6uYJj",
+    "author": {
+     "screenName": "Snixtp",
+     "name": "Espen JD"
+    }
+   }
+  },
+  {
+   "id": "2088286218480222554",
+   "text": "Run Qwen3.8-27B locally with NVFP4 + DSpark on @sgl_project \n\nhttps://t.co/6r4hbUzUdf",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 12,
+    "retweets": 1,
+    "replies": 3,
+    "quotes": 0,
+    "views": 2026,
+    "bookmarks": 2
+   },
+   "createdAt": "Fri Aug 14 15:26:47 +0000 2026",
+   "createdAtLocal": "2026-08-14 23:26",
+   "createdAtISO": "2026-08-14T15:26:47+00:00",
+   "media": [],
+   "urls": [
+    "https://docs.sglang.io/cookbook/autoregressive/Qwen/Qwen3.8-27B"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2088281320422322413",
+    "text": "The king of small models is back! Qwen3.8-27B from @Alibaba_Qwen is open source, and Day-0 support is live in SGLang:\n- 206.1 tok/s decode on a single RTX 5090, with our NVFP4 plus DSpark\n- 38.28 tok/s decode on DGX Spark\nQwen3.8-27B raises the bar again for what a small model can do on agentic planning and long-horizon tasks.\n\nLong live the (small model) king! Run it locally with SGLang 👇",
+    "author": {
+     "screenName": "sgl_project",
+     "name": "SGLang"
+    }
+   }
+  },
+  {
+   "id": "2088146559552856314",
+   "text": "slime 🔥🔥",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 288,
+    "bookmarks": 0
+   },
+   "createdAt": "Fri Aug 14 06:11:50 +0000 2026",
+   "createdAtLocal": "2026-08-14 14:11",
+   "createdAtISO": "2026-08-14T06:11:50+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2088136328781435106",
+    "text": "Proudly presented by the team ❤️",
+    "author": {
+     "screenName": "slime_framework",
+     "name": "slime"
+    }
+   }
+  },
+  {
+   "id": "2088089556424020396",
+   "text": "Red Note (Xiaohongshu) is cooking!\n\nI use 点点 everyday!",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 12,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 1310,
+    "bookmarks": 1
+   },
+   "createdAt": "Fri Aug 14 02:25:19 +0000 2026",
+   "createdAtLocal": "2026-08-14 10:25",
+   "createdAtISO": "2026-08-14T02:25:19+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2088089052197396945",
+    "text": "Congrats to @dotsstudioai on open-sourcing dots3-note preview, a 280B-total / 16B-active multimodal model with 512K context, built for real-world long-horizon agentic tasks. Day-0 support is live in SGLang!\n\nThis is the model behind rednote's IMO 2026 gold. It scored 7/7 on all six problems for a perfect 42/42, a mark only 7 human contestants reached this year.  \n\nAnd it got there without a human formalization pass (Lean) and no proof assistant, just reasoning plus Python end to end.  \n\nIt is among the first models to hit 42/42 under official grading, at roughly 1/10 the size of the others that did (Kimi K3, GPT5.6 Sol, Fable 5).  \n\nWith SGLang, you could run dots3-note preview fast and excel at long and complicated agentic reasoning workflows.",
+    "author": {
+     "screenName": "sgl_project",
+     "name": "SGLang"
+    }
+   }
+  },
+  {
+   "id": "2087890645331710155",
+   "text": "SGLang is the best engine to run the DeepSeek V4 family",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 11,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1375,
+    "bookmarks": 1
+   },
+   "createdAt": "Thu Aug 13 13:14:55 +0000 2026",
+   "createdAtLocal": "2026-08-13 21:14",
+   "createdAtISO": "2026-08-13T13:14:55+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2087888354545402325",
+    "text": "Congrats to the @deepseek_ai team on launching DeepSeek-V4-Pro-0813 and DeepSeek harness🐳  \n\nThe new checkpoint just dropped: https://t.co/xcnhgMYMFJ\nHarness repo:\nhttps://t.co/WWefFNvUyR\n \nAnother impressive jump from the previews, and this is a serious model for agentic coding and long horizon tasks 🤯 And the built-in DSpark draft module keeps generation fast even under high concurrency.  \n\nSGLang is the best engine to run the DeepSeek V4 family, and every optimization we've already landed carries straight over to this release.  \n\nCookbook 👇 https://t.co/LBlNRSf59t",
+    "author": {
+     "screenName": "sgl_project",
+     "name": "SGLang"
+    }
+   }
+  },
+  {
+   "id": "2087818764171837563",
+   "text": "Who doesn’t like Capybara",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 1,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 271,
+    "bookmarks": 0
+   },
+   "createdAt": "Thu Aug 13 08:29:17 +0000 2026",
+   "createdAtLocal": "2026-08-13 16:29",
+   "createdAtISO": "2026-08-13T08:29:17+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2087812345410224620",
+    "text": "it is qwensday my dudes https://t.co/WYoOsnTaI1",
+    "author": {
+     "screenName": "charles_irl",
+     "name": "Charles 🎉 Frye"
+    }
+   }
+  },
+  {
+   "id": "2087562897283277065",
+   "text": "Qwen3.8 27B next 👏",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 13,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 2900,
+    "bookmarks": 2
+   },
+   "createdAt": "Wed Aug 12 15:32:34 +0000 2026",
+   "createdAtLocal": "2026-08-12 23:32",
+   "createdAtISO": "2026-08-12T15:32:34+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2087555309565047149",
+    "text": "📢 @Alibaba_Qwen's Qwen3.8-2.4T-A95B weights just dropped, and SGLang already has day-0 support with DSpark.\n\nHF: https://t.co/pZOIEaHVHq\nCookbook: https://t.co/A6jTYkb3Gt\n\n🖖 What kind of model can help optimize an inference engine?\n\nQwen3.8-2.4T-A95B can take on complex engineering tasks, plan and iterate on its own, and keep going until the job is done. We even asked it to optimize its own serving on SGLang, and it ran unattended for 4.5 hours with verified performance improvements.\n\nThanks to the Qwen team @Alibaba_Qwen, @NVIDIAAI, and @AIatAMD for the close collaboration.",
+    "author": {
+     "screenName": "sgl_project",
+     "name": "SGLang"
+    }
+   }
+  },
+  {
+   "id": "2087276265002897836",
+   "text": "this is huge for agentic inference because it makes hybrid-model prefix reuse a solved primitive instead of a per-architecture rewrite",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 3,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 538,
+    "bookmarks": 1
+   },
+   "createdAt": "Tue Aug 11 20:33:35 +0000 2026",
+   "createdAtLocal": "2026-08-12 04:33",
+   "createdAtISO": "2026-08-11T20:33:35+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2087178463182454788",
+    "text": "🚀 New blog: Unified Radix Cache: One Tree for Hybrid Model Prefix Caching \n\nHybrid models complicate prefix caching: each attention type has its own cache reuse semantics, and specialized cache classes multiply combinatorially, duplicating tree logic as caching features grow.\n\nUnified Radix Cache brings everything into one shared tree:\n1️⃣ One token-keyed radix topology for canonical prefix identity, with composable components for architecture-specific reuse semantics\n2️⃣ HiCache and session-aware eviction are natively supported in the shared tree, built for agentic workloads\n3️⃣ A clean separation between the controller and tree core makes the core replaceable, including an experimental Rust tree core implementation\n\nOne tree, composable cache semantics, and a unified foundation for hybrid model prefix caching.",
+    "author": {
+     "screenName": "lmsysorg",
+     "name": "LMSYS Org"
+    }
+   }
+  },
+  {
+   "id": "2087248846388695427",
+   "text": "Run Nemotron 3.5 Lightning on your DGX Spark and RTX 5090/6000 Pro with ease ✨\n\nSnappy model that is great at agentic stuff!\nGreat job @NVIDIAAI 👏\n\n- SGLang\n- NVFP4 with DSpark\n- 1M context\n- 112 tok/s single steam\n- Up to 362 tok/s at 8 sessions\n\nGet it here: https://t.co/pp2sF5tEeS",
+   "author": {
+    "id": "1550009227493752834",
+    "name": "Mia",
+    "screenName": "MiaAI_lab",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2063908041691484160/5XsJBn7I_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 104,
+    "retweets": 4,
+    "replies": 10,
+    "quotes": 4,
+    "views": 39136,
+    "bookmarks": 82
+   },
+   "createdAt": "Tue Aug 11 18:44:38 +0000 2026",
+   "createdAtLocal": "2026-08-12 02:44",
+   "createdAtISO": "2026-08-11T18:44:38+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HPdlEJ3XQAAe_uB.jpg",
+     "width": 1872,
+     "height": 1056
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "unseenmars_",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2086691706326438258",
+   "text": "Qwen 3.8 27b Qwen 3.8 27b Qwen 3.8 27b Qwen 3.8 27b Qwen 3.8 27b Qwen 3.8 27b\nQwen 3.8 27b Qwen 3.8 27b Qwen 3.8 27b Qwen 3.8 27b Qwen 3.8 27b Qwen 3.8 27b\nQwen 3.8 27b Qwen 3.8 27b Qwen 3.8 27b Qwen 3.8 27b Qwen 3.8 27b Qwen 3.8 27b\nQwen 3.8 27b Qwen 3.8 27b Qwen 3.8 27b Qwen 3.8 27b Qwen 3.8 27b Qwen 3.8 27b\nQwen 3.8 27b Qwen 3.8 27b Qwen 3.8 27b Qwen 3.8 27b Qwen 3.8 27b Qwen 3.8 27b\n\nWe believe in you!!!!",
+   "author": {
+    "id": "148402224",
+    "name": "Wayne Lowry",
+    "screenName": "wikiwayne",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1735642547106586624/HH1CLhdL_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 672,
+    "retweets": 25,
+    "replies": 30,
+    "quotes": 10,
+    "views": 541895,
+    "bookmarks": 22
+   },
+   "createdAt": "Mon Aug 10 05:50:46 +0000 2026",
+   "createdAtLocal": "2026-08-10 13:50",
+   "createdAtISO": "2026-08-10T05:50:46+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "unseenmars_",
+   "lang": "fi",
+   "score": null
+  },
+  {
+   "id": "2087243699617189922",
+   "text": "Love the name!",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 0,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 170,
+    "bookmarks": 0
+   },
+   "createdAt": "Tue Aug 11 18:24:11 +0000 2026",
+   "createdAtLocal": "2026-08-12 02:24",
+   "createdAtISO": "2026-08-11T18:24:11+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2087214239643730227",
+    "text": "a life update: i started a new company called Pragmatik (p7k) Labs (语用科技) in shanghai, focusing on the research of next-generation agents across digital and physical worlds. thanks to Gaorong Ventures and HSG (红杉中国 & 高榕创投) for co-leading this round, and to Tencent (腾讯) and Shanghai Engine Fund (上海未来产业基金) for the support. @pragmatik_labs · https://t.co/01J3uSbxmX",
+    "author": {
+     "screenName": "JustinLin610",
+     "name": "Junyang Lin"
+    }
+   }
+  },
+  {
+   "id": "2086850900631691671",
+   "text": "Starting with this release, we're adding a \"Local AI\" section to track progress across platforms like SM120, DGX Spark, Halo, and Apple MLX. https://t.co/uefHEMdO5j",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 15,
+    "retweets": 3,
+    "replies": 0,
+    "quotes": 0,
+    "views": 2006,
+    "bookmarks": 1
+   },
+   "createdAt": "Mon Aug 10 16:23:21 +0000 2026",
+   "createdAtLocal": "2026-08-11 00:23",
+   "createdAtISO": "2026-08-10T16:23:21+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HPX7rIKacAEHxJ_.jpg",
+     "width": 1862,
+     "height": 858
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2086845125880390083",
+    "text": "SGLang v0.5.17 is out 🚀\n\nKimi K3 is now in main, optimized with KDA-aware prefix caching, DSpark speculative decoding, and DCP for 1M context. You can run it on both NVIDIA and AMD GPUs, with verified recipes in the SGLang cookbook.  \n\nWe also shipped MiniMax-H3 on SGLang-Diffusion, an open video-and-audio generation model. It takes text, image, video and audio in, and generates 4-15s clips at 24 fps, locally on 2x RTX 5090.  \n\nOther newly supported models: MiniMax-M3-NVFP4, EmbeddingGemma, and LFM2.5.  \n\nHere are some highlights for this release:  \n\n- The frontend server got an initial Rust rewrite \n\n- MoE prefill got up to 1.92x faster with DWDP \n\n- Decode context parallelism (DCP) got pluggable comm backends \n\n- Multi-turn agents got a session-aware KV cache \n\n- Engine restarts got faster with a weight cache  \n\nWe also welcomed 45 new contributors, and thanks again to our amazing partners and model makers: @Kimi_Moonshot @MiniMax_AI @NVIDIAAI @AMD @intel @GoogleDeepMind @liquidai  \n\nNow. MAX LOAD! MAX OUTPUT! 🏃‍♀️",
+    "author": {
+     "screenName": "sgl_project",
+     "name": "SGLang"
+    }
+   }
+  },
+  {
+   "id": "2086771504881238119",
+   "text": "Glimmer NVFP4 🚀\nhttps://t.co/iJsF1p1325 \n\nGlimmer DFlash 🚀\nhttps://t.co/OR7OS8wTjP",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 10,
+    "retweets": 1,
+    "replies": 0,
+    "quotes": 0,
+    "views": 2241,
+    "bookmarks": 4
+   },
+   "createdAt": "Mon Aug 10 11:07:51 +0000 2026",
+   "createdAtLocal": "2026-08-10 19:07",
+   "createdAtISO": "2026-08-10T11:07:51+00:00",
+   "media": [],
+   "urls": [
+    "http://huggingface.co/RadixArk/Muse-Glimmer-NVFP4",
+    "http://huggingface.co/RadixArk/Muse-Glimmer-DFLASH"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "de",
+   "score": null,
+   "quotedTweet": {
+    "id": "2086758948288487856",
+    "text": "@AIatMeta's Muse Glimmer (30B dense, open-weights) launches with SGLang day-0 support. We got ~230 tok/s on a single RTX 5090, with NVFP4 + DFlash on. It also works out of the box on @NVIDIAAIDev RTX Pro 6000, DGX Spark, and MLX for Mac.  \n\nSpeed and reliability have always been the blockers for a local agent. SGLang and Muse Glimmer make a local agent that's blazing fast, always on, and gets things done.  \n\nGo build and run a local agent on your own machine!🚀",
+    "author": {
+     "screenName": "lmsysorg",
+     "name": "LMSYS Org"
+    }
+   }
+  },
+  {
+   "id": "2086765824011088029",
+   "text": "Made this video after two days of daily driving Glimmer. It is a serious model for local agents and very very fast with @sgl_project\n\nI use it with @pidotdev for:\n\n- Sorts messy folders by what's inside, not by file type\n\n- Runs batch jobs like summarization, conversion, and translation..\n\n- Answers questions about anything on my laptop\n\nI will try some coding tasks next. It definitely has lots of potential, and I am so glad Meta is back!!",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 22,
+    "retweets": 2,
+    "replies": 1,
+    "quotes": 1,
+    "views": 1849,
+    "bookmarks": 2
+   },
+   "createdAt": "Mon Aug 10 10:45:17 +0000 2026",
+   "createdAtLocal": "2026-08-10 18:45",
+   "createdAtISO": "2026-08-10T10:45:17+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2086758948288487856",
+    "text": "@AIatMeta's Muse Glimmer (30B dense, open-weights) launches with SGLang day-0 support. We got ~230 tok/s on a single RTX 5090, with NVFP4 + DFlash on. It also works out of the box on @NVIDIAAIDev RTX Pro 6000, DGX Spark, and MLX for Mac.  \n\nSpeed and reliability have always been the blockers for a local agent. SGLang and Muse Glimmer make a local agent that's blazing fast, always on, and gets things done.  \n\nGo build and run a local agent on your own machine!🚀",
+    "author": {
+     "screenName": "lmsysorg",
+     "name": "LMSYS Org"
+    }
+   }
+  },
+  {
+   "id": "2086760427682435432",
+   "text": "Meta is backkkkkkkkk!",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 10,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 1640,
+    "bookmarks": 0
+   },
+   "createdAt": "Mon Aug 10 10:23:50 +0000 2026",
+   "createdAtLocal": "2026-08-10 18:23",
+   "createdAtISO": "2026-08-10T10:23:50+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2086755368596902004",
+    "text": "excited to be releasing open weights for muse glimmer today, a 30b model that runs on a single consumer gpu, with open weights for a version of muse spark 1.2 coming soon.\n\ntwo very different models, both headed into people's hands, with more to come.",
+    "author": {
+     "screenName": "alexandr_wang",
+     "name": "Alexandr Wang"
+    }
+   }
+  },
+  {
+   "id": "2085035770600116511",
+   "text": "🎉 Day-0 support for Ling-3.0-flash from @AntLingAGI is now live in SGLang! A 124B MoE model built for production agents with: \n\n> Hybrid-linear from step 0 of pretraining: KDA + MLA stacked 5:1, 1/64 sparse MoE \n> 10,000+ interactive training environments \n> New INT4 and MXFP4 variants, running end-to-end on a single NVIDIA DGX Spark via the Spark-adapted SGLang path  \n\n⭐️ What makes long agent runs fast: Ling-3.0-flash natively integrates SGLang HiCache + Mooncake hierarchical caching, cutting TTFT by 60% to over 80% on long inputs. \n\nTry it in your agent stack today!",
+   "author": {
+    "id": "1822588444046249984",
+    "name": "LMSYS Org",
+    "screenName": "lmsysorg",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1823251762243121152/0cgIY6yc_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 24,
+    "retweets": 7,
+    "replies": 2,
+    "quotes": 3,
+    "views": 7162,
+    "bookmarks": 5
+   },
+   "createdAt": "Wed Aug 05 16:10:40 +0000 2026",
+   "createdAtLocal": "2026-08-06 00:10",
+   "createdAtISO": "2026-08-05T16:10:40+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HO-IwXMbEAE0Z5I.png",
+     "width": 677,
+     "height": 649
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "unseenmars_",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2084656533489754475",
+    "text": "Today, we’re releasing the open weights for Ling-3.0-flash. 🎉\n\nOfficial BF16 and FP8-quantized versions are now available, so you can choose the option that best fits your hardware, performance requirements, and deployment needs. https://t.co/o2eQRZdupH",
+    "author": {
+     "screenName": "AntLingAGI",
+     "name": "Ant Ling"
+    }
+   }
+  },
+  {
+   "id": "2084837564905897996",
+   "text": "what draft models do you need next? Let us know 🫡",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 6,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 521,
+    "bookmarks": 1
+   },
+   "createdAt": "Wed Aug 05 03:03:04 +0000 2026",
+   "createdAtLocal": "2026-08-05 11:03",
+   "createdAtISO": "2026-08-05T03:03:04+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2084679323030831388",
+    "text": "SpecForge v0.3.0 is here! It's a major update to how draft models get trained. The new runtime separates target-model inference from draft-model training; unifies online, offline, and disaggregated workflows behind one entry point, and supports a broader family of speculative decoding algorithms.\n\nSpecBundle also grows to 11 open draft models, spanning GLM-5.1, Kimi K2.5/K2.6/K2.7-Code, Qwen3, Step-3.5-Flash, Inkling-Small, and Kimi K3.\n\nFull release note 👇",
+    "author": {
+     "screenName": "lmsysorg",
+     "name": "LMSYS Org"
+    }
+   }
+  },
+  {
+   "id": "2084385920258822494",
+   "text": "wow",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 4,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 593,
+    "bookmarks": 0
+   },
+   "createdAt": "Mon Aug 03 21:08:24 +0000 2026",
+   "createdAtLocal": "2026-08-04 05:08",
+   "createdAtISO": "2026-08-03T21:08:24+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "qst",
+   "score": null,
+   "quotedTweet": {
+    "id": "2084375192491708515",
+    "text": "Our Kimi-K3-DSpark speculator passed 600K downloads! Great to see @wafer_ai put it on AMD MI355X and get ~2.2× single-stream, +18% peak aggregate.\n\nDownload checkpoint here:\nhttps://t.co/LkkEG3SzJh https://t.co/Bn4NRpTHI1",
+    "author": {
+     "screenName": "radixark",
+     "name": "RadixArk"
+    }
+   }
+  },
+  {
+   "id": "2084139410107564102",
+   "text": "Great collection of prompts if you need to run MiniMax H3 now",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 347,
+    "bookmarks": 0
+   },
+   "createdAt": "Mon Aug 03 04:48:51 +0000 2026",
+   "createdAtLocal": "2026-08-03 12:48",
+   "createdAtISO": "2026-08-03T04:48:51+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2084129969421357353",
+    "text": "@BytePlusGlobal 's Seedance 2.5 and @MiniMax_AI 's H3 both just dropped, but you shouldn't have to burn hundreds of credits to figure out which one fits your workflow.\n\nSo we picked the 10 most popular prompts from our creator community and ran side-by-side comparisons.\n\nTake from @AiMeowing:\nH3 delivers ~70–80% of Seedance 2.5’s quality at ~1/3 of the cost, making it a strong choice for creators who prioritize cost efficiency and experimentation.\n\nSeedance 2.5 shines in cinematic long shots, realistic human performance, and commercial-grade production, making it a better fit for professional creators and commercial use cases where quality and consistency matter most.\n\nboth have their place depending on what you're optimizing for: cost-efficiency or top-end quality.\n\nReally excited to collaborate! Also huge thanks to @lmsysorg for the compute support and creators who shared their prompts and helped us make these comparisons more useful for everyone 🙌\n\nPrompt #1: Animal Animation & Dynamic Motion",
+    "author": {
+     "screenName": "yesand_ai",
+     "name": "yes&"
+    }
+   }
+  },
+  {
+   "id": "2084116127538729006",
+   "text": "We ran MiniMax H3 on 2x 5090 and 1x RTX 6000 and the results were very promising! Trying DGX Spark next!",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 13,
+    "retweets": 2,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1849,
+    "bookmarks": 5
+   },
+   "createdAt": "Mon Aug 03 03:16:20 +0000 2026",
+   "createdAtLocal": "2026-08-03 11:16",
+   "createdAtISO": "2026-08-03T03:16:20+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2084110114022396018",
+    "text": "@MiniMax_AI H3 is live in SGLang Diffusion, with day-0 serving support 🎬  \n\nThis open model matches Seedance 2.0 at 1/3 the cost, or $0 if you run it locally on 2x 5090 or 1 RTX 6000.\n\nWith SGLang Diffusion, you can build visual concepts, motion design, e-commerce creatives, precise video edits, animation and stylized visuals, all locally on your own machine. No API bill, no waitlist.  \n\nH3 takes text, image, video and audio in a single context, and generates 5-15s clips at native 2K, 24fps with native stereo audio. \n\nSGLang Diffusion also runs on @NVIDIAAI Blackwell and Hopper, and @AMD MI355X / MI300X.  \n\nLet's create something with MiniMax H3 👇",
+    "author": {
+     "screenName": "lmsysorg",
+     "name": "LMSYS Org"
+    }
+   }
+  },
+  {
+   "id": "2084121844614128101",
+   "text": "Cookbook for H3 with 5090 (should work for 6000 as well)\n\nhttps://t.co/vnJYOl8Zwv",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 3,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 216,
+    "bookmarks": 3
+   },
+   "createdAt": "Mon Aug 03 03:39:03 +0000 2026",
+   "createdAtLocal": "2026-08-03 11:39",
+   "createdAtISO": "2026-08-03T03:39:03+00:00",
+   "media": [],
+   "urls": [
+    "http://docs.sglang.io/cookbook/diffusion/MiniMax/MiniMax-H3#hw=rtx5090&profile=offload&weights=fl2va&mode=t2va&quant=bf16&encoder=auto"
+   ],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2083907587309777402",
+   "text": "Run Inkling-Small on 2x @NVIDIAAI DGX Spark with 1M context  ✨\n\n- SGLang with dspark speculative drafts\n~34 tok/s (single stream)\n~79 tok/s (6 concurrent sessions)\n\nUnlike DeepSeek V4 Flash which supports only text, Inkling-Small also supports images, audio, and video.\n\nSpecial thanks to @u1tra_instinct for his Inkling-Small work.\n\nGet it here:\nhttps://t.co/TIYBw6edjb",
+   "author": {
+    "id": "1550009227493752834",
+    "name": "Mia",
+    "screenName": "MiaAI_lab",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2063908041691484160/5XsJBn7I_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 129,
+    "retweets": 13,
+    "replies": 13,
+    "quotes": 1,
+    "views": 9543,
+    "bookmarks": 106
+   },
+   "createdAt": "Sun Aug 02 13:27:40 +0000 2026",
+   "createdAtLocal": "2026-08-02 21:27",
+   "createdAtISO": "2026-08-02T13:27:40+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "unseenmars_",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2083429049557483914",
+   "text": "Need for speed ❤️‍🔥",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 4,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 501,
+    "bookmarks": 0
+   },
+   "createdAt": "Sat Aug 01 05:46:08 +0000 2026",
+   "createdAtLocal": "2026-08-01 13:46",
+   "createdAtISO": "2026-08-01T05:46:08+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2083424431377137732",
+    "text": "the \"Fast\" is silent",
+    "author": {
+     "screenName": "charles_irl",
+     "name": "Charles 🎉 Frye"
+    }
+   }
+  },
+  {
+   "id": "2083367378877067399",
+   "text": "Scaling Kimi K3 on H200s with @sgl_project @lmsysorg \n\nWhile most discussion on X focuses on Blackwell, I thought it would be useful to share what we learned while tuning Kimi K3 for throughput-oriented workloads on H200s.\n\n- TP+EP beat DP+EP for K3. Only about 1/4 of its layers use gated MLA, so DP attention provides less benefit from avoiding KV-cache duplication. Having each DP rank process every attention head also substantially increased latency. This differs from our K2.6 and GLM setups, where we generally prefer DP+EP.\n\n- FP8 KV cache worked well. We measured no quality or throughput regression in our evaluations, while effectively doubling KV-cache capacity.\n\n- TP32+EP32 provided significantly more cache capacity: approximately 4M KV-cache tokens per replica, compared with about 800K using TP16+EP16.\n\n- For low cache-hit workloads, consider disabling radix cache. Prefix caching requires four Mamba-state slots per sequence in our setup; without radix cache, each sequence needs only one.\n\n- Non-speculative decoding won at high concurrency. Above roughly 64 concurrent requests, draft-and-verify overhead outweighed the savings from accepted speculative tokens in our tests.\n\n- A few caveats: symmetric memory caused instability in our multi-node environment. We also observed hangs when combining speculative decoding, HiCache, and high KV pressure. Both issues are still under investigation.\n\nWe’ve been running this configuration at full load across roughly ~O(1000) chips for several days. Aside from hardware failures, it has been reliable.\n\nFeedback, discussion, and better configurations are very welcome! Sharing my launch command in the first comment. \n\nh/t to @hanming_lu @liin1211 @0xishand @ChengWan17 @NealBayya for the discussion",
+   "author": {
+    "id": "931483504604454912",
+    "name": "Byron Hsu",
+    "screenName": "hsu_byron",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2047544116318539776/cli40YXl_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 380,
+    "retweets": 30,
+    "replies": 10,
+    "quotes": 7,
+    "views": 75779,
+    "bookmarks": 273
+   },
+   "createdAt": "Sat Aug 01 01:41:04 +0000 2026",
+   "createdAtLocal": "2026-08-01 09:41",
+   "createdAtISO": "2026-08-01T01:41:04+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "unseenmars_",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2083350029226688598",
+   "text": "More optimization and more models 🐳 to come!",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 15,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 1618,
+    "bookmarks": 0
+   },
+   "createdAt": "Sat Aug 01 00:32:08 +0000 2026",
+   "createdAtLocal": "2026-08-01 08:32",
+   "createdAtISO": "2026-08-01T00:32:08+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2083349739668660432",
+    "text": "🚀 SGLang now officially supports @thinkymachines Inkling-Small running on 2× @NVIDIAAI DGX Spark systems connected via ConnectX-7.\n\nHuge thanks to @realJerryzhou @ispobaoke for implementing the support, with valuable community contributions from @u1tra_instinct and @TechMDAI.\n\nThis enables strong agentic capabilities to run locally on a compact platform. The current setup achieves 24 tok/s (concurrency=1) without MTP. \n\nDSpark support is coming soon.\n\nCheck out the cookbook below to get started 👇",
+    "author": {
+     "screenName": "sgl_project",
+     "name": "SGLang"
+    }
+   }
+  },
+  {
+   "id": "2083314103725248514",
+   "text": "iykyk https://t.co/B78vYrp2vx",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 504,
+    "retweets": 18,
+    "replies": 54,
+    "quotes": 5,
+    "views": 30142,
+    "bookmarks": 26
+   },
+   "createdAt": "Fri Jul 31 22:09:23 +0000 2026",
+   "createdAtLocal": "2026-08-01 06:09",
+   "createdAtISO": "2026-07-31T22:09:23+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HOlrH9-a4AE8FGk.jpg",
+     "width": 1536,
+     "height": 2048
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "fi",
+   "score": null
+  },
+  {
+   "id": "2083191823971869073",
+   "text": "Great to see! Later this year, RadixArk will roll out SGL-torchtpu as an additional @radixark PyTorch-native TPU backend, featuring eager execution, @PyTorch ecosystem compatibility, and MPMD support. It will let any AI researcher or engineer in the industry run LLMs with @sgl_project  on @Google's TPUs using standard PyTorch tooling, with high performance, scalability, and state-of-the-art features.",
+   "author": {
+    "id": "776585502606721024",
+    "name": "PyTorch",
+    "screenName": "PyTorch",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1813965160702451712/yXV1vRhr_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 62,
+    "retweets": 13,
+    "replies": 3,
+    "quotes": 0,
+    "views": 18398,
+    "bookmarks": 11
+   },
+   "createdAt": "Fri Jul 31 14:03:29 +0000 2026",
+   "createdAtLocal": "2026-07-31 22:03",
+   "createdAtISO": "2026-07-31T14:03:29+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "unseenmars_",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2082830595768701174",
+    "text": "RadixArk and Google Cloud are joining forces with the SGLang community to make TPU a drop-in, cost-efficient path to frontier inference.  \n\nSGL-JAX already serves the major open model families on the latest TPU generations: Gemma, Qwen, DeepSeek, GLM, Kimi, Ling, MiniMax, MiMo, Grok, plus Wan and Flux for video and image generation.  \n\nWith this partnership, TPU unlocks SGLang's production feature set: 5D parallelism, Radix Cache, HiCache, quantization, speculative decoding, on TPU Pallas kernels co-built by Google, RadixArk, and the SGLang community. SGL-torchtpu opens a PyTorch-native path to all of it.  \n\nSGLang on TPU comes with the same API and the same features, so for teams already running it, getting started is simple. Going forward, TPU support for new open models will land alongside the rest, and that carries forward to each new TPU generation.  \n\nFull announcement and SGL-JAX repo 👇",
+    "author": {
+     "screenName": "radixark",
+     "name": "RadixArk"
+    }
+   }
+  },
+  {
+   "id": "2083266703547625532",
+   "text": "Congrats to the DeepSeek team on DeepSeek-V4-Flash-0731 🐳  \n\nThe new checkpoint just dropped today: https://t.co/qbz3tJasWn  \n\nThis is a truly impressive jump from the previews, and it isn't even the Pro version yet 🤯  \n\nSGLang is the best engine to run the DeepSeek V4 family, and every optimization we've already landed carries straight over to this release.    \n\nV4-Flash ships with a built-in DSpark draft module, and your existing V4 serving config runs as is.    \n\nCookbook 👇",
+   "author": {
+    "id": "1923440305703092226",
+    "name": "SGLang",
+    "screenName": "sgl_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1923445139319685126/pyjcWZU7_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 28,
+    "retweets": 8,
+    "replies": 2,
+    "quotes": 0,
+    "views": 3056,
+    "bookmarks": 4
+   },
+   "createdAt": "Fri Jul 31 19:01:02 +0000 2026",
+   "createdAtLocal": "2026-08-01 03:01",
+   "createdAtISO": "2026-07-31T19:01:02+00:00",
+   "media": [],
+   "urls": [
+    "http://huggingface.co/deepseek-ai/DeepSeek-V4-Flash-0731"
+   ],
+   "isRetweet": true,
+   "retweetedBy": "unseenmars_",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2083084415157022911",
+    "text": "🚀 DeepSeek-V4-Flash Official API is now LIVE in public beta!\n\n🔷 We’ve massively upgraded its Agent capabilities—benchmark scores are now far surpassing the V4-Pro-Preview. Check out the massive performance leap below! 👇\n🔷 The official V4-Flash now natively supports the Responses API format and is fully adapted for Codex!\n\nCheck out the configuration details in our official API docs: https://t.co/smCwQZMeiq",
+    "author": {
+     "screenName": "deepseek_ai",
+     "name": "DeepSeek"
+    }
+   }
+  },
+  {
+   "id": "2083240941910135119",
+   "text": "SGLang is the best engine to run DeepSeek V4 and we will make sure you can run flash well locally 🫡",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 25,
+    "retweets": 3,
+    "replies": 2,
+    "quotes": 0,
+    "views": 2725,
+    "bookmarks": 4
+   },
+   "createdAt": "Fri Jul 31 17:18:39 +0000 2026",
+   "createdAtLocal": "2026-08-01 01:18",
+   "createdAtISO": "2026-07-31T17:18:39+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2083168112837337231",
+    "text": "DeepSeek-V4-Flash-0731 is out 🚀\nOfficial release (supersedes the preview) with massively upgraded agentic skills. Same efficient MoE core (~13B active) + speculative decoding module attached\nIt beats V4-Pro Preview on Terminal Bench 2.1 (82.7), DeepSWE, Toolathlon, Cybergym and more — while staying far smaller and cheaper\nMIT open weights: https://t.co/eHb7ISGy5d\nMax reasoning + long context ready. This one hits hard for coding agents.",
+    "author": {
+     "screenName": "mr_r0b0t",
+     "name": "mr_r0b0t"
+    }
+   }
+  },
+  {
+   "id": "2083039235100246173",
+   "text": "🫡",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 550,
+    "bookmarks": 0
+   },
+   "createdAt": "Fri Jul 31 03:57:09 +0000 2026",
+   "createdAtLocal": "2026-07-31 11:57",
+   "createdAtISO": "2026-07-31T03:57:09+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "art",
+   "score": null,
+   "quotedTweet": {
+    "id": "2082896815716712726",
+    "text": "Day 0 support for Inkling-Small on Modal.\n\n- 276B parameter MoE with 12B active\n- 1M context\n- Variable thinking effort\n- Native image &amp; audio understanding\n- NVFP4 checkpoint fits on a single @NVIDIAAI B300\n\nGreat to work with @thinkymachines and @sgl_project on this one. https://t.co/WF5gvK0NM4",
+    "author": {
+     "screenName": "modal",
+     "name": "Modal"
+    }
+   }
+  },
+  {
+   "id": "2083005234562166995",
+   "text": "👨‍🍳",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 313,
+    "bookmarks": 0
+   },
+   "createdAt": "Fri Jul 31 01:42:02 +0000 2026",
+   "createdAtLocal": "2026-07-31 09:42",
+   "createdAtISO": "2026-07-31T01:42:02+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "art",
+   "score": null,
+   "quotedTweet": {
+    "id": "2082965730346315812",
+    "text": "yv超算中心 https://t.co/UXORTQ4hWV",
+    "author": {
+     "screenName": "yvbbrjdr",
+     "name": "yv"
+    }
+   }
+  },
+  {
+   "id": "2082890993179955322",
+   "text": "Inkling-small is out today! With SGLang, you can get 648 tok/s decode with DSpark (simulated acc len=4) and 288 tok/s w/o DSpark, under the same setup (8x @NVIDIAAI B200, TP 8, NVFP4, bs=1).\n\nWhat makes this model different is the size. 276B total with 12B active is a sweet spot for RL, and both LoRA and full-parameter training become well within reach. Miles is ready and verified for multimodal RL on Inkling-small, so you can turn your multimodal data into real capability gains.\n\nAt ~1/4 the size, Inkling-small matches the bigger version in capability and even wins on some benchmarks.\n\nRun Inkling-small with SGLang, and customize it with Miles.",
+   "author": {
+    "id": "1822588444046249984",
+    "name": "LMSYS Org",
+    "screenName": "lmsysorg",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1823251762243121152/0cgIY6yc_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 202,
+    "retweets": 26,
+    "replies": 14,
+    "quotes": 8,
+    "views": 120133,
+    "bookmarks": 59
+   },
+   "createdAt": "Thu Jul 30 18:08:05 +0000 2026",
+   "createdAtLocal": "2026-07-31 02:08",
+   "createdAtISO": "2026-07-30T18:08:05+00:00",
+   "media": [
+    {
+     "type": "video",
+     "url": "https://video.twimg.com/amplify_video/2082890772794519552/vid/avc1/1920x1080/ZGN34drOesPa9QBv.mp4?tag=29",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "unseenmars_",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2082885869426631032",
+    "text": "Today, we are releasing Inkling-Small.\n\nInkling-Small achieves comparable performance to Inkling at a quarter of its size. It features 276B total parameters, 12B active. We are making the full weights available.\n\nhttps://t.co/BtYNcpkDRA\n\nFine-tune it on Tinker today, or chat with it in text, image, and audio on Tinker Playground.",
+    "author": {
+     "screenName": "thinkymachines",
+     "name": "Thinking Machines"
+    }
+   }
+  },
+  {
+   "id": "2082830595768701174",
+   "text": "RadixArk and Google Cloud are joining forces with the SGLang community to make TPU a drop-in, cost-efficient path to frontier inference.  \n\nSGL-JAX already serves the major open model families on the latest TPU generations: Gemma, Qwen, DeepSeek, GLM, Kimi, Ling, MiniMax, MiMo, Grok, plus Wan and Flux for video and image generation.  \n\nWith this partnership, TPU unlocks SGLang's production feature set: 5D parallelism, Radix Cache, HiCache, quantization, speculative decoding, on TPU Pallas kernels co-built by Google, RadixArk, and the SGLang community. SGL-torchtpu opens a PyTorch-native path to all of it.  \n\nSGLang on TPU comes with the same API and the same features, so for teams already running it, getting started is simple. Going forward, TPU support for new open models will land alongside the rest, and that carries forward to each new TPU generation.  \n\nFull announcement and SGL-JAX repo 👇",
+   "author": {
+    "id": "1994288895320838149",
+    "name": "RadixArk",
+    "screenName": "radixark",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1996396384120086528/UzE4Waox_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 82,
+    "retweets": 15,
+    "replies": 4,
+    "quotes": 10,
+    "views": 39461,
+    "bookmarks": 17
+   },
+   "createdAt": "Thu Jul 30 14:08:05 +0000 2026",
+   "createdAtLocal": "2026-07-30 22:08",
+   "createdAtISO": "2026-07-30T14:08:05+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HOeycTDbMAAShjE.jpg",
+     "width": 1920,
+     "height": 1080
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "unseenmars_",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2082521140883558892",
+   "text": "🚀 New blog: Towards Blackwell-Native 8-bit and 4-bit RL: End-to-End MXFP8 and NVFP4 RL in Miles\n\nWe bring two Blackwell-native, low-precision RL recipes to Miles, fully open-sourced across the stack:\n☑️ End-to-end MXFP8 across rollout, forward, and backward GEMMs\n☑️ Hardware-native NVFP4 W4A4 RL for MoE models\n☑️ Bit-exact quantizers between training & rollout to minimize training-rollout mismatch\n☑️ Fine-grained, cross-stack per-layer precision control\n\nOn Qwen3-30B-A3B, all 5 low-precision configs closely track the BF16 reward curve while reducing rollout time.\n\nBuilt together with @humansand and @nvidia.",
+   "author": {
+    "id": "1822588444046249984",
+    "name": "LMSYS Org",
+    "screenName": "lmsysorg",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1823251762243121152/0cgIY6yc_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 180,
+    "retweets": 35,
+    "replies": 4,
+    "quotes": 2,
+    "views": 16855,
+    "bookmarks": 122
+   },
+   "createdAt": "Wed Jul 29 17:38:26 +0000 2026",
+   "createdAtLocal": "2026-07-30 01:38",
+   "createdAtISO": "2026-07-29T17:38:26+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HOaZpyCbYAAowEM.jpg",
+     "width": 1920,
+     "height": 1244
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "unseenmars_",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2082266026918768889",
+   "text": "Run Kimi K3 on Google Cloud!!",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 6,
+    "retweets": 0,
+    "replies": 1,
+    "quotes": 0,
+    "views": 536,
+    "bookmarks": 1
+   },
+   "createdAt": "Wed Jul 29 00:44:42 +0000 2026",
+   "createdAtLocal": "2026-07-29 08:44",
+   "createdAtISO": "2026-07-29T00:44:42+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2082242719997669593",
+    "text": "Google Cloud @googlecloud announced its Day 0 support for Kimi K3 with SGLang! They just published the full guide for serving the 2.8T-param MoE with SGLang on GKE, including DSPARK speculative decoding.\n\nA model this size is an infrastructure problem before it's a model problem. A4 and A4X VMs gave SGLang the memory bandwidth and interconnect to keep K3 fast under real concurrency.\n\nThree ways to deploy: Model Garden, AI Hypercomputer recipes, GKE.\n\nGuide in the comments 👇",
+    "author": {
+     "screenName": "sgl_project",
+     "name": "SGLang"
+    }
+   }
+  },
+  {
+   "id": "2082015413794410640",
+   "text": "🧡💚 Modal",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 3,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 237,
+    "bookmarks": 0
+   },
+   "createdAt": "Tue Jul 28 08:08:51 +0000 2026",
+   "createdAtLocal": "2026-07-28 16:08",
+   "createdAtISO": "2026-07-28T08:08:51+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "hu",
+   "score": null,
+   "quotedTweet": {
+    "id": "2081906575267283346",
+    "text": "Big, big appreciation to the SGLang team — playing a major part in our ability to stand up great performant endpoints on day-0, model after model.\n\nOpen source is a joyous place to collaborate, thanks to these folks.",
+    "author": {
+     "screenName": "_gongy",
+     "name": "gongy"
+    }
+   }
+  },
+  {
+   "id": "2081867025140650236",
+   "text": "You can just build things with Kimi K3, and all you need is an idea.\n\nI was really impressed that Kimi K3 is leading the frontend bench @arena. So I sent a very simple prompt: make a playable Chrome-dino game.\n\nIt made it in one pass.\n\nSo I ran to our designer and asked her for a few key frames for my speedrun idea: a girl running, cheering, a flag monument, a rocket ride.\n\nThen I asked Kimi to turn them into the game.\n\nNobody asked it to, but it studied the poses and figured out how to line them up. The run cycle came out perfectly smooth.\n\nIt also took the night and morning backgrounds and turned them into a live gradient. Dawn breaks as the girl runs.\n\nThen it started screenshotting itself to debug. \n\nIt ran the page headless and saw the jump apex pushing her head off the canvas. Fixed it. Screenshotted again to prove it, instead of assuming it.\n\nFor audio, it composed its own 8-bit tracks on theme. Then it searched for CC0 alternatives. Then it asked me to pick.\n\nThen I handed it our real kernel ablation numbers and asked it to design the game mechanic around them.\n\nIt turned each datapoint into a pixel-art snack, paced them out across the track, and each one became a reward that brings the girl closer to the finish line.\n\nIt even wrote an autopilot bot to play the whole game start to finish, just to check the thing was actually beatable.\n\nFinally I asked it to edit the story and export the video.\n\nAnd after $22 of tokens over a weekend, I had our best launch video ever.\n\nYou can play the game here: https://t.co/lnmZ6dvI5h\n\nGo build something with Kimi K3, it is very fast now with @sgl_project!",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 11,
+    "retweets": 3,
+    "replies": 2,
+    "quotes": 3,
+    "views": 3218,
+    "bookmarks": 3
+   },
+   "createdAt": "Mon Jul 27 22:19:12 +0000 2026",
+   "createdAtLocal": "2026-07-28 06:19",
+   "createdAtISO": "2026-07-27T22:19:12+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HORDW98bQAAxIpW.jpg",
+     "width": 3258,
+     "height": 1164
+    }
+   ],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2081764780621337075",
+    "text": "SGLang day-0 speed on Kimi K3: 423 tok/s (measured on gsm8k), plus RL support ready in Miles @radixark!\n\nHow the largest open-source model runs this fast: we natively implemented and deeply optimized K3’s new architecture with fused KDA decode kernels, DP attention, DSpark, PD disagg, and KDA-aware prefix caching. We've passed Kimi Vendor Verifier and are ready for production!\n\nThanks to @Kimi_Moonshot, @nvidia, @AMD, @KVCache_AI, @modal, and @baseten for building this with us, and to @googlecloud, @nebiustf, @fal, @digitalocean, @runpod, @DeepInfra and @gmi_cloud for serving K3 on SGLang.\n\nBlog, cookbook, benchmarks in the comments.\n\nP.S. This demo video? Kimi K3 made it itself. Play the game 👇",
+    "author": {
+     "screenName": "lmsysorg",
+     "name": "LMSYS Org"
+    }
+   }
+  },
+  {
+   "id": "2081867935191302360",
+   "text": "thank you @thelocalblender for the design work!!!",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 3,
+    "retweets": 0,
+    "replies": 0,
+    "quotes": 0,
+    "views": 90,
+    "bookmarks": 0
+   },
+   "createdAt": "Mon Jul 27 22:22:49 +0000 2026",
+   "createdAtLocal": "2026-07-28 06:22",
+   "createdAtISO": "2026-07-27T22:22:49+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2081793554377314484",
+   "text": "We trained a DSpark speculator draft model for Kimi K3 with SpecForge that takes batch-1 decode from ~113 to ~423 tok/s.\n\nBenchmark highlights:\n- +68% throughput at bs=256 on chat vs verify-all, lossless\n- 5.67 accept length on GSM8K, 5.36 on HumanEval\n\nBlog, serving command, and the Hugging Face link below 👇",
+   "author": {
+    "id": "1994288895320838149",
+    "name": "RadixArk",
+    "screenName": "radixark",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1996396384120086528/UzE4Waox_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 259,
+    "retweets": 25,
+    "replies": 9,
+    "quotes": 6,
+    "views": 39156,
+    "bookmarks": 110
+   },
+   "createdAt": "Mon Jul 27 17:27:15 +0000 2026",
+   "createdAtLocal": "2026-07-28 01:27",
+   "createdAtISO": "2026-07-27T17:27:15+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HOQDo4kaoAAN-u1.jpg",
+     "width": 2624,
+     "height": 1612
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "unseenmars_",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2081764780621337075",
+    "text": "SGLang day-0 speed on Kimi K3: 423 tok/s (measured on gsm8k), plus RL support ready in Miles @radixark!\n\nHow the largest open-source model runs this fast: we natively implemented and deeply optimized K3’s new architecture with fused KDA decode kernels, DP attention, DSpark, PD disagg, and KDA-aware prefix caching. We've passed Kimi Vendor Verifier and are ready for production!\n\nThanks to @Kimi_Moonshot, @nvidia, @AMD, @KVCache_AI, @modal, and @baseten for building this with us, and to @googlecloud, @nebiustf, @fal, @digitalocean, @runpod, @DeepInfra and @gmi_cloud for serving K3 on SGLang.\n\nBlog, cookbook, benchmarks in the comments.\n\nP.S. This demo video? Kimi K3 made it itself. Play the game 👇",
+    "author": {
+     "screenName": "lmsysorg",
+     "name": "LMSYS Org"
+    }
+   }
+  },
+  {
+   "id": "2081794059891597372",
+   "text": "I am going to share how I made this🤩",
+   "author": {
+    "id": "1678461645453156352",
+    "name": "Kai",
+    "screenName": "unseenmars_",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/2071507556607143936/iKse9rJt_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 2,
+    "retweets": 1,
+    "replies": 0,
+    "quotes": 0,
+    "views": 256,
+    "bookmarks": 0
+   },
+   "createdAt": "Mon Jul 27 17:29:16 +0000 2026",
+   "createdAtLocal": "2026-07-28 01:29",
+   "createdAtISO": "2026-07-27T17:29:16+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": false,
+   "retweetedBy": null,
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2081792084286349446",
+    "text": "One night I was brainstorming what to do with Kimi K3's frontend abilities. I said I wanted a game, or a video, and bonus points if it had something to do with SGLang.\nThen I got this: https://t.co/QtkQdTFtUI\n100% made by K3. The game, the visuals, the edit. Zero human hands.\n\nI have since died in every way imaginable lol\nHuge thanks to my amazing team! Especially the game maker @unseenmars_",
+    "author": {
+     "screenName": "mingyilu123",
+     "name": "Mingyi Lu"
+    }
+   }
+  },
+  {
+   "id": "2081619175093551565",
+   "text": "LMSYS exists because of open weights.\n\nIn early 2023, LMSYS started with Vicuna, an open-weight model fine-tuned from Meta's LLaMA (the first phenomenal open-weight model). FastChat, and later SGLang, came out of that same pattern: open weights show up, a community forms around making them usable, and the tooling ends up serving everyone.\n\nThat's the diffusion story in the letter, and we've lived it from the inside. Proud to have signed it - the spirit of openness at LMSYS never sleeps.",
+   "author": {
+    "id": "1822588444046249984",
+    "name": "LMSYS Org",
+    "screenName": "lmsysorg",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1823251762243121152/0cgIY6yc_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 107,
+    "retweets": 15,
+    "replies": 8,
+    "quotes": 7,
+    "views": 22751,
+    "bookmarks": 4
+   },
+   "createdAt": "Mon Jul 27 05:54:20 +0000 2026",
+   "createdAtLocal": "2026-07-27 13:54",
+   "createdAtISO": "2026-07-27T05:54:20+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HONla_YawAA-lpg.jpg",
+     "width": 1280,
+     "height": 1016
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "unseenmars_",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2081618564709302495",
+    "text": "Count us in! SGLang community has co-signed the Open Weights letter @lmsysorg\n\nEverything we ship goes out in the open, because world-class performance should be accessible to every builder.\n\nLet's keep building in the open 🧡",
+    "author": {
+     "screenName": "sgl_project",
+     "name": "SGLang"
+    }
+   }
+  },
+  {
+   "id": "2081604292621054011",
+   "text": "RadixArk has proudly co-signed this letter.\n\nOur mission is to make frontier AI infrastructure open and accessible to everyone. We power the open-weight ecosystem with SGLang for serving and Miles for training.\n\nExcited to build the future of AI together with the community! https://t.co/KBdfkiGqay",
+   "author": {
+    "id": "1994288895320838149",
+    "name": "RadixArk",
+    "screenName": "radixark",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1996396384120086528/UzE4Waox_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 79,
+    "retweets": 14,
+    "replies": 0,
+    "quotes": 2,
+    "views": 8600,
+    "bookmarks": 5
+   },
+   "createdAt": "Mon Jul 27 04:55:12 +0000 2026",
+   "createdAtLocal": "2026-07-27 12:55",
+   "createdAtISO": "2026-07-27T04:55:12+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HONXzS_b0AAQ1PC.jpg",
+     "width": 1280,
+     "height": 1016
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "unseenmars_",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2080643682408321103",
+    "text": "For my first post, I’m sharing a letter @NVIDIA signed on why open models matter.\n\nAI will transform every industry, power every company, and be built by every country.\n\nOpen models strengthen safety and cybersecurity, accelerate innovation and diffusion, and enable sovereignty.\n\nThe world needs both frontier closed models and frontier open models.\n\nhttps://t.co/AUKzoQ5Ikb",
+    "author": {
+     "screenName": "JensenHuang",
+     "name": "Jensen Huang"
+    }
+   }
+  },
+  {
+   "id": "2080818269326655762",
+   "text": "🎉 SGLang v0.5.16 is out!\n\nThis cycle we landed DSpark, a new speculative decoding algorithm. It stays ahead of MTP across the whole concurrency sweep, where speculation usually stops paying off. And we see 383.7 tok/s at accept length ~5 on DeepSeek-V4-Pro (TP8, B300, bs=1).\n\nWe also shipped day-0 support for Inkling, the first open-weights model from Thinking Machines Lab. You can run Inkling on NVIDIA Blackwell and H200, and on AMD MI350X/MI355X, with verified recipes in the SGLang cookbook.\n\nOther newly supported models: LongCat 2.0 FP8, JetBrains Mellum v2, Pi0.5, and LongLive 2.0.\n\nHere are some highlights for this release:\n\n- One prefix cache for SWA, Mamba, and DSA models, on by default\n- GLM-5.2 splits its cache across GPUs: can cut per-GPU KV memory by ~74%\n- Lighter speculative decoding for GDN: scratch memory 11.5 GB down to 1.8 GB\n- First correct KDA MTP path on Blackwell, plus a fused prefill kernel\n\nWe also welcomed 32 new contributors, and thanks again to our amazing partners and model makers: @thinkymachines @NVIDIAAI @AMD @intel @Zai_org @Alibaba_Qwen @deepseek_ai @Meituan_LongCat @jetbrains @physical_int\n\nNow. MAX LOAD! MAX OUTPUT! 🚀",
+   "author": {
+    "id": "1923440305703092226",
+    "name": "SGLang",
+    "screenName": "sgl_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1923445139319685126/pyjcWZU7_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 128,
+    "retweets": 13,
+    "replies": 7,
+    "quotes": 3,
+    "views": 13349,
+    "bookmarks": 32
+   },
+   "createdAt": "Sat Jul 25 00:51:49 +0000 2026",
+   "createdAtLocal": "2026-07-25 08:51",
+   "createdAtISO": "2026-07-25T00:51:49+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HOCMJ6GagAAeFIR.jpg",
+     "width": 2062,
+     "height": 1406
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "unseenmars_",
+   "lang": "en",
+   "score": null
+  },
+  {
+   "id": "2080534870124798136",
+   "text": "Infra night at SF is 🚀🔥\n\n@CrusoeAI @dstackai",
+   "author": {
+    "id": "1923440305703092226",
+    "name": "SGLang",
+    "screenName": "sgl_project",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1923445139319685126/pyjcWZU7_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 23,
+    "retweets": 5,
+    "replies": 0,
+    "quotes": 0,
+    "views": 2851,
+    "bookmarks": 3
+   },
+   "createdAt": "Fri Jul 24 06:05:42 +0000 2026",
+   "createdAtLocal": "2026-07-24 14:05",
+   "createdAtISO": "2026-07-24T06:05:42+00:00",
+   "media": [],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "unseenmars_",
+   "lang": "en",
+   "score": null,
+   "quotedTweet": {
+    "id": "2080471537023611232",
+    "text": "Always SF - Full House! @sgl_project @CrusoeAI https://t.co/CYxlxpL0XM",
+    "author": {
+     "screenName": "richardczl",
+     "name": "Richard Chen"
+    }
+   }
+  },
+  {
+   "id": "2080007701195899241",
+   "text": "We trained a DSpark speculator for Inkling NVFP4, built end-to-end with SpecForge on a live SGLang target engine.\n\n- 1.89x decode throughput over non-spec at bs=64 (8xB200, TP8)\n- 7–14% faster than Inkling's built-in MTP at the same batch size\n- 3.66 mean accept length, up to 4.76 on GSM8K\n\nUnder the hood:\n1️⃣ 5-layer Qwen3-style DFlash parallel-draft backbone\n2️⃣ Rank-256 Markov logit-bias head for intra-block dependencies\n3️⃣ Per-position confidence head predicts acceptance\n4️⃣ Distilled online from 400K Inkling regenerations\n\nTry it out now! Serving command in the comment.",
+   "author": {
+    "id": "1994288895320838149",
+    "name": "RadixArk",
+    "screenName": "radixark",
+    "profileImageUrl": "https://pbs.twimg.com/profile_images/1996396384120086528/UzE4Waox_normal.jpg",
+    "verified": true
+   },
+   "metrics": {
+    "likes": 73,
+    "retweets": 20,
+    "replies": 4,
+    "quotes": 7,
+    "views": 20711,
+    "bookmarks": 18
+   },
+   "createdAt": "Wed Jul 22 19:10:55 +0000 2026",
+   "createdAtLocal": "2026-07-23 03:10",
+   "createdAtISO": "2026-07-22T19:10:55+00:00",
+   "media": [
+    {
+     "type": "photo",
+     "url": "https://pbs.twimg.com/media/HN2rwzdbUAApbZG.jpg",
+     "width": 2000,
+     "height": 1400
+    }
+   ],
+   "urls": [],
+   "isRetweet": true,
+   "retweetedBy": "unseenmars_",
+   "lang": "en",
+   "score": null
+  }
+ ]
+}

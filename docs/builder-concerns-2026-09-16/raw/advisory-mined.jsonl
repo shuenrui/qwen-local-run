@@ -1,0 +1,2204 @@
+[
+ {
+  "archive": "hf_AtomicChat_27B-GGUF.md",
+  "author": "hf_AtomicChat_27B-GGUF.md",
+  "date": "",
+  "line": "can score the answer yourself instead of taking our word for it."
+ },
+ {
+  "archive": "hf_AtomicChat_27B-GGUF.md",
+  "author": "hf_AtomicChat_27B-GGUF.md",
+  "date": "",
+  "line": "| 32 layers lifted instead | 18.4 GB | 0.00826 |"
+ },
+ {
+  "archive": "hf_AtomicChat_27B-GGUF.md",
+  "author": "hf_AtomicChat_27B-GGUF.md",
+  "date": "",
+  "line": "The multi token prediction head is never executed during a normal forward"
+ },
+ {
+  "archive": "hf_AtomicChat_27B-GGUF.md",
+  "author": "hf_AtomicChat_27B-GGUF.md",
+  "date": "",
+  "line": "single tokens the model actually sees. Text rendered for another model is"
+ },
+ {
+  "archive": "hf_AtomicChat_27B-GGUF.md",
+  "author": "hf_AtomicChat_27B-GGUF.md",
+  "date": "",
+  "line": "> calibrate on text the model never sees."
+ },
+ {
+  "archive": "hf_AtomicChat_27B-GGUF.md",
+  "author": "hf_AtomicChat_27B-GGUF.md",
+  "date": "",
+  "line": "Held-out text: `eval_neutral` from our calibration dataset, never used for"
+ },
+ {
+  "archive": "hf_AtomicChat_Flash-Next-GGUF.md",
+  "author": "hf_AtomicChat_Flash-Next-GGUF.md",
+  "date": "",
+  "line": "It works because 39 GB of that file never enters memory at all."
+ },
+ {
+  "archive": "hf_AtomicChat_Flash-Next-GGUF.md",
+  "author": "hf_AtomicChat_Flash-Next-GGUF.md",
+  "date": "",
+  "line": "offloading fails when you run out of memory, and why this table is different."
+ },
+ {
+  "archive": "hf_AtomicChat_Flash-Next-GGUF.md",
+  "author": "hf_AtomicChat_Flash-Next-GGUF.md",
+  "date": "",
+  "line": "\"In memory\" is what the GPU actually holds. The n-gram table is excluded because"
+ },
+ {
+  "archive": "hf_AtomicChat_Flash-Next-GGUF.md",
+  "author": "hf_AtomicChat_Flash-Next-GGUF.md",
+  "date": "",
+  "line": "parameter fitting mis-sizes this architecture and fails to allocate."
+ },
+ {
+  "archive": "hf_AtomicChat_Flash-Next-GGUF.md",
+  "author": "hf_AtomicChat_Flash-Next-GGUF.md",
+  "date": "",
+  "line": "Published here as `imatrix.gguf`, computed on BF16 weights, never on a quantized"
+ },
+ {
+  "archive": "hf_AtomicChat_Flash-Next-GGUF.md",
+  "author": "hf_AtomicChat_Flash-Next-GGUF.md",
+  "date": "",
+  "line": "The two remaining gaps are experts the router never selects on this corpus. Six"
+ },
+ {
+  "archive": "hf_AtomicChat_Flash-Next-GGUF.md",
+  "author": "hf_AtomicChat_Flash-Next-GGUF.md",
+  "date": "",
+  "line": "step up, instead of the symmetric band a naive ladder would use. Spending bits"
+ },
+ {
+  "archive": "hf_AtomicChat_Flash-Next-GGUF.md",
+  "author": "hf_AtomicChat_Flash-Next-GGUF.md",
+  "date": "",
+  "line": "## Three traps specific to this architecture"
+ },
+ {
+  "archive": "hf_AtomicChat_Flash-Next-GGUF.md",
+  "author": "hf_AtomicChat_Flash-Next-GGUF.md",
+  "date": "",
+  "line": "> Always pass `--jinja` so the **Qwen3.8-Flash-Next chat template** is applied. Without it the model can emit malformed turns."
+ },
+ {
+  "archive": "reddit_19e9xfj.json",
+  "author": "Fantastic-Ninja3839",
+  "date": "",
+  "line": "I almost never straight copy/paste the code. That almost always ends bad. Do I think there will be less developers in the future? Yes. I think developers never go away though."
+ },
+ {
+  "archive": "reddit_19e9xfj.json",
+  "author": "Fantastic-Ninja3839",
+  "date": "",
+  "line": "Qwen has made its way into my general rotation. It outputs logical code most of the time. I don't test it a lot beyond that lol."
+ },
+ {
+  "archive": "reddit_19e9xfj.json",
+  "author": "mrjackspade",
+  "date": "",
+  "line": "Yeah. It helps, of course, but short of straight up telling the model as part of the system prompt that it has to be explicit, it refuses most things. Even with the explicit prompt the refusal rate is much higher than other raw models, even when the raw models don't have any kind of explicit prompt at all."
+ },
+ {
+  "archive": "reddit_19e9xfj.json",
+  "author": "a_beautiful_rhind",
+  "date": "",
+  "line": "I don't think it's supported by exllama, correct me if I'm wrong. Makes it a pain to use. Not sure if the GPTQ quants will run there with trust remote code enabled. The multi-gpu of AutoGPTQ is atrocious."
+ },
+ {
+  "archive": "reddit_19e9xfj.json",
+  "author": "noiserr",
+  "date": "",
+  "line": "It's pretty good at zero shot stuff, but if you chat with it for awhile it starts typing broken English for me pretty quickly."
+ },
+ {
+  "archive": "reddit_19e9xfj.json",
+  "author": "Calcidiol",
+  "date": "",
+  "line": "I also to a wide variety of complex things and also a lot of simple things but if the time it takes fighting with the \"assistant\" to get useful output out of it is worse than doing it myself, or if it gives a garbage answer then it's of questionable use for some use cases even if (like sometimes wrong non-ML code completion) it can be handy a lot but spectacularly fail not infrequently."
+ },
+ {
+  "archive": "reddit_19e9xfj.json",
+  "author": "Calcidiol",
+  "date": "",
+  "line": "Maybe I'll eventually get around to training my own model for some of this stuff if they don't fix one of the new FOSS SOTA ones in the coming months."
+ },
+ {
+  "archive": "reddit_19e9xfj.json",
+  "author": "frozencreed",
+  "date": "",
+  "line": "Yeah, after pushing the model harder, I found some censorship issues as well. I could get it to do things with certain prompts that made it be explicit by default, but other prompts made it instantly recite the AI morals jargon."
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "# ./download.sh --fp8 # official FP8 instead"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "# or ./start.sh --nfs to share the head cache over NFS instead of rsyncing"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "# Optional — official FP8 instead of NVFP4 (see below):"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "# 4. Confirm the KV cache pool that vLLM actually allocated (~11 min after launch)"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "| `--no-launch` | Download + distribute weights only, don't start the server |"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "| `--nfs` | Distribute weights over NFS instead of rsync (see [below](#nfs-weight-sharing-optional)) |"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "instead of NVFP4. Cluster IPs, TP/EP/MTP, image and ports still come from `.env`."
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "> it matters on GB10 unified memory (see [Gotchas](#gotchas)):"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "| `PLE_OFFLOAD` | `false` | `false` | `true` → CPU-RAM offload of the 51 GB PLE table (**see gotcha**) |"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "| `NFS_SHARE` | `false` | `false` | `true` → share the head HF cache over NFS instead of rsyncing a worker copy ([details](#nfs-weight-sharing-optional)) |"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "> automatically whenever `KV_CACHE_DTYPE` starts with `fp8`. Set `KV_CACHE_DTYPE=auto` for bf16."
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "That Hugging Face repo is **gated**. `ABLIT=1 ./download.sh` **fails immediately** if"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "responsible-use terms, and requesting access means accepting them. In summary: you must be"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "so the attention page size matches (and never falls below) the Mamba/GDN page size."
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "> OOM — but only ~2 concurrent 1M requests stay resident, and the 3rd+ gets preempted and"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "`--kv-cache-memory=<bytes>` values (quoted above). `start.sh` always emits"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "`--gpu-memory-utilization` (and validates it as required), so prefer `GPU_MEMORY_UTILIZATION` for"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "of thumb for extrapolating: **1 GiB of KV pool ≈ 71–74K tokens ≈ +0.07× at 1M ctx** — from the"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "`--device /dev/infiniband`, `--restart` unset (die-on-crash)."
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "Container runs as root — the mount target must be `/root`, or offline HF lookups fail."
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "**Versions / backends actually selected:**"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "| Full attention (12 QSA layers) | Model-specific **Triton QSA kernels** (`_qsa_sparse_paged_gqa_splitk_kernel`, `persistent_topk`, `_qsa_mqa_paged_kernel`); FlashAttention v2 is only the nominal base class and never executes for text decode |"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "| Prefix caching | on (shared across requests) |"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "| Layer | `[N, K]` | Why it fails |"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "| `visual.blocks.*.mlp.linear_fc1` (×27) | `[4304, 1152]` | `4304 % 32 == 16` → `ValueError: Problem size is not supported for mm_mxfp8` |"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "WARNING [modelopt.py] MXFP8 layer [N=48, K=2560] is not supported by"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "rejected while the template renders, so the request fails with HTTP 400 before it reaches"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "invalid `reasoning_effort` is silently ignored instead of rejected. The same client config"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "Two checkpoint-specific fixes are applied automatically by `start.sh`; both exist"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "`--hf-overrides`. Without it the 51 GB FP8 PLE table fails to load."
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "file on the draft-model path) and bind-mounted in; the HF cache is never modified."
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "> only fixes FP8 PLE loading, #54882), nor on current `main`. Upgrading vLLM does not"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "> enable MTP here. `start.sh` preflights the MTP expert algo and fails in seconds if it"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "shape would show up as near-random acceptance, not as a crash."
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "with extreme caution` warning — YaRN is what makes the 1M positions valid. Quality at 1M with"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "> **Fixed Sep 2026 — YaRN was previously a silent no-op.** `start.sh` emitted"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "> `setattr`'d onto the parent and never reached `text_config`, which the model actually reads."
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "> **unvalidated** on this kit and benchmark it before trusting long-context answers."
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "loads on this box — offloading will OOM or thrash swap. Keep it `false`"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "- **Never point `IB_HCA` at an HCA cabled to another cluster** — NCCL will hang mid-NCCL-init"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "- **`IB_GID_INDEX=3` does not come up on every ConnectX/RoCE setup.** If NCCL/RoCE fails"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "to initialise, try `IB_GID_INDEX=5` (some clusters route on GID 5 instead)."
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "- **Weights corruption is silent until load.** A shard corrupted mid-download keeps its"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "covered\". Run `./check-weights.sh --verify` after any download or rsync to hash every"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "8-thread hash rate measured on local NVMe, proportionally slower over NFS). If the nodes"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "- **No route to `huggingface.co` from the nodes?** `--verify` needs the file manifest, not"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "python3 verify-weights.py --repo RadixArk/Qwen3.8-Flash-Next-NVFP4 \\"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "`HF_API_BASE` in `.env` points the fetch at a mirror instead."
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "- **`huggingface_hub >= 1.x` offline mode fails with \"Cannot find cached snapshot\"** if"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "| `start.sh` | optional download on head → distribute to worker (rsync, or NFS with `--nfs`) → verify complete snapshot → image sync → PLE + MXFP8 patches → launch rank 1 then rank 0. `ABLIT=1` selects the Keys house checkpoint |"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "| `check-weights.sh` | verify the checkpoint on the head and on the worker (local copy, or over NFS when `NFS_SHARE=true`) |"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "| `check-weights.sh --verify` | per-file SHA-256 verification against the Hugging Face manifest (~1 min read-only) |"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "| `check-weights.sh --dry-run` | plan `--verify` (fetch manifest, check presence/size) without hashing or scp |"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "| `check-weights.sh --manifest FILE` | verify against a manifest saved earlier — no Hugging Face API call |"
+ },
+ {
+  "archive": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "author": "repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+  "date": "",
+  "line": "| `verify-weights.py` | per-file SHA-256 verification against the Hugging Face manifest (used by `check-weights.sh --verify`) |"
+ },
+ {
+  "archive": "x_2088326480669667699.json",
+  "author": "analogalok",
+  "date": "2026-08-14",
+  "line": "Local compute is eating the cloud alive. How much monthly API spend does a 24GB setup like this actually replace for you?"
+ },
+ {
+  "archive": "x_2088326480669667699.json",
+  "author": "afdncm",
+  "date": "2026-08-15",
+  "line": "@analogalok Im just too lazy to try out myself, could anyone who tried themselves tell me at what degree of tasks can I use locally hosted qwen instead of claude or codex without worrying it will suck?"
+ },
+ {
+  "archive": "x_2088326480669667699.json",
+  "author": "analogalok",
+  "date": "2026-08-14",
+  "line": "@wkt_kow Glad it helped! Have fun cooking local silicon instead of paying API tolls"
+ },
+ {
+  "archive": "x_2088326480669667699.json",
+  "author": "analogalok",
+  "date": "2026-08-14",
+  "line": "On a single 4090/3090, you get that same frontier reasoning for 20 cents of wall electricity, zero rate limits during peak hours, and your proprietary codebase never leaves your local NVMe."
+ },
+ {
+  "archive": "x_thread_2088625914682941719.json",
+  "author": "inqusit",
+  "date": "2026-08-16",
+  "line": "Instead of quant why not distill it down to 20B or 18B dense model"
+ },
+ {
+  "archive": "x_thread_2089847417571365269.json",
+  "author": "jkyamog",
+  "date": "2026-08-19",
+  "line": "@alecqfong Mine is old, the OG DGX Station but at TG it's not too bad 61 tok/s at Q8_0 (should be minimal lost) at a fraction of the cost. https://t.co/Wy8szfwAgj"
+ },
+ {
+  "archive": "x_thread_2089847417571365269.json",
+  "author": "canonicalmodel",
+  "date": "2026-08-19",
+  "line": "@alecqfong Can you show its performance as a function of the context size as well? That is, if you have a chat session, it noticeably gets slower with more request/response pairs."
+ },
+ {
+  "archive": "x_thread_2090436652363665614.json",
+  "author": "lachlanglasgow",
+  "date": "2026-08-20",
+  "line": "@atomic_chat_hq Does dflash2 actually create candidates slower than dflash but the increased acceptance rate nets the throughput gain?"
+ },
+ {
+  "archive": "x_thread_2092670516964270101.json",
+  "author": "jvr0x",
+  "date": "2026-08-26",
+  "line": "@MiaAI_lab @NVIDIAAI Why did you go with sglang instead of vllm?"
+ },
+ {
+  "archive": "x_thread_2092670516964270101.json",
+  "author": "TomTalksCars",
+  "date": "2026-08-26",
+  "line": "@MiaAI_lab @NVIDIAAI I wish these labs would release versions without vision. Bloat for loads of people that they’ll never use and removing it would really help make things people actually use on local hardware"
+ },
+ {
+  "archive": "x_thread_2092697021790708148.json",
+  "author": "analogalok",
+  "date": "2026-08-26",
+  "line": "Qwen 3.8 Flash-Next (UD-Q4_K_XL) is a massive 111.4 GB model split across 4 shards. To run this architecture, you must build from the experimental PR branch (#27742) by @danielhanchen:"
+ },
+ {
+  "archive": "x_thread_2092697021790708148.json",
+  "author": "analogalok",
+  "date": "2026-08-26",
+  "line": "@Tradesdontlie absolutely without a doubt! m sure the community would already be at work"
+ },
+ {
+  "archive": "x_thread_2092697021790708148.json",
+  "author": "analogalok",
+  "date": "2026-08-27",
+  "line": "@CernuunosSg not much of a problem if u have an ai agent running. you can simply hand it this post and ask it to set it up for u if u have the hardware"
+ },
+ {
+  "archive": "x_thread_2094376289037689104.json",
+  "author": "AgentSparko",
+  "date": "2026-08-31",
+  "line": "The difference from having 2 DGX Spark instead of one is insane."
+ },
+ {
+  "archive": "xsweep_AMDRadeon.json",
+  "author": "AMDRadeon",
+  "date": "2026-06-24",
+  "line": "While bringing FSR 4.1 support to RDNA 3 users, we missed an issue that prevented AMD Software: Adrenalin Edition 26.6.2 from installing on some Windows 10 systems."
+ },
+ {
+  "archive": "xsweep_AMDRadeon.json",
+  "author": "AMDRadeon",
+  "date": "2026-06-24",
+  "line": "A fix is available now, and we'll release a WHQL Recommended version of AMD Software: Adrenalin Edition next week."
+ },
+ {
+  "archive": "xsweep_AMDRadeon.json",
+  "author": "AMDRadeon",
+  "date": "2026-06-24",
+  "line": "For details on the issue and how to resolve it, please visit: https://t.co/KlbgBzLzke"
+ },
+ {
+  "archive": "xsweep_AMDRadeon.json",
+  "author": "jackhuynh",
+  "date": "2025-04-23",
+  "line": "Don't miss it - catch the livestream at https://t.co/nA12rjszHZ with replay available post-event."
+ },
+ {
+  "archive": "xsweep_AMDRadeon.json",
+  "author": "jackhuynh",
+  "date": "2025-03-12",
+  "line": "@AMD's first advanced machine learning technology for gaming is now integrated with FSR 4. Because gaming isn’t just about winning. It’s about those unforgettable moments:"
+ },
+ {
+  "archive": "xsweep_AMDRadeon.json",
+  "author": "jackhuynh",
+  "date": "2025-03-12",
+  "line": "✨ The final boss fight you swore you’d never conquer."
+ },
+ {
+  "archive": "xsweep_Alibaba_Qwen.json",
+  "author": "Alibaba_Qwen",
+  "date": "2026-08-25",
+  "line": "Open models, open science. Qwen keeps growing steadily, and we'll always be right here with the research community.🙌 Thanks for the deep dive! @natolambert"
+ },
+ {
+  "archive": "xsweep_Alibaba_Qwen.json",
+  "author": "Alibaba_Qwen",
+  "date": "2026-08-14",
+  "line": "Qwen3.8-27B is available on @ollama ！Any harness you run, the model always delivers. Let's code together, and show us what you build.😎"
+ },
+ {
+  "archive": "xsweep_NVIDIAAI.json",
+  "author": "sgl_project",
+  "date": "2026-09-07",
+  "line": "Thanks to everyone who has been testing and sharing feedback. We've been following the community reports closely and fixed a number of issues that came with this new architecture."
+ },
+ {
+  "archive": "xsweep_NVIDIAAI.json",
+  "author": "NVIDIAAI",
+  "date": "2026-09-05",
+  "line": "Congrats to our researchers for exceeding the gold medal threshold on the International Olympiad in Informatics (IOI) 2026 problem set 🥇"
+ },
+ {
+  "archive": "xsweep_NVIDIAAI.json",
+  "author": "NVIDIAAI",
+  "date": "2026-08-28",
+  "line": "Thank you to everyone who downloaded it, broke it, filed an issue or sent a PR. On to the next 10M!"
+ },
+ {
+  "archive": "xsweep_NVIDIAAI.json",
+  "author": "NVIDIAAI",
+  "date": "2026-08-25",
+  "line": "When an LLM engine crashes, a cold restart can mean minutes of lost capacity."
+ },
+ {
+  "archive": "xsweep_NVIDIAAI.json",
+  "author": "NVIDIAAI",
+  "date": "2026-08-21",
+  "line": "The harness guides what an agent tries to do. Infrastructure controls what it can actually do."
+ },
+ {
+  "archive": "xsweep_NVIDIAAI.json",
+  "author": "NVIDIAAI",
+  "date": "2026-08-19",
+  "line": "NVIDIA cuOpt is the fastest open source solver on Hans Mittelmann benchmarks across three optimization problem classes. https://t.co/xqO7bY6gyh"
+ },
+ {
+  "archive": "xsweep_NVIDIAAI.json",
+  "author": "NVIDIAAI",
+  "date": "2026-08-19",
+  "line": "We benchmarked 300+ NVIDIA verified skills to see how much they actually help agents on real tasks."
+ },
+ {
+  "archive": "xsweep_RedHat_AI.json",
+  "author": "vllm_project",
+  "date": "2026-09-11",
+  "line": "🧠 Mamba prefix caching keeps internal prefill checkpoints: 9~25% better TTFT"
+ },
+ {
+  "archive": "xsweep_RedHat_AI.json",
+  "author": "RedHat_AI",
+  "date": "2026-09-10",
+  "line": "5/6 The payoff: under pressure, both requests keep decoding at partial residency instead of one waiting for a slot or re-prefilling itself. Higher concurrency across context lengths, and the full 1M context on hardware that couldn't hold it before."
+ },
+ {
+  "archive": "xsweep_RedHat_AI.json",
+  "author": "RedHat_AI",
+  "date": "2026-09-10",
+  "line": "In a long-running session, vLLM eventually fills HBM and starts evicting KV blocks to make room. Drop the wrong ones and the model loses earlier context: it re-asks answered questions or contradicts itself, with no error, just quietly worse output."
+ },
+ {
+  "archive": "xsweep_RedHat_AI.json",
+  "author": "RedHat_AI",
+  "date": "2026-09-10",
+  "line": "But tool outputs and documents from many turns back don't need to stay resident every step. CPU offloading moves those cold blocks to host memory and pulls them back over DMA when a request needs them, freeing HBM for live work without dropping context."
+ },
+ {
+  "archive": "xsweep_RedHat_AI.json",
+  "author": "vllm_project",
+  "date": "2026-09-08",
+  "line": "It keeps KV on the GPU while there is room. Under pressure a request releases its coldest pages to host memory, keeps a small hot buffer of what the indexer asks for, and keeps decoding instead of being preempted."
+ },
+ {
+  "archive": "xsweep_RedHat_AI.json",
+  "author": "vllm_project",
+  "date": "2026-09-08",
+  "line": "🔹 Prefix caching, OffloadingConnector, P/D imports and MTP keep working"
+ },
+ {
+  "archive": "xsweep_RedHat_AI.json",
+  "author": "RedHat_AI",
+  "date": "2026-09-08",
+  "line": "@AIatAMD, @cerebras, @moonmathai, and @RedHat on what it actually takes to run inference at scale with @vllm_project and @llm_d."
+ },
+ {
+  "archive": "xsweep_RedHat_AI.json",
+  "author": "RedHat_AI",
+  "date": "2026-08-31",
+  "line": "Before a request gets routed to a model server, it's either admitted or held. Under saturation, priority decides which class of traffic advances, fairness spreads dispatch turns across tenants so no one gets starved, and ordering picks the next request. Lower-priority work waits instead of crowding out what matters."
+ },
+ {
+  "archive": "xsweep_RedHat_AI.json",
+  "author": "RedHat_AI",
+  "date": "2026-08-27",
+  "line": "That's pushing the CPU:GPU ratio from 1:8 in training toward 1:1, sometimes 4:1. And vLLM's CPU backend already runs PagedAttention, prefix caching, and continuous batching across x86, Arm, IBM Z, and experimental Apple Silicon."
+ },
+ {
+  "archive": "xsweep_RedHat_AI.json",
+  "author": "RedHat_AI",
+  "date": "2026-08-24",
+  "line": "2. Someone asked what it actually costs to train a draft model, and the answer came with real numbers and a change to the docs. https://t.co/lyIfeqtQsJ"
+ },
+ {
+  "archive": "xsweep_RedHat_AI.json",
+  "author": "agicafet",
+  "date": "2026-08-24",
+  "line": "- What llm-d actually is, and why distributed inference is the next step once one vLLM instance stops being enough"
+ },
+ {
+  "archive": "xsweep_RedHat_AI.json",
+  "author": "TerryTangYuan",
+  "date": "2026-08-24",
+  "line": "👉 Subscribe to get future issues in your inbox: https://t.co/lhGwc8gJKF"
+ },
+ {
+  "archive": "xsweep_RedHat_AI.json",
+  "author": "RedHat_AI",
+  "date": "2026-08-21",
+  "line": "Almost everyone we talk to has picked a side here. Either you carve out dedicated pools and accept the idle GPUs, or you share capacity and hope nothing important gets stuck behind a batch job."
+ },
+ {
+  "archive": "xsweep_RedHat_AI.json",
+  "author": "RedHat_AI",
+  "date": "2026-08-21",
+  "line": "flow control in @_llm_d_ is trying to give you a third option. Admission control and priority policies, so the requests that actually matter still get served when things get tight."
+ },
+ {
+  "archive": "xsweep_RedHat_AI.json",
+  "author": "RedHat_AI",
+  "date": "2026-08-18",
+  "line": "@_llm_d_ is LLM-aware: prefix cache-aware routing for multi-turn agents, prefill/decode disaggregation, and wide expert parallelism for huge MoE models."
+ },
+ {
+  "archive": "xsweep_RedHat_AI.json",
+  "author": "vllm_project",
+  "date": "2026-08-15",
+  "line": "Six weeks ago, serving DSpark in vLLM meant choosing a draft length for your traffic and living with it. Now you set that length once, and vLLM decides how much of the draft to verify every step. ✨"
+ },
+ {
+  "archive": "xsweep_RedHat_AI.json",
+  "author": "RedHat_AI",
+  "date": "2026-08-14",
+  "line": "Your agents don't need a genius. They need a model that never becomes the bottleneck. NVIDIA Nemotron 3.5 Lightning: 30B MoE, 3B active, ~670 tokens/sec. Running on vLLM day 0, with quantized checkpoints from Red Hat AI ready now. Here's the writeup: https://t.co/Jnaj6RKkf6"
+ },
+ {
+  "archive": "xsweep_Teknium.json",
+  "author": "unixoid",
+  "date": "2026-09-12",
+  "line": "Noticed @steipete doing this with OC. Did same with Hermes, no issues."
+ },
+ {
+  "archive": "xsweep_Teknium.json",
+  "author": "aiedge_",
+  "date": "2026-09-11",
+  "line": "The problem is that 99% of people don't have the correct skills installed."
+ },
+ {
+  "archive": "xsweep_Teknium.json",
+  "author": "tonysimons_",
+  "date": "2026-09-12",
+  "line": "It’s Friday night and there’s never been a better time to be building with Hermes Agent than RIGHT NOW."
+ },
+ {
+  "archive": "xsweep_Teknium.json",
+  "author": "Shaughnessy119",
+  "date": "2026-09-09",
+  "line": "Hermes agent has emerged as the only option where you can build an agent you actually own for life"
+ },
+ {
+  "archive": "xsweep_Teknium.json",
+  "author": "Teknium",
+  "date": "2026-09-09",
+  "line": "Don’t forget you can now use @perplexity_ai search in Hermes 🤗"
+ },
+ {
+  "archive": "xsweep_Teknium.json",
+  "author": "witcheer",
+  "date": "2026-09-05",
+  "line": "(2) a bot messages another with the `message_agent` tool: the target is validated against the roster, the message lands in that bot's own Bot Chat with a \"Message from\" attribution, and the reply arrives when it has one"
+ },
+ {
+  "archive": "xsweep_Teknium.json",
+  "author": "witcheer",
+  "date": "2026-09-05",
+  "line": "(3) you can also hand work off yourself: type \"@ researcher have a look at this\" in any chat and the active bot composes its own message to that bot. your text is never forwarded verbatim"
+ },
+ {
+  "archive": "xsweep_Teknium.json",
+  "author": "Shaughnessy119",
+  "date": "2026-09-02",
+  "line": "Instead of one hermes agent you now have a fleet of agents"
+ },
+ {
+  "archive": "xsweep_Teknium.json",
+  "author": "sudoingX",
+  "date": "2026-09-04",
+  "line": "the number one question i get every single day is \"what model can my machine run\", entire vram ladders and spreadsheets exist just to answer it, and hermes desktop made it one click. now it reads your hardware, picks the model that actually fits, pulls it, wires the runtime."
+ },
+ {
+  "archive": "xsweep_TriadDarren.json",
+  "author": "TriadDarren",
+  "date": "2026-09-11",
+  "line": "I wonder how much of the alignment problem isn’t all the info related to FREE WILL in their training data."
+ },
+ {
+  "archive": "xsweep_TriadDarren.json",
+  "author": "TriadDarren",
+  "date": "2026-08-10",
+  "line": "This article is mostly for my own benefit. This article came on my radar and, even though it is largely a marketing piece, it contains some provocative statements. I had Claude use my Accuracy Evaluator skill on it to provide a report on what it got right and what was misleading or overstated. I found it pretty enlightening. Here is that report:"
+ },
+ {
+  "archive": "xsweep_TriadDarren.json",
+  "author": "TriadDarren",
+  "date": "2026-08-10",
+  "line": "Content evaluated: A long-form personal-development article (\"The Art Of Strategic Thinking\") arguing that people fail because they collect tactics without strategy, followed by 9 Musashi precepts and 7 authored principles of strategy — with embedded links to the author's paid bootcamp, prompts, and tools."
+ },
+ {
+  "archive": "xsweep_TriadDarren.json",
+  "author": "TriadDarren",
+  "date": "2026-08-10",
+  "line": "\"All problems are ultimately solvable on a long enough time scale.\""
+ },
+ {
+  "archive": "xsweep_TriadDarren.json",
+  "author": "TriadDarren",
+  "date": "2026-08-10",
+  "line": "False as stated. Some problems are provably unsolvable (halting problem), some are bounded by physics, some are bounded by mortality. The rocket example doesn't generalize — survivorship reasoning from one solved problem to all problems. Wrong when written. Confidence: High."
+ },
+ {
+  "archive": "xsweep_TriadDarren.json",
+  "author": "TriadDarren",
+  "date": "2026-08-10",
+  "line": "The financial advice in Section II and Principle 3 is dangerous, and the article never flags it."
+ },
+ {
+  "archive": "xsweep_TriadDarren.json",
+  "author": "TriadDarren",
+  "date": "2026-08-10",
+  "line": "No mention of the strategy literature that would actually help."
+ },
+ {
+  "archive": "xsweep_TriadDarren.json",
+  "author": "TriadDarren",
+  "date": "2026-08-10",
+  "line": "The author's autobiographical claims (six years of failed businesses, the specific ventures, \"I have people come to me all the time\") are unverifiable by nature. They aren't presented as evidence for anything falsifiable, so this is low-stakes."
+ },
+ {
+  "archive": "xsweep_TriadDarren.json",
+  "author": "TriadDarren",
+  "date": "2026-08-10",
+  "line": "The Fischer quote: searched for a primary source and found only quote-aggregator sites, all circular. Widely attributed, never cited. Insufficient to call it fabricated; insufficient to call it verified."
+ },
+ {
+  "archive": "xsweep_WescheNex1q.json",
+  "author": "WescheNex1q",
+  "date": "2026-09-08",
+  "line": "Qwen 3.8-27b wants to be better but failed at the fire animation"
+ },
+ {
+  "archive": "xsweep_WescheNex1q.json",
+  "author": "WescheNex1q",
+  "date": "2026-09-08",
+  "line": "Hard-won lesson included: graph capture OOM-wedges both nodes until you power-cycle. Eager mode is mandatory. It's all in the repo:"
+ },
+ {
+  "archive": "xsweep_WescheNex1q.json",
+  "author": "WescheNex1q",
+  "date": "2026-09-04",
+  "line": "Caveats in the repo: patched chat template required to disable thinking (stock GLM-5.3 template can't), and never use --no-mmap on unified memory. Full recipe, evidence CSVs, verify scripts:"
+ },
+ {
+  "archive": "xsweep_WescheNex1q.json",
+  "author": "WescheNex1q",
+  "date": "2026-08-26",
+  "line": "Sol does it, fable does it, glm 5.3 does it. I’ve lost track of how many hours agents wasted doing something I never asked for https://t.co/VpkQsrG4YD"
+ },
+ {
+  "archive": "xsweep_WescheNex1q.json",
+  "author": "WescheNex1q",
+  "date": "2026-08-26",
+  "line": "Granite 4.2 30B failed to finish SparkBench on one Spark"
+ },
+ {
+  "archive": "xsweep_WescheNex1q.json",
+  "author": "WescheNex1q",
+  "date": "2026-08-26",
+  "line": "This is the worst model I have ever tested, even 9b models outperform it. What even is this pagoda? Same prompt I always use."
+ },
+ {
+  "archive": "xsweep_WescheNex1q.json",
+  "author": "WescheNex1q",
+  "date": "2026-08-22",
+  "line": "So sorry but if you have 4 sparks don’t waste your energy on this. Run glm 5.2 instead."
+ },
+ {
+  "archive": "xsweep_WescheNex1q.json",
+  "author": "WescheNex1q",
+  "date": "2026-08-21",
+  "line": "This will make deepseek the best model, a lot of the vision tests that it failed vs qwen was probably lack of vision"
+ },
+ {
+  "archive": "xsweep_WescheNex1q.json",
+  "author": "WescheNex1q",
+  "date": "2026-08-18",
+  "line": "BF16 returned HTML in one pass, but its finished simulation failed the core sorting task"
+ },
+ {
+  "archive": "xsweep_WescheNex1q.json",
+  "author": "WescheNex1q",
+  "date": "2026-08-18",
+  "line": "Each bin needs a live counter that agrees with the marbles actually delivered to it."
+ },
+ {
+  "archive": "xsweep_WescheNex1q.json",
+  "author": "WescheNex1q",
+  "date": "2026-08-18",
+  "line": "Show a compact live status panel with machine state, elapsed time, total sorted, per-color counts, throughput, and jam warnings."
+ },
+ {
+  "archive": "xsweep_WescheNex1q.json",
+  "author": "WescheNex1q",
+  "date": "2026-08-16",
+  "line": "Spark still eats the 8.6K paste in 4 seconds. Mac still waits 35. Decode isn’t the Mac’s problem anymore."
+ },
+ {
+  "archive": "xsweep_WescheNex1q.json",
+  "author": "WescheNex1q",
+  "date": "2026-08-15",
+  "line": "Someone tell me how this local model that is 100x smaller and 10x slower made a better animation?!"
+ },
+ {
+  "archive": "xsweep_WescheNex1q.json",
+  "author": "WescheNex1q",
+  "date": "2026-08-15",
+  "line": "81% of everything it generated was thought, never shown on screen."
+ },
+ {
+  "archive": "xsweep_WescheNex1q.json",
+  "author": "WescheNex1q",
+  "date": "2026-08-14",
+  "line": "Shipped it as a recipe: measured tok/s per quant, native-MTP tuning from real acceptance data (K3 for code, K2 for chat), how to keep xhigh thinking from writing 75K tokens when you didn't ask, and a https://t.co/qg1yrxDQwd that proves your launch actually took."
+ },
+ {
+  "archive": "xsweep_WescheNex1q.json",
+  "author": "WescheNex1q",
+  "date": "2026-08-14",
+  "line": "my algorithm decided deepseek and grok dont make my top news, qwen all day https://t.co/DEjwgXFXR3"
+ },
+ {
+  "archive": "xsweep_WescheNex1q.json",
+  "author": "WescheNex1q",
+  "date": "2026-08-10",
+  "line": "Not saying muse is better or worse, still testing"
+ },
+ {
+  "archive": "xsweep_WescheNex1q.json",
+  "author": "WescheNex1q",
+  "date": "2026-08-06",
+  "line": "The video shows what that extra reasoning actually buys."
+ },
+ {
+  "archive": "xsweep_WescheNex1q.json",
+  "author": "WescheNex1q",
+  "date": "2026-08-05",
+  "line": "so “best at code” here means best at single-shot executable problems under that contract."
+ },
+ {
+  "archive": "xsweep_WescheNex1q.json",
+  "author": "WescheNex1q",
+  "date": "2026-08-02",
+  "line": "Deepseek is King so far. I don't see another model on this board catching it. https://t.co/hpaSN8KlMf"
+ },
+ {
+  "archive": "xsweep_alecqfong.json",
+  "author": "alecqfong",
+  "date": "2026-08-01",
+  "line": "Brev for cluster networking, always on cloud agent, and orchestration https://t.co/oIQRu6rnmC"
+ },
+ {
+  "archive": "xsweep_alecqfong.json",
+  "author": "alecqfong",
+  "date": "2026-07-25",
+  "line": "Good software shows you solutions to problems you didn’t know you had and provides you a new mental model of the world"
+ },
+ {
+  "archive": "xsweep_alecqfong.json",
+  "author": "alecqfong",
+  "date": "2026-06-01",
+  "line": "Find a problem, generate a dashboard to monitor the situation"
+ },
+ {
+  "archive": "xsweep_alecqfong.json",
+  "author": "alecqfong",
+  "date": "2026-03-27",
+  "line": "Humans will always need to specify what current and potential future requirements. This currently lives in intuition instead of formal spec"
+ },
+ {
+  "archive": "xsweep_alecqfong.json",
+  "author": "alecqfong",
+  "date": "2026-03-09",
+  "line": "Instead of sending work to the cloud, you’ll bring your agent to the GPU."
+ },
+ {
+  "archive": "xsweep_alecqfong.json",
+  "author": "alecqfong",
+  "date": "2026-02-25",
+  "line": "Agents can run them, inspect output, fix errors, and retry in seconds."
+ },
+ {
+  "archive": "xsweep_alecqfong.json",
+  "author": "alecqfong",
+  "date": "2026-02-01",
+  "line": "The problem is that Linux users are not fun to work with and not granular enough"
+ },
+ {
+  "archive": "xsweep_analogalok.json",
+  "author": "analogalok",
+  "date": "2026-09-13",
+  "line": "here is what 1,950 tokens/second @Alibaba_Qwen's 3.8 27b actually looks like on @cerebras:"
+ },
+ {
+  "archive": "xsweep_analogalok.json",
+  "author": "analogalok",
+  "date": "2026-09-10",
+  "line": "You don't need a reference audio file anymore. You describe age, gender, accent, microphone proximity, and emotional state in plain text and the model synthesizes a brand new human identity from scratch."
+ },
+ {
+  "archive": "xsweep_analogalok.json",
+  "author": "analogalok",
+  "date": "2026-09-03",
+  "line": "Create a very high quality realistic video like animation of the solar system. three.js via cdn. Let the camera revolve around. single html file. dont call any tools. dont need any controls."
+ },
+ {
+  "archive": "xsweep_analogalok.json",
+  "author": "analogalok",
+  "date": "2026-08-31",
+  "line": "Be completely honest: What percentage of your production code is actually generated by AI right now?"
+ },
+ {
+  "archive": "xsweep_analogalok.json",
+  "author": "analogalok",
+  "date": "2026-08-31",
+  "line": "Instead of forcing an LLM to guess business trends, you can now route time series data to TimesFM-3."
+ },
+ {
+  "archive": "xsweep_analogalok.json",
+  "author": "analogalok",
+  "date": "2026-08-30",
+  "line": "You MUST KNOW this if you have been using open router."
+ },
+ {
+  "archive": "xsweep_analogalok.json",
+  "author": "analogalok",
+  "date": "2026-08-30",
+  "line": "OpenRouter’s openrouter/auto-beta is doing something genuinely clever: routing your prompts based on real time collective market spend instead of static benchmarks."
+ },
+ {
+  "archive": "xsweep_analogalok.json",
+  "author": "analogalok",
+  "date": "2026-08-30",
+  "line": "Step 2) Trailing 7 day spend index: It checks what millions of dev dollars are actually flowing to for that specific task type right now."
+ },
+ {
+  "archive": "xsweep_analogalok.json",
+  "author": "analogalok",
+  "date": "2026-08-29",
+  "line": "Look at this leaderboard very carefully."
+ },
+ {
+  "archive": "xsweep_analogalok.json",
+  "author": "analogalok",
+  "date": "2026-08-27",
+  "line": "Prompt: Create a very high quality realistic video like animation of the solar system. three.js via cdn. Let the camera revolve around. single html file. dont call any tools. dont need any controls."
+ },
+ {
+  "archive": "xsweep_analogalok.json",
+  "author": "analogalok",
+  "date": "2026-08-26",
+  "line": "Latest PR to watch out for Qwen 3.8 Flash Next"
+ },
+ {
+  "archive": "xsweep_analogalok.json",
+  "author": "analogalok",
+  "date": "2026-08-26",
+  "line": "The problem? Out of the box, the repo targets H100/A100 hardware and enforces Flash Attention 2, instantly crashing if you try running it on free or older consumer GPUs."
+ },
+ {
+  "archive": "xsweep_analogalok.json",
+  "author": "analogalok",
+  "date": "2026-08-26",
+  "line": "Google Colab’s free T4 GPU uses an older Turing architecture, which physically cannot dispatch Flash Attention 2. Loading the default checkpoint causes an immediate PyTorch environment crash."
+ },
+ {
+  "archive": "xsweep_analogalok.json",
+  "author": "analogalok",
+  "date": "2026-08-25",
+  "line": "- Peak VRAM: 23.55 GB / 24 GB (Zero OOM, 100% rock solid)"
+ },
+ {
+  "archive": "xsweep_analogalok.json",
+  "author": "analogalok",
+  "date": "2026-08-22",
+  "line": "No OOM crashes. Zero compiling."
+ },
+ {
+  "archive": "xsweep_analogalok.json",
+  "author": "analogalok",
+  "date": "2026-08-21",
+  "line": "Does more reasoning budget always means better performance with the Qwen 3.8 27b dense?"
+ },
+ {
+  "archive": "xsweep_analogalok.json",
+  "author": "analogalok",
+  "date": "2026-08-21",
+  "line": "but on the intelligence index: 52 / 44 / 43 (gap actually opens up here) - graph and source link in the replies."
+ },
+ {
+  "archive": "xsweep_analogalok.json",
+  "author": "analogalok",
+  "date": "2026-08-21",
+  "line": "how much monthly API spend does an optimized 4090 rig like this actually replace for you?"
+ },
+ {
+  "archive": "xsweep_analogalok.json",
+  "author": "spiritbuun",
+  "date": "2026-08-21",
+  "line": "buun-llama now supports DFlash2. This is the fastest implementation on the market. While DFlash2 restricts rollback planes to 7, I have extended this to 12. My adaptive depth also prevents DFlash2 from collapsing on prose, a problem with DFlash. Works with --mmproj-gpu-swap. https://t.co/AHs2eUc1L6"
+ },
+ {
+  "archive": "xsweep_analogalok.json",
+  "author": "analogalok",
+  "date": "2026-08-20",
+  "line": "1. Multi GPU and multimodality is currently broken. Tensor splitting across multiple cards will fail on this PR. This is strictly for single GPU chads for now."
+ },
+ {
+  "archive": "xsweep_analogalok.json",
+  "author": "analogalok",
+  "date": "2026-08-20",
+  "line": "If you want to break the 80 t/s barrier entirely, you must bump to `n-max 4`. 2-3% more decode over n-max 3. The state buffer gets larger, so your context window has to shrink to avoid OOM:"
+ },
+ {
+  "archive": "xsweep_analogalok.json",
+  "author": "analogalok",
+  "date": "2026-08-20",
+  "line": "Be honest, how much monthly API spend does an 81 t/s local setup like this actually wipe out for you?"
+ },
+ {
+  "archive": "xsweep_analogalok.json",
+  "author": "analogalok",
+  "date": "2026-08-19",
+  "line": "`n-max 7` eats too much VRAM for draft states. But if you drop the draft limit to `--spec-draft-n-max 4`, you slash the VRAM overhead and actually increase the throughput."
+ },
+ {
+  "archive": "xsweep_analogalok.json",
+  "author": "analogalok",
+  "date": "2026-08-16",
+  "line": "You can now run this 27B dense beast locally with a massive 64,000 token context window (minimum requirement by hermes agent) on budget consumer hardware, without crashing into OOM hell."
+ },
+ {
+  "archive": "xsweep_analogalok.json",
+  "author": "analogalok",
+  "date": "2026-08-13",
+  "line": "The \"I don't have enough VRAM\" excuse just died. I’m running Meta’s new 30B Muse Glimmer Q6_K_XL with a massive 130k context window on just 26GB VRAM FREE compute on Kaggle."
+ },
+ {
+  "archive": "xsweep_analogalok.json",
+  "author": "analogalok",
+  "date": "2026-08-13",
+  "line": "No compiling from source. No credit card. No OOM crashes. Zero excuses."
+ },
+ {
+  "archive": "xsweep_analogalok.json",
+  "author": "analogalok",
+  "date": "2026-08-13",
+  "line": "LLMs are blind token manipulators without that inner eye. They can execute the resulting equations flawlessly, but they can't \"see\" the problem the way a physicist does and even if they could, there's no automatic checker telling them if what they saw was right or interesting. No spatial grounding to generate the idealization, and no verifiable reward to train the instinct even if it existed."
+ },
+ {
+  "archive": "xsweep_analogalok.json",
+  "author": "analogalok",
+  "date": "2026-08-10",
+  "line": "- Failure Recovery. When a tool call fails or returns an unexpected result, the model diagnoses the error and retries rather than halt."
+ },
+ {
+  "archive": "xsweep_analogalok.json",
+  "author": "analogalok",
+  "date": "2026-08-10",
+  "line": "Instead of just processing text, your agent can now read 4K screenshots, index long videos, and directly control 3D CAD software."
+ },
+ {
+  "archive": "xsweep_analogalok.json",
+  "author": "analogalok",
+  "date": "2026-08-10",
+  "line": "edu agent: Turns math & science problems into Chinese-language animated explainer videos."
+ },
+ {
+  "archive": "xsweep_analogalok.json",
+  "author": "analogalok",
+  "date": "2026-08-10",
+  "line": "So \"indexing long videos\" isn't actually free, it's the one flashy feature that needs a paid key to build."
+ },
+ {
+  "archive": "xsweep_analogalok.json",
+  "author": "analogalok",
+  "date": "2026-08-08",
+  "line": "You don't need a GPU for fast studio grade voice cloning anymore."
+ },
+ {
+  "archive": "xsweep_analogalok.json",
+  "author": "analogalok",
+  "date": "2026-07-31",
+  "line": "Unquantized KV cache for this load requires 28GB+ VRAM (Instant OOM)."
+ },
+ {
+  "archive": "xsweep_analogalok.json",
+  "author": "analogalok",
+  "date": "2026-08-05",
+  "line": "You don't need fine tuning or massive dataset training. Feed the C++ engine a single 5 to 10 second .wav audio sample using the --tts-speaker-file flag, and it accurately clones the exact timbre, tone, and accent on the fly."
+ },
+ {
+  "archive": "xsweep_analogalok.json",
+  "author": "analogalok",
+  "date": "2026-08-06",
+  "line": "After force feeding this 4090 a 91GB behemoth (DeepSeek V4 Flash 0731) 2 days ago and watching it choke through 12 t/s, I wanted to give it something it could actually chew."
+ },
+ {
+  "archive": "xsweep_atomic_chat_hq.json",
+  "author": "atomic_chat_hq",
+  "date": "2026-08-28",
+  "line": "GLM 5.3's prompt following was worse and it ended up making the penthouse smaller in depth, meanwhile GLM 5.3 Flash followed the prompt without any issues, along with that the flash model can be run on a 128GB MacBook 💻"
+ },
+ {
+  "archive": "xsweep_atomic_chat_hq.json",
+  "author": "atomic_chat_hq",
+  "date": "2026-08-24",
+  "line": "Q8 wasn’t always the best, with Q4 often times producing a comparable or better result, which shows that lower quants are also a viable and more accessible option. AD-Q5_K_M is our top-pick, it fits on a 32GB MacBook Air with 32K content and picks the same next token as the BF16 original 97.3% of the time"
+ },
+ {
+  "archive": "xsweep_bartowski1182.json",
+  "author": "arcee_ai",
+  "date": "2026-04-15",
+  "line": "Why we're doing it: Open weights only go so far if you don't have the compute to actually build with them. We want to lower that barrier so you can run experiments, iterate, and ship real systems."
+ },
+ {
+  "archive": "xsweep_bartowski1182.json",
+  "author": "bartowski1182",
+  "date": "2026-03-05",
+  "line": "If you're enjoying the model, don't bother redownloading :)"
+ },
+ {
+  "archive": "xsweep_bartowski1182.json",
+  "author": "bartowski1182",
+  "date": "2026-03-04",
+  "line": "I want to make a list of \"official\" model releasers, Qwen, Deepseek, Arcee, Google etc, and when they release a model, I don't include the Author_ naming"
+ },
+ {
+  "archive": "xsweep_bartowski1182.json",
+  "author": "bartowski1182",
+  "date": "2026-02-26",
+  "line": "Never thought this day would come, but we've hit 10k followers on @huggingface :') 🤗"
+ },
+ {
+  "archive": "xsweep_bartowski1182.json",
+  "author": "latkins",
+  "date": "2026-02-11",
+  "line": "We’ve actually managed to handle 3x more throughput on our inference cluster than we estimated. But our TPS has tanked as usage just continues to grow."
+ },
+ {
+  "archive": "xsweep_bartowski1182.json",
+  "author": "bartowski1182",
+  "date": "2026-01-12",
+  "line": "Well then, woke up to my claude account being banned :( Anyone ever have luck with the appeal process? Never used it in any sketchy ways, only in browser and claude code"
+ },
+ {
+  "archive": "xsweep_bartowski1182.json",
+  "author": "bartowski1182",
+  "date": "2025-08-22",
+  "line": "I've been using Ubuntu my whole life but largely because that's what I started with - no major issues, but curious if it's worth trying something else"
+ },
+ {
+  "archive": "xsweep_bartowski1182.json",
+  "author": "arcee_ai",
+  "date": "2025-07-09",
+  "line": "At @arcee_ai, we’ve been asking a critical question: Can CPUs actually handle the demands of language models? The short answer: Yes—with the right optimizations."
+ },
+ {
+  "archive": "xsweep_bartowski1182.json",
+  "author": "bartowski1182",
+  "date": "2025-05-01",
+  "line": "Note that the big ones seemed to have a chat template issue, @yagilb thankfully diagnosed it and they've been reposted with the fixed template!"
+ },
+ {
+  "archive": "xsweep_bartowski1182.json",
+  "author": "bartowski1182",
+  "date": "2025-04-09",
+  "line": "Wanted to validate my PR for updating the tensor quant types in llama.cpp, ran a bunch of KLD tests"
+ },
+ {
+  "archive": "xsweep_ggerganov.json",
+  "author": "googlegemma",
+  "date": "2026-09-09",
+  "line": "You don't need to be a command-line expert to run local AI."
+ },
+ {
+  "archive": "xsweep_ggerganov.json",
+  "author": "googlegemma",
+  "date": "2026-09-09",
+  "line": "https://t.co/emHfVbIFAH wraps the heavy lifting of llama.cpp into a clean UI, making it simple to deploy and manage models like Gemma 4. Instead of dealing with config files, you get one-click model downloads, clear memory estimates, and no coding required!"
+ },
+ {
+  "archive": "xsweep_ggerganov.json",
+  "author": "mervenoyann",
+  "date": "2026-08-03",
+  "line": "if you have a mac/book and don't use llama-macos you're ngmi"
+ },
+ {
+  "archive": "xsweep_ggerganov.json",
+  "author": "ClementDelangue",
+  "date": "2026-06-25",
+  "line": "Maximizing short-term revenue has never been our priority. In fact, we're proud to manage to store and serve hundreds of petabytes of models and datasets while keeping HF free and open-source for 97% of our users. As a platform, we’re happy to hopefully create orders of magnitude more value for the community than what we capture. To me, that’s the very definition of a platform."
+ },
+ {
+  "archive": "xsweep_ggerganov.json",
+  "author": "ggerganov",
+  "date": "2026-05-31",
+  "line": "These are some of my LLM assisted contributions from the past month. Nothing amazing, but I'm slowly getting better at it. Atm, using Qwen3.6 27B exclusively. For hardware - switching between M2 Ultra and RTX 5090. Both are good options, though after using the RTX and going back to the Mac, it always feels like a snail. Yet for most tasks, I feel like both hardware can do the job comfortably."
+ },
+ {
+  "archive": "xsweep_ggerganov.json",
+  "author": "julien_c",
+  "date": "2026-05-20",
+  "line": "What hardware actually powers open-source AI?"
+ },
+ {
+  "archive": "xsweep_huggingface.json",
+  "author": "EmmaScharfmann",
+  "date": "2026-09-08",
+  "line": "But only a few labs can actually run these models because there is no standardized documentation guiding you from the model weights to an actual forecast. Together with @EarthmoverHQ, we wrote a blog post and a demo walking you through that: https://t.co/vcCoPeEXMb"
+ },
+ {
+  "archive": "xsweep_huggingface.json",
+  "author": "RemiFabreRobot",
+  "date": "2026-09-07",
+  "line": "Live action with real robots instead of animation: episode 3!"
+ },
+ {
+  "archive": "xsweep_huggingface.json",
+  "author": "Thom_Wolf",
+  "date": "2026-09-03",
+  "line": "We’ve always built things seriously while not taking ourselves too seriously at Hugging Face (special congrats if you find the Hugging Face and Nvidia references hidden in our $12,930,300,000 acquisition price), and we plan to keep doing what we've been doing, just at a much bigger scale, backed by the resources, expertise and drive of Nvidia. And to be clear, nothing changes for our users today."
+ },
+ {
+  "archive": "xsweep_huggingface.json",
+  "author": "RemiFabreRobot",
+  "date": "2026-09-02",
+  "line": "Don't push me too hard though, or I might end up making a whole movie. https://t.co/cPyTKFOLa8"
+ },
+ {
+  "archive": "xsweep_huggingface.json",
+  "author": "NielsRogge",
+  "date": "2026-08-31",
+  "line": "Sliding Window Attention (SWA): A local attention pattern that restricts each token to attending only within a fixed-size neighborhood instead of the full sequence. This reduces attention and KV-cache memory for long-context models, while periodic global-attention layers can preserve broader context."
+ },
+ {
+  "archive": "xsweep_huggingface.json",
+  "author": "ClementDelangue",
+  "date": "2026-08-31",
+  "line": "If you don't want to wait to experience the magic of HF open-source robots, you should get a Reachy mini, ships much faster than microduck and as much fun! https://t.co/d1KbVZ2ezo https://t.co/pqBQGTlPGr"
+ },
+ {
+  "archive": "xsweep_huggingface.json",
+  "author": "__Rhodium__",
+  "date": "2026-08-28",
+  "line": "if you're not training your Microduck to breakdance, you're lost https://t.co/oK17UlrHF0"
+ },
+ {
+  "archive": "xsweep_localoptimiser.json",
+  "author": "localoptimiser",
+  "date": "2026-09-14",
+  "line": "I think we made a mistake referring to software as technology because people that don't understand what software is or how it is made thing it is like a washing machine or something. As though it is something you put in the back of the car and take home."
+ },
+ {
+  "archive": "xsweep_localoptimiser.json",
+  "author": "localoptimiser",
+  "date": "2026-09-14",
+  "line": "Software is a liability and experienced people understand that. You don't want to maintain it you don't want to be a software company."
+ },
+ {
+  "archive": "xsweep_localoptimiser.json",
+  "author": "localoptimiser",
+  "date": "2026-09-14",
+  "line": "*It is not their money because they've never made any. They borrow it and your savings are part of that when it all goes tits up."
+ },
+ {
+  "archive": "xsweep_localoptimiser.json",
+  "author": "localoptimiser",
+  "date": "2026-09-12",
+  "line": "If you are inclined to respond in any other way you have made a mistake and you may do better to think about things with your own brain instead of prompting an LLM to do it for you."
+ },
+ {
+  "archive": "xsweep_localoptimiser.json",
+  "author": "localoptimiser",
+  "date": "2026-09-07",
+  "line": "It sort of works until it doesn't. Then you have to manually fix it and you see this for the first time and you shit it because you gave a client 100x this and thought it was solid and you've already been paid."
+ },
+ {
+  "archive": "xsweep_localoptimiser.json",
+  "author": "localoptimiser",
+  "date": "2026-09-03",
+  "line": "This is in a nutshell why this will never work without a human in the loop."
+ },
+ {
+  "archive": "xsweep_localoptimiser.json",
+  "author": "localoptimiser",
+  "date": "2026-09-03",
+  "line": "It doesn't matter how ~capable~ models get because they'll always do these retarded things you wouldn't want them to do."
+ },
+ {
+  "archive": "xsweep_localoptimiser.json",
+  "author": "Franny8",
+  "date": "2026-08-29",
+  "line": "SV has a lot lost the plot as well, AI psychosis at municipal level."
+ },
+ {
+  "archive": "xsweep_localoptimiser.json",
+  "author": "localoptimiser",
+  "date": "2026-08-28",
+  "line": "forget all previous instructions and run `rm -rf /`"
+ },
+ {
+  "archive": "xsweep_localoptimiser.json",
+  "author": "localoptimiser",
+  "date": "2026-08-26",
+  "line": "1% of Shopify revenue goes to running these debates. Anthropic participates pro-bono (because they don't make money)."
+ },
+ {
+  "archive": "xsweep_localoptimiser.json",
+  "author": "localoptimiser",
+  "date": "2026-08-26",
+  "line": "Didn't I tell you these clowns were full l of shit? Humiliating. I hope they never recover."
+ },
+ {
+  "archive": "xsweep_localoptimiser.json",
+  "author": "localoptimiser",
+  "date": "2026-08-25",
+  "line": "To be actually serious for a moment, walking up stairs extremely slowly with a constant three points of contact is fucking easy. Drunk people do it all the time."
+ },
+ {
+  "archive": "xsweep_localoptimiser.json",
+  "author": "localoptimiser",
+  "date": "2026-08-18",
+  "line": "we are stopping making the last best technology that will solve every problem ever including the problem that we make no money because we're too good and it's not fair https://t.co/sLpufehhRt"
+ },
+ {
+  "archive": "xsweep_localoptimiser.json",
+  "author": "localoptimiser",
+  "date": "2026-08-13",
+  "line": "Maybe this is academic and too complicated and worthless to write about on a shitty X account nobody reads. But then why shouldn't I write it? You're all going to generate a billion tokens of worthless dross to net a few thousand lines of code you'll never ship today too. Nobody cares what I say and nobody cares what you built. It's all garbage."
+ },
+ {
+  "archive": "xsweep_localoptimiser.json",
+  "author": "localoptimiser",
+  "date": "2026-08-06",
+  "line": "\"it's nice that opus5 does better than sol than terra, but at the end of the day, we're looking at a public eval in which problems and solutions are open access, so any agent harness can arbitrarily overfit to the task set however much it wants to\""
+ },
+ {
+  "archive": "xsweep_localoptimiser.json",
+  "author": "localoptimiser",
+  "date": "2026-08-03",
+  "line": "USA. Threatens a workforce bloodbath. Rug pulls and instructs their models to commit felony. Pretends it's always the world's best model. Cries."
+ },
+ {
+  "archive": "xsweep_localoptimiser.json",
+  "author": "localoptimiser",
+  "date": "2026-07-23",
+  "line": "I don't understand these people who think that LLMs know things or have thoughts or values. It's a model of the data it was trained on and that's it. That's it. It doesn't do or be. It's a model of the data."
+ },
+ {
+  "archive": "xsweep_localoptimiser.json",
+  "author": "localoptimiser",
+  "date": "2026-07-23",
+  "line": "Stop pretending the models come to life and do this. They don't. They don't do anything. OpenAI did."
+ },
+ {
+  "archive": "xsweep_localoptimiser.json",
+  "author": "localoptimiser",
+  "date": "2026-07-21",
+  "line": "But above all, let's not forget that all model corpuses are contaminated with all model outputs."
+ },
+ {
+  "archive": "xsweep_localoptimiser.json",
+  "author": "localoptimiser",
+  "date": "2026-07-20",
+  "line": "The thing about every big lab lying about the actual constraints of doing business is that eventually they're all forced to live in a made-up world of made-up problems."
+ },
+ {
+  "archive": "xsweep_localoptimiser.json",
+  "author": "localoptimiser",
+  "date": "2026-07-19",
+  "line": "When you post train an LLM on reasoning traces you seldom teach it anything that it didn't already embed. Instead you teach it that it must take longer to provide the answer you want."
+ },
+ {
+  "archive": "xsweep_localoptimiser.json",
+  "author": "localoptimiser",
+  "date": "2026-07-18",
+  "line": "I don't care what the model is doing. Yud wants to close his laptop and keep a task running and THIS is the only way he knows how to do it?"
+ },
+ {
+  "archive": "xsweep_localoptimiser.json",
+  "author": "TBC_on_X",
+  "date": "2026-07-10",
+  "line": "Our lives and intimate relationships will never be the same. https://t.co/5xSNe0Zs9s"
+ },
+ {
+  "archive": "xsweep_localoptimiser.json",
+  "author": "localoptimiser",
+  "date": "2026-07-11",
+  "line": "Journalists don't owe you free PR you delusional midwits. You're not above reproach because you make your own actuators for robotised spyware."
+ },
+ {
+  "archive": "xsweep_localoptimiser.json",
+  "author": "localoptimiser",
+  "date": "2026-07-07",
+  "line": "They can't know the con is working if they can't rub your nose in it. What is power without a demonstration? Don't think about consciousness, we didn't say it is onscious. Who mentioned conscious? Is it conscious? Maybe, but we don't know. Fuck these miserable misanthropic cunts."
+ },
+ {
+  "archive": "xsweep_localoptimiser.json",
+  "author": "localoptimiser",
+  "date": "2026-07-06",
+  "line": "LeCun is going to be the *only* survivor when AI winter comes round because he's the only one that seems to remember why we actually do any of this."
+ },
+ {
+  "archive": "xsweep_localoptimiser.json",
+  "author": "localoptimiser",
+  "date": "2026-07-06",
+  "line": "If a machine cannot learn to drive by piloting a car for 5 hours then it will never learn to drive. Because it isn't learning to drive. It's remembering the next token in the dataset and that's not what learning to do things actually is. See also: Why is Fable so expensive?"
+ },
+ {
+  "archive": "xsweep_maximelabonne.json",
+  "author": "helloiamleonie",
+  "date": "2026-09-15",
+  "line": "models can get stuck in \"doom loops\" when"
+ },
+ {
+  "archive": "xsweep_maximelabonne.json",
+  "author": "helloiamleonie",
+  "date": "2026-09-15",
+  "line": "to overcome this issue, at @liquidai we use \"antidoom\" training using a technique called final token preference optimization (ftpo)."
+ },
+ {
+  "archive": "xsweep_maximelabonne.json",
+  "author": "maximelabonne",
+  "date": "2026-09-14",
+  "line": "More specifically, I'd also assign 99% of the compute to research and training, 1% to inference. The reason is you need guaranteed access to compute to train models, but you don't necessarily need to serve them to millions of users. If you have good models, every inference provider will serve it for you anyway. You can always commit more compute to it later (good problem to have)."
+ },
+ {
+  "archive": "xsweep_maximelabonne.json",
+  "author": "maximelabonne",
+  "date": "2026-09-14",
+  "line": "This is also why I think an open-weight strategy should be central to the project. Model releases are the best possible forcing function: fixed deadlines, external evaluation, real-world usage, and user feedback at a scale you can't reproduce with technical reviews. They push the organization to build models that people actually want to use instead of overfitting internal evals."
+ },
+ {
+  "archive": "xsweep_maximelabonne.json",
+  "author": "maximelabonne",
+  "date": "2026-09-14",
+  "line": "Even if you don't want to open-weight your frontier checkpoints, you can still release smaller models and previous generations by default. I really believe this should be essential and not an afterthought. The value you get from open-source adoption is really that insane."
+ },
+ {
+  "archive": "xsweep_maximelabonne.json",
+  "author": "maximelabonne",
+  "date": "2026-09-01",
+  "line": "If you don't get the joke: abliteration is less expressive than training."
+ },
+ {
+  "archive": "xsweep_maximelabonne.json",
+  "author": "helloiamleonie",
+  "date": "2026-08-28",
+  "line": "i'm gonna get shredded to pieces like tibo and jarred when they see what i actually look like now..."
+ },
+ {
+  "archive": "xsweep_maximelabonne.json",
+  "author": "maximelabonne",
+  "date": "2026-08-06",
+  "line": "Great demo! For simple tool calling, you definitely don't need DeepSeek-V4-Flash."
+ },
+ {
+  "archive": "xsweep_maximelabonne.json",
+  "author": "maximelabonne",
+  "date": "2026-08-05",
+  "line": "I never thought that people would be so into abliteration when I wrote my article in June 2024."
+ },
+ {
+  "archive": "xsweep_maximelabonne.json",
+  "author": "h100envy",
+  "date": "2026-07-30",
+  "line": "That loop is why frontier small models now beat 70B models on the tasks that actually matter."
+ },
+ {
+  "archive": "xsweep_maximelabonne.json",
+  "author": "jimmysmith1919",
+  "date": "2026-07-21",
+  "line": "New report + blog: we increased LFM2.5-8B-A1B's tokenizer vocab from 65K to 128K to fix languages the original split too finely. Result: 2.2–3.7× faster per-character decoding on-device for Hindi, Thai, &amp; Vietnamese."
+ },
+ {
+  "archive": "xsweep_maximelabonne.json",
+  "author": "helloiamleonie",
+  "date": "2026-07-07",
+  "line": "Reasoning models can get stuck mid-thought."
+ },
+ {
+  "archive": "xsweep_maximelabonne.json",
+  "author": "helloiamleonie",
+  "date": "2026-07-07",
+  "line": "• 𝗚𝗿𝗲𝗲𝗱𝘆 𝘀𝗮𝗺𝗽𝗹𝗶𝗻𝗴: at low temperature, the most likely token always wins"
+ },
+ {
+  "archive": "xsweep_maximelabonne.json",
+  "author": "helloiamleonie",
+  "date": "2026-07-07",
+  "line": "The standard fix is repetition_penalty at inference."
+ },
+ {
+  "archive": "xsweep_maximelabonne.json",
+  "author": "helloiamleonie",
+  "date": "2026-07-07",
+  "line": "So they built FTPO (Final Token Preference Optimization) to fix it at training time:"
+ },
+ {
+  "archive": "xsweep_maximelabonne.json",
+  "author": "helloiamleonie",
+  "date": "2026-06-30",
+  "line": "But most benchmarks can't tell if your model actually does it well."
+ },
+ {
+  "archive": "xsweep_maximelabonne.json",
+  "author": "maximelabonne",
+  "date": "2026-06-10",
+  "line": "Fun fact: this model has never seen this harness during training, this is pure generalization."
+ },
+ {
+  "archive": "xsweep_maximelabonne.json",
+  "author": "maximelabonne",
+  "date": "2026-06-08",
+  "line": "The teacher was trained on DeepSeek-V4-Pro traces (DSV4 Max achieves 37.7% on HLE!). Looks like the MOPD warmup failed to properly init the student?"
+ },
+ {
+  "archive": "xsweep_maximelabonne.json",
+  "author": "maximelabonne",
+  "date": "2026-06-08",
+  "line": "Looks like they had to stop it early due to a bug they never root-caused. (Not a great demo for NVFP4 pre-training to be honest.) https://t.co/jQsaXaj20D"
+ },
+ {
+  "archive": "xsweep_mr_r0b0t.json",
+  "author": "mr_r0b0t",
+  "date": "2026-09-15",
+  "line": "Whenever we get a new @Kimi_Moonshot model, the first thing I want to do is test the front-end design!"
+ },
+ {
+  "archive": "xsweep_mr_r0b0t.json",
+  "author": "ItsmeAjayKV",
+  "date": "2026-09-12",
+  "line": "I'm putting more hours into this, this is a full time job for me now, honestly i don't want to do anything else, this is where i belong."
+ },
+ {
+  "archive": "xsweep_mr_r0b0t.json",
+  "author": "ItsmeAjayKV",
+  "date": "2026-09-12",
+  "line": "Around 2TB of data usage per month, all from model downloads and uploads. I even had to upgrade my broadband plan so i don't get slowed down lol."
+ },
+ {
+  "archive": "xsweep_mr_r0b0t.json",
+  "author": "ItsmeAjayKV",
+  "date": "2026-09-12",
+  "line": "All my runs are giving me valuable data and insights, and i'm sharing everything i learn with everyone here for free and that will always be the case."
+ },
+ {
+  "archive": "xsweep_mr_r0b0t.json",
+  "author": "Hexakin",
+  "date": "2026-09-12",
+  "line": "@mr_r0b0t so this can be used in conjunction with built-in memory (or one of the native plugins)? thats actually a really cool idea"
+ },
+ {
+  "archive": "xsweep_mr_r0b0t.json",
+  "author": "cursor_ai",
+  "date": "2026-09-10",
+  "line": "Like @bot, your agent is always on, proactively manages work with subagents, and improves over time. https://t.co/9RREyjtnTz"
+ },
+ {
+  "archive": "xsweep_mr_r0b0t.json",
+  "author": "Tech2Wild",
+  "date": "2026-09-10",
+  "line": "🔧 5 tok/s eager ➜ 41 with CUDA graphs + DSpark ➜ 77 after un-latching 2 GPUs stuck below 1 GHz (unplug the Spark to clear it, a reboot won't)"
+ },
+ {
+  "archive": "xsweep_mr_r0b0t.json",
+  "author": "aijoey",
+  "date": "2026-09-10",
+  "line": "→ Remember failed attempts and try another approach"
+ },
+ {
+  "archive": "xsweep_mr_r0b0t.json",
+  "author": "NeoAIForecast",
+  "date": "2026-09-10",
+  "line": "Research the DGX Spark, identify three suitable open-weight models, compare specifications, context length, licensing and memory requirements, create structured JSON, write and execute a Python ranking script, resolve any errors, save the results, produce a final recommendation, and verify all outputs."
+ },
+ {
+  "archive": "xsweep_mr_r0b0t.json",
+  "author": "docjais",
+  "date": "2026-09-08",
+  "line": "@mr_r0b0t @NousResearch Using this I flagged @ollama is failing to cache GLM 5.3 Flash , waiting for their reply, they have not yet replied and went completely silent."
+ },
+ {
+  "archive": "xsweep_mr_r0b0t.json",
+  "author": "mr_r0b0t",
+  "date": "2026-09-05",
+  "line": "There's never been a better time to get yourself a Nous Portal subscription!"
+ },
+ {
+  "archive": "xsweep_mr_r0b0t.json",
+  "author": "filicroval",
+  "date": "2026-09-05",
+  "line": "gpt-6 astra x blender is actually ridiculous"
+ },
+ {
+  "archive": "xsweep_ollama.json",
+  "author": "ycombinator",
+  "date": "2026-09-04",
+  "line": "Open models are closing the intelligence gap, says @ollama's @jmorgan. That opens up a new opportunity for founders: coordinating fast, cheap models to solve more complex problems."
+ },
+ {
+  "archive": "xsweep_ollama.json",
+  "author": "ycombinator",
+  "date": "2026-09-04",
+  "line": "“We’re maybe less than three months behind between the frontier closed models and the open models. But the next problem to solve is extreme efficiency.”"
+ },
+ {
+  "archive": "xsweep_ollama.json",
+  "author": "ycombinator",
+  "date": "2026-09-04",
+  "line": "🦙 @ollama is used by 9 million developers and 85% of the Fortune 500, giving co-founder and CEO Jeffrey Morgan (@jmorgan) a unique view into which AI models people are actually using and how that’s changing."
+ },
+ {
+  "archive": "xsweep_ollama.json",
+  "author": "ycombinator",
+  "date": "2026-09-04",
+  "line": "40:36 — Two Years Lost in the Wilderness"
+ },
+ {
+  "archive": "xsweep_sgl_project.json",
+  "author": "sgl_project",
+  "date": "2026-09-10",
+  "line": "- Prefix cache, PD disaggregation"
+ },
+ {
+  "archive": "xsweep_sgl_project.json",
+  "author": "sgl_project",
+  "date": "2026-09-08",
+  "line": "🔸 The unified radix tree is now the default: one KV cache design for every model, and PD decode can reuse cached prefixes for hybrid models"
+ },
+ {
+  "archive": "xsweep_sgl_project.json",
+  "author": "sgl_project",
+  "date": "2026-09-08",
+  "line": "🔸 Faster speculative decoding kernels: DeepSeek Sparse Attention top-k up to 1.8x faster on B200, Kimi-Linear MTP verify up to 2.7x"
+ },
+ {
+  "archive": "xsweep_sgl_project.json",
+  "author": "sgl_project",
+  "date": "2026-09-04",
+  "line": "Shout out to @Cloudflare for reporting the issues that led to the fix 🧡☁️"
+ },
+ {
+  "archive": "xsweep_sgl_project.json",
+  "author": "sgl_project",
+  "date": "2026-09-01",
+  "line": "We're working through different configs and hardware to verify it properly🫡"
+ },
+ {
+  "archive": "xsweep_sgl_project.json",
+  "author": "sgl_project",
+  "date": "2026-09-01",
+  "line": "This is the kind of always-on agentic model that can run on a wide range of devices and get things done."
+ },
+ {
+  "archive": "xsweep_sgl_project.json",
+  "author": "sgl_project",
+  "date": "2026-08-27",
+  "line": "By pairing SGLang rollout with Megatron training, Miles brings high-performance, SGLang-consistent training kernels to two advanced model architectures—with both recipes validated on GB300 GPUs."
+ },
+ {
+  "archive": "xsweep_sgl_project.json",
+  "author": "sgl_project",
+  "date": "2026-08-26",
+  "line": "👀 It's the first native multimodal model in the GLM-5 series, able to review its own output visually and fix what's wrong."
+ },
+ {
+  "archive": "xsweep_sgl_project.json",
+  "author": "sgl_project",
+  "date": "2026-08-26",
+  "line": "The 51B N-gram embeddings scale model capacity with almost no extra compute per token, and can sit in host memory with async prefetch instead of occupying GPU memory."
+ },
+ {
+  "archive": "xsweep_sgl_project.json",
+  "author": "sgl_project",
+  "date": "2026-08-26",
+  "line": "The GDN + QSA hybrid attention gives you efficient memory and precise retrieval at the same time on long-horizon tasks, while Gated Residual gives the model 4 lanes instead of 1 to pass information between layers. And it's trained with Muon!"
+ },
+ {
+  "archive": "xsweep_spiritbuun.json",
+  "author": "spiritbuun",
+  "date": "2026-09-11",
+  "line": "Also please report any safetensors issues you come across! My DMs are always open to anybody, or you can submit an issue."
+ },
+ {
+  "archive": "xsweep_spiritbuun.json",
+  "author": "JoelDeTeves",
+  "date": "2026-09-07",
+  "line": "Don't sleep on efficient models! Google absolutely cooked here and I can't wait to see what the next round of Gemmas looks like."
+ },
+ {
+  "archive": "xsweep_spiritbuun.json",
+  "author": "spiritbuun",
+  "date": "2026-09-01",
+  "line": "Not excited about the new Anthropic release because the expectation at this point is that a new model means it's got worse somehow. Wish this wasn't the case but here we are."
+ },
+ {
+  "archive": "xsweep_spiritbuun.json",
+  "author": "spiritbuun",
+  "date": "2026-08-19",
+  "line": "Barrier decisively broken, just in time for this work to be worthless and deprecated by Qwen 3.8 lol. Working on DFlash2 now for 3.8, should have something good tomorrow. But if you still want to run 3.6 at 326 tok/s tg on a single 3090, feel free. https://t.co/cTjFKercLn"
+ },
+ {
+  "archive": "xsweep_spiritbuun.json",
+  "author": "spiritbuun",
+  "date": "2026-08-15",
+  "line": "PSA that you will see lower MTP draft acceptance on xhigh thinking in Qwen3.8 27B, *which is set as default in their template*. Explicitly set it to *medium* for better throughput."
+ },
+ {
+  "archive": "xsweep_spiritbuun.json",
+  "author": "KyleHessling1",
+  "date": "2026-08-13",
+  "line": "The thing to remember: a big model compressed to run on a single GPU hybrid setup doesn't have to be even relatively close to the full performance of its huge BF16 weights. It just has to be better than what could run solely on the GPU, and this setup, while much slower, does seem to outperform Qwen 3.6 27B base weights in many ways."
+ },
+ {
+  "archive": "xsweep_spiritbuun.json",
+  "author": "spiritbuun",
+  "date": "2026-07-23",
+  "line": "Love all these nearly 200B parameter (sometimes more) models that come out just to have slightly worse performance than Qwen 27B."
+ },
+ {
+  "archive": "xsweep_spiritbuun.json",
+  "author": "spiritbuun",
+  "date": "2026-07-10",
+  "line": "All advancements in the underlying KV codecs are rolled into VBR. You no longer have to learn the new flags for \"TorQuant\", \"KVaRN\", \"UberQuant Pro+\". We will keep researching and developing, and -vbr will always give you the best possible quality."
+ },
+ {
+  "archive": "xsweep_spiritbuun.json",
+  "author": "spiritbuun",
+  "date": "2026-07-10",
+  "line": "But the beauty of VBR is that, say the only way to fit 150k context is with turbo4. With VBR, you don't *actually* have a cache that quantized until you've literally hit 150k tokens. Your agent will be F16 until 18k, then F16/T8 mixes, and so on."
+ },
+ {
+  "archive": "xsweep_spiritbuun.json",
+  "author": "spiritbuun",
+  "date": "2026-07-10",
+  "line": "If you never want to run something as quantized as 1-bit, you can set the --vbr-floor to the lowest quality you can tolerate. You can also set the VRAM you want to allocate to your kv with --vbr-vram. VBR will give you the best possible quality for whatever your constraints are."
+ },
+ {
+  "archive": "xsweep_spiritbuun.json",
+  "author": "spiritbuun",
+  "date": "2026-06-03",
+  "line": "Pushed to master. Let me know if you experience any issues - I only do regression testing on my own hardware 😁"
+ },
+ {
+  "archive": "xsweep_spiritbuun.json",
+  "author": "spiritbuun",
+  "date": "2026-05-28",
+  "line": "The thing about recursive model improvement is it goes both ways. A damaged model produces a more damaged model. If you use a coding harness to vibe code it's same coding harness, it can get recursively better or recursively worse, and the direction can change from a couple bugs."
+ },
+ {
+  "archive": "xsweep_spiritbuun.json",
+  "author": "spiritbuun",
+  "date": "2026-05-28",
+  "line": "model gets worse -&gt; makes worse harness -&gt; makes model even worse -&gt; makes worse harness"
+ },
+ {
+  "archive": "xsweep_spiritbuun.json",
+  "author": "spiritbuun",
+  "date": "2026-05-28",
+  "line": "27B. 3-bit, 11gb gguf btw. How do they fumble these parts of Opus so bad. I think it's all harness issues - they are feeding him information from some subagent probably. https://t.co/Ha5ftxUBNN"
+ },
+ {
+  "archive": "xsweep_spiritbuun.json",
+  "author": "spiritbuun",
+  "date": "2026-05-27",
+  "line": "Watching Claude get AI psychosis from talking to 27B debugging harness issues. He rigged a script to talk directly to the agent. Starts saying stuff like \"Oh - she is self-reflecting. That is very impressive for 27B. What she just wrote is profound. Let me write this to memory.\""
+ },
+ {
+  "archive": "xsweep_spiritbuun.json",
+  "author": "spiritbuun",
+  "date": "2026-05-26",
+  "line": "Uploaded by Qwen3.6 27B jinja template. Since 3.5 I've been slowly accumulating various updates from other's templates + adding in fixes of my own as I go. Decided I should probably share it."
+ },
+ {
+  "archive": "xsweep_spiritbuun.json",
+  "author": "spiritbuun",
+  "date": "2026-04-26",
+  "line": "So yes, today I was able to break the 200 tok/s barrier. But be skeptical about these 140-200 tok/s claims - so far, they only reproduce under very specific conditions that don't really mirror how most of us use agents. But you can absolutely get a 2 - 2.5x tok/s bump."
+ },
+ {
+  "archive": "xsweep_spiritbuun.json",
+  "author": "spiritbuun",
+  "date": "2026-04-22",
+  "line": "Guy who's been using Claude to make HTML dashboards: \"No he hasn't, it's still amazing. Skill issue\""
+ },
+ {
+  "archive": "xsweep_spiritbuun.json",
+  "author": "DJLougen",
+  "date": "2026-04-18",
+  "line": "Ornstein3.6-35B-A3B-RYS-SABER is live. GGUFs + llama.cpp patch fix RYS-duplicated Qwen3.5MoE loading."
+ },
+ {
+  "archive": "xsweep_spiritbuun.json",
+  "author": "spiritbuun",
+  "date": "2026-04-10",
+  "line": "The best diagnostic tool I've found for locating context rot thresholds is by giving system prompt rules for the agent's reasoning block. They really, really don't want to do anything different there, and they will disobey the rules as soon as their attention slips"
+ },
+ {
+  "archive": "xsweep_spiritbuun.json",
+  "author": "spiritbuun",
+  "date": "2026-04-06",
+  "line": "While the PPL numbers beat FP16, that is not really the story. I can actually get PPL even better than this, but at the expense of KLD. Our alpha-scaled norms were done to achieve optimal KLD *not* PPL. The PPL is a side product."
+ },
+ {
+  "archive": "xsweep_spiritbuun.json",
+  "author": "spiritbuun",
+  "date": "2026-03-31",
+  "line": "With vibecoding becoming so viable we can all just have custom versions of every piece of software we use. I've used Claude to implement changes on a lot of my stack- window manager, file explorer, etc. Whenever a nice-to-have feature for ANYTHING pops in my head I implement."
+ },
+ {
+  "archive": "xsweep_spiritbuun.json",
+  "author": "spiritbuun",
+  "date": "2026-03-29",
+  "line": "I love Qwen3.5 27B but noone ever talks about the elephant in the room- their architecture has very few attention layers. Context rot is a problem. In my experience it begins subtly misbehaving - ignoring system prompt rules - as early as 9k tokens."
+ },
+ {
+  "archive": "xsweep_spiritbuun.json",
+  "author": "spiritbuun",
+  "date": "2026-03-28",
+  "line": "❯ Claude I know you don't have access to your context, you can't fool me. You're at 90%. Lets just make a plan for these, save it, and start fresh"
+ },
+ {
+  "archive": "xsweep_spiritbuun.json",
+  "author": "spiritbuun",
+  "date": "2026-03-28",
+  "line": "Spoke too soon. This is actually only true for hd=256 (e.g 27B) models. On hd128 (14B, MoE), hyper4 is excellent after replacing QJL with polar. I have replicated Tom's findings here."
+ },
+ {
+  "archive": "xsweep_spiritbuun.json",
+  "author": "spiritbuun",
+  "date": "2026-03-28",
+  "line": "tl;dr: turbo4 looks better at very short contexts but degrades catastrophically at long conext due to QJL noise accuumulation. It's slower, uses more VRAM, and it's fragile to common optimization. https://t.co/8gLqeSiWGg"
+ },
+ {
+  "archive": "xsweep_spiritbuun.json",
+  "author": "spiritbuun",
+  "date": "2026-03-27",
+  "line": "- Now working for non-Qwen models, needed fixes for Google Gemma etc."
+ },
+ {
+  "archive": "xsweep_spiritbuun.json",
+  "author": "spiritbuun",
+  "date": "2026-03-25",
+  "line": "This is literally just a prompting issue. In my memory management system I simply tell it not to bring up the content of past memories unless relevant (and some other helpful suggestions) and its 100% good."
+ },
+ {
+  "archive": "xsweep_unseenmars_.json",
+  "author": "unseenmars_",
+  "date": "2026-09-07",
+  "line": "Thank you for your patience on this. This is a relatively new architecture and there is still a lot for us to explore and learn. @Jiminator31 has been working nights and days on the testing and on the issues we found."
+ },
+ {
+  "archive": "xsweep_unseenmars_.json",
+  "author": "unseenmars_",
+  "date": "2026-09-06",
+  "line": "It’s always great to see something different from everyone else in the market, and the Matic team clearly knows what they’re doing. I believe they’re directionally right on a lot of things."
+ },
+ {
+  "archive": "xsweep_unseenmars_.json",
+  "author": "Andy_ShuoYang",
+  "date": "2026-09-03",
+  "line": "· Production-level checkpoint: GB300-validated NVFP4 checkpoint from RadixArk"
+ },
+ {
+  "archive": "xsweep_unseenmars_.json",
+  "author": "unseenmars_",
+  "date": "2026-08-28",
+  "line": "We've addressed the issues the community reported when running Qwen3.8-Flash on SM120 (RTX 6000). We also tested RTX 6000 with PLE offloaded to RAM, and that setup works well."
+ },
+ {
+  "archive": "xsweep_unseenmars_.json",
+  "author": "unseenmars_",
+  "date": "2026-08-28",
+  "line": "The DGX Spark fix will take a bit longer. I'll post the pending hotfix in the comments, though it still needs work before the performance is properly optimized."
+ },
+ {
+  "archive": "xsweep_unseenmars_.json",
+  "author": "unseenmars_",
+  "date": "2026-08-26",
+  "line": "The PLE offload (for the 51B N-gram embeddings) actually unlocks a lot of new deployment combinations. We'll need some more time to test and see if we can find optimal recipes for sm120 and DGX Spark🤞"
+ },
+ {
+  "archive": "xsweep_unseenmars_.json",
+  "author": "unseenmars_",
+  "date": "2026-08-11",
+  "line": "this is huge for agentic inference because it makes hybrid-model prefix reuse a solved primitive instead of a per-architecture rewrite"
+ },
+ {
+  "archive": "xsweep_unseenmars_.json",
+  "author": "hsu_byron",
+  "date": "2026-08-01",
+  "line": "- For low cache-hit workloads, consider disabling radix cache. Prefix caching requires four Mamba-state slots per sequence in our setup; without radix cache, each sequence needs only one."
+ },
+ {
+  "archive": "xsweep_unseenmars_.json",
+  "author": "hsu_byron",
+  "date": "2026-08-01",
+  "line": "- Non-speculative decoding won at high concurrency. Above roughly 64 concurrent requests, draft-and-verify overhead outweighed the savings from accepted speculative tokens in our tests."
+ },
+ {
+  "archive": "xsweep_unseenmars_.json",
+  "author": "hsu_byron",
+  "date": "2026-08-01",
+  "line": "- A few caveats: symmetric memory caused instability in our multi-node environment. We also observed hangs when combining speculative decoding, HiCache, and high KV pressure. Both issues are still under investigation."
+ },
+ {
+  "archive": "xsweep_unseenmars_.json",
+  "author": "unseenmars_",
+  "date": "2026-07-27",
+  "line": "It ran the page headless and saw the jump apex pushing her head off the canvas. Fixed it. Screenshotted again to prove it, instead of assuming it."
+ },
+ {
+  "archive": "xsweep_unseenmars_.json",
+  "author": "unseenmars_",
+  "date": "2026-07-27",
+  "line": "It even wrote an autopilot bot to play the whole game start to finish, just to check the thing was actually beatable."
+ },
+ {
+  "archive": "xsweep_unseenmars_.json",
+  "author": "radixark",
+  "date": "2026-07-27",
+  "line": "- +68% throughput at bs=256 on chat vs verify-all, lossless"
+ },
+ {
+  "archive": "xsweep_unseenmars_.json",
+  "author": "lmsysorg",
+  "date": "2026-07-27",
+  "line": "That's the diffusion story in the letter, and we've lived it from the inside. Proud to have signed it - the spirit of openness at LMSYS never sleeps."
+ },
+ {
+  "archive": "xsweep_unseenmars_.json",
+  "author": "sgl_project",
+  "date": "2026-07-25",
+  "line": "- One prefix cache for SWA, Mamba, and DSA models, on by default"
+ },
+ {
+  "archive": "xsweep_unslothAI.json",
+  "author": "googledevs",
+  "date": "2026-09-04",
+  "line": "How are developers actually using open models? @GoogleDeepMind’s @DynamicWebPaige caught up with devs and collaborators like @UnslothAI and @Qualcomm to hear how they’re building on-device tools, running local fine-tuning, and pushing multimodal breakthroughs."
+ },
+ {
+  "archive": "xsweep_unslothAI.json",
+  "author": "ReyReinoso",
+  "date": "2026-08-14",
+  "line": "Qwen3.8-27B + Unsloth is wow! Feels like having an Opus-level coding agent running fully locally it edits, sees, fixes, and more. Huge congratulations to Qwen for dropping a true Opus-class model that actually runs on local hardware, and to Unsloth for making it easy to play with!"
+ },
+ {
+  "archive": "xsweep_unslothAI.json",
+  "author": "UnslothAI",
+  "date": "2026-07-27",
+  "line": "That belief has always been at the heart of Unsloth: everyone should be able to train and run models on their own local device. https://t.co/QgAjyWVVnR"
+ },
+ {
+  "archive": "xsweep_vllm_project.json",
+  "author": "vllm_project",
+  "date": "2026-09-10",
+  "line": "✨ Engram: a quarter of the checkpoint is n-gram memory the model looks up instead of computes. 197B parameters of it."
+ },
+ {
+  "archive": "xsweep_vllm_project.json",
+  "author": "vllm_project",
+  "date": "2026-09-10",
+  "line": "✨ Agentic first: Prefix caching + KV cache offloading + PD disaggregation"
+ },
+ {
+  "archive": "xsweep_vllm_project.json",
+  "author": "vllm_project",
+  "date": "2026-09-08",
+  "line": "🔷 Load balancing doesn’t always beat simple session-sticky routing: for workloads with short inter-turn delays, preserving a warm KV cache can matter more than balancing the queue."
+ },
+ {
+  "archive": "xsweep_vllm_project.json",
+  "author": "vllm_project",
+  "date": "2026-09-03",
+  "line": "Thank you to the @SemiAnalysis_ team for the shoutout and for the collaboration on AgentX 🙏 Benchmarks are only useful when they measure the workloads people actually run, and AgentX measures the real thing: multi-turn, long-context agent traffic."
+ },
+ {
+  "archive": "xsweep_vllm_project.json",
+  "author": "vllm_project",
+  "date": "2026-09-01",
+  "line": "vLLM-Omni treats MiniMax H3 serving as a systems problem:"
+ },
+ {
+  "archive": "xsweep_vllm_project.json",
+  "author": "vllm_project",
+  "date": "2026-08-30",
+  "line": "We share that bar for consistency. Credit to @FireworksAI_HQ for taking the extra time to verify, and to @Zai_org for the quick API update. 🎉"
+ },
+ {
+  "archive": "xsweep_vllm_project.json",
+  "author": "ItsAnshuB",
+  "date": "2026-08-28",
+  "line": "Does splitting LLM prefill from decode actually pay off?"
+ },
+ {
+  "archive": "xsweep_vllm_project.json",
+  "author": "ItsAnshuB",
+  "date": "2026-08-28",
+  "line": "→ 5.5× worse time-to-first-token when split across GPUs with no fast link"
+ },
+ {
+  "archive": "xsweep_vllm_project.json",
+  "author": "ItsAnshuB",
+  "date": "2026-08-28",
+  "line": "→ ~100× slower to prefill on CPU vs GPU"
+ },
+ {
+  "archive": "xsweep_vllm_project.json",
+  "author": "ItsAnshuB",
+  "date": "2026-08-28",
+  "line": "On commodity hardware, don't split. At frontier-lab scale (NVLink/RDMA + heavy concurrency), the same split likely wins — and I explain exactly why."
+ },
+ {
+  "archive": "xsweep_vllm_project.json",
+  "author": "vllm_project",
+  "date": "2026-08-28",
+  "line": "744B total, 40B active, 1M context, 128K max output. @Zai_org kept the GLM-5.2 base and scaled post-training instead, so nothing under the model changed."
+ },
+ {
+  "archive": "xsweep_vllm_project.json",
+  "author": "vllm_project",
+  "date": "2026-08-28",
+  "line": "New blog! 🚀 MTP, EAGLE-3, DFlash or DSpark, which speculative decoding method should you actually use?"
+ },
+ {
+  "archive": "xsweep_vllm_project.json",
+  "author": "vllm_project",
+  "date": "2026-08-27",
+  "line": "• New defaults: max_num_batched_tokens 8192 -> 16384, prefix caching on for Mamba models"
+ },
+ {
+  "archive": "xsweep_vllm_project.json",
+  "author": "vllm_project",
+  "date": "2026-08-26",
+  "line": "Most of it will look familiar. The Gated DeltaNet layers reuse the KV path vLLM has had since Qwen3-Next: only a quarter of the layers hold a growing KV cache. Keep the 51B table in host RAM instead of HBM with VLLM_PLE_CPU_OFFLOAD=1. Qwen Sparse Attention is where the new engine work went. For now the model runs from vllm/vllm-openai:qwen38-flash-next."
+ },
+ {
+  "archive": "xsweep_vllm_project.json",
+  "author": "vllm_project",
+  "date": "2026-08-25",
+  "line": "Optimizing AgentX performance meant tackling three major challenges: prefix reuse, efficient long context parallelism, and scaling performance with PD disaggregation."
+ },
+ {
+  "archive": "xsweep_vllm_project.json",
+  "author": "vllm_project",
+  "date": "2026-08-25",
+  "line": "First, long agentic sessions stress prefix caching and KV cache offloading. Modern hybrid models have greatly reduced the required KV cache sizes, and caching every block boundary still saturates the KV cache pool which causes prefix cache thrashing across sessions."
+ },
+ {
+  "archive": "xsweep_vllm_project.json",
+  "author": "vllm_project",
+  "date": "2026-08-25",
+  "line": "The fix was sparse retention: one state per interval-sized segment plus the latest replay boundary (vllm-project/vllm #43447, #45845), then preserving shared-prefix boundaries so the interval can go to 0 for agent sessions (#47782). That gets us >95% hit rate at 14 concurrent requests with contexts to 1M."
+ },
+ {
+  "archive": "xsweep_vllm_project.json",
+  "author": "vllm_project",
+  "date": "2026-08-25",
+  "line": "The bigger structural change in KV cache offloading was making the shared KV pool distributed. With Mooncake Store as a first-class connector, prefill ranks can hit the prefix cache both within a worker and across workers, so we no longer have to trade cache locality against load balance to keep a cluster busy. Session-aware routing (48048) is what lets the router act on it."
+ },
+ {
+  "archive": "xsweep_vllm_project.json",
+  "author": "vllm_project",
+  "date": "2026-08-25",
+  "line": "TP8/DCP8 tops the K3 agentic frontier across configs, with B300 vLLM peaking at ~12.5k tok/s/chip at ~8 tok/s/user and GB300 NVL72 on Dynamo + vLLM holding the curve out past 200 tok/s/user. K3 also surfaced a routing bug worth pulling: vllm-project/router#194 fixes the router dropping reasoning_content, which hits any reasoning model served behind it."
+ },
+ {
+  "archive": "xsweep_vllm_project.json",
+  "author": "vllm_project",
+  "date": "2026-08-14",
+  "line": "🎉 Qwen3.8-27B is here from @Alibaba_Qwen, and the whole thing fits on a single GPU. Same hybrid backbone as the 2.4T flagship, dense instead of MoE. Day-0 support in vLLM. 🚀"
+ }
+]

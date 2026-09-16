@@ -1,0 +1,2221 @@
+{
+ "video_id": "s4cTVRH2ReA",
+ "url": "https://www.youtube.com/watch?v=s4cTVRH2ReA",
+ "segments": [
+  {
+   "start": 0.64,
+   "duration": 3.12,
+   "text": "Hey, welcome to Luke's Dev Lab. It's"
+  },
+  {
+   "start": 2.24,
+   "duration": 3.36,
+   "text": "great to have you here. So, in this"
+  },
+  {
+   "start": 3.76,
+   "duration": 6.56,
+   "text": "video, we're going to be looking at Quen"
+  },
+  {
+   "start": 5.6,
+   "duration": 7.68,
+   "text": "3.8 Flash Next. So, specifically, we're"
+  },
+  {
+   "start": 10.32,
+   "duration": 7.2,
+   "text": "going to be looking at this Quen 3.8"
+  },
+  {
+   "start": 13.28,
+   "duration": 6.72,
+   "text": "Flash Next GGUF from Unsllo. So, this is"
+  },
+  {
+   "start": 17.52,
+   "duration": 4.0,
+   "text": "177 billion parameter model. And you"
+  },
+  {
+   "start": 20.0,
+   "duration": 4.24,
+   "text": "might be thinking, well, how can this"
+  },
+  {
+   "start": 21.52,
+   "duration": 5.04,
+   "text": "possibly run? Well, this model is"
+  },
+  {
+   "start": 24.24,
+   "duration": 4.56,
+   "text": "actually a preview of the technology"
+  },
+  {
+   "start": 26.56,
+   "duration": 4.4,
+   "text": "they're going to be using in their Quen"
+  },
+  {
+   "start": 28.8,
+   "duration": 4.72,
+   "text": "4 models. So, this is like an"
+  },
+  {
+   "start": 30.96,
+   "duration": 4.24,
+   "text": "experimental from the Quen team. So, I'm"
+  },
+  {
+   "start": 33.52,
+   "duration": 4.0,
+   "text": "not going to get into too much of the"
+  },
+  {
+   "start": 35.2,
+   "duration": 4.0,
+   "text": "details on this because I will just link"
+  },
+  {
+   "start": 37.52,
+   "duration": 3.359,
+   "text": "this page down below for you to come and"
+  },
+  {
+   "start": 39.2,
+   "duration": 4.0,
+   "text": "have a read. But essentially, this model"
+  },
+  {
+   "start": 40.879,
+   "duration": 5.601,
+   "text": "doesn't just use your VRAM and your"
+  },
+  {
+   "start": 43.2,
+   "duration": 6.0,
+   "text": "system RAM. It also uses your drive on"
+  },
+  {
+   "start": 46.48,
+   "duration": 4.48,
+   "text": "your system as well for the engram"
+  },
+  {
+   "start": 49.2,
+   "duration": 3.28,
+   "text": "embedding. So, again, I'll leave this"
+  },
+  {
+   "start": 50.96,
+   "duration": 2.88,
+   "text": "page down below. I'm not going to go"
+  },
+  {
+   "start": 52.48,
+   "duration": 2.559,
+   "text": "into the technicals on this video."
+  },
+  {
+   "start": 53.84,
+   "duration": 2.48,
+   "text": "That's not really what we do on this"
+  },
+  {
+   "start": 55.039,
+   "duration": 2.881,
+   "text": "channel. We're just going to dive into"
+  },
+  {
+   "start": 56.32,
+   "duration": 6.239,
+   "text": "testing. What I'm going to be testing in"
+  },
+  {
+   "start": 57.92,
+   "duration": 6.0,
+   "text": "this video is the Q3 KXL version. So, we"
+  },
+  {
+   "start": 62.559,
+   "duration": 3.441,
+   "text": "will be running the model through our"
+  },
+  {
+   "start": 63.92,
+   "duration": 4.0,
+   "text": "usual test suite here. So, performance"
+  },
+  {
+   "start": 66.0,
+   "duration": 4.32,
+   "text": "where we test the prefill and the decode"
+  },
+  {
+   "start": 67.92,
+   "duration": 4.72,
+   "text": "speed, memory, where we test the model"
+  },
+  {
+   "start": 70.32,
+   "duration": 5.6,
+   "text": "to find data throughout its context. A"
+  },
+  {
+   "start": 72.64,
+   "duration": 6.0,
+   "text": "reasoning test, 164 handwritten Python"
+  },
+  {
+   "start": 75.92,
+   "duration": 4.72,
+   "text": "challenges from OpenAI's human eval."
+  },
+  {
+   "start": 78.64,
+   "duration": 4.159,
+   "text": "Kamban test, which is our good front-end"
+  },
+  {
+   "start": 80.64,
+   "duration": 3.839,
+   "text": "web development test. SAM physics and"
+  },
+  {
+   "start": 82.799,
+   "duration": 3.441,
+   "text": "dungeon crawler for algorithmic and"
+  },
+  {
+   "start": 84.479,
+   "duration": 3.761,
+   "text": "mathematical capabilities. And then"
+  },
+  {
+   "start": 86.24,
+   "duration": 4.64,
+   "text": "finally, we ramp up the difficulty with"
+  },
+  {
+   "start": 88.24,
+   "duration": 4.32,
+   "text": "MCP connections to Blender and Godo,"
+  },
+  {
+   "start": 90.88,
+   "duration": 3.84,
+   "text": "where we have an asset created in"
+  },
+  {
+   "start": 92.56,
+   "duration": 3.76,
+   "text": "Blender, and then a game in God. And"
+  },
+  {
+   "start": 94.72,
+   "duration": 3.92,
+   "text": "then a quick look at the system this is"
+  },
+  {
+   "start": 96.32,
+   "duration": 4.32,
+   "text": "running on. So, I've got my RTX 2000 AD"
+  },
+  {
+   "start": 98.64,
+   "duration": 4.4,
+   "text": "here with 16 gigs of VRAM, which is what"
+  },
+  {
+   "start": 100.64,
+   "duration": 4.799,
+   "text": "we will be targeting our setup today on."
+  },
+  {
+   "start": 103.04,
+   "duration": 4.399,
+   "text": "And then we've got 32 gigs of system"
+  },
+  {
+   "start": 105.439,
+   "duration": 4.401,
+   "text": "memory. And then I've also got a two"
+  },
+  {
+   "start": 107.439,
+   "duration": 3.761,
+   "text": "TBTE storage device here, which I don't"
+  },
+  {
+   "start": 109.84,
+   "duration": 2.959,
+   "text": "normally mention in these tests, but"
+  },
+  {
+   "start": 111.2,
+   "duration": 3.68,
+   "text": "it's actually important for this model."
+  },
+  {
+   "start": 112.799,
+   "duration": 4.0,
+   "text": "And then I've got a 50/90, which usually"
+  },
+  {
+   "start": 114.88,
+   "duration": 3.199,
+   "text": "helps me speed up my tests in some"
+  },
+  {
+   "start": 116.799,
+   "duration": 2.881,
+   "text": "videos, but it's not really going to"
+  },
+  {
+   "start": 118.079,
+   "duration": 4.08,
+   "text": "help that much for this one. And you"
+  },
+  {
+   "start": 119.68,
+   "duration": 3.759,
+   "text": "will be able to find my configs. If you"
+  },
+  {
+   "start": 122.159,
+   "duration": 2.881,
+   "text": "go down to the description of this"
+  },
+  {
+   "start": 123.439,
+   "duration": 3.04,
+   "text": "video, there's a link to my website, and"
+  },
+  {
+   "start": 125.04,
+   "duration": 3.279,
+   "text": "then from there, you'll be able to find"
+  },
+  {
+   "start": 126.479,
+   "duration": 3.76,
+   "text": "a link to the configurations where I"
+  },
+  {
+   "start": 128.319,
+   "duration": 5.521,
+   "text": "have this model configured to run on"
+  },
+  {
+   "start": 130.239,
+   "duration": 5.36,
+   "text": "this 16 gig GPU. So, let's jump into our"
+  },
+  {
+   "start": 133.84,
+   "duration": 4.0,
+   "text": "benchmarks and we'll start off with the"
+  },
+  {
+   "start": 135.599,
+   "duration": 5.841,
+   "text": "performance test of the model. So, for"
+  },
+  {
+   "start": 137.84,
+   "duration": 5.36,
+   "text": "context on this one, I'm only using 64K"
+  },
+  {
+   "start": 141.44,
+   "duration": 4.0,
+   "text": "and this is what I'm going to be using"
+  },
+  {
+   "start": 143.2,
+   "duration": 5.6,
+   "text": "throughout this video because for me on"
+  },
+  {
+   "start": 145.44,
+   "duration": 6.0,
+   "text": "my system, 128K was just not feasible."
+  },
+  {
+   "start": 148.8,
+   "duration": 4.48,
+   "text": "So, you can see we've got our Q3 KXL"
+  },
+  {
+   "start": 151.44,
+   "duration": 4.24,
+   "text": "quantization. And we're going to start"
+  },
+  {
+   "start": 153.28,
+   "duration": 4.0,
+   "text": "off with the prefill speed of the model."
+  },
+  {
+   "start": 155.68,
+   "duration": 4.08,
+   "text": "And this is the speed at which the model"
+  },
+  {
+   "start": 157.28,
+   "duration": 4.319,
+   "text": "can read your prompt, ingest tokens,"
+  },
+  {
+   "start": 159.76,
+   "duration": 4.16,
+   "text": "like a code base, this sort of thing."
+  },
+  {
+   "start": 161.599,
+   "duration": 5.681,
+   "text": "So, at a very short prefill, I'm getting"
+  },
+  {
+   "start": 163.92,
+   "duration": 6.24,
+   "text": "27 tokens a second uncashed, 1,900"
+  },
+  {
+   "start": 167.28,
+   "duration": 6.48,
+   "text": "cached. Coming up to a long prefill, so"
+  },
+  {
+   "start": 170.16,
+   "duration": 6.079,
+   "text": "cached 112,000, but we're still 28"
+  },
+  {
+   "start": 173.76,
+   "duration": 3.92,
+   "text": "tokens a second uncashed. And this is"
+  },
+  {
+   "start": 176.239,
+   "duration": 3.521,
+   "text": "actually where this model is quite"
+  },
+  {
+   "start": 177.68,
+   "duration": 5.68,
+   "text": "painful for me, and it's that the"
+  },
+  {
+   "start": 179.76,
+   "duration": 5.44,
+   "text": "prefill speed is very slow on my system."
+  },
+  {
+   "start": 183.36,
+   "duration": 3.599,
+   "text": "And you might find it for yours too,"
+  },
+  {
+   "start": 185.2,
+   "duration": 4.0,
+   "text": "depending on how much system memory"
+  },
+  {
+   "start": 186.959,
+   "duration": 4.0,
+   "text": "you've got. And then coming down to our"
+  },
+  {
+   "start": 189.2,
+   "duration": 3.2,
+   "text": "decode speed, this is where the model is"
+  },
+  {
+   "start": 190.959,
+   "duration": 4.961,
+   "text": "actually quite good. So I'm getting"
+  },
+  {
+   "start": 192.4,
+   "duration": 5.52,
+   "text": "around 14 almost 15 tokens a second on"
+  },
+  {
+   "start": 195.92,
+   "duration": 3.679,
+   "text": "the generation speed for this model. And"
+  },
+  {
+   "start": 197.92,
+   "duration": 4.56,
+   "text": "again, this performance test you're"
+  },
+  {
+   "start": 199.599,
+   "duration": 5.121,
+   "text": "seeing this is with my 16 gig GPU. And"
+  },
+  {
+   "start": 202.48,
+   "duration": 5.759,
+   "text": "then we're offloading to both system"
+  },
+  {
+   "start": 204.72,
+   "duration": 5.92,
+   "text": "memory and we're using our SSD. So"
+  },
+  {
+   "start": 208.239,
+   "duration": 4.08,
+   "text": "moving on to needle in the hay stack. So"
+  },
+  {
+   "start": 210.64,
+   "duration": 4.64,
+   "text": "you'll normally see me fill up the"
+  },
+  {
+   "start": 212.319,
+   "duration": 6.0,
+   "text": "context of the model to 256K in this"
+  },
+  {
+   "start": 215.28,
+   "duration": 6.16,
+   "text": "one, but it was just not feasible"
+  },
+  {
+   "start": 218.319,
+   "duration": 5.361,
+   "text": "really. So I wanted to do 256K, but a"
+  },
+  {
+   "start": 221.44,
+   "duration": 4.48,
+   "text": "single run was going to take about 5 to"
+  },
+  {
+   "start": 223.68,
+   "duration": 4.639,
+   "text": "6 hours. So this would have locked up my"
+  },
+  {
+   "start": 225.92,
+   "duration": 4.319,
+   "text": "system for about 4 days for the testing"
+  },
+  {
+   "start": 228.319,
+   "duration": 3.84,
+   "text": "period. And so I decided to go with the"
+  },
+  {
+   "start": 230.239,
+   "duration": 4.241,
+   "text": "60K context because that's what we're"
+  },
+  {
+   "start": 232.159,
+   "duration": 4.401,
+   "text": "doing all of our testing today anyway."
+  },
+  {
+   "start": 234.48,
+   "duration": 4.56,
+   "text": "And you can see this took almost 11"
+  },
+  {
+   "start": 236.56,
+   "duration": 4.399,
+   "text": "hours at this. though it's again it's"
+  },
+  {
+   "start": 239.04,
+   "duration": 4.559,
+   "text": "the prefill that makes this so painful"
+  },
+  {
+   "start": 240.959,
+   "duration": 4.48,
+   "text": "and this test is almost entirely prefill"
+  },
+  {
+   "start": 243.599,
+   "duration": 3.761,
+   "text": "based. So anyway jumping into the"
+  },
+  {
+   "start": 245.439,
+   "duration": 5.601,
+   "text": "results. So we fill up the data of the"
+  },
+  {
+   "start": 247.36,
+   "duration": 5.76,
+   "text": "context at these depths 0 25 50 75 and"
+  },
+  {
+   "start": 251.04,
+   "duration": 3.919,
+   "text": "100% depth. We ask the model to find a"
+  },
+  {
+   "start": 253.12,
+   "duration": 3.76,
+   "text": "piece of data at those depths and we ask"
+  },
+  {
+   "start": 254.959,
+   "duration": 4.24,
+   "text": "it to do it three times over. So this"
+  },
+  {
+   "start": 256.88,
+   "duration": 4.24,
+   "text": "does show at least at our 60k context"
+  },
+  {
+   "start": 259.199,
+   "duration": 3.841,
+   "text": "that the model finds the data throughout"
+  },
+  {
+   "start": 261.12,
+   "duration": 3.76,
+   "text": "the context without issue. And then"
+  },
+  {
+   "start": 263.04,
+   "duration": 3.92,
+   "text": "looking at the results here, the outputs"
+  },
+  {
+   "start": 264.88,
+   "duration": 4.8,
+   "text": "of the model, they're not super clean,"
+  },
+  {
+   "start": 266.96,
+   "duration": 5.36,
+   "text": "but the data does always get found. So"
+  },
+  {
+   "start": 269.68,
+   "duration": 4.88,
+   "text": "yeah, this test, you can see the outputs"
+  },
+  {
+   "start": 272.32,
+   "duration": 4.48,
+   "text": "are always fairly noisy from the model,"
+  },
+  {
+   "start": 274.56,
+   "duration": 4.16,
+   "text": "but it does always find the data. But"
+  },
+  {
+   "start": 276.8,
+   "duration": 3.76,
+   "text": "we'll see how it performs as we move"
+  },
+  {
+   "start": 278.72,
+   "duration": 3.44,
+   "text": "through our tests as well. So my"
+  },
+  {
+   "start": 280.56,
+   "duration": 4.32,
+   "text": "apologies for not running this one on"
+  },
+  {
+   "start": 282.16,
+   "duration": 4.64,
+   "text": "the large context that I normally do. So"
+  },
+  {
+   "start": 284.88,
+   "duration": 4.24,
+   "text": "moving on to our reasoning benchmark"
+  },
+  {
+   "start": 286.8,
+   "duration": 4.24,
+   "text": "now. So this is where we ask the model a"
+  },
+  {
+   "start": 289.12,
+   "duration": 4.96,
+   "text": "bunch of questions that get increasingly"
+  },
+  {
+   "start": 291.04,
+   "duration": 6.159,
+   "text": "difficult over time. So we've got 40 out"
+  },
+  {
+   "start": 294.08,
+   "duration": 5.2,
+   "text": "of 48 here with an 83% pass rate, which"
+  },
+  {
+   "start": 297.199,
+   "duration": 4.801,
+   "text": "is not too bad. And then we can see"
+  },
+  {
+   "start": 299.28,
+   "duration": 4.639,
+   "text": "typical sort of results here where the"
+  },
+  {
+   "start": 302.0,
+   "duration": 4.479,
+   "text": "model just starts to dip down towards"
+  },
+  {
+   "start": 303.919,
+   "duration": 4.401,
+   "text": "the end. So 10 out of 12 on the hard"
+  },
+  {
+   "start": 306.479,
+   "duration": 4.801,
+   "text": "questions is pretty good. It's not too"
+  },
+  {
+   "start": 308.32,
+   "duration": 5.28,
+   "text": "bad. And then 50% correct on the expert"
+  },
+  {
+   "start": 311.28,
+   "duration": 3.919,
+   "text": "ones, which is also not too bad. We we"
+  },
+  {
+   "start": 313.6,
+   "duration": 3.68,
+   "text": "haven't seen a model so far that's"
+  },
+  {
+   "start": 315.199,
+   "duration": 3.84,
+   "text": "passed this. Even I've tested this on"
+  },
+  {
+   "start": 317.28,
+   "duration": 3.84,
+   "text": "frontier level models and they don't"
+  },
+  {
+   "start": 319.039,
+   "duration": 4.481,
+   "text": "pass the expert ones. So it's a pretty"
+  },
+  {
+   "start": 321.12,
+   "duration": 5.44,
+   "text": "decent result on reasoning. And then"
+  },
+  {
+   "start": 323.52,
+   "duration": 5.44,
+   "text": "finally onto our OpenAI human eval. So"
+  },
+  {
+   "start": 326.56,
+   "duration": 4.4,
+   "text": "this is 164 handwritten Python"
+  },
+  {
+   "start": 328.96,
+   "duration": 3.6,
+   "text": "challenges which is possibly benchmaxed"
+  },
+  {
+   "start": 330.96,
+   "duration": 2.88,
+   "text": "at this point, but I'll have this link"
+  },
+  {
+   "start": 332.56,
+   "duration": 3.199,
+   "text": "down below if you'd like to read up on"
+  },
+  {
+   "start": 333.84,
+   "duration": 4.56,
+   "text": "it or even run it for yourself. So"
+  },
+  {
+   "start": 335.759,
+   "duration": 6.481,
+   "text": "jumping into the results, we've got 85%"
+  },
+  {
+   "start": 338.4,
+   "duration": 5.519,
+   "text": "pass rate and 99% pass rate of answered."
+  },
+  {
+   "start": 342.24,
+   "duration": 4.08,
+   "text": "So this is because the model's got an"
+  },
+  {
+   "start": 343.919,
+   "duration": 4.881,
+   "text": "86% answer rate where it's failed to"
+  },
+  {
+   "start": 346.32,
+   "duration": 4.08,
+   "text": "answer 23 questions. So if we grade it"
+  },
+  {
+   "start": 348.8,
+   "duration": 5.04,
+   "text": "only on the questions it's answered,"
+  },
+  {
+   "start": 350.4,
+   "duration": 6.239,
+   "text": "it's got 99% correct whereas if we grade"
+  },
+  {
+   "start": 353.84,
+   "duration": 4.639,
+   "text": "it overall it's 85. So this actually a"
+  },
+  {
+   "start": 356.639,
+   "duration": 4.321,
+   "text": "pretty good result for the model on this"
+  },
+  {
+   "start": 358.479,
+   "duration": 3.841,
+   "text": "test. So let's move into our coding"
+  },
+  {
+   "start": 360.96,
+   "duration": 3.519,
+   "text": "challenges now and we'll start with"
+  },
+  {
+   "start": 362.32,
+   "duration": 4.319,
+   "text": "canbam which is our front-end web"
+  },
+  {
+   "start": 364.479,
+   "duration": 4.641,
+   "text": "development test. So the model actually"
+  },
+  {
+   "start": 366.639,
+   "duration": 5.761,
+   "text": "delivered in a zero shot on this. So if"
+  },
+  {
+   "start": 369.12,
+   "duration": 6.0,
+   "text": "we come down here we can see of our 66k"
+  },
+  {
+   "start": 372.4,
+   "duration": 5.2,
+   "text": "tokens 61.6%"
+  },
+  {
+   "start": 375.12,
+   "duration": 4.799,
+   "text": "were used. So if we imagine we're"
+  },
+  {
+   "start": 377.6,
+   "duration": 4.319,
+   "text": "normally working with our 130k context"
+  },
+  {
+   "start": 379.919,
+   "duration": 4.0,
+   "text": "would be at about 30% of our context"
+  },
+  {
+   "start": 381.919,
+   "duration": 4.72,
+   "text": "used which is very low. So if we move"
+  },
+  {
+   "start": 383.919,
+   "duration": 4.961,
+   "text": "over to our result here. So what you can"
+  },
+  {
+   "start": 386.639,
+   "duration": 4.801,
+   "text": "see it's done. It's very nice actually."
+  },
+  {
+   "start": 388.88,
+   "duration": 4.319,
+   "text": "So we can move our cards around. It's"
+  },
+  {
+   "start": 391.44,
+   "duration": 4.72,
+   "text": "quite intuitive where the card is going"
+  },
+  {
+   "start": 393.199,
+   "duration": 5.44,
+   "text": "to be placed with this blue line. If you"
+  },
+  {
+   "start": 396.16,
+   "duration": 5.36,
+   "text": "move it over here, it gets a done state."
+  },
+  {
+   "start": 398.639,
+   "duration": 4.881,
+   "text": "We can edit cards. Everything is"
+  },
+  {
+   "start": 401.52,
+   "duration": 3.76,
+   "text": "complete in here. And then we can move"
+  },
+  {
+   "start": 403.52,
+   "duration": 3.44,
+   "text": "the columns around as well, which is"
+  },
+  {
+   "start": 405.28,
+   "duration": 3.359,
+   "text": "quite intuitive. Again, with that blue"
+  },
+  {
+   "start": 406.96,
+   "duration": 3.84,
+   "text": "line, we can see where the column's"
+  },
+  {
+   "start": 408.639,
+   "duration": 4.0,
+   "text": "going to move to. So, it's done a really"
+  },
+  {
+   "start": 410.8,
+   "duration": 3.6,
+   "text": "good job here. We've got dark and light."
+  },
+  {
+   "start": 412.639,
+   "duration": 3.84,
+   "text": "All the features are working. Everything"
+  },
+  {
+   "start": 414.4,
+   "duration": 3.76,
+   "text": "is complete. So, in a zero shot, and"
+  },
+  {
+   "start": 416.479,
+   "duration": 3.44,
+   "text": "with the amount of context used, it's"
+  },
+  {
+   "start": 418.16,
+   "duration": 4.879,
+   "text": "actually done a very good job on this"
+  },
+  {
+   "start": 419.919,
+   "duration": 5.761,
+   "text": "task. So, moving on over to our sand"
+  },
+  {
+   "start": 423.039,
+   "duration": 5.521,
+   "text": "physics now. And this was also a zero"
+  },
+  {
+   "start": 425.68,
+   "duration": 5.359,
+   "text": "shot and the model used up 40% of our"
+  },
+  {
+   "start": 428.56,
+   "duration": 4.8,
+   "text": "60k. So again, this would be about 20%"
+  },
+  {
+   "start": 431.039,
+   "duration": 4.56,
+   "text": "of the context we usually work at for"
+  },
+  {
+   "start": 433.36,
+   "duration": 4.08,
+   "text": "comparison. And what it's delivered, if"
+  },
+  {
+   "start": 435.599,
+   "duration": 4.961,
+   "text": "I refresh this, you can see it starts"
+  },
+  {
+   "start": 437.44,
+   "duration": 5.199,
+   "text": "with some demo content. And it's working"
+  },
+  {
+   "start": 440.56,
+   "duration": 5.039,
+   "text": "quite well. So you can see we can place"
+  },
+  {
+   "start": 442.639,
+   "duration": 7.041,
+   "text": "the sand. We can place the water and it"
+  },
+  {
+   "start": 445.599,
+   "duration": 6.481,
+   "text": "flows down. We can place the wall tiles"
+  },
+  {
+   "start": 449.68,
+   "duration": 4.079,
+   "text": "and the water will flow through it. And"
+  },
+  {
+   "start": 452.08,
+   "duration": 3.519,
+   "text": "then we can place the acid as well and"
+  },
+  {
+   "start": 453.759,
+   "duration": 4.0,
+   "text": "it burns through the materials as it's"
+  },
+  {
+   "start": 455.599,
+   "duration": 4.401,
+   "text": "supposed to and it dissolves as it burns"
+  },
+  {
+   "start": 457.759,
+   "duration": 4.88,
+   "text": "through the materials. We've even got an"
+  },
+  {
+   "start": 460.0,
+   "duration": 4.96,
+   "text": "eraser brush which is a nice touch. And"
+  },
+  {
+   "start": 462.639,
+   "duration": 5.28,
+   "text": "then you can clear the canvas as well as"
+  },
+  {
+   "start": 464.96,
+   "duration": 5.04,
+   "text": "adjust the brush size. It's got textures"
+  },
+  {
+   "start": 467.919,
+   "duration": 3.921,
+   "text": "on the background here which is quite"
+  },
+  {
+   "start": 470.0,
+   "duration": 4.24,
+   "text": "nice. So overall it's done a pretty good"
+  },
+  {
+   "start": 471.84,
+   "duration": 4.479,
+   "text": "job on this one as well. So we'll move"
+  },
+  {
+   "start": 474.24,
+   "duration": 4.0,
+   "text": "on to our dungeon crawler now. A good"
+  },
+  {
+   "start": 476.319,
+   "duration": 4.32,
+   "text": "test of algorithmic capabilities with"
+  },
+  {
+   "start": 478.24,
+   "duration": 5.2,
+   "text": "dungeon generation and ray casting. So"
+  },
+  {
+   "start": 480.639,
+   "duration": 6.56,
+   "text": "this is another zero shot and this was"
+  },
+  {
+   "start": 483.44,
+   "duration": 6.879,
+   "text": "28.9% of our 60k context. So we'd be"
+  },
+  {
+   "start": 487.199,
+   "duration": 5.041,
+   "text": "sitting at about 14% used if we were at"
+  },
+  {
+   "start": 490.319,
+   "duration": 4.241,
+   "text": "130k like normal. And then coming over"
+  },
+  {
+   "start": 492.24,
+   "duration": 4.799,
+   "text": "to our result and again it's delivered a"
+  },
+  {
+   "start": 494.56,
+   "duration": 5.44,
+   "text": "very nice result. So the ray casting is"
+  },
+  {
+   "start": 497.039,
+   "duration": 6.321,
+   "text": "working [snorts] the fog of war. We can"
+  },
+  {
+   "start": 500.0,
+   "duration": 5.039,
+   "text": "do god mode. We can toggle the dungeons."
+  },
+  {
+   "start": 503.36,
+   "duration": 3.839,
+   "text": "The design is quite unique. I've not"
+  },
+  {
+   "start": 505.039,
+   "duration": 5.041,
+   "text": "seen a dungeon design like this before"
+  },
+  {
+   "start": 507.199,
+   "duration": 5.361,
+   "text": "where it's mostly corridors, but it's"
+  },
+  {
+   "start": 510.08,
+   "duration": 5.12,
+   "text": "still valid. So, yeah, the models has"
+  },
+  {
+   "start": 512.56,
+   "duration": 4.479,
+   "text": "done another good job on this task. So,"
+  },
+  {
+   "start": 515.2,
+   "duration": 4.079,
+   "text": "let's move on to some more difficult"
+  },
+  {
+   "start": 517.039,
+   "duration": 4.401,
+   "text": "tasks now. So, we're going to move into"
+  },
+  {
+   "start": 519.279,
+   "duration": 3.76,
+   "text": "the MCP portion of this video now. And"
+  },
+  {
+   "start": 521.44,
+   "duration": 3.519,
+   "text": "this is where the difficulty will start"
+  },
+  {
+   "start": 523.039,
+   "duration": 3.841,
+   "text": "to ramp up. And we're starting with"
+  },
+  {
+   "start": 524.959,
+   "duration": 4.56,
+   "text": "Blender. And what we do here is we ask"
+  },
+  {
+   "start": 526.88,
+   "duration": 5.04,
+   "text": "the model to create a starfold lantern."
+  },
+  {
+   "start": 529.519,
+   "duration": 4.721,
+   "text": "Now, you might think the prompt was to"
+  },
+  {
+   "start": 531.92,
+   "duration": 4.8,
+   "text": "deliver a deconstructed one, but it's"
+  },
+  {
+   "start": 534.24,
+   "duration": 4.48,
+   "text": "not. So, you can see the asset here is"
+  },
+  {
+   "start": 536.72,
+   "duration": 3.52,
+   "text": "not perfect. But in part of this test is"
+  },
+  {
+   "start": 538.72,
+   "duration": 3.28,
+   "text": "we also ask it to deliver some"
+  },
+  {
+   "start": 540.24,
+   "duration": 3.52,
+   "text": "screenshots of the render so we can see"
+  },
+  {
+   "start": 542.0,
+   "duration": 5.519,
+   "text": "it fully. But first, a quick look in the"
+  },
+  {
+   "start": 543.76,
+   "duration": 5.44,
+   "text": "code. So, this came back in a zero shot"
+  },
+  {
+   "start": 547.519,
+   "duration": 3.44,
+   "text": "as well, but it did require a"
+  },
+  {
+   "start": 549.2,
+   "duration": 4.4,
+   "text": "compaction, but that's unsurprising"
+  },
+  {
+   "start": 550.959,
+   "duration": 4.481,
+   "text": "considering our limited context. So,"
+  },
+  {
+   "start": 553.6,
+   "duration": 3.2,
+   "text": "before it did the compaction, I had a"
+  },
+  {
+   "start": 555.44,
+   "duration": 3.04,
+   "text": "quick look and it looked like everything"
+  },
+  {
+   "start": 556.8,
+   "duration": 3.52,
+   "text": "was complete. The screenshots had been"
+  },
+  {
+   "start": 558.48,
+   "duration": 3.44,
+   "text": "delivered. Everything was there. But I"
+  },
+  {
+   "start": 560.32,
+   "duration": 4.88,
+   "text": "did just let the model go through to the"
+  },
+  {
+   "start": 561.92,
+   "duration": 6.4,
+   "text": "end and reach this delivered state. And"
+  },
+  {
+   "start": 565.2,
+   "duration": 5.759,
+   "text": "this compaction was where I saw the"
+  },
+  {
+   "start": 568.32,
+   "duration": 4.88,
+   "text": "weakness of this model on my system. So"
+  },
+  {
+   "start": 570.959,
+   "duration": 5.361,
+   "text": "once the model got to its state of"
+  },
+  {
+   "start": 573.2,
+   "duration": 5.6,
+   "text": "compaction, it took I would say about an"
+  },
+  {
+   "start": 576.32,
+   "duration": 6.16,
+   "text": "hour to perform the compaction, which"
+  },
+  {
+   "start": 578.8,
+   "duration": 5.52,
+   "text": "was not great. But let's look at the"
+  },
+  {
+   "start": 582.48,
+   "duration": 4.16,
+   "text": "screenshots. So these are the shots it's"
+  },
+  {
+   "start": 584.32,
+   "duration": 4.8,
+   "text": "delivered. So here we've got a nice"
+  },
+  {
+   "start": 586.64,
+   "duration": 3.92,
+   "text": "scene of the lantern. We've got that"
+  },
+  {
+   "start": 589.12,
+   "duration": 3.44,
+   "text": "close-up shot. And then we've got"
+  },
+  {
+   "start": 590.56,
+   "duration": 3.279,
+   "text": "another one here and another shot here."
+  },
+  {
+   "start": 592.56,
+   "duration": 4.0,
+   "text": "I think this is probably the best shot"
+  },
+  {
+   "start": 593.839,
+   "duration": 4.481,
+   "text": "we've got. So I would say the asset is"
+  },
+  {
+   "start": 596.56,
+   "duration": 4.08,
+   "text": "really nice. I think the design is"
+  },
+  {
+   "start": 598.32,
+   "duration": 5.12,
+   "text": "really nice, but obviously some of the"
+  },
+  {
+   "start": 600.64,
+   "duration": 4.72,
+   "text": "parts are not correct. So these sort of"
+  },
+  {
+   "start": 603.44,
+   "duration": 3.76,
+   "text": "columns, if you will, here they"
+  },
+  {
+   "start": 605.36,
+   "duration": 3.44,
+   "text": "obviously need to be extending the"
+  },
+  {
+   "start": 607.2,
+   "duration": 4.56,
+   "text": "entire length. And then these glass"
+  },
+  {
+   "start": 608.8,
+   "duration": 5.12,
+   "text": "panes are orientated wrong, which we do"
+  },
+  {
+   "start": 611.76,
+   "duration": 4.72,
+   "text": "see quite often with models doing this."
+  },
+  {
+   "start": 613.92,
+   "duration": 5.359,
+   "text": "But I think if the assets were in the"
+  },
+  {
+   "start": 616.48,
+   "duration": 4.88,
+   "text": "correct placement, I think the overall"
+  },
+  {
+   "start": 619.279,
+   "duration": 4.161,
+   "text": "design is really quite nice. Like I like"
+  },
+  {
+   "start": 621.36,
+   "duration": 4.96,
+   "text": "the details on the top section up here."
+  },
+  {
+   "start": 623.44,
+   "duration": 4.88,
+   "text": "I like the hanging ornamental sort of"
+  },
+  {
+   "start": 626.32,
+   "duration": 3.6,
+   "text": "parts here and the the core in the"
+  },
+  {
+   "start": 628.32,
+   "duration": 3.04,
+   "text": "middle looks really good. So I think it"
+  },
+  {
+   "start": 629.92,
+   "duration": 3.039,
+   "text": "has done a really good job. It's just"
+  },
+  {
+   "start": 631.36,
+   "duration": 3.2,
+   "text": "some of the placement and orientation"
+  },
+  {
+   "start": 632.959,
+   "duration": 3.281,
+   "text": "that it's missed on. But if you could"
+  },
+  {
+   "start": 634.56,
+   "duration": 3.76,
+   "text": "get it to fix these issues, I think"
+  },
+  {
+   "start": 636.24,
+   "duration": 4.56,
+   "text": "you'd have a really nice looking asset"
+  },
+  {
+   "start": 638.32,
+   "duration": 4.4,
+   "text": "here. So we're moving on to our final"
+  },
+  {
+   "start": 640.8,
+   "duration": 3.52,
+   "text": "and most difficult challenge here. And"
+  },
+  {
+   "start": 642.72,
+   "duration": 3.92,
+   "text": "this is where we use the Godo game"
+  },
+  {
+   "start": 644.32,
+   "duration": 5.44,
+   "text": "engine and we ask the model to create a"
+  },
+  {
+   "start": 646.64,
+   "duration": 5.36,
+   "text": "3D game where the user can traverse a"
+  },
+  {
+   "start": 649.76,
+   "duration": 4.079,
+   "text": "scene, pick up collectibles which can"
+  },
+  {
+   "start": 652.0,
+   "duration": 4.16,
+   "text": "then trigger an end goal that they can"
+  },
+  {
+   "start": 653.839,
+   "duration": 4.881,
+   "text": "reach and trigger an end state. And it"
+  },
+  {
+   "start": 656.16,
+   "duration": 4.56,
+   "text": "must have moving platforms and obstacles"
+  },
+  {
+   "start": 658.72,
+   "duration": 4.32,
+   "text": "along the way. So there's quite a lot to"
+  },
+  {
+   "start": 660.72,
+   "duration": 5.04,
+   "text": "this one. So jumping into the code. So"
+  },
+  {
+   "start": 663.04,
+   "duration": 6.0,
+   "text": "you can see here session compacted three"
+  },
+  {
+   "start": 665.76,
+   "duration": 5.6,
+   "text": "times. And this was absolute pain for me"
+  },
+  {
+   "start": 669.04,
+   "duration": 4.16,
+   "text": "because these compactions, the first one"
+  },
+  {
+   "start": 671.36,
+   "duration": 4.08,
+   "text": "took maybe around an hour, but then the"
+  },
+  {
+   "start": 673.2,
+   "duration": 4.16,
+   "text": "next compaction took even longer and the"
+  },
+  {
+   "start": 675.44,
+   "duration": 4.16,
+   "text": "one after that took even longer. So this"
+  },
+  {
+   "start": 677.36,
+   "duration": 4.32,
+   "text": "test took me like a whole day to run. So"
+  },
+  {
+   "start": 679.6,
+   "duration": 4.4,
+   "text": "this one did take a few shots as well."
+  },
+  {
+   "start": 681.68,
+   "duration": 4.08,
+   "text": "So the game if you if I tried to run it,"
+  },
+  {
+   "start": 684.0,
+   "duration": 3.76,
+   "text": "it would just be like a blank screen. So"
+  },
+  {
+   "start": 685.76,
+   "duration": 4.079,
+   "text": "I had to tell the model about this and"
+  },
+  {
+   "start": 687.76,
+   "duration": 3.759,
+   "text": "then there would be errors when I would"
+  },
+  {
+   "start": 689.839,
+   "duration": 4.24,
+   "text": "try and run the game after it was trying"
+  },
+  {
+   "start": 691.519,
+   "duration": 4.481,
+   "text": "to fix this. So, what I actually did was"
+  },
+  {
+   "start": 694.079,
+   "duration": 3.681,
+   "text": "when I looked in the scene here,"
+  },
+  {
+   "start": 696.0,
+   "duration": 3.6,
+   "text": "everything looked complete, but the game"
+  },
+  {
+   "start": 697.76,
+   "duration": 3.28,
+   "text": "just wouldn't start up. It wouldn't run."
+  },
+  {
+   "start": 699.6,
+   "duration": 3.919,
+   "text": "There were just errors that were popping"
+  },
+  {
+   "start": 701.04,
+   "duration": 4.4,
+   "text": "up and the model was absolutely crawling"
+  },
+  {
+   "start": 703.519,
+   "duration": 4.481,
+   "text": "to fix this because the prefill speed"
+  },
+  {
+   "start": 705.44,
+   "duration": 4.16,
+   "text": "was so bad. So, what I actually did on"
+  },
+  {
+   "start": 708.0,
+   "duration": 4.079,
+   "text": "this test, just because I wanted to see"
+  },
+  {
+   "start": 709.6,
+   "duration": 4.96,
+   "text": "what had been generated, was I stopped"
+  },
+  {
+   "start": 712.079,
+   "duration": 7.44,
+   "text": "the Flash Next model. I loaded up Quen"
+  },
+  {
+   "start": 714.56,
+   "duration": 6.959,
+   "text": "3.8 27B at Q4 KXL and I just asked it,"
+  },
+  {
+   "start": 719.519,
+   "duration": 3.601,
+   "text": "\"Don't modify the game in any way. Can"
+  },
+  {
+   "start": 721.519,
+   "duration": 3.121,
+   "text": "you just make it run? Get it to a state"
+  },
+  {
+   "start": 723.12,
+   "duration": 3.2,
+   "text": "where I can run it. So that is what I"
+  },
+  {
+   "start": 724.64,
+   "duration": 3.92,
+   "text": "did on this one because like I said,"
+  },
+  {
+   "start": 726.32,
+   "duration": 5.04,
+   "text": "this test took me like all day to do. So"
+  },
+  {
+   "start": 728.56,
+   "duration": 7.519,
+   "text": "if we run this now and we can see here"
+  },
+  {
+   "start": 731.36,
+   "duration": 7.44,
+   "text": "what it's done. So I Oh, I forgot."
+  },
+  {
+   "start": 736.079,
+   "duration": 6.161,
+   "text": "W and S are reversed like a lot of"
+  },
+  {
+   "start": 738.8,
+   "duration": 5.2,
+   "text": "models will do. So I can collect this"
+  },
+  {
+   "start": 742.24,
+   "duration": 4.56,
+   "text": "key"
+  },
+  {
+   "start": 744.0,
+   "duration": 5.36,
+   "text": "and we can jump to the platform. Got the"
+  },
+  {
+   "start": 746.8,
+   "duration": 4.479,
+   "text": "second key. See, I do like what it's"
+  },
+  {
+   "start": 749.36,
+   "duration": 3.52,
+   "text": "done here with the environment. It's"
+  },
+  {
+   "start": 751.279,
+   "duration": 3.921,
+   "text": "quite cool. It's created a lot of"
+  },
+  {
+   "start": 752.88,
+   "duration": 5.199,
+   "text": "different sort of block types and"
+  },
+  {
+   "start": 755.2,
+   "duration": 5.12,
+   "text": "colors. So, you reach a checkpoint here"
+  },
+  {
+   "start": 758.079,
+   "duration": 4.88,
+   "text": "and then I was killed by this thing. So,"
+  },
+  {
+   "start": 760.32,
+   "duration": 5.759,
+   "text": "if we jump on this."
+  },
+  {
+   "start": 762.959,
+   "duration": 5.12,
+   "text": "There we go. So, complete. So, it does"
+  },
+  {
+   "start": 766.079,
+   "duration": 4.0,
+   "text": "work. It's pretty nice. It's not"
+  },
+  {
+   "start": 768.079,
+   "duration": 5.681,
+   "text": "terrible. I think it's done a decent job"
+  },
+  {
+   "start": 770.079,
+   "duration": 6.481,
+   "text": "here. But um yeah, it did take another"
+  },
+  {
+   "start": 773.76,
+   "duration": 4.319,
+   "text": "model to get it to the end just because"
+  },
+  {
+   "start": 776.56,
+   "duration": 4.0,
+   "text": "again that pain that I had with the"
+  },
+  {
+   "start": 778.079,
+   "duration": 4.32,
+   "text": "prefill speed on this one. All right, so"
+  },
+  {
+   "start": 780.56,
+   "duration": 5.92,
+   "text": "that'll bring us to the end of this"
+  },
+  {
+   "start": 782.399,
+   "duration": 6.081,
+   "text": "video on Quen Flash Next. So let's go"
+  },
+  {
+   "start": 786.48,
+   "duration": 3.12,
+   "text": "through a quick summary of the findings."
+  },
+  {
+   "start": 788.48,
+   "duration": 3.2,
+   "text": "So you'll be able to head over to"
+  },
+  {
+   "start": 789.6,
+   "duration": 5.44,
+   "text": "lukedevlab.com and review this for"
+  },
+  {
+   "start": 791.68,
+   "duration": 5.92,
+   "text": "yourself. So our performance 14.8 eight"
+  },
+  {
+   "start": 795.04,
+   "duration": 4.479,
+   "text": "tokens a second on decode is actually"
+  },
+  {
+   "start": 797.6,
+   "duration": 4.4,
+   "text": "quite good for a model considering it's"
+  },
+  {
+   "start": 799.519,
+   "duration": 4.641,
+   "text": "like 170 billion parameters. But it's"
+  },
+  {
+   "start": 802.0,
+   "duration": 4.32,
+   "text": "this prefill uncashed which is really"
+  },
+  {
+   "start": 804.16,
+   "duration": 4.72,
+   "text": "where my system suffers. So you are"
+  },
+  {
+   "start": 806.32,
+   "duration": 5.04,
+   "text": "going to need a lot of system memory to"
+  },
+  {
+   "start": 808.88,
+   "duration": 5.6,
+   "text": "run this model and with me I've only got"
+  },
+  {
+   "start": 811.36,
+   "duration": 6.0,
+   "text": "32 GB. So that's quite a limitation for"
+  },
+  {
+   "start": 814.48,
+   "duration": 5.68,
+   "text": "me. So looking at our memory test it was"
+  },
+  {
+   "start": 817.36,
+   "duration": 4.479,
+   "text": "perfect but we only did this at 64k."
+  },
+  {
+   "start": 820.16,
+   "duration": 3.6,
+   "text": "Then coming down to our reasoning, it"
+  },
+  {
+   "start": 821.839,
+   "duration": 4.321,
+   "text": "did quite good at our reasoning test as"
+  },
+  {
+   "start": 823.76,
+   "duration": 4.0,
+   "text": "well. And then human eval also did quite"
+  },
+  {
+   "start": 826.16,
+   "duration": 3.679,
+   "text": "well on this one. And then if we come"
+  },
+  {
+   "start": 827.76,
+   "duration": 5.68,
+   "text": "down to our test results here. So with"
+  },
+  {
+   "start": 829.839,
+   "duration": 5.841,
+   "text": "our canban 60% of our context used. Now"
+  },
+  {
+   "start": 833.44,
+   "duration": 5.839,
+   "text": "I'm going to read these also as we"
+  },
+  {
+   "start": 835.68,
+   "duration": 5.36,
+   "text": "normally do test at 128k 130k context."
+  },
+  {
+   "start": 839.279,
+   "duration": 4.0,
+   "text": "So if we look at it from that standpoint"
+  },
+  {
+   "start": 841.04,
+   "duration": 4.88,
+   "text": "as a comparison to other models. So be"
+  },
+  {
+   "start": 843.279,
+   "duration": 4.721,
+   "text": "about 30% context used for camban in a"
+  },
+  {
+   "start": 845.92,
+   "duration": 4.32,
+   "text": "zero shot. This is actually really good."
+  },
+  {
+   "start": 848.0,
+   "duration": 5.36,
+   "text": "And then sand physics as well. It's 40%"
+  },
+  {
+   "start": 850.24,
+   "duration": 5.039,
+   "text": "context use. Zero shot be about 20%"
+  },
+  {
+   "start": 853.36,
+   "duration": 4.0,
+   "text": "compared to other models. The context we"
+  },
+  {
+   "start": 855.279,
+   "duration": 4.721,
+   "text": "use also quite good. Dungeon crawler"
+  },
+  {
+   "start": 857.36,
+   "duration": 4.719,
+   "text": "again this would be about 14%. It's also"
+  },
+  {
+   "start": 860.0,
+   "duration": 3.839,
+   "text": "a zero shot. So another really good"
+  },
+  {
+   "start": 862.079,
+   "duration": 3.921,
+   "text": "result on that. And then it's when we"
+  },
+  {
+   "start": 863.839,
+   "duration": 3.921,
+   "text": "get down to the MCP challenges where we"
+  },
+  {
+   "start": 866.0,
+   "duration": 4.24,
+   "text": "need a lot more tokens. This is where"
+  },
+  {
+   "start": 867.76,
+   "duration": 5.36,
+   "text": "things become a bit more different. So"
+  },
+  {
+   "start": 870.24,
+   "duration": 4.8,
+   "text": "with Blender, the result was okay. The"
+  },
+  {
+   "start": 873.12,
+   "duration": 3.519,
+   "text": "asset wasn't perfect. There were"
+  },
+  {
+   "start": 875.04,
+   "duration": 3.44,
+   "text": "definitely things that need fixing, but"
+  },
+  {
+   "start": 876.639,
+   "duration": 3.44,
+   "text": "it also looked quite nice at the same"
+  },
+  {
+   "start": 878.48,
+   "duration": 3.76,
+   "text": "time with the way it had done the"
+  },
+  {
+   "start": 880.079,
+   "duration": 3.921,
+   "text": "lighting, the textures, and the"
+  },
+  {
+   "start": 882.24,
+   "duration": 3.36,
+   "text": "geometry. But of course, we needed a"
+  },
+  {
+   "start": 884.0,
+   "duration": 4.639,
+   "text": "compaction here. And this is where this"
+  },
+  {
+   "start": 885.6,
+   "duration": 4.96,
+   "text": "model can become very slow if you don't"
+  },
+  {
+   "start": 888.639,
+   "duration": 3.921,
+   "text": "have a good enough system to run it. And"
+  },
+  {
+   "start": 890.56,
+   "duration": 3.76,
+   "text": "then moving on to GDAU as well. I did"
+  },
+  {
+   "start": 892.56,
+   "duration": 3.519,
+   "text": "have to get another model to step in to"
+  },
+  {
+   "start": 894.32,
+   "duration": 3.68,
+   "text": "get the game running because again, we"
+  },
+  {
+   "start": 896.079,
+   "duration": 3.601,
+   "text": "were having to compact multiple times on"
+  },
+  {
+   "start": 898.0,
+   "duration": 3.839,
+   "text": "this one, which just made the test"
+  },
+  {
+   "start": 899.68,
+   "duration": 4.159,
+   "text": "painful to run. But the result was quite"
+  },
+  {
+   "start": 901.839,
+   "duration": 4.081,
+   "text": "good as well. So I would say my"
+  },
+  {
+   "start": 903.839,
+   "duration": 3.601,
+   "text": "conclusion for this model is it's it's"
+  },
+  {
+   "start": 905.92,
+   "duration": 3.76,
+   "text": "pretty good model. It's it's quite"
+  },
+  {
+   "start": 907.44,
+   "duration": 4.24,
+   "text": "capable um as you would expect from"
+  },
+  {
+   "start": 909.68,
+   "duration": 4.159,
+   "text": "something so large. So this has 6"
+  },
+  {
+   "start": 911.68,
+   "duration": 4.399,
+   "text": "billion active parameters. So this is"
+  },
+  {
+   "start": 913.839,
+   "duration": 4.56,
+   "text": "why the decode speed is not too bad. But"
+  },
+  {
+   "start": 916.079,
+   "duration": 3.841,
+   "text": "because the model is so large, this is"
+  },
+  {
+   "start": 918.399,
+   "duration": 3.521,
+   "text": "what's going to slow you down on your"
+  },
+  {
+   "start": 919.92,
+   "duration": 4.159,
+   "text": "prefill speed. And this can really catch"
+  },
+  {
+   "start": 921.92,
+   "duration": 4.08,
+   "text": "you if you're using a large context or"
+  },
+  {
+   "start": 924.079,
+   "duration": 4.401,
+   "text": "if you're needing to compact a lot. So"
+  },
+  {
+   "start": 926.0,
+   "duration": 4.24,
+   "text": "this is the limitation of this model for"
+  },
+  {
+   "start": 928.48,
+   "duration": 3.84,
+   "text": "I think quite a lot of us to run this"
+  },
+  {
+   "start": 930.24,
+   "duration": 4.0,
+   "text": "locally. So, it is very capable and I"
+  },
+  {
+   "start": 932.32,
+   "duration": 5.199,
+   "text": "would definitely say it does contend"
+  },
+  {
+   "start": 934.24,
+   "duration": 6.0,
+   "text": "with the Quen 3.827B."
+  },
+  {
+   "start": 937.519,
+   "duration": 5.281,
+   "text": "But for most users who have modest"
+  },
+  {
+   "start": 940.24,
+   "duration": 6.08,
+   "text": "hardware, I would still say if you can"
+  },
+  {
+   "start": 942.8,
+   "duration": 6.479,
+   "text": "fit the Quen 3.827B onto your system at"
+  },
+  {
+   "start": 946.32,
+   "duration": 5.04,
+   "text": "like a Q3 quantization, it's still much"
+  },
+  {
+   "start": 949.279,
+   "duration": 4.721,
+   "text": "easier to run this model. It's just like"
+  },
+  {
+   "start": 951.36,
+   "duration": 4.719,
+   "text": "a traditional architecture. It can go on"
+  },
+  {
+   "start": 954.0,
+   "duration": 4.639,
+   "text": "your VRAM. It's not going to take up"
+  },
+  {
+   "start": 956.079,
+   "duration": 4.641,
+   "text": "like 100 GB of downloaded space on your"
+  },
+  {
+   "start": 958.639,
+   "duration": 4.0,
+   "text": "drive. Maybe that's not a problem. But"
+  },
+  {
+   "start": 960.72,
+   "duration": 3.52,
+   "text": "yeah, I would say if you've got the"
+  },
+  {
+   "start": 962.639,
+   "duration": 3.921,
+   "text": "system to run this, it's definitely"
+  },
+  {
+   "start": 964.24,
+   "duration": 5.2,
+   "text": "worth using it. But otherwise, if you"
+  },
+  {
+   "start": 966.56,
+   "duration": 5.279,
+   "text": "can just get that Quen 27B model to fit"
+  },
+  {
+   "start": 969.44,
+   "duration": 4.079,
+   "text": "on your GPU, then I would still go with"
+  },
+  {
+   "start": 971.839,
+   "duration": 2.961,
+   "text": "that. So, what do you guys think of this"
+  },
+  {
+   "start": 973.519,
+   "duration": 3.201,
+   "text": "model? I know a lot of you have been"
+  },
+  {
+   "start": 974.8,
+   "duration": 3.36,
+   "text": "asking for me to test this. I know a lot"
+  },
+  {
+   "start": 976.72,
+   "duration": 3.28,
+   "text": "of you have been using it. So, I'd be"
+  },
+  {
+   "start": 978.16,
+   "duration": 3.52,
+   "text": "curious to hear like what speed you get,"
+  },
+  {
+   "start": 980.0,
+   "duration": 3.68,
+   "text": "how the prefill is for you, like what"
+  },
+  {
+   "start": 981.68,
+   "duration": 3.68,
+   "text": "system you're using it on. It definitely"
+  },
+  {
+   "start": 983.68,
+   "duration": 2.959,
+   "text": "be interested to hear this. So, thank"
+  },
+  {
+   "start": 985.36,
+   "duration": 3.2,
+   "text": "you for making it to the end of the"
+  },
+  {
+   "start": 986.639,
+   "duration": 3.76,
+   "text": "video. I really appreciate it. A huge"
+  },
+  {
+   "start": 988.56,
+   "duration": 3.839,
+   "text": "thank you to my supporters on YouTube"
+  },
+  {
+   "start": 990.399,
+   "duration": 3.44,
+   "text": "and Patreon. You guys are amazing. So,"
+  },
+  {
+   "start": 992.399,
+   "duration": 3.12,
+   "text": "give the video a thumbs up if you"
+  },
+  {
+   "start": 993.839,
+   "duration": 5.841,
+   "text": "enjoyed it and subscribe if you want to"
+  },
+  {
+   "start": 995.519,
+   "duration": 4.161,
+   "text": "see more content like this. Bye."
+  }
+ ]
+}
