@@ -85,4 +85,11 @@ textarea{width:100%;min-height:92px;background:var(--code-bg);color:var(--text);
 .ghost:hover{border-color:var(--accent);color:var(--accent)}
 .preview{width:100%;min-height:420px;border:1px solid var(--border);border-radius:8px;background:#fff}
 .pill.ok{color:var(--ok)}
+a.exp{text-decoration:none;color:var(--muted);border:1px solid var(--border);border-radius:5px;padding:.05rem .4rem;font-size:.72rem;white-space:nowrap}
+a.exp:hover{color:var(--accent);border-color:var(--accent)}
+.hk{color:#c792ea}
+.hs{color:#9ece6a}
+.hc{color:#565f89;font-style:italic}
+.hn{color:#ff9e64}
+#hviewer .card{margin-bottom:1rem}
 @media(max-width:640px){.run{margin-left:0;width:100%}.cards{grid-template-columns:1fr}.topbar{flex-direction:column;gap:.2rem}}

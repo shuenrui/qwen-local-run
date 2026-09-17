@@ -1,0 +1,23 @@
+{
+  "id": "landing-page",
+  "name": "Landing page (DOM-checked)",
+  "category": "frontend",
+  "runs": 1,
+  "thinking": false,
+  "max_tokens": 5000,
+  "engine": "mtp",
+  "prompt": "Build a complete single-file HTML landing page for a coffee subscription: an <h1> headline, at least one <section>, a visible <button> signup CTA. No external resources; it must render without console errors.",
+  "checks": [
+    {
+      "type": "dom_selectors",
+      "selectors": [
+        "h1",
+        "button",
+        "section"
+      ]
+    },
+    {
+      "type": "dom_no_errors"
+    }
+  ]
+}

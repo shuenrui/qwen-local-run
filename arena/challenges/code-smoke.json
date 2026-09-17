@@ -1,0 +1,21 @@
+{
+  "id": "code-smoke",
+  "name": "Smoke: fenced python",
+  "category": "testing",
+  "runs": 1,
+  "thinking": false,
+  "max_tokens": 2000,
+  "engine": "mtp",
+  "prompt": "Write a Python program that prints hi, inside a single ```python code fence.",
+  "checks": [
+    {
+      "type": "contains",
+      "value": "print"
+    },
+    {
+      "type": "exec",
+      "lang": "python",
+      "note": "runs the first fenced block in a throwaway container"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "widgets",
+  "name": "5 machines trap",
+  "category": "reasoning",
+  "runs": 1,
+  "thinking": true,
+  "max_tokens": 1000,
+  "engine": "mtp",
+  "prompt": "If 5 machines take 5 minutes to make 5 widgets, how long do 100 machines take to make 100 widgets? Explain, then give the final answer.",
+  "checks": [
+    {
+      "type": "regex",
+      "value": "(?<![\\d.])5\\s*(minutes|min)"
+    }
+  ]
+}

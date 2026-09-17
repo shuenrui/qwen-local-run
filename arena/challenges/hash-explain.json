@@ -1,0 +1,26 @@
+{
+  "id": "hash-explain",
+  "name": "Hash-map explainer",
+  "category": "writing",
+  "runs": 1,
+  "thinking": false,
+  "max_tokens": 1000,
+  "engine": "mtp",
+  "prompt": "Write a 200-word technical explainer on how a hash map handles collisions, accurate and concise, one short code snippet.",
+  "checks": [
+    {
+      "type": "contains",
+      "value": "chaining"
+    },
+    {
+      "type": "contains",
+      "value": "open addressing",
+      "ci": true
+    },
+    {
+      "type": "word_count",
+      "min": 120,
+      "max": 420
+    }
+  ]
+}

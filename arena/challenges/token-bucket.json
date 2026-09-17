@@ -1,0 +1,24 @@
+{
+  "id": "token-bucket",
+  "name": "Thread-safe token bucket",
+  "category": "coding",
+  "runs": 1,
+  "thinking": false,
+  "max_tokens": 2000,
+  "engine": "mtp",
+  "prompt": "Implement a thread-safe token-bucket rate limiter class TokenBucket(capacity, refill_per_sec) with allow(tokens=1)->bool, plus a short test showing it blocks after exhausting capacity.",
+  "checks": [
+    {
+      "type": "contains",
+      "value": "class TokenBucket"
+    },
+    {
+      "type": "regex",
+      "value": "Lock"
+    },
+    {
+      "type": "exec",
+      "lang": "python"
+    }
+  ]
+}

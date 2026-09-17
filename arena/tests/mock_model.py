@@ -1,17 +1,19 @@
 #!/usr/bin/env python3
 """arena/tests/mock_model.py — OpenAI-compatible stand-in for backend tests.
 
-Serves /v1/models and streams a fixed short reply on
-/v1/chat/completions (SSE with a usage event), so the arena orchestrator,
-SSE stream, blind slots, voting and scoreboard can be exercised WITHOUT
-booting a real model. Listens on 127.0.0.1:8899; pair it with throwaway
-profiles pointing at that port and POST /api/run with auto:false.
+Serves /v1/models and streams a fixed reply containing a runnable fenced
+python snippet on /v1/chat/completions (SSE + usage event), so the arena
+orchestrator, SSE stream, blind slots, checks (incl. sandboxed exec),
+voting, grading and scoreboard can be exercised WITHOUT booting a real
+model. Listens on 127.0.0.1:8899. Tests should run arena with
+ARENA_RESULTS=<scratch dir> and auto:false so no GPU work happens and
+real saved runs can never be touched.
 """
 import json
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 
 PORT = 8899
-TOKENS = ["Hel", "lo", " from", " the", " little", " engine", "."]
+TOKENS = ["```python", "\n", "print(\"hi\")", "\n", "```"]
 
 
 def sse_body():

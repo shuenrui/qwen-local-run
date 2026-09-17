@@ -1,0 +1,20 @@
+{
+  "id": "palindrome",
+  "name": "Palindrome fn",
+  "category": "coding",
+  "runs": 1,
+  "thinking": false,
+  "max_tokens": 800,
+  "engine": "mtp",
+  "prompt": "Write def is_palindrome(s) in Python that ignores case and non-alphanumerics, with a ```python fenced block and 3 examples that execute on import (plain asserts, no pytest).",
+  "checks": [
+    {
+      "type": "contains",
+      "value": "def is_palindrome"
+    },
+    {
+      "type": "exec",
+      "lang": "python"
+    }
+  ]
+}

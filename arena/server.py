@@ -29,10 +29,12 @@ import glob
 import json
 import os
 import random
+import re
 import subprocess
 import sys
 import threading
 import time
+import traceback
 import urllib.request
 from datetime import datetime
 from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
@@ -45,6 +47,7 @@ STATIC_DIR = os.path.join(HERE, "static")
 # Tests MUST point ARENA_RESULTS at a scratch dir so e2e cleanup can never
 # touch real saved runs (see arena/tests/mock_model.py usage in README).
 RESULTS_DIR = os.path.abspath(os.environ.get("ARENA_RESULTS", os.path.join(ROOT, "results")))
+CH_DIR = os.path.join(HERE, "challenges")
 HF_HUB = os.path.join(ROOT, ".cache", "huggingface", "hub")
 # Downloads run as root inside a throwaway container: the HF cache is root-owned
 # (the SGLang containers created it), so a host-side `hf download` cannot write
@@ -400,13 +403,13 @@ def stream_chat(job, item, port, served_model, prompt, thinking, max_tokens, tem
                     if first is None:
                         first = time.time()
                     reasoning.append(rc)
-                    add_event(job, {"type": "delta", "slot": item["slot"],
+                    add_event(job, {"type": "delta", "slot": item["key"],
                                     "kind": "reasoning", "text": rc})
                 if ct:
                     if first is None:
                         first = time.time()
                     parts.append(ct)
-                    add_event(job, {"type": "delta", "slot": item["slot"],
+                    add_event(job, {"type": "delta", "slot": item["key"],
                                     "kind": "content", "text": ct})
     total = time.time() - t0
     text = "".join(parts)
@@ -420,60 +423,263 @@ def stream_chat(job, item, port, served_model, prompt, thinking, max_tokens, tem
             "estimated": estimated}
 
 
-def run_job(job):
+# --------------------- challenges, checks, grading --------------------------
+
+def list_challenges():
+    out = []
+    for path in sorted(glob.glob(os.path.join(CH_DIR, "*.json"))):
+        try:
+            with open(path) as f:
+                c = json.load(f)
+        except (OSError, ValueError):
+            continue
+        checks = c.get("checks") or []
+        c["server_checks"] = sum(1 for ch in checks if not str(ch.get("type", "")).startswith("dom_"))
+        c["dom_checks"] = sum(1 for ch in checks if str(ch.get("type", "")).startswith("dom_"))
+        out.append(c)
+    return out
+
+
+def load_challenge(cid):
+    cid = str(cid or "")
+    if not re.fullmatch(r"[\w.-]+", cid):
+        return None
+    path = os.path.join(CH_DIR, cid + ".json")
+    if not os.path.isfile(path):
+        return None
     try:
-        for item in job["results"]:
-            if job.get("cancel"):
-                item["status"] = "skipped"
-                add_event(job, {"type": "status", "slot": item["slot"], "status": "skipped"})
-                continue
-            cname, port = item["container_name"], item["port"]
-            item["status"] = "starting"
-            add_event(job, {"type": "status", "slot": item["slot"], "status": "starting"})
-            try:
-                if job["auto"]:
-                    if item.get("engine", "sglang") != "sglang":
-                        raise RuntimeError(
-                            "manual-only lane (ENGINE=%s): boot it yourself, "
-                            "then rerun with auto OFF" % item.get("engine"))
-                    prof = os.path.join(ROOT, item["id"])
-                    env = dict(os.environ, PROFILE=prof)
-                    eng = job["engine"]
-                    if "35b" in (item.get("model_id", "").lower()) and eng == "dspark":
-                        eng = "mtp"                 # dspark draft is 3.8-only
-                    subprocess.run(["bash", os.path.join(ROOT, "start-model.sh"), eng],
-                                   cwd=ROOT, env=env, check=True)
-                    item["status"] = "waiting-ready"
-                    add_event(job, {"type": "status", "slot": item["slot"], "status": "waiting-ready"})
-                    if not wait_ready(port):
-                        raise RuntimeError("server never became ready")
-                item["status"] = "running"
-                add_event(job, {"type": "status", "slot": item["slot"], "status": "running"})
-                m = stream_chat(job, item, port, item["served_model"], job["prompt"],
-                                job["thinking"], job["max_tokens"], job["temperature"])
-                item.update(m, status="done")
-                item["toks_per_s"] = round(m["tokens"] / max(m["total_s"], 1e-6), 1)
-                add_event(job, {"type": "done", "slot": item["slot"],
-                                "ttft_s": m["ttft_s"], "total_s": m["total_s"],
-                                "tokens": m["tokens"], "estimated": m["estimated"],
-                                "toks_per_s": item["toks_per_s"],
-                                "text": m["text"], "reasoning": m.get("reasoning", "")})
-            except Exception as e:                  # surface to the model's card
-                item["status"] = "error"
-                item["error"] = str(e)[:500]
-                add_event(job, {"type": "error", "slot": item["slot"], "error": item["error"]})
-            finally:
-                if job["auto"]:
-                    stop_container(cname)
-                    add_event(job, {"type": "status", "slot": item["slot"], "status": "stopped"})
-        stamp = datetime.now().strftime("%Y%m%d-%H%M%S")
-        saved = os.path.join(RESULTS_DIR, f"arena-{stamp}")
+        with open(path) as f:
+            return json.load(f)
+    except (OSError, ValueError):
+        return None
+
+
+def first_code(text, lang="python"):
+    m = re.search(r"```" + re.escape(lang) + r"\s*\n([\s\S]*?)```", text or "", re.I)
+    if not m:
+        m = re.search(r"```(?:[\w+-]*)\s*\n([\s\S]*?)```", text or "")
+    return m.group(1) if m else None
+
+
+def _exec_python(code, timeout=45):
+    """Run model code in a throwaway container (no net, read-only fs)."""
+    try:
+        p = subprocess.run(
+            ["docker", "run", "-i", "--rm", "--network", "none", "--read-only",
+             "--tmpfs", "/tmp", DOWNLOAD_IMAGE, "python3", "-I", "-"],
+            input=code.encode(), stdout=subprocess.PIPE, stderr=subprocess.STDOUT,
+            timeout=timeout)
+        return p.returncode == 0, p.stdout.decode("utf-8", "replace")[-300:]
+    except Exception as e:
+        return False, str(e)[:300]
+
+
+def _recompute_pass(item):
+    sigs = []
+    if item.get("server_ok") is not None:
+        sigs.append(bool(item["server_ok"]))
+    dom = any(str(c.get("type", "")).startswith("dom_") for c in item.get("checks", []))
+    if dom:
+        if item.get("dom_pass") is None:
+            item["passed"] = None               # waiting for client-side grade
+            return
+        sigs.append(bool(item["dom_pass"]))
+    item["passed"] = all(sigs) if sigs else None
+
+
+def run_server_checks(item, prompt, max_tokens):
+    """Evaluate every non-dom check against item['text']; update passed state."""
+    details, dom_any = [], False
+    text = item.get("text", "") or ""
+    for ch in item.get("checks", []):
+        t = str(ch.get("type", ""))
+        ok, extra = False, {}
+        if t.startswith("dom_"):
+            dom_any = True
+            continue
+        try:
+            if t == "contains":
+                ok = (ch.get("value", "") in text) if not ch.get("ci") else \
+                     (ch.get("value", "").lower() in text.lower())
+            elif t == "not_contains":
+                ok = (ch.get("value", "") not in text) if not ch.get("ci") else \
+                     (ch.get("value", "").lower() not in text.lower())
+            elif t == "regex":
+                ok = re.search(ch.get("value", ""), text,
+                               re.I if "i" in str(ch.get("flags", "")) else 0) is not None
+            elif t == "regex_count":
+                ok = len(re.findall(ch.get("value", ""), text, re.M)) == int(ch.get("equals"))
+            elif t == "json_valid":
+                mt = re.search(r"\{[\s\S]*\}", text)
+                try:
+                    obj = json.loads(mt.group(0)) if mt else None
+                    ok = isinstance(obj, dict) and all(k in obj for k in ch.get("keys", []))
+                except ValueError:
+                    ok = False
+            elif t == "word_count":
+                n = len(text.split())
+                ok = int(ch.get("min", 0)) <= n <= int(ch.get("max", 10 ** 9))
+                extra = {"n": n}
+            elif t == "exec":
+                code = first_code(text, ch.get("lang", "python"))
+                if not code:
+                    ok, extra["out"] = False, "no fenced code found"
+                else:
+                    ok, out = _exec_python(code)
+                    extra["out"] = out
+            else:
+                ok = False
+        except (re.error, ValueError):
+            ok = False
+        d = {"type": t, "pass": bool(ok)}
+        d.update(extra)
+        details.append(d)
+    item["checks_detail"] = details
+    item["server_ok"] = (all(d["pass"] for d in details) if details else None)
+    item["dom_pending"] = dom_any and item.get("dom_pass") is None
+    _recompute_pass(item)
+
+
+def compute_rates(job):
+    rates = {}
+    for r in job["results"]:
+        e = rates.setdefault(r["slot"], {"k": 0, "pass1": False, "any": False,
+                                         "n_pass": 0, "pending": 0})
+        e["k"] += 1
+        if r.get("rep", 1) == 1:
+            e["pass1"] = bool(r.get("passed"))
+        if r.get("passed") is True:
+            e["any"] = True
+            e["n_pass"] += 1
+        elif r.get("passed") is None and (r.get("checks") or []):
+            e["pending"] += 1
+    return rates
+
+
+def merge_dom_grades(job):
+    for item in job["results"]:
+        g = (job.get("grades") or {}).get(item["key"])
+        if g:
+            item["dom_checks"] = g.get("checks", [])
+            item["dom_pass"] = bool(g.get("pass"))
+        _recompute_pass(item)
+
+
+def _persist_job(job, saved=None):
+    saved = saved or os.path.join(ROOT, job.get("saved_dir", RESULTS_DIR))
+    try:
         os.makedirs(saved, exist_ok=True)
         with open(os.path.join(saved, "results.json"), "w") as f:
             json.dump({k: v for k, v in job.items() if k != "events"}, f, indent=2)
+    except Exception:
+        traceback.print_exc()
+        sys.stderr.write("[arena] FAILED to persist run to %s\n" % saved)
+
+
+def list_runs():
+    out = []
+    for d in sorted(glob.glob(os.path.join(RESULTS_DIR, "arena-*")), reverse=True):
+        try:
+            with open(os.path.join(d, "results.json")) as f:
+                j = json.load(f)
+        except (OSError, ValueError):
+            continue
+        rs = j.get("results", [])
+        vote = None
+        try:
+            with open(os.path.join(d, "votes.json")) as f:
+                pick = (json.load(f) or {}).get("pick")
+            if pick:
+                vote = "tie" if pick == "TIE" else next(
+                    (r.get("label") for r in rs if r.get("slot") == pick), pick)
+        except (OSError, ValueError):
+            pass
+        out.append({"name": os.path.basename(d),
+                    "prompt": (j.get("prompt") or "")[:110],
+                    "models": sorted({(r.get("label") or r.get("name") or "") for r in rs}),
+                    "challenge": j.get("challenge"), "vote": vote,
+                    "reconstructed": bool(j.get("reconstructed")),
+                    "graded": any(r.get("passed") is not None for r in rs)})
+    return out
+
+
+def run_job(job):
+    try:
+        groups = []
+        for it in job["results"]:
+            if not groups or groups[-1][0] != it["slot"]:
+                groups.append((it["slot"], []))
+            groups[-1][1].append(it)
+        for slot, items in groups:
+            first = items[0]
+            port, cname = first["port"], first["container_name"]
+            try:
+                if job.get("cancel"):
+                    raise RuntimeError("cancelled before this model")
+                if job["auto"]:
+                    if first.get("engine", "sglang") != "sglang":
+                        raise RuntimeError("manual-only lane (ENGINE=%s): boot it yourself, "
+                                           "then rerun with auto OFF" % first.get("engine"))
+                    for it in items:
+                        it["status"] = "starting"
+                        add_event(job, {"type": "status", "slot": it["key"], "status": "starting"})
+                    prof = os.path.join(ROOT, first["id"])
+                    env = dict(os.environ, PROFILE=prof)
+                    eng = job["engine"]
+                    if "35b" in (first.get("model_id", "").lower()) and eng == "dspark":
+                        eng = "mtp"
+                    subprocess.run(["bash", os.path.join(ROOT, "start-model.sh"), eng],
+                                   cwd=ROOT, env=env, check=True)
+                    for it in items:
+                        it["status"] = "waiting-ready"
+                    add_event(job, {"type": "status", "slot": items[-1]["key"], "status": "waiting-ready"})
+                    if not wait_ready(port):
+                        raise RuntimeError("server never became ready")
+                for it in items:
+                    it["status"] = "running"
+                    add_event(job, {"type": "status", "slot": it["key"], "status": "running"})
+                    try:
+                        m = stream_chat(job, it, port, it["served_model"], job["prompt"],
+                                        job["thinking"], job["max_tokens"], job["temperature"])
+                        it.update(m, status="done")
+                        it["toks_per_s"] = round(m["tokens"] / max(m["total_s"], 1e-6), 1)
+                        run_server_checks(it, job["prompt"], job["max_tokens"])
+                        add_event(job, {"type": "done", "slot": it["key"],
+                                        "ttft_s": m["ttft_s"], "total_s": m["total_s"],
+                                        "tokens": m["tokens"], "estimated": m["estimated"],
+                                        "toks_per_s": it["toks_per_s"],
+                                        "text": m["text"], "reasoning": m.get("reasoning", ""),
+                                        "checks": it.get("checks_detail", []),
+                                        "dom": [c for c in it.get("checks", [])
+                                                if str(c.get("type", "")).startswith("dom_")],
+                                        "passed": it.get("passed")})
+                    except Exception as e:          # one rep can fail; others continue
+                        it["status"] = "error"
+                        it["error"] = str(e)[:500]
+                        add_event(job, {"type": "error", "slot": it["key"], "error": it["error"]})
+            except Exception as e:                   # boot failure fails the whole group
+                for it in items:
+                    if it["status"] not in ("done", "error"):
+                        it["status"] = "error"
+                        it["error"] = str(e)[:500]
+                        add_event(job, {"type": "error", "slot": it["key"], "error": it["error"]})
+            finally:
+                if job["auto"]:
+                    stop_container(cname)
+                    for it in items:
+                        add_event(job, {"type": "status", "slot": it["key"], "status": "stopped"})
+        merge_dom_grades(job)
+        job["rates"] = compute_rates(job)
+        stamp = datetime.now().strftime("%Y%m%d-%H%M%S")
+        saved = os.path.join(RESULTS_DIR, "arena-%s-%s" % (stamp, job["id"]))
+        dup = 0
+        while os.path.exists(os.path.join(saved, "results.json")):
+            dup += 1
+            saved = os.path.join(RESULTS_DIR, "arena-%s-%s-%d" % (stamp, job["id"], dup))
+        _persist_job(job, saved)
         job["saved_dir"] = os.path.relpath(saved, ROOT)
         job["status"] = "done"
-        add_event(job, {"type": "job-done", "saved_dir": job["saved_dir"]})
+        add_event(job, {"type": "job-done", "saved_dir": job["saved_dir"], "rates": job["rates"]})
     finally:
         run_lock.release()
 
@@ -527,13 +733,16 @@ def build_export(job, fmt):
     if fmt == "csv":
         buf = io.StringIO()
         w = _csv.writer(buf)
-        w.writerow(["model", "status", "ttft_s", "total_s", "toks_per_s",
-                    "tokens", "estimated", "error", "response"])
+        w.writerow(["slot", "model", "rep", "status", "ttft_s", "total_s",
+                    "toks_per_s", "tokens", "estimated", "passed", "error", "response"])
         for r in res:
-            w.writerow([r.get("label") or r.get("name"), r.get("status"),
+            p = r.get("passed")
+            w.writerow([r.get("slot", ""), r.get("label") or r.get("name"),
+                        r.get("rep", 1), r.get("status"),
                         r.get("ttft_s", ""), r.get("total_s", ""),
                         r.get("toks_per_s", ""), r.get("tokens", ""),
                         "yes" if r.get("estimated") else "",
+                        "" if p is None else ("pass" if p else "fail"),
                         r.get("error", ""), r.get("text", "")])
         return base + ".csv", "text/csv", buf.getvalue()
 
@@ -560,6 +769,14 @@ def build_export(job, fmt):
             r.get("label") or r.get("name"), r.get("status"),
             r.get("ttft_s", "—"), r.get("total_s", "—"),
             r.get("toks_per_s", "—"), r.get("tokens", "—")))
+    if job.get("rates"):
+        parts = []
+        for s in sorted(job["rates"]):
+            e = job["rates"][s]
+            parts.append("%s: pass@1 %s · pass@k %s (%d/%d)" % (
+                s, "✓" if e["pass1"] else "✗", "✓" if e["any"] else "✗",
+                e["n_pass"], e["k"]))
+        L += ["", "**Grading:** " + "; ".join(parts)]
     L += ["", "## Responses"]
     for r in res:
         meta = r.get("status", "")
@@ -580,6 +797,14 @@ def build_export(job, fmt):
             L += ["<details><summary>thinking</summary>", "", r["reasoning"],
                   "", "</details>", ""]
         L.append(r.get("text", ""))
+        if r.get("checks_detail"):
+            L += ["", "**Checks:** " + " · ".join(
+                "%s %s" % (d["type"], "✓" if d["pass"] else "✗")
+                for d in r["checks_detail"])]
+        if r.get("dom_checks"):
+            L += ["", "**DOM:** " + " · ".join(
+                "%s %s" % (d.get("type"), "✓" if d.get("pass") else "✗")
+                for d in r["dom_checks"])]
     return base + ".md", "text/markdown", "\n".join(L)
 
 
@@ -607,6 +832,16 @@ class Handler(BaseHTTPRequestHandler):
             return self._static(path[len("/static/"):], None)
         if path == "/api/models":
             return self._json(200, {"models": discover_models()})
+        if path == "/api/challenges":
+            return self._json(200, {"challenges": list_challenges()})
+        if path == "/api/runs":
+            return self._json(200, {"runs": list_runs()})
+        if path.startswith("/api/runs/"):
+            name = path[len("/api/runs/"):].strip("/")
+            fmt = (parse_qs(urlparse(self.path).query).get("fmt") or ["md"])[0]
+            if name.endswith("/export"):
+                return self._saved_export(name[:-len("/export")], fmt)
+            return self._saved_view(name)
         if path == "/api/scores":
             return self._scores()
         if path == "/api/scores/export":
@@ -629,6 +864,8 @@ class Handler(BaseHTTPRequestHandler):
             return self._cancel()
         if path == "/api/vote":
             return self._vote()
+        if path == "/api/grade":
+            return self._grade()
         if path != "/api/run":
             return self._json(404, {"error": "not found"})
         try:
@@ -638,14 +875,25 @@ class Handler(BaseHTTPRequestHandler):
             return self._json(400, {"error": "invalid JSON"})
         prompt = (body.get("prompt") or "").strip()
         models = body.get("models") or []
-        if not prompt:
-            return self._json(400, {"error": "prompt is empty"})
         if not models:
             return self._json(400, {"error": "no models selected"})
+        ch = None
+        if body.get("challenge"):
+            ch = load_challenge(body["challenge"])
+            if ch is None:
+                return self._json(400, {"error": "unknown challenge"})
+            prompt = prompt or (ch.get("prompt") or "").strip()
+        if not prompt:
+            return self._json(400, {"error": "prompt is empty"})
         try:
             max_tokens = max(1, min(int(body.get("max_tokens", 2000)), MAX_TOKEN_LIMIT))
         except (TypeError, ValueError):
             max_tokens = 2000
+        try:
+            reps = int(body.get("runs") or (ch or {}).get("runs") or 1)
+        except (TypeError, ValueError):
+            reps = 1
+        reps = max(1, min(reps, 5))
         known = {m["id"]: m for m in discover_models()}
         for mid in models:
             if mid not in known:
@@ -654,30 +902,34 @@ class Handler(BaseHTTPRequestHandler):
             return self._json(409, {"error": "a run is already active"})
         slots = list("ABCDEFGHIJK"[:len(models)])
         random.shuffle(slots)                    # blind display order (protocol #8)
+        checks = (ch or {}).get("checks") or []
+        results = []
+        for mid, slot in zip(models, slots):
+            base = {"slot": slot, "id": mid, "name": known[mid]["name"],
+                    "label": known[mid]["label"], "served_model": known[mid]["served_model"],
+                    "container_name": known[mid]["container_name"], "port": known[mid]["port"],
+                    "model_id": known[mid]["model_id"],
+                    "engine": known[mid].get("engine", "sglang"),
+                    "checks": checks, "status": "queued"}
+            for rep in range(1, reps + 1):
+                it = dict(base, rep=rep)
+                it["key"] = slot if reps == 1 else "%s%d" % (slot, rep)
+                results.append(it)
         with jobs_lock:
             job_seq[0] += 1
             jid = f"job-{job_seq[0]}"
             job = {"id": jid, "status": "running", "prompt": prompt,
+                   "challenge": (body.get("challenge") or None),
                    "thinking": bool(body.get("thinking", False)),
                    "max_tokens": max_tokens,
                    "temperature": body.get("temperature"),
                    "auto": bool(body.get("auto", True)),
                    "engine": (body.get("engine") or "mtp"),
-                   "order": slots,
-                   "events": [],
-                   "results": [{"slot": slot, "id": mid,
-                                "name": known[mid]["name"],
-                                "label": known[mid]["label"],
-                                "served_model": known[mid]["served_model"],
-                                "container_name": known[mid]["container_name"],
-                                "port": known[mid]["port"],
-                                "model_id": known[mid]["model_id"],
-                                "engine": known[mid].get("engine", "sglang"),
-                                "status": "queued"}
-                               for mid, slot in zip(models, slots)]}
+                   "order": [it["key"] for it in results],
+                   "events": [], "grades": {}, "results": results}
             jobs[jid] = job
         threading.Thread(target=run_job, args=(job,), daemon=True).start()
-        return self._json(202, {"job_id": jid, "order": slots})
+        return self._json(202, {"job_id": jid, "order": job["order"]})
 
     def _download(self):
         try:
@@ -746,6 +998,69 @@ class Handler(BaseHTTPRequestHandler):
             except OSError:
                 pass
         return self._json(200, dict(job["vote"]))
+
+    def _grade(self):
+        try:
+            n = int(self.headers.get("Content-Length", 0) or 0)
+            body = json.loads(self.rfile.read(n) or b"{}")
+        except Exception:
+            return self._json(400, {"error": "invalid JSON"})
+        jid, key = body.get("job"), body.get("key")
+        checks = body.get("checks")
+        with jobs_lock:
+            job = jobs.get(jid)
+        if job is None:
+            return self._json(404, {"error": "unknown job"})
+        item = next((r for r in job["results"] if r.get("key") == key), None)
+        if item is None or not isinstance(checks, list) or not checks:
+            return self._json(400, {"error": "bad key or checks"})
+        ok = all(bool(c.get("pass")) for c in checks)
+        job.setdefault("grades", {})[key] = {
+            "checks": checks, "pass": ok,
+            "at": datetime.now().isoformat(timespec="seconds")}
+        item["dom_checks"] = checks
+        item["dom_pass"] = ok
+        item["dom_pending"] = False
+        _recompute_pass(item)
+        job["rates"] = compute_rates(job)
+        if job.get("saved_dir"):
+            _persist_job(job)
+        return self._json(200, {"key": key, "passed": item.get("passed"),
+                                "rates": job["rates"]})
+
+    def _load_saved(self, name):
+        if not re.fullmatch(r"arena-[\w.-]+", str(name or "")):
+            return None
+        rj = os.path.join(RESULTS_DIR, name, "results.json")
+        if not os.path.isfile(rj):
+            return None
+        try:
+            with open(rj) as f:
+                return json.load(f)
+        except (OSError, ValueError):
+            return None
+
+    def _saved_view(self, name):
+        j = self._load_saved(name)
+        if j is None:
+            return self._json(404, {"error": "unknown run"})
+        return self._json(200, j)
+
+    def _saved_export(self, name, fmt):
+        j = self._load_saved(name)
+        if j is None:
+            return self._json(404, {"error": "unknown run"})
+        try:
+            fname, mime, content = build_export(j, fmt)
+        except Exception as e:
+            return self._json(500, {"error": f"export failed: {e}"})
+        data = content.encode("utf-8")
+        self.send_response(200)
+        self.send_header("Content-Type", mime + "; charset=utf-8")
+        self.send_header("Content-Disposition", 'attachment; filename="%s"' % fname)
+        self.send_header("Content-Length", str(len(data)))
+        self.end_headers()
+        self.wfile.write(data)
 
     def _scores(self):
         agg = tally_scores()

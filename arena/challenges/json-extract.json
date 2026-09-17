@@ -1,0 +1,22 @@
+{
+  "id": "json-extract",
+  "name": "Strict JSON extraction",
+  "category": "structured",
+  "runs": 1,
+  "thinking": false,
+  "max_tokens": 500,
+  "engine": "mtp",
+  "prompt": "Extract into strict JSON only (no prose): Invoice #A-2041, $1,250.00 due March 3 2026 from Acme Corp (acme@example.com). Items: 3x Widget Pro @ $100, 5x Bolt @ $250. Keys: invoice_id,total,due_date,vendor{name,email},items[{name,qty,unit_price}]",
+  "checks": [
+    {
+      "type": "json_valid",
+      "keys": [
+        "invoice_id",
+        "total",
+        "due_date",
+        "vendor",
+        "items"
+      ]
+    }
+  ]
+}

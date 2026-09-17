@@ -6,6 +6,7 @@ let MODELS = [], ES = null, CARD = {}, BUF = {}, dirty = {}, renderPending = fal
 let SELECTED = new Set(), firstLoad = true, pollTimer = null;
 let LAST_JOB = null;
 let VOTED = false, REVEALED = false;
+let CHALLENGES = [], GRADES = {}, HAS_CHECKS = false;
 
 function escapeHtml(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 
@@ -26,7 +27,7 @@ function renderMarkdown(src){
   for(const line of html.split('\n')){
     const cm = line.match(/^\u0000C(\d+)\u0000$/);
     if(cm){ flushP(); flushL(); const b=blocks[+cm[1]];
-      out.push(`<pre class="code"><div class="code-head"><span>${b.lang||'code'}</span><button class="copy">copy</button></div><code>${escapeHtml(b.code.replace(/\n$/,''))}</code></pre>`); continue; }
+      out.push(`<pre class="code"><div class="code-head"><span>${b.lang||'code'}</span><button class="copy">copy</button></div><code>${hl(b.code.replace(/\n$/,''), b.lang)}</code></pre>`); continue; }
     let m;
     if((m=line.match(/^(#{1,6})\s+(.*)$/))){ flushP(); flushL(); const l=m[1].length; out.push(`<h${l}>${m[2]}</h${l}>`); continue; }
     if(/^\s*([-*_]){3,}\s*$/.test(line)){ flushP(); flushL(); out.push('<hr>'); continue; }
@@ -149,17 +150,18 @@ function buildCards(slots){
     const tr=document.createElement('tr');
     tr.innerHTML=`<td>Model ${s}</td><td class="c-st">queued</td><td class="c-ttft">—</td><td class="c-total">—</td><td class="c-tps">—</td><td class="c-tok">—</td>`;
     tb.appendChild(tr);
-    CARD[s]={el:card,h3:card.querySelector('h3'),status:card.querySelector('.st'),
+    CARD[s]={el:card,slot:s.replace(/[0-9]+$/,''),key:s,h3:card.querySelector('h3'),status:card.querySelector('.st'),
       metrics:card.querySelector('.metrics'),body:card.querySelector('.body'),
       reasoningEl:card.querySelector('.rbody'),reasoningBox:card.querySelector('.reasoning'),
       tabs:card.querySelector('.tabs'),vote:card.querySelector('.votebtn'),
-      row:tr,streaming:false,frame:null,errors:0,shownTab:'r',errPill:null,okPill:null};
+      row:tr,streaming:false,frame:null,errors:0,shownTab:'r',errPill:null,okPill:null,passPill:null};
     BUF[s]={content:'',reasoning:''};
     const t=card.querySelectorAll('.tab');
     t[0].onclick=()=>showTab(s,'r');
     t[1].onclick=()=>showTab(s,'p');
-    CARD[s].vote.onclick=()=>postVote(s);
+    CARD[s].vote.onclick=()=>postVote(CARD[s].slot);
   });
+  HAS_CHECKS=false;
   $('score').hidden=false; $('tiebtn').hidden=true; $('reveal').hidden=true;
 }
 
@@ -197,7 +199,19 @@ function openStream(jid){
           r.querySelector('.c-ttft').textContent=ev.ttft_s+'s'; r.querySelector('.c-total').textContent=ev.total_s+'s';
           r.querySelector('.c-tps').textContent=ev.toks_per_s; r.querySelector('.c-tok').textContent=ev.tokens; }
         renderBody(sl);
-        if(CARD[sl] && detectHtml(BUF[sl].content)) CARD[sl].tabs.hidden=false;
+        if(CARD[sl]){
+          if(CARD[sl].tabs && detectHtml(BUF[sl].content)) CARD[sl].tabs.hidden=false;
+          (ev.checks||[]).forEach(d=>{
+            if(d.type) HAS_CHECKS=true;
+            const p=document.createElement('span'); p.className='pill '+(d.pass?'ok':'no');
+            p.title=d.out||''; p.textContent=(d.pass?'✓ ':'✗ ')+d.type;
+            CARD[sl].metrics.appendChild(p);
+          });
+          (ev.dom||[]).forEach(d=>HAS_CHECKS=true);
+          if(ev.passed===true) markPass(sl,'✅ pass',true);
+          else if(ev.passed===false) markPass(sl,'❌ fail',false);
+          else if(ev.dom && ev.dom.length){ markPass(sl,'dom: checking…',null); requestDomChecks(sl, ev.dom); }
+        }
         break;
       case 'error':
         if(CARD[sl]) CARD[sl].streaming=false;
@@ -206,6 +220,11 @@ function openStream(jid){
         break;
       case 'job-done':
         $('saved').textContent='saved → '+ev.saved_dir;
+        if(HAS_CHECKS && ev.rates){
+          const bits=Object.keys(ev.rates).sort().map(s=>{ const e=ev.rates[s];
+            return `${s}: pass@1 ${e.pass1?'✓':'✗'} · ${e.n_pass}/${e.k} reps`; });
+          if(bits.length) $('saved').textContent += '   ·   '+bits.join('  |  ');
+        }
         document.querySelectorAll('#export .exp').forEach(a=>{ a.href='/api/jobs/'+LAST_JOB+'/export?fmt='+a.dataset.fmt; });
         $('export').hidden=false;
         showVoting();
@@ -242,9 +261,9 @@ async function revealNames(){
   let j; try{ j=await (await fetch('/api/jobs/'+LAST_JOB)).json(); }catch(e){ return; }
   REVEALED=true;
   (j.results||[]).forEach(r=>{
-    const c=CARD[r.slot]; if(!c) return;
-    c.h3.textContent = r.label || r.name || r.slot;
-    c.row.querySelector('td').textContent = r.label || r.name || r.slot;
+    const c=CARD[r.key||r.slot]; if(!c) return;
+    c.h3.textContent = r.label || r.name || c.key;
+    c.row.querySelector('td').textContent = (r.label || r.name || c.key)+(r.rep>1?` rep${r.rep}`:'');
   });
   const pick=(j.vote && j.vote.pick)||'';
   if(pick && pick!=='TIE'){
@@ -349,7 +368,9 @@ $('run').onclick=async()=>{
   const temp=$('temp').value===''?null:parseFloat($('temp').value);
   const body={prompt,models:ids,thinking:$('thinking').checked,
     max_tokens:parseInt($('maxtok').value,10)||2000,temperature:temp,
-    engine:$('engine').value,auto:$('auto').checked};
+    engine:$('engine').value,auto:$('auto').checked,
+    runs:parseInt($('runs').value,10)||1};
+  if($('challenge').value) body.challenge=$('challenge').value;
   $('run').disabled=true; $('status').textContent='queued…';
   $('results').hidden=false; $('saved').textContent=''; $('export').hidden=true;
   let r, j;
@@ -372,5 +393,137 @@ document.addEventListener('click',e=>{
   }
 });
 
+/* ------------------------ tiny offline highlighter ------------------------ */
+function hl(code, lang){
+  lang=(lang||'').toLowerCase();
+  const py=lang==='python', jsl=/(js|ts|javascript|typescript|jsx|tsx)/.test(lang);
+  if(!py && !jsl) return escapeHtml(code);
+  const kw=py?/^(def|class|return|if|elif|else|for|while|in|not|and|or|import|from|as|with|try|except|finally|raise|lambda|None|True|False|yield|async|await|pass|break|continue)$/
+            :/^(function|const|let|var|return|if|else|for|while|switch|case|new|class|this|typeof|try|catch|finally|throw|async|await|null|undefined|true|false|import|export|from)$/;
+  const re=/("""[\s\S]*?"""|'''[\s\S]*?'''|"(?:[^"\\\n]|\\.)*"|'(?:[^'\\\n]|\\.)*'|#[^\n]*|\/\/[^\n]*|\b[A-Za-z_]\w*\b|\b\d+(?:\.\d+)?\b)/g;
+  return code.split(re).map(tok=>{
+    if(tok==null || tok==='') return '';
+    if(/^(?:"""|'''|"|')/.test(tok)) return '<span class="hs">'+escapeHtml(tok)+'</span>';
+    if(/^#|^\/\//.test(tok)) return '<span class="hc">'+escapeHtml(tok)+'</span>';
+    if(/^\d/.test(tok)) return '<span class="hn">'+escapeHtml(tok)+'</span>';
+    if(kw.test(tok)) return '<span class="hk">'+escapeHtml(tok)+'</span>';
+    return escapeHtml(tok);
+  }).join('');
+}
+
+/* ----------------------------- challenges ----------------------------- */
+async function loadChallenges(){
+  let j; try{ j=await (await fetch('/api/challenges')).json(); }catch(e){ return; }
+  CHALLENGES=j.challenges||[];
+  const sel=$('challenge');
+  sel.innerHTML='<option value="">custom…</option>';
+  CHALLENGES.forEach(c=>{
+    const o=document.createElement('option'); o.value=c.id;
+    const nchk=(c.server_checks||0)+(c.dom_checks||0);
+    o.textContent=`${c.name} [${c.category}${nchk?` · ${nchk} check${nchk>1?'s':''}`:''}${c.runs>1?` · ×${c.runs}`:''}]`;
+    sel.appendChild(o);
+  });
+}
+$('challenge').onchange=()=>{
+  const c=CHALLENGES.find(x=>x.id===$('challenge').value);
+  const hint=$('chint');
+  if(!c){ hint.hidden=true; return; }
+  $('prompt').value=c.prompt||'';
+  $('thinking').checked=!!c.thinking;
+  $('maxtok').value=c.max_tokens||2000;
+  $('runs').value=c.runs||1;
+  if(c.engine) $('engine').value=c.engine;
+  if(c.temperature!=null) $('temp').value=c.temperature;
+  hint.hidden=false;
+  hint.textContent=`${c.name} · ${c.category} · checks: `+
+    ((c.checks||[]).map(k=>k.type).join(', ')||'none (showcase — vote only)')+
+    ' · pass@1 reported after the run';
+};
+
+/* ------------------ DOM grading via hidden sandboxed iframe ------------------ */
+const CHECK_SHIM='<script>(function(){var errs=[];window.onerror=function(m){errs.push(String(m));};'+
+ 'window.addEventListener("unhandledrejection",function(e){errs.push("promise: "+e.reason);});'+
+ 'var specs=%%SPECS%%;var sent=false;function send(){if(sent)return;sent=true;var out=[];'+
+ '(specs||[]).forEach(function(sp){try{if(sp.type==="dom_no_errors"){out.push({type:sp.type,pass:errs.length===0,errors:errs.slice(0,3)});}'+
+ 'else if(sp.type==="dom_selectors"){var res={};(sp.selectors||[]).forEach(function(s){try{res[s]=document.querySelectorAll(s).length;}catch(e){res[s]=-1;}});'+
+ 'out.push({type:sp.type,pass:Object.keys(res).every(function(k){return res[k]>=1;}),sel:res});}}catch(e){out.push({type:sp.type,pass:false,err:String(e)});}});'+
+ 'if(!out.length)out.push({type:"dom_no_errors",pass:errs.length===0});'+
+ 'parent.postMessage({__arenaGrade:1,checks:out},"*");}'+
+ 'window.addEventListener("load",function(){setTimeout(send,1200);});setTimeout(send,9000);})();<\/script>';
+function markPass(key,val,ok){
+  const c=CARD[key]; if(!c) return;
+  if(c.passPill) c.passPill.remove();
+  c.passPill=document.createElement('span');
+  c.passPill.className='pill '+(ok===true?'ok':(ok===false?'no':''));
+  c.passPill.textContent=val; c.metrics.appendChild(c.passPill);
+}
+function requestDomChecks(key,domSpecs){
+  let base=buildPreviewHtml(key);
+  if(!base){ gradeNow(key,[{type:'dom_no_errors',pass:false,err:'no renderable html found'}]); return; }
+  const shim=CHECK_SHIM.replace('%%SPECS%%', JSON.stringify(domSpecs||[]));
+  const html=/<\/head>/i.test(base)? base.replace(/<\/head>/i, m=>m+shim) : shim+base;
+  const f=document.createElement('iframe');
+  f.setAttribute('sandbox','allow-scripts');
+  f.style.cssText='position:absolute;left:-9999px;top:0;width:420px;height:320px;border:0';
+  GRADES[key]=f; document.body.appendChild(f); f.srcdoc=html;
+  setTimeout(()=>{ if(GRADES[key]){ delete GRADES[key]; f.remove();
+    gradeNow(key,[{type:'dom_no_errors',pass:false,err:'grade timeout'}]); } }, 30000);
+}
+async function gradeNow(key,checks){
+  try{
+    const r=await fetch('/api/grade',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({job:LAST_JOB,key,checks})});
+    const j=await r.json().catch(()=>({}));
+    markPass(key, j.passed===true?'✅ pass':(j.passed===false?'❌ fail':'⏳ pending'), j.passed);
+    loadHistory();
+  }catch(e){ markPass(key,'dom: grade failed',false); }
+}
+window.addEventListener('message',e=>{
+  const d=e.data; if(!d||!d.__arenaGrade||!Array.isArray(d.checks)) return;
+  for(const k in GRADES){
+    if(GRADES[k].contentWindow===e.source){ const f=GRADES[k]; delete GRADES[k]; f.remove();
+      gradeNow(k,d.checks); return; }
+  }
+});
+
+/* ------------------------------ history ------------------------------ */
+async function loadHistory(){
+  let j; try{ j=await (await fetch('/api/runs')).json(); }catch(e){ return; }
+  const tb=$('hist').querySelector('tbody'); tb.innerHTML='';
+  const runs=j.runs||[];
+  if(!runs.length){ tb.innerHTML='<tr><td colspan="5" style="color:var(--muted)">no saved runs yet</td></tr>'; return; }
+  runs.slice(0,60).forEach(r=>{
+    const tr=document.createElement('tr');
+    const badges=(r.reconstructed?' <span class="badge">recon</span>':'')+
+      (r.challenge?` <span class="badge">${escapeHtml(r.challenge)}</span>`:'');
+    tr.innerHTML=`<td>${escapeHtml(r.name)}${badges}</td><td>${escapeHtml((r.prompt||'').slice(0,70))}</td>`+
+      `<td>${escapeHtml((r.models||[]).join(', '))}</td><td>${escapeHtml(r.vote||'—')}</td>`+
+      `<td><a class="exp" href="#" data-v>view</a> `+
+      `<a class="exp" href="/api/runs/${encodeURIComponent(r.name)}/export?fmt=md">md</a> `+
+      `<a class="exp" href="/api/runs/${encodeURIComponent(r.name)}/export?fmt=csv">csv</a></td>`;
+    tr.querySelector('[data-v]').onclick=ev=>{ ev.preventDefault(); showRun(r.name); };
+    tb.appendChild(tr);
+  });
+}
+async function showRun(name){
+  let j; try{ j=await (await fetch('/api/runs/'+encodeURIComponent(name))).json(); }catch(e){ return; }
+  const v=$('hviewer'); v.innerHTML='';
+  const h=document.createElement('h3'); h.textContent=name; v.appendChild(h);
+  const p=document.createElement('div'); p.className='hint'; p.textContent='Prompt: '+(j.prompt||''); v.appendChild(p);
+  (j.results||[]).forEach(r=>{
+    const c=document.createElement('div'); c.className='card';
+    const meta=(r.label||r.name||'')+(r.rep>1?` rep ${r.rep}`:'')+' — '+r.status+
+      (r.toks_per_s?` · ${r.toks_per_s} tok/s`:'')+
+      (r.passed===true?' · ✅ pass':(r.passed===false?' · ❌ fail':''));
+    c.innerHTML=`<header><h3>${escapeHtml(meta)}</h3></header><div class="body"></div>`;
+    c.querySelector('.body').innerHTML=renderMarkdown(r.text||('⚠ '+(r.error||'')));
+    v.appendChild(c);
+  });
+  v.scrollIntoView({behavior:'smooth'});
+}
+$('hrefresh').onclick=e=>{ e.preventDefault(); loadHistory(); };
+
 loadModels();
 refreshScores();
+loadChallenges();
+loadHistory();

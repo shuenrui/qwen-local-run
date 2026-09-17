@@ -1,0 +1,22 @@
+{
+  "id": "bat-ball",
+  "name": "Bat-and-ball trap",
+  "category": "reasoning",
+  "runs": 1,
+  "thinking": true,
+  "max_tokens": 1000,
+  "engine": "mtp",
+  "prompt": "A bat and a ball cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost? Reason briefly, then state the final answer.",
+  "checks": [
+    {
+      "type": "regex",
+      "value": "0\\.05|5 ?cents|\\$0\\.05",
+      "flags": "i"
+    },
+    {
+      "type": "not_contains",
+      "value": "$0.10",
+      "ci": true
+    }
+  ]
+}

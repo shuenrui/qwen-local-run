@@ -1,0 +1,27 @@
+{
+  "id": "strict-bullets",
+  "name": "Exactly 4 bullets",
+  "category": "instruction",
+  "runs": 1,
+  "thinking": false,
+  "max_tokens": 300,
+  "engine": "mtp",
+  "prompt": "Reply with EXACTLY 4 bullet points and nothing else (no intro, no outro): what to pack for a 3-day hike. Each bullet at most 8 words.",
+  "checks": [
+    {
+      "type": "regex_count",
+      "value": "^\\s*[-*\\u2022].+",
+      "equals": 4
+    },
+    {
+      "type": "not_contains",
+      "value": "here are",
+      "ci": true
+    },
+    {
+      "type": "not_contains",
+      "value": "in conclusion",
+      "ci": true
+    }
+  ]
+}

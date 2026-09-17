@@ -1,0 +1,28 @@
+{
+  "id": "lru-cache",
+  "name": "LRU cache (O(1))",
+  "category": "coding",
+  "runs": 1,
+  "thinking": false,
+  "max_tokens": 2000,
+  "engine": "mtp",
+  "prompt": "Write a Python class LRUCache with O(1) get and put using OrderedDict, plus a small test at the bottom.",
+  "checks": [
+    {
+      "type": "contains",
+      "value": "class LRUCache"
+    },
+    {
+      "type": "regex",
+      "value": "def\\s+get\\s*\\("
+    },
+    {
+      "type": "regex",
+      "value": "def\\s+put\\s*\\("
+    },
+    {
+      "type": "exec",
+      "lang": "python"
+    }
+  ]
+}
