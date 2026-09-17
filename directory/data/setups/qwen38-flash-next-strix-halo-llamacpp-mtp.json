@@ -23,7 +23,69 @@
     "spec_decode": "mtp",
     "flags": [
       "--spec-type draft-mtp,ngram-mod"
-    ]
+    ],
+    "backend": "rocm",
+    "fork_revision": {
+      "repo": "https://github.com/drluoto/llama.cpp",
+      "branch": "strix-halo-flash-next",
+      "commits": [
+        "ea9f94fc7625",
+        "59a40b56ff79"
+      ],
+      "anchor_date": "2026-08-29",
+      "resolution": "branch_on_anchor",
+      "ambiguous": true,
+      "source": "docs/builder-concerns-2026-09-16/r-artifacts.md",
+      "locator": "row 2: branch commits ea9f94fc7625 + 59a40b56ff79, both 2026-08-29",
+      "retrieved": "2026-09-16",
+      "note": "Two anchor-day commits; which one built the measured stack is unstated. Later commits 5ad68897a6a5/590ac45bc19b post-date the anchor and are excluded."
+    },
+    "kernel_patches": [
+      {
+        "id": "hip-topk-26592",
+        "pr": "26592",
+        "purpose": "GPU TOP_K via hipCUB; stock HIP falls back to CPU past ne=1024",
+        "source": "https://github.com/ggml-org/llama.cpp/discussions/27950",
+        "locator": "body lever 1 (GPU TOP_K fix)"
+      },
+      {
+        "id": "radix-topk-27466",
+        "pr": "27466",
+        "purpose": "GPU TOP_K via native radix (alternative to hipCUB)",
+        "source": "https://github.com/ggml-org/llama.cpp/discussions/27950",
+        "locator": "body lever 1 (GPU TOP_K fix)"
+      },
+      {
+        "id": "native-mtp-27836",
+        "pr": "27836",
+        "purpose": "Native MTP decoder path for qwen4exp on this branch",
+        "source": "https://github.com/ggml-org/llama.cpp/discussions/27950",
+        "locator": "body lever 2 (native MTP)"
+      },
+      {
+        "id": "detached-head-loader",
+        "purpose": "Detached-head loader fix plus converter whitelist so the Q8_0 sidecar binds",
+        "source": "https://github.com/ggml-org/llama.cpp/discussions/27950",
+        "locator": "body lever 2 (native MTP)",
+        "note": "Loader fix by crusaderky; whitelist rmonsurate/llama.cpp#1."
+      }
+    ],
+    "environment": {
+      "rocm": "7.1",
+      "source": "https://github.com/ggml-org/llama.cpp/discussions/27950",
+      "locator": "body: Ryzen AI Max+ 395 / Radeon 8060S, gfx1151, 128 GB unified, ROCm 7.1",
+      "date": "2026-08-29",
+      "note": "Builder stack only; the ROCm 10.0 load failure is recorded separately as a known failure."
+    },
+    "spec_decode_profile": {
+      "method": "mtp",
+      "draft_checkpoint": "drluoto/Qwen3.8-Flash-Next-MTP-GGUF (Q8_0 detached sidecar)",
+      "source": "https://github.com/ggml-org/llama.cpp/discussions/27950",
+      "locator": "body packaging list (ROCm-verified MTP sidecar)",
+      "date": "2026-08-29",
+      "provenance": "forum",
+      "note": "Detached sidecar, not a built-in head; draft token counts per arm are unstated."
+    }
   },
   "hardware": [
     "strix-halo"
@@ -32,7 +94,39 @@
     "memory_gb": 100,
     "disk_gb": 94,
     "min_vram_gb": null,
-    "notes": "~94GB UD-IQ4_XS trunk + MTP sidecar resident in 128GB unified; up to 112GB GPU-allocatable. Builder measured at 8k and 24k context."
+    "notes": "~94GB UD-IQ4_XS trunk + MTP sidecar resident in 128GB unified; up to 112GB GPU-allocatable. Builder measured at 8k and 24k context.",
+    "memory_profile": {
+      "provenance": "forum",
+      "date": "2026-08-29",
+      "source": "https://github.com/ggml-org/llama.cpp/discussions/27950",
+      "locator": "body packaging + dossier section 6 (trunk 93.7 GB, ~5 GB sidecar)",
+      "note": "Trunk plus sidecar both resident in 128 GB unified; ~105 GB allocatable is an AMD setting, not a formula in the corpus.",
+      "entries": [
+        {
+          "component": "weights",
+          "value": 93.7,
+          "unit": "GB",
+          "scope": "total",
+          "location": "unified",
+          "provenance": "forum",
+          "date": "2026-08-29",
+          "source": "https://github.com/ggml-org/llama.cpp/discussions/27950",
+          "locator": "variation checkpoint UD-IQ4_XS, 93.7 GB"
+        },
+        {
+          "component": "draft",
+          "value": 5.2,
+          "unit": "GB",
+          "scope": "total",
+          "location": "unified",
+          "provenance": "forum",
+          "date": "2026-08-29",
+          "source": "https://github.com/ggml-org/llama.cpp/discussions/27950",
+          "locator": "body: 5.2 GB fetched via range reads, not 360 GB",
+          "note": "Dossier rounds to ~5 GB; the body states 5.2 GB fetched."
+        }
+      ]
+    }
   },
   "capabilities": {
     "vision": false,
@@ -60,7 +154,16 @@
         "text": "Serve the UD-IQ4_XS trunk plus the sidecar with --spec-type draft-mtp,ngram-mod"
       }
     ],
-    "auto_bootable": false
+    "auto_bootable": false,
+    "repo_revision": {
+      "resolution": "exact",
+      "commit": "ec0ad38b4836",
+      "anchor_date": "2026-08-29",
+      "source": "docs/builder-concerns-2026-09-16/r-artifacts.md",
+      "locator": "row 1: guide repo pin ec0ad38b4836 on 2026-08-29",
+      "retrieved": "2026-09-16",
+      "note": "Guide-repo pin only; the llama.cpp branch pin lives in engine.fork_revision."
+    }
   },
   "measurements": [
     {
@@ -72,7 +175,20 @@
       "provenance": "forum",
       "date": "2026-08-29",
       "source": "https://github.com/ggml-org/llama.cpp/discussions/27950",
-      "context": "file rewrite @8k ctx, full stack, greedy, UD-IQ4_XS; no-speculation baseline 16.8"
+      "context": "file rewrite @8k ctx, full stack, greedy, UD-IQ4_XS; no-speculation baseline 16.8",
+      "conditions": {
+        "context_label": "file rewrite @8k, full stack, greedy",
+        "greedy": true,
+        "hardware_count": 1,
+        "spec_decode": "mtp"
+      },
+      "evidence": {
+        "level": "c2_observation",
+        "lineage_id": "drluoto-strix-halo-mtp",
+        "method_grade": "author_report",
+        "quality_status": "unchecked",
+        "dossier_cited": true
+      }
     },
     {
       "id": "m002",
@@ -83,7 +199,20 @@
       "provenance": "forum",
       "date": "2026-08-29",
       "source": "https://github.com/ggml-org/llama.cpp/discussions/27950",
-      "context": "new code @8k ctx; baseline 16.8"
+      "context": "new code @8k ctx; baseline 16.8",
+      "conditions": {
+        "context_label": "new code @8k, full stack, greedy",
+        "greedy": true,
+        "hardware_count": 1,
+        "spec_decode": "mtp"
+      },
+      "evidence": {
+        "level": "c2_observation",
+        "lineage_id": "drluoto-strix-halo-mtp",
+        "method_grade": "author_report",
+        "quality_status": "unchecked",
+        "dossier_cited": true
+      }
     },
     {
       "id": "m003",
@@ -94,7 +223,20 @@
       "provenance": "forum",
       "date": "2026-08-29",
       "source": "https://github.com/ggml-org/llama.cpp/discussions/27950",
-      "context": "file rewrite @24k ctx; baseline ~15"
+      "context": "file rewrite @24k ctx; baseline ~15",
+      "conditions": {
+        "context_label": "file rewrite @24k, full stack, greedy",
+        "greedy": true,
+        "hardware_count": 1,
+        "spec_decode": "mtp"
+      },
+      "evidence": {
+        "level": "c2_observation",
+        "lineage_id": "drluoto-strix-halo-mtp",
+        "method_grade": "author_report",
+        "quality_status": "unchecked",
+        "dossier_cited": true
+      }
     },
     {
       "id": "m004",
@@ -105,7 +247,68 @@
       "provenance": "forum",
       "date": "2026-08-29",
       "source": "https://github.com/ggml-org/llama.cpp/discussions/27950",
-      "context": "new code @24k ctx; baseline ~15"
+      "context": "new code @24k ctx; baseline ~15",
+      "conditions": {
+        "context_label": "new code @24k, full stack, greedy",
+        "greedy": true,
+        "hardware_count": 1,
+        "spec_decode": "mtp"
+      },
+      "evidence": {
+        "level": "c2_observation",
+        "lineage_id": "drluoto-strix-halo-mtp",
+        "method_grade": "author_report",
+        "quality_status": "unchecked",
+        "dossier_cited": true
+      }
+    },
+    {
+      "id": "m005",
+      "metric": "decode_per_stream",
+      "value": 16.8,
+      "unit": "tok/s",
+      "concurrency": 1,
+      "provenance": "forum",
+      "date": "2026-08-29",
+      "source": "https://github.com/ggml-org/llama.cpp/discussions/27950",
+      "context": "no-speculation baseline @8k ctx (file rewrite and new code share the 16.8 row)",
+      "note": "Baseline arm from the headline table; pairs with m001 in the 8k bundle comparison. Locator: body headline table, 16.8 column.",
+      "conditions": {
+        "context_label": "no-speculation baseline @8k",
+        "greedy": true,
+        "hardware_count": 1
+      },
+      "evidence": {
+        "level": "c2_observation",
+        "lineage_id": "drluoto-strix-halo-mtp",
+        "method_grade": "author_report",
+        "quality_status": "unchecked",
+        "dossier_cited": true
+      }
+    },
+    {
+      "id": "m006",
+      "metric": "decode_per_stream",
+      "value": 15.0,
+      "unit": "tok/s",
+      "concurrency": 1,
+      "provenance": "forum",
+      "date": "2026-08-29",
+      "source": "https://github.com/ggml-org/llama.cpp/discussions/27950",
+      "context": "no-speculation baseline @24k ctx (source states ~15, approximate)",
+      "note": "Recorded as 15.0 with this approximation note; pairs with m003 in the 24k bundle comparison. Locator: body headline table, ~15 column.",
+      "conditions": {
+        "context_label": "no-speculation baseline @24k (approximate)",
+        "greedy": true,
+        "hardware_count": 1
+      },
+      "evidence": {
+        "level": "c2_observation",
+        "lineage_id": "drluoto-strix-halo-mtp",
+        "method_grade": "author_report",
+        "quality_status": "unchecked",
+        "dossier_cited": true
+      }
     }
   ],
   "caveats": [
@@ -119,24 +322,280 @@
     {
       "url": "https://github.com/ggml-org/llama.cpp/discussions/27950",
       "kind": "thread",
-      "note": "the measured, reproducible stack and discussion"
+      "note": "the measured, reproducible stack and discussion",
+      "lineage_id": "drluoto-strix-halo-mtp",
+      "archive_path": "directory/tools/history/inputs/pass4-social/raw/gh-discussion_ggml-org_llama.cpp_27950.json",
+      "locator": "title, body headline table, packaging list, and comments"
     },
     {
       "url": "https://github.com/drluoto/flash-next-strix-halo",
       "kind": "repo",
-      "note": "the builder guide: build/run lines and pitfalls"
+      "note": "the builder guide: build/run lines and pitfalls",
+      "lineage_id": "drluoto-strix-halo-mtp",
+      "locator": "build/run lines and pitfalls; pinned at ec0ad38b4836 per r-artifacts row 1"
     },
     {
       "url": "https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF",
       "kind": "model",
-      "note": "UD-IQ4_XS weights"
+      "note": "UD-IQ4_XS weights",
+      "lineage_id": "drluoto-strix-halo-mtp",
+      "locator": "UD-IQ4_XS trunk weights"
     },
     {
       "url": "https://huggingface.co/drluoto/Qwen3.8-Flash-Next-MTP-GGUF",
       "kind": "model",
-      "note": "detached MTP sidecar"
+      "note": "detached MTP sidecar",
+      "lineage_id": "drluoto-strix-halo-mtp",
+      "locator": "detached Q8_0 MTP sidecar"
     }
   ],
   "id": "qwen38-flash-next-strix-halo-llamacpp-mtp",
-  "updated": "2026-09-14"
+  "updated": "2026-09-14",
+  "schema_version": 2,
+  "correctness": {
+    "output_checked": true,
+    "checks": [
+      {
+        "id": "byte-clean-long-prompts",
+        "kind": "byte_clean",
+        "result": "pass",
+        "source": "https://github.com/ggml-org/llama.cpp/discussions/27950",
+        "locator": "body lever 2 (native MTP)",
+        "quote": "Output verified byte-clean at long prompts",
+        "date": "2026-08-29",
+        "lineage_id": "drluoto-strix-halo-mtp",
+        "note": "Strongest proof-of-output statement in the corpus per dossier section 4; contrasts with the earlier community port that emitted multilingual noise above ~1k prompt tokens."
+      }
+    ],
+    "note": "Correctness is builder-verified output reading, not an independent reproduction."
+  },
+  "known_failures": [
+    {
+      "id": "rocm10-sidecar-load",
+      "stage": "load",
+      "trigger": "Detached Q8_0 MTP sidecar on the strix-halo-flash-next branch under ROCm 10.0 (gfx1151, Ryzen AI Max+ 395, 96 GB unified)",
+      "effect": "Sidecar fails to load even standalone (n_layer_nextn reads 0; tensor blk.0.hc_attn_norm.weight not found), so it is not a target-pairing issue. The TOP_K side worked on the same box.",
+      "status": "open",
+      "observed_date": "2026-09-03",
+      "lineage_id": "giulio-volpe-rocm10-negative",
+      "source": "https://github.com/ggml-org/llama.cpp/discussions/27950",
+      "locator": "giulio-volpe comment 2026-09-03 (ROCm 10.0, gfx1151)",
+      "quote": "error loading model: check_tensor_dims: tensor 'blk.0.hc_attn_norm.weight' not found",
+      "note": "User-verified negative result; repro is broken on newer ROCm as of that date."
+    }
+  ],
+  "evidence": {
+    "rubric_version": "1.0",
+    "lineages": [
+      {
+        "id": "drluoto-strix-halo-mtp",
+        "actor": "drluoto",
+        "publisher": "drluoto",
+        "kind": "builder_repo",
+        "sources": [
+          "https://github.com/ggml-org/llama.cpp/discussions/27950",
+          "https://github.com/drluoto/flash-next-strix-halo"
+        ],
+        "locator": "discussion headline table + packaging list; guide build/run lines",
+        "archive_path": "directory/tools/history/inputs/pass4-social/raw/gh-discussion_ggml-org_llama.cpp_27950.json",
+        "note": "Guide repo plus discussion thread are one builder lineage."
+      },
+      {
+        "id": "giulio-volpe-rocm10-negative",
+        "actor": "giulio-volpe",
+        "kind": "crowd_report",
+        "sources": [
+          "https://github.com/ggml-org/llama.cpp/discussions/27950"
+        ],
+        "locator": "ROCm 10.0 sidecar load-failure comment, 2026-09-03",
+        "archive_path": "directory/tools/history/inputs/pass4-social/raw/gh-discussion_ggml-org_llama.cpp_27950.json",
+        "note": "Independent negative report on the same branch; TOP_K side worked."
+      }
+    ],
+    "claims": [
+      {
+        "id": "strix-halo-full-stack-config",
+        "technique_id": "rocm-hip-topk-gpu",
+        "kind": "configuration",
+        "statement": "Serves the UD-IQ4_XS trunk plus the Q8_0 detached MTP sidecar on Strix Halo via the strix-halo-flash-next branch: GPU TOP_K fix, native MTP with loader fix, and --spec-type draft-mtp,ngram-mod.",
+        "evidence_level": "c1_configuration",
+        "lineage_id": "drluoto-strix-halo-mtp",
+        "source": "https://github.com/ggml-org/llama.cpp/discussions/27950",
+        "locator": "body stack levers + packaging list",
+        "quote": "Three composable levers",
+        "status": "recorded",
+        "date": "2026-08-29",
+        "provenance": "forum"
+      },
+      {
+        "id": "gpu-topk-mechanism",
+        "technique_id": "rocm-hip-topk-gpu",
+        "kind": "mechanism",
+        "statement": "Stock HIP falls back to CPU past ne=1024 for ggml_top_k; the branch fixes it via hipCUB (#26592) or native radix (#27466), worth +38-53% end-to-end at 24k.",
+        "evidence_level": "c1_configuration",
+        "lineage_id": "drluoto-strix-halo-mtp",
+        "source": "https://github.com/ggml-org/llama.cpp/discussions/27950",
+        "locator": "body lever 1 (GPU TOP_K)",
+        "quote": "stock HIP falls back to CPU past ne=1024 (no CUB)",
+        "status": "recorded",
+        "date": "2026-08-29",
+        "provenance": "forum"
+      },
+      {
+        "id": "native-mtp-sidecar-usage",
+        "technique_id": "native-mtp",
+        "kind": "mechanism",
+        "statement": "Uses native MTP (#27836) with the detached-head loader fix; the Q8_0 head was extracted with HTTP range reads (5.2 GB fetched instead of the 360 GB checkpoint).",
+        "evidence_level": "c1_configuration",
+        "lineage_id": "drluoto-strix-halo-mtp",
+        "source": "https://github.com/ggml-org/llama.cpp/discussions/27950",
+        "locator": "body lever 2 + packaging list",
+        "status": "recorded",
+        "date": "2026-08-29",
+        "provenance": "forum"
+      }
+    ],
+    "comparisons": [
+      {
+        "id": "full-stack-vs-no-spec-8k",
+        "question": "What association does the headline table report between the full three-lever stack and no speculation at 8k file rewrite?",
+        "variable": "full three-lever stack (GPU TOP_K + native MTP + ngram-mod) vs no speculation",
+        "a": {
+          "label": "no speculation",
+          "measurement_id": "m005"
+        },
+        "b": {
+          "label": "full stack",
+          "measurement_id": "m001"
+        },
+        "result": "b_better",
+        "effect_metric": "decode_per_stream",
+        "effect_direction": "increase",
+        "contrast_kind": "bundle",
+        "conditions_constant": [
+          "same Strix Halo box and builder stack as labelled",
+          "same 8k file-rewrite workload as labelled"
+        ],
+        "conditions_unstated": [
+          "prompt corpus",
+          "sample size / n",
+          "same server configuration across arms",
+          "per-lever isolation",
+          "build pin per arm"
+        ],
+        "evidence_level": "c2_observation",
+        "lineage_id": "drluoto-strix-halo-mtp",
+        "independent_reproductions": [],
+        "quality_status": "unchecked",
+        "source": "https://github.com/ggml-org/llama.cpp/discussions/27950",
+        "locator": "body headline table (16.8 -> 47.1 row)",
+        "promotion_gate": {
+          "target_level": "c3_matched_ab",
+          "target_contrast_kind": "single_variable",
+          "required_facts": [
+            "both arms identified",
+            "same server configuration and workload",
+            "per-lever isolation including an ngram-mod A/B",
+            "build pins for the measured stack"
+          ],
+          "status": "not_met",
+          "note": "A three-lever bundle cannot promote without isolating the levers."
+        },
+        "provenance": "forum",
+        "date": "2026-08-29"
+      },
+      {
+        "id": "full-stack-vs-no-spec-24k",
+        "question": "What association does the headline table report between the full three-lever stack and no speculation at 24k file rewrite?",
+        "variable": "full three-lever stack (GPU TOP_K + native MTP + ngram-mod) vs no speculation",
+        "a": {
+          "label": "no speculation (approximate)",
+          "measurement_id": "m006"
+        },
+        "b": {
+          "label": "full stack",
+          "measurement_id": "m003"
+        },
+        "result": "b_better",
+        "effect_metric": "decode_per_stream",
+        "effect_direction": "increase",
+        "contrast_kind": "bundle",
+        "conditions_constant": [
+          "same Strix Halo box and builder stack as labelled",
+          "same 24k file-rewrite workload as labelled"
+        ],
+        "conditions_unstated": [
+          "prompt corpus",
+          "sample size / n",
+          "same server configuration across arms",
+          "per-lever isolation",
+          "build pin per arm",
+          "exact baseline value (source states ~15)"
+        ],
+        "evidence_level": "c2_observation",
+        "lineage_id": "drluoto-strix-halo-mtp",
+        "independent_reproductions": [],
+        "quality_status": "unchecked",
+        "source": "https://github.com/ggml-org/llama.cpp/discussions/27950",
+        "locator": "body headline table (~15 -> 28.6 row)",
+        "promotion_gate": {
+          "target_level": "c3_matched_ab",
+          "target_contrast_kind": "single_variable",
+          "required_facts": [
+            "both arms identified",
+            "same server configuration and workload",
+            "per-lever isolation including an ngram-mod A/B",
+            "build pins for the measured stack"
+          ],
+          "status": "not_met",
+          "note": "A three-lever bundle cannot promote without isolating the levers."
+        },
+        "provenance": "forum",
+        "date": "2026-08-29"
+      }
+    ],
+    "open_questions": [
+      {
+        "id": "loader-fix-on-current-rocm",
+        "type": "other",
+        "question": "The detached-head loader fix is unconfirmed on current ROCm after the 2026-09-03 ROCm 10.0 load failure; dossier section 13 calls a fresh-branch build the blocker.",
+        "blocks": [
+          "exact_reproduction"
+        ],
+        "owner": "openkod",
+        "status": "open",
+        "source": "https://github.com/ggml-org/llama.cpp/discussions/27950",
+        "locator": "giulio-volpe comment 2026-09-03 + dossier section 13"
+      },
+      {
+        "id": "thermal-power-ceiling",
+        "type": "other",
+        "question": "No power, thermal, or GPU-allocatable ceiling beyond the 112 GB value was recorded; the headline numbers are from one day with no thermal-drift notes.",
+        "blocks": [
+          "speed_claim"
+        ],
+        "owner": "openkod",
+        "status": "open",
+        "source": "https://github.com/ggml-org/llama.cpp/discussions/27950",
+        "locator": "dossier section 9 (unknowns/gaps)"
+      },
+      {
+        "id": "ngram-mod-attribution",
+        "type": "other",
+        "question": "ngram-mod is a knob with no A/B measurement; its contribution inside the bundle is unisolated.",
+        "blocks": [
+          "causal_claim"
+        ],
+        "owner": "openkod",
+        "status": "open",
+        "source": "https://github.com/ggml-org/llama.cpp/discussions/27950",
+        "locator": "body lever 3 (one line, no numbers) + dossier section 13"
+      }
+    ],
+    "re_review_triggers": [
+      "a new ROCm release, or PR #27836/#26592/#27466 merging into mainline",
+      "a HIP change affecting the ne=1024 CPU-fallback knee",
+      "a fresh-branch build confirming the detached-head loader fix on current ROCm"
+    ]
+  }
 }

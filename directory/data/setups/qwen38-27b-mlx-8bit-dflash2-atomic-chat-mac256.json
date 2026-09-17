@@ -21,7 +21,23 @@
     "image": null,
     "draft_model": null,
     "spec_decode": "dflash2",
-    "flags": []
+    "flags": [],
+    "fork_revision": {
+      "repo": "https://github.com/AtomicBot-ai/Atomic-Chat",
+      "resolution": "unresolved",
+      "source": "https://github.com/AtomicBot-ai/Atomic-Chat",
+      "locator": "no commit pin in the corpus; dossier section 9",
+      "retrieved": "2026-09-16",
+      "note": "Atomic Chat app version/build is unstated. A repo commit pin or rename/re-benchmark is a re-review trigger; binary provenance between the two arms is unresolved."
+    },
+    "spec_decode_profile": {
+      "method": "dflash2",
+      "source": "https://x.com/atomic_chat_hq/status/2090436652363665614",
+      "locator": "reply 2090558731901690077 by @TriadDarren, 2026-08-20T21:56:57Z, in thread 2090436652363665614 (DFlash2 on Auto)",
+      "date": "2026-08-20",
+      "provenance": "forum",
+      "note": "Auto setting only; block size, sampler, context, and draft details are all unstated."
+    }
   },
   "hardware": [
     "mac-256gb"
@@ -30,7 +46,28 @@
     "memory_gb": 30,
     "disk_gb": 30,
     "min_vram_gb": null,
-    "notes": "8-bit MLX weights 29.5GB in the 256GB unified pool; KV depends on context (unstated)."
+    "notes": "8-bit MLX weights 29.5GB in the 256GB unified pool; KV depends on context (unstated).",
+    "memory_profile": {
+      "provenance": "forum",
+      "date": "2026-08-20",
+      "source": "https://x.com/atomic_chat_hq/status/2090436652363665614",
+      "locator": "reply states 256GB M3 Ultra Mac Studio + mlx-community/Qwen3.8-27B-8bit; 29.5 GB weight size per dossier section 6",
+      "note": "Memory-abundance archetype (29.5 GB weights in a 256 GB unified pool). No offload is encoded: abundance is not a source statement of no-host-offload.",
+      "entries": [
+        {
+          "component": "weights",
+          "value": 29.5,
+          "unit": "GB",
+          "scope": "total",
+          "location": "unified",
+          "provenance": "forum",
+          "date": "2026-08-20",
+          "source": "https://huggingface.co/mlx-community/Qwen3.8-27B-8bit",
+          "locator": "8-bit MLX conversion, 29.5 GB per dossier section 6",
+          "note": "KV depends on context, unstated."
+        }
+      ]
+    }
   },
   "capabilities": {
     "vision": true,
@@ -58,7 +95,14 @@
         "text": "Enable the DFlash2 draft on Auto"
       }
     ],
-    "auto_bootable": false
+    "auto_bootable": false,
+    "repo_revision": {
+      "resolution": "unresolved",
+      "source": "https://github.com/AtomicBot-ai/Atomic-Chat",
+      "locator": "no commit pin in the corpus (dossier section 9)",
+      "retrieved": "2026-09-16",
+      "note": "Recipe lives in the app release, not on a pinned commit."
+    }
   },
   "measurements": [
     {
@@ -70,7 +114,14 @@
       "provenance": "forum",
       "date": "2026-08-20",
       "source": "https://x.com/atomic_chat_hq/status/2090436652363665614",
-      "context": "baseline, no spec decode"
+      "context": "baseline, no spec decode",
+      "evidence": {
+        "level": "c2_observation",
+        "lineage_id": "triaddarren-m3ultra-dflash2",
+        "method_grade": "author_report",
+        "quality_status": "unchecked",
+        "dossier_cited": true
+      }
     },
     {
       "id": "m002",
@@ -81,7 +132,14 @@
       "provenance": "forum",
       "date": "2026-08-20",
       "source": "https://x.com/atomic_chat_hq/status/2090436652363665614",
-      "context": "DFlash2 on Auto; 3.79x vs baseline"
+      "context": "DFlash2 on Auto; 3.79x vs baseline",
+      "evidence": {
+        "level": "c2_observation",
+        "lineage_id": "triaddarren-m3ultra-dflash2",
+        "method_grade": "author_report",
+        "quality_status": "unchecked",
+        "dossier_cited": true
+      }
     }
   ],
   "caveats": [
@@ -94,19 +152,186 @@
     {
       "url": "https://x.com/atomic_chat_hq/status/2090436652363665614",
       "kind": "post",
-      "note": "the reported result (reply by @TriadDarren)"
+      "note": "the reported result (reply by @TriadDarren)",
+      "lineage_id": "triaddarren-m3ultra-dflash2",
+      "archive_path": "directory/tools/history/inputs/pass4-social/raw/x_thread_2090436652363665614.json",
+      "locator": "reply 2090558731901690077 by @TriadDarren, 2026-08-20T21:56:57Z, in thread 2090436652363665614",
+      "quote": "@atomic_chat_hq \"Up to 4x faster\" ACCURATE. On 256GB M3 Ultra Mac Studio, I ran mlx-community/Qwen3.8-27B-8bit at 23 t/s and raised it to 87.6 t/s with DFlash2 on Auto. (3.79x speed improvement.)"
     },
     {
       "url": "https://huggingface.co/mlx-community/Qwen3.8-27B-8bit",
       "kind": "model",
-      "note": "8-bit MLX weights"
+      "note": "8-bit MLX weights",
+      "lineage_id": "triaddarren-m3ultra-dflash2",
+      "locator": "8-bit MLX weights, 29.5 GB"
     },
     {
       "url": "https://github.com/AtomicBot-ai/Atomic-Chat",
       "kind": "repo",
-      "note": "the runtime app"
+      "note": "the runtime app",
+      "lineage_id": "triaddarren-m3ultra-dflash2",
+      "locator": "runtime app; no commit pin in corpus"
     }
   ],
   "id": "qwen38-27b-mlx-8bit-dflash2-atomic-chat-mac256",
-  "updated": "2026-09-14"
+  "updated": "2026-09-14",
+  "schema_version": 2,
+  "evidence": {
+    "rubric_version": "1.0",
+    "lineages": [
+      {
+        "id": "triaddarren-m3ultra-dflash2",
+        "actor": "TriadDarren",
+        "kind": "builder_reply",
+        "sources": [
+          "https://x.com/atomic_chat_hq/status/2090436652363665614"
+        ],
+        "locator": "reply 2090558731901690077 by @TriadDarren, 2026-08-20T21:56:57Z, in thread 2090436652363665614",
+        "archive_path": "directory/tools/history/inputs/pass4-social/raw/x_thread_2090436652363665614.json",
+        "note": "Single-reply lineage. @JoelDeTeves's same-thread remark (post 2090621092482392321, 'I think it is beating MTP now') is a remark, not a measurement, and stays in this lineage — not independent corroboration."
+      }
+    ],
+    "claims": [
+      {
+        "id": "dflash2-auto-config",
+        "technique_id": "dflash2-block-diffusion-drafting",
+        "kind": "configuration",
+        "statement": "Runs mlx-community/Qwen3.8-27B-8bit inside the Atomic Chat app (MLX-VLM backend) with the DFlash2 draft on Auto.",
+        "evidence_level": "c1_configuration",
+        "lineage_id": "triaddarren-m3ultra-dflash2",
+        "source": "https://x.com/atomic_chat_hq/status/2090436652363665614",
+        "locator": "reply 2090558731901690077 by @TriadDarren, 2026-08-20T21:56:57Z, in thread 2090436652363665614",
+        "status": "recorded",
+        "date": "2026-08-20",
+        "provenance": "forum"
+      },
+      {
+        "id": "dflash2-lift-observed",
+        "technique_id": "dflash2-block-diffusion-drafting",
+        "kind": "observation",
+        "statement": "Builder reports 23 t/s baseline rising to 87.6 t/s with DFlash2 on Auto (3.79x) on a 256 GB M3 Ultra Mac Studio.",
+        "evidence_level": "c2_observation",
+        "lineage_id": "triaddarren-m3ultra-dflash2",
+        "source": "https://x.com/atomic_chat_hq/status/2090436652363665614",
+        "locator": "reply 2090558731901690077 by @TriadDarren, 2026-08-20T21:56:57Z, in thread 2090436652363665614",
+        "quote": "@atomic_chat_hq \"Up to 4x faster\" ACCURATE. On 256GB M3 Ultra Mac Studio, I ran mlx-community/Qwen3.8-27B-8bit at 23 t/s and raised it to 87.6 t/s with DFlash2 on Auto. (3.79x speed improvement.)",
+        "status": "recorded",
+        "date": "2026-08-20",
+        "provenance": "forum"
+      },
+      {
+        "id": "up-to-4x-as-379x",
+        "technique_id": "dflash2-block-diffusion-drafting",
+        "kind": "observation",
+        "statement": "The vendor 'Up to 4x faster' headline is corroborated on this one run as 3.79x (87.6/23); the honest description is 3.79x, not 4x.",
+        "evidence_level": "c2_observation",
+        "lineage_id": "triaddarren-m3ultra-dflash2",
+        "source": "https://x.com/atomic_chat_hq/status/2090436652363665614",
+        "locator": "reply 2090558731901690077 by @TriadDarren, 2026-08-20T21:56:57Z, in thread 2090436652363665614",
+        "quote": "@atomic_chat_hq \"Up to 4x faster\" ACCURATE. On 256GB M3 Ultra Mac Studio, I ran mlx-community/Qwen3.8-27B-8bit at 23 t/s and raised it to 87.6 t/s with DFlash2 on Auto. (3.79x speed improvement.)",
+        "status": "recorded",
+        "date": "2026-08-20",
+        "provenance": "forum"
+      }
+    ],
+    "comparisons": [
+      {
+        "id": "dflash2-off-vs-auto",
+        "question": "What does the builder's reply claim for DFlash2 Auto versus no speculation?",
+        "candidate_variable": "DFlash2 draft toggle (Auto) — claimed, not isolated as the sole variable",
+        "a": {
+          "label": "baseline, no spec decode",
+          "measurement_id": "m001"
+        },
+        "b": {
+          "label": "DFlash2 on Auto",
+          "measurement_id": "m002"
+        },
+        "result": "b_better",
+        "effect_metric": "decode_per_stream",
+        "effect_direction": "increase",
+        "contrast_kind": "claimed",
+        "conditions_constant": [
+          "same 256 GB M3 Ultra box, checkpoint, and app as stated in the reply"
+        ],
+        "conditions_unstated": [
+          "context length",
+          "workload / task",
+          "sampler settings",
+          "MTP/DFlash block size",
+          "KV quantization",
+          "sample size / n",
+          "same app configuration across both arms",
+          "MLX stack version"
+        ],
+        "evidence_level": "c2_observation",
+        "lineage_id": "triaddarren-m3ultra-dflash2",
+        "independent_reproductions": [],
+        "quality_status": "unchecked",
+        "source": "https://x.com/atomic_chat_hq/status/2090436652363665614",
+        "locator": "reply 2090558731901690077 by @TriadDarren, 2026-08-20T21:56:57Z, in thread 2090436652363665614",
+        "quote": "@atomic_chat_hq \"Up to 4x faster\" ACCURATE. On 256GB M3 Ultra Mac Studio, I ran mlx-community/Qwen3.8-27B-8bit at 23 t/s and raised it to 87.6 t/s with DFlash2 on Auto. (3.79x speed improvement.)",
+        "promotion_gate": {
+          "target_level": "c3_matched_ab",
+          "target_contrast_kind": "single_variable",
+          "required_facts": [
+            "both arms identified",
+            "same app configuration and workload",
+            "DFlash2 as the sole toggled variable",
+            "per-run protocol including context, sampler, and n"
+          ],
+          "status": "not_met",
+          "note": "No per-run protocol exists; this lane cannot become box/reference without a re-run (dossier section 13)."
+        },
+        "provenance": "forum",
+        "date": "2026-08-20",
+        "note": "Author-reported claimed comparison. Do not render as verified, proved, independently reproduced, or generally causal."
+      }
+    ],
+    "contradictions": [
+      {
+        "id": "apple-only-vs-rtx6000-vendor-benchmarks",
+        "statement": "Per dossier section 8, a pass-4 note records an unresolved tension: the Atomic Chat README states DFlash is Apple-only, while vendor material benchmarks DFlash2 on RTX 6000.",
+        "status": "unresolved_conflict",
+        "sources": [
+          "https://x.com/atomic_chat_hq/status/2090436652363665614"
+        ],
+        "lineage_ids": [
+          "triaddarren-m3ultra-dflash2"
+        ],
+        "note": "Recorded here, not settled here: the engine-registry sources are outside this task's scope (no engine edits allowed), so no resolution is attempted."
+      }
+    ],
+    "open_questions": [
+      {
+        "id": "per-run-protocol",
+        "type": "other",
+        "question": "No per-run protocol exists: context length, sampler settings, MTP/DFlash block size, KV quantization, n, and MLX stack version are all unstated.",
+        "blocks": [
+          "promotion_to_box"
+        ],
+        "owner": "openkod",
+        "status": "open",
+        "source": "https://x.com/atomic_chat_hq/status/2090436652363665614",
+        "locator": "reply 2090558731901690077 by @TriadDarren, 2026-08-20T21:56:57Z, in thread 2090436652363665614; dossier section 9"
+      },
+      {
+        "id": "mlx-snapshot-unpinned",
+        "type": "other",
+        "question": "The mlx-community 8-bit checkpoint snapshot is unpinned; re-solving the actual snapshot is required for exact reproduction.",
+        "blocks": [
+          "exact_reproduction"
+        ],
+        "owner": "openkod",
+        "status": "open",
+        "source": "https://huggingface.co/mlx-community/Qwen3.8-27B-8bit",
+        "locator": "dossier section 9 (snapshot not pinned)"
+      }
+    ],
+    "re_review_triggers": [
+      "AtomicChat renames or re-benchmarks this class",
+      "the Atomic-Chat repo gains a commit pin for the measured app version",
+      "a new MLX quant of the same checkpoint is published (e.g. a 6-bit)"
+    ]
+  }
 }

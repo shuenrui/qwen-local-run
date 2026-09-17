@@ -31,7 +31,38 @@
     "memory_gb": 24,
     "disk_gb": 18,
     "min_vram_gb": 24,
-    "notes": "23GB resident at 96% GPU / 4% CPU per ollama ps; host RAM is not the constraint \u2014 24GB floor. GPU downclocked at a 90% power limit; a stock-clocked card should beat this number. Load ~19.5s."
+    "notes": "23GB resident at 96% GPU / 4% CPU per ollama ps; host RAM is not the constraint — 24GB floor. GPU downclocked at a 90% power limit; a stock-clocked card should beat this number. Load ~19.5s.",
+    "memory_profile": {
+      "provenance": "forum",
+      "date": "2026-08-25",
+      "source": "https://discuss.huggingface.co/t/179251",
+      "locator": "MartinPilarski post 1 (blobs 16.5 GB + 928 MB projector; 23 GB resident at 96% GPU / 4% CPU per preserved record) + dossier section 6",
+      "note": "Fully GPU-resident pull per the preserved record; host RAM is not the constraint. No offload is encoded: the 96/4 split is ollama ps residency, not a host-offload claim.",
+      "entries": [
+        {
+          "component": "weights",
+          "value": 17.4,
+          "unit": "GB",
+          "scope": "total",
+          "location": "gpu",
+          "provenance": "forum",
+          "date": "2026-08-25",
+          "source": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
+          "locator": "Q4_K_M size_gb per variation record"
+        },
+        {
+          "component": "projector",
+          "value": 0.928,
+          "unit": "GB",
+          "scope": "total",
+          "location": "gpu",
+          "provenance": "forum",
+          "date": "2026-08-25",
+          "source": "https://discuss.huggingface.co/t/179251",
+          "locator": "post 1: 928 MB projector alongside the 16.5 GB blobs"
+        }
+      ]
+    }
   },
   "capabilities": {
     "vision": true,
@@ -53,7 +84,14 @@
         "kind": "do",
         "text": "cap context via a Modelfile tag (num_ctx 131072) if you need the long window"
       }
-    ]
+    ],
+    "repo_revision": {
+      "resolution": "unresolved",
+      "source": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
+      "locator": "the recipe is a pull (pinned command + context ceiling + blob location), not a repo (dossier section 2)",
+      "retrieved": "2026-09-16",
+      "note": "No commit exists to pin."
+    }
   },
   "measurements": [
     {
@@ -65,14 +103,36 @@
       "provenance": "forum",
       "date": "2026-08-25",
       "n": null,
-      "method": "wall-clock division (482 tokens / ~12s) \u2014 NOT ollama eval_duration",
-      "note": "482 tokens in ~12s wall-clock on the Q4_K_M pull; corroborated in-thread by John6666 against crowd-sourced llamabench.ai RTX 3090 non-speculative runs of 38.2 / 40.0 / 41.1 / 45.6 tok/s (llama.cpp, differing quant/cache settings \u2014 sanity range, not a reproduction)",
-      "source": "https://discuss.huggingface.co/t/179251"
+      "method": "wall-clock division (482 tokens / ~12s) — NOT ollama eval_duration",
+      "note": "482 tokens in ~12s wall-clock on the Q4_K_M pull; corroborated in-thread by John6666 against crowd-sourced llamabench.ai RTX 3090 non-speculative runs of 38.2 / 40.0 / 41.1 / 45.6 tok/s (llama.cpp, differing quant/cache settings — sanity range, not a reproduction)",
+      "source": "https://discuss.huggingface.co/t/179251",
+      "conditions": {
+        "context_label": "Q4_K_M pull, 482 tokens in ~12 s wall-clock",
+        "hardware_count": 1,
+        "power_limit_pct": 90,
+        "clock_state": "downclocked (builder-stated)"
+      },
+      "evidence": {
+        "level": "c2_observation",
+        "lineage_id": "hf-forum-179251-ollama",
+        "method_grade": "wall_clock_division",
+        "method_note": "482 tokens / ~12 s wall-clock division — NOT ollama eval_duration, which was never recorded. John6666's decision tree would require eval_duration (or --verbose/API metrics) to promote this above wall-clock.",
+        "quality_status": "unchecked",
+        "dossier_cited": true,
+        "corroborations": [
+          {
+            "url": "https://llamabench.ai/browse/rtx3090/qwen3-8-27b",
+            "kind": "benchmark",
+            "locator": "John6666 reply post 2, 2026-08-26 (crowd rows cited in-thread)",
+            "note": "Crowd range 38.2 / 40.0 / 41.1 / 45.6 tok/s (llama.cpp, differing quant/cache) — sanity range per the reply, explicitly NOT a reproduction."
+          }
+        ]
+      }
     }
   ],
   "caveats": [
     "WEAK METHOD, kept deliberately: 40.2 tok/s is wall-clock division, not Ollama's eval_duration; a thread reply is a full decision tree for verifying it properly.",
-    "Card was downclocked at a 90% power limit \u2014 treat 40.2 as a floor for a stock 3090.",
+    "Card was downclocked at a 90% power limit — treat 40.2 as a floor for a stock 3090.",
     "Corroborated in-thread against crowd-sourced llamabench.ai RTX 3090 numbers.",
     "27B loads fully GPU-resident through Ollama's HF bridge with the 928MB vision projector alongside."
   ],
@@ -81,18 +141,119 @@
     {
       "url": "https://discuss.huggingface.co/t/179251",
       "kind": "thread",
-      "note": "the run report + verification replies"
+      "note": "the run report + verification replies",
+      "lineage_id": "hf-forum-179251-ollama",
+      "archive_path": "directory/tools/history/inputs/pass4-social/raw/forum-hf_179251.json",
+      "locator": "post 1 run report (MartinPilarski, 2026-08-25) + post 2 verification reply (John6666, 2026-08-26)"
     },
     {
       "url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
       "kind": "model",
-      "note": "weights / quant card"
+      "note": "weights / quant card",
+      "lineage_id": "hf-forum-179251-ollama",
+      "locator": "weights / quant card"
     },
     {
       "url": "https://llamabench.ai/browse/rtx3090/qwen3-8-27b",
       "kind": "benchmark",
-      "note": "crowd-sourced comparison point cited in-thread"
+      "note": "crowd-sourced comparison point cited in-thread",
+      "lineage_id": "hf-forum-179251-ollama",
+      "locator": "cited in-thread by John6666; corroboration only, not a reproduction"
     }
   ],
-  "updated": "2026-09-12"
+  "updated": "2026-09-12",
+  "schema_version": 2,
+  "evidence": {
+    "rubric_version": "1.0",
+    "lineages": [
+      {
+        "id": "hf-forum-179251-ollama",
+        "actor": "MartinPilarski",
+        "kind": "forum_report",
+        "sources": [
+          "https://discuss.huggingface.co/t/179251",
+          "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
+          "https://llamabench.ai/browse/rtx3090/qwen3-8-27b"
+        ],
+        "locator": "run report + verification decision-tree reply + cited crowd rows",
+        "archive_path": "directory/tools/history/inputs/pass4-social/raw/forum-hf_179251.json",
+        "note": "Single-forum-thread lineage. The crowd range lives in corroborations only."
+      }
+    ],
+    "claims": [
+      {
+        "id": "pull-cap-config",
+        "technique_id": "ollama-hf-bridge-pull",
+        "kind": "configuration",
+        "statement": "ollama pull hf.co/unsloth/Qwen3.8-27B-GGUF:Q4_K_M with context capped at 131072 via a local qwen-capped-128k tag; 16.5 GB blobs + 928 MB projector on a secondary drive; load ~19.5 s into VRAM on one RTX 3090.",
+        "evidence_level": "c1_configuration",
+        "lineage_id": "hf-forum-179251-ollama",
+        "source": "https://discuss.huggingface.co/t/179251",
+        "locator": "post 1 report + preserved engine config",
+        "status": "recorded",
+        "date": "2026-08-25",
+        "provenance": "forum"
+      },
+      {
+        "id": "wall-clock-402",
+        "technique_id": "ollama-hf-bridge-pull",
+        "kind": "observation",
+        "statement": "40.2 tok/s by wall-clock division (482 tokens / ~12 s) on the Q4_K_M pull; Ollama's eval_duration was never recorded, so this stays a wall-clock figure.",
+        "evidence_level": "c2_observation",
+        "lineage_id": "hf-forum-179251-ollama",
+        "source": "https://discuss.huggingface.co/t/179251",
+        "locator": "post 1 report + measurement method/note",
+        "quote": "482 tokens in about 12 seconds works out to roughly 40 tokens/s.",
+        "status": "recorded",
+        "date": "2026-08-25",
+        "provenance": "forum"
+      },
+      {
+        "id": "verify-tree",
+        "technique_id": "ollama-hf-bridge-pull",
+        "kind": "reproducibility",
+        "statement": "John6666's reply is the verification path for this number: confirm ~12 s is generation time via eval_duration (--verbose or API metrics), check 100% GPU via ollama ps, and only then compare against other benchmarks.",
+        "evidence_level": "c1_configuration",
+        "lineage_id": "hf-forum-179251-ollama",
+        "source": "https://discuss.huggingface.co/t/179251",
+        "locator": "post 2 decision tree (eval_duration vs wall-clock, ollama ps)",
+        "quote": "Use --verbose (or the API metrics) once and compare eval_rate, rather than dividing visible tokens by wall-clock time.",
+        "status": "recorded",
+        "date": "2026-08-26",
+        "provenance": "forum"
+      }
+    ],
+    "open_questions": [
+      {
+        "id": "eval-duration-unrecorded",
+        "type": "other",
+        "question": "No ollama eval_duration (or --verbose/API metrics) was ever recorded; the 40.2 cannot be promoted above forum tier without an eval_duration or a fresh run, and the 131072 local-tag cap needs its ceiling confirmed.",
+        "blocks": [
+          "speed_claim"
+        ],
+        "owner": "openkod",
+        "status": "open",
+        "source": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks/issues/57",
+        "locator": "docs/builder-concerns-2026-09-16/builder-questions.md Q2 (Ollama wall-clock vs eval_duration, filed 2026-09-16); dossier section 13 (blocker)"
+      },
+      {
+        "id": "local-tag-ceiling",
+        "type": "other",
+        "question": "The 131072 cap is a builder-local tag, not a ceiling reproducible through Ollama server APIs; a second user would need their own command.",
+        "blocks": [
+          "exact_reproduction"
+        ],
+        "owner": "openkod",
+        "status": "open",
+        "source": "https://discuss.huggingface.co/t/179251",
+        "locator": "dossier section 9/13 (local tag, single source)"
+      }
+    ],
+    "re_review_triggers": [
+      "Ollama changes HF-bridge blob handling or context-cap behavior",
+      "unsloth re-quantizes with a different tag",
+      "an independent builder records a real (non-wall-clock) number",
+      "an answer to the eval_duration builder question"
+    ]
+  }
 }

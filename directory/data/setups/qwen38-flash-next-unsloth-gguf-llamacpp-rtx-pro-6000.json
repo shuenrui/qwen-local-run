@@ -24,16 +24,68 @@
     "flags": [
       "--spec-type draft-mtp",
       "--spec-draft-n-max 5"
-    ]
+    ],
+    "fork_revision": {
+      "repo": "https://github.com/ggml-org/llama.cpp",
+      "resolution": "unresolved",
+      "source": "https://unsloth.ai/docs/models/qwen3.8-next",
+      "locator": "guide gives a llama-server command, not a fork branch or build pin",
+      "retrieved": "2026-09-16",
+      "note": "No fork branch or build is stated in the corpus; requires_fork is preserved from the Phase-A record and the revision stays unresolved. Unsloth Desktop (MTP on by default) is the stated alternative in engine config prose."
+    },
+    "spec_decode_profile": {
+      "method": "mtp",
+      "draft_checkpoint": "unsloth/Qwen3.8-Flash-Next-GGUF MTP/mtp-Qwen3.8-Flash-Next-shared-Q8_0.gguf (shared Q8_0 module, 2.79 GB)",
+      "max_draft_tokens": 5,
+      "source": "https://unsloth.ai/docs/models/qwen3.8-next",
+      "locator": "guide MTP run command (--spec-type draft-mtp --spec-draft-n-max 5); shared-module size per dossier section 3",
+      "date": "2026-09-02",
+      "provenance": "vendor",
+      "note": "Acceptance and draft details beyond n-max 5 are unstated; the chart does not restate quant per point (quant mapped from the guide, per preserved caveats)."
+    }
   },
   "hardware": [
-    "rtx-pro-6000"
+    {
+      "id": "rtx-pro-6000",
+      "variant_ambiguous": true,
+      "variant_note": "RTX PRO 6000 has two editions with different bandwidth (Workstation 1792 GB/s, Server 1597 GB/s); the claim does not say which (per preserved setup caveats)."
+    }
   ],
   "requirements": {
     "memory_gb": 114,
     "disk_gb": 114,
     "min_vram_gb": 114,
-    "notes": "111.3GB UD-Q4_K_XL + ~2.8GB shared MTP module; fits a single 96GB card only with the PLE table offloaded (Unsloth sizes the 4-bit lane at 96-114GB). Treat the 96GB fit as tight."
+    "notes": "111.3GB UD-Q4_K_XL + ~2.8GB shared MTP module; fits a single 96GB card only with the PLE table offloaded (Unsloth sizes the 4-bit lane at 96-114GB). Treat the 96GB fit as tight.",
+    "memory_profile": {
+      "provenance": "vendor",
+      "date": "2026-09-02",
+      "source": "https://unsloth.ai/docs/models/qwen3.8-next",
+      "locator": "dossier section 1/6: 111.3 GB file + 2.79 GB shared module; 96-114 GB 4-bit lane",
+      "note": "Weights exceed the 96 GB card on paper; which tier carries the remainder is the open fit question below. No offload is encoded.",
+      "entries": [
+        {
+          "component": "weights",
+          "value": 111.3,
+          "unit": "GB",
+          "scope": "total",
+          "provenance": "vendor",
+          "date": "2026-09-02",
+          "source": "https://unsloth.ai/docs/models/qwen3.8-next",
+          "locator": "UD-Q4_K_XL 111.3 GB per dossier section 1"
+        },
+        {
+          "component": "draft",
+          "value": 2.79,
+          "unit": "GB",
+          "scope": "total",
+          "provenance": "vendor",
+          "date": "2026-09-02",
+          "source": "https://unsloth.ai/docs/models/qwen3.8-next",
+          "locator": "shared Q8_0 MTP module per dossier section 3",
+          "note": "Shared module reuses the main model's embed layer."
+        }
+      ]
+    }
   },
   "capabilities": {
     "vision": true,
@@ -48,7 +100,14 @@
     "repo": "https://unsloth.ai/docs/models/qwen3.8-next",
     "profile": null,
     "steps": null,
-    "auto_bootable": true
+    "auto_bootable": true,
+    "repo_revision": {
+      "resolution": "page_retrieval",
+      "retrieved": "2026-09-13",
+      "source": "https://unsloth.ai/docs/models/qwen3.8-next",
+      "locator": "dossier section 2/10: page retrieved 2026-09-13 and archived verbatim; the page does not version itself",
+      "note": "Stated with the fetch date, not a fake-versioned commit; re-fetch and diff to re-review."
+    }
   },
   "measurements": [
     {
@@ -60,7 +119,20 @@
       "provenance": "vendor",
       "date": "2026-09-02",
       "source": "https://unsloth.ai/docs/models/qwen3.8-next",
-      "context": "vendor chart: '170 tokens/s on 1x RTX 6000 PRO GPU compared to the 100 token baseline', UD-Q4_K_XL + shared Q8_0 MTP; quant mapped from the guide, not restated on the chart"
+      "context": "vendor chart: '170 tokens/s on 1x RTX 6000 PRO GPU compared to the 100 token baseline', UD-Q4_K_XL + shared Q8_0 MTP; quant mapped from the guide, not restated on the chart",
+      "conditions": {
+        "context_label": "vendor chart 170 tok/s point, UD-Q4_K_XL + shared Q8_0 MTP",
+        "hardware_count": 1,
+        "spec_decode": "mtp",
+        "max_draft_tokens": 5
+      },
+      "evidence": {
+        "level": "c2_observation",
+        "lineage_id": "unsloth-rtx6000-chart",
+        "method_grade": "vendor_published_table",
+        "quality_status": "unchecked",
+        "dossier_cited": true
+      }
     }
   ],
   "caveats": [
@@ -74,19 +146,106 @@
     {
       "url": "https://unsloth.ai/docs/models/qwen3.8-next",
       "kind": "docs",
-      "note": "the guide: MTP run command and the 170 tok/s on RTX PRO 6000 chart"
+      "note": "the guide: MTP run command and the 170 tok/s on RTX PRO 6000 chart",
+      "lineage_id": "unsloth-rtx6000-chart",
+      "locator": "MTP run command + 170 tok/s chart; page retrieved 2026-09-13 per dossier section 2 (no raw page archive exists; discovery quote + method note archived in candidates.json)"
     },
     {
       "url": "https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF",
       "kind": "model",
-      "note": "UD quants and the shared MTP module"
+      "note": "UD quants and the shared MTP module",
+      "lineage_id": "unsloth-rtx6000-chart",
+      "locator": "UD quants and the shared MTP module"
     },
     {
       "url": "https://x.com/UnslothAI/status/2095157074112164072",
       "kind": "post",
-      "note": "discovery post (vendor)"
+      "note": "discovery post (vendor); the doc is the artifact",
+      "lineage_id": "unsloth-rtx6000-chart",
+      "archive_path": "directory/tools/history/inputs/pass4-social/raw/xsweep_unslothAI.json",
+      "locator": "discovery post payload"
     }
   ],
   "id": "qwen38-flash-next-unsloth-gguf-llamacpp-rtx-pro-6000",
-  "updated": "2026-09-14"
+  "updated": "2026-09-14",
+  "schema_version": 2,
+  "evidence": {
+    "rubric_version": "1.0",
+    "lineages": [
+      {
+        "id": "unsloth-rtx6000-chart",
+        "actor": "Unsloth",
+        "publisher": "unsloth",
+        "kind": "vendor_docs",
+        "sources": [
+          "https://unsloth.ai/docs/models/qwen3.8-next",
+          "https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF",
+          "https://x.com/UnslothAI/status/2095157074112164072"
+        ],
+        "locator": "guide command + chart (retrieved 2026-09-13); discovery post in xsweep archive",
+        "note": "Vendor-docs lineage, one operating point, no independent reproduction. Quality rows are omitted: no archived docs source for them is in hand."
+      }
+    ],
+    "claims": [
+      {
+        "id": "mtp-run-config",
+        "technique_id": "native-mtp",
+        "kind": "configuration",
+        "statement": "UD-Q4_K_XL (111.3 GB) plus the shared Q8_0 MTP module (2.79 GB) served on one RTX PRO 6000 via --spec-type draft-mtp --spec-draft-n-max 5 (or Unsloth Desktop, where MTP is on by default).",
+        "evidence_level": "c1_configuration",
+        "lineage_id": "unsloth-rtx6000-chart",
+        "source": "https://unsloth.ai/docs/models/qwen3.8-next",
+        "locator": "guide MTP run command, verbatim in dossier section 1; candidates.json method note",
+        "status": "recorded",
+        "date": "2026-09-02",
+        "provenance": "vendor"
+      },
+      {
+        "id": "chart-170-single-point",
+        "technique_id": "native-mtp",
+        "kind": "observation",
+        "statement": "Vendor chart: 170 tok/s on one RTX PRO 6000 against a ~100 tok/s baseline, one operating point, no n, no workload class, quant not restated per point.",
+        "evidence_level": "c0_claim",
+        "lineage_id": "unsloth-rtx6000-chart",
+        "source": "https://unsloth.ai/docs/models/qwen3.8-next",
+        "locator": "chart row per dossier section 4-5; candidates.json discovery quote",
+        "quote": "Qwen3.8-Flash can now run 1.7x faster locally with MTP! GGUFs can reach 170 tokens/s on a RTX PRO 6000",
+        "status": "recorded",
+        "date": "2026-09-02",
+        "provenance": "vendor"
+      }
+    ],
+    "open_questions": [
+      {
+        "id": "rtx-pro-6000-fit",
+        "type": "other",
+        "question": "The 111.3 GB file plus 2.79 GB module exceeds the 96 GB card on paper; which tier carried the remainder behind the 170 tok/s run (page-locked host, pageable host, CPU-RAM offload flag, or freed KV) is unstated, as is whether the ~100 baseline shared the same KV/context/driver.",
+        "blocks": [
+          "fit_claim"
+        ],
+        "owner": "openkod",
+        "status": "open",
+        "source": "https://github.com/unslothai/unsloth/issues/11098",
+        "locator": "docs/builder-concerns-2026-09-16/builder-questions.md Q1 (RTX PRO 6000 fit/offload, filed 2026-09-16); dossier section 8"
+      },
+      {
+        "id": "docs-page-unversioned",
+        "type": "other",
+        "question": "The vendor doc is undated and unversioned; which page revision the 170 chart came from is untracked.",
+        "blocks": [
+          "exact_reproduction"
+        ],
+        "owner": "openkod",
+        "status": "open",
+        "source": "https://unsloth.ai/docs/models/qwen3.8-next",
+        "locator": "dossier section 9-10"
+      }
+    ],
+    "re_review_triggers": [
+      "the docs page changes (re-fetch and diff)",
+      "a v2 of the shared MTP (gguf) module",
+      "an independent reproduction on a non-vendor board",
+      "an answer to the fit/offload builder question"
+    ]
+  }
 }

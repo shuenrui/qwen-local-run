@@ -30,7 +30,52 @@
     "memory_gb": 43.1,
     "disk_gb": 84.9,
     "min_vram_gb": null,
-    "notes": "Vendor reports 44,125 MiB model-self (MTL0) with a 57,344 MiB wired limit, plus ~37,279 MiB host for the pageable PLE table — i.e. the file set is larger than 64GB by design and pages from disk."
+    "notes": "Vendor reports 44,125 MiB model-self (MTL0) with a 57,344 MiB wired limit, plus ~37,279 MiB host for the pageable PLE table — i.e. the file set is larger than 64GB by design and pages from disk.",
+    "offload": {
+      "strategy": "pageable_ple",
+      "components": [
+        "cache_table"
+      ],
+      "intentional": true,
+      "source": "https://huggingface.co/AtomicChat/Qwen3.8-Flash-Next-GGUF",
+      "locator": "card lines 47, 91-92, 120-123 (39 GB table never enters memory; stays on SSD; mmap on; goes to the host by itself)",
+      "provenance": "vendor",
+      "date": "2026-09-10",
+      "note": "Vendor-intentional design: shard 2 holds nothing but the table so Metal never wires it (card lines 70-76). cold_start_effect is absent: first-token latency under paging was not measured. No unconditional-fit wording is attached to this record."
+    },
+    "memory_profile": {
+      "provenance": "vendor",
+      "date": "2026-09-10",
+      "source": "https://huggingface.co/AtomicChat/Qwen3.8-Flash-Next-GGUF",
+      "locator": "card lines 80-84 (build table) + memory breakdown lines 50-52",
+      "note": "84.9 GB file set on a 64 GB box by design: 45.8 GB weights resident, 39.1 GB table on SSD.",
+      "entries": [
+        {
+          "component": "weights",
+          "value": 45.8,
+          "unit": "GB",
+          "scope": "total",
+          "location": "unified",
+          "provenance": "vendor",
+          "date": "2026-09-10",
+          "source": "https://huggingface.co/AtomicChat/Qwen3.8-Flash-Next-GGUF",
+          "locator": "card line 82: AD-3.84bpw in-memory 45.8 GB"
+        },
+        {
+          "component": "cache_table",
+          "value": 39.1,
+          "unit": "GB",
+          "scope": "total",
+          "location": "ssd",
+          "pageable": true,
+          "provenance": "vendor",
+          "date": "2026-09-10",
+          "source": "https://huggingface.co/AtomicChat/Qwen3.8-Flash-Next-GGUF",
+          "locator": "card line 82: on-SSD 39.1 GB; lines 91-92: excluded from in-memory because it stays on SSD",
+          "note": "51.2B-parameter n-gram lookup table; ~3 MB/s of random reads at 36 tok/s (card lines 57-64)."
+        }
+      ]
+    }
   },
   "capabilities": {
     "vision": true,
@@ -58,7 +103,14 @@
         "text": "Add the mmproj file if vision is needed"
       }
     ],
-    "auto_bootable": false
+    "auto_bootable": false,
+    "repo_revision": {
+      "resolution": "unresolved",
+      "source": "https://huggingface.co/AtomicChat/Qwen3.8-Flash-Next-GGUF",
+      "locator": "the HF card, not a repo, is the recipe (dossier section 9)",
+      "retrieved": "2026-09-16",
+      "note": "No commit exists to pin."
+    }
   },
   "measurements": [
     {
@@ -69,7 +121,18 @@
       "provenance": "vendor",
       "date": "2026-09-10",
       "source": "https://huggingface.co/AtomicChat/Qwen3.8-Flash-Next-GGUF",
-      "context": "pp512 on M5 Max 64GB"
+      "context": "pp512 on M5 Max 64GB",
+      "conditions": {
+        "context_label": "pp512 prefill, vendor table",
+        "hardware_count": 1
+      },
+      "evidence": {
+        "level": "c2_observation",
+        "lineage_id": "atomicchat-flashnext-card",
+        "method_grade": "vendor_published_table",
+        "quality_status": "unchecked",
+        "dossier_cited": true
+      }
     },
     {
       "id": "m002",
@@ -80,7 +143,18 @@
       "provenance": "vendor",
       "date": "2026-09-10",
       "source": "https://huggingface.co/AtomicChat/Qwen3.8-Flash-Next-GGUF",
-      "context": "tg128, with vision, on the 85GB AD build that exceeds machine RAM via the pageable PLE table"
+      "context": "tg128, with vision, on the 85GB AD build that exceeds machine RAM via the pageable PLE table",
+      "conditions": {
+        "context_label": "tg128 decode with vision, vendor table",
+        "hardware_count": 1
+      },
+      "evidence": {
+        "level": "c2_observation",
+        "lineage_id": "atomicchat-flashnext-card",
+        "method_grade": "vendor_published_table",
+        "quality_status": "unchecked",
+        "dossier_cited": true
+      }
     },
     {
       "id": "m003",
@@ -90,7 +164,18 @@
       "provenance": "vendor",
       "date": "2026-09-10",
       "source": "https://huggingface.co/AtomicChat/Qwen3.8-Flash-Next-GGUF",
-      "context": "MTL0 model-self 44,125 MiB (wired limit 57,344 MiB); host adds 37,279 MiB for the pageable table"
+      "context": "MTL0 model-self 44,125 MiB (wired limit 57,344 MiB); host adds 37,279 MiB for the pageable table",
+      "conditions": {
+        "context_label": "MTL0/host memory split, vendor table",
+        "hardware_count": 1
+      },
+      "evidence": {
+        "level": "c2_observation",
+        "lineage_id": "atomicchat-flashnext-card",
+        "method_grade": "vendor_published_table",
+        "quality_status": "unchecked",
+        "dossier_cited": true
+      }
     }
   ],
   "caveats": [
@@ -103,14 +188,148 @@
     {
       "url": "https://huggingface.co/AtomicChat/Qwen3.8-Flash-Next-GGUF",
       "kind": "model",
-      "note": "the AD build and its measured speed/memory table"
+      "note": "the AD build and its measured speed/memory table",
+      "lineage_id": "atomicchat-flashnext-card",
+      "archive_path": "directory/tools/history/inputs/pass4-social/raw/hf_AtomicChat_Flash-Next-GGUF.md",
+      "locator": "memory-shape section lines 41-76; quants table lines 80-99; run lines 101-125; traps + quality context lines 127-190"
     },
     {
       "url": "https://huggingface.co/collections/AtomicChat/qwen-38-27b-6a7c86fe00e317b78f572767",
       "kind": "model",
-      "note": "AtomicChat quant collection"
+      "note": "AtomicChat quant collection",
+      "lineage_id": "atomicchat-flashnext-card",
+      "locator": "AtomicChat quant collection"
     }
   ],
   "id": "qwen38-flash-next-atomicchat-gguf-llamacpp-mac64",
-  "updated": "2026-09-14"
+  "updated": "2026-09-14",
+  "schema_version": 2,
+  "capability_observations": [
+    {
+      "capability": "vision",
+      "status": "requires_extra_artifact",
+      "source": "https://huggingface.co/AtomicChat/Qwen3.8-Flash-Next-GGUF",
+      "locator": "card lines 112-118 (llama-mtmd-cli with separate --mmproj)",
+      "date": "2026-09-10",
+      "lineage_id": "atomicchat-flashnext-card",
+      "note": "Vision needs the separate mmproj projector file; the 36 tok/s headline is with vision. The card's quants cover the text path (card line 241)."
+    }
+  ],
+  "correctness": {
+    "output_checked": false,
+    "checks": [
+      {
+        "id": "ad-384bpw-kld",
+        "kind": "kl_divergence",
+        "result": "recorded",
+        "source": "https://huggingface.co/AtomicChat/Qwen3.8-Flash-Next-GGUF",
+        "locator": "card line 82: AD-3.84bpw mean KLD 0.2277",
+        "date": "2026-09-10",
+        "lineage_id": "atomicchat-flashnext-card",
+        "note": "Measured against one reference (BF16 PPL 4.0445 +/- 0.0216), one corpus, one machine (card lines 94-96). Vendor-measured; not independently reproduced."
+      },
+      {
+        "id": "ad-384bpw-top1",
+        "kind": "top1_retention",
+        "result": "recorded",
+        "source": "https://huggingface.co/AtomicChat/Qwen3.8-Flash-Next-GGUF",
+        "locator": "card line 82: AD-3.84bpw same top-1 82.68%",
+        "date": "2026-09-10",
+        "lineage_id": "atomicchat-flashnext-card",
+        "note": "The card's own pick is AD-4.27bpw (KLD 0.0842, top-1 89.49%, line 83-86); the 3.84bpw recipe ships below it and its measured cost is the top-1 drop, not hidden."
+      }
+    ],
+    "note": "The speed rows have no output-quality gate; quality evidence lives only in the card's table, recorded separately here."
+  },
+  "evidence": {
+    "rubric_version": "1.0",
+    "lineages": [
+      {
+        "id": "atomicchat-flashnext-card",
+        "actor": "AtomicChat",
+        "publisher": "atomicchat",
+        "kind": "vendor_card",
+        "sources": [
+          "https://huggingface.co/AtomicChat/Qwen3.8-Flash-Next-GGUF"
+        ],
+        "locator": "memory-shape, quants, run, traps, and quality sections",
+        "archive_path": "directory/tools/history/inputs/pass4-social/raw/hf_AtomicChat_Flash-Next-GGUF.md",
+        "note": "Single-vendor lineage; the card is the only source and it re-quantizes routinely."
+      }
+    ],
+    "claims": [
+      {
+        "id": "pageable-ple-mechanism",
+        "technique_id": "pageable-ple",
+        "kind": "mechanism",
+        "statement": "The 39.1 GB n-gram lookup table pages from SSD via mmap (kept in its own shard so Metal never wires it); at 36 tok/s that is ~3 MB/s of random reads against a 28 ms per-token budget, which is why ordinary offloading's failure mode does not apply.",
+        "evidence_level": "c1_configuration",
+        "lineage_id": "atomicchat-flashnext-card",
+        "source": "https://huggingface.co/AtomicChat/Qwen3.8-Flash-Next-GGUF",
+        "locator": "card lines 47, 57-76, 120-123",
+        "quote": "It works because 39 GB of that file never enters memory at all.",
+        "status": "recorded",
+        "date": "2026-09-10",
+        "provenance": "vendor"
+      },
+      {
+        "id": "conditional-fit-only",
+        "technique_id": "pageable-ple",
+        "kind": "fit_constraint",
+        "statement": "The 84.9 GB build runs on the 64 GB box ONLY because the PLE table pages from disk (44,125 MiB model-self vs 57,344 MiB wired limit plus 37,279 MiB host); this is not a general fits verdict and an 85 GB build on 64 GB hardware cannot be one.",
+        "evidence_level": "c1_configuration",
+        "lineage_id": "atomicchat-flashnext-card",
+        "source": "https://huggingface.co/AtomicChat/Qwen3.8-Flash-Next-GGUF",
+        "locator": "card lines 43-52",
+        "status": "recorded",
+        "date": "2026-09-10",
+        "provenance": "vendor"
+      },
+      {
+        "id": "ad-384bpw-quality-row",
+        "technique_id": "atomic-dynamic-quant",
+        "kind": "quality_effect",
+        "statement": "AD-3.84bpw quality row: mean KLD 0.2277, same top-1 82.68%, PPL ratio 1.102; the card's pick AD-4.27bpw reads 0.0842 / 89.49% / 1.026.",
+        "evidence_level": "c2_observation",
+        "lineage_id": "atomicchat-flashnext-card",
+        "source": "https://huggingface.co/AtomicChat/Qwen3.8-Flash-Next-GGUF",
+        "locator": "card lines 80-86",
+        "quote": "| `AD-3.84bpw-IQ4_XS-M64` | **45.8 GB** | 39.1 GB | 84.9 GB | 0.2277 | 82.68% | 1.102 |",
+        "status": "recorded",
+        "date": "2026-09-10",
+        "provenance": "vendor"
+      }
+    ],
+    "open_questions": [
+      {
+        "id": "pageable-pressure-ceiling",
+        "type": "other",
+        "question": "Whether the pageable table ever crossed a memory-pressure ceiling is not recorded by the vendor card; that limit is absent from the source rather than whitewashed.",
+        "blocks": [
+          "fit_claim"
+        ],
+        "owner": "openkod",
+        "status": "open",
+        "source": "https://huggingface.co/AtomicChat/Qwen3.8-Flash-Next-GGUF",
+        "locator": "dossier section 9 (unknowns/gaps)"
+      },
+      {
+        "id": "card-moving-target",
+        "type": "other",
+        "question": "No pin exists for the card; the vendor re-quantizes and re-measures routinely.",
+        "blocks": [
+          "exact_reproduction"
+        ],
+        "owner": "openkod",
+        "status": "open",
+        "source": "https://huggingface.co/AtomicChat/Qwen3.8-Flash-Next-GGUF",
+        "locator": "dossier section 12"
+      }
+    ],
+    "re_review_triggers": [
+      "AtomicChat re-quantizes or re-measures this build",
+      "llama.cpp changes the GET_ROWS/PLE handling (upstream ngram-module)",
+      "a second independent builder runs the same build"
+    ]
+  }
 }

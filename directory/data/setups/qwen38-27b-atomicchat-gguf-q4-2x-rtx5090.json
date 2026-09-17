@@ -36,7 +36,51 @@
     "memory_gb": 20,
     "disk_gb": 17.1,
     "min_vram_gb": 18,
-    "notes": "AD-Q4_K_M weights are 17.1GB; the vendor measured full offload on 2x RTX 5090 (64GB total). The model also fits a single 24GB+ card at 8k; the 2x figure is what the vendor published."
+    "notes": "AD-Q4_K_M weights are 17.1GB; the vendor measured full offload on 2x RTX 5090 (64GB total). The model also fits a single 24GB+ card at 8k; the 2x figure is what the vendor published.",
+    "memory_profile": {
+      "provenance": "vendor",
+      "date": "2026-08-18",
+      "source": "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF",
+      "locator": "card quality table line 60 (17.1 GB) + cache-budget lines 78-80",
+      "note": "Weights are the card's own value; KV budget is the card's stated 256 KB/token rule. No offload is encoded: -ngl 99 full GPU residency is configuration prose, not a host-offload claim.",
+      "entries": [
+        {
+          "component": "weights",
+          "value": 17.1,
+          "unit": "GB",
+          "scope": "total",
+          "location": "gpu",
+          "provenance": "vendor",
+          "date": "2026-08-18",
+          "source": "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF",
+          "locator": "card line 60: AD-Q4_K_M 17.1 GB"
+        },
+        {
+          "component": "kv_pool",
+          "value": 2.0,
+          "unit": "GB",
+          "scope": "total",
+          "location": "gpu",
+          "context_tokens": 8192,
+          "provenance": "vendor",
+          "date": "2026-08-18",
+          "source": "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF",
+          "locator": "card lines 78-80: 256 KB/token = 2 GB at 8k"
+        },
+        {
+          "component": "kv_pool",
+          "value": 8.0,
+          "unit": "GB",
+          "scope": "total",
+          "location": "gpu",
+          "context_tokens": 32768,
+          "provenance": "vendor",
+          "date": "2026-08-18",
+          "source": "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF",
+          "locator": "card lines 78-80: 256 KB/token = 8 GB at 32k"
+        }
+      ]
+    }
   },
   "capabilities": {
     "vision": true,
@@ -51,7 +95,14 @@
     "repo": "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF",
     "profile": null,
     "steps": null,
-    "auto_bootable": true
+    "auto_bootable": true,
+    "repo_revision": {
+      "resolution": "unresolved",
+      "source": "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF",
+      "locator": "the recipe is the card; no commit exists to pin (dossier section 9)",
+      "retrieved": "2026-09-16",
+      "note": "An unresolved revision object records the gap instead of a pin; see the card-moving-target open question."
+    }
   },
   "measurements": [
     {
@@ -62,7 +113,18 @@
       "provenance": "vendor",
       "date": "2026-08-18",
       "source": "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF",
-      "context": "@8k ctx, AD-Q4_K_M full offload on 2x RTX 5090"
+      "context": "@8k ctx, AD-Q4_K_M full offload on 2x RTX 5090",
+      "conditions": {
+        "context_label": "prefill @8k, vendor table",
+        "hardware_count": 2
+      },
+      "evidence": {
+        "level": "c2_observation",
+        "lineage_id": "atomicchat-27b-card",
+        "method_grade": "vendor_published_table",
+        "quality_status": "unchecked",
+        "dossier_cited": true
+      }
     },
     {
       "id": "m002",
@@ -73,7 +135,18 @@
       "provenance": "vendor",
       "date": "2026-08-18",
       "source": "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF",
-      "context": "@8k ctx"
+      "context": "@8k ctx",
+      "conditions": {
+        "context_label": "decode @8k, vendor table",
+        "hardware_count": 2
+      },
+      "evidence": {
+        "level": "c2_observation",
+        "lineage_id": "atomicchat-27b-card",
+        "method_grade": "vendor_published_table",
+        "quality_status": "unchecked",
+        "dossier_cited": true
+      }
     },
     {
       "id": "m003",
@@ -83,7 +156,18 @@
       "provenance": "vendor",
       "date": "2026-08-18",
       "source": "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF",
-      "context": "@32k ctx — likely batched pp across the full prompt; column semantics not restated"
+      "context": "@32k ctx — likely batched pp across the full prompt; column semantics not restated",
+      "conditions": {
+        "context_label": "prefill @32k, vendor table (column semantics flagged)",
+        "hardware_count": 2
+      },
+      "evidence": {
+        "level": "c2_observation",
+        "lineage_id": "atomicchat-27b-card",
+        "method_grade": "vendor_published_table",
+        "quality_status": "unchecked",
+        "dossier_cited": true
+      }
     },
     {
       "id": "m004",
@@ -94,7 +178,18 @@
       "provenance": "vendor",
       "date": "2026-08-18",
       "source": "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF",
-      "context": "@32k ctx"
+      "context": "@32k ctx",
+      "conditions": {
+        "context_label": "decode @32k, vendor table",
+        "hardware_count": 2
+      },
+      "evidence": {
+        "level": "c2_observation",
+        "lineage_id": "atomicchat-27b-card",
+        "method_grade": "vendor_published_table",
+        "quality_status": "unchecked",
+        "dossier_cited": true
+      }
     }
   ],
   "caveats": [
@@ -107,14 +202,244 @@
     {
       "url": "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF",
       "kind": "model",
-      "note": "the AD quants and the \"How we measured\" speed table"
+      "note": "the AD quants and the \"How we measured\" speed table",
+      "lineage_id": "atomicchat-27b-card",
+      "archive_path": "directory/tools/history/inputs/pass4-social/raw/hf_AtomicChat_27B-GGUF.md",
+      "locator": "speed table lines 119-126; quality table lines 53-70; How-we-measured lines 327-351"
     },
     {
       "url": "https://github.com/AtomicBot-ai/Atomic-Chat",
       "kind": "repo",
-      "note": "the Atomic Chat app that serves it"
+      "note": "the Atomic Chat app that serves it",
+      "lineage_id": "atomicchat-27b-card",
+      "locator": "the Atomic Chat app that serves it"
     }
   ],
   "id": "qwen38-27b-atomicchat-gguf-q4-2x-rtx5090",
-  "updated": "2026-09-14"
+  "updated": "2026-09-14",
+  "schema_version": 2,
+  "correctness": {
+    "output_checked": false,
+    "checks": [
+      {
+        "id": "ad-q4-k-m-kl",
+        "kind": "kl_divergence",
+        "result": "recorded",
+        "source": "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF",
+        "locator": "card line 60: AD-Q4_K_M KL 0.01126",
+        "quote": "KL divergence is how far the quantized model's predictions drift from the original weights. Lower is better, and zero means identical.",
+        "date": "2026-08-18",
+        "lineage_id": "atomicchat-27b-card",
+        "note": "Vendor-measured against the original weights on held-out text; not independently reproduced."
+      },
+      {
+        "id": "ad-q4-k-m-top1",
+        "kind": "top1_retention",
+        "result": "recorded",
+        "source": "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF",
+        "locator": "card line 60: AD-Q4_K_M top-1 95.59%",
+        "date": "2026-08-18",
+        "lineage_id": "atomicchat-27b-card",
+        "note": "Same table/same caveat. Honest curve nearby: AD-IQ2_XXS top-1 79.44% vs Q8_0 98.92% (lines 55/69) — the trade-off is measured, not hidden."
+      }
+    ],
+    "note": "The speed table has no output-quality gate; quality evidence lives only in the card's KL/top-1 table, recorded separately here and never blended into the speed rows."
+  },
+  "evidence": {
+    "rubric_version": "1.0",
+    "lineages": [
+      {
+        "id": "atomicchat-27b-card",
+        "actor": "AtomicChat",
+        "publisher": "atomicchat",
+        "kind": "vendor_card",
+        "sources": [
+          "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF",
+          "https://github.com/AtomicBot-ai/Atomic-Chat"
+        ],
+        "locator": "quality table + How-we-measured + speed table + fit table",
+        "archive_path": "directory/tools/history/inputs/pass4-social/raw/hf_AtomicChat_27B-GGUF.md",
+        "note": "Vendor artifact, rung 1. No independent reproduction. The 305,686 downloads figure is popularity, not quality — kept out of the measurement rows."
+      }
+    ],
+    "claims": [
+      {
+        "id": "ad-layout-config",
+        "technique_id": "atomic-dynamic-quant",
+        "kind": "configuration",
+        "statement": "AD-Q4_K_M (17.1 GB) served with llama-server -m ... -ngl 99 -c 8192 in full offload across two RTX 5090s; AD marks the Atomic Dynamic layout of the two largest tensor groups (ffn_down/ffn_up).",
+        "evidence_level": "c1_configuration",
+        "lineage_id": "atomicchat-27b-card",
+        "source": "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF",
+        "locator": "card lines 60, 72-74, 95-99, 119-121",
+        "quote": "AD- marks an Atomic Dynamic layout",
+        "status": "recorded",
+        "date": "2026-08-18",
+        "provenance": "vendor"
+      },
+      {
+        "id": "bf16-imatrix-method",
+        "technique_id": "atomic-dynamic-quant",
+        "kind": "mechanism",
+        "statement": "The importance matrix was collected on the BF16 weights, never on a quant proxy, and each file's KL/top-1 was measured against the original weights on held-out neutral text (reference perplexity 4.5219 +/- 0.0238).",
+        "evidence_level": "c1_configuration",
+        "lineage_id": "atomicchat-27b-card",
+        "source": "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF",
+        "locator": "card lines 329-336, 354-366",
+        "quote": "The importance matrix was collected on the BF16 weights rather than on a quantized copy",
+        "status": "recorded",
+        "date": "2026-08-18",
+        "provenance": "vendor"
+      },
+      {
+        "id": "ad-q4-k-m-quality-row",
+        "technique_id": "atomic-dynamic-quant",
+        "kind": "quality_effect",
+        "statement": "AD-Q4_K_M quality row: KL 0.01126, top-1 95.59% (Q8_0 reference: KL 0.00064, top-1 98.92%).",
+        "evidence_level": "c2_observation",
+        "lineage_id": "atomicchat-27b-card",
+        "source": "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF",
+        "locator": "card lines 55 and 60",
+        "status": "recorded",
+        "date": "2026-08-18",
+        "provenance": "vendor",
+        "quote": "| `AD-Q4_K_M` | 17.1 GB | 0.01126 | 95.59% |"
+      }
+    ],
+    "comparisons": [
+      {
+        "id": "prefill-8k-vs-32k",
+        "question": "What does the vendor table report for prefill at 8k versus 32k?",
+        "candidate_variable": "context length (8k vs 32k) plus unstated scheduler/batch differences",
+        "a": {
+          "label": "prefill @8k",
+          "measurement_id": "m001"
+        },
+        "b": {
+          "label": "prefill @32k",
+          "measurement_id": "m003"
+        },
+        "result": "b_better",
+        "effect_metric": "prefill_tok_s",
+        "effect_direction": "increase",
+        "contrast_kind": "uncontrolled",
+        "conditions_constant": [
+          "same AD-Q4_K_M file and 2-card lane as labelled"
+        ],
+        "conditions_unstated": [
+          "batch size / n",
+          "32k scheduler statement",
+          "column semantics of the 5244 cell",
+          "same server configuration across cells"
+        ],
+        "evidence_level": "c2_observation",
+        "lineage_id": "atomicchat-27b-card",
+        "independent_reproductions": [],
+        "quality_status": "unchecked",
+        "source": "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF",
+        "locator": "card lines 123-126 (363 vs 5244)",
+        "promotion_gate": {
+          "target_level": "c3_matched_ab",
+          "target_contrast_kind": "single_variable",
+          "required_facts": [
+            "column semantics of the 32k prefill cell resolved",
+            "same batch/scheduler across cells",
+            "context length as the sole variable",
+            "card revision pinned"
+          ],
+          "status": "not_met",
+          "note": "The 5244 cell is likely batched pp across the full prompt; quoting it as a speed requires the raw logs first (setup caveat)."
+        },
+        "provenance": "vendor",
+        "date": "2026-08-18"
+      },
+      {
+        "id": "decode-8k-vs-32k",
+        "question": "What does the vendor table report for decode at 8k versus 32k?",
+        "candidate_variable": "context length (8k vs 32k) plus unstated scheduler/batch differences",
+        "a": {
+          "label": "decode @8k",
+          "measurement_id": "m002"
+        },
+        "b": {
+          "label": "decode @32k",
+          "measurement_id": "m004"
+        },
+        "result": "a_better",
+        "effect_metric": "decode_per_stream",
+        "effect_direction": "increase",
+        "contrast_kind": "uncontrolled",
+        "conditions_constant": [
+          "same AD-Q4_K_M file and 2-card lane as labelled"
+        ],
+        "conditions_unstated": [
+          "batch size / n",
+          "32k scheduler statement",
+          "same server configuration across cells"
+        ],
+        "evidence_level": "c2_observation",
+        "lineage_id": "atomicchat-27b-card",
+        "independent_reproductions": [],
+        "quality_status": "unchecked",
+        "source": "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF",
+        "locator": "card lines 123-126 (77 vs 72)",
+        "promotion_gate": {
+          "target_level": "c3_matched_ab",
+          "target_contrast_kind": "single_variable",
+          "required_facts": [
+            "same batch/scheduler across cells",
+            "context length as the sole variable",
+            "card revision pinned"
+          ],
+          "status": "not_met",
+          "note": "Vendor table contrast only; no independent reproduction."
+        },
+        "provenance": "vendor",
+        "date": "2026-08-18"
+      }
+    ],
+    "open_questions": [
+      {
+        "id": "column-semantics-32k",
+        "type": "other",
+        "question": "The 8k/32k table columns are not fully explained: the 5244 tok/s prefill cell at 32k is likely batched pp across the full prompt. Column semantics must be verified against the raw logs before quoting.",
+        "blocks": [
+          "speed_claim"
+        ],
+        "owner": "openkod",
+        "status": "open",
+        "source": "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF",
+        "locator": "card lines 123-126 + setup caveat"
+      },
+      {
+        "id": "card-moving-target",
+        "type": "other",
+        "question": "No pin exists for the card; it is a moving target (vendor re-quantizes and re-measures routinely).",
+        "blocks": [
+          "exact_reproduction"
+        ],
+        "owner": "openkod",
+        "status": "open",
+        "source": "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF",
+        "locator": "dossier section 13 (blocker)"
+      },
+      {
+        "id": "n-batch-scheduler",
+        "type": "other",
+        "question": "No n, no batch-size statement, no 32k scheduler statement.",
+        "blocks": [
+          "speed_claim"
+        ],
+        "owner": "openkod",
+        "status": "open",
+        "source": "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF",
+        "locator": "dossier section 9 (unknowns/gaps)"
+      }
+    ],
+    "re_review_triggers": [
+      "a re-measured quality table (new KL/top-1)",
+      "AD quant type changes under the card's one-quant conventions",
+      "the Atomic-Chat repo adds a commit or a changelog"
+    ]
+  }
 }

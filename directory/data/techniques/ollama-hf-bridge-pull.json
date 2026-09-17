@@ -1,0 +1,33 @@
+{
+  "id": "ollama-hf-bridge-pull",
+  "name": "Ollama HF-bridge pull with context-cap tag",
+  "category": "serving",
+  "canonical_description": "Pulls a GGUF through Ollama's HuggingFace bridge, optionally capping context with a local Modelfile tag, with blob storage wherever the operator puts it.",
+  "mechanism": "ollama pull hf.co/<repo>:<quant> fetches blobs (model + projector) through the HF bridge; a local tag sets num_ctx (here 131072). Verification-grade numbers come from ollama run --verbose or API metrics (eval_duration/eval_count), not from dividing visible tokens by wall-clock time; ollama ps reports GPU/CPU residency split.",
+  "constraints": [
+    "A builder-local cap tag is not reproducible through Ollama server APIs by other operators.",
+    "Wall-clock division is not eval_duration; figures recorded that way stay below benchmark grade.",
+    "Ollama runtime version is versioned in the engine record's gotchas, not per-measurement."
+  ],
+  "tradeoffs": [
+    "Simplest route onto a card (one pull) versus the weakest method (wall-clock) until verified.",
+    "Crowd ranges corroborate plausibility only; they are never reproductions."
+  ],
+  "re_review_triggers": [
+    "Ollama changes HF-bridge blob handling or context-cap behavior.",
+    "A setup claims an Ollama-caused performance effect without a matching comparison object.",
+    "An eval_duration is recorded for a previously wall-clock-only row."
+  ],
+  "canonical_sources": [
+    {
+      "url": "https://discuss.huggingface.co/t/179251",
+      "kind": "thread",
+      "archive_path": "directory/tools/history/inputs/pass4-social/raw/forum-hf_179251.json",
+      "locator": "post 1 run report + post 2 verification decision-tree reply",
+      "note": "Run report plus the corpus's strongest Ollama-verification text in one thread."
+    }
+  ],
+  "status": "proposed",
+  "updated": "2026-09-17",
+  "note": "Canonical technique identity only. A setup-specific claim must still carry its own statement, source, locator, lineage, evidence level, and contrast kind."
+}

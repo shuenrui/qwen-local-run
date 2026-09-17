@@ -24,7 +24,41 @@
     "flags": [
       "--spec-draft-n-max 4",
       "--parallel 1"
-    ]
+    ],
+    "fork_revision": {
+      "repo": "https://github.com/ggml-org/llama.cpp",
+      "branch": "PR #27342",
+      "commits": null,
+      "anchor_date": "2026-08-19",
+      "resolution": "unresolved",
+      "ambiguous": true,
+      "source": "https://github.com/ggml-org/llama.cpp/pull/27342",
+      "locator": "the archived posts reference PR #27342 without committing to a build SHA; the native-MTP baseline arm is a different binary/build",
+      "retrieved": "2026-09-16",
+      "note": "binary provenance between the DFlash2 arm and the native-MTP baseline arm is unresolved."
+    },
+    "kernel_patches": [
+      {
+        "id": "dflash2-pr-27342",
+        "pr": "27342",
+        "purpose": "Block-diffusion DFlash2 speculative decoding that the 90-tok/s DFlash2 arm needs.",
+        "source": "https://github.com/ggml-org/llama.cpp/pull/27342",
+        "locator": "llama.cpp PR #27342 description"
+      }
+    ],
+    "spec_decode_profile": {
+      "method": "dflash2",
+      "draft_checkpoint": "z-lab/Qwen3.8-27B-DFlash2-GGUF (with the custom analogalok 2-bit Q2_K drafter)",
+      "draft_revision": "57ab3265056d (DFlash 2 release, 2026-08-18 21:25Z; Q4_K_M drag blob 18a380efc9...)",
+      "draft_quant": "q4_k_m / custom 2-bit Q2_K drafter",
+      "max_draft_tokens": 4,
+      "acceptance_rate_pct": null,
+      "source": "docs/builder-concerns-2026-09-16/r-artifacts.md",
+      "locator": "row 3: z-lab revision resolved to the 2026-08-18 anchor",
+      "date": "2026-08-19",
+      "provenance": "forum",
+      "note": "acceptance_rate_pct stays null for the 26k decoded pair (no source-stated \"./acceptance\" number in that post; the +5.39 acceptance figure the builder quotes is for his 30k n-max-4 explainer, not the A/B pair)."
+    }
   },
   "hardware": [
     "gpu-24gb"
@@ -33,7 +67,38 @@
     "memory_gb": 22,
     "disk_gb": 17,
     "min_vram_gb": 22,
-    "notes": "Peak VRAM 22.x GB of 24 at the 30k/n-max-4 point; --parallel 1 is required to free the batching reserve."
+    "notes": "Peak VRAM 22.x GB of 24 at the 30k/n-max-4 point; --parallel 1 is required to free the batching reserve.",
+    "memory_profile": {
+      "provenance": "forum",
+      "date": "2026-08-19",
+      "source": "https://x.com/analogalok/status/2089979723166200196",
+      "locator": "builder's VRAM-ladder post (m006 context)",
+      "entries": [
+        {
+          "component": "weights",
+          "value": 16.7,
+          "unit": "GB",
+          "scope": "total",
+          "location": "gpu",
+          "provenance": "forum",
+          "date": "2026-08-19",
+          "source": "https://x.com/analogalok/status/2089979723166200196",
+          "locator": "UD-Q4_K_XL size, builder post"
+        },
+        {
+          "component": "other",
+          "value": 22.0,
+          "unit": "GB",
+          "scope": "total",
+          "location": "gpu",
+          "provenance": "forum",
+          "date": "2026-08-19",
+          "source": "https://x.com/analogalok/status/2089979723166200196",
+          "locator": "m006 peak VRAM at the 30k / n-max-4 operating point",
+          "note": "resident peak of the recorded operating point; component split beyond weights is not in the source"
+        }
+      ]
+    }
   },
   "capabilities": {
     "vision": true,
@@ -61,7 +126,15 @@
         "text": "Serve with --spec-draft-n-max 4 and --parallel 1; KV q4_0/q8_0 depending on context"
       }
     ],
-    "auto_bootable": false
+    "auto_bootable": false,
+    "repo_revision": {
+      "resolution": "unresolved",
+      "anchor_date": "2026-08-19",
+      "ambiguous": true,
+      "source": "https://github.com/ggml-org/llama.cpp/pull/27342",
+      "locator": "llama.cpp PR #27342, but the exact build used per arm is unstated",
+      "retrieved": "2026-09-16"
+    }
   },
   "measurements": [
     {
@@ -73,7 +146,23 @@
       "provenance": "forum",
       "date": "2026-08-19",
       "source": "https://x.com/analogalok/status/2089979723166200196",
-      "context": "DFlash2 @ n-max 4, ~30k context"
+      "context": "DFlash2 @ n-max 4, ~30k context",
+      "conditions": {
+        "context_label": "~30k operating point",
+        "greedy": null,
+        "hardware_count": 1,
+        "spec_decode": "dflash2",
+        "max_draft_tokens": 4,
+        "workload": null
+      },
+      "evidence": {
+        "level": "c2_observation",
+        "method_grade": "author_report",
+        "lineage_id": "analogalok-4090-dflash2",
+        "quality_status": "unchecked",
+        "dossier_cited": true,
+        "note": "headline, DFlash2-vs-MTP A/B at ~30k context; quality status unchecked"
+      }
     },
     {
       "id": "m002",
@@ -84,7 +173,21 @@
       "provenance": "forum",
       "date": "2026-08-19",
       "source": "https://x.com/analogalok/status/2089979723166200196",
-      "context": "30k context, DFlash2 n-max 4, 22.x GB VRAM; prefill 1,725 t/s"
+      "context": "30k context, DFlash2 n-max 4, 22.x GB VRAM; prefill 1,725 t/s",
+      "conditions": {
+        "context_label": "30k operating point, n-max 4",
+        "hardware_count": 1,
+        "spec_decode": "dflash2",
+        "max_draft_tokens": 4,
+        "workload": null
+      },
+      "evidence": {
+        "level": "c2_observation",
+        "method_grade": "author_report",
+        "lineage_id": "analogalok-4090-dflash2",
+        "quality_status": "unchecked",
+        "dossier_cited": true
+      }
     },
     {
       "id": "m003",
@@ -95,7 +198,23 @@
       "provenance": "forum",
       "date": "2026-08-21",
       "source": "https://x.com/analogalok/status/2090874243185856971",
-      "context": "26k prompt baseline, custom 2-bit Q2_K drafter; Native MTP = 68.09 on the same box"
+      "context": "26k prompt baseline, custom 2-bit Q2_K drafter; Native MTP = 68.09 on the same box",
+      "conditions": {
+        "context_label": "26k prompt baseline",
+        "workload": null,
+        "greedy": true,
+        "hardware_count": 1,
+        "spec_decode": "dflash2",
+        "max_draft_tokens": 4
+      },
+      "evidence": {
+        "level": "c2_observation",
+        "method_grade": "author_report",
+        "lineage_id": "analogalok-4090-dflash2",
+        "quality_status": "unchecked",
+        "dossier_cited": true,
+        "contrast_id": "dflash2-vs-native-mtp-decode-26k"
+      }
     },
     {
       "id": "m004",
@@ -106,7 +225,21 @@
       "provenance": "forum",
       "date": "2026-08-21",
       "source": "https://x.com/analogalok/status/2090874243185856971",
-      "context": "80k prompt (160k: 48.93) — DFlash2 throughput decay curve"
+      "context": "80k prompt (160k: 48.93) — DFlash2 throughput decay curve",
+      "conditions": {
+        "context_label": "80k-prompt stress",
+        "hardware_count": 1,
+        "spec_decode": "dflash2",
+        "max_draft_tokens": 4,
+        "workload": null
+      },
+      "evidence": {
+        "level": "c2_observation",
+        "method_grade": "author_report",
+        "lineage_id": "analogalok-4090-dflash2",
+        "quality_status": "unchecked",
+        "dossier_cited": true
+      }
     },
     {
       "id": "m005",
@@ -116,7 +249,22 @@
       "provenance": "forum",
       "date": "2026-08-21",
       "source": "https://x.com/analogalok/status/2090874243185856971",
-      "context": "26k prompt, DFlash2; MTP prefill 2,324 — a negative for DFlash2 (MTP wins prompt ingestion)"
+      "context": "26k prompt, DFlash2; MTP prefill 2,324 — a negative for DFlash2 (MTP wins prompt ingestion)",
+      "conditions": {
+        "context_label": "26k prompt baseline",
+        "workload": null,
+        "greedy": true,
+        "hardware_count": 1,
+        "spec_decode": "dflash2"
+      },
+      "evidence": {
+        "level": "c2_observation",
+        "method_grade": "author_report",
+        "lineage_id": "analogalok-4090-dflash2",
+        "quality_status": "unchecked",
+        "dossier_cited": true,
+        "contrast_id": "dflash2-vs-native-mtp-prefill-26k"
+      }
     },
     {
       "id": "m006",
@@ -126,7 +274,118 @@
       "provenance": "forum",
       "date": "2026-08-19",
       "source": "https://x.com/analogalok/status/2089979723166200196",
-      "context": "peak VRAM at the 30k / n-max-4 operating point"
+      "context": "peak VRAM at the 30k / n-max-4 operating point",
+      "conditions": {
+        "context_label": "30k / n-max-4 operating point",
+        "hardware_count": 1,
+        "spec_decode": "dflash2",
+        "max_draft_tokens": 4
+      },
+      "evidence": {
+        "level": "c2_observation",
+        "method_grade": "author_report",
+        "lineage_id": "analogalok-4090-dflash2",
+        "quality_status": "unchecked",
+        "dossier_cited": true,
+        "contrast_kind": "claimed"
+      }
+    },
+    {
+      "id": "m007",
+      "metric": "decode_per_stream",
+      "value": 68.09,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "date": "2026-08-21",
+      "source": "https://x.com/analogalok/status/2090874243185856971",
+      "concurrency": 1,
+      "context": "26k prompt baseline, native MTP arm of the same 08-21 protocol",
+      "note": "contrast arm; the builder does not state the native-MTP baseline build/binary. Locator: archived post 2090874243185856971 (2026-08-21 18:50Z), decay-matrix row 1: 26k native-MTP decode 68.09 tok/s",
+      "conditions": {
+        "context_label": "26k prompt baseline, native MTP arm",
+        "workload": null,
+        "greedy": true,
+        "hardware_count": 1
+      },
+      "evidence": {
+        "level": "c2_observation",
+        "method_grade": "author_report",
+        "quality_status": "unchecked",
+        "lineage_id": "analogalok-4090-dflash2",
+        "dossier_cited": true
+      }
+    },
+    {
+      "id": "m008",
+      "metric": "decode_per_stream",
+      "value": 55.56,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "date": "2026-08-21",
+      "source": "https://x.com/analogalok/status/2090874243185856971",
+      "concurrency": 1,
+      "context": "80k prompt stress, native MTP arm of the same protocol",
+      "conditions": {
+        "context_label": "80k-prompt stress, native MTP arm",
+        "workload": null,
+        "hardware_count": 1
+      },
+      "evidence": {
+        "level": "c2_observation",
+        "method_grade": "author_report",
+        "quality_status": "unchecked",
+        "lineage_id": "analogalok-4090-dflash2",
+        "dossier_cited": true
+      },
+      "note": " Locator: archived post 2090874243185856971 (2026-08-21 18:50Z), decay-matrix row 2: 80k native-MTP decode 55.56 tok/s"
+    },
+    {
+      "id": "m009",
+      "metric": "decode_per_stream",
+      "value": 42.49,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "date": "2026-08-21",
+      "source": "https://x.com/analogalok/status/2090874243185856971",
+      "concurrency": 1,
+      "context": "160k prompt stress, native MTP arm of the same protocol",
+      "conditions": {
+        "context_label": "160k-prompt stress, native MTP arm",
+        "workload": null,
+        "hardware_count": 1
+      },
+      "evidence": {
+        "level": "c2_observation",
+        "method_grade": "author_report",
+        "quality_status": "unchecked",
+        "lineage_id": "analogalok-4090-dflash2",
+        "dossier_cited": true
+      },
+      "note": " Locator: archived post 2090874243185856971 (2026-08-21 18:50Z), decay-matrix row 3: 160k native-MTP decode 42.49 tok/s"
+    },
+    {
+      "id": "m010",
+      "metric": "prefill_tok_s",
+      "value": 2324.0,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "date": "2026-08-21",
+      "source": "https://x.com/analogalok/status/2090874243185856971",
+      "concurrency": 1,
+      "context": "26k prompt baseline, native MTP arm (prefill beats DFlash2 here)",
+      "conditions": {
+        "context_label": "26k prompt baseline, native MTP arm",
+        "workload": null,
+        "hardware_count": 1
+      },
+      "evidence": {
+        "level": "c2_observation",
+        "method_grade": "author_report",
+        "quality_status": "unchecked",
+        "lineage_id": "analogalok-4090-dflash2",
+        "dossier_cited": true
+      },
+      "note": " Locator: archived post 2090874243185856971 (2026-08-21 18:50Z), decay-matrix row 1: 26k native-MTP prefill 2,324 tok/s"
     }
   ],
   "caveats": [
@@ -141,12 +400,18 @@
     {
       "url": "https://x.com/analogalok/status/2089979723166200196",
       "kind": "post",
-      "note": "primary DFlash2 result (90 tok/s)"
+      "note": "primary DFlash2 result (90 tok/s)",
+      "archive_path": "directory/tools/history/inputs/pass4-social/raw/xsweep_analogalok.json",
+      "lineage_id": "analogalok-4090-dflash2",
+      "locator": "archived thread payload"
     },
     {
       "url": "https://x.com/analogalok/status/2090874243185856971",
       "kind": "post",
-      "note": "throughput decay matrix vs native MTP"
+      "note": "throughput decay matrix vs native MTP",
+      "archive_path": "directory/tools/history/inputs/pass4-social/raw/xsweep_analogalok.json",
+      "lineage_id": "analogalok-4090-dflash2",
+      "locator": "archived thread payload"
     },
     {
       "url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
@@ -160,5 +425,190 @@
     }
   ],
   "id": "qwen38-27b-unsloth-gguf-dflash2-llamacpp-4090",
-  "updated": "2026-09-14"
+  "updated": "2026-09-14",
+  "schema_version": 2,
+  "evidence": {
+    "rubric_version": "1.0",
+    "lineages": [
+      {
+        "id": "analogalok-4090-dflash2",
+        "actor": "analogalok",
+        "publisher": "analogalok",
+        "kind": "builder_thread",
+        "sources": [
+          "https://x.com/analogalok/status/2089979723166200196",
+          "https://x.com/analogalok/status/2090874243185856971",
+          "https://x.com/analogalok/status/2090797011100717267",
+          "https://x.com/analogalok/status/2090400471458759145"
+        ],
+        "locator": "DFlash2 series posts (one builder lineage)",
+        "note": "The 08-19 and 08-21 posts plus the patch explainer threads are one builder lineage."
+      }
+    ],
+    "claims": [
+      {
+        "id": "dflash2-drafter-mechanism",
+        "technique_id": "dflash2-block-diffusion-drafting",
+        "kind": "mechanism",
+        "statement": "DFlash2 uses parallel block-diffusion drafting to propose a block of tokens for the target model to verify, replacing the stock Q4_K_M per-token draft.",
+        "evidence_level": "c1_configuration",
+        "lineage_id": "analogalok-4090-dflash2",
+        "source": "https://github.com/ggml-org/llama.cpp/pull/27342",
+        "locator": "PR #27342 description / archived builder post",
+        "status": "recorded"
+      },
+      {
+        "id": "q2-drafter-swap-config",
+        "technique_id": "dflash2-block-diffusion-drafting",
+        "kind": "configuration",
+        "statement": "Run with --parallel 1, --spec-draft-n-max 4, KV q4q8 ladder, and the custom analogalok Q2_K (~700MB) drafter so the same 16.7 GB build reaches ~250k context.",
+        "evidence_level": "c1_configuration",
+        "lineage_id": "analogalok-4090-dflash2",
+        "source": "https://x.com/analogalok/status/2090797011100717267",
+        "locator": "archived post 2090797011100717267 (--parallel 1 unlock)",
+        "status": "recorded"
+      },
+      {
+        "id": "mtp-kv-on-accelerated-prefill-is-worse-than-dflash2",
+        "technique_id": "native-mtp",
+        "kind": "performance_effect",
+        "statement": "Native MTP beats DFlash2 on prefill (2,324 vs 1,662 tok/s at 26k), a negative recorded for the DFlash2 lane.",
+        "evidence_level": "c2_observation",
+        "lineage_id": "analogalok-4090-dflash2",
+        "source": "https://x.com/analogalok/status/2090874243185856971",
+        "locator": "raw/xsweep_analogalok.json, 2026-08-21 18:50z post",
+        "measurement_ids": [
+          "m005"
+        ],
+        "status": "recorded"
+      }
+    ],
+    "comparisons": [
+      {
+        "id": "dflash2-vs-native-mtp-decode-26k",
+        "question": "What does the builder's stated protocol report for DFlash2 versus native MTP decode at the 26k prompt baseline?",
+        "variable": "speculative_drafter",
+        "a": {
+          "label": "native MTP (same box / quant / KV / prompt set)",
+          "measurement_id": "m007"
+        },
+        "b": {
+          "label": "DFlash2 (custom 2-bit Q2_K drafter)",
+          "measurement_id": "m003"
+        },
+        "result": "b_better",
+        "effect_metric": "decode_per_stream",
+        "effect_direction": "increase",
+        "contrast_kind": "single_variable",
+        "conditions_constant": [
+          "single RTX 4090 24 GB box",
+          "same checkpoint/quant family as recorded",
+          "same KV q4/q8 configuration as recorded",
+          "same 26k prompt baseline",
+          "--parallel 1"
+        ],
+        "conditions_unstated": [
+          "exact llama.cpp binary/build used by each arm",
+          "whether native MTP ran mainline or a different fork commit",
+          "sample size / n",
+          "driver/runtime pins"
+        ],
+        "evidence_level": "c3_matched_ab",
+        "binary_provenance_status": "unresolved",
+        "lineage_id": "analogalok-4090-dflash2",
+        "independent_reproductions": [],
+        "quality_status": "unchecked",
+        "source": "https://x.com/analogalok/status/2090874243185856971",
+        "locator": "raw/xsweep_analogalok.json, 2026-08-21 18:50z post",
+        "re_review_triggers": [
+          "native-MTP baseline commit/build is pinned",
+          "DFlash2 fork commit/build is pinned",
+          "an independent lineage reruns both arms"
+        ],
+        "note": "Scoped author-reported matched comparison. Do not render as verified, proved, independently reproduced, or generally causal across builds.",
+        "date": "2026-08-21",
+        "provenance": "forum"
+      },
+      {
+        "id": "dflash2-vs-native-mtp-prefill-26k",
+        "question": "What does the builder's stated protocol report for prefill on the same 26k prompt baseline?",
+        "candidate_variable": "speculative_drafter (decode/prefill trade-off, not an isolated variable)",
+        "a": {
+          "label": "native MTP prefill",
+          "measurement_id": "m010"
+        },
+        "b": {
+          "label": "DFlash2 prefill",
+          "measurement_id": "m005"
+        },
+        "result": "a_better",
+        "effect_metric": "prefill_tok_s",
+        "effect_direction": "increase",
+        "contrast_kind": "uncontrolled",
+        "conditions_constant": [
+          "single RTX 4090 24 GB box",
+          "same 26k prompt baseline",
+          "same KV/config as recorded",
+          "--parallel 1"
+        ],
+        "conditions_unstated": [
+          "same-binary/build equivalence per arm",
+          "sample size / n"
+        ],
+        "evidence_level": "c2_observation",
+        "lineage_id": "analogalok-4090-dflash2",
+        "independent_reproductions": [],
+        "quality_status": "unchecked",
+        "source": "https://x.com/analogalok/status/2090874243185856971",
+        "locator": "raw/xsweep_analogalok.json, 2026-08-21 18:50z post",
+        "note": "DFlash2 loses prefill (1,662 vs 2,324) on the same box; a negative recorded for the lane.",
+        "date": "2026-08-21",
+        "provenance": "forum",
+        "promotion_gate": {
+          "target_level": "c3_matched_ab",
+          "target_contrast_kind": "single_variable",
+          "required_facts": [
+            "both prefill arms identified",
+            "same server configuration and workload",
+            "drafter as the sole variable (decode/prefill trade-off isolated)",
+            "build pins for both arms"
+          ],
+          "status": "not_met",
+          "note": "Prefill contrast stays C2/uncontrolled: DFlash2 loses prefill on the same box, and this negative must not be promoted together with the decode C3."
+        }
+      }
+    ],
+    "open_questions": [],
+    "re_review_triggers": [
+      "native-MTP baseline commit pinned to the same llama.cpp binary as the PR #27342 arm",
+      "a second lineage reruns the 26k prompt pair"
+    ]
+  },
+  "capability_observations": [
+    {
+      "capability": "vision",
+      "status": "broken",
+      "trigger": "multimodal / mmproj path on the PR #27342 llama.cpp build as recorded in the post",
+      "scope": "this exact PR branch (single-GPU build)",
+      "source": "https://x.com/analogalok/status/2090400471458759145",
+      "locator": "raw/xsweep_analogalok.json, 2026-08-20 18:50z post",
+      "quote": "Multi GPU and multimodality is currently broken.",
+      "lineage_id": "analogalok-4090-dflash2"
+    }
+  ],
+  "known_failures": [
+    {
+      "id": "multi-gpu-split-broken-on-pr-branch",
+      "stage": "other",
+      "trigger": "tensor-parallel split across multiple cards on llama.cpp PR #27342",
+      "effect": "load fails; the run is single-GPU only",
+      "status": "open",
+      "observed_date": "2026-08-20",
+      "date": "2026-08-20",
+      "lineage_id": "analogalok-4090-dflash2",
+      "source": "https://x.com/analogalok/status/2090400471458759145",
+      "locator": "raw/xsweep_analogalok.json, 2026-08-20 post (PR #27342 catch)",
+      "quote": "Multi GPU and multimodality is currently broken. Tensor splitting across multiple cards will fail on this PR."
+    }
+  ]
 }

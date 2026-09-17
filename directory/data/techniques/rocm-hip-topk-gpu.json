@@ -1,0 +1,32 @@
+{
+  "id": "rocm-hip-topk-gpu",
+  "name": "ROCm HIP GPU TOP_K fix",
+  "category": "runtime_patch",
+  "canonical_description": "Routes ggml_top_k onto the GPU on ROCm/HIP backends where the stock path falls back to CPU, restoring qwen4exp decode scaling with context depth.",
+  "mechanism": "Stock HIP has no CUB past ne=1024, so the QSA indexer's ggml_top_k over the whole context collapses decode with depth (knee at exactly d1024). Fixed either with hipCUB (llama.cpp PR #26592) or a native radix implementation (PR #27466).",
+  "constraints": [
+    "Applies to ROCm/HIP builds hitting the ne=1024 CPU-fallback knee; not relevant to CUDA/Metal/Vulkan paths.",
+    "Recorded on a custom branch; the fix is not mainline until the cited PRs merge."
+  ],
+  "tradeoffs": [
+    "hipCUB adds a dependency surface; native radix avoids it but is a separate code path.",
+    "TOP_K is one lever of a bundle; this packet does not attribute end-to-end speedups by itself."
+  ],
+  "re_review_triggers": [
+    "PR #26592 or #27466 merges into llama.cpp mainline.",
+    "A HIP change removes the ne=1024 CPU-fallback knee.",
+    "A setup claims a TOP_K-caused performance effect without a matching comparison object."
+  ],
+  "canonical_sources": [
+    {
+      "url": "https://github.com/ggml-org/llama.cpp/discussions/27950",
+      "kind": "thread",
+      "archive_path": "directory/tools/history/inputs/pass4-social/raw/gh-discussion_ggml-org_llama.cpp_27950.json",
+      "locator": "body lever 1: GPU TOP_K fix, ne=1024 knee, PR #26592/#27466 refs, +38-53% at 24k",
+      "note": "Builder discussion recording the knee diagnosis and both fix paths."
+    }
+  ],
+  "status": "proposed",
+  "updated": "2026-09-17",
+  "note": "Canonical technique identity only. A setup-specific claim must still carry its own statement, source, locator, lineage, evidence level, and contrast kind."
+}

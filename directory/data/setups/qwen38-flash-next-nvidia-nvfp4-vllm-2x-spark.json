@@ -25,7 +25,34 @@
       "--tensor-parallel-size 2",
       "--max-model-len 262144",
       "--gpu-memory-utilization 0.835"
-    ]
+    ],
+    "image_digest": "sha256:d464f3b4 (prefix; the full digest is not in the public tag list, archived at README line 405)",
+    "environment": {
+      "source": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
+      "locator": "README container line 405 (~20.6 GB NVIDIA dev build; no host-OS string recorded)",
+      "date": "2026-08-26",
+      "note": "host OS not stated in the archived README; do not infer it"
+    },
+    "spec_decode_profile": {
+      "method": "mtp",
+      "max_draft_tokens": 3,
+      "acceptance_rate_pct": 72.8,
+      "acceptance_basis": "823 of 1131 is the builder-quoted acceptance count; number kept vendor-attributed from the server-read table",
+      "date": "2026-08-26",
+      "source": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
+      "locator": "README server-read table (m002 2.13x line; acceptance 823/1131)",
+      "provenance": "forum"
+    },
+    "fork_revision": {
+      "repo": "https://github.com/vllm-project/vllm",
+      "branch": "dev (qwen38-flash-next container build)",
+      "anchor_date": "2026-08-26",
+      "resolution": "unresolved",
+      "ambiguous": true,
+      "source": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
+      "locator": "the dual-Spark build is a ~20.6 GB NVIDIA dev container; only the image-digest prefix is archived (README line 405)",
+      "retrieved": "2026-09-16"
+    }
   },
   "hardware": [
     {
@@ -37,7 +64,42 @@
     "memory_gb": 64,
     "disk_gb": 133,
     "min_vram_gb": null,
-    "notes": "~62.7GB weights resident per node (64.3GiB with MTP), plus a 32GiB fp8 KV pool (~3.65M tokens). Requires two boxes on the same fabric."
+    "notes": "~62.7GB weights resident per node (64.3GiB with MTP), plus a 32GiB fp8 KV pool (~3.65M tokens). Requires two boxes on the same fabric.",
+    "memory_profile": {
+      "kv_dtype": "fp8_e4m3",
+      "gpu_memory_utilization": 0.835,
+      "provenance": "forum",
+      "date": "2026-08-26",
+      "source": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
+      "locator": "README server-read tables (checkpoint table + MEMORY row)",
+      "entries": [
+        {
+          "component": "weights",
+          "value": 62.72,
+          "unit": "GB",
+          "scope": "per_unit",
+          "location": "gpu",
+          "provenance": "forum",
+          "date": "2026-08-26",
+          "source": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
+          "locator": "README checkpoint/memory table",
+          "note": "weights resident per node (64.3 GiB with MTP)"
+        },
+        {
+          "component": "kv_pool",
+          "value": 32.02,
+          "unit": "GiB",
+          "scope": "per_unit",
+          "location": "gpu",
+          "kv_tokens": 3652200,
+          "provenance": "forum",
+          "date": "2026-08-26",
+          "source": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
+          "locator": "README KV pool row (~3.65 million tokens fp8)",
+          "note": "32.02 GiB = 3,652,200 tokens; ~13.9x the 262K ceiling"
+        }
+      ]
+    }
   },
   "capabilities": {
     "vision": true,
@@ -65,7 +127,16 @@
         "text": "./start.sh"
       }
     ],
-    "auto_bootable": false
+    "auto_bootable": false,
+    "repo_revision": {
+      "anchor_date": "2026-08-26",
+      "resolution": "earliest_commit_after_anchor",
+      "ambiguous": true,
+      "source": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
+      "locator": "earliest available commit (2026-08-31) postdates the anchor; git history has no commit on/before it",
+      "retrieved": "2026-09-16",
+      "note": "no commit exists on/before the 2026-08-26 anchor; the repo was bootstrapped five days later"
+    }
   },
   "measurements": [
     {
@@ -77,7 +148,20 @@
       "provenance": "forum",
       "date": "2026-08-26",
       "source": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
-      "context": "batch-1 greedy, MTP OFF (README checkpoint table)"
+      "context": "batch-1 greedy, MTP OFF (README checkpoint table)",
+      "conditions": {
+        "hardware_count": 2,
+        "greedy": true,
+        "kv_dtype": "fp8_e4m3",
+        "context_label": "batch-1 greedy, MTP OFF (README checkpoint table)"
+      },
+      "evidence": {
+        "level": "c2_observation",
+        "method_grade": "server_telemetry",
+        "lineage_id": "mia-ai-lab-dual-spark",
+        "quality_status": "unchecked",
+        "dossier_cited": true
+      }
     },
     {
       "id": "m002",
@@ -88,7 +172,22 @@
       "provenance": "forum",
       "date": "2026-08-26",
       "source": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
-      "context": "batch-1 greedy, MTP=3: 2.13x; draft acceptance 72.8% (823/1131)"
+      "context": "batch-1 greedy, MTP=3: 2.13x; draft acceptance 72.8% (823/1131)",
+      "conditions": {
+        "hardware_count": 2,
+        "greedy": true,
+        "kv_dtype": "fp8_e4m3",
+        "context_label": "batch-1 greedy, MTP=3 (README table)",
+        "spec_decode": "mtp",
+        "max_draft_tokens": 3
+      },
+      "evidence": {
+        "level": "c2_observation",
+        "method_grade": "server_telemetry",
+        "lineage_id": "mia-ai-lab-dual-spark",
+        "quality_status": "unchecked",
+        "dossier_cited": true
+      }
     },
     {
       "id": "m003",
@@ -99,7 +198,19 @@
       "provenance": "forum",
       "date": "2026-08-26",
       "source": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
-      "context": "concurrency table x1 (TTFT 160 ms)"
+      "context": "concurrency table x1 (TTFT 160 ms)",
+      "conditions": {
+        "hardware_count": 2,
+        "spec_decode": "mtp",
+        "kv_dtype": "fp8_e4m3"
+      },
+      "evidence": {
+        "level": "c2_observation",
+        "method_grade": "server_telemetry",
+        "lineage_id": "mia-ai-lab-dual-spark",
+        "quality_status": "unchecked",
+        "dossier_cited": true
+      }
     },
     {
       "id": "m004",
@@ -110,7 +221,19 @@
       "provenance": "forum",
       "date": "2026-08-26",
       "source": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
-      "context": "x2 aggregate; 45.1 per-stream; TTFT 426 ms"
+      "context": "x2 aggregate; 45.1 per-stream; TTFT 426 ms",
+      "conditions": {
+        "hardware_count": 2,
+        "spec_decode": "mtp",
+        "kv_dtype": "fp8_e4m3"
+      },
+      "evidence": {
+        "level": "c2_observation",
+        "method_grade": "server_telemetry",
+        "lineage_id": "mia-ai-lab-dual-spark",
+        "quality_status": "unchecked",
+        "dossier_cited": true
+      }
     },
     {
       "id": "m005",
@@ -121,7 +244,19 @@
       "provenance": "forum",
       "date": "2026-08-26",
       "source": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
-      "context": "x4 aggregate; 34.2 per-stream; TTFT 471 ms"
+      "context": "x4 aggregate; 34.2 per-stream; TTFT 471 ms",
+      "conditions": {
+        "hardware_count": 2,
+        "spec_decode": "mtp",
+        "kv_dtype": "fp8_e4m3"
+      },
+      "evidence": {
+        "level": "c2_observation",
+        "method_grade": "server_telemetry",
+        "lineage_id": "mia-ai-lab-dual-spark",
+        "quality_status": "unchecked",
+        "dossier_cited": true
+      }
     },
     {
       "id": "m006",
@@ -132,7 +267,19 @@
       "provenance": "forum",
       "date": "2026-08-26",
       "source": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
-      "context": "x8 aggregate (MAX_NUM_SEQS=8); 26.7 per-stream; aggregate scales 3.8x from x1"
+      "context": "x8 aggregate (MAX_NUM_SEQS=8); 26.7 per-stream; aggregate scales 3.8x from x1",
+      "conditions": {
+        "hardware_count": 2,
+        "spec_decode": "mtp",
+        "kv_dtype": "fp8_e4m3"
+      },
+      "evidence": {
+        "level": "c2_observation",
+        "method_grade": "server_telemetry",
+        "lineage_id": "mia-ai-lab-dual-spark",
+        "quality_status": "unchecked",
+        "dossier_cited": true
+      }
     },
     {
       "id": "m007",
@@ -142,7 +289,19 @@
       "provenance": "forum",
       "date": "2026-08-26",
       "source": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
-      "context": "@32k (flat ~2.96k from 16k-64k, -8% by 128k)"
+      "context": "@32k (flat ~2.96k from 16k-64k, -8% by 128k)",
+      "conditions": {
+        "hardware_count": 2,
+        "spec_decode": "mtp",
+        "kv_dtype": "fp8_e4m3"
+      },
+      "evidence": {
+        "level": "c2_observation",
+        "method_grade": "server_telemetry",
+        "lineage_id": "mia-ai-lab-dual-spark",
+        "quality_status": "unchecked",
+        "dossier_cited": true
+      }
     },
     {
       "id": "m008",
@@ -152,7 +311,19 @@
       "provenance": "forum",
       "date": "2026-08-26",
       "source": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
-      "context": "weights resident per node; fp8 KV pool 32.02 GiB = 3,652,200 tokens"
+      "context": "weights resident per node; fp8 KV pool 32.02 GiB = 3,652,200 tokens",
+      "evidence": {
+        "level": "c2_observation",
+        "method_grade": "server_telemetry",
+        "lineage_id": "mia-ai-lab-dual-spark",
+        "quality_status": "unchecked",
+        "dossier_cited": true
+      },
+      "conditions": {
+        "hardware_count": 2,
+        "context_label": "weights resident per node",
+        "spec_decode": "mtp"
+      }
     }
   ],
   "caveats": [
@@ -167,19 +338,223 @@
     {
       "url": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
       "kind": "repo",
-      "note": "the recipe and server-read measurement tables"
+      "note": "the recipe and server-read measurement tables",
+      "lineage_id": "mia-ai-lab-dual-spark",
+      "archive_path": "directory/tools/history/inputs/pass4-social/raw/repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+      "locator": "README server-read benchmark tables"
     },
     {
       "url": "https://huggingface.co/nvidia/Qwen3.8-Flash-Next-NVFP4",
       "kind": "model",
-      "note": "NVFP4 weights"
+      "note": "NVFP4 weights",
+      "lineage_id": "mia-ai-lab-dual-spark"
     },
     {
       "url": "https://x.com/MiaAI_lab/status/2092670516964270101",
       "kind": "post",
-      "note": "discovery post (claims differ from the repo — see caveats)"
+      "note": "discovery post (claims differ from the repo — see caveats)",
+      "lineage_id": "mia-ai-lab-dual-spark",
+      "archive_path": "directory/tools/history/inputs/pass4-social/raw/xsweep_NVIDIAAI.json",
+      "locator": "thread payload archived in the NVIDIAAI sweep raw file"
+    },
+    {
+      "url": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks/blob/main/README.md",
+      "kind": "docs",
+      "note": "durable README: measurement-conditions tables",
+      "lineage_id": "mia-ai-lab-dual-spark",
+      "archive_path": "directory/tools/history/inputs/pass4-social/raw/repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md"
     }
   ],
   "id": "qwen38-flash-next-nvidia-nvfp4-vllm-2x-spark",
-  "updated": "2026-09-14"
+  "updated": "2026-09-14",
+  "schema_version": 2,
+  "evidence": {
+    "rubric_version": "1.0",
+    "lineages": [
+      {
+        "id": "mia-ai-lab-dual-spark",
+        "actor": "MiaAI-Lab",
+        "publisher": "mia-ai-lab",
+        "kind": "builder_repo",
+        "sources": [
+          "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
+          "https://x.com/MiaAI_lab/status/2092670516964270101"
+        ],
+        "locator": "README server-read tables; announcement post",
+        "archive_path": "directory/tools/history/inputs/pass4-social/raw/repo_MiaAI-Lab_Flash-Next-Dual-DGX-Sparks_README.md",
+        "note": "README and X announcement are one lineage."
+      }
+    ],
+    "claims": [
+      {
+        "id": "tp2-ep-roce-configuration",
+        "technique_id": "roce-tensor-parallel",
+        "kind": "configuration",
+        "statement": "Serves the NVFP4 checkpoint across two GB10 nodes with TP2 + EP + MTP3 over ConnectX RoCE/IB, passwordless SSH and Docker on both nodes.",
+        "evidence_level": "c1_configuration",
+        "lineage_id": "mia-ai-lab-dual-spark",
+        "source": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
+        "locator": "README launch section (lines 10/37/405)",
+        "quote": "Multi-node inference for [RadixArk/Qwen3.8-Flash-Next-NVFP4] across 2 DGX Sparks using vLLM with TP2+EP+MTP3.",
+        "status": "recorded"
+      },
+      {
+        "id": "native-mtp-draft-head-usage",
+        "technique_id": "native-mtp",
+        "kind": "mechanism",
+        "statement": "Uses the checkpoint MTP-3 speculative head; the MTP layer-index alias is re-injected by start.sh so the loader binds mtp.layers.48 correctly.",
+        "evidence_level": "c1_configuration",
+        "lineage_id": "mia-ai-lab-dual-spark",
+        "source": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
+        "locator": "README checkpoint-fix notes (start.sh section)",
+        "status": "recorded"
+      },
+      {
+        "id": "fp8-routed-experts-failure",
+        "technique_id": "fp8-block-scales-routed-experts",
+        "kind": "failure_mode",
+        "statement": "Without the FP8_BLOCK_SCALES routed-experts patch, the MoE can load unquantized and die roughly seven minutes in.",
+        "evidence_level": "c1_configuration",
+        "lineage_id": "mia-ai-lab-dual-spark",
+        "source": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
+        "locator": "README patch notes (line 89 region)",
+        "quote": "FP8_BLOCK_SCALES routed-experts patch (missing upstream — without it the MoE loads unquantized and dies ~7 min in)",
+        "status": "recorded"
+      }
+    ],
+    "comparisons": [
+      {
+        "id": "mtp-off-vs-mtp3",
+        "question": "What association does the README table report between MTP off and MTP=3 at batch 1?",
+        "candidate_variable": "engine MTP toggle (native MTP=3 draft head)",
+        "a": {
+          "label": "MTP off",
+          "measurement_id": "m001"
+        },
+        "b": {
+          "label": "MTP=3",
+          "measurement_id": "m002"
+        },
+        "result": "b_better",
+        "effect_metric": "decode_per_stream",
+        "effect_direction": "increase",
+        "contrast_kind": "uncontrolled",
+        "conditions_constant": [
+          "two-node GB10 box as recorded",
+          "batch-1 greedy as labelled in the README server-read table",
+          "same MiaAI-Lab README server-telemetry source"
+        ],
+        "conditions_unstated": [
+          "raw full A/B command",
+          "prompt corpus",
+          "exact context tokens",
+          "sample size / n",
+          "same server configuration and workload across both arms",
+          "MTP toggle as sole changed variable",
+          "checkpoint-path discrepancy resolution",
+          "repo/build pin"
+        ],
+        "evidence_level": "c2_observation",
+        "lineage_id": "mia-ai-lab-dual-spark",
+        "independent_reproductions": [],
+        "quality_status": "unchecked",
+        "source": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
+        "locator": "README server-read benchmark table",
+        "promotion_gate": {
+          "target_level": "c3_matched_ab",
+          "target_contrast_kind": "single_variable",
+          "required_facts": [
+            "both arms identified",
+            "same server configuration and workload",
+            "MTP is the sole toggled variable",
+            "checkpoint-path discrepancy resolved"
+          ],
+          "status": "not_met",
+          "note": "Pinning alone is not enough. If the four facts cannot be established from existing artifacts, a clean 2x Spark rerun is required for C3 (Terra 2026-09-16)."
+        },
+        "provenance": "forum",
+        "date": "2026-08-26"
+      }
+    ],
+    "contradictions": [
+      {
+        "id": "tweet-vs-readme",
+        "statement": "Announcement says ~64 tok/s single stream and ~115 tok/s at 2-4 concurrent; README server tables record 52.1-54.4 batch-1 and 86.5-128.1 aggregate at x2-x4.",
+        "resolution": "Repo numbers admitted under law 9; tweet remains discovery-only.",
+        "status": "resolved_by_source_priority",
+        "sources": [
+          "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
+          "https://x.com/MiaAI_lab/status/2092670516964270101"
+        ],
+        "lineage_ids": [
+          "mia-ai-lab-dual-spark"
+        ]
+      }
+    ],
+    "open_questions": [
+      {
+        "id": "repo-pin-ambiguous",
+        "question": "No repo commit exists on or before the 2026-08-26 recipe anchor; the earliest available bootstrap commit is 6e08722d1fad (2026-08-31).",
+        "blocks": [
+          "exact_reproduction"
+        ],
+        "owner": "openkod",
+        "type": "other",
+        "status": "open",
+        "source": "docs/builder-concerns-2026-09-16/pilot-dossiers/00-INDEX.md",
+        "locator": "historically-resolved pin table, MiaAI-Lab row"
+      },
+      {
+        "id": "image-digest-exhaustion",
+        "type": "other",
+        "question": "Only the sha256:d464f3b4 prefix of the container image digest is archived (README line 405); the full digest is not in the public tag list, so exact-digest reproduction cannot be pinned from existing artifacts.",
+        "blocks": [
+          "exact_reproduction"
+        ],
+        "owner": "openkod",
+        "status": "open",
+        "source": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
+        "locator": "README line 405; public tag list has no full digest"
+      },
+      {
+        "id": "kv-cache-scope",
+        "type": "other",
+        "question": "The admitted memory and speed numbers cover the fp8 KV-cache default at GPU_MEMORY_UTILIZATION=0.835; KV behavior outside that configuration is not part of the admitted claim.",
+        "blocks": [
+          "speed_claim"
+        ],
+        "owner": "openkod",
+        "status": "open",
+        "source": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
+        "locator": "README KV pool rows (fp8 default) and server-read tables"
+      },
+      {
+        "id": "concurrency-ceiling",
+        "type": "other",
+        "question": "Concurrency above x8 (MAX_NUM_SEQS=8) was not measured; the x8 aggregate 207.0 tok/s row is the recorded ceiling.",
+        "blocks": [
+          "speed_claim"
+        ],
+        "owner": "openkod",
+        "status": "open",
+        "source": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
+        "locator": "README concurrency table x8 row; MAX_NUM_SEQS=8 at README line 172"
+      }
+    ],
+    "re_review_triggers": [
+      "vLLM version or container digest changes",
+      "checkpoint identity changes between the nvidia and RadixArk paths",
+      "FP8 routed-experts patch lands upstream vLLM"
+    ]
+  },
+  "interconnect": {
+    "kind": "roce",
+    "role": "tensor_parallel",
+    "topology": "ConnectX between two GB10 nodes; TP2+EP+MTP3 with rank-1 launch via start.sh",
+    "requires_same_fabric": true,
+    "provenance": "forum",
+    "date": "2026-08-26",
+    "source": "https://github.com/MiaAI-Lab/Qwen3.8-Flash-Next-Dual-DGX-Sparks",
+    "locator": "README multi-node provision/launch section"
+  }
 }

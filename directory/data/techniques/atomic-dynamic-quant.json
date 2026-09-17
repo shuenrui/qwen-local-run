@@ -1,0 +1,32 @@
+{
+  "id": "atomic-dynamic-quant",
+  "name": "Atomic Dynamic quantization",
+  "category": "quantization",
+  "canonical_description": "AtomicChat's AD GGUF layout: the two largest tensor groups get the named precision (ffn_down/ffn_up), allocated with the vendor's own importance matrix and re-measured against the original weights.",
+  "mechanism": "AD-<ffn_down>-<ffn_up> names what the two largest tensor groups got, collapsed to one name when both match. The importance matrix is collected on the BF16 weights, never on a quant proxy, and each file's KL divergence plus top-1 agreement is measured against the original weights on held-out neutral text with published raw logits for re-measurement.",
+  "constraints": [
+    "Quality rows are vendor-measured on the vendor's held-out text; they do not transfer to other corpora without re-measurement.",
+    "The card is a moving target: files are re-quantized and re-measured, so rows need a card pin before exact comparison."
+  ],
+  "tradeoffs": [
+    "Smaller AD files trade top-1 agreement for size along a measured curve (e.g. AD-IQ2_XXS 79.44% vs Q8_0 98.92%).",
+    "AD naming describes tensor allocation, not a speed claim; speed rows need their own comparison objects."
+  ],
+  "re_review_triggers": [
+    "The vendor re-measures the quality table (new KL/top-1).",
+    "AD quant type conventions change.",
+    "A setup claims an AD-caused quality or performance effect without a matching comparison object."
+  ],
+  "canonical_sources": [
+    {
+      "url": "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF",
+      "kind": "model",
+      "archive_path": "directory/tools/history/inputs/pass4-social/raw/hf_AtomicChat_27B-GGUF.md",
+      "locator": "quality table lines 53-70; AD naming lines 72-74; How-we-measured lines 327-351; speed table lines 119-126",
+      "note": "Vendor HF card: method, quality rows, and speed rows in one artifact."
+    }
+  ],
+  "status": "proposed",
+  "updated": "2026-09-17",
+  "note": "Canonical technique identity only. A setup-specific claim must still carry its own statement, source, locator, lineage, evidence level, and contrast kind."
+}
