@@ -52,9 +52,12 @@ cached, cached_gib, dl_status, dl_got_gib, dl_total_gib, dl_speed_mbs, dl_error}
 | Endpoint | Meaning |
 |---|---|
 | `GET /api/models` | discovered models + live cache/download state |
-| `POST /api/run` `{prompt, models:[profile id], thinking, max_tokens, temperature, engine:"mtp"\|"dspark", auto}` | start a comparison → `202 {job_id}`; `400` bad input; `409` one job at a time |
+| `POST /api/run` `{prompt, models:[profile id], thinking, max_tokens, temperature, engine:"mtp"\|"dspark", auto}` | start a comparison → `202 {job_id, order}` — `order` is a **randomized blind slot list** (`A`,`B`,…); identity↔slot lives only in the job (`400` bad input; `409` one job at a time) |
+| `POST /api/vote` `{job, pick:"A"…"K"\|"TIE"}` | lock in a blind preference vote after the run finishes (one per run, `409` on repeat or before completion); persisted as `votes.json` next to `results.json` |
+| `GET /api/scores` | aggregate tally of every saved blind vote: `{rows:[{id,label,wins,ties,losses,votes,win_rate}]}` (ties count ½) |
+| `GET /api/scores/export` | scoreboard as CSV attachment |
 | `GET /api/jobs/<id>` | job snapshot: `{status, prompt, options…, results:[{id,label,status,ttft_s,total_s,tokens,estimated,toks_per_s,text,reasoning,error}]}` |
-| `GET /api/jobs/<id>/stream` | SSE events: `{type:"status",model,status}`, `{type:"delta",model,kind:"content"\|"reasoning",text}`, `{type:"done",model,ttft_s,total_s,tokens,estimated,toks_per_s,text,reasoning}`, `{type:"error",model,error}`, `{type:"job-done",saved_dir}`, `{type:"end"}` |
+| `GET /api/jobs/<id>/stream` | SSE events, **keyed by blind slot only** (never the model id, so live streaming can't leak identity): `{type:"status",slot,status}`, `{type:"delta",slot,kind:"content"\|"reasoning",text}`, `{type:"done",slot,ttft_s,total_s,tokens,estimated,toks_per_s,text,reasoning}`, `{type:"error",slot,error}`, `{type:"job-done",saved_dir}`, `{type:"end"}` |
 | `GET /api/jobs/<id>/export?fmt=md\|csv\|json` | download the run as attachment (all include full responses) |
 | `POST /api/download` `{id}` | start a **resumable** model download → `202`; `409` if one is active. Runs as root inside a throwaway container (`huggingface_hub.snapshot_download`) because the shared HF cache is root-owned |
 | `POST /api/cancel` `{id}` | stop the active download container |

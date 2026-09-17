@@ -34,6 +34,8 @@
       </label>
       <label class="opt"><input type="checkbox" id="auto" checked> auto start/stop</label>
       <button id="run" class="run">Run ▶</button>
+      <button id="tiebtn" class="ghost" hidden>🤝 It's a tie</button>
+      <button id="reveal" class="ghost" hidden>Reveal names</button>
       <span id="status" class="status"></span>
     </div>
   </section>
@@ -51,6 +53,15 @@
       <a class="exp" data-fmt="json">JSON</a>
     </div>
     <div id="saved" class="saved"></div>
+  </section>
+
+  <section class="panel">
+    <h2>4 · Scoreboard</h2>
+    <table class="score" id="sboard">
+      <thead><tr><th>model</th><th>votes</th><th>W</th><th>T</th><th>L</th><th>win %</th></tr></thead>
+      <tbody><tr><td colspan="6" style="color:var(--muted)">no votes yet — run a comparison, then vote blind</td></tr></tbody>
+    </table>
+    <div class="hint">Blind preference votes across all your saved runs. <a id="srefresh" href="#">refresh</a> · <a href="/api/scores/export">CSV</a></div>
   </section>
 </main>
 <script src="/static/app.js"></script>

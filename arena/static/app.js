@@ -5,6 +5,7 @@ const $ = id => document.getElementById(id);
 let MODELS = [], ES = null, CARD = {}, BUF = {}, dirty = {}, renderPending = false;
 let SELECTED = new Set(), firstLoad = true, pollTimer = null;
 let LAST_JOB = null;
+let VOTED = false, REVEALED = false;
 
 function escapeHtml(s){ return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 
@@ -133,26 +134,33 @@ async function cancelDl(mid){
   pollModels();
 }
 
-function buildCards(ids){
+function buildCards(slots){
   const cards=$('cards'); cards.innerHTML=''; CARD={}; BUF={}; dirty={};
   const tb=$('score').querySelector('tbody'); tb.innerHTML='';
-  ids.forEach(id=>{
-    const m=MODELS.find(x=>x.id===id)||{label:id};
+  slots.forEach(s=>{
     const card=document.createElement('div'); card.className='card';
-    card.innerHTML=`<header><h3>${escapeHtml(m.label)}</h3><span class="st">queued</span></header>
+    card.innerHTML=`<header><h3>Model ${s}</h3><span class="st">queued</span>
+        <span class="tabs" hidden><a class="tab on" data-t="r">Rendered</a><a class="tab" data-t="p">Preview</a></span>
+        <button class="votebtn" hidden>🥇 Vote</button></header>
       <div class="metrics"></div>
       <details class="reasoning" hidden><summary>thinking</summary><div class="rbody"></div></details>
       <div class="body"></div>`;
     cards.appendChild(card);
     const tr=document.createElement('tr');
-    tr.innerHTML=`<td>${escapeHtml(m.label)}</td><td class="c-st">queued</td><td class="c-ttft">—</td><td class="c-total">—</td><td class="c-tps">—</td><td class="c-tok">—</td>`;
+    tr.innerHTML=`<td>Model ${s}</td><td class="c-st">queued</td><td class="c-ttft">—</td><td class="c-total">—</td><td class="c-tps">—</td><td class="c-tok">—</td>`;
     tb.appendChild(tr);
-    CARD[id]={el:card,status:card.querySelector('.st'),metrics:card.querySelector('.metrics'),
-      body:card.querySelector('.body'),reasoningEl:card.querySelector('.rbody'),
-      reasoningBox:card.querySelector('.reasoning'),row:tr,streaming:false};
-    BUF[id]={content:'',reasoning:''};
+    CARD[s]={el:card,h3:card.querySelector('h3'),status:card.querySelector('.st'),
+      metrics:card.querySelector('.metrics'),body:card.querySelector('.body'),
+      reasoningEl:card.querySelector('.rbody'),reasoningBox:card.querySelector('.reasoning'),
+      tabs:card.querySelector('.tabs'),vote:card.querySelector('.votebtn'),
+      row:tr,streaming:false,frame:null,errors:0,shownTab:'r',errPill:null,okPill:null};
+    BUF[s]={content:'',reasoning:''};
+    const t=card.querySelectorAll('.tab');
+    t[0].onclick=()=>showTab(s,'r');
+    t[1].onclick=()=>showTab(s,'p');
+    CARD[s].vote.onclick=()=>postVote(s);
   });
-  $('score').hidden=false;
+  $('score').hidden=false; $('tiebtn').hidden=true; $('reveal').hidden=true;
 }
 
 function setStatus(id,text){
@@ -162,52 +170,176 @@ function setStatus(id,text){
 }
 
 function openStream(jid){
-  LAST_JOB=jid;
+  LAST_JOB=jid; VOTED=false; REVEALED=false;
   if(ES) ES.close();
   ES=new EventSource('/api/jobs/'+jid+'/stream');
   ES.onmessage=e=>{
     let ev; try{ ev=JSON.parse(e.data); }catch(_){ return; }
-    const id=ev.model;
+    const sl=ev.slot;
     switch(ev.type){
       case 'status':
-        setStatus(id,ev.status);
-        if(CARD[id]) CARD[id].streaming=(ev.status==='running');
+        setStatus(sl,ev.status);
+        if(CARD[sl]) CARD[sl].streaming=(ev.status==='running');
         break;
       case 'delta':
-        if(!BUF[id]) break;
-        if(ev.kind==='reasoning'){ BUF[id].reasoning+=ev.text; if(CARD[id]) CARD[id].reasoningBox.hidden=false; }
-        else BUF[id].content+=ev.text;
-        scheduleRender(id);
+        if(!BUF[sl]) break;
+        if(ev.kind==='reasoning'){ BUF[sl].reasoning+=ev.text; if(CARD[sl]) CARD[sl].reasoningBox.hidden=false; }
+        else BUF[sl].content+=ev.text;
+        scheduleRender(sl);
         break;
       case 'done':
-        if(CARD[id]) CARD[id].streaming=false;
-        setStatus(id,'done');
-        if(CARD[id]) CARD[id].metrics.innerHTML=
+        if(CARD[sl]) CARD[sl].streaming=false;
+        setStatus(sl,'done');
+        if(CARD[sl]) CARD[sl].metrics.innerHTML=
           `<span class="pill">TTFT <b>${ev.ttft_s}s</b></span><span class="pill">total <b>${ev.total_s}s</b></span>`+
           `<span class="pill"><b>${ev.toks_per_s}</b> tok/s</span><span class="pill">tokens <b>${ev.tokens}</b>${ev.estimated?' (est)':''}</span>`;
-        if(CARD[id]&&CARD[id].row){ const r=CARD[id].row;
+        if(CARD[sl]&&CARD[sl].row){ const r=CARD[sl].row;
           r.querySelector('.c-ttft').textContent=ev.ttft_s+'s'; r.querySelector('.c-total').textContent=ev.total_s+'s';
           r.querySelector('.c-tps').textContent=ev.toks_per_s; r.querySelector('.c-tok').textContent=ev.tokens; }
-        renderBody(id);
+        renderBody(sl);
+        if(CARD[sl] && detectHtml(BUF[sl].content)) CARD[sl].tabs.hidden=false;
         break;
       case 'error':
-        if(CARD[id]) CARD[id].streaming=false;
-        setStatus(id,'error');
-        if(CARD[id]) CARD[id].body.innerHTML='<div class="err">⚠ '+escapeHtml(ev.error)+'</div>';
+        if(CARD[sl]) CARD[sl].streaming=false;
+        setStatus(sl,'error');
+        if(CARD[sl]) CARD[sl].body.innerHTML='<div class="err">⚠ '+escapeHtml(ev.error)+'</div>';
         break;
       case 'job-done':
         $('saved').textContent='saved → '+ev.saved_dir;
         document.querySelectorAll('#export .exp').forEach(a=>{ a.href='/api/jobs/'+LAST_JOB+'/export?fmt='+a.dataset.fmt; });
         $('export').hidden=false;
+        showVoting();
         break;
       case 'end':
-        $('status').textContent='done'; $('run').disabled=false;
+        $('status').textContent='done — read side-by-side, Preview if it is code, then vote';
+        $('run').disabled=false;
         if(ES) ES.close(); ES=null;
         break;
     }
   };
   ES.onerror=()=>{ $('status').textContent=$('status').textContent||'stream ended'; $('run').disabled=false; if(ES) ES.close(); ES=null; };
 }
+
+/* ---------------------- blind voting + reveal ---------------------- */
+function showVoting(){
+  if(VOTED) return;
+  Object.values(CARD).forEach(c=>{ c.vote.hidden=false; });
+  if(Object.keys(CARD).length>1) $('tiebtn').hidden=false;
+}
+async function postVote(pick){
+  if(VOTED || !LAST_JOB) return;
+  let r;
+  try{ r=await fetch('/api/vote',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({job:LAST_JOB,pick})}); }
+  catch(e){ $('status').textContent='vote failed'; return; }
+  if(!r.ok){ const j=await r.json().catch(()=>({})); $('status').textContent='vote: '+(j.error||('HTTP '+r.status)); return; }
+  VOTED=true;
+  Object.values(CARD).forEach(c=>{ c.vote.hidden=true; });
+  $('tiebtn').hidden=true; $('reveal').hidden=false;
+  $('status').textContent='vote locked in — click Reveal names when ready';
+}
+async function revealNames(){
+  if(REVEALED || !LAST_JOB) return;
+  let j; try{ j=await (await fetch('/api/jobs/'+LAST_JOB)).json(); }catch(e){ return; }
+  REVEALED=true;
+  (j.results||[]).forEach(r=>{
+    const c=CARD[r.slot]; if(!c) return;
+    c.h3.textContent = r.label || r.name || r.slot;
+    c.row.querySelector('td').textContent = r.label || r.name || r.slot;
+  });
+  const pick=(j.vote && j.vote.pick)||'';
+  if(pick && pick!=='TIE'){
+    const w=(j.results||[]).find(r=>r.slot===pick);
+    const c=w && CARD[w.slot];
+    if(c){ c.el.classList.add('won'); c.h3.textContent='🏆 '+c.h3.textContent; }
+  }
+  $('reveal').hidden=true;
+  $('status').textContent='revealed — scoreboard updated';
+  refreshScores();
+}
+$('tiebtn').onclick=()=>postVote('TIE');
+$('reveal').onclick=revealNames;
+
+/* ------------------------- sandboxed preview ------------------------- */
+function detectHtml(text){
+  if(!text) return null;
+  if(/<!doctype\s+html|<html[\s>]/i.test(text)) return {doc:true, html:text};
+  const m=text.match(/```(?:html|xml)?\s*\n([\s\S]*?)```/i);
+  if(m && /<[a-z!]/i.test(m[1])) return {doc:false, html:m[1]};
+  return null;
+}
+const SHIM='<script>'+
+  'window.onerror=function(m){parent.postMessage({__arenaPreview:1,err:String(m)},"*")};'+
+  'window.addEventListener("unhandledrejection",function(e){parent.postMessage({__arenaPreview:1,err:"promise: "+e.reason},"*")});'+
+  '<\/script>';
+function buildPreviewHtml(sl){
+  const d=detectHtml((BUF[sl]&&BUF[sl].content)||''); if(!d) return null;
+  if(d.doc){
+    return /<head[^>]*>/i.test(d.html) ? d.html.replace(/<head[^>]*>/i, m=>m+SHIM) : SHIM+d.html;
+  }
+  return '<!doctype html><html><head><meta charset="utf-8">'+
+    '<meta name="viewport" content="width=device-width,initial-scale=1">'+
+    '<style>body{font-family:system-ui,sans-serif;margin:1rem;background:#fff;color:#111}</style>'+
+    SHIM+'</head><body>'+d.html+'</body></html>';
+}
+function showTab(sl,which){
+  const c=CARD[sl]; if(!c) return;
+  c.el.querySelectorAll('.tab').forEach(t=>t.classList.toggle('on', t.dataset.t===which));
+  if(which==='p'){
+    const html=buildPreviewHtml(sl); if(!html) return;
+    c.errors=0;
+    if(c.errPill){ c.errPill.remove(); c.errPill=null; }
+    if(c.okPill){ c.okPill.remove(); c.okPill=null; }
+    if(!c.frame){
+      c.frame=document.createElement('iframe');
+      c.frame.className='preview';
+      c.frame.setAttribute('sandbox','allow-scripts allow-modals allow-forms allow-popups');
+      c.frame.setAttribute('title','model-generated page (sandboxed)');
+    }
+    c.frame.srcdoc=html;
+    c.body.innerHTML=''; c.body.appendChild(c.frame);
+    c.shownTab='p';
+    setTimeout(()=>{
+      if(c.shownTab!=='p' || c.errors>0 || c.okPill) return;
+      c.okPill=document.createElement('span'); c.okPill.className='pill ok';
+      c.okPill.textContent='0 runtime errors ✓'; c.metrics.appendChild(c.okPill);
+    }, 6000);
+  } else {
+    c.shownTab='r';
+    if(c.frame) c.frame.remove();
+    renderBody(sl);
+  }
+}
+window.addEventListener('message',e=>{
+  const d=e.data; if(!d || !d.__arenaPreview || !d.err) return;
+  for(const sl in CARD){
+    const c=CARD[sl];
+    if(c.frame && c.frame.contentWindow===e.source){
+      c.errors++;
+      if(c.okPill){ c.okPill.remove(); c.okPill=null; }
+      if(!c.errPill){ c.errPill=document.createElement('span'); c.errPill.className='pill no'; c.metrics.appendChild(c.errPill); }
+      c.errPill.textContent='⚠ '+c.errors+' runtime error'+(c.errors>1?'s':'')+': '+String(d.err).slice(0,90);
+      return;
+    }
+  }
+});
+
+/* ---------------------------- scoreboard ---------------------------- */
+async function refreshScores(){
+  let j; try{ j=await (await fetch('/api/scores')).json(); }catch(e){ return; }
+  const tb=$('sboard').querySelector('tbody'); tb.innerHTML='';
+  const rows=j.rows||[];
+  if(!rows.length){
+    tb.innerHTML='<tr><td colspan="6" style="color:var(--muted)">no votes yet — run a comparison, then vote blind</td></tr>';
+    return;
+  }
+  rows.forEach(r=>{
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td>${escapeHtml(r.label||r.id)}</td><td>${r.votes}</td><td>${r.wins}</td>`+
+      `<td>${r.ties}</td><td>${r.losses}</td><td><b>${r.win_rate}%</b></td>`;
+    tb.appendChild(tr);
+  });
+}
+$('srefresh').onclick=e=>{ e.preventDefault(); refreshScores(); };
 
 $('run').onclick=async()=>{
   const ids=[...document.querySelectorAll('.msel:checked')].map(e=>e.dataset.id);
@@ -219,14 +351,15 @@ $('run').onclick=async()=>{
     max_tokens:parseInt($('maxtok').value,10)||2000,temperature:temp,
     engine:$('engine').value,auto:$('auto').checked};
   $('run').disabled=true; $('status').textContent='queued…';
-  $('results').hidden=false; $('saved').textContent='';
-  buildCards(ids);
-  let r;
-  try{ r=await fetch('/api/run',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}); }
-  catch(e){ $('status').textContent='request failed'; $('run').disabled=false; return; }
-  const j=await r.json().catch(()=>({}));
+  $('results').hidden=false; $('saved').textContent=''; $('export').hidden=true;
+  let r, j;
+  try{
+    r=await fetch('/api/run',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)});
+    j=await r.json().catch(()=>({}));
+  }catch(e){ $('status').textContent='request failed'; $('run').disabled=false; return; }
   if(!r.ok){ $('status').textContent='error: '+(j.error||('HTTP '+r.status)); $('run').disabled=false; return; }
-  $('status').textContent='running… (serial)';
+  buildCards(j.order||[]);
+  $('status').textContent='running… (serial, blind)';
   openStream(j.job_id);
 };
 
@@ -240,3 +373,4 @@ document.addEventListener('click',e=>{
 });
 
 loadModels();
+refreshScores();

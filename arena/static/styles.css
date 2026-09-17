@@ -75,4 +75,14 @@ textarea{width:100%;min-height:92px;background:var(--code-bg);color:var(--text);
 .export{margin-top:.85rem;font-size:.82rem;color:var(--muted)}
 .export .exp{display:inline-block;margin-left:.5rem;background:var(--panel2);border:1px solid var(--border);color:var(--text);border-radius:7px;padding:.25rem .7rem;font-size:.8rem;cursor:pointer;text-decoration:none}
 .export .exp:hover{border-color:var(--accent);color:var(--accent)}
+.tabs{margin-left:.5rem;display:flex;gap:.3rem}
+.tab{font-size:.7rem;color:var(--muted);border:1px solid var(--border);border-radius:5px;padding:.05rem .45rem;cursor:pointer;text-decoration:none}
+.tab.on{color:var(--accent);border-color:var(--accent)}
+.votebtn{margin-left:.5rem;background:var(--panel2);border:1px solid var(--border);color:var(--text);border-radius:6px;padding:.1rem .55rem;cursor:pointer;font-size:.72rem}
+.votebtn:hover{border-color:var(--accent);color:var(--accent)}
+.card.won{border-color:var(--ok);box-shadow:0 0 0 1px var(--ok)}
+.ghost{background:var(--panel2);border:1px solid var(--border);color:var(--text);border-radius:9px;padding:.5rem .95rem;cursor:pointer;font-size:.85rem}
+.ghost:hover{border-color:var(--accent);color:var(--accent)}
+.preview{width:100%;min-height:420px;border:1px solid var(--border);border-radius:8px;background:#fff}
+.pill.ok{color:var(--ok)}
 @media(max-width:640px){.run{margin-left:0;width:100%}.cards{grid-template-columns:1fr}.topbar{flex-direction:column;gap:.2rem}}

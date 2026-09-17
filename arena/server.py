@@ -28,6 +28,7 @@ import argparse
 import glob
 import json
 import os
+import random
 import subprocess
 import sys
 import threading
@@ -41,7 +42,9 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.dirname(HERE)                      # repo root
 PROFILES_DIR = os.path.join(ROOT, "profiles")
 STATIC_DIR = os.path.join(HERE, "static")
-RESULTS_DIR = os.path.join(ROOT, "results")
+# Tests MUST point ARENA_RESULTS at a scratch dir so e2e cleanup can never
+# touch real saved runs (see arena/tests/mock_model.py usage in README).
+RESULTS_DIR = os.path.abspath(os.environ.get("ARENA_RESULTS", os.path.join(ROOT, "results")))
 HF_HUB = os.path.join(ROOT, ".cache", "huggingface", "hub")
 # Downloads run as root inside a throwaway container: the HF cache is root-owned
 # (the SGLang containers created it), so a host-side `hf download` cannot write
@@ -397,13 +400,13 @@ def stream_chat(job, item, port, served_model, prompt, thinking, max_tokens, tem
                     if first is None:
                         first = time.time()
                     reasoning.append(rc)
-                    add_event(job, {"type": "delta", "model": item["id"],
+                    add_event(job, {"type": "delta", "slot": item["slot"],
                                     "kind": "reasoning", "text": rc})
                 if ct:
                     if first is None:
                         first = time.time()
                     parts.append(ct)
-                    add_event(job, {"type": "delta", "model": item["id"],
+                    add_event(job, {"type": "delta", "slot": item["slot"],
                                     "kind": "content", "text": ct})
     total = time.time() - t0
     text = "".join(parts)
@@ -422,11 +425,11 @@ def run_job(job):
         for item in job["results"]:
             if job.get("cancel"):
                 item["status"] = "skipped"
-                add_event(job, {"type": "status", "model": item["id"], "status": "skipped"})
+                add_event(job, {"type": "status", "slot": item["slot"], "status": "skipped"})
                 continue
             cname, port = item["container_name"], item["port"]
             item["status"] = "starting"
-            add_event(job, {"type": "status", "model": item["id"], "status": "starting"})
+            add_event(job, {"type": "status", "slot": item["slot"], "status": "starting"})
             try:
                 if job["auto"]:
                     if item.get("engine", "sglang") != "sglang":
@@ -441,16 +444,16 @@ def run_job(job):
                     subprocess.run(["bash", os.path.join(ROOT, "start-model.sh"), eng],
                                    cwd=ROOT, env=env, check=True)
                     item["status"] = "waiting-ready"
-                    add_event(job, {"type": "status", "model": item["id"], "status": "waiting-ready"})
+                    add_event(job, {"type": "status", "slot": item["slot"], "status": "waiting-ready"})
                     if not wait_ready(port):
                         raise RuntimeError("server never became ready")
                 item["status"] = "running"
-                add_event(job, {"type": "status", "model": item["id"], "status": "running"})
+                add_event(job, {"type": "status", "slot": item["slot"], "status": "running"})
                 m = stream_chat(job, item, port, item["served_model"], job["prompt"],
                                 job["thinking"], job["max_tokens"], job["temperature"])
                 item.update(m, status="done")
                 item["toks_per_s"] = round(m["tokens"] / max(m["total_s"], 1e-6), 1)
-                add_event(job, {"type": "done", "model": item["id"],
+                add_event(job, {"type": "done", "slot": item["slot"],
                                 "ttft_s": m["ttft_s"], "total_s": m["total_s"],
                                 "tokens": m["tokens"], "estimated": m["estimated"],
                                 "toks_per_s": item["toks_per_s"],
@@ -458,11 +461,11 @@ def run_job(job):
             except Exception as e:                  # surface to the model's card
                 item["status"] = "error"
                 item["error"] = str(e)[:500]
-                add_event(job, {"type": "error", "model": item["id"], "error": item["error"]})
+                add_event(job, {"type": "error", "slot": item["slot"], "error": item["error"]})
             finally:
                 if job["auto"]:
                     stop_container(cname)
-                    add_event(job, {"type": "status", "model": item["id"], "status": "stopped"})
+                    add_event(job, {"type": "status", "slot": item["slot"], "status": "stopped"})
         stamp = datetime.now().strftime("%Y%m%d-%H%M%S")
         saved = os.path.join(RESULTS_DIR, f"arena-{stamp}")
         os.makedirs(saved, exist_ok=True)
@@ -473,6 +476,38 @@ def run_job(job):
         add_event(job, {"type": "job-done", "saved_dir": job["saved_dir"]})
     finally:
         run_lock.release()
+
+
+def tally_scores():
+    """Aggregate persisted blind votes across all saved runs -> per-model tally."""
+    agg = {}
+    for rj in glob.glob(os.path.join(RESULTS_DIR, "arena-*", "results.json")):
+        try:
+            with open(rj) as f:
+                j = json.load(f)
+            with open(os.path.join(os.path.dirname(rj), "votes.json")) as f:
+                pick = (json.load(f) or {}).get("pick")
+        except (OSError, ValueError):
+            continue
+        rs = j.get("results", [])
+        if not pick or not rs:
+            continue
+        winner = None
+        if pick != "TIE":
+            winner = next((r["id"] for r in rs if r.get("slot") == pick), None)
+            if winner is None:
+                continue
+        for r in rs:
+            e = agg.setdefault(r["id"], {"label": r.get("label") or r.get("name"),
+                                         "wins": 0, "ties": 0, "losses": 0, "votes": 0})
+            e["votes"] += 1
+            if pick == "TIE":
+                e["ties"] += 1
+            elif r["id"] == winner:
+                e["wins"] += 1
+            else:
+                e["losses"] += 1
+    return agg
 
 
 # ------------------------------- export ------------------------------------
@@ -511,6 +546,12 @@ def build_export(job, fmt):
                 "default" if temp is None else temp))
     if job.get("saved_dir"):
         L.append("- **Saved:** " + job["saved_dir"])
+    if job.get("vote"):
+        v = job["vote"]
+        slot = v.get("pick")
+        who = "Tie 🤝" if slot == "TIE" else next(
+            (r.get("label") for r in res if r.get("slot") == slot), slot)
+        L.append("- **Blind vote:** %s (locked %s)" % (who, v.get("at", "")))
     L += ["", "## Summary", "",
           "| model | status | TTFT (s) | total (s) | tok/s | tokens |",
           "|---|---|---|---|---|---|"]
@@ -566,6 +607,10 @@ class Handler(BaseHTTPRequestHandler):
             return self._static(path[len("/static/"):], None)
         if path == "/api/models":
             return self._json(200, {"models": discover_models()})
+        if path == "/api/scores":
+            return self._scores()
+        if path == "/api/scores/export":
+            return self._scores_csv()
         if path.startswith("/api/jobs/"):
             rest = path[len("/api/jobs/"):]
             fmt = (parse_qs(urlparse(self.path).query).get("fmt") or ["md"])[0]
@@ -582,6 +627,8 @@ class Handler(BaseHTTPRequestHandler):
             return self._download()
         if path == "/api/cancel":
             return self._cancel()
+        if path == "/api/vote":
+            return self._vote()
         if path != "/api/run":
             return self._json(404, {"error": "not found"})
         try:
@@ -605,6 +652,8 @@ class Handler(BaseHTTPRequestHandler):
                 return self._json(400, {"error": f"unknown model '{mid}'"})
         if not run_lock.acquire(blocking=False):
             return self._json(409, {"error": "a run is already active"})
+        slots = list("ABCDEFGHIJK"[:len(models)])
+        random.shuffle(slots)                    # blind display order (protocol #8)
         with jobs_lock:
             job_seq[0] += 1
             jid = f"job-{job_seq[0]}"
@@ -614,18 +663,21 @@ class Handler(BaseHTTPRequestHandler):
                    "temperature": body.get("temperature"),
                    "auto": bool(body.get("auto", True)),
                    "engine": (body.get("engine") or "mtp"),
+                   "order": slots,
                    "events": [],
-                   "results": [{"id": mid, "name": known[mid]["name"],
+                   "results": [{"slot": slot, "id": mid,
+                                "name": known[mid]["name"],
                                 "label": known[mid]["label"],
                                 "served_model": known[mid]["served_model"],
                                 "container_name": known[mid]["container_name"],
                                 "port": known[mid]["port"],
                                 "model_id": known[mid]["model_id"],
                                 "engine": known[mid].get("engine", "sglang"),
-                                "status": "queued"} for mid in models]}
+                                "status": "queued"}
+                               for mid, slot in zip(models, slots)]}
             jobs[jid] = job
         threading.Thread(target=run_job, args=(job,), daemon=True).start()
-        return self._json(202, {"job_id": jid})
+        return self._json(202, {"job_id": jid, "order": slots})
 
     def _download(self):
         try:
@@ -664,6 +716,65 @@ class Handler(BaseHTTPRequestHandler):
             return self._json(400, {"error": f"unknown model '{mid}'"})
         cancel_download(mid)
         return self._json(200, {"cancelled": mid})
+
+    def _vote(self):
+        try:
+            n = int(self.headers.get("Content-Length", 0) or 0)
+            body = json.loads(self.rfile.read(n) or b"{}")
+        except Exception:
+            return self._json(400, {"error": "invalid JSON"})
+        jid = body.get("job")
+        pick = (body.get("pick") or "").strip().upper()
+        with jobs_lock:
+            job = jobs.get(jid)
+        if job is None:
+            return self._json(404, {"error": "unknown job"})
+        slots = {r.get("slot") for r in job.get("results", [])}
+        if pick not in slots | {"TIE"}:
+            return self._json(400, {"error": "pick must be a run slot or TIE"})
+        if job.get("status") != "done":
+            return self._json(409, {"error": "run not finished yet"})
+        if job.get("vote"):
+            return self._json(409, {"error": "already voted: " + str(job["vote"].get("pick"))})
+        job["vote"] = {"pick": pick,
+                       "at": datetime.now().isoformat(timespec="seconds")}
+        saved = job.get("saved_dir")
+        if saved:
+            try:
+                with open(os.path.join(ROOT, saved, "votes.json"), "w") as f:
+                    json.dump(job["vote"], f, indent=2)
+            except OSError:
+                pass
+        return self._json(200, dict(job["vote"]))
+
+    def _scores(self):
+        agg = tally_scores()
+        rows = []
+        for mid, e in agg.items():
+            wr = (e["wins"] + 0.5 * e["ties"]) / e["votes"] * 100 if e["votes"] else 0
+            rows.append({"id": mid, **e, "win_rate": round(wr, 1)})
+        rows.sort(key=lambda r: (-r["win_rate"], r["label"]))
+        return self._json(200, {"rows": rows})
+
+    def _scores_csv(self):
+        import io as _io
+        import csv as _csv
+        agg = tally_scores()
+        buf = _io.StringIO()
+        w = _csv.writer(buf)
+        w.writerow(["model", "votes", "wins", "ties", "losses", "win_rate_pct"])
+        def rate(e):
+            return (e["wins"] + 0.5 * e["ties"]) / e["votes"] * 100 if e["votes"] else 0
+        for mid, e in sorted(agg.items(), key=lambda kv: -rate(kv[1])):
+            w.writerow([e["label"], e["votes"], e["wins"], e["ties"],
+                        e["losses"], round(rate(e), 1)])
+        data = buf.getvalue().encode("utf-8")
+        self.send_response(200)
+        self.send_header("Content-Type", "text/csv; charset=utf-8")
+        self.send_header("Content-Disposition", 'attachment; filename="arena-scoreboard.csv"')
+        self.send_header("Content-Length", str(len(data)))
+        self.end_headers()
+        self.wfile.write(data)
 
     def _snapshot(self, jid):
         with jobs_lock:
