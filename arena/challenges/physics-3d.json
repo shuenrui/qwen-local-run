@@ -1,0 +1,32 @@
+{
+  "id": "physics-3d",
+  "name": "Self-contained 3D physics scene",
+  "category": "frontend",
+  "runs": 1,
+  "thinking": false,
+  "max_tokens": 5000,
+  "engine": "mtp",
+  "prompt": "Build ONE self-contained HTML file showing a real 3D physics scene that runs by itself: at least 15 balls dropping under gravity, bouncing off the floor and each other with energy loss, viewed through a lit, slowly orbiting camera. Use Three.js via a CDN <script> tag (the viewer has internet) or a hand-rolled 3D projection on canvas \u2014 your call. Requirements: a full-viewport <canvas>; the animation starts automatically via requestAnimationFrame with NO clicks needed; include one <button> labeled Reset that re-drops the balls; no console errors. Output only the html code fence.",
+  "checks": [
+    {
+      "type": "dom_selectors",
+      "selectors": [
+        "canvas",
+        "button"
+      ]
+    },
+    {
+      "type": "canvas_motion",
+      "delay_ms": 1200
+    },
+    {
+      "type": "dom_no_errors"
+    },
+    {
+      "type": "contains",
+      "value": "requestAnimationFrame",
+      "ci": true
+    }
+  ],
+  "notes": "canvas_motion samples the canvas twice ~1.2s apart: the scene must ACTUALLY be animating (physics running by itself), not a static render."
+}

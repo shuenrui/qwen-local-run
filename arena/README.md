@@ -60,6 +60,7 @@ cached, cached_gib, dl_status, dl_got_gib, dl_total_gib, dl_speed_mbs, dl_error}
 | `GET /api/runs` | summaries of every saved run: `{runs:[{name,prompt,models,challenge,vote,reconstructed,graded}]}` |
 | `GET /api/runs/<name>` | a full saved job (read-only; powers the History view) |
 | `GET /api/runs/<name>/export?fmt=md\|csv\|json` | re-export a past run without re-running models |
+| `GET /api/runs/<name>/artifact/<key>` | serve a generated HTML artifact standalone (CSP-sandboxed, `inline`) |
 | `POST /api/grade` `{job, key, checks:[{type,pass,…}]}` | the browser posts back DOM-check verdicts collected inside the sandboxed iframe; server stores them under `grades`, recomputes `passed`/`rates` and re-persists the run |
 | `GET /api/jobs/<id>` | job snapshot: `{status, prompt, options…, results:[{id,label,status,ttft_s,total_s,tokens,estimated,toks_per_s,text,reasoning,error}]}` |
 | `GET /api/jobs/<id>/stream` | SSE events, **keyed by blind slot only** (never the model id, so live streaming can't leak identity): `{type:"status",slot,status}`, `{type:"delta",slot,kind:"content"\|"reasoning",text}`, `{type:"done",slot,ttft_s,total_s,tokens,estimated,toks_per_s,text,reasoning}`, `{type:"error",slot,error}`, `{type:"job-done",saved_dir}`, `{type:"end"}` |

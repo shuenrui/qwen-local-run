@@ -565,6 +565,18 @@ def merge_dom_grades(job):
         _recompute_pass(item)
 
 
+def _extract_html(text):
+    """Pull a standalone HTML document out of a response (fence or raw)."""
+    text = text or ""
+    m = re.search(r"```(?:html|xml)\s*\n([\s\S]*?)```", text, re.I)
+    html = m.group(1) if m else None
+    if not html and re.search(r"<!doctype\s+html|<html[\s>]", text, re.I):
+        html = text
+    if html and re.search(r"<(!doctype|html|head|body|canvas|svg|div|script|main)", html, re.I):
+        return html
+    return None
+
+
 def _persist_job(job, saved=None):
     saved = saved or os.path.join(ROOT, job.get("saved_dir", RESULTS_DIR))
     try:
@@ -598,6 +610,7 @@ def list_runs():
                     "prompt": (j.get("prompt") or "")[:110],
                     "models": sorted({(r.get("label") or r.get("name") or "") for r in rs}),
                     "challenge": j.get("challenge"), "vote": vote,
+                    "artifacts": sum(1 for r in rs if r.get("artifact")),
                     "reconstructed": bool(j.get("reconstructed")),
                     "graded": any(r.get("passed") is not None for r in rs)})
     return out
@@ -676,6 +689,19 @@ def run_job(job):
         while os.path.exists(os.path.join(saved, "results.json")):
             dup += 1
             saved = os.path.join(RESULTS_DIR, "arena-%s-%s-%d" % (stamp, job["id"], dup))
+        for it in job["results"]:
+            h = _extract_html(it.get("text", ""))
+            if not h:
+                continue
+            try:
+                apath = os.path.join(saved, "artifacts")
+                os.makedirs(apath, exist_ok=True)
+                rel = "artifacts/%s.html" % it["key"]
+                with open(os.path.join(saved, rel), "w") as f:
+                    f.write(h)
+                it["artifact"] = rel
+            except OSError:
+                pass
         _persist_job(job, saved)
         job["saved_dir"] = os.path.relpath(saved, ROOT)
         job["status"] = "done"
@@ -805,6 +831,10 @@ def build_export(job, fmt):
             L += ["", "**DOM:** " + " · ".join(
                 "%s %s" % (d.get("type"), "✓" if d.get("pass") else "✗")
                 for d in r["dom_checks"])]
+        if r.get("artifact"):
+            L += ["", "_artifact saved as `%s` — open via History “open ↗” or "
+                  "GET /api/runs/<run>/artifact/%s_"
+                  % (r["artifact"], r["artifact"].split("/")[-1][:-5])]
     return base + ".md", "text/markdown", "\n".join(L)
 
 
@@ -837,11 +867,14 @@ class Handler(BaseHTTPRequestHandler):
         if path == "/api/runs":
             return self._json(200, {"runs": list_runs()})
         if path.startswith("/api/runs/"):
-            name = path[len("/api/runs/"):].strip("/")
+            rest = path[len("/api/runs/"):]
+            if "/artifact/" in rest:
+                name, _, key = rest.partition("/artifact/")
+                return self._artifact(name.strip("/"), key.strip("/"))
             fmt = (parse_qs(urlparse(self.path).query).get("fmt") or ["md"])[0]
-            if name.endswith("/export"):
-                return self._saved_export(name[:-len("/export")], fmt)
-            return self._saved_view(name)
+            if rest.endswith("/export"):
+                return self._saved_export(rest[:-len("/export")], fmt)
+            return self._saved_view(rest)
         if path == "/api/scores":
             return self._scores()
         if path == "/api/scores/export":
@@ -1059,6 +1092,28 @@ class Handler(BaseHTTPRequestHandler):
         self.send_header("Content-Type", mime + "; charset=utf-8")
         self.send_header("Content-Disposition", 'attachment; filename="%s"' % fname)
         self.send_header("Content-Length", str(len(data)))
+        self.end_headers()
+        self.wfile.write(data)
+
+    def _artifact(self, name, key):
+        """Serve a saved artifact HTML page in an opaque (CSP-sandboxed) origin."""
+        if not re.fullmatch(r"arena-[\w.-]+", str(name)) or not re.fullmatch(r"[\w-]{1,40}", str(key)):
+            return self._json(400, {"error": "bad path"})
+        p = os.path.join(RESULTS_DIR, name, "artifacts", key + ".html")
+        if not os.path.isfile(p):
+            return self._json(404, {"error": "no artifact"})
+        try:
+            with open(p, "rb") as f:
+                data = f.read()
+        except OSError:
+            return self._json(500, {"error": "read failed"})
+        self.send_response(200)
+        self.send_header("Content-Type", "text/html; charset=utf-8")
+        self.send_header("Content-Security-Policy",
+                         "sandbox allow-scripts allow-modals allow-forms allow-popups")
+        self.send_header("Content-Disposition", 'inline; filename="%s-%s.html"' % (name, key))
+        self.send_header("Content-Length", str(len(data)))
+        self.send_header("Cache-Control", "no-store")
         self.end_headers()
         self.wfile.write(data)
 

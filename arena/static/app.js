@@ -441,15 +441,26 @@ $('challenge').onchange=()=>{
 };
 
 /* ------------------ DOM grading via hidden sandboxed iframe ------------------ */
-const CHECK_SHIM='<script>(function(){var errs=[];window.onerror=function(m){errs.push(String(m));};'+
+const CHECK_SHIM='<script>(function(){var errs=[];window.onerror=function(m){errs.push(String(m));return false;};'+
  'window.addEventListener("unhandledrejection",function(e){errs.push("promise: "+e.reason);});'+
- 'var specs=%%SPECS%%;var sent=false;function send(){if(sent)return;sent=true;var out=[];'+
- '(specs||[]).forEach(function(sp){try{if(sp.type==="dom_no_errors"){out.push({type:sp.type,pass:errs.length===0,errors:errs.slice(0,3)});}'+
- 'else if(sp.type==="dom_selectors"){var res={};(sp.selectors||[]).forEach(function(s){try{res[s]=document.querySelectorAll(s).length;}catch(e){res[s]=-1;}});'+
- 'out.push({type:sp.type,pass:Object.keys(res).every(function(k){return res[k]>=1;}),sel:res});}}catch(e){out.push({type:sp.type,pass:false,err:String(e)});}});'+
- 'if(!out.length)out.push({type:"dom_no_errors",pass:errs.length===0});'+
- 'parent.postMessage({__arenaGrade:1,checks:out},"*");}'+
- 'window.addEventListener("load",function(){setTimeout(send,1200);});setTimeout(send,9000);})();<\/script>';
+ 'var specs=%%SPECS%%,out=[],sent=false,started=false;var timer=setTimeout(finish,12000);'+
+ 'function finish(){if(sent)return;sent=true;clearTimeout(timer);'+
+ 'parent.postMessage({__arenaGrade:1,checks:out.length?out:[{type:"dom_no_errors",pass:errs.length===0}]},"*");}'+
+ 'function tick(){if(sent)return;if(!specs.length)return finish();var sp=specs.shift();'+
+ 'try{run(sp);}catch(e){out.push({type:sp.type,pass:false,err:String(e)});tick();}}'+
+ 'function run(sp){var t=sp.type;'+
+ 'if(t==="dom_no_errors"){out.push({type:t,pass:errs.length===0,errors:errs.slice(0,3)});tick();}'+
+ 'else if(t==="dom_selectors"){var res={};(sp.selectors||[]).forEach(function(s){try{res[s]=document.querySelectorAll(s).length;}catch(e){res[s]=-1;}});'+
+ 'out.push({type:t,pass:Object.keys(res).every(function(k){return res[k]>=1;}),sel:res});tick();}'+
+ 'else if(t==="canvas_motion"){var cv=document.querySelector(sp.selector||"canvas");'+
+ 'if(!cv){out.push({type:t,pass:false,err:"no canvas found"});tick();return;}'+
+ 'var d1;try{d1=cv.toDataURL();}catch(e){out.push({type:t,pass:false,err:"canvas blocked: "+e});tick();return;}'+
+ 'setTimeout(function(){if(sent)return;var r;'+
+ 'try{r={type:t,pass:cv.toDataURL()!==d1};}catch(e){r={type:t,pass:false,err:String(e)};}'+
+ 'out.push(r);tick();},sp.delay_ms||900);}'+
+ 'else{out.push({type:t,pass:false,err:"unknown check type"});tick();}}'+
+ 'function start(){if(started||sent)return;started=true;tick();}'+
+ 'window.addEventListener("load",function(){setTimeout(start,700);});setTimeout(start,2500);})();<\/script>';
 function markPass(key,val,ok){
   const c=CARD[key]; if(!c) return;
   if(c.passPill) c.passPill.remove();
@@ -495,7 +506,8 @@ async function loadHistory(){
   runs.slice(0,60).forEach(r=>{
     const tr=document.createElement('tr');
     const badges=(r.reconstructed?' <span class="badge">recon</span>':'')+
-      (r.challenge?` <span class="badge">${escapeHtml(r.challenge)}</span>`:'');
+      (r.challenge?` <span class="badge">${escapeHtml(r.challenge)}</span>`:'')+
+      (r.artifacts?` <span class="badge ok">${r.artifacts} html</span>`:'');
     tr.innerHTML=`<td>${escapeHtml(r.name)}${badges}</td><td>${escapeHtml((r.prompt||'').slice(0,70))}</td>`+
       `<td>${escapeHtml((r.models||[]).join(', '))}</td><td>${escapeHtml(r.vote||'—')}</td>`+
       `<td><a class="exp" href="#" data-v>view</a> `+
@@ -516,6 +528,12 @@ async function showRun(name){
       (r.toks_per_s?` · ${r.toks_per_s} tok/s`:'')+
       (r.passed===true?' · ✅ pass':(r.passed===false?' · ❌ fail':''));
     c.innerHTML=`<header><h3>${escapeHtml(meta)}</h3></header><div class="body"></div>`;
+    if(r.artifact){
+      const a=document.createElement('a'); a.className='exp'; a.target='_blank';
+      a.href='/api/runs/'+encodeURIComponent(name)+'/artifact/'+encodeURIComponent(r.key||r.slot||'');
+      a.textContent='open ↗'; a.style.marginLeft='.6rem';
+      c.querySelector('h3').appendChild(a);
+    }
     c.querySelector('.body').innerHTML=renderMarkdown(r.text||('⚠ '+(r.error||'')));
     v.appendChild(c);
   });
