@@ -286,7 +286,7 @@ def pilot_01():
         'method': 'mtp',
         'max_draft_tokens': 3,
         'acceptance_rate_pct': 72.8,
-        'acceptance_basis': '782 of 1131 is the builder-quoted acceptance count; number kept vendor-attributed from the server-read table',
+        'acceptance_basis': '823 of 1131 is the builder-quoted acceptance count; number kept vendor-attributed from the server-read table',
         'date': '2026-08-26',
         'source': repo,
         'locator': 'README server-read table (m002 2.13x line; acceptance 823/1131)',
@@ -609,11 +609,6 @@ def pilot_02():
     byid['m003']['evidence']['contrast_id'] = 'dflash2-vs-native-mtp-decode-26k'
     save(P, s)
 
-if __name__ == '__main__':
-    for fn in (pilot_01, pilot_02, pilot_03, pilot_04):
-        print(fn.__name__); fn()
-
-
 # ---------------------------------------------------------------- pilot 03
 def pilot_03():
     P = 'qwen38-flash-next-strix-halo-llamacpp-mtp'
@@ -867,3 +862,9 @@ def pilot_04():
             mm['conditions'] = {'context_label': 'baseline, no speculative decoding',
                                 'workload': None, 'hardware_count': 1}
     save(P, s)
+
+
+if __name__ == '__main__':
+    for fn in (pilot_01, pilot_02, pilot_03, pilot_04):
+        print(fn.__name__)
+        fn()
