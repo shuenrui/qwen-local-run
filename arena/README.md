@@ -76,3 +76,25 @@ cached, cached_gib, dl_status, dl_got_gib, dl_total_gib, dl_speed_mbs, dl_error}
 - Backend restart wipes in-memory jobs: exports work for runs of the current
   session; older runs live in `results/arena-*/results.json` (a History view
   reading them is a natural next feature).
+
+## What the UI renders today (and what it doesn't)
+- **Input:** plain text only — the prompt box. No file/document upload.
+- **Output:** each response goes through the built-in markdown renderer in
+  `app.js`: headings, lists, links, bold/italic, inline code, fenced code
+  blocks (styled, with copy button). **No** syntax-highlight colors, and code
+  is never executed — a model that generates a whole website gives you its
+  HTML/CSS/JS as text, not a live page.
+
+## Suggested front-end tasks (roughly by value)
+1. **Sandboxed HTML preview**: when a response contains a full document or an
+   `html`-tagged fence, add a per-card *Preview* tab that renders it in
+   `<iframe sandbox="allow-scripts" srcdoc=…>` (never `allow-same-origin` —
+   keeps generated code out of the app's origin). CDN-referenced assets won't
+   load (offline box), so also show a “assets may not load offline” hint.
+2. **Run History browser**: list `results/arena-*/results.json`, open/export
+   any past run without re-running models.
+3. **Syntax highlighting**: vendor highlight.js into `arena/static/vendor/`
+   (offline-first) and hook it into the fenced-code renderer.
+4. **Winner vote & tally**: per-prompt pick-best + running scoreboard (uses
+   the existing job data; store votes alongside results.json).
+5. **Diff view**: side-by-side word-diff between two cards' answers.

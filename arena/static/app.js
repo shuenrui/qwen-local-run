@@ -216,7 +216,7 @@ $('run').onclick=async()=>{
   if(!prompt){ $('status').textContent='type a prompt'; return; }
   const temp=$('temp').value===''?null:parseFloat($('temp').value);
   const body={prompt,models:ids,thinking:$('thinking').checked,
-    max_tokens:parseInt($('maxtok').value,10)||400,temperature:temp,
+    max_tokens:parseInt($('maxtok').value,10)||2000,temperature:temp,
     engine:$('engine').value,auto:$('auto').checked};
   $('run').disabled=true; $('status').textContent='queued…';
   $('results').hidden=false; $('saved').textContent='';

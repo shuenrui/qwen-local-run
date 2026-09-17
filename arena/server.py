@@ -48,7 +48,7 @@ HF_HUB = os.path.join(ROOT, ".cache", "huggingface", "hub")
 # its .locks. This image is already present locally and ships huggingface_hub.
 DOWNLOAD_IMAGE = os.environ.get("ARENA_DL_IMAGE", "lmsysorg/sglang:qwen38-27b")
 
-MAX_TOKEN_LIMIT = 8192
+MAX_TOKEN_LIMIT = 5000
 READY_TIMEOUT_S = 1200                            # model boot can be slow
 
 jobs = {}
@@ -596,9 +596,9 @@ class Handler(BaseHTTPRequestHandler):
         if not models:
             return self._json(400, {"error": "no models selected"})
         try:
-            max_tokens = max(1, min(int(body.get("max_tokens", 400)), MAX_TOKEN_LIMIT))
+            max_tokens = max(1, min(int(body.get("max_tokens", 2000)), MAX_TOKEN_LIMIT))
         except (TypeError, ValueError):
-            max_tokens = 400
+            max_tokens = 2000
         known = {m["id"]: m for m in discover_models()}
         for mid in models:
             if mid not in known:
