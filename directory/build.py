@@ -31,6 +31,7 @@ Presentation contract (see docs/redesign-2026-09-10/):
 from __future__ import annotations
 
 import argparse
+import base64
 import datetime
 import json
 import os
@@ -102,9 +103,31 @@ def collect() -> dict:
     }
 
 
+def font_faces() -> str:
+    """Emit @font-face rules for the System Sheet faces as base64 data URIs.
+
+    site/index.html is a single self-contained file, so the woff2 payloads are
+    inlined rather than referenced by path, and hotlinking a CDN is deliberately
+    avoided: it would add a third-party runtime dependency and drop the design
+    onto OS fallbacks whenever that CDN is blocked or slow. The faces, their
+    source URL and their OFL license are recorded in site_src/fonts/manifest.json.
+    """
+    manifest = json.loads(read(os.path.join(SRC, "fonts", "manifest.json")))
+    rules = []
+    for face in manifest["faces"]:
+        with open(os.path.join(SRC, "fonts", face["file"]), "rb") as fh:
+            b64 = base64.b64encode(fh.read()).decode("ascii")
+        rules.append(
+            "@font-face{font-family:'%s';font-style:%s;font-weight:%s;"
+            "font-display:swap;src:url(data:font/woff2;base64,%s) format('woff2')}"
+            % (face["family"], face["style"], face["weight"], b64)
+        )
+    return "\n".join(rules) + "\n"
+
+
 def render(data: dict) -> str:
     shell = read(os.path.join(SRC, "shell.html"))
-    css = read(os.path.join(SRC, "app.css"))
+    css = font_faces() + read(os.path.join(SRC, "app.css"))
     app = read(os.path.join(SRC, "app.js"))
 
     blob = json.dumps(data, ensure_ascii=False, separators=(",", ":"))

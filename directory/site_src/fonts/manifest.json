@@ -1,0 +1,16 @@
+{
+  "note": "Latin-subset woff2 of the four System Sheet faces. build.py embeds them as base64 data URIs so site/index.html stays a single self-contained file with no third-party runtime dependency; hotlinking a CDN would leave the design on OS fallbacks whenever that CDN is blocked or slow. All four families are SIL Open Font License 1.1.",
+  "provenance": "https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Lora:ital,wght@0,400;0,500;1,400&family=Alegreya+Sans:wght@400;500;700&family=IBM+Plex+Mono:wght@400;500&display=swap",
+  "fetched": "2026-09-18",
+  "faces": [
+    { "family": "Cormorant Garamond", "style": "normal", "weight": "400 600", "file": "cormorant-garamond-400-600.woff2" },
+    { "family": "Cormorant Garamond", "style": "italic", "weight": "400", "file": "cormorant-garamond-400i.woff2" },
+    { "family": "Lora", "style": "normal", "weight": "400 500", "file": "lora-400-500.woff2" },
+    { "family": "Lora", "style": "italic", "weight": "400", "file": "lora-400i.woff2" },
+    { "family": "Alegreya Sans", "style": "normal", "weight": "400", "file": "alegreya-sans-400.woff2" },
+    { "family": "Alegreya Sans", "style": "normal", "weight": "500", "file": "alegreya-sans-500.woff2" },
+    { "family": "Alegreya Sans", "style": "normal", "weight": "700", "file": "alegreya-sans-700.woff2" },
+    { "family": "IBM Plex Mono", "style": "normal", "weight": "400", "file": "ibm-plex-mono-400.woff2" },
+    { "family": "IBM Plex Mono", "style": "normal", "weight": "500", "file": "ibm-plex-mono-500.woff2" }
+  ]
+}

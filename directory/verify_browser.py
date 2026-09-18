@@ -1585,6 +1585,50 @@ def main():
         check("no page errors scoping the mode control", not p9_errors, str(p9_errors[:2]))
         ctx9.close()
 
+        # The System Sheet faces must actually load, not merely be declared. The
+        # CSS named Cormorant/Lora/Alegreya Sans/IBM Plex Mono for a long stretch
+        # with no @font-face anywhere in the repo, so every visitor silently got
+        # OS fallbacks while the comps rendered the real faces.
+        ctx10 = browser.new_context(viewport={"width": 1440, "height": 1000})
+        p10 = ctx10.new_page()
+        p10_errors = []
+        p10.on("pageerror", lambda e: p10_errors.append(str(e)))
+        p10.goto(BASE + "#/recipes/" + fail_id + "?mode=pro")
+        p10.wait_for_timeout(600)
+        fonts = p10.evaluate("""async () => {
+          await document.fonts.ready;
+          const loaded = [];
+          document.fonts.forEach(f => { if (f.status === 'loaded') loaded.push(f.family); });
+          function w(font) { const c = document.createElement('canvas').getContext('2d');
+                              c.font = font; return c.measureText('Handgloves 1234').width; }
+          return { loaded: loaded,
+                   cormorant: w('400 40px "Cormorant Garamond"'),
+                   times: w('400 40px "Times New Roman"') };
+        }""")
+        check("System Sheet display face is loaded, not an OS fallback",
+              "Cormorant Garamond" in fonts["loaded"]
+              and abs(fonts["cormorant"] - fonts["times"]) > 1.0,
+              str(fonts))
+        faces = p10.evaluate("""() => {
+          const out = {};
+          for (const ss of Array.from(document.styleSheets)) {
+            let rules; try { rules = Array.from(ss.cssRules); } catch (e) { continue; }
+            for (const r of rules) {
+              if (r.type === CSSRule.FONT_FACE_RULE) {
+                const fam = r.style.fontFamily.replace(/['"]/g, '');
+                out[fam] = (out[fam] || 0) + 1;
+              }
+            }
+          }
+          return out;
+        }""")
+        check("every System Sheet family ships an embedded @font-face",
+              all(f in faces for f in
+                  ["Cormorant Garamond", "Lora", "Alegreya Sans", "IBM Plex Mono"]),
+              str(faces))
+        check("no page errors loading the embedded fonts", not p10_errors, str(p10_errors[:2]))
+        ctx10.close()
+
 
         # ---------------------------------------------------------- console
         real = [e for e in console_errors if "favicon" not in e.lower()]
