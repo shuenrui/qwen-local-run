@@ -3,7 +3,7 @@
    serial orchestrator, and streams each reply live over SSE. */
 const $ = id => document.getElementById(id);
 let MODELS = [], ES = null, CARD = {}, BUF = {}, dirty = {}, renderPending = false;
-let SELECTED = new Set(), firstLoad = true, pollTimer = null;
+let SELECTED = new Set(), firstLoad = true, pollTimer = null, LASTMAX = 2000;
 let LAST_JOB = null;
 let VOTED = false, REVEALED = false;
 let CHALLENGES = [], GRADES = {}, HAS_CHECKS = false;
@@ -194,7 +194,8 @@ function openStream(jid){
         setStatus(sl,'done');
         if(CARD[sl]) CARD[sl].metrics.innerHTML=
           `<span class="pill">TTFT <b>${ev.ttft_s}s</b></span><span class="pill">total <b>${ev.total_s}s</b></span>`+
-          `<span class="pill"><b>${ev.toks_per_s}</b> tok/s</span><span class="pill">tokens <b>${ev.tokens}</b>${ev.estimated?' (est)':''}</span>`;
+          `<span class="pill"><b>${ev.toks_per_s}</b> tok/s</span><span class="pill">tokens <b>${ev.tokens}</b>${ev.estimated?' (est)':''}</span>`+
+          (ev.tokens>=LASTMAX?'<span class="pill no" title="generation stopped at max_tokens — raise the limit or reselect the challenge preset">⚠ truncated</span>':'');
         if(CARD[sl]&&CARD[sl].row){ const r=CARD[sl].row;
           r.querySelector('.c-ttft').textContent=ev.ttft_s+'s'; r.querySelector('.c-total').textContent=ev.total_s+'s';
           r.querySelector('.c-tps').textContent=ev.toks_per_s; r.querySelector('.c-tok').textContent=ev.tokens; }
@@ -370,6 +371,7 @@ $('run').onclick=async()=>{
     max_tokens:parseInt($('maxtok').value,10)||2000,temperature:temp,
     engine:$('engine').value,auto:$('auto').checked,
     runs:parseInt($('runs').value,10)||1};
+  LASTMAX=body.max_tokens;
   if($('challenge').value) body.challenge=$('challenge').value;
   $('run').disabled=true; $('status').textContent='queued…';
   $('results').hidden=false; $('saved').textContent=''; $('export').hidden=true;
@@ -423,8 +425,10 @@ async function loadChallenges(){
     o.textContent=`${c.name} [${c.category}${nchk?` · ${nchk} check${nchk>1?'s':''}`:''}${c.runs>1?` · ×${c.runs}`:''}]`;
     sel.appendChild(o);
   });
+  // A browser reload can restore the select without firing onchange; resync the form.
+  if(sel.value) applyChallenge();
 }
-$('challenge').onchange=()=>{
+function applyChallenge(){
   const c=CHALLENGES.find(x=>x.id===$('challenge').value);
   const hint=$('chint');
   if(!c){ hint.hidden=true; return; }
@@ -438,7 +442,8 @@ $('challenge').onchange=()=>{
   hint.textContent=`${c.name} · ${c.category} · checks: `+
     ((c.checks||[]).map(k=>k.type).join(', ')||'none (showcase — vote only)')+
     ' · pass@1 reported after the run';
-};
+}
+$('challenge').onchange=applyChallenge;
 
 /* ------------------ DOM grading via hidden sandboxed iframe ------------------ */
 const CHECK_SHIM='<script>(function(){var errs=[];window.onerror=function(m){errs.push(String(m));return false;};'+
