@@ -556,18 +556,39 @@ async function showRun(name){
   const p=document.createElement('div'); p.className='hint'; p.textContent='Prompt: '+(j.prompt||''); v.appendChild(p);
   const grid=document.createElement('div'); grid.className='cards';
   (j.results||[]).forEach(r=>{
+    const key=r.key||r.slot||'';
     const c=document.createElement('div'); c.className='card';
     const meta=(r.label||r.name||'')+(r.rep>1?` rep ${r.rep}`:'')+' — '+r.status+
       (r.toks_per_s?` · ${r.toks_per_s} tok/s`:'')+
       (r.passed===true?' · ✅ pass':(r.passed===false?' · ❌ fail':''));
-    c.innerHTML=`<header><h3>${escapeHtml(meta)}</h3></header><div class="body"></div>`;
-    if(r.artifact){
+    const art=r.artifact?('/api/runs/'+encodeURIComponent(name)+'/artifact/'+encodeURIComponent(key)):null;
+    c.innerHTML=`<header><h3>${escapeHtml(meta)}</h3>`+
+      (art?'<span class="tabs"><a class="tab on" data-t="r">Rendered</a><a class="tab" data-t="p">Preview</a></span>':'')+
+      `</header><div class="body"></div>`;
+    if(art){
       const a=document.createElement('a'); a.className='exp'; a.target='_blank';
-      a.href='/api/runs/'+encodeURIComponent(name)+'/artifact/'+encodeURIComponent(r.key||r.slot||'');
-      a.textContent='open ↗'; a.style.marginLeft='.6rem';
+      a.href=art; a.textContent='open ↗'; a.style.marginLeft='.6rem';
       c.querySelector('h3').appendChild(a);
     }
-    c.querySelector('.body').innerHTML=renderMarkdown(r.text||('⚠ '+(r.error||'')));
+    const body=c.querySelector('.body');
+    const rendered=document.createElement('div');
+    rendered.innerHTML=renderMarkdown(r.text||('⚠ '+(r.error||'')));
+    body.appendChild(rendered);
+    if(art){
+      let frame=null;
+      const tabs=c.querySelectorAll('.tab');
+      const sel=t=>tabs.forEach(x=>x.classList.toggle('on',x.dataset.t===t));
+      tabs[0].onclick=()=>{ sel('r'); rendered.style.display=''; if(frame) frame.style.display='none'; };
+      tabs[1].onclick=()=>{
+        sel('p'); rendered.style.display='none';
+        if(!frame){
+          frame=document.createElement('iframe'); frame.className='preview';
+          frame.setAttribute('sandbox','allow-scripts allow-modals allow-forms allow-popups');
+          frame.setAttribute('title','saved model-generated page (sandboxed)');
+          frame.src=art; body.appendChild(frame);
+        } else frame.style.display='';
+      };
+    }
     grid.appendChild(c);
   });
   v.appendChild(grid);
