@@ -137,6 +137,8 @@ function condOf(m) {
   if (m.concurrency != null) bits.push(m.concurrency === 1 ? "1 stream" : m.concurrency + " streams");
   else if (String(m.metric).indexOf("decode") === 0) bits.push("streams unstated");
   bits.push(m.provenance);
+  if (m.method) bits.push(m.method);
+  if (m.evidence && m.evidence.method_grade) bits.push("grade: " + m.evidence.method_grade);
   return bits.join(" · ");
 }
 
@@ -178,7 +180,11 @@ var FAIL_RE = /\bcorrupts?\b|\bcrash(es|ed)?\b|\bOOM\b|\bfails?\b|\bbroken\b|doe
 // is a stopgap until the schema carries structured failure records.
 var FIXED_RE = /\bwas gone\b|\bno longer\b|\bfixed\b|\bresolved\b|which proved|\bproved the\b|without a reboot/i;
 function failures(s) {
-  return (s.caveats || []).filter(function (c) { return FAIL_RE.test(c) && !FIXED_RE.test(c); });
+  var structured = (s.known_failures || []).filter(function (f) { return f.status !== "resolved" && f.status !== "fixed"; }).map(function (f) {
+    return [f.trigger, f.effect, f.status].filter(Boolean).join(" — ");
+  });
+  var prose = (s.caveats || []).filter(function (c) { return FAIL_RE.test(c) && !FIXED_RE.test(c); });
+  return structured.concat(prose.filter(function (c) { return structured.indexOf(c) < 0; }));
 }
 
 /* ---- the four confidence dimensions. Never averaged, never summed. ---- */
@@ -268,12 +274,16 @@ function blob(s) {
 
 /* ------------------------------------------------------------- app state */
 var state = {
-  route: "models-home", params: {}, q: "",
+  route: "models-home", params: {}, path: "#/", q: "",
   f: {}, sort: "updated", adv: false, flat: false,
   expanded: {}, compare: [], profile: null,
   modelQ: "", modelGen: "", modelArch: "", modelBaseline: "", selectedModel: null,
   assume: { context: 8192, concurrency: 1, reserve: null },
-  mobile: false
+  mobile: false,
+  /* Information mode -- Lite/Pro, see docs/builder-concerns-2026-09-16/
+     lite-pro-content-contract.md. Resolved fresh on every route() call from
+     the URL, then the saved preference, then this default. */
+  mode: "lite"
 };
 var MOBILE = window.matchMedia("(max-width: 719px)");
 state.mobile = MOBILE.matches;
@@ -449,12 +459,19 @@ function measurementTable(s) {
     if (m.concurrency != null) cond.push(m.concurrency === 1 ? "1 stream" : m.concurrency + " streams");
     if (m.n != null) cond.push("n=" + m.n);
     if (m.range) cond.push("range " + m.range[0] + "–" + m.range[1]);
-    out += "<tr><td>" + esc(metricWord(m.metric)) + '</td><td class="v">' + esc(m.value) +
-      ' <span class="g">' + esc(m.unit) + "</span></td><td>" + (cond.length ? esc(cond.join(" · ")) : na("unstated")) +
-      "</td><td>" + (m.method ? esc(m.method) : na("unstated")) +
-      "</td><td>" + (m.date ? esc(m.date) : na("undated")) + '</td><td><span class="tier t-' + esc(m.provenance) + '">' +
-      esc(m.provenance) + "</span>" + (m.source ? ' <a href="' + esc(m.source) + '" target="_blank" rel="noopener">link</a>' : "") + "</td></tr>";
-    if (m.note) out += '<tr><td colspan="6" class="g" style="padding-top:0">' + esc(m.note) + "</td></tr>";
+    if (m.context) cond.push(m.context);
+    if (m.conditions) Object.keys(m.conditions).forEach(function (k) { if (m.conditions[k] != null && k !== "context_label") cond.push(k.replace(/_/g, " ") + ": " + m.conditions[k]); });
+     var ev = m.evidence || {}, method = m.method || "";
+     if (ev.method_grade) method += (method ? " · " : "") + "grade: " + ev.method_grade;
+     if (ev.level) method += (method ? " · " : "") + "evidence: " + ev.level;
+     if (ev.method_note) method += (method ? " — " : "") + ev.method_note;
+     out += "<tr><td>" + esc(metricWord(m.metric)) + '</td><td class="v">' + esc(m.value) +
+       ' <span class="g">' + esc(m.unit) + "</span></td><td>" + (cond.length ? esc(cond.join(" · ")) : na("unstated")) +
+       "</td><td>" + (method ? esc(method) : na("unstated")) +
+       "</td><td>" + (m.date ? esc(m.date) : na("undated")) + '</td><td><span class="tier t-' + esc(m.provenance) + '">' +
+       esc(m.provenance) + "</span>" + (m.source ? ' <a href="' + esc(m.source) + '" target="_blank" rel="noopener">link</a>' : "") + "</td></tr>";
+     if (m.note) out += '<tr><td colspan="6" class="g" style="padding-top:0">' + esc(m.note) + "</td></tr>";
+     if (ev.corroborations && ev.corroborations.length) out += '<tr><td colspan="6" class="g" style="padding-top:0">' + esc("Corroborations: " + ev.corroborations.map(function (x) { return x.note || x.url || "recorded"; }).join(" · ")) + "</td></tr>";
   });
   return out + "</tbody></table></div>";
 }
@@ -473,16 +490,41 @@ function sourcesHtml(s) {
   }).join("") + "</div>";
 }
 
-/* the detail body, shared by the in-place expansion and the recipe page */
+/* the detail body, shared by the in-place expansion and the recipe page.
+   Mode-aware: renders ONE semantic tree per the active mode rather than two
+   hidden trees (lite-pro-content-contract.md section 3, "rendering rule").
+   Lite is the seven-section reading copy; Pro keeps every Lite section in
+   place and appends the dossier. Nothing here infers a fact legacy (schema
+   v1) data does not state -- product truth and AGENTS.md law 1-2 outrank
+   any amount of visual polish. */
+function evidencePhraseFor(rep) {
+  if (!rep) return null;
+  var word = { box: "Owner-measured run", forum: "Forum-reported result", vendor: "Vendor-reported result" }[rep.provenance];
+  return word || null;
+}
+function offloadUnstated(s) {
+  var req = s.requirements || {};
+  if (req.memory_gb == null || req.notes) return false;
+  var refs = (s.hwRefs || []).length ? s.hwRefs : (s.hardware || []).map(function (id) { return { id: id }; });
+  return refs.some(function (ref) {
+    var cap = (HW[ref.id] || {}).memory_gb;
+    return cap != null && req.memory_gb > cap;
+  });
+}
 function detailBody(s, opts) {
   opts = opts || {};
   var H = opts.page ? "h2" : "h3";
+  var mode = state.mode === "pro" ? "pro" : "lite";
   var v = s.variation || {}, e = s.engine || {}, r = s.run || {}, req = s.requirements || {}, m = modelOf(s);
+  var eng = ENG[e.id] || {};
   var fails = failures(s), cav = (s.caveats || []).filter(function (c) { return fails.indexOf(c) < 0; });
-  var h = "";
+  var conflicts = capConflicts(s);
+  var rep = repDecode(s), pre = (s.measurements || []).filter(function (x) { return x.metric === "prefill_tok_s"; })[0];
 
-  h += '<div class="sec"><' + H + '>What this runs</' + H + '><p class="prose">' + esc(s.slug_note || "") + "</p>" +
-    '<div class="kv" style="margin-top:9px">' +
+  function sec(title, body) { return '<div class="sec"><' + H + '>' + title + '</' + H + '>' + body + '</div>'; }
+
+  /* 1. What this recipe runs */
+  var s1 = '<p class="prose">' + esc(s.slug_note || "") + '</p><div class="kv" style="margin-top:9px">' +
     "<dt>Model</dt><dd><a href=\"#/models/" + esc(s.model) + '">' + esc(m.name || s.model) + "</a> " +
     '<span class="g">' + esc((m.architecture || {}).kind || "") + "</span></dd>" +
     '<dt>Checkpoint</dt><dd><span class="mono">' + esc(v.checkpoint) + "</span>" +
@@ -491,59 +533,142 @@ function detailBody(s, opts) {
     (s.builder ? ' <span class="g">' + esc("· recipe by ") + "</span><a href=\"#/publishers/" + esc(s.builder) + '">' + esc(pubName(s.builder)) + "</a>" : "") + "</dd>" +
     "<dt>Quantization</dt><dd>" + esc(v.quant) + (v.quant_detail ? ' <span class="g">' + esc("— " + v.quant_detail) + "</span>" : "") + "</dd>" +
     "<dt>Artifact</dt><dd>" + esc(v.format) + " · " + (gb(v.size_gb) || na()) + " · " + esc(v.license || "license not recorded") + "</dd>" +
-    "</div></div>";
+    "<dt>Engine</dt><dd><a href=\"" + esc(eng.url || "#/methodology") + '" target="_blank" rel="noopener">' + esc(eng.name || e.id) + "</a></dd>" +
+    "<dt>Custom fork / patch</dt><dd>" + (e.requires_fork ? '<span class="mark m-warn">' + esc("⤴ required") + "</span>" : esc("not required")) + "</dd>" +
+    "</div>";
+  var h = sec("What this recipe runs", s1);
 
-  h += '<div class="sec"><' + H + '>How to run it</' + H + '>';
-  if (r.command) h += cmdBlock(r.command);
-  else h += '<p class="prose">' + esc("No single copyable command is recorded. Follow the ordered steps below.") + "</p>";
-  h += stepsHtml(s);
-  h += '<div class="kv" style="margin-top:9px"><dt>Repository</dt><dd><a href="' + esc(r.repo) + '" target="_blank" rel="noopener">' + esc(r.repo) + "</a></dd>" +
-    (r.profile ? "<dt>Profile</dt><dd><span class=\"mono\">" + esc(r.profile) + "</span></dd>" : "") +
-    "<dt>Setup complexity</dt><dd>" + esc(complexityWord(s)) + ' <span class="g">' + esc("(derived — see methodology)") + "</span></dd></div></div>";
-
-  h += '<div class="sec"><' + H + '>Requirements and runtime</' + H + '><div class="kv">' +
-    "<dt>Resident memory</dt><dd>" + (gb(req.memory_gb) || na()) + "</dd>" +
-    "<dt>Disk</dt><dd>" + (gb(req.disk_gb) || na()) + "</dd>" +
-    (req.min_vram_gb != null ? "<dt>Min VRAM</dt><dd>" + gb(req.min_vram_gb) + "</dd>" : "") +
-    (req.notes ? "<dt>Notes</dt><dd>" + esc(req.notes) + "</dd>" : "") +
-    "<dt>Engine</dt><dd><a href=\"" + esc((ENG[e.id] || {}).url || "#/methodology") + '" target="_blank" rel="noopener">' + esc((ENG[e.id] || {}).name || e.id) + "</a>" +
-    (e.requires_fork ? ' <span class="mark m-warn">' + esc("⤴ custom fork required") + "</span>" : ' <span class="g">' + esc("stock") + "</span>") + "</dd>" +
-    "<dt>Engine version</dt><dd>" + (e.version ? esc(e.version) : na("not recorded — the schema has no field for it yet")) + "</dd>" +
-    "<dt>Configuration</dt><dd>" + esc(e.config || "") + "</dd>" +
-    "<dt>Speculative decoding</dt><dd>" + esc(e.spec_decode || "none") + (e.draft_model ? ' <span class="mono">' + esc(e.draft_model) + "</span>" : "") + "</dd>" +
-    (e.image ? "<dt>Image</dt><dd><span class=\"mono\">" + esc(e.image) + "</span></dd>" : "") +
-    ((e.flags || []).length ? "<dt>Flags</dt><dd><span class=\"mono\">" + esc(e.flags.join("  ")) + "</span></dd>" : "") +
-    "</div></div>";
-
-  h += '<div class="sec"><' + H + '>Tested hardware</' + H + '><div class="kv">' + ((s.hwRefs || []).length ? s.hwRefs : (s.hardware || []).map(function (id) { return { id: id, count: 1 }; })).map(function (ref) {
-    var id = ref.id, hw = HW[id] || {};
+  /* 2. What it needs */
+  var hwRefs = (s.hwRefs || []).length ? s.hwRefs : (s.hardware || []).map(function (id) { return { id: id, count: 1 }; });
+  var s2 = '<div class="kv">' + hwRefs.map(function (ref) {
+    var hw = HW[ref.id] || {};
     var bits = [gb(hw.memory_gb) || "memory not recorded"];
     if (hw.bandwidth_gbs) bits.push(hw.bandwidth_gbs + " GB/s");
     else if (hw.bandwidth_range_gbs) bits.push(hw.bandwidth_range_gbs[0] + "–" + hw.bandwidth_range_gbs[1] + " GB/s");
     if (hw.arch) bits.push(hw.arch);
-    bits.push(hw.measured_by_us ? "measured by the owner" : "not measured by the owner");
-    return "<dt>" + esc(hwLabel(id, ref.count)) + "</dt><dd>" + esc(bits.join(" · ")) + "</dd>";
-  }).join("") + "</div></div>";
+    return "<dt>" + esc(hwLabel(ref.id, ref.count)) + "</dt><dd>" + esc(bits.join(" · ")) + "</dd>";
+  }).join("") +
+    "<dt>Resident memory (recorded on)</dt><dd>" + (gb(req.memory_gb) || na()) + "</dd>" +
+    (req.min_vram_gb != null ? "<dt>Min VRAM</dt><dd>" + gb(req.min_vram_gb) + "</dd>" : "") +
+    "<dt>Disk</dt><dd>" + (gb(req.disk_gb) || na()) + "</dd>" +
+    (req.notes ? "<dt>Notes</dt><dd>" + esc(req.notes) + "</dd>" : "") +
+    "</div>";
+  if (offloadUnstated(s)) s2 += '<p class="flagnote">' + esc("Offload not stated — the recorded resident memory exceeds the named device's capacity and the source does not explain how the rest fits. Do not assume RAM or SSD offload from this alone.") + "</p>";
+  h += sec("What it needs", s2);
 
-  h += '<div class="sec"><' + H + '>Measurements <span class="g">' +
-    esc(plural((s.measurements || []).length, "record")) + "</span></' + H + '>" + measurementTable(s) + aggNote(s) + "</div>";
+  /* 3. How to start it */
+  var s3 = (r.command ? cmdBlock(r.command) : '<p class="prose">' + esc("No single copyable command is recorded. Follow the ordered steps below.") + "</p>") +
+    stepsHtml(s) + '<div class="kv" style="margin-top:9px"><dt>Repository</dt><dd><a href="' + esc(r.repo) + '" target="_blank" rel="noopener">' + esc(r.repo) + "</a></dd>" +
+    (r.profile ? "<dt>Profile</dt><dd><span class=\"mono\">" + esc(r.profile) + "</span></dd>" : "") + "</div>";
+  if (e.requires_fork) s3 += '<p class="flagnote">' + esc("This recipe depends on a custom fork or patch, not the stock engine release — confirm it still applies before you start.") + "</p>";
+  h += sec("How to start it", s3);
 
-  h += '<div class="sec"><' + H + '>Capability support</' + H + '>' + capLine(s) + "</div>";
+  /* 4. What was observed */
+  var s4;
+  if (!rep) {
+    /* No single-stream number, but an aggregate figure may still exist --
+       AGENTS.md law 3, negative/partial results stay visible rather than
+       collapsing to "no measurement". aggNote() never promotes it into a
+       per-stream headline; it stays labelled aggregate. */
+    var agg = aggDecode(s);
+    s4 = agg ? '<p class="prose">' + esc("No single-stream measurement for this exact recipe.") + "</p>" + aggNote(s)
+             : '<p class="prose">' + esc("No speed measurement for this exact recipe. This is a sourced runnable lane, not a measured result.") + "</p>";
+  } else {
+    var phrase = evidencePhraseFor(rep);
+    s4 = '<p class="prose"><span class="v num">' + esc(rep.value + " " + rep.unit) + "</span> " + esc("(" + metricWord(rep.metric) + ")") +
+      (rep.concurrency != null ? esc(" at " + (rep.concurrency === 1 ? "1 stream" : rep.concurrency + " streams")) : esc(" — streams unstated")) +
+      (rep.n != null ? esc(", n=" + rep.n) : "") + (rep.stat ? esc(", " + rep.stat) : "") + "." +
+      (rep.source ? ' <a href="' + esc(rep.source) + '" target="_blank" rel="noopener">' + esc("source") + "</a>" : "") + "</p>" +
+      (phrase ? '<p class="coll-phrase">' + esc(phrase) + "</p>" : "") + aggNote(s);
+    if (pre) s4 += '<p class="prose tight">' + esc("Prefill recorded separately: " + pre.value + " " + pre.unit + ", not combined with decode.") + "</p>";
+  }
+  h += sec("What was observed", s4);
 
-  if (fails.length) h += '<div class="sec"><' + H + ' style="color:var(--bad)">' + esc("✕ Known failures") +
-    '</' + H + '><ul class="notes bad">' + fails.map(function (c) { return "<li>" + esc(c) + "</li>"; }).join("") + "</ul></div>";
-  if (cav.length) h += '<div class="sec"><' + H + '>Caveats <span class="g">' + esc("— what these numbers do not mean") +
-    '</span></' + H + '><ul class="notes warn">' + cav.map(function (c) { return "<li>" + esc(c) + "</li>"; }).join("") + "</ul></div>";
-  var got = (ENG[e.id] || {}).gotchas || [];
-  if (got.length) h += '<div class="sec"><' + H + '>Engine gotchas <span class="g">' + esc((ENG[e.id] || {}).name || e.id) +
-    '</span></' + H + '><ul class="notes">' + got.map(function (c) { return "<li>" + esc(c) + "</li>"; }).join("") + "</ul></div>";
+  /* 5. How it seeks performance */
+  var s5, claims = (s.evidence || {}).claims || [], techniqueIds = uniq(claims.map(function (c) {
+    return c.technique_id;
+  }).filter(Boolean));
+  var techniqueNote = techniqueIds.length
+    ? " Linked recorded technique ids: " + techniqueIds.join(", ") + "."
+    : " No sourced performance technique is recorded for this exact recipe.";
+  if (e.spec_decode && e.spec_decode !== "none") {
+    s5 = '<p class="prose">' + esc("This recipe's engine config specifies speculative decoding: " + e.spec_decode +
+      (e.draft_model ? " (draft " + e.draft_model + ")" : "") +
+      ". That is a configuration fact, not a causal claim." + techniqueNote) + "</p>";
+  } else {
+    s5 = '<p class="prose">' + esc(techniqueIds.length
+      ? "Recorded performance technique claims link to: " + techniqueIds.join(", ") + "."
+      : "No sourced performance technique is recorded for this exact recipe.") + "</p>";
+  }
+  h += sec("How it seeks performance", s5);
 
-  h += '<div class="sec"><' + H + '>Sources and revision</' + H + '>' + sourcesHtml(s) +
-    '<p class="prose" style="margin-top:7px">' + esc("Last updated " + (s.updated || "—") + " · " + freshness(s).word +
-      " · status: " + (s.status || "unrecorded")) + "</p>";
-  if (!opts.page) h += "</div>";
-  else h += '<details class="rawjson"><summary>Raw JSON</summary><pre>' + esc(JSON.stringify(s, function (k, v2) { return k.indexOf("__") === 0 ? undefined : v2; }, 2)) + "</pre>" +
-    copyBtn(JSON.stringify(s, function (k, v2) { return k.indexOf("__") === 0 ? undefined : v2; }, 2), "copy JSON") + "</details></div>";
+  /* 6. Trade-offs and failures — always shown, both modes, never collapsed to a count */
+  var s6 = "";
+  if (fails.length) s6 += '<p class="lbl" style="color:var(--bad)">' + esc("Known failures") + '</p><ul class="notes bad">' +
+    fails.map(function (c) { return "<li>" + esc(c) + "</li>"; }).join("") + "</ul>";
+  if (conflicts.length) s6 += '<p class="lbl" style="color:var(--warn);margin-top:8px">' + esc("Capability gaps") + '</p><ul class="notes warn">' +
+    conflicts.map(function (k) { return "<li>" + esc("The model supports " + k + "; this runtime does not implement it.") + "</li>"; }).join("") + "</ul>";
+  if (cav.length) s6 += '<p class="lbl" style="margin-top:8px">' + esc("Caveats — what these numbers do not mean") + '</p><ul class="notes">' +
+    cav.map(function (c) { return "<li>" + esc(c) + "</li>"; }).join("") + "</ul>";
+  if (!fails.length && !conflicts.length && !cav.length) s6 = '<p class="prose">' + esc("No trade-offs, failures, or caveats are recorded for this exact recipe.") + "</p>";
+  h += sec("Trade-offs and failures", s6);
+
+  /* 7. Evidence and freshness */
+  var s7 = sourcesHtml(s) + '<p class="prose" style="margin-top:7px">' +
+    esc("Last updated " + (s.updated || "—") + " · " + freshness(s).word + " · status: " + (s.status || "unrecorded")) + "</p>";
+  if (mode === "lite") s7 += '<p style="margin-top:9px"><button type="button" class="btn" data-mode-jump="pro">' + esc("Open Pro evidence →") + "</button></p>";
+  h += sec("Evidence and freshness", s7);
+
+  h = '<div class="' + (mode === "pro" ? "pro-copy" : "lite-copy") + '">' + h + '</div>';
+
+  /* Pro dossier: the v2 record is the authority. Sections are omitted only
+     when that record has no corresponding evidence; missing fields remain
+     visible as "not recorded" rather than being inferred. */
+  if (mode === "pro") {
+    var d = '<div class="dossier"><div class="dossier-hd"><h2>' + esc("Pro dossier") + '</h2><span class="g">' +
+       esc("Runtime, protocol and audit detail for this exact recipe") + "</span></div>";
+    var ev = s.evidence || {}, mp = req.memory_profile || {}, off = req.offload || {};
+    var v2line = function (x) { return x == null || x === "" ? na("not recorded") : esc(String(x)); };
+    var list = function (xs, cls) { return xs && xs.length ? '<ul class="notes' + (cls ? " " + cls : "") + '">' + xs.map(function (x) { return "<li>" + esc(typeof x === "string" ? x : (x.statement || x.question || JSON.stringify(x))) + "</li>"; }).join("") + "</ul>" : ""; };
+
+    d += sec("A · Identity and artifacts", '<div class="kv"><dt>Recipe</dt><dd>' + esc(s.title) + "</dd>" +
+      "<dt>Checkpoint</dt><dd>" + v2line(v.checkpoint) + "</dd><dt>Publisher</dt><dd>" + v2line(v.publisher) +
+      "</dd><dt>Quantization</dt><dd>" + v2line(v.quant_detail || v.quant) + "</dd><dt>Format / size</dt><dd>" + v2line([v.format, gb(v.size_gb)].filter(Boolean).join(" · ")) +
+      "</dd><dt>License</dt><dd>" + v2line(v.license) + "</dd></div>");
+    d += sec("B · Runtime and protocol", '<div class="kv"><dt>Engine</dt><dd>' + v2line(eng.name || e.id) +
+      "</dd><dt>Build / fork</dt><dd>" + v2line(e.version || (e.requires_fork ? "custom fork required" : "stock engine")) +
+      "</dd><dt>Configuration</dt><dd>" + v2line(e.config) + "</dd><dt>Speculation</dt><dd>" + v2line(e.spec_decode || "none") +
+      (e.draft_model ? ' <span class="mono">' + esc(e.draft_model) + "</span>" : "") + "</dd>" + (e.image ? "<dt>Image</dt><dd>" + v2line(e.image) + "</dd>" : "") +
+      ((e.flags || []).length ? "<dt>Flags</dt><dd><span class=\"mono\">" + esc(e.flags.join("  ")) + "</span></dd>" : "") + "</div>");
+    d += sec("C · Hardware and variant", capLine(s) + '<div class="kv" style="margin-top:8px"><dt>Tested hardware</dt><dd>' + esc(hwFirstLabel(s) || "not recorded") +
+      "</dd><dt>Variant notes</dt><dd>" + v2line(v.quant_detail) + "</dd><dt>Setup complexity</dt><dd>" + esc(complexityWord(s)) + ' <span class="g">' + esc("derived — see methodology") + "</span></dd></div>");
+    var mem = (mp.entries || []).map(function (x) { return (x.component || "component") + ": " + (x.value == null ? "not recorded" : x.value + " " + (x.unit || "")) + (x.location ? " · " + x.location : ""); });
+    d += sec("D · Memory and offload", '<div class="kv"><dt>Recorded resident memory</dt><dd>' + v2line(req.memory_gb == null ? null : gb(req.memory_gb)) +
+      "</dd><dt>Memory profile</dt><dd>" + (mem.length ? esc(mem.join(" · ")) : na("not recorded")) + "</dd><dt>Offload strategy</dt><dd>" +
+      (off.strategy ? esc(off.strategy + (off.intentional === true ? " · intentional" : "")) : (req.notes && /offload|mmap|pageable|ssd|stream/i.test(req.notes) ? esc(req.notes) : na("not recorded"))) +
+      "</dd>" + (mp.note ? "<dt>Profile note</dt><dd>" + esc(mp.note) + "</dd>" : "") + "</div>");
+    var claims = ev.claims || [];
+    if (claims.length) d += sec("E · Techniques", '<div class="tech-list">' + claims.map(function (c) { return '<dl class="tech-card"><dt>' + esc(c.technique_id || c.kind || "recorded claim") + '</dt><dd>' + esc(c.statement || "") +
+      (c.evidence_level ? ' <span class="g">' + esc("[" + c.evidence_level + "]") + "</span>" : "") + "</dd></dl>"; }).join("") + "</div>");
+    d += sec("F · Measurements and evidence <span class=\"g\">" + esc(plural((s.measurements || []).length, "record")) + "</span>", measurementTable(s) + aggNote(s));
+    var checks = (s.correctness || {}).checks || [], capobs = s.capability_observations || [];
+    if ((s.correctness || {}).output_checked != null || checks.length || capobs.length) d += sec("G · Quality and correctness", (s.correctness || {}).output_checked != null ? '<p class="prose">' + esc("Output checked: " + (s.correctness.output_checked ? "yes" : "no")) + "</p>" : "") +
+      list(checks.map(function (x) { return (x.kind || "check") + ": " + (x.result || "not recorded") + (x.note ? " — " + x.note : ""); }).concat(capobs.map(function (x) { return "Capability " + x.capability + ": " + (x.status || "not recorded") + (x.note ? " — " + x.note : ""); })), "warn");
+    var comps = ev.comparisons || [];
+    if (comps.length) d += sec("H · Causal evidence", comps.map(function (x) { return '<div class="tech-card"><dt>' + esc(x.question || x.variable || "Recorded comparison") + '</dt><dd>' + esc((x.result || "result not recorded") + " · " + (x.effect_metric || "metric not recorded") + " · " + (x.contrast_kind || "contrast kind not recorded")) + (x.conditions_unstated && x.conditions_unstated.length ? '<span class="g">' + esc(" Conditions unstated: " + x.conditions_unstated.join("; ")) + "</span>" : "") + "</dd></div>"; }).join(""));
+    var sf = s.known_failures || [];
+    if (sf.length) d += sec("I · Structured failures", '<div class="kv">' + sf.map(function (x) { return "<dt>" + esc(x.id || "failure") + "</dt><dd>" + esc([x.trigger, x.effect, x.status].filter(Boolean).join(" · ")) + (x.source ? ' <a href="' + esc(x.source) + '" target="_blank" rel="noopener">source</a>' : "") + (x.quote ? '<span class="g">' + esc(" — " + x.quote) + "</span>" : "") + "</dd>"; }).join("") + "</div>");
+    var qs = ev.open_questions || [], rr = ev.re_review_triggers || [];
+    if (qs.length || rr.length) d += sec("J · Open questions and re-review triggers", list(qs.map(function (x) { return (x.question || "question not recorded") + (x.status ? " · " + x.status : ""); }).concat(rr.map(function (x) { return "Re-review: " + x; })), "warn"));
+    if (ev.lineages && ev.lineages.length) d += sec("Evidence lineages", list(ev.lineages.map(function (x) { return (x.id || "lineage") + ": " + (x.note || x.locator || x.kind || "recorded"); })));
+
+    if (opts.page) d += '<details class="rawjson"><summary>' + esc("Raw JSON") + '</summary><pre>' +
+      esc(JSON.stringify(s, function (k, v2) { return k.indexOf("__") === 0 ? undefined : v2; }, 2)) + "</pre>" +
+      copyBtn(JSON.stringify(s, function (k, v2) { return k.indexOf("__") === 0 ? undefined : v2; }, 2), "copy JSON") + "</details>";
+
+    d += "</div>";
+    h += d;
+  }
 
   if (!opts.page) {
     h += '<div class="det-foot"><a class="btn" href="#/recipes/' + esc(s.id) + '">Open recipe page →</a>' +
@@ -1046,14 +1171,10 @@ function modelPreview(m) {
 }
 function writeModelHash() {
   if (state.route !== "models-home") return;
-  var q = [];
-  if (state.selectedModel) q.push("model=" + encodeURIComponent(state.selectedModel));
-  if (state.modelQ) q.push("q=" + encodeURIComponent(state.modelQ));
-  if (state.modelGen) q.push("gen=" + encodeURIComponent(state.modelGen));
-  if (state.modelArch) q.push("arch=" + encodeURIComponent(state.modelArch));
-  if (state.modelBaseline) q.push("baseline=" + encodeURIComponent(state.modelBaseline));
-  var next = "#/" + (q.length ? "?" + q.join("&") : "");
-  if (location.hash !== next) history.replaceState(null, "", next);
+  writeQuery("#/", {
+    model: state.selectedModel || undefined, q: state.modelQ, gen: state.modelGen,
+    arch: state.modelArch, baseline: state.modelBaseline, mode: modeParam()
+  });
 }
 /* The hero reads as a printed contents page: mono uppercase rules, a numbered
    index, and the figure set in the page-number position. Supplied reference,
@@ -1267,6 +1388,17 @@ function comparability(list) {
       out.push({ k: "conc", t: "Different concurrency on the compared figure. These are different quantities." });
     if (uniq(withRep.map(function (m) { return m.provenance; })).length > 1)
       out.push({ k: "prov", t: "Different evidence tiers — " + uniq(withRep.map(function (m) { return m.provenance; })).join(" and ") + ". Tiers are never blended." });
+    /* Free-form method prose often names the same protocol differently. Use
+       the recorded grade as the stable discriminator, and always separate the
+       materially different wall-clock/eval cases even when no grade exists. */
+    var methods = uniq(withRep.map(function (m) {
+      var grade = m.evidence && m.evidence.method_grade;
+      var text = String(m.method || "").toLowerCase();
+      var family = /wall[ -]?clock/.test(text) ? "wall-clock" : (/eval(_duration)?|eval rate/.test(text) ? "eval" : "");
+      return grade ? "grade: " + grade : family;
+    }).filter(Boolean));
+    if (methods.length > 1)
+      out.push({ k: "method", t: "Different measurement methods — " + methods.join(" vs ") + ". Wall-clock and eval measurements are different quantities." });
   }
   if (withRep.length < list.length)
     out.push({ k: "coverage", t: (list.length - withRep.length) + " of " + list.length + " recipes carry no single-stream speed measurement — the performance section is partly empty by design." });
@@ -1380,7 +1512,7 @@ function viewCompare() {
     }).join("") + "</tr></thead><tbody>";
 
   var mixedHw = issues.some(function (i) { return i.k === "hardware"; });
-  var mixedMetric = issues.some(function (i) { return i.k === "metric" || i.k === "stat" || i.k === "conc" || i.k === "prov"; });
+   var mixedMetric = issues.some(function (i) { return i.k === "metric" || i.k === "stat" || i.k === "conc" || i.k === "prov" || i.k === "method"; });
   var perfFlag = function () { return mixedHw || mixedMetric; };
 
   h += grpRow("Identity", n);
@@ -1862,18 +1994,23 @@ function viewRecipe(id) {
   var s = SETUPS.filter(function (x) { return x.id === id; })[0];
   setRail("");
   if (!s) return notFound("No recipe with the id " + id + " is in this dataset.");
-  var m = modelOf(s), c = conf(s);
+  var m = modelOf(s), c = conf(s), rep = repDecode(s), req = s.requirements || {};
   el("mast-sub").innerHTML = esc(s.slug_note || "");
-  var h = '<div class="page"><p class="crumb"><a href="#/recipes">Recipes</a> ' + esc("→") +
-    ' <a href="#/models/' + esc(s.model) + '">' + esc(m.name || s.model) + "</a> " + esc("→ this recipe") + "</p>" +
-    "<h1>" + esc(s.title) + "</h1>" +
-    '<div class="res-act" style="margin-top:10px">' + evStrip(s) +
-    '<span class="mark m-none">' + esc(READY_GLYPH[readiness(s)] + " " + READY_WORD[readiness(s)]) + "</span>" +
-    '<span class="mark m-none">' + esc(s.status || "status unrecorded") + "</span>" +
-    '<span class="mark m-none">' + esc("updated " + (s.updated || "—") + " · " + freshness(s).word) + "</span>" +
-    '<label class="mark m-none" style="cursor:pointer"><input type="checkbox" class="cbx" data-cmp="' + esc(s.id) + '"' +
-    (state.compare.indexOf(s.id) >= 0 ? " checked" : "") + ' aria-label="' + esc("Compare " + s.title) + '"> compare</label></div>';
-  h += '<div class="psec">' + detailBody(s, { page: true }) + "</div></div>";
+  var condition = rep ? condOf(rep) : "No single-stream measurement recorded";
+  var provenance = ["box: owner-measured", "forum: community-reported", "vendor: vendor-reported", "○: not recorded"];
+  var h = '<div class="page recipe-page"><p class="crumb"><a href="#/recipes">Recipes</a> ' + esc("→") +
+     ' <a href="#/models/' + esc(s.model) + '">' + esc(m.name || s.model) + "</a> " + esc("→ this recipe") + "</p>" +
+     "<h1>" + esc(s.title) + "</h1>" +
+     '<div class="recipe-layout"><div class="recipe-main"><div class="res-act recipe-actions">' +
+     (s.run && s.run.command ? copyBtn(s.run.command, "Copy launch command") : '<span class="mark m-none">' + esc("Launch command not recorded") + "</span>") +
+     '<a class="btn" href="#/hardware">Check against my hardware</a>' +
+     '<button type="button" class="btn" data-cmp="' + esc(s.id) + '">' + esc(state.compare.indexOf(s.id) >= 0 ? "Remove from compare" : "Add to compare") + "</button>" +
+     '</div><div class="recipe-meta"><span><b>Added</b> ' + esc(s.added || "not recorded") + '</span><span><b>Verified</b> ' + esc(s.verified || "not recorded") + '</span><span><b>Citations</b> ' + esc(String((s.sources || []).length)) + '</span><span><b>Flagged conditions</b> ' + esc(String((s.caveats || []).length)) + '</span></div>' +
+     '<div class="res-act recipe-status">' + evStrip(s) +
+     '<span class="mark m-none">' + esc(READY_GLYPH[readiness(s)] + " " + READY_WORD[readiness(s)]) + "</span>" +
+     '<span class="mark m-none">' + esc(s.status || "status unrecorded") + "</span>" +
+     '<span class="mark m-none">' + esc("updated " + (s.updated || "—") + " · " + freshness(s).word) + "</span></div>";
+  h += '<div class="psec">' + detailBody(s, { page: true }) + '</div></div><aside class="recipe-rail" aria-label="Recipe summary"><section><h2>CONDITION SUMMARY</h2><dl><dt>Headline</dt><dd>' + esc(condition) + '</dd><dt>Memory</dt><dd>' + esc(req.memory_gb == null ? "not recorded" : gb(req.memory_gb)) + '</dd><dt>Hardware</dt><dd>' + esc(hwFirstLabel(s) || "not recorded") + '</dd></dl><p>Compatibility is checked only in My Hardware; this recipe is not a bare fits claim.</p></section><section><h2>PROVENANCE KEY</h2><ul>' + provenance.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join("") + '</ul><p>Confidence dimensions remain separate; they are not a ranking.</p></section></aside></div></div>';
   el("main").innerHTML = h;
 }
 function viewModel(id) {
@@ -2001,9 +2138,9 @@ function viewMethodology() {
   h += '<div class="psec"><h2>What this dataset does not record</h2><ul class="notes">' +
     "<li>" + esc("Bytes per token of KV cache on " + (Object.keys(MODELS).length - kvKnown) + " of " + Object.keys(MODELS).length +
       " model families. Without it, a KV-cache allowance cannot be computed, and it is never estimated from parameter count.") + "</li>" +
-    "<li>" + esc("Engine version — there is no field for it, so every comparison of engine versions reads “not recorded”.") + "</li>" +
+     "<li>" + esc("Engine version — recorded for pilots where sourced, and absent for legacy records; missing versions remain visible as “not recorded”.") + "</li>" +
     "<li>" + esc("Operating system as a recorded fact, rather than implied from hardware.") + "</li>" +
-    "<li>" + esc("Failures as structured records. They live in caveat prose and are surfaced by matching that prose, which is a stopgap.") + "</li>" +
+     "<li>" + esc("Structured known failures — recorded for pilots and absent for legacy records; legacy failure information may remain only in caveat prose, so missing structured records remain visible.") + "</li>" +
     "<li>" + esc("Clean-install verification, so the strongest level of recipe confidence is currently unreachable by any entry.") + "</li>" +
     "<li>" + esc("Reddit-sourced numbers. The collection environment is hard-blocked by the platform, so no Reddit-sourced figure is recorded anywhere rather than being recorded unverified.") + "</li>" +
     "</ul></div>";
@@ -2054,15 +2191,47 @@ function parseHash() {
   var parts = path.replace(/^\/+|\/+$/g, "").split("/").filter(Boolean);
   return { parts: parts, q: q };
 }
+/* One query serializer for every hash writer (content contract section 3:
+   "use one query serializer instead of adding mode handling separately to
+   every route writer"). writeQuery does a full, explicit rebuild from a
+   params object -- used where state already owns every param (directory,
+   models-home). patchQuery merges a partial change onto whatever is
+   currently in the hash -- used by the mode toggle on routes that do not
+   otherwise own their query string, so it never clobbers an unrelated param
+   (e.g. compare's ?sel=). Neither ever drops `mode` unless it is the "lite"
+   default, keeping URLs deterministic. */
+function serializeQuery(params) {
+  var q = [];
+  Object.keys(params).forEach(function (k) {
+    var v = params[k];
+    if (v === undefined || v === null || v === "" || v === false) return;
+    q.push(k + "=" + encodeURIComponent(v));
+  });
+  return q.join("&");
+}
+function writeQuery(path, params) {
+  var qs = serializeQuery(params);
+  var next = path + (qs ? "?" + qs : "");
+  if (location.hash !== next) history.replaceState(null, "", next);
+}
+function patchQuery(path, patch) {
+  var cur = parseHash().q || {};
+  var merged = {};
+  Object.keys(cur).forEach(function (k) { merged[k] = cur[k]; });
+  Object.keys(patch).forEach(function (k) {
+    var v = patch[k];
+    if (v === undefined || v === null || v === "" || v === false) delete merged[k];
+    else merged[k] = v;
+  });
+  writeQuery(path, merged);
+}
+function modeParam() { return state.mode !== "lite" ? state.mode : undefined; }
 function writeHash() {
   if (state.route !== "directory") return;
-  var q = [];
-  if (state.q) q.push("q=" + encodeURIComponent(state.q));
-  Object.keys(state.f).forEach(function (k) { if (state.f[k]) q.push(k + "=" + encodeURIComponent(state.f[k])); });
-  if (state.sort !== "updated") q.push("sort=" + state.sort);
-  if (state.adv) q.push("adv=1");
-  var next = "#/recipes" + (q.length ? "?" + q.join("&") : "");
-  if (location.hash !== next) history.replaceState(null, "", next);
+  var params = { q: state.q, sort: state.sort !== "updated" ? state.sort : undefined,
+    adv: state.adv ? "1" : undefined, mode: modeParam() };
+  Object.keys(state.f).forEach(function (k) { if (state.f[k]) params[k] = state.f[k]; });
+  writeQuery("#/recipes", params);
 }
 function route() {
   var r = parseHash(), p = r.parts;
@@ -2070,6 +2239,13 @@ function route() {
   state.route = name === "models-home" ? "models-home" : name === "recipes" ? (p[1] ? "recipe" : "directory") :
     ({ hardware: "hardware", compare: "compare", models: "model", publishers: "publisher",
       methodology: "methodology", contribute: "contribute" }[name] || "404");
+  state.params = { id: p[1] };
+  state.path = "#/" + p.join("/");
+  /* Mode resolution runs before any route branch, once, for every route:
+     a valid ?mode= in this URL wins; otherwise the saved preference; otherwise
+     Lite. This is the one place mode is decided -- content contract section 3. */
+  state.mode = (r.q.mode === "pro" || r.q.mode === "lite") ? r.q.mode : (store("qlr.mode") || "lite");
+  updateModeControl();
   if (state.route === "models-home") {
     state.modelQ = r.q.q || "";
     state.modelGen = r.q.gen || "";
@@ -2118,6 +2294,55 @@ function route() {
 }
 function setRail(html) { var r = el("rail"); r.innerHTML = html; r.hidden = !html; }
 function announce(msg) { var l = el("live"); if (l) l.textContent = msg; }
+
+/* ---------------------------------------------------------- mode control */
+function updateModeControl() {
+  var lite = el("mode-lite"), pro = el("mode-pro");
+  if (!lite || !pro) return;
+  lite.setAttribute("aria-pressed", state.mode === "lite" ? "true" : "false");
+  pro.setAttribute("aria-pressed", state.mode === "pro" ? "true" : "false");
+}
+/* Which view function redraws #main for the current route, with no argument
+   binding needed -- setMode calls this directly instead of going through
+   route(), which is the only way to change mode without route()'s
+   unconditional window.scrollTo(0,0) and tab/grid reset undoing the content
+   contract's "no state, focus, or scroll reset on mode switch" rule. */
+function currentView() {
+  switch (state.route) {
+    case "models-home": return viewModelsHome;
+    case "directory": return viewDirectory;
+    case "recipe": return function () { viewRecipe(state.params.id); };
+    case "model": return function () { viewModel(state.params.id); };
+    case "publisher": return function () { viewPublisher(state.params.id); };
+    case "hardware": return viewHardware;
+    case "compare": return viewCompare;
+    case "methodology": return viewMethodology;
+    case "contribute": return viewContribute;
+    default: return null;
+  }
+}
+function syncModeInUrl() {
+  if (state.route === "directory") { writeHash(); return; }
+  if (state.route === "models-home") { writeModelHash(); return; }
+  patchQuery(state.path, { mode: modeParam() });
+}
+function setMode(next) {
+  if (next !== "lite" && next !== "pro") return;
+  if (state.mode === next) return;
+  var sy = window.scrollY, sx = window.scrollX;
+  var activeId = document.activeElement && document.activeElement.id;
+  state.mode = next;
+  store("qlr.mode", next);
+  syncModeInUrl();
+  var v = currentView();
+  if (v) v();
+  renderRail();
+  updateModeControl();
+  window.scrollTo(sx, sy);
+  var restore = (activeId && el(activeId)) || el(next === "pro" ? "mode-pro" : "mode-lite");
+  if (restore && restore.focus) restore.focus();
+  announce(next === "pro" ? "Pro mode selected" : "Lite mode selected");
+}
 
 /* ---------------------------------------------------------------- events */
 function nav(hash) { if (location.hash === hash) route(); else location.hash = hash; }
@@ -2198,7 +2423,7 @@ document.addEventListener("change", function (e) {
   }
 });
 document.addEventListener("click", function (e) {
-  var t = e.target.closest ? e.target.closest("[data-hero-gen],[data-exp],[data-copy],[data-clear],[data-rail-f],[data-rail-clear],[data-jump],[data-cmp],[data-ev],[data-grp],[data-goal],[data-load],[data-model-select],#model-clear,#clear-all,#adv-toggle,#cmp-clear,#theme,#hw-detect,#hw-save,#hw-clear,#hw-export,#hw-import") : null;
+  var t = e.target.closest ? e.target.closest("[data-hero-gen],[data-exp],[data-copy],[data-clear],[data-rail-f],[data-rail-clear],[data-jump],[data-cmp],[data-ev],[data-grp],[data-goal],[data-load],[data-model-select],[data-mode-jump],#model-clear,#clear-all,#adv-toggle,#cmp-clear,#theme,#mode-lite,#mode-pro,#hw-detect,#hw-save,#hw-clear,#hw-export,#hw-import") : null;
   if (!t) {
     hidePop();
     /* Clicking anywhere on a row header toggles it — the expander triangle is
@@ -2222,6 +2447,10 @@ document.addEventListener("click", function (e) {
     store("qlr.theme", next);
     return;
   }
+  if (t.id === "mode-lite") { setMode("lite"); return; }
+  if (t.id === "mode-pro") { setMode("pro"); return; }
+  var mj = t.getAttribute("data-mode-jump");
+  if (mj) { setMode(mj); return; }
   var modelSelect = t.getAttribute("data-model-select");
   if (modelSelect) {
     if (e.preventDefault) e.preventDefault();

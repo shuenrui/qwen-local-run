@@ -995,6 +995,19 @@ def main():
         check("comparability banner fires on a mismatched selection",
               "not directly comparable" in cw["banner"].lower(), cw["banner"])
 
+        wall_clock = next((s for s in SET
+                           if rep(s) and re.search(r"wall[ -]?clock", str(rep(s).get("method", "")), re.I)), None)
+        vendor = next((s for s in SET
+                       if rep(s) and (rep(s).get("evidence") or {}).get("method_grade") == "vendor_published_table"), None)
+        check("dataset has wall-clock and vendor measurements for method-warning regression",
+              wall_clock is not None and vendor is not None,
+              f"wall-clock={wall_clock['id'] if wall_clock else None}, vendor={vendor['id'] if vendor else None}")
+        if wall_clock and vendor:
+            goto(page, f"#/compare?sel={wall_clock['id']},{vendor['id']}")
+            method_warning = page.evaluate("(document.querySelector('.banner')||{}).innerText||''")
+            check("wall-clock versus vendor comparison displays the different measurement methods warning",
+                  "different measurement methods" in method_warning.lower(), method_warning[:180])
+
         # a matched pair must NOT be flagged
         pair = None
         for a in SET:
@@ -1327,6 +1340,175 @@ def main():
         check("dark theme renders the full model homepage", dark["models"] == len(MODELS), str(dark["models"]))
         check("no page errors in dark theme", not p6_errors, str(p6_errors[:2]))
         ctx6.close()
+        # --------------------------------------------- Lite/Pro information mode
+        # lite-pro-content-contract.md sections 3 and 12. A fresh context per
+        # scenario, same pattern as the dark-theme and blocked-storage blocks
+        # above, so state from earlier checks (filters, compare, zoom) cannot
+        # leak into these.
+        ctx7 = browser.new_context(viewport={"width": 1440, "height": 1000})
+        p7 = ctx7.new_page()
+        p7_errors = []
+        p7.on("pageerror", lambda e: p7_errors.append(str(e)))
+
+        # a recipe id with a recorded failure, via the real UI filter (not a
+        # re-implemented regex) so this exercises the same path a reader would
+        p7.goto(BASE + "#/recipes")
+        p7.wait_for_timeout(250)
+        p7.click("#adv-toggle")
+        p7.wait_for_timeout(200)
+        p7.select_option("#f-fail", "yes")
+        p7.wait_for_timeout(280)
+        fail_id = rowids(p7)[0]
+        p7.click('.chip[data-clear="fail"]')
+        p7.wait_for_timeout(200)
+
+        def mode_state(pg):
+            return pg.evaluate("""() => ({
+              lite: document.getElementById('mode-lite').getAttribute('aria-pressed'),
+              pro: document.getElementById('mode-pro').getAttribute('aria-pressed'),
+              hash: location.hash
+            })""")
+
+        # 1. deterministic default
+        p7.goto(BASE + "#/recipes/" + fail_id)
+        p7.wait_for_timeout(250)
+        ms = mode_state(p7)
+        check("recipe page defaults to Lite with no mode param",
+              ms["lite"] == "true" and ms["pro"] == "false", str(ms))
+        t = text(p7)
+        check("Lite recipe page shows the seven required sections",
+              all(x in t for x in ["What this recipe runs", "What it needs", "How to start it",
+                                    "What was observed", "How it seeks performance",
+                                    "Trade-offs and failures", "Evidence and freshness"]))
+        check("Lite never hides a recorded failure",
+              "known failures" in t.lower(), fail_id)
+        check("Lite page does not render the Pro dossier",
+              "pro dossier" not in t.lower())
+
+        # 2. invalid URL value falls back safely, valid value wins
+        p7.goto(BASE + "#/recipes/" + fail_id + "?mode=bogus")
+        p7.wait_for_timeout(250)
+        check("invalid ?mode= falls back to Lite, not a broken state",
+              mode_state(p7)["lite"] == "true")
+        p7.goto(BASE + "#/recipes/" + fail_id + "?mode=pro")
+        p7.wait_for_timeout(250)
+        ms = mode_state(p7)
+        check("valid ?mode=pro selects Pro on load", ms["pro"] == "true", str(ms))
+        check("Pro recipe page renders the dossier", "pro dossier" in text(p7).lower())
+        check("Pro still contains every Lite section (expanded in place, not replaced)",
+              all(x in text(p7) for x in ["What this recipe runs", "How to start it",
+                                          "Trade-offs and failures", "Evidence and freshness"]))
+
+        pilot = next((s for s in SET
+                      if s.get("schema_version") == 2
+                      and (s.get("evidence") or {}).get("claims")
+                      and s.get("known_failures")
+                      and ((s.get("evidence") or {}).get("open_questions")
+                           or (s.get("evidence") or {}).get("re_review_triggers"))), None)
+        check("dataset has a pilot with the v2 dossier evidence needed for this regression",
+              pilot is not None, "no schema_version=2 record has all four sections")
+        if pilot:
+            p7.goto(BASE + "#/recipes/" + pilot["id"] + "?mode=pro")
+            p7.wait_for_timeout(250)
+            dossier = text(p7)
+            check("pilot Pro route exposes Identity, Techniques, Structured failures and Open questions",
+                  all(x in dossier for x in ["Identity and artifacts", "Techniques",
+                                             "Structured failures", "Open questions"]),
+                  pilot["id"])
+
+        # 3. the toggle persists a preference across navigation with no URL param
+        p7.goto(BASE + "#/recipes/" + fail_id)
+        p7.wait_for_timeout(250)
+        p7.click("#mode-pro")
+        p7.wait_for_timeout(200)
+        check("clicking Pro updates the URL", "mode=pro" in mode_state(p7)["hash"])
+        p7.goto(BASE + "#/hardware")
+        p7.wait_for_timeout(250)
+        check("saved preference carries to a route with no mode param",
+              mode_state(p7)["pro"] == "true")
+
+        # 4. mode switch preserves route, filters, scroll and focus
+        p7.goto(BASE + "#/recipes?q=nvfp4")
+        p7.wait_for_timeout(280)
+        rows_before = rows(p7)
+        p7.click("#mode-pro")
+        p7.wait_for_timeout(200)
+        h = mode_state(p7)["hash"]
+        check("mode switch preserves an unrelated query param (search)",
+              "q=nvfp4" in h and "mode=pro" in h, h)
+        check("mode switch does not change the filtered row count",
+              rows(p7) == rows_before, f"{rows(p7)} vs {rows_before}")
+
+        p7.goto(BASE + "#/recipes/" + fail_id)
+        p7.wait_for_timeout(250)
+        p7.evaluate("window.scrollTo(0, 400)")
+        p7.wait_for_timeout(120)
+        before_scroll = p7.evaluate("window.scrollY")
+        p7.click("#mode-pro")
+        p7.wait_for_timeout(200)
+        after = p7.evaluate("""() => ({scroll: window.scrollY, active: document.activeElement.id,
+                                        hash: location.hash})""")
+        check("mode switch does not reset scroll position",
+              abs(after["scroll"] - before_scroll) < 40, f"{before_scroll} -> {after['scroll']}")
+        check("mode switch keeps focus on a real control, not lost to <body>",
+              after["active"] == "mode-pro")
+        check("mode switch preserves the route/entity in the URL",
+              ("#/recipes/" + fail_id) in after["hash"])
+
+        # 5. browser history round-trips mode correctly
+        p7.goto(BASE + "#/recipes/" + fail_id + "?mode=pro")
+        p7.wait_for_timeout(200)
+        p7.goto(BASE + "#/recipes/" + fail_id + "?mode=lite")
+        p7.wait_for_timeout(200)
+        p7.go_back()
+        p7.wait_for_timeout(200)
+        check("browser back restores the previous mode",
+              mode_state(p7)["pro"] == "true", mode_state(p7))
+
+        # 6. keyboard operability and announcement -- force a known starting
+        # mode first (localStorage from the checks above may already say Pro,
+        # and setMode() correctly no-ops on a same-mode click, which would
+        # make a stale "already true" read pass for the wrong reason)
+        p7.goto(BASE + "#/recipes/" + fail_id)
+        p7.wait_for_timeout(250)
+        p7.click("#mode-lite")
+        p7.wait_for_timeout(150)
+        p7.focus("#mode-pro")
+        p7.keyboard.press("Enter")
+        p7.wait_for_timeout(200)
+        live = p7.evaluate("document.getElementById('live').textContent")
+        check("mode control is keyboard-operable and announces the change",
+              mode_state(p7)["pro"] == "true" and "Pro mode selected" in live, live)
+
+        # 7. the toggle is a real button group, not a select or tab list
+        group = p7.evaluate("""() => {
+          var g = document.querySelector('[aria-label="Information mode"]');
+          return g && { role: g.getAttribute('role'),
+                         tag0: g.children[0].tagName, tag1: g.children[1].tagName };
+        }""")
+        check("mode control is a labelled group of two buttons",
+              group and group["role"] == "group" and group["tag0"] == "BUTTON" and group["tag1"] == "BUTTON",
+              str(group))
+
+        check("no page errors switching modes", not p7_errors, str(p7_errors[:2]))
+        ctx7.close()
+
+        # blocked localStorage must not break the mode control
+        ctx8 = browser.new_context(viewport={"width": 1440, "height": 1000})
+        p8 = ctx8.new_page()
+        p8_errors = []
+        p8.on("pageerror", lambda e: p8_errors.append(str(e)))
+        p8.add_init_script("""
+          Object.defineProperty(window, 'localStorage', { get: function(){ throw new Error('blocked'); } });
+        """)
+        p8.goto(BASE + "#/recipes/" + fail_id)
+        p8.wait_for_timeout(300)
+        p8.click("#mode-pro")
+        p8.wait_for_timeout(200)
+        check("mode toggle survives blocked localStorage",
+              not p8_errors and "pro dossier" in text(p8).lower(), str(p8_errors[:2]))
+        ctx8.close()
+
 
         # ---------------------------------------------------------- console
         real = [e for e in console_errors if "favicon" not in e.lower()]
