@@ -278,6 +278,7 @@ var state = {
   f: {}, sort: "updated", adv: false, flat: false,
   expanded: {}, compare: [], profile: null,
   modelQ: "", modelGen: "", modelArch: "", modelBaseline: "", selectedModel: null,
+  mopen: {}, mcompare: [],
   assume: { context: 8192, concurrency: 1, reserve: null },
   mobile: false,
   /* Information mode -- Lite/Pro, see docs/builder-concerns-2026-09-16/
@@ -1176,69 +1177,18 @@ function writeModelHash() {
     arch: state.modelArch, baseline: state.modelBaseline, mode: modeParam()
   });
 }
-/* The hero reads as a printed contents page: mono uppercase rules, a numbered
-   index, and the figure set in the page-number position. Supplied reference,
-   2026-09-12 -- it sets the direction for this band only. */
-function mfHero(list, verified) {
-  var gens = [];
-  D.model_order.forEach(function (id) {
-    var g = String((MODELS[id] || {}).generation || "");
-    if (!g) return;
-    var row = gens.filter(function (x) { return x.g === g; })[0];
-    if (!row) { row = { g: g, models: 0, recipes: 0 }; gens.push(row); }
-    row.models += 1;
-    row.recipes += SETUPS.filter(function (s) { return s.model === id; }).length;
-  });
-  gens.sort(function (a, b) { return parseFloat(b.g) - parseFloat(a.g); });
-
-  var rows = gens.map(function (x, i) {
-    var n = pad2(i + 1), on = state.modelGen === x.g;
-    return '<li><button type="button" class="mf-item' + (on ? " is-on" : "") +
-      '" data-hero-gen="' + esc(x.g) + '" aria-pressed="' + on + '">' +
-      '<span class="mf-n">' + esc(n + ".0") + '</span>' +
-      '<span class="mf-sep" aria-hidden="true">/</span>' +
-      '<span class="mf-name">' + esc("Qwen " + x.g) + '</span>' +
-      '<span class="mf-dots" aria-hidden="true"></span>' +
-      '<span class="mf-meta">' + esc(x.models + (x.models === 1 ? " model" : " models")) + '</span>' +
-      '<span class="mf-fig">' + esc(String(x.recipes)) + '</span></button></li>';
-  }).join("");
-
-  return '<header class="mf-hero">' +
-    '<div class="mf-eyebrow"><span>00.0</span><span>Models</span>' +
-      '<span class="mf-eyebrow-end">' + esc(verified + " / " + D.model_order.length + " with a curated baseline") + '</span></div>' +
-    '<div class="mf-body">' +
-      '<div class="mf-title"><span class="mf-n">01</span><h1>Choose a Qwen model</h1></div>' +
-      '<div class="mf-lede"><p>' +
-        esc("Start with what you want to run. Each practical minimum is tied to one reported or measured recipe, and its speed is shown only when that same setup was measured.") +
-      '</p>' +
-      '<ol class="mf-index">' + rows + '</ol></div>' +
-    '</div>' +
-    '<div class="mf-foot"><span>' + esc("Qwen Local-Run Directory") + '</span><span>' +
-      esc(SETUPS.length + " recipes") + '</span></div>' +
-    '</header>';
+/* ------------------------------------------ models index (printed sheet) ----
+   The homepage reads as a printed index: a serif title band with a gold
+   kicker, a full-width family table grouped by released series, and an
+   expandable kept-by strip per family. Structure and look follow the
+   owner-signed-off comp (Models.dc.html); every figure rendered here is a
+   recorded field, and the kept-by strip sources the same baseline data the
+   selected-model panel uses. */
+function modelList() {
+  return D.model_order.map(function (id) { return MODELS[id]; }).filter(modelMatches);
 }
 function pad2(n) { return (n < 10 ? "0" : "") + n; }
-/* The editorial masthead, collapsed to one compact single-line row: the contents
-   numeral, the page title, the "what you want to run" guidance and the baseline
-   tally share one band. No eyebrow kicker above the heading and no multi-line
-   lede; the fuller guidance lives in the mast-sub line under the tabs. */
-function mhMast(verified) {
-  return '<header class="mf-hero mh-mast">' +
-    '<div class="mh-mast-row">' +
-      '<span class="mf-n">01</span>' +
-      '<h1>Choose a Qwen model</h1>' +
-      '<span class="mh-mast-sep" aria-hidden="true">\u2014</span>' +
-      '<span class="mh-mast-guide">' + esc("start with what you want to run") + '</span>' +
-      '<span class="mh-mast-stat">' + esc(verified + " / " + D.model_order.length + " with a curated baseline") + '</span>' +
-    '</div>' +
-    '</header>';
-}
-
-/* The right column: an editorial printed contents grouped by Qwen series, newest
-   first. Each series is a [data-toc-series] chapter rendered as a dark association
-   band; its entries are numbered sequentially (01, 02, 03...) beside the exact
-   model names and keep [data-model-select] + data-toc-selected on the active one. */
-function seriesSections(list, sel) {
+function seriesOf(list) {
   var gens = [];
   list.forEach(function (m) {
     var g = String(m.generation || "");
@@ -1247,27 +1197,204 @@ function seriesSections(list, sel) {
     row.models.push(m);
   });
   gens.sort(function (a, b) { return parseFloat(b.g) - parseFloat(a.g); });
-  return gens.map(function (sec) {
+  return gens;
+}
+function seriesRange(models) {
+  var ds = models.map(function (m) { return m.released; }).filter(Boolean).sort();
+  if (!ds.length) return null;
+  return ds[0] === ds[ds.length - 1] ? ds[0] : ds[0] + " \u2192 " + ds[ds.length - 1];
+}
+function typeWord(m) {
+  var a = m.architecture || {};
+  var w = a.kind === "moe" ? "Mixture-of-experts" : a.kind === "dense" ? "Dense" : (a.kind || "architecture not recorded");
+  var mods = [];
+  (m.modalities || []).forEach(function (x) {
+    if (MODALITY_CAP[x] && mods.indexOf(MODALITY_CAP[x]) < 0) mods.push(MODALITY_CAP[x]);
+  });
+  return mods.length ? w + " \u00b7 " + mods.join(" \u00b7 ") : w;
+}
+function paramsCell(a) {
+  if (a.params_total_b == null) return na();
+  var t = "<b>" + esc(a.params_total_b + "B") + "</b>";
+  if (a.params_active_b != null && a.params_active_b !== a.params_total_b)
+    t += ' <span class="mi-act">\u00b7 ' + esc(a.params_active_b + "B") + "</span>";
+  else if (a.params_active_b == null && a.kind !== "dense")
+    t += ' <span class="mi-act">\u00b7 ' + esc("active not recorded") + "</span>";
+  return t;
+}
+function miBand() {
+  var gens = seriesOf(D.model_order.map(function (id) { return MODELS[id]; }));
+  return '<section class="mi-band">' +
+    '<div class="mi-band-l"><div class="mi-kicker">' + esc("Index") + "</div>" +
+    '<h1 class="mi-title">' + esc("Models") + "</h1></div>" +
+    '<div class="mi-band-r"><p class="mi-intro">' +
+      esc(D.model_order.length + " model families in " + gens.length +
+        " released series, with " + SETUPS.length +
+        " recipes recorded against them. Sizes, dates and context windows are the publisher\u2019s; open a family to read the recipe this directory keeps as its best record, and who measured it.") +
+    '</p><div class="mi-all">' +
+      '<button type="button" class="mi-btn mi-btn-g" id="mi-open-all">' + esc("Open all") + "</button>" +
+      '<button type="button" class="mi-btn" id="mi-close-all">' + esc("Close all") + "</button>" +
+    "</div></div></section>";
+}
+function miHead() {
+  return '<div class="mi-head"><span class="mi-head-sp" aria-hidden="true"></span>' +
+    '<div class="mi-head-g mi-grid"><div>' + esc("Model") + '</div><div>' + esc("Type") + "</div>" +
+    '<div class="r">' + esc("Released") + '</div><div class="r">' + esc("Params \u00b7 active") + "</div>" +
+    '<div class="r">' + esc("Context") + '</div><div class="r r0">' + esc("Recipes") + "</div></div></div>";
+}
+function miGroups(list, sel) {
+  var n = 0;
+  return '<ol class="toc">' + seriesOf(list).map(function (sec) {
     var recipes = sec.models.reduce(function (acc, m) { return acc + modelRecipes(m.id).length; }, 0);
+    var range = seriesRange(sec.models);
     return '<li class="toc-sec" data-toc-series="' + esc(sec.g) + '">' +
-      '<div class="toc-chapter">' +
-        '<h2>' + esc("Qwen " + sec.g) + '</h2>' +
-        '<span class="toc-cmeta">' + esc(sec.models.length + (sec.models.length === 1 ? " model" : " models") +
-          " \u00b7 " + recipes + (recipes === 1 ? " recipe" : " recipes")) + '</span>' +
-      '</div>' +
-      '<ol class="toc-items">' + sec.models.map(function (m, mi) {
-        return tocItem(m, pad2(mi + 1), m.id === sel);
-      }).join("") + '</ol></li>';
-  }).join("");
+      '<div class="mi-rail"><div class="mi-rail-t">' + esc("Qwen" + sec.g + " series") + "</div>" +
+      '<div class="mi-rail-m">' + esc(sec.models.length + (sec.models.length === 1 ? " family" : " families") +
+        " \u00b7 " + recipes + (recipes === 1 ? " recipe" : " recipes")) + "</div>" +
+      (range ? '<div class="mi-rail-d">' + esc(range) + "</div>" : "") + "</div>" +
+      '<ol class="mi-fams">' + sec.models.map(function (m) {
+        n += 1;
+        return miFam(m, pad2(n), m.id === sel);
+      }).join("") + "</ol></li>";
+  }).join("") + "</ol>";
+}
+function miFam(m, num, on) {
+  var a = m.architecture || {}, c = m.context || {}, recs = modelRecipes(m.id).length;
+  var open = !!state.mopen[m.id], cmp = state.mcompare.indexOf(m.id) >= 0;
+  var bits = [a.kind === "moe" ? "MoE" : (a.kind || "architecture not recorded")];
+  if (a.params_total_b != null) bits.push(a.params_total_b + "B total");
+  if (a.params_active_b != null) bits.push(a.params_active_b + "B active");
+  else if (a.kind === "dense") bits.push("all active");
+  var rel = releasedWord(m.released);
+  bits.push(rel ? "released " + rel : "launch date not recorded");
+  var intro = introText(m.summary, 168);
+  var mmeta = [typeWord(m), a.params_total_b != null ? a.params_total_b + "B" : null,
+    m.released || null, c.native != null ? ctx(c.native) : null].filter(Boolean);
+  return '<li class="mi-fam' + (cmp ? " is-cmp" : "") + '" data-fam="' + esc(m.id) + '">' +
+    '<div class="mi-row">' +
+    '<input type="checkbox" class="cbx mi-cbx" data-mcmp="' + esc(m.id) + '"' + (cmp ? " checked" : "") +
+      ' aria-label="' + esc("Select " + m.name + " for comparison") + '">' +
+    '<button type="button" class="mi-caret" data-mopen="' + esc(m.id) + '" aria-expanded="' + open +
+      '" aria-controls="kept-' + esc(m.id) + '" aria-label="' +
+      esc((open ? "Collapse " : "Expand ") + m.name + ": kept-by evidence") + '">' +
+      '<span class="mi-num">' + esc(num) + '</span><span class="mi-glyph" aria-hidden="true">' +
+      (open ? "\u2013" : "+") + "</span></button>" +
+    '<a class="toc-item' + (on ? " is-sel" : "") + '" href="#/models/' + esc(m.id) +
+      '" data-model-select="' + esc(m.id) + '"' +
+      (on ? ' data-toc-selected="true" aria-current="true"' : "") + '>' +
+      '<span class="mi-cell mi-name"><span class="mi-nm">' + esc(m.name) +
+        '</span><span class="mi-leader" aria-hidden="true"></span></span>' +
+      '<span class="mi-cell mi-type">' + esc(typeWord(m)) + "</span>" +
+      '<span class="mi-cell mi-rel">' + (m.released ? esc(m.released) : na()) + "</span>" +
+      '<span class="mi-cell mi-par">' + paramsCell(a) + "</span>" +
+      '<span class="mi-cell mi-ctx">' + (c.native != null ? esc(ctx(c.native)) : na("not stated")) + "</span>" +
+      '<span class="toc-fig">' + (recs
+        ? "<b>" + recs + "</b><small>" + esc(recs === 1 ? "recipe" : "recipes") + "</small>"
+        : '<span class="mi-fig-none">' + esc("none yet") + "</span>") + "</span>" +
+      '<span class="mi-mmeta" aria-hidden="true">' +
+        '<span class="mm-t">' + esc(mmeta[0]) + '</span><span class="mm-p">' + esc(mmeta[1] || "") + "</span>" +
+        '<span class="mm-r">' + esc(mmeta[2] || "") + '</span><span class="mm-c">' + esc(mmeta[3] || "") + "</span></span>" +
+      '<span class="toc-meta sr">' + esc(bits.join(" \u00b7 ")) + "</span>" +
+      (intro ? '<span class="toc-intro sr">' + esc(intro) + "</span>" : "") +
+    "</a></div>" +
+    '<div class="kept' + (open && !baselineSetup(m) ? " kept-empty" : "") + '" id="kept-' + esc(m.id) + '"' +
+      (open ? "" : " hidden") + ">" + (open ? keptHtml(m) : "") + "</div></li>";
+}
+/* Who keeps the figure: the directory for owner-measured rows, the named
+   builder for community reports, the publisher for its own claim. */
+function keeperOf(s, rep) {
+  var prov = (rep && rep.provenance) || s.provenance_tier;
+  if (prov === "box") return "This directory";
+  if (s.builder) return pubName(s.builder);
+  if (prov === "vendor" && (s.variation || {}).publisher) return pubName(s.variation.publisher);
+  return null;
+}
+function initialsOf(name) {
+  var w = String(name || "").trim().split(/\s+/).filter(Boolean);
+  if (!w.length) return "\u2013";
+  if (w.length === 1) return w[0].slice(0, 2).toUpperCase();
+  return (w[0].charAt(0) + w[1].charAt(0)).toUpperCase();
+}
+function shortCond(m) {
+  return [metricWord(m.metric), m.stat,
+    m.concurrency != null ? (m.concurrency === 1 ? "1 stream" : m.concurrency + " streams") : "streams unstated",
+    m.provenance].filter(Boolean).join(" \u00b7 ");
+}
+function engineWord(s) {
+  var e = s.engine || {}, v = s.variation || {};
+  return ((ENG[e.id] || {}).name || e.id || "engine not recorded") +
+    (e.version ? " " + e.version : "") + " \u00b7 " + (v.quant || "quant not recorded") +
+    (e.requires_fork ? " \u00b7 custom fork" : "");
+}
+function keptHtml(m) {
+  var b = m.practical_baseline || {}, s = baselineSetup(m), recs = modelRecipes(m.id).length;
+  if (!s) {
+    var why = b.reason || "No qualifying baseline is recorded for this model.";
+    return '<div class="kept-in"><div class="kept-none"><p>' + esc(recs
+      ? "Practical minimum not verified yet. " + why + " The " + plural(recs, "recipe") +
+        " recorded for this family stay visible in the family record; none is promoted into this strip without reported or measured evidence."
+      : "No recipe on record. Nobody has submitted a runnable setup for this family, and the directory has not benched one. That is a gap in this index, not a statement about the model.") +
+      '</p><p class="kept-links"><a href="#/models/' + esc(m.id) + '">' + esc("Open the family record") + "</a>" +
+      (recs ? "" : " \u00b7 <a href=\"#/contribute\">" + esc("Contribute a recipe") + "</a>") + "</p></div></div>";
+  }
+  var rep = baselineSpeed(s), keeper = keeperOf(s, rep);
+  var srcHost = rep && rep.source ? String(rep.source).replace(/^https?:\/\//, "").split("/")[0] : null;
+  var fails = failures(s), notes = (s.caveats || []).filter(function (x) { return fails.indexOf(x) < 0; });
+  return '<div class="kept-in">' +
+    '<div class="kept-head kept-grid"><div>' + esc("Kept by") + '</div><div class="r">' + esc("Tok/s") + "</div>" +
+    "<div>" + esc("Device") + "</div><div>" + esc("Engine") + '</div><div class="r">' + esc("Context") +
+    '</div><div class="r r0">' + esc("Verified") + "</div></div>" +
+    '<div class="kept-row kept-grid">' +
+      '<div class="kept-who"><span class="kept-av" aria-hidden="true">' + esc(initialsOf(keeper)) + "</span>" +
+        '<span class="kept-id"><span class="kept-name">' + (keeper ? esc(keeper) : na("keeper not recorded")) + "</span>" +
+        '<a class="kept-rec" href="#/recipes/' + esc(s.id) + '">' + esc(s.id) + "</a>" +
+        (srcHost ? '<a class="kept-src" href="' + esc(rep.source) + '" target="_blank" rel="noopener">' + esc(srcHost) + "</a>" : "") +
+        "</span></div>" +
+      '<div class="kept-tok r">' + (rep
+        ? "<b>" + esc(rep.value) + "<small> " + esc(rep.unit) + '</small><span class="kept-cond">' + esc(shortCond(rep)) + "</span></b>"
+        : na("not recorded")) + "</div>" +
+      '<div class="kept-dev">' + (hwLabels(s).length ? esc(hwLabels(s).join(" \u00b7 ")) : na()) + "</div>" +
+      '<div class="kept-eng">' + esc(engineWord(s)) + "</div>" +
+      '<div class="kept-ctx r">' + ((s.capabilities || {}).long_context != null ? esc(ctx(s.capabilities.long_context)) : na()) + "</div>" +
+      '<div class="kept-ver r r0">' + (b.reviewed ? esc(b.reviewed) : na()) + "</div>" +
+    "</div>" +
+    fails.map(function (x) { return '<div class="kept-note is-fail">' + esc(x) + "</div>"; }).join("") +
+    notes.slice(0, 2).map(function (x) { return '<div class="kept-note is-flag">' + esc(x) + "</div>"; }).join("") +
+    (notes.length > 2 ? '<div class="kept-note is-flag"><a href="#/recipes/' + esc(s.id) + '">' +
+      esc(plural(notes.length - 2, "more caveat") + " in the recipe record") + "</a></div>" : "") +
+    '<div class="kept-foot">' + esc("Decode figures are single-stream tok/s at the recipe\u2019s own recorded context; verified is the date this directory last reviewed the baseline. ") +
+    '<a href="#/models/' + esc(m.id) + '">' + esc("Open the family record") + "</a></div></div>";
+}
+function miReading() {
+  return '<div class="mi-reading"><div class="mi-reading-k">' + esc("Reading this index") + "</div><p>" +
+    esc("Release dates, parameter counts and context windows are the publisher\u2019s, at native context. Two-figure counts are total then active parameters. Inside an open family, the kept-by line is the recipe this directory curates as that family\u2019s practical minimum: who recorded it, its record, hardware class, single-stream decode reading with its condition and provenance, and the date the baseline was last reviewed. Provenance tiers are stated per figure and never blended. \u201cNone yet\u201d is a gap in this directory, not a statement that the model does not run; whether any of it runs on your machine is answered only in My Hardware.") +
+    "</p></div>";
+}
+
+function renderModelBar() {
+  var old = el("model-compare-bar");
+  if (old) old.remove();
+  if (!state.mcompare.length) return;
+  var names = state.mcompare.map(function (id) { return (MODELS[id] || {}).name || id; });
+  var baselines = state.mcompare.map(function (id) { return baselineSetup(MODELS[id]); }).filter(Boolean);
+  var ready = baselines.length >= 2;
+  var missing = state.mcompare.length - baselines.length;
+  var h = '<div class="model-compare-bar" id="model-compare-bar" role="region" aria-label="Selected models for comparison">' +
+    '<div><span class="model-compare-k">Selected for comparison</span><span class="model-compare-n">' +
+    esc(names.join(" · ")) + '</span>' + (missing ? '<span class="model-compare-note">' +
+      esc(missing + " selected " + (missing === 1 ? "family has" : "families have") + " no recorded baseline") + "</span>" : "") +
+    '</div><div class="model-compare-actions"><button type="button" class="btn" id="mi-compare-clear">Clear</button>' +
+    '<button type="button" class="btn btn-p" id="mi-compare-go"' + (ready ? "" : " disabled") + '>Compare ' +
+    esc(String(baselines.length)) + " models →</button></div></div>";
+  el("main").insertAdjacentHTML("beforeend", h);
 }
 
 function viewModelsHome() {
   setRail("");
-  var list = D.model_order.map(function (id) { return MODELS[id]; }).filter(modelMatches);
-  var verified = Object.keys(MODELS).filter(function (id) { return !!baselineSetup(MODELS[id]); }).length;
-  el("mast-sub").innerHTML = esc("Choose a Qwen model and read its practical hardware baseline. Every recipe stays at #/recipes.");
+  var list = modelList();
+  el("mast-sub").innerHTML = esc("Every Qwen family with a recorded local lane, newest series first. Open a family for the recipe this directory keeps as its best record; the full recipe directory stays at #/recipes.");
 
-  var h = '<div class="models-home">' + mhMast(verified) + tocControls(list);
+  var h = '<div class="models-home">' + miBand() + tocControls(list);
   if (!list.length) {
     h += '<div class="empty"><h2>No models match</h2><p>' +
       esc("Clear the search or filters to return to all " + D.model_order.length + " models.") +
@@ -1284,33 +1411,15 @@ function viewModelsHome() {
     ? state.selectedModel : list[0].id;
   state.selectedModel = sel;
 
-  h += '<div class="model-master mh-split">' +
-    '<aside class="mh-panel"><div class="model-preview" data-evidence-panel data-evidence-model="' + esc(sel) + '">' +
-      modelPreview(MODELS[sel]) + '</div></aside>' +
-    '<div class="mh-index"><div class="mh-index-head"><span class="lbl">Every model</span>' +
-      '<span class="mh-index-meta">' + esc(list.length + " of " + D.model_order.length + " shown") + '</span></div>' +
-      '<ol class="toc">' + seriesSections(list, sel) + '</ol>' +
-      '<div class="toc-foot"><span>' + esc("Qwen Local-Run Directory") + '</span><span>' +
-        esc(SETUPS.length + " recipes across " + D.model_order.length + " models") + '</span></div>' +
-    '</div></div></div>';
+  h += '<div class="model-master mh-split mi-full">' +
+    '<div class="mh-index">' +
+      '<div class="mi-scrollx"><div class="mi-table">' + miHead() + miGroups(list, sel) + miReading() + "</div></div>" +
+    "</div>" +
+  "</div></div>";
   el("main").innerHTML = h;
+  renderModelBar();
   announce(list.length + " of " + D.model_order.length + " models; showing " + MODELS[sel].name);
   writeModelHash();
-}
-
-function tocHero(list, verified, totalRecipes) {
-  return '<header class="mf-hero">' +
-    '<div class="mf-eyebrow"><span>00.0</span><span>Contents</span>' +
-      '<span class="mf-eyebrow-end">' + esc(verified + " / " + D.model_order.length + " with a curated baseline") + '</span></div>' +
-    '<div class="mf-body">' +
-      '<div class="mf-title"><span class="mf-n">01</span><h1>Choose a Qwen model</h1></div>' +
-      '<div class="mf-lede"><p>' +
-        esc("Every Qwen model with a plausible local lane, newest generation first. Each entry names what the model is and when it launched; open one for the recipes that run it.") +
-      '</p><p class="mf-lede-2">' +
-        esc(totalRecipes + " source-backed recipes sit behind these " + D.model_order.length +
-            " models. Nothing here is a recommendation \u2014 the numbers live with the recipes, each carrying its own source.") +
-      '</p></div>' +
-    '</div></header>';
 }
 
 function tocControls(list) {
@@ -2397,6 +2506,16 @@ document.addEventListener("input", function (e) {
 });
 document.addEventListener("change", function (e) {
   var t = e.target, f = t.getAttribute("data-f");
+  var mcmp = t.getAttribute("data-mcmp");
+  if (mcmp) {
+    var mi = state.mcompare.indexOf(mcmp);
+    if (t.checked && mi < 0) {
+      if (state.mcompare.length >= 4) { t.checked = false; announce("Select up to four model families."); return; }
+      state.mcompare.push(mcmp);
+    } else if (!t.checked && mi >= 0) state.mcompare.splice(mi, 1);
+    viewModelsHome();
+    return;
+  }
   if (t.id === "model-gen") { state.modelGen = t.value; viewModelsHome(); return; }
   if (t.id === "model-arch") { state.modelArch = t.value; viewModelsHome(); return; }
   if (t.id === "model-baseline") { state.modelBaseline = t.value; viewModelsHome(); return; }
@@ -2434,7 +2553,7 @@ document.addEventListener("change", function (e) {
   }
 });
 document.addEventListener("click", function (e) {
-  var t = e.target.closest ? e.target.closest("[data-hero-gen],[data-exp],[data-copy],[data-clear],[data-rail-f],[data-rail-clear],[data-jump],[data-cmp],[data-ev],[data-grp],[data-goal],[data-load],[data-model-select],[data-mode-jump],#model-clear,#clear-all,#adv-toggle,#cmp-clear,#theme,#mode-lite,#mode-pro,#hw-detect,#hw-save,#hw-clear,#hw-export,#hw-import") : null;
+  var t = e.target.closest ? e.target.closest("[data-hero-gen],[data-exp],[data-copy],[data-clear],[data-rail-f],[data-rail-clear],[data-jump],[data-cmp],[data-ev],[data-grp],[data-goal],[data-load],[data-model-select],[data-mode-jump],[data-mopen],#model-clear,#clear-all,#adv-toggle,#cmp-clear,#theme,#mode-lite,#mode-pro,#hw-detect,#hw-save,#hw-clear,#hw-export,#hw-import,#mi-open-all,#mi-close-all,#mi-compare-clear,#mi-compare-go") : null;
   if (!t) {
     hidePop();
     /* Clicking anywhere on a row header toggles it — the expander triangle is
@@ -2477,6 +2596,33 @@ document.addEventListener("click", function (e) {
   if (t.id === "model-clear") {
     state.modelQ = ""; state.modelGen = ""; state.modelArch = ""; state.modelBaseline = "";
     viewModelsHome(); return;
+  }
+  var mopen = t.getAttribute("data-mopen");
+  if (mopen) {
+    state.mopen[mopen] = !state.mopen[mopen];
+    viewModelsHome();
+    return;
+  }
+  if (t.id === "mi-open-all") {
+    modelList().forEach(function (m) { state.mopen[m.id] = true; });
+    viewModelsHome();
+    return;
+  }
+  if (t.id === "mi-close-all") {
+    state.mopen = {};
+    viewModelsHome();
+    return;
+  }
+  if (t.id === "mi-compare-clear") {
+    state.mcompare = [];
+    viewModelsHome();
+    return;
+  }
+  if (t.id === "mi-compare-go" && !t.disabled) {
+    state.compare = state.mcompare.map(function (id) { return baselineSetup(MODELS[id]); }).filter(Boolean).map(function (s) { return s.id; });
+    sess("qlr.compare", state.compare);
+    nav("#/compare");
+    return;
   }
   var hg = t.getAttribute("data-hero-gen");
   if (hg) { state.modelGen = state.modelGen === hg ? "" : hg; viewModelsHome(); return; }
