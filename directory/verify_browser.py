@@ -949,6 +949,16 @@ def main():
               [g for g in cw["groups"]] == want, str(cw["groups"]))
         check("compare renders one column per selected recipe plus the field column",
               cw["cols"] == 5, str(cw["cols"]))
+        cmp_comp = page.evaluate("""() => ({
+          title: document.querySelector('.cmp-intro h1')?.textContent || '',
+          meta: document.querySelectorAll('.cmp thead .cmp-meta').length,
+          directions: Array.from(document.querySelectorAll('.cmp tbody th.k')).map(n => n.textContent).filter(x => /first/i.test(x)),
+          best: document.querySelectorAll('.cmp-best').length
+        })""")
+        check("Compare uses the display comp title with keeper and provenance lines",
+              cmp_comp["title"] == "Read the differences" and cmp_comp["meta"] == 8, str(cmp_comp))
+        check("Compare labels performance-row reading direction without ranking marks",
+              len(cmp_comp["directions"]) >= 3 and "winner" not in page.locator(".cmp").inner_text().lower(), str(cmp_comp))
         check("compare declares no overall winner",
               cw["winner"] == 0 and "No overall winner" in cw["body"], str(cw["winner"]))
         low = cw["body"].lower()
@@ -991,6 +1001,10 @@ def main():
             bn = page.evaluate("(document.querySelector('.banner h3')||{}).textContent||''")
             check("a genuinely matched pair is not flagged as incomparable",
                   "directly comparable" in bn.lower() and "not" not in bn.lower(), bn)
+            check("comparable performance rows use quiet best-cell shading without rank marks",
+                  page.evaluate("document.querySelectorAll('.cmp-best').length") >= 1 and
+                  page.evaluate("document.querySelectorAll('.winner,.rank,.firsts,[data-rank]').length") == 0,
+                  page.evaluate("document.querySelectorAll('.cmp-best').length"))
         else:
             note("no fully matched pair exists in this dataset; positive-comparability case not exercised")
 

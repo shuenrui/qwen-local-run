@@ -1560,14 +1560,31 @@ function cval(v, cond, flagged) {
   return "<td>" + v + (cond ? '<span class="cond">' + esc(cond) + "</span>" : "") +
     (flagged ? '<span class="rowflag">' + esc("▲ not directly comparable") + "</span>" : "") + "</td>";
 }
-function cmpRow(label, list, fn, flagFn) {
+function bestCells(list, fn, lower, allowed) {
+  if (!allowed || list.length < 2) return [];
+  var vals = list.map(fn);
+  if (vals.some(function (v) { return v == null || !isFinite(v); })) return [];
+  var best = lower ? Math.min.apply(null, vals) : Math.max.apply(null, vals);
+  return vals.map(function (v) { return v === best; });
+}
+function metricValue(s, metric) {
+  var row = (s.measurements || []).filter(function (m) { return m.metric === metric && isSingle(m); })[0];
+  return row && Number(row.value);
+}
+function cmpRow(label, list, fn, flagFn, bestFn) {
   var cells = list.map(function (s) { return fn(s); });
   var flagged = flagFn ? flagFn(list) : false;
   return '<tr><th class="k" scope="row">' + esc(label) + "</th>" +
-    cells.map(function (c) {
+    cells.map(function (c, i) {
       if (c == null || c === "") return "<td>" + na() + "</td>";
-      return "<td>" + c + (flagged ? '<span class="rowflag">' + esc("▲ not directly comparable") + "</span>" : "") + "</td>";
+      return '<td' + (bestFn && bestFn[i] ? ' class="cmp-best"' : "") + ">" + c + (flagged ? '<span class="rowflag">' + esc("▲ not directly comparable") + "</span>" : "") + "</td>";
     }).join("") + "</tr>";
+}
+function cmpKeeperMeta(s) {
+  var rep = repDecode(s), keeper = keeperOf(s, rep), tier = (rep && rep.provenance) || s.provenance_tier || "not recorded";
+  var host = rep && rep.source ? String(rep.source).replace(/^https?:\/\//, "").split("/")[0] : "source not recorded";
+  return '<span class="cmp-meta"><b>Kept by</b> ' + esc(keeper || "not recorded") + '</span>' +
+    '<span class="cmp-meta"><b>Provenance</b> ' + esc(tier + " · " + host) + "</span>";
 }
 function grpRow(label, n) {
   return '<tr class="grp"><th class="k" scope="row">' + esc(label) + '</th><th colspan="' + n + '"></th></tr>';
@@ -1590,7 +1607,7 @@ function viewCompare() {
   setRail("");
   el("mast-sub").innerHTML = esc("Put two to four recipes side by side. Every axis on which their measurements are not comparable is named. No winner is declared.");
   if (!list.length) {
-    el("main").innerHTML = '<div class="page"><h1>Compare</h1>' +
+    el("main").innerHTML = '<div class="page cmp-page"><header class="cmp-intro"><p class="eyebrow">COMPARE</p><h1>Read the differences</h1></header>' +
       '<p class="lede">' + esc("Nothing is selected yet. Tick the compare box on any recipe row — in the Directory, on a model-family page, on a recipe page, or in a My Hardware result — and a selection rail appears at the bottom of the screen.") + "</p>" +
       '<div class="empty"><h2>Good places to start</h2><p>' + esc("The families with the most alternatives to weigh up:") + "</p><ul class=\"notes\">" +
       D.model_order.map(function (mid) { return { id: mid, n: SETUPS.filter(function (s) { return s.model === mid; }).length }; })
@@ -1600,7 +1617,7 @@ function viewCompare() {
     return;
   }
   var n = list.length, issues = comparability(list);
-  var h = '<div class="page wide"><h1>' + esc("Comparing " + plural(n, "recipe")) + "</h1>";
+  var h = '<div class="page wide cmp-page"><header class="cmp-intro"><p class="eyebrow">COMPARE</p><h1>Read the differences</h1><p class="lede">' + esc(plural(n, "recipe") + " side by side. Comparable rows receive a quiet reading tint; no row is ranked and no overall winner is declared.") + "</p></header>";
 
   if (n < 2) h += '<div class="banner b-info"><h3>' + esc("One recipe selected") + "</h3><p>" +
     esc("Comparison needs at least two. Add another from Recipes or a model page.") + "</p></div>";
@@ -1617,6 +1634,7 @@ function viewCompare() {
     list.map(function (s, i) {
       return '<th scope="col">' + esc(String.fromCharCode(65 + i) + " · " + tail(s.variation.checkpoint)) +
         '<span class="cond">' + esc(((ENG[(s.engine || {}).id] || {}).name || "?") + " · " + s.variation.quant) + "</span>" +
+        cmpKeeperMeta(s) +
         '<span class="cond"><a href="#/recipes/' + esc(s.id) + '">' + esc("open recipe →") + "</a></span></th>";
     }).join("") + "</tr></thead><tbody>";
 
@@ -1691,12 +1709,12 @@ function viewCompare() {
   });
 
   h += grpRow("Performance", n);
-  h += cmpRow("Single-stream decode", list, function (s) { return metricCell(s, "decode_chat", true) === '<span class="na">no measurement</span>' ? (function () {
+  h += cmpRow("Single-stream decode · higher first", list, function (s) { return metricCell(s, "decode_chat", true) === '<span class="na">no measurement</span>' ? (function () {
     var r = repDecode(s);
     return r ? '<b class="num">' + esc(r.value) + "</b> tok/s" + '<span class="cond">' + esc(condOf(r)) + "</span>" : '<span class="na">no measurement</span>';
-  })() : metricCell(s, "decode_chat", true); }, perfFlag);
-  h += cmpRow("Prefill", list, function (s) { return metricCell(s, "prefill_tok_s"); }, perfFlag);
-  h += cmpRow("Time to first token", list, function (s) { return metricCell(s, "ttft_ms"); }, perfFlag);
+  })() : metricCell(s, "decode_chat", true); }, perfFlag, bestCells(list, function (s) { var r = repDecode(s); return r && Number(r.value); }, false, !mixedHw && !mixedMetric));
+  h += cmpRow("Prefill · higher first", list, function (s) { return metricCell(s, "prefill_tok_s"); }, perfFlag, bestCells(list, function (s) { return metricValue(s, "prefill_tok_s"); }, false, !mixedHw && !mixedMetric));
+  h += cmpRow("Time to first token · lower first", list, function (s) { return metricCell(s, "ttft_ms"); }, perfFlag, bestCells(list, function (s) { return metricValue(s, "ttft_ms"); }, true, !mixedHw && !mixedMetric));
   h += cmpRow("Aggregate throughput", list, function (s) { return metricCell(s, "decode_agg"); }, perfFlag);
   h += cmpRow("Per-stream at load", list, function (s) { return metricCell(s, "decode_per_stream", false); }, perfFlag);
   h += cmpRow("Concurrency recorded", list, function (s) {
