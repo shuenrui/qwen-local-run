@@ -833,6 +833,24 @@ tr.det>td{padding:0;border-bottom:1px solid var(--rule-2)}
 .empty .acts{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
 
 /* ---------- my hardware ---------- */
+.hw-intro{padding:16px 0 4px;border-top:2px solid var(--rule-3)}
+.hw-intro h1{font:600 clamp(31px,4vw,52px)/.98 var(--font-display);letter-spacing:-.025em;margin:4px 0 9px;max-width:13ch}
+.hw-intro .lede{max-width:68ch;margin:0;color:var(--ink-2)}
+.hw-chooser{margin:11px 0 14px;padding:10px 0 12px;border-top:1px solid var(--rule-2);border-bottom:1px solid var(--rule-2)}
+.hw-choice-head{display:flex;align-items:baseline;justify-content:space-between;gap:10px;margin-bottom:7px}
+.hw-memory-head{margin-top:13px}
+.hw-chip-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5px}
+.hw-chip,.hw-memory{font:500 12px/1.2 var(--font-ui);text-align:left;color:var(--ink);background:transparent;border:1px solid var(--rule-2);min-height:49px;padding:7px 8px;cursor:pointer}
+.hw-chip:hover,.hw-memory:hover{border-color:var(--rule-3);background:var(--sunk)}
+.hw-chip.on,.hw-memory.on{border-color:var(--sel);box-shadow:inset 3px 0 0 var(--sel);background:var(--sunk)}
+.hw-chip b{display:block;font-weight:650}
+.hw-chip span{display:block;margin-top:4px;color:var(--ink-3);font:450 10.5px/1.25 var(--font-mono)}
+.hw-memory-grid{display:flex;flex-wrap:wrap;gap:5px}
+.hw-memory{min-height:32px;min-width:48px;text-align:center;padding:5px 8px;font:500 11px/1 var(--font-mono)}
+.hw-checkbar{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:baseline;gap:11px;margin:20px 0 13px;padding:10px 12px;border-top:2px solid var(--sel);border-bottom:1px solid var(--rule-2);background:var(--sunk)}
+.hw-checkbar .eyebrow{color:var(--sel);font:650 10px/1.2 var(--font-mono);letter-spacing:.1em}
+.hw-checkbar b{font:600 17px/1.25 var(--font-display);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.hw-checkbar .g{font-size:11px;text-align:right}
 .hw{display:grid;grid-template-columns:380px minmax(0,1fr);gap:26px;padding:20px 0 40px;align-items:start}
 .hw-pane{position:sticky;top:78px;border:0;border-top:2px solid var(--rule-3);background:transparent;padding:14px 0}
 .hw-modes{display:grid;grid-template-columns:1fr 1fr;gap:5px;margin:10px 0 13px}
@@ -940,6 +958,10 @@ tr.det>td{padding:0;border-bottom:1px solid var(--rule-2)}
   .recipe-actions .copy{width:100%}
   .det-grid{grid-template-columns:minmax(0,1fr)}
   .assump{padding:9px}
+  .hw-intro h1{font-size:39px}
+  .hw-chip-grid{grid-template-columns:1fr}
+  .hw-checkbar{grid-template-columns:1fr;gap:4px;margin-top:14px}
+  .hw-checkbar .g{text-align:left}
   .calc-tab th{width:auto;display:block;padding-bottom:0}
   .calc-tab td{display:block;padding-top:1px;padding-bottom:6px}
   /* label-above-value at narrow widths: a nowrap label column forces overflow */

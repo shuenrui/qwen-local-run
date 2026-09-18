@@ -1034,6 +1034,32 @@ def main():
 
         # ------------------------------------------------------ my hardware
         goto(page, "#/hardware")
+        hw_comp = page.evaluate("""() => ({
+          title: document.querySelector('.hw-intro h1')?.textContent || '',
+          chips: document.querySelectorAll('[data-hwchip]').length,
+          memories: Array.from(document.querySelectorAll('[data-hwmemory]')).map(n => n.textContent.trim()),
+          bar: document.querySelector('.hw-checkbar')?.innerText || '',
+          formSuperset: ['hw-known','hwf-os','hwf-chip','hwf-gpu','hw-save','hw-clear'].every(id => !!document.getElementById(id))
+        })""")
+        check("My Hardware matches the chip-based comp while keeping the full form superset",
+              "Check against my machine" in hw_comp["title"] and hw_comp["chips"] == len(HW) and hw_comp["formSuperset"], str(hw_comp))
+        check("My Hardware exposes memory chips and a CHECKING AGAINST bar",
+              "64 GB" in hw_comp["memories"] and "CHECKING AGAINST" in hw_comp["bar"], str(hw_comp))
+        page.click('[data-hwchip="mac-64gb"]')
+        page.wait_for_timeout(250)
+        chip_state = page.evaluate("""() => ({
+          device: document.querySelector('[data-hwchip="mac-64gb"]')?.getAttribute('aria-pressed'),
+          bar: document.querySelector('.hw-checkbar')?.innerText || '',
+          groups: document.querySelectorAll('.grp-hd').length
+        })""")
+        check("selecting a device chip updates the checking bar and keeps compatibility results",
+              chip_state["device"] == "true" and "CHECKING AGAINST" in chip_state["bar"] and chip_state["groups"] == 5, str(chip_state))
+        page.click('[data-hwmemory="128"]')
+        page.wait_for_timeout(180)
+        check("memory chip updates the recorded profile without creating a bare fit claim",
+              "128 GB available" in (page.locator(".hw-checkbar").inner_text() or "") and
+              not any(re.match(r"\s*(✓\s*)?fits\b", v, re.I) for v in page.locator(".verdict").all_text_contents()),
+              page.locator(".hw-checkbar").inner_text())
         check("My Hardware states what detection reads and that nothing leaves the device",
               "Nothing leaves this device" in text(page) and "navigator.deviceMemory" in text(page))
         page.select_option("#hw-known", "mac-64gb")

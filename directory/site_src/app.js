@@ -1925,6 +1925,20 @@ function resultCard(s, r, p) {
     '<span class="g" style="font-size:12px">' + esc(((ENG[(s.engine || {}).id] || {}).name || "?") + " · " + s.variation.quant + " · " + complexityWord(s)) + "</span></div></div>";
 }
 
+function hydrateKnownProfile(id) {
+  var hw = HW[id];
+  if (!hw) return;
+  state.profile = blankProfile();
+  state.profile.deviceId = id;
+  state.profile.name = hw.name;
+  state.profile.ramGb = hw.memory_gb;
+  state.profile.chip = hw.chip || "";
+  state.profile.gpu = hw.gpu || "";
+  state.profile.unified = /unified/i.test(hw.memory_type || "") ? "unified" : "separate";
+  state.profile.os = /Metal/i.test(hw.arch || "") ? "macos" : "linux";
+  state.profile.gpuCount = /multi/i.test(hw.form_factor || "") ? 2 : 1;
+}
+
 var GOALS = [
   ["chat", "General chat", "filter", null],
   ["coding", "Coding", "evidence-only", null],
@@ -1942,7 +1956,19 @@ function viewHardware() {
   setRail("");
   el("mast-sub").innerHTML = esc("Check the directory against one machine. Nothing here narrows the Directory, and no unconditional “fits” verdict is ever shown.");
 
-  var h = '<div class="hw"><section class="hw-pane" aria-label="Your machine"><h2 class="lbl" style="font-size:11px">Your machine</h2>';
+  var h = '<div class="page hw-page"><header class="hw-intro"><p class="eyebrow">MY HARDWARE</p><h1>Check against my machine</h1>' +
+    '<p class="lede">Choose a recorded device class or describe your own. The result keeps measured evidence, memory arithmetic, and uncertainty separate.</p></header>' +
+    '<div class="hw"><section class="hw-pane" aria-label="Your machine"><h2 class="lbl" style="font-size:11px">Your machine</h2>';
+  h += '<div class="hw-chooser"><div class="hw-choice-head"><span id="hw-device-label" class="lbl">DEVICE CLASS</span><span class="g">' + esc(Object.keys(HW).length + " recorded classes") + '</span></div>' +
+    '<div class="hw-chip-grid" role="group" aria-labelledby="hw-device-label">' + Object.keys(HW).map(function (id) {
+      var x = HW[id], active = p && p.deviceId === id;
+      return '<button type="button" class="hw-chip' + (active ? " on" : "") + '" data-hwchip="' + esc(id) + '" aria-pressed="' + active + '"><b>' + esc(x.name) + '</b><span>' + esc((x.memory_gb != null ? gb(x.memory_gb) : "memory not recorded") + " · " + (x.arch || "architecture not recorded")) + '</span></button>';
+    }).join("") + '</div>' +
+    '<div class="hw-choice-head hw-memory-head"><span id="hw-memory-label" class="lbl">MEMORY AVAILABLE</span><span class="g">optional shorthand</span></div>' +
+    '<div class="hw-memory-grid" role="group" aria-labelledby="hw-memory-label">' + [16, 24, 32, 64, 96, 128, 256].map(function (n) {
+      var active = p && p.ramGb === n;
+      return '<button type="button" class="hw-memory' + (active ? " on" : "") + '" data-hwmemory="' + n + '" aria-pressed="' + active + '">' + esc(gb(n)) + '</button>';
+    }).join("") + '</div></div>';
   h += '<div class="hw-modes">' +
     '<button type="button" class="btn" id="hw-detect">Detect this machine</button>' +
     '<label class="fld"><select id="hw-known" aria-label="Select a known device"><option value="">Known device…</option>' +
@@ -1980,7 +2006,7 @@ function viewHardware() {
   }).join(" ") + "</p>";
   h += '<div class="privacy"><b>' + esc("Nothing leaves this device.") + "</b> " +
     esc("The whole dataset is inlined in this page, so it makes no network request after load — you can confirm that in your browser's network panel. Detection reads only navigator.userAgentData, navigator.hardwareConcurrency, navigator.deviceMemory, the WebGPU adapter description and the WebGL renderer string. Profiles are stored in this browser only.") + "</div>";
-  h += "</section><section aria-label=\"Compatibility results\">";
+  h += "</section><section aria-label=\"Compatibility results\"><div class=\"hw-checkbar\"><span class=\"eyebrow\">CHECKING AGAINST</span><b>" + esc(p ? (p.name || p.chip || p.gpu || "your machine") : "Choose a machine above") + "</b><span class=\"g\">" + esc(p ? ((p.ramGb != null ? gb(p.ramGb) : "memory not recorded") + " available · no bare fit verdicts") : "results stay empty until a profile is described") + "</span></div>";
 
   if (!p) {
     h += '<div class="empty"><h2>' + esc("No machine described yet") + "</h2>" +
@@ -2039,7 +2065,7 @@ function viewHardware() {
   });
   finishHardware(h);
 }
-function finishHardware(h) { el("main").innerHTML = h + "</section></div>"; }
+function finishHardware(h) { el("main").innerHTML = h + "</section></div></div>"; }
 
 /* ------------------------------------------------------------- detection */
 function detectMachine(cb) {
@@ -2526,16 +2552,7 @@ document.addEventListener("change", function (e) {
   if (t.id === "hw-known") {
     var id = t.value;
     if (!id) return;
-    var hw = HW[id];
-    state.profile = blankProfile();
-    state.profile.deviceId = id;
-    state.profile.name = hw.name;
-    state.profile.ramGb = hw.memory_gb;
-    state.profile.chip = hw.chip || "";
-    state.profile.gpu = hw.gpu || "";
-    state.profile.unified = /unified/i.test(hw.memory_type || "") ? "unified" : "separate";
-    state.profile.os = /Metal/i.test(hw.arch || "") ? "macos" : "linux";
-    state.profile.gpuCount = /multi/i.test(hw.form_factor || "") ? 2 : 1;
+    hydrateKnownProfile(id);
     viewHardware();
     return;
   }
@@ -2553,7 +2570,7 @@ document.addEventListener("change", function (e) {
   }
 });
 document.addEventListener("click", function (e) {
-  var t = e.target.closest ? e.target.closest("[data-hero-gen],[data-exp],[data-copy],[data-clear],[data-rail-f],[data-rail-clear],[data-jump],[data-cmp],[data-ev],[data-grp],[data-goal],[data-load],[data-model-select],[data-mode-jump],[data-mopen],#model-clear,#clear-all,#adv-toggle,#cmp-clear,#theme,#mode-lite,#mode-pro,#hw-detect,#hw-save,#hw-clear,#hw-export,#hw-import,#mi-open-all,#mi-close-all,#mi-compare-clear,#mi-compare-go") : null;
+  var t = e.target.closest ? e.target.closest("[data-hero-gen],[data-exp],[data-copy],[data-clear],[data-rail-f],[data-rail-clear],[data-jump],[data-cmp],[data-ev],[data-grp],[data-goal],[data-load],[data-model-select],[data-mode-jump],[data-mopen],[data-hwchip],[data-hwmemory],#model-clear,#clear-all,#adv-toggle,#cmp-clear,#theme,#mode-lite,#mode-pro,#hw-detect,#hw-save,#hw-clear,#hw-export,#hw-import,#mi-open-all,#mi-close-all,#mi-compare-clear,#mi-compare-go") : null;
   if (!t) {
     hidePop();
     /* Clicking anywhere on a row header toggles it — the expander triangle is
@@ -2680,6 +2697,18 @@ document.addEventListener("click", function (e) {
   if (goal) { state.goal = state.goal === goal ? null : goal; viewHardware(); return; }
   var load = t.getAttribute("data-load");
   if (load != null) { var arr = store("qlr.profiles.v2") || []; state.profile = arr[+load] || null; viewHardware(); return; }
+
+  var hwchip = t.getAttribute("data-hwchip");
+  if (hwchip) { hydrateKnownProfile(hwchip); viewHardware(); announce("Checking against " + (HW[hwchip] || {}).name); return; }
+  var hwmemory = t.getAttribute("data-hwmemory");
+  if (hwmemory) {
+    if (!state.profile) state.profile = blankProfile();
+    state.profile.ramGb = Number(hwmemory);
+    state.profile.name = state.profile.name || "custom memory profile";
+    viewHardware();
+    announce("Using " + gb(Number(hwmemory)) + " of available memory");
+    return;
+  }
 
   if (t.id === "hw-detect") {
     var out = el("hw-detect-out");
