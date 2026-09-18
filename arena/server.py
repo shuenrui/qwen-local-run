@@ -729,9 +729,9 @@ def run_job(job):
                 it["artifact"] = rel
             except OSError:
                 pass
-        _persist_job(job, saved)
         job["saved_dir"] = os.path.relpath(saved, ROOT)
         job["status"] = "stopped" if job.get("cancel") else "done"
+        _persist_job(job, saved)
         add_event(job, {"type": "job-done", "saved_dir": job["saved_dir"],
                         "rates": job["rates"], "stopped": bool(job.get("cancel"))})
     finally:
