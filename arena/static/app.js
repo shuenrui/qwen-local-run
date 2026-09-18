@@ -471,6 +471,10 @@ $('challenge').onchange=applyChallenge;
 /* ------------------ DOM grading via hidden sandboxed iframe ------------------ */
 const CHECK_SHIM='<script>(function(){var errs=[];window.onerror=function(m){errs.push(String(m));return false;};'+
  'window.addEventListener("unhandledrejection",function(e){errs.push("promise: "+e.reason);});'+
+ 'var raf=0,orAF=window.requestAnimationFrame;window.requestAnimationFrame=function(c){raf++;return orAF.call(window,function(t){c(t);});};'+
+ 'var gCtx=HTMLCanvasElement.prototype.getContext;HTMLCanvasElement.prototype.getContext=function(t,a){'+
+ 'if(a&&(t==="webgl"||t==="webgl2"||t==="experimental-webgl")){a=Object.assign({},a);a.preserveDrawingBuffer=true;}'+
+ 'return gCtx.call(this,t,a);};'+
  'var specs=%%SPECS%%,out=[],sent=false,started=false;var timer=setTimeout(finish,12000);'+
  'function finish(){if(sent)return;sent=true;clearTimeout(timer);'+
  'parent.postMessage({__arenaGrade:1,checks:out.length?out:[{type:"dom_no_errors",pass:errs.length===0}]},"*");}'+
@@ -481,10 +485,10 @@ const CHECK_SHIM='<script>(function(){var errs=[];window.onerror=function(m){err
  'else if(t==="dom_selectors"){var res={};(sp.selectors||[]).forEach(function(s){try{res[s]=document.querySelectorAll(s).length;}catch(e){res[s]=-1;}});'+
  'out.push({type:t,pass:Object.keys(res).every(function(k){return res[k]>=1;}),sel:res});tick();}'+
  'else if(t==="canvas_motion"){var cv=document.querySelector(sp.selector||"canvas");'+
- 'if(!cv){out.push({type:t,pass:false,err:"no canvas found"});tick();return;}'+
- 'var d1;try{d1=cv.toDataURL();}catch(e){out.push({type:t,pass:false,err:"canvas blocked: "+e});tick();return;}'+
+ 'if(!cv){out.push({type:t,pass:false,err:"no canvas found",raf:raf});tick();return;}'+
+ 'var d1;try{d1=cv.toDataURL();}catch(e){out.push({type:t,pass:false,err:"canvas blocked: "+e,raf:raf});tick();return;}'+
  'setTimeout(function(){if(sent)return;var r;'+
- 'try{r={type:t,pass:cv.toDataURL()!==d1};}catch(e){r={type:t,pass:false,err:String(e)};}'+
+ 'try{r={type:t,pass:cv.toDataURL()!==d1,raf:raf};}catch(e){r={type:t,pass:false,err:String(e),raf:raf};}'+
  'out.push(r);tick();},sp.delay_ms||900);}'+
  'else{out.push({type:t,pass:false,err:"unknown check type"});tick();}}'+
  'function start(){if(started||sent)return;started=true;tick();}'+
@@ -573,3 +577,18 @@ loadModels();
 refreshScores();
 loadChallenges();
 loadHistory();
+
+/* Reconnect to a run still in progress after a page refresh — the server
+   replays the whole event log to a fresh SSE connection. */
+(async()=>{
+  try{
+    const r=await (await fetch('/api/jobs/last')).json();
+    if(r&&r.job){
+      buildCards(r.order||[]);
+      $('results').hidden=false;
+      $('status').textContent='reconnected to running job…';
+      $('stop').hidden=false; $('stop').disabled=false; $('stop').textContent='■ Stop';
+      openStream(r.job);
+    }
+  }catch(e){}
+})();

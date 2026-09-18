@@ -890,6 +890,14 @@ class Handler(BaseHTTPRequestHandler):
             return self._static(path[len("/static/"):], None)
         if path == "/api/models":
             return self._json(200, {"models": discover_models()})
+        if path == "/api/jobs/last":
+            with jobs_lock:
+                live = [j for j in jobs.values() if j["status"] == "running"]
+                j = live[-1] if live else None
+            if j is None:
+                return self._json(200, {"job": None})
+            return self._json(200, {"job": j["id"], "order": j["order"],
+                                    "status": j["status"]})
         if path == "/api/challenges":
             return self._json(200, {"challenges": list_challenges()})
         if path == "/api/runs":
@@ -1233,7 +1241,7 @@ class Handler(BaseHTTPRequestHandler):
             while True:
                 with jobs_lock:
                     evs = job["events"][idx:]
-                    done = (job["status"] == "done")
+                    done = job["status"] in ("done", "stopped")
                 if evs:
                     idx += len(evs)
                     blob = "".join("data: " + json.dumps(e) + "\n\n" for e in evs)
