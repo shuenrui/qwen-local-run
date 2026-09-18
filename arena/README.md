@@ -52,7 +52,8 @@ cached, cached_gib, dl_status, dl_got_gib, dl_total_gib, dl_speed_mbs, dl_error}
 | Endpoint | Meaning |
 |---|---|
 | `GET /api/models` | discovered models + live cache/download state |
-| `POST /api/run` `{prompt, models:[profile id], thinking, max_tokens, temperature, engine:"mtp"\|"dspark", auto, challenge?, runs?}` | start a comparison → `202 {job_id, order}` — `order` is a **randomized blind key list** (`A`, or `A1,A2…` when `runs>1`); identity↔slot lives only in the job (`400` bad input; `409` one job at a time). With `challenge`, the file supplies prompt (unless overridden), options defaults, and the `checks` rubric |
+| `POST /api/run` `{prompt, models:[profile id], thinking, max_tokens, temperature, engine:"mtp"\|"dspark", auto, challenge?, runs?}` | start a comparison → `202 {job_id, order}` — `order` is a **randomized blind key list** (`A`, or `A1,A2…` when `runs>1`); identity↔slot lives only in the job (`400` bad input; `409` one job at a time). With `challenge`, the file supplies prompt (unless overridden), options defaults, and the `checks` rubric. `max_tokens` is clamped to 32000 |
+| `POST /api/stop` `{job}` | stop the running job: aborts the in-flight stream (partial output kept), skips remaining models/reps, saves what exists, releases the run lock (`409` if not running). Voting is disabled for stopped runs |
 | `POST /api/vote` `{job, pick:"A"…"K"\|"TIE"}` | lock in a blind preference vote after the run finishes (one per run, `409` on repeat or before completion); persisted as `votes.json` next to `results.json` |
 | `GET /api/scores` | aggregate tally of every saved blind vote: `{rows:[{id,label,wins,ties,losses,votes,win_rate}]}` (ties count ½) |
 | `GET /api/scores/export` | scoreboard as CSV attachment |

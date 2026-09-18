@@ -219,20 +219,30 @@ function openStream(jid){
         setStatus(sl,'error');
         if(CARD[sl]) CARD[sl].body.innerHTML='<div class="err">⚠ '+escapeHtml(ev.error)+'</div>';
         break;
+      case 'stopped':
+        if(CARD[sl]) CARD[sl].streaming=false;
+        setStatus(sl,'stopped');
+        renderBody(sl);
+        if(CARD[sl]&&![...CARD[sl].metrics.querySelectorAll('.pill')].some(p=>p.textContent.includes('stopped')))
+          CARD[sl].metrics.insertAdjacentHTML('beforeend',
+            '<span class="pill no" title="stopped by user — partial output kept">■ stopped</span>');
+        break;
       case 'job-done':
-        $('saved').textContent='saved → '+ev.saved_dir;
-        if(HAS_CHECKS && ev.rates){
+        $('stop').hidden=true;
+        $('saved').textContent=(ev.stopped?'stopped · partial run saved → ':'saved → ')+ev.saved_dir;
+        if(!ev.stopped && HAS_CHECKS && ev.rates){
           const bits=Object.keys(ev.rates).sort().map(s=>{ const e=ev.rates[s];
             return `${s}: pass@1 ${e.pass1?'✓':'✗'} · ${e.n_pass}/${e.k} reps`; });
           if(bits.length) $('saved').textContent += '   ·   '+bits.join('  |  ');
         }
         document.querySelectorAll('#export .exp').forEach(a=>{ a.href='/api/jobs/'+LAST_JOB+'/export?fmt='+a.dataset.fmt; });
         $('export').hidden=false;
-        showVoting();
+        if(!ev.stopped) showVoting();
         break;
       case 'end':
         $('status').textContent='done — read side-by-side, Preview if it is code, then vote';
         $('run').disabled=false;
+        $('stop').hidden=true;
         if(ES) ES.close(); ES=null;
         break;
     }
@@ -368,7 +378,7 @@ $('run').onclick=async()=>{
   if(!prompt){ $('status').textContent='type a prompt'; return; }
   const temp=$('temp').value===''?null:parseFloat($('temp').value);
   const body={prompt,models:ids,thinking:$('thinking').checked,
-    max_tokens:parseInt($('maxtok').value,10)||2000,temperature:temp,
+    max_tokens:Math.min(parseInt($('maxtok').value,10)||32000,32000),temperature:temp,
     engine:$('engine').value,auto:$('auto').checked,
     runs:parseInt($('runs').value,10)||1};
   LASTMAX=body.max_tokens;
@@ -383,7 +393,20 @@ $('run').onclick=async()=>{
   if(!r.ok){ $('status').textContent='error: '+(j.error||('HTTP '+r.status)); $('run').disabled=false; return; }
   buildCards(j.order||[]);
   $('status').textContent='running… (serial, blind)';
+  $('stop').hidden=false; $('stop').disabled=false; $('stop').textContent='■ Stop';
   openStream(j.job_id);
+};
+
+$('stop').onclick=async()=>{
+  if(!LAST_JOB) return;
+  $('stop').disabled=true; $('stop').textContent='stopping…';
+  let r;
+  try{ r=await fetch('/api/stop',{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({job:LAST_JOB})}); }
+  catch(e){ $('stop').disabled=false; $('stop').textContent='■ Stop'; return; }
+  if(!r.ok){ const j=await r.json().catch(()=>({}));
+    $('stop').disabled=false; $('stop').textContent='■ Stop';
+    $('status').textContent='stop refused: '+(j.error||('HTTP '+r.status)); }
 };
 
 /* copy buttons on rendered code blocks */

@@ -16,6 +16,7 @@ Endpoints:
   GET  /static/<file>         -> assets
   GET  /api/models            -> discovered models + live cache status
   POST /api/run               -> {job_id} (202) | 409 busy | 400 bad input
+  POST /api/stop              -> {job} (200 stopping) | 409 not running
   GET  /api/jobs/<id>         -> job snapshot (poll fallback)
   GET  /api/jobs/<id>/stream  -> SSE: status + token deltas + final metrics
 
@@ -54,7 +55,7 @@ HF_HUB = os.path.join(ROOT, ".cache", "huggingface", "hub")
 # its .locks. This image is already present locally and ships huggingface_hub.
 DOWNLOAD_IMAGE = os.environ.get("ARENA_DL_IMAGE", "lmsysorg/sglang:qwen38-27b")
 
-MAX_TOKEN_LIMIT = 5000
+MAX_TOKEN_LIMIT = 32000
 READY_TIMEOUT_S = 1200                            # model boot can be slow
 
 jobs = {}
@@ -338,10 +339,16 @@ def add_event(job, ev):
     job["events"].append(ev)
 
 
-def wait_ready(port, timeout_s=READY_TIMEOUT_S):
+class Cancelled(Exception):
+    """User pressed Stop; unwinds the current model group without erroring."""
+
+
+def wait_ready(port, timeout_s=READY_TIMEOUT_S, stop=None):
     url = f"http://127.0.0.1:{port}/v1/models"
     t0 = time.time()
     while time.time() - t0 < timeout_s:
+        if stop and stop():
+            return False
         try:
             with urllib.request.urlopen(url, timeout=10) as r:
                 if r.status == 200:
@@ -382,8 +389,12 @@ def stream_chat(job, item, port, served_model, prompt, thinking, max_tokens, tem
     first = None
     parts, reasoning = [], []
     usage_tokens = None
+    stopped = False
     with urllib.request.urlopen(req, timeout=900) as r:
         for raw in r:
+            if job.get("cancel"):
+                stopped = True            # client disconnect aborts SGLang's generation
+                break
             line = raw.decode("utf-8", "replace").strip()
             if not line.startswith("data:"):
                 continue
@@ -420,7 +431,7 @@ def stream_chat(job, item, port, served_model, prompt, thinking, max_tokens, tem
     return {"text": text, "reasoning": "".join(reasoning),
             "ttft_s": round((first or time.time()) - t0, 2),
             "total_s": round(total, 2), "tokens": usage_tokens,
-            "estimated": estimated}
+            "estimated": estimated, "stopped": stopped}
 
 
 # --------------------- challenges, checks, grading --------------------------
@@ -628,7 +639,7 @@ def run_job(job):
             port, cname = first["port"], first["container_name"]
             try:
                 if job.get("cancel"):
-                    raise RuntimeError("cancelled before this model")
+                    raise Cancelled()
                 if job["auto"]:
                     if first.get("engine", "sglang") != "sglang":
                         raise RuntimeError("manual-only lane (ENGINE=%s): boot it yourself, "
@@ -646,14 +657,23 @@ def run_job(job):
                     for it in items:
                         it["status"] = "waiting-ready"
                     add_event(job, {"type": "status", "slot": items[-1]["key"], "status": "waiting-ready"})
-                    if not wait_ready(port):
+                    if not wait_ready(port, stop=lambda: job.get("cancel")):
+                        if job.get("cancel"):
+                            raise Cancelled()
                         raise RuntimeError("server never became ready")
                 for it in items:
+                    if job.get("cancel"):
+                        raise Cancelled()
                     it["status"] = "running"
                     add_event(job, {"type": "status", "slot": it["key"], "status": "running"})
                     try:
                         m = stream_chat(job, it, port, it["served_model"], job["prompt"],
                                         job["thinking"], job["max_tokens"], job["temperature"])
+                        if m.get("stopped"):
+                            it.update(m, status="stopped")
+                            add_event(job, {"type": "stopped", "slot": it["key"],
+                                            "tokens": m["tokens"]})
+                            raise Cancelled()
                         it.update(m, status="done")
                         it["toks_per_s"] = round(m["tokens"] / max(m["total_s"], 1e-6), 1)
                         run_server_checks(it, job["prompt"], job["max_tokens"])
@@ -666,10 +686,17 @@ def run_job(job):
                                         "dom": [c for c in it.get("checks", [])
                                                 if str(c.get("type", "")).startswith("dom_")],
                                         "passed": it.get("passed")})
+                    except Cancelled:
+                        raise
                     except Exception as e:          # one rep can fail; others continue
                         it["status"] = "error"
                         it["error"] = str(e)[:500]
                         add_event(job, {"type": "error", "slot": it["key"], "error": it["error"]})
+            except Cancelled:
+                for it in items:
+                    if it["status"] not in ("done", "error", "stopped"):
+                        it["status"] = "stopped"
+                        add_event(job, {"type": "stopped", "slot": it["key"]})
             except Exception as e:                   # boot failure fails the whole group
                 for it in items:
                     if it["status"] not in ("done", "error"):
@@ -704,8 +731,9 @@ def run_job(job):
                 pass
         _persist_job(job, saved)
         job["saved_dir"] = os.path.relpath(saved, ROOT)
-        job["status"] = "done"
-        add_event(job, {"type": "job-done", "saved_dir": job["saved_dir"], "rates": job["rates"]})
+        job["status"] = "stopped" if job.get("cancel") else "done"
+        add_event(job, {"type": "job-done", "saved_dir": job["saved_dir"],
+                        "rates": job["rates"], "stopped": bool(job.get("cancel"))})
     finally:
         run_lock.release()
 
@@ -895,6 +923,8 @@ class Handler(BaseHTTPRequestHandler):
             return self._download()
         if path == "/api/cancel":
             return self._cancel()
+        if path == "/api/stop":
+            return self._stop()
         if path == "/api/vote":
             return self._vote()
         if path == "/api/grade":
@@ -1001,6 +1031,22 @@ class Handler(BaseHTTPRequestHandler):
             return self._json(400, {"error": f"unknown model '{mid}'"})
         cancel_download(mid)
         return self._json(200, {"cancelled": mid})
+
+    def _stop(self):
+        try:
+            n = int(self.headers.get("Content-Length", 0) or 0)
+            body = json.loads(self.rfile.read(n) or b"{}")
+        except Exception:
+            return self._json(400, {"error": "invalid JSON"})
+        jid = body.get("job")
+        with jobs_lock:
+            job = jobs.get(jid)
+            if job is None:
+                return self._json(404, {"error": "unknown job"})
+            if job["status"] != "running":
+                return self._json(409, {"error": "job not running"})
+            job["cancel"] = True
+        return self._json(200, {"stopping": jid})
 
     def _vote(self):
         try:

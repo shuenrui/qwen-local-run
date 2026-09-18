@@ -28,7 +28,7 @@
         <select id="challenge"><option value="">custom…</option></select>
       </label>
       <label class="opt"><input type="checkbox" id="thinking"> thinking</label>
-      <label class="opt">max_tokens <input id="maxtok" type="number" value="2000" min="16" max="5000"></label>
+      <label class="opt">max_tokens <input id="maxtok" type="number" value="8000" min="16" max="32000" title="Output cap only — the model stops earlier if it finishes its answer. Leave blank for the max (32000)."></label>
       <label class="opt">runs <input id="runs" type="number" value="1" min="1" max="5"></label>
       <label class="opt">temp <input id="temp" type="number" placeholder="default" step="0.1" min="0" max="2"></label>
       <label class="opt">engine
@@ -39,6 +39,7 @@
       </label>
       <label class="opt"><input type="checkbox" id="auto" checked> auto start/stop</label>
       <button id="run" class="run">Run ▶</button>
+      <button id="stop" class="ghost" hidden>■ Stop</button>
       <button id="tiebtn" class="ghost" hidden>🤝 It's a tie</button>
       <button id="reveal" class="ghost" hidden>Reveal names</button>
       <span id="status" class="status"></span>
