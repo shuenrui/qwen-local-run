@@ -554,6 +554,7 @@ async function showRun(name){
   const v=$('hviewer'); v.innerHTML='';
   const h=document.createElement('h3'); h.textContent=name; v.appendChild(h);
   const p=document.createElement('div'); p.className='hint'; p.textContent='Prompt: '+(j.prompt||''); v.appendChild(p);
+  const grid=document.createElement('div'); grid.className='cards';
   (j.results||[]).forEach(r=>{
     const c=document.createElement('div'); c.className='card';
     const meta=(r.label||r.name||'')+(r.rep>1?` rep ${r.rep}`:'')+' — '+r.status+
@@ -567,8 +568,9 @@ async function showRun(name){
       c.querySelector('h3').appendChild(a);
     }
     c.querySelector('.body').innerHTML=renderMarkdown(r.text||('⚠ '+(r.error||'')));
-    v.appendChild(c);
+    grid.appendChild(c);
   });
+  v.appendChild(grid);
   v.scrollIntoView({behavior:'smooth'});
 }
 $('hrefresh').onclick=e=>{ e.preventDefault(); loadHistory(); };
