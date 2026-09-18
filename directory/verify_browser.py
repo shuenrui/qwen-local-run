@@ -1509,6 +1509,82 @@ def main():
               not p8_errors and "pro dossier" in text(p8).lower(), str(p8_errors[:2]))
         ctx8.close()
 
+        # task #19: the control may only exist where mode can change output.
+        # detailBody() is the sole mode branch -- viewRecipe reaches it directly,
+        # viewDirectory/viewModel/viewPublisher reach it through rowsHtml() once a
+        # row is expanded. Anywhere else a visible, focusable, announced control
+        # that changes nothing is the defect the owner hit on the model chooser.
+        ctx9 = browser.new_context(viewport={"width": 1440, "height": 1000})
+        p9 = ctx9.new_page()
+        p9_errors = []
+        p9.on("pageerror", lambda e: p9_errors.append(str(e)))
+
+        def mode_ctl(pg):
+            return pg.evaluate("""() => {
+              var c = document.querySelector('.mode-ctl');
+              if (!c) return null;
+              var r = c.getBoundingClientRect();
+              return { hidden: c.hasAttribute('hidden'),
+                       shown: r.width > 0 && r.height > 0,
+                       display: getComputedStyle(c).display };
+            }""")
+
+        def ctl_at(h):
+            p9.goto(BASE + h)
+            p9.wait_for_timeout(250)
+            return mode_ctl(p9)
+
+        # discover a model route rather than hardcoding an id that data can change
+        p9.goto(BASE + "#/")
+        p9.wait_for_timeout(250)
+        model_href = p9.evaluate("""() => {
+          var a = document.querySelector('a[href^="#/models/"]');
+          return a ? a.getAttribute('href') : null;
+        }""")
+        check("a model route is discoverable for the mode-control scoping test",
+              bool(model_href), str(model_href))
+
+        for h in ["#/", "#/hardware", "#/compare", "#/methodology", "#/contribute"]:
+            c = ctl_at(h)
+            check("mode control is not rendered on a mode-blind route: " + h,
+                  bool(c) and c["hidden"] and not c["shown"] and c["display"] == "none",
+                  str(c))
+
+        for h in ["#/recipes", model_href, "#/recipes/" + fail_id]:
+            c = ctl_at(h)
+            check("mode control is rendered on a mode-aware route: " + str(h),
+                  bool(c) and not c["hidden"] and c["shown"], str(c))
+
+        # a control removed from render must also leave the tab order, or it is
+        # still an inert stop for a keyboard reader
+        ctl_at("#/")
+        reached = []
+        for _ in range(12):
+            p9.keyboard.press("Tab")
+            reached.append(p9.evaluate("() => document.activeElement && document.activeElement.id"))
+        check("hidden mode control is out of the tab order on a mode-blind route",
+              "mode-lite" not in reached and "mode-pro" not in reached, str(reached))
+
+        # hiding the control must not cost the reader their saved mode: Pro chosen
+        # on a recipe has to still be Pro after a detour through the chooser
+        ctl_at("#/recipes/" + fail_id)
+        p9.click("#mode-lite")
+        p9.wait_for_timeout(200)
+        p9.click("#mode-pro")
+        p9.wait_for_timeout(250)
+        on_blind = ctl_at("#/")
+        ctl_at("#/recipes/" + fail_id)
+        back = p9.evaluate("""() => ({
+              pro: document.getElementById('mode-pro').getAttribute('aria-pressed'),
+              dossier: document.body.innerText.toLowerCase().indexOf('pro dossier') >= 0
+            })""")
+        check("saved Pro preference survives a detour through a mode-blind route",
+              bool(on_blind) and on_blind["hidden"] and back["pro"] == "true" and back["dossier"],
+              str({"on_blind_route": on_blind, "back_on_recipe": back}))
+
+        check("no page errors scoping the mode control", not p9_errors, str(p9_errors[:2]))
+        ctx9.close()
+
 
         # ---------------------------------------------------------- console
         real = [e for e in console_errors if "favicon" not in e.lower()]

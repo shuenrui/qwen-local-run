@@ -2296,7 +2296,18 @@ function setRail(html) { var r = el("rail"); r.innerHTML = html; r.hidden = !htm
 function announce(msg) { var l = el("live"); if (l) l.textContent = msg; }
 
 /* ---------------------------------------------------------- mode control */
+/* Routes whose output can depend on state.mode. detailBody() holds the only mode
+   branch: viewRecipe calls it directly, and viewDirectory, viewModel and
+   viewPublisher reach it through rowsHtml() -> rowTr()/rowLi(). Those two emit
+   detailBody only once a row is expanded, so those routes render identically
+   while collapsed and differ after — the control has to stay available there so
+   a reader can pick a mode before expanding. On every other route the control
+   would be a visible, focusable, announced widget that changes nothing, so it is
+   taken out of the accessibility tree instead of being left inert. */
+var MODE_ROUTES = { recipe: 1, directory: 1, model: 1, publisher: 1 };
 function updateModeControl() {
+  var ctl = document.querySelector(".mode-ctl");
+  if (ctl) ctl.hidden = !MODE_ROUTES[state.route];
   var lite = el("mode-lite"), pro = el("mode-pro");
   if (!lite || !pro) return;
   lite.setAttribute("aria-pressed", state.mode === "lite" ? "true" : "false");
