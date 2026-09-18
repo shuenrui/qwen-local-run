@@ -43,11 +43,16 @@ fast it goes *according to whom*, and can run it from the copyable command.
 5. **`site/index.html` is generated.** Never edit it by hand; change the page
    source in `site_src/` (`shell.html`, `app.css`, `app.js`), `build.py`, or the
    data, and rebuild.
-6. **Never push to `origin`.** `origin` is the public
-   `MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark` repo — a third party's serving
-   stack that this project measures against and credits, not an upstream.
-   Pushes go to remote `mine` (`shuenrui/qwen-local-run`), branch mapping
-   `qwen-directory-standalone:main`.
+6. **Confirm the remote before pushing.** `origin` is the owner's own repo
+   (`shuenrui/qwen-local-run`), branch `main`; pushing there is how work is
+   backed up and reviewed. This law used to read "never push to `origin`"
+   because `origin` once pointed at
+   `MiaAI-Lab/Qwen3.8-27B-SGLang-DGX-Spark` — a third party's serving stack
+   that this project measures against and credits, not an upstream. That is no
+   longer the remote, but the instinct behind the rule stands: never push this
+   directory into a repo the project does not own. Run `git remote -v` before
+   any push. A push does not publish the site; publishing stays a separate,
+   owner-gated step.
 7. **Sizes come from the HuggingFace tree endpoint**
    (`/api/models/<id>/tree/main?recursive=true`). The siblings endpoint returns
    0 for LFS files; a size of 0 or null is invalid.
