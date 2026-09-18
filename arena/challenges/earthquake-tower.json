@@ -1,0 +1,34 @@
+{
+  "id": "earthquake-tower",
+  "name": "Earthquake tower (bench)",
+  "category": "simulation",
+  "thinking": false,
+  "max_tokens": 32000,
+  "engine": "mtp",
+  "runs": 1,
+  "prompt": "Build ONE self-contained HTML file: a 2D physics earthquake-resistance simulator rendered on <canvas data-testid=\"simulation\">. A tower of at least 6 stories made of beams and joints (cross-braced) stands on ground that shakes horizontally with adjustable intensity (0-10) and frequency (0.1-5 Hz). Requirements: beams are colored by stress (green -> yellow -> red); a beam BREAKS when its stress exceeds a material limit, and broken pieces fall under gravity and collide with the ground (nothing may tunnel out of the world or fall through the floor). UI: sliders or number inputs with data-testid=\"intensity\" and data-testid=\"frequency\" plus live readouts, and <button data-testid=\"reset\">Reset</button>.\n\nMANDATORY benchmark API — a hidden automated grader calls exactly this; it must exist on window before load finishes and be independent of wall-clock time:\nwindow.BENCH = {\n  reset(seed) {},              // rebuild the identical tower (same geometry/materials) and seed all RNG\n  step(ms) {},                 // advance physics by exactly ms milliseconds of simulated time (fixed-dt substeps), ground shaking included\n  perform(action, payload) {}, // 'setIntensity' {v: 0..10}, 'setFrequency' {v: hz}\n  getState() { return {seed, timeMs, standing, collapsed, brokenBeams}; },\n  getMetrics() { return {intensity, frequency, maxStress, toppledDeg}; }\n};\nstanding (boolean): >= 80% of joints remain within 20% below their original heights. collapsed (boolean): top of tower below 40% of original height, OR more than 50% of beams broken. toppledDeg: maximum tilt (degrees) of the top section from vertical.\nThe page must also animate on its own via requestAnimationFrame when the grader is not driving it. No external libraries — implement the beam/joint physics yourself in vanilla JS on canvas 2D.",
+  "checks": [
+    {"type": "dom_selectors", "selectors": ["canvas[data-testid=\"simulation\"]", "button[data-testid=\"reset\"]"]},
+    {"type": "dom_no_errors"},
+    {"type": "bench",
+     "steps": [
+       {"op": "reset", "seed": 5, "gap_ms": 100},
+       {"op": "perform", "action": "setIntensity", "payload": {"v": 3}, "gap_ms": 50},
+       {"op": "step", "ms": 8000, "gap_ms": 300}
+     ],
+     "assert": [
+       {"state": "standing", "equals": true},
+       {"state": "collapsed", "equals": false}
+     ]},
+    {"type": "bench",
+     "steps": [
+       {"op": "perform", "action": "setIntensity", "payload": {"v": 8}, "gap_ms": 50},
+       {"op": "step", "ms": 8000, "gap_ms": 300}
+     ],
+     "assert": [
+       {"state": "collapsed", "equals": true}
+     ]},
+    {"type": "contains", "value": "BENCH"}
+  ],
+  "notes": "The flagship structural test, staged on one continuous timeline (second bench intentionally continues the damaged state): the SAME tower must survive intensity 3 for 8 simulated seconds and then collapse at intensity 8. Exercises constraints/joints, material failure, collision correctness and deterministic stepping. Hardest task in the launch set — a fail here is informative, not broken grading."
+}

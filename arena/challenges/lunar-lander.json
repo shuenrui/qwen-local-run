@@ -1,0 +1,36 @@
+{
+  "id": "lunar-lander",
+  "name": "Lunar lander (bench)",
+  "category": "games",
+  "thinking": false,
+  "max_tokens": 20000,
+  "engine": "mtp",
+  "runs": 1,
+  "prompt": "Build ONE self-contained HTML file: a playable lunar lander game rendered on <canvas data-testid=\"simulation\">. Moon gravity 1.62 m/s^2. Controls: up-arrow or W for thrust, left/right or A/D to rotate; thrust burns fuel proportionally. Terrain is generated deterministically from a seed and contains one flat landing pad. HUD shows altitude (m), vertical speed vy (m/s, NEGATIVE when descending), horizontal speed vx (m/s), fuel (%), tilt (deg). Touchdown is a SUCCESS only if |vy| <= 3, |vx| <= 2 and |tilt| <= 15 deg; otherwise it crashes/explodes. On success show a score computed from remaining fuel and distance to pad center in <div data-testid=\"score\"></div>.\n\nMANDATORY benchmark API — a hidden automated grader calls exactly this; it must exist on window before load finishes and be independent of wall-clock time:\nwindow.BENCH = {\n  reset(seed) {},              // regenerate terrain from seed; lander at x = center, altitude 400 m, vy = vx = 0, tilt 0, fuel 100, crashed = landed = false\n  step(ms) {},                 // advance physics by exactly ms milliseconds of simulated time (fixed-dt substeps)\n  perform(action, payload) {}, // 'thrust' with {level: 0..1} sets engine level until changed; 'rotate' with {deg: number} sets tilt\n  getState() { return {seed, crashed, landed, timeMs}; },\n  getMetrics() { return {altitude, vy, vx, fuel, tiltDeg}; }\n};\nInclude <button data-testid=\"reset\">Reset</button> wired to BENCH.reset(1). The game must also animate and be playable normally via requestAnimationFrame when the grader is not driving it. No external libraries — plain canvas 2D and vanilla JS only.",
+  "checks": [
+    {"type": "dom_selectors", "selectors": ["canvas[data-testid=\"simulation\"]", "button[data-testid=\"reset\"]", "div[data-testid=\"score\"]"]},
+    {"type": "dom_no_errors"},
+    {"type": "bench",
+     "steps": [
+       {"op": "reset", "seed": 7, "gap_ms": 100},
+       {"op": "step", "ms": 1500, "gap_ms": 100}
+     ],
+     "assert": [
+       {"metric": "altitude", "max": 399},
+       {"metric": "vy", "min": -30, "max": -1},
+       {"metric": "fuel", "equals": 100},
+       {"state": "crashed", "equals": false}
+     ]},
+    {"type": "bench",
+     "steps": [
+       {"op": "perform", "action": "thrust", "payload": {"level": 1}, "gap_ms": 50},
+       {"op": "step", "ms": 500, "gap_ms": 100}
+     ],
+     "assert": [
+       {"metric": "fuel", "max": 99.5},
+       {"state": "crashed", "equals": false}
+     ]},
+    {"type": "contains", "value": "BENCH"}
+  ],
+  "notes": "Two sequential bench checks on one continuous timeline (no reset between them — intentional). Free fall for 1.5 s under lunar gravity must give vy ~= -2.43 m/s and altitude ~398 m with fuel untouched; then full thrust for 0.5 s must burn fuel. Tests force application, state management and the BENCH contract; playability/visuals are for the blind vote."
+}

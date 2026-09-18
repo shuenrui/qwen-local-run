@@ -1,0 +1,27 @@
+{
+  "id": "double-pendulum",
+  "name": "Double pendulum chaos (bench)",
+  "category": "scientific",
+  "thinking": false,
+  "max_tokens": 12000,
+  "engine": "mtp",
+  "runs": 1,
+  "prompt": "Build ONE self-contained HTML file that simulates TWO identical double pendulums side by side on a single <canvas data-testid=\"simulation\">. Use the real equations of motion for a double pendulum (Lagrangian form or equivalent), g = 9.81, integrated with a FIXED timestep that only advances when driven (see BENCH.step) or by your own requestAnimationFrame loop during free viewing. Pendulum B starts with theta1 offset by exactly 1e-3 radians from pendulum A; everything else identical. Draw fading trails for both bobs, plus a live readout of the divergence.\n\nMANDATORY benchmark API — a hidden automated grader calls exactly this; it must exist on window before load finishes, be deterministic for a given seed, and be independent of wall-clock time:\nwindow.BENCH = {\n  reset(seed) {},            // re-init both pendulums deterministically; seed 1 => default initial angles (theta1 = 2.0 rad, theta2 = 0.5 rad, zero velocities, B offset by +1e-3 on theta1)\n  step(ms) {},               // advance BOTH pendulums by exactly ms milliseconds of simulated time using fixed-dt substeps\n  perform(action, payload) {}, // support 'setTheta1' with payload {rad: number} applied to pendulum A while at rest\n  getState() { return {seed, timeMs}; },\n  getMetrics() { return {timeMs, angle1A, angle1B, divergence, energyDriftPct}; }\n};\ndivergence = |angle1A - angle1B| in radians at the current simulated time. energyDriftPct = |E(t) - E(0)| / |E(0)| * 100 for pendulum A (total mechanical energy).\n\nAlso include <button data-testid=\"reset\">Reset</button> wired to BENCH.reset(1). No external libraries — plain canvas 2D and vanilla JS only.",
+  "checks": [
+    {"type": "dom_selectors", "selectors": ["canvas[data-testid=\"simulation\"]", "button[data-testid=\"reset\"]"]},
+    {"type": "dom_no_errors"},
+    {"type": "bench",
+     "steps": [
+       {"op": "reset", "seed": 1, "gap_ms": 100},
+       {"op": "step", "ms": 1000, "gap_ms": 50},
+       {"op": "step", "ms": 9000, "gap_ms": 200}
+     ],
+     "assert": [
+       {"metric": "timeMs", "near": 10000, "tol": 100},
+       {"metric": "divergence", "min": 0.05},
+       {"metric": "energyDriftPct", "max": 5}
+     ]},
+    {"type": "contains", "value": "BENCH"}
+  ],
+  "notes": "Chaos, made measurable: a 1e-3 rad initial offset must grow to >= 0.05 rad divergence within 10 simulated seconds, and energy drift <= 5% guards against unstable integration. step() is wall-clock independent, so grading is deterministic and identical across models."
+}

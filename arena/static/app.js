@@ -475,8 +475,12 @@ const CHECK_SHIM='<script>(function(){var errs=[];window.onerror=function(m){err
  'var gCtx=HTMLCanvasElement.prototype.getContext;HTMLCanvasElement.prototype.getContext=function(t,a){'+
  'if(a&&(t==="webgl"||t==="webgl2"||t==="experimental-webgl")){a=Object.assign({},a);a.preserveDrawingBuffer=true;}'+
  'return gCtx.call(this,t,a);};'+
- 'var specs=%%SPECS%%,out=[],sent=false,started=false;var timer=setTimeout(finish,12000);'+
+ 'var specs=%%SPECS%%,out=[],sent=false,started=false;'+
+ 'var want=specs.map(function(s){return s.type;});'+
+ 'var timer=setTimeout(finish,specs.some(function(s){return s.type==="bench";})?60000:12000);'+
  'function finish(){if(sent)return;sent=true;clearTimeout(timer);'+
+ 'want.forEach(function(t){var have=false;for(var i=0;i<out.length;i++){if(out[i].type===t)have=true;}'+
+ 'if(!have)out.push({type:t,pass:false,err:"grading timeout"});});'+
  'parent.postMessage({__arenaGrade:1,checks:out.length?out:[{type:"dom_no_errors",pass:errs.length===0}]},"*");}'+
  'function tick(){if(sent)return;if(!specs.length)return finish();var sp=specs.shift();'+
  'try{run(sp);}catch(e){out.push({type:sp.type,pass:false,err:String(e)});tick();}}'+
@@ -490,7 +494,46 @@ const CHECK_SHIM='<script>(function(){var errs=[];window.onerror=function(m){err
  'setTimeout(function(){if(sent)return;var r;'+
  'try{r={type:t,pass:cv.toDataURL()!==d1,raf:raf};}catch(e){r={type:t,pass:false,err:String(e),raf:raf};}'+
  'out.push(r);tick();},sp.delay_ms||900);}'+
+ 'else if(t==="bench"){runBench(sp);}'+
  'else{out.push({type:t,pass:false,err:"unknown check type"});tick();}}'+
+ 'function getPath(o,p){var ks=String(p).split(".");for(var i=0;i<ks.length;i++){if(o==null)return undefined;o=o[ks[i]];}return o;}'+
+ 'function runBench(sp){'+
+ 'if(!window.BENCH){out.push({type:"bench",pass:false,err:"window.BENCH missing"});tick();return;}'+
+ 'var need=["reset","step","perform","getState","getMetrics"],miss=[];'+
+ 'need.forEach(function(k){if(typeof window.BENCH[k]!=="function")miss.push(k);});'+
+ 'if(miss.length){out.push({type:"bench",pass:false,err:"BENCH missing: "+miss.join(",")});tick();return;}'+
+ 'var steps=(sp.steps||[]).slice(),asserts=(sp.assert||[]).slice();'+
+ 'var res={type:"bench",pass:true,steps:0};'+
+ 'function fail(m){res.pass=false;res.err=m;out.push(res);tick();}'+
+ 'function runStep(){'+
+ 'if(sent)return;'+
+ 'if(!steps.length){runAsserts();return;}'+
+ 'var s=steps.shift();res.steps++;'+
+ 'try{'+
+ 'if(s.op==="reset"){window.BENCH.reset(s.seed!=null?s.seed:1);setTimeout(runStep,s.gap_ms!=null?s.gap_ms:50);return;}'+
+ 'if(s.op==="step"){window.BENCH.step(s.ms||100);setTimeout(runStep,s.gap_ms!=null?s.gap_ms:10);return;}'+
+ 'if(s.op==="perform"){window.BENCH.perform(s.action,s.payload);setTimeout(runStep,s.gap_ms!=null?s.gap_ms:50);return;}'+
+ 'if(s.op==="wait"){setTimeout(runStep,s.ms||100);return;}'+
+ 'fail("unknown bench op: "+s.op);return;'+
+ '}catch(e){fail("step error: "+e);return;}}'+
+ 'function runAsserts(){'+
+ 'var m,st;'+
+ 'try{m=window.BENCH.getMetrics()||{};}catch(e){fail("getMetrics error: "+e);return;}'+
+ 'try{st=window.BENCH.getState()||{};}catch(e){fail("getState error: "+e);return;}'+
+ 'res.metrics=m;res.state=st;'+
+ 'var bad=[];'+
+ 'asserts.forEach(function(a){'+
+ 'var isSt=a.state!=undefined,name=isSt?("state."+a.state):a.metric;'+
+ 'var src=getPath(isSt?st:m,isSt?a.state:a.metric);'+
+ 'if(src===undefined){bad.push(name+": missing");return;}'+
+ 'if(a.equals!==undefined&&src!==a.equals)bad.push(name+"="+src+" want "+a.equals);'+
+ 'if(a.min!==undefined&&!(src>=a.min))bad.push(name+"="+src+" < "+a.min);'+
+ 'if(a.max!==undefined&&!(src<=a.max))bad.push(name+"="+src+" > "+a.max);'+
+ 'if(a.near!==undefined&&!(Math.abs(src-a.near)<=(a.tol||0)))bad.push(name+"="+src+" not "+a.near+"±"+(a.tol||0));'+
+ '});'+
+ 'if(bad.length){res.pass=false;res.fails=bad.slice(0,5);}'+
+ 'out.push(res);tick();}'+
+ 'runStep();}'+
  'function start(){if(started||sent)return;started=true;tick();}'+
  'window.addEventListener("load",function(){setTimeout(start,700);});setTimeout(start,2500);})();<\/script>';
 function markPass(key,val,ok){
@@ -509,8 +552,11 @@ function requestDomChecks(key,domSpecs){
   f.setAttribute('sandbox','allow-scripts');
   f.style.cssText='position:absolute;left:-9999px;top:0;width:420px;height:320px;border:0';
   GRADES[key]=f; document.body.appendChild(f); f.srcdoc=html;
+  const hasBench=(domSpecs||[]).some(s=>s.type==='bench');
   setTimeout(()=>{ if(GRADES[key]){ delete GRADES[key]; f.remove();
-    gradeNow(key,[{type:'dom_no_errors',pass:false,err:'grade timeout'}]); } }, 30000);
+    const specs=(domSpecs&&domSpecs.length)?domSpecs:[{type:'dom_no_errors'}];
+    gradeNow(key,specs.map(s=>({type:s.type,pass:false,err:'grade timeout'}))); } },
+    hasBench?75000:30000);
 }
 async function gradeNow(key,checks){
   try{

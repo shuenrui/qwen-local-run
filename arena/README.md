@@ -96,8 +96,19 @@ challenge; `runs: k` repeats each model (blind keys `A1..Ak`) and reports
   `regex_count` (`equals`), `json_valid` (`keys`), `word_count` (`min`/`max`),
   `exec` (`lang:"python"` — runs the first fenced block inside a throwaway
   `docker run --network none --read-only --tmpfs /tmp` container)
-- client-side (graded in a hidden sandbox iframe, posted to `POST /api/grade`):
-  `dom_selectors` (`selectors:[…]`, each must match ≥1), `dom_no_errors`
+- client-side (graded in a hidden sandbox iframe, posted to `POST /api/grade`;
+  routed by `is_client_check()` — `dom_*`, `canvas_motion`, `bench`):
+  `dom_selectors` (`selectors:[…]`, each must match ≥1), `dom_no_errors`,
+  `canvas_motion` (`delay_ms` — samples `toDataURL()` twice; the shim forces
+  `preserveDrawingBuffer` on WebGL contexts so Three.js scenes sample correctly
+  and reports live `raf` tick counts), and `bench` — drives the page's
+  `window.BENCH` contract: `steps:[{op:"reset",seed}|{op:"step",ms}|
+  {op:"perform",action,payload}|{op:"wait",ms}]`, then `assert:[{metric|state:
+  "dotted.path", equals|min|max|near+tol}]` against `getMetrics()`/`getState()`.
+  Multiple `bench` checks share one page timeline (staged scenarios, e.g. quake
+  intensity 3 → 8). Missing `window.BENCH`, a throwing step, or a grading
+  timeout each fail explicitly — never silently pass. See
+  `docs/rendering-arena-plan.md`.
 A model that emits no runnable/parsable content simply fails those checks —
 that is the point (see `docs/model-eval-plan.md`: keep failures visible).
 

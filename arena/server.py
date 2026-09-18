@@ -343,6 +343,15 @@ class Cancelled(Exception):
     """User pressed Stop; unwinds the current model group without erroring."""
 
 
+CLIENT_CHECK_TYPES = ("canvas_motion", "bench")
+
+
+def is_client_check(t):
+    """Checks graded in the browser's sandboxed iframe, not against text."""
+    t = str(t)
+    return t.startswith("dom_") or t in CLIENT_CHECK_TYPES
+
+
 def wait_ready(port, timeout_s=READY_TIMEOUT_S, stop=None):
     url = f"http://127.0.0.1:{port}/v1/models"
     t0 = time.time()
@@ -445,8 +454,8 @@ def list_challenges():
         except (OSError, ValueError):
             continue
         checks = c.get("checks") or []
-        c["server_checks"] = sum(1 for ch in checks if not str(ch.get("type", "")).startswith("dom_"))
-        c["dom_checks"] = sum(1 for ch in checks if str(ch.get("type", "")).startswith("dom_"))
+        c["server_checks"] = sum(1 for ch in checks if not is_client_check(ch.get("type", "")))
+        c["dom_checks"] = sum(1 for ch in checks if is_client_check(ch.get("type", "")))
         out.append(c)
     return out
 
@@ -489,7 +498,7 @@ def _recompute_pass(item):
     sigs = []
     if item.get("server_ok") is not None:
         sigs.append(bool(item["server_ok"]))
-    dom = any(str(c.get("type", "")).startswith("dom_") for c in item.get("checks", []))
+    dom = any(is_client_check(c.get("type", "")) for c in item.get("checks", []))
     if dom:
         if item.get("dom_pass") is None:
             item["passed"] = None               # waiting for client-side grade
@@ -505,7 +514,7 @@ def run_server_checks(item, prompt, max_tokens):
     for ch in item.get("checks", []):
         t = str(ch.get("type", ""))
         ok, extra = False, {}
-        if t.startswith("dom_"):
+        if is_client_check(t):
             dom_any = True
             continue
         try:
@@ -684,7 +693,7 @@ def run_job(job):
                                         "text": m["text"], "reasoning": m.get("reasoning", ""),
                                         "checks": it.get("checks_detail", []),
                                         "dom": [c for c in it.get("checks", [])
-                                                if str(c.get("type", "")).startswith("dom_")],
+                                                if is_client_check(c.get("type", ""))],
                                         "passed": it.get("passed")})
                     except Cancelled:
                         raise
