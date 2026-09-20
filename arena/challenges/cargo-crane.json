@@ -1,0 +1,42 @@
+{
+  "id": "cargo-crane",
+  "name": "Cargo crane swing control (bench)",
+  "category": "simulation",
+  "thinking": false,
+  "max_tokens": 20000,
+  "engine": "mtp",
+  "runs": 1,
+  "prompt": "Build ONE self-contained HTML file: a 2D side-view cargo crane rendered on <canvas data-testid=\"simulation\">. A rail at height 30 m spans x = -15..15 m. A trolley rides the rail; a cable of length L hangs from the trolley carrying a 1000 kg load (planar pendulum, g = 9.81, full nonlinear swing, pivot = trolley position). Trolley servo: max speed 5 m/s, max acceleration 2 m/s^2 toward its target. Hoist: cable length moves toward its target at 2 m/s. Load swing has linear angular damping 1.0 /s (crane sway-control). Integrate with a FIXED timestep dt <= 0.002 s (semi-implicit Euler or RK4). Draw the rail, tower, trolley, cable, load container, a target marker, plus a live readout of trolley x, cable length and sway angle.\n\nMANDATORY benchmark API — a hidden automated grader calls exactly this; it must exist on window before load finishes, be deterministic for a given seed, and be independent of wall-clock time:\nwindow.BENCH = {\n  reset(seed) {},              // trolley at x = 0, cable length 20 m, load hanging straight down at rest, timeMs = 0\n  step(ms) {},                 // advance physics by exactly ms milliseconds of simulated time using fixed-dt substeps\n  perform(action, payload) {}, // 'move' with payload {x: number} sets the trolley target x (clamped to -15..15); 'hoist' with payload {len: number} sets the target cable length (clamped to 5..25 m)\n  getState() { return {seed, timeMs, trolleyX, cableLen}; },\n  getMetrics() { return {timeMs, trolleyX, loadX, loadY, swayDeg, cableLen}; }\n};\nswayDeg = load swing angle from vertical in degrees (0 = hanging straight down, sign indicates side). loadX/loadY = load position in meters in the same frame as the rail (rail y = 30). Include <button data-testid=\"reset\">Reset</button> wired to BENCH.reset(1). The scene must also animate via requestAnimationFrame during free viewing. No external libraries — plain canvas 2D and vanilla JS only.",
+  "checks": [
+    {"type": "dom_selectors", "selectors": ["canvas[data-testid=\"simulation\"]", "button[data-testid=\"reset\"]"]},
+    {"type": "dom_no_errors"},
+    {"type": "bench",
+     "steps": [
+       {"op": "reset", "seed": 3, "gap_ms": 100},
+       {"op": "perform", "action": "hoist", "payload": {"len": 10}, "gap_ms": 50},
+       {"op": "perform", "action": "move", "payload": {"x": 10}, "gap_ms": 50},
+       {"op": "step", "ms": 5000, "gap_ms": 100},
+       {"op": "step", "ms": 5000, "gap_ms": 100}
+     ],
+     "assert": [
+       {"metric": "timeMs", "near": 10000, "tol": 100},
+       {"metric": "cableLen", "near": 10, "tol": 0.5},
+       {"metric": "trolleyX", "near": 10, "tol": 0.5},
+       {"metric": "swayDeg", "max": 6},
+       {"metric": "loadX", "near": 10, "tol": 2.0},
+       {"metric": "loadY", "near": 20, "tol": 1.5}
+     ]},
+    {"type": "bench",
+     "steps": [
+       {"op": "perform", "action": "move", "payload": {"x": 0}, "gap_ms": 50},
+       {"op": "step", "ms": 1500, "gap_ms": 100}
+     ],
+     "assert": [
+       {"metric": "timeMs", "near": 11500, "tol": 100},
+       {"metric": "trolleyX", "min": 6.5, "max": 9.0},
+       {"metric": "swayDeg", "min": 1.5}
+     ]},
+    {"type": "contains", "value": "BENCH"}
+  ],
+  "notes": "Two sequential bench checks on one continuous timeline (no reset between them — intentional). Hoist to 10 m and traverse to x = 10 must settle within 8 s (trolley and cable on target, swing damped, load hanging at y ~= 20); then commanding a return must visibly excite the pendulum mid-transit. Tests servo motion, hoist, pendulum dynamics and the BENCH contract; looks are for the blind vote."
+}

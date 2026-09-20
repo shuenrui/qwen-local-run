@@ -1,0 +1,37 @@
+{
+  "id": "suspension-bridge",
+  "name": "Bridge deck load test (bench)",
+  "category": "simulation",
+  "thinking": false,
+  "max_tokens": 20000,
+  "engine": "mtp",
+  "runs": 1,
+  "prompt": "Build ONE self-contained HTML file: a 2D side-view simulation of a bridge DECK segment rendered on <canvas data-testid=\"simulation\">. Physics (this is what gets graded): the deck is a chain of N = 11 point masses (nodes 0..10), 1000 kg each, spaced 10 m apart in a straight horizontal line at height y = 0 (y axis points UP, gravity g = 9.81 pulls -y). Adjacent nodes are linked by spring-damper elements: stiffness k = 8e6 N/m, damping c = 8e4 N-s/m, rest length 10 m. Additionally every free node feels global air damping of 2000 N-s/m opposing its velocity (this settles the span in seconds; it does not affect the static sag). Nodes 0 and 10 are PINNED (fixed position forever). All other nodes move under gravity plus spring forces, integrated with semi-implicit (symplectic) Euler at a FIXED timestep dt = 0.001 s. A link BREAKS when its length exceeds 11.5 m (15% strain); broken links exert no force. collapsed = true if any link is broken. maxSag = max over nodes of (0 - y), i.e. downward displacement in meters, positive down. Draw the deck, the two pinned abutments, plus two towers and a main cable with hangers as decoration (visual only — they carry no load in this model), a live readout of maxSag, and turn broken links red.\n\nMANDATORY benchmark API — a hidden automated grader calls exactly this; it must exist on window before load finishes, be deterministic for a given seed, and be independent of wall-clock time:\nwindow.BENCH = {\n  reset(seed) {},              // all nodes back on the straight line at rest; seed accepted and stored (same seed => same run; add only a deterministic sub-micron perturbation derived from seed)\n  step(ms) {},                 // advance physics by exactly ms milliseconds of simulated time using fixed 1 ms substeps\n  perform(action, payload) {}, // 'load' with payload {node: 0..10, kg: number} adds that many kg of static mass to the node (accumulates until reset)\n  getState() { return {seed, timeMs, collapsed}; },\n  getMetrics() { return {timeMs, centerY, maxSag}; }\n};\ncenterY = y position (meters, y-up) of node 5. Include <button data-testid=\"reset\">Reset</button> wired to BENCH.reset(1). The scene must also animate via requestAnimationFrame during free viewing. No external libraries — plain canvas 2D and vanilla JS only.",
+  "checks": [
+    {"type": "dom_selectors", "selectors": ["canvas[data-testid=\"simulation\"]", "button[data-testid=\"reset\"]"]},
+    {"type": "dom_no_errors"},
+    {"type": "bench",
+     "steps": [
+       {"op": "reset", "seed": 1, "gap_ms": 100},
+       {"op": "perform", "action": "load", "payload": {"node": 5, "kg": 10000}, "gap_ms": 50},
+       {"op": "step", "ms": 5000, "gap_ms": 100},
+       {"op": "step", "ms": 5000, "gap_ms": 100}
+     ],
+     "assert": [
+       {"metric": "timeMs", "near": 10000, "tol": 100},
+       {"state": "collapsed", "equals": false},
+       {"metric": "maxSag", "min": 4.5, "max": 8.0}
+     ]},
+    {"type": "bench",
+     "steps": [
+       {"op": "perform", "action": "load", "payload": {"node": 5, "kg": 490000}, "gap_ms": 50},
+       {"op": "step", "ms": 10000, "gap_ms": 100}
+     ],
+     "assert": [
+       {"metric": "timeMs", "near": 20000, "tol": 100},
+       {"state": "collapsed", "equals": true}
+     ]},
+    {"type": "contains", "value": "BENCH"}
+  ],
+  "notes": "Two sequential bench checks on one continuous timeline (no reset between them — intentional). A 10 t midspan load must settle to a ~6 m sag without breaking (assert band verified against a reference semi-implicit-Euler sim); adding 490 t more (500 t total) must snap links. Physics is deck-only spring chain with pinned ends; towers/cable are drawn decoratively. Tests load response, fracture logic and the BENCH contract; visuals are for the blind vote."
+}
