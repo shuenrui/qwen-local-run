@@ -585,6 +585,50 @@ def merge_dom_grades(job):
         _recompute_pass(item)
 
 
+def summarize_failures(job, item, limit=12):
+    """One short line per failed check, server + client side, for repair prompts."""
+    lines = []
+    for d in item.get("checks_detail") or []:
+        if d.get("pass") is False:
+            extra = ""
+            for k in ("err", "fails", "out"):
+                if d.get(k):
+                    extra = ": " + str(d[k])[:280]
+                    break
+            lines.append("[server:%s] FAIL%s" % (d.get("type", "?"), extra))
+    dom = item.get("dom_checks") or (job.get("grades") or {}).get(item.get("key"), {}).get("checks", [])
+    for c in dom or []:
+        if c.get("pass") is False:
+            extra = ""
+            for k in ("err", "fails"):
+                if c.get(k):
+                    extra = ": " + str(c[k])[:280]
+                    break
+            lines.append("[client:%s] FAIL%s" % (c.get("type", "?"), extra))
+    if not lines:
+        if item.get("passed") is False:
+            lines.append("graded FAIL (no per-check detail recorded)")
+        else:
+            lines.append("no failures recorded")
+    return lines[:limit]
+
+
+def build_repair_prompt(orig_prompt, prev_text, failures, attempt):
+    """Second-chance prompt: original task + previous code + grader errors."""
+    prev = (prev_text or "")[:100000]
+    fails = "\n".join("- " + f for f in failures) or "- (no detail)"
+    return (
+        (orig_prompt or "").rstrip() + "\n\n---\n"
+        "Your previous submission for this exact task FAILED automated grading "
+        "(attempt %d). It is reproduced below, followed by the grader failures.\n\n"
+        "--- PREVIOUS SUBMISSION ---\n%s\n\n"
+        "--- GRADER FAILURES ---\n%s\n\n"
+        "Repair ALL failures and output the COMPLETE fixed file "
+        "(same format the task requires — not a diff, not a patch). "
+        "Preserve everything that already passed. Do not explain; output the file."
+        % (attempt, prev, fails))
+
+
 def _extract_html(text):
     """Pull a standalone HTML document out of a response (fence or raw)."""
     text = text or ""
@@ -946,6 +990,8 @@ class Handler(BaseHTTPRequestHandler):
             return self._vote()
         if path == "/api/grade":
             return self._grade()
+        if path == "/api/repair":
+            return self._repair()
         if path != "/api/run":
             return self._json(404, {"error": "not found"})
         try:
@@ -1123,6 +1169,68 @@ class Handler(BaseHTTPRequestHandler):
             _persist_job(job)
         return self._json(200, {"key": key, "passed": item.get("passed"),
                                 "rates": job["rates"]})
+
+    def _repair(self):
+        """One repair attempt for a saved slot: new single-slot job whose
+        prompt is original task + previous code + grader failures. Reuses
+        run_job end to end (boot, stream, checks, persist). 409 while busy."""
+        try:
+            n = int(self.headers.get("Content-Length", 0) or 0)
+            body = json.loads(self.rfile.read(n) or b"{}")
+        except Exception:
+            return self._json(400, {"error": "invalid JSON"})
+        run = (body.get("run") or "").strip()
+        slot = (body.get("slot") or "").strip()
+        j = self._load_saved(run)
+        if j is None:
+            return self._json(404, {"error": "unknown run"})
+        item = next((r for r in j.get("results", [])
+                     if r.get("key") == slot or r.get("slot") == slot), None)
+        if item is None:
+            return self._json(400, {"error": f"unknown slot '{slot}'"})
+        prev = item.get("text") or ""
+        if not prev.strip():
+            return self._json(400, {"error": "nothing to repair (empty response)"})
+        if item.get("status") not in ("done", "error", "stopped"):
+            return self._json(409, {"error": "source slot is still running"})
+        if not run_lock.acquire(blocking=False):
+            return self._json(409, {"error": "a run is already active"})
+        mid = item.get("id") or ""
+        known = {m["id"]: m for m in discover_models()}
+        if mid not in known:
+            run_lock.release()
+            return self._json(400, {"error": f"profile gone: '{mid}'"})
+        fails = summarize_failures(j, item)
+        attempt = int(item.get("repair_attempt") or 0) + 1
+        prompt = build_repair_prompt(j.get("prompt") or "", prev, fails, attempt)
+        max_tokens = max(1, min(int(j.get("max_tokens") or 8000), MAX_TOKEN_LIMIT))
+        it = {"slot": "A", "key": "A", "rep": 1, "id": mid,
+              "name": m["name"], "label": m["label"],
+              "served_model": m["served_model"],
+              "container_name": m["container_name"], "port": m["port"],
+              "model_id": m["model_id"],
+              "engine": m.get("engine", "sglang"),
+              "checks": item.get("checks") or [], "status": "queued",
+              "repair_attempt": attempt,
+              "repair_failures": fails}
+        with jobs_lock:
+            job_seq[0] += 1
+            jid = f"job-{job_seq[0]}"
+            job = {"id": jid, "status": "running", "prompt": prompt,
+                   "challenge": j.get("challenge"),
+                   "thinking": bool(j.get("thinking", False)),
+                   "max_tokens": max_tokens,
+                   "temperature": j.get("temperature"),
+                   "auto": bool(j.get("auto", True)),
+                   "engine": (j.get("engine") or "mtp"),
+                   "repair_of": {"run": run, "slot": item.get("key") or slot,
+                                 "attempt": attempt},
+                   "order": ["A"], "events": [], "grades": {},
+                   "results": [it]}
+            jobs[jid] = job
+        threading.Thread(target=run_job, args=(job,), daemon=True).start()
+        # run_lock stays held: run_job releases it on completion.
+        return self._json(202, {"job_id": jid, "repair_of": job["repair_of"]})
 
     def _load_saved(self, name):
         if not re.fullmatch(r"arena-[\w.-]+", str(name or "")):

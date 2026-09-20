@@ -616,6 +616,25 @@ async function showRun(name){
       a.href=art; a.textContent='open ↗'; a.style.marginLeft='.6rem';
       c.querySelector('h3').appendChild(a);
     }
+    if(r.passed===false && (r.text||'').trim()){
+      const b=document.createElement('a'); b.className='exp'; b.href='#';
+      b.textContent='repair'; b.style.marginLeft='.6rem'; b.title='re-run this slot with grader failures fed back';
+      b.onclick=async ev=>{
+        ev.preventDefault(); b.textContent='repairing…';
+        let res, jj;
+        try{
+          res=await fetch('/api/repair',{method:'POST',headers:{'Content-Type':'application/json'},
+            body:JSON.stringify({run:name,slot:key})});
+          jj=await res.json().catch(()=>({}));
+        }catch(e){ b.textContent='repair (request failed)'; return; }
+        if(!res.ok){ b.textContent='repair refused: '+(jj.error||('HTTP '+res.status)); return; }
+        buildCards(['A']); $('results').hidden=false;
+        $('status').textContent='repairing '+key+' from '+name+'… (single slot, not blind)';
+        $('stop').hidden=false; $('stop').disabled=false; $('stop').textContent='■ Stop';
+        openStream(jj.job_id);
+      };
+      c.querySelector('h3').appendChild(b);
+    }
     const body=c.querySelector('.body');
     const rendered=document.createElement('div');
     rendered.innerHTML=renderMarkdown(r.text||('⚠ '+(r.error||'')));
