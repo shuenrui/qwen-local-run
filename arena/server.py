@@ -1200,6 +1200,7 @@ class Handler(BaseHTTPRequestHandler):
         if mid not in known:
             run_lock.release()
             return self._json(400, {"error": f"profile gone: '{mid}'"})
+        m = known[mid]
         fails = summarize_failures(j, item)
         attempt = int(item.get("repair_attempt") or 0) + 1
         prompt = build_repair_prompt(j.get("prompt") or "", prev, fails, attempt)
