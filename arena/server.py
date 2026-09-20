@@ -1203,7 +1203,10 @@ class Handler(BaseHTTPRequestHandler):
         fails = summarize_failures(j, item)
         attempt = int(item.get("repair_attempt") or 0) + 1
         prompt = build_repair_prompt(j.get("prompt") or "", prev, fails, attempt)
-        max_tokens = max(1, min(int(j.get("max_tokens") or 8000), MAX_TOKEN_LIMIT))
+        max_tokens = max(1, min(int(body.get("max_tokens") or j.get("max_tokens") or 8000),
+                                MAX_TOKEN_LIMIT))
+        thinking = bool(body.get("thinking", j.get("thinking", False)))
+        temperature = body.get("temperature", j.get("temperature"))
         it = {"slot": "A", "key": "A", "rep": 1, "id": mid,
               "name": m["name"], "label": m["label"],
               "served_model": m["served_model"],
@@ -1218,9 +1221,9 @@ class Handler(BaseHTTPRequestHandler):
             jid = f"job-{job_seq[0]}"
             job = {"id": jid, "status": "running", "prompt": prompt,
                    "challenge": j.get("challenge"),
-                   "thinking": bool(j.get("thinking", False)),
+                   "thinking": thinking,
                    "max_tokens": max_tokens,
-                   "temperature": j.get("temperature"),
+                   "temperature": temperature,
                    "auto": bool(j.get("auto", True)),
                    "engine": (j.get("engine") or "mtp"),
                    "repair_of": {"run": run, "slot": item.get("key") or slot,
