@@ -625,7 +625,9 @@ def build_repair_prompt(orig_prompt, prev_text, failures, attempt):
         "--- GRADER FAILURES ---\n%s\n\n"
         "Repair ALL failures and output the COMPLETE fixed file "
         "(same format the task requires — not a diff, not a patch). "
-        "Preserve everything that already passed. Do not explain; output the file."
+        "Preserve everything that already passed. Reason briefly (a few "
+        "paragraphs max) — the file MUST fit in the output. "
+        "Do not explain; output the file."
         % (attempt, prev, fails))
 
 
