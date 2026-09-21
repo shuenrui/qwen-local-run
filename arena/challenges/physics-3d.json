@@ -3,7 +3,7 @@
   "name": "Self-contained 3D physics scene",
   "category": "frontend",
   "runs": 1,
-  "thinking": true,
+  "thinking": false,
   "temperature": 0.2,
   "max_tokens": 5000,
   "engine": "mtp",

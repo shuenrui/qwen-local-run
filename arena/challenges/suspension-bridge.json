@@ -2,7 +2,7 @@
   "id": "suspension-bridge",
   "name": "Bridge deck load test (bench)",
   "category": "simulation",
-  "thinking": true,
+  "thinking": false,
   "temperature": 0.2,
   "max_tokens": 20000,
   "engine": "mtp",

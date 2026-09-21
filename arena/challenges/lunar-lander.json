@@ -2,7 +2,7 @@
   "id": "lunar-lander",
   "name": "Lunar lander (bench)",
   "category": "games",
-  "thinking": true,
+  "thinking": false,
   "temperature": 0.2,
   "max_tokens": 20000,
   "engine": "mtp",

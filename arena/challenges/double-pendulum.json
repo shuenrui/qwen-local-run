@@ -2,7 +2,7 @@
   "id": "double-pendulum",
   "name": "Double pendulum chaos (bench)",
   "category": "scientific",
-  "thinking": true,
+  "thinking": false,
   "temperature": 0.2,
   "max_tokens": 12000,
   "engine": "mtp",

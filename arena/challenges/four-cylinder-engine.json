@@ -2,7 +2,7 @@
   "id": "four-cylinder-engine",
   "name": "Four-cylinder engine kinematics (bench)",
   "category": "simulation",
-  "thinking": true,
+  "thinking": false,
   "temperature": 0.2,
   "max_tokens": 16000,
   "engine": "mtp",

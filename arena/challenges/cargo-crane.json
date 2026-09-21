@@ -2,7 +2,7 @@
   "id": "cargo-crane",
   "name": "Cargo crane swing control (bench)",
   "category": "simulation",
-  "thinking": true,
+  "thinking": false,
   "temperature": 0.2,
   "max_tokens": 20000,
   "engine": "mtp",
