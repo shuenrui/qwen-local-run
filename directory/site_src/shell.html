@@ -15,7 +15,6 @@ __CSS__
 <header class="mast" role="banner">
   <div class="mast-bar">
     <a class="brand" href="#/" aria-label="Qwen Local-Run Directory, home">
-      <span class="brand-mark" aria-hidden="true">QLR</span>
       <span class="brand-name">Qwen Local-Run Directory</span>
     </a>
     <nav class="tabs" id="tabs" aria-label="Primary">
@@ -31,10 +30,10 @@ __CSS__
         <button type="button" id="mode-lite" class="mode-btn" aria-pressed="true">Lite</button>
         <button type="button" id="mode-pro" class="mode-btn" aria-pressed="false">Pro</button>
       </div>
-      <button type="button" id="theme" class="icon-btn" aria-label="Switch colour theme">◐</button>
+      <button type="button" id="theme" class="icon-btn" aria-label="Switch colour theme"><span id="theme-label">Dark</span></button>
     </div>
   </div>
-  <p class="mast-sub" id="mast-sub"></p>
+  <p class="mast-sub"><span class="mast-route" id="mast-route"></span><span class="mast-note" id="mast-note"></span></p>
 </header>
 
 <div class="shell" id="shell">

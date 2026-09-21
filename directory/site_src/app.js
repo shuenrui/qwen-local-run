@@ -188,10 +188,13 @@ function failures(s) {
 }
 
 /* ---- the four confidence dimensions. Never averaged, never summed. ---- */
+/* Confidence dimensions are drawn marks, not pie-chart glyphs: one circle per
+   dimension whose filled fraction is the level, and a struck circle for a
+   recorded failure. Fraction and stroke read in greyscale and at 400% zoom. */
 var LV = {
-  ok: { cls: "v-ok", g: "●" }, mid: { cls: "v-ok", g: "◑" },
-  est: { cls: "v-est", g: "◐" }, weak: { cls: "v-est", g: "◔" },
-  none: { cls: "v-none", g: "○" }, bad: { cls: "v-bad", g: "✕" }
+  ok: { cls: "v-ok", lvl: "full" }, mid: { cls: "v-ok", lvl: "three" },
+  est: { cls: "v-est", lvl: "half" }, weak: { cls: "v-est", lvl: "one" },
+  none: { cls: "v-none", lvl: "empty" }, bad: { cls: "v-bad", lvl: "struck" }
 };
 function confRecipe(s) {
   var r = s.run || {}, req = s.requirements || {};
@@ -250,7 +253,7 @@ function evStrip(s) {
   var c = conf(s), cells = "", label = [];
   DIMS.forEach(function (d) {
     var v = c[d[0]], l = LV[v.k];
-    cells += '<i class="' + l.cls + '" aria-hidden="true">' + l.g + "</i>";
+    cells += '<i class="' + l.cls + '" data-lvl="' + l.lvl + '" aria-hidden="true"></i>';
     label.push(d[1] + ": " + v.t);
   });
   return '<button type="button" class="ev" data-ev="' + esc(s.id) + '" aria-label="' + esc(label.join(". ") + ".") + '">' +
@@ -525,7 +528,8 @@ function detailBody(s, opts) {
   function sec(title, body) { return '<div class="sec"><' + H + '>' + title + '</' + H + '>' + body + '</div>'; }
 
   /* 1. What this recipe runs */
-  var s1 = '<p class="prose">' + esc(s.slug_note || "") + '</p><div class="kv" style="margin-top:9px">' +
+  var s1 = (opts && opts.page ? "" : '<p class="prose">' + esc(s.slug_note || "") + "</p>") +
+    '<div class="kv" style="margin-top:9px">' +
     "<dt>Model</dt><dd><a href=\"#/models/" + esc(s.model) + '">' + esc(m.name || s.model) + "</a> " +
     '<span class="g">' + esc((m.architecture || {}).kind || "") + "</span></dd>" +
     '<dt>Checkpoint</dt><dd><span class="mono">' + esc(v.checkpoint) + "</span>" +
@@ -535,7 +539,7 @@ function detailBody(s, opts) {
     "<dt>Quantization</dt><dd>" + esc(v.quant) + (v.quant_detail ? ' <span class="g">' + esc("— " + v.quant_detail) + "</span>" : "") + "</dd>" +
     "<dt>Artifact</dt><dd>" + esc(v.format) + " · " + (gb(v.size_gb) || na()) + " · " + esc(v.license || "license not recorded") + "</dd>" +
     "<dt>Engine</dt><dd><a href=\"" + esc(eng.url || "#/methodology") + '" target="_blank" rel="noopener">' + esc(eng.name || e.id) + "</a></dd>" +
-    "<dt>Custom fork / patch</dt><dd>" + (e.requires_fork ? '<span class="mark m-warn">' + esc("⤴ required") + "</span>" : esc("not required")) + "</dd>" +
+    "<dt>Custom fork / patch</dt><dd>" + (e.requires_fork ? '<span class="mark m-warn">' + esc("fork required") + "</span>" : esc("not required")) + "</dd>" +
     "</div>";
   var h = sec("What this recipe runs", s1);
 
@@ -755,7 +759,7 @@ function readyCell(s) {
 function engineCell(s) {
   var e = s.engine || {};
   return '<div class="l1" style="font-weight:400;font-size:13px">' + esc((ENG[e.id] || {}).name || e.id) +
-    (e.requires_fork ? ' <span style="color:var(--warn)">' + esc("⤴") + "</span>" : "") + "</div>" +
+    (e.requires_fork ? ' <span class="forkmark" style="color:var(--warn)">' + esc("fork") + "</span>" : "") + "</div>" +
     '<div class="l2">' + esc(e.requires_fork ? "custom fork" : "stock") +
     (e.spec_decode && e.spec_decode !== "none" ? esc(" · " + e.spec_decode) : "") + "</div>";
 }
@@ -770,7 +774,7 @@ function rowTr(s) {
   var h = '<tr class="' + cls.join(" ") + '" data-row="' + esc(s.id) + '">' +
     '<td class="c-sel"><input type="checkbox" class="cbx" data-cmp="' + esc(s.id) + '"' + (picked ? " checked" : "") +
     ' aria-label="' + esc("Compare " + s.title) + '"></td>' +
-    "<td>" + artifactCell(s) + "</td>" +
+    '<td class="c-art">' + artifactCell(s) + "</td>" +
     '<td class="c-quant"><div class="l1" style="font-weight:400;font-size:13px">' + esc(v.quant) + "</div>" +
       '<div class="l2">' + esc(v.format) + " · " + esc(gb(v.size_gb) || "size ?") + "</div></td>" +
     '<td class="c-eng">' + engineCell(s) + "</td>" +
@@ -800,7 +804,7 @@ function rowLi(s) {
     ' aria-label="' + esc("Compare " + s.title) + '">' +
     '<div class="mrow-body">' + artifactCell(s) +
     '<div class="mrow-l">' +
-      '<span><span class="lbl">Engine</span>' + esc((ENG[e.id] || {}).name || e.id) + (e.requires_fork ? esc(" ⤴ fork") : "") + "</span>" +
+      '<span><span class="lbl">Engine</span>' + esc((ENG[e.id] || {}).name || e.id) + (e.requires_fork ? esc(" · fork") : "") + "</span>" +
       '<span><span class="lbl">Quant</span>' + esc(v.quant) + " · " + esc(gb(v.size_gb) || "?") + "</span>" +
       '<span><span class="lbl">Tested on</span>' + esc(String(hwFirstLabel(s)).split(",")[0]) + "</span>" +
       '<span><span class="lbl">Needs</span>' + esc(gb(req.memory_gb) || "not recorded") + "</span>" +
@@ -998,7 +1002,7 @@ function viewDirectory() {
   });
 
   setRail(railHtml(groups));
-  el("mast-sub").innerHTML = esc("The complete advanced index — ") +
+  el("mast-note").innerHTML = esc("The complete advanced index — ") +
     "<b>" + SETUPS.length + "</b>" + esc(" recipes across ") + "<b>" + D.model_order.length + "</b>" +
     esc(" model families, each number carrying its source.");
 
@@ -1392,7 +1396,7 @@ function renderModelBar() {
 function viewModelsHome() {
   setRail("");
   var list = modelList();
-  el("mast-sub").innerHTML = esc("Every Qwen family with a recorded local lane, newest series first. Open a family for the recipe this directory keeps as its best record; the full recipe directory stays at #/recipes.");
+  el("mast-note").innerHTML = esc("Every Qwen family with a recorded local lane, newest series first. Open a family for the recipe this directory keeps as its best record; the full recipe directory stays at #/recipes.");
 
   var h = '<div class="models-home">' + miBand() + tocControls(list);
   if (!list.length) {
@@ -1534,7 +1538,7 @@ function renderRail() {
     '<div class="crail-items">' + list.map(function (s) {
       return '<div class="citem"><div class="cbody"><div class="cn" title="' + esc(s.variation.checkpoint) + '">' +
         esc(tail(s.variation.checkpoint)) + '</div><div class="cs">' +
-        esc(((ENG[(s.engine || {}).id] || {}).name || "?") + ((s.engine || {}).requires_fork ? " ⤴" : "") + " · " + s.variation.quant) +
+        esc(((ENG[(s.engine || {}).id] || {}).name || "?") + ((s.engine || {}).requires_fork ? " · fork" : "") + " · " + s.variation.quant) +
         '</div><div class="cs">' + esc(String(hwFirstLabel(s) || "hardware not recorded").split(",")[0]) + "</div></div>" +
         '<button type="button" class="cx" data-cmp="' + esc(s.id) + '" aria-label="' + esc("Remove " + s.title + " from compare") + '">' + esc("✕") + "</button></div>";
     }).join("") + "</div>" +
@@ -1605,10 +1609,10 @@ function metricCell(s, metric, single) {
 function viewCompare() {
   var list = cmpSetups();
   setRail("");
-  el("mast-sub").innerHTML = esc("Put two to four recipes side by side. Every axis on which their measurements are not comparable is named. No winner is declared.");
+  el("mast-note").innerHTML = esc("Put two to four recipes side by side. Every axis on which their measurements are not comparable is named. No winner is declared.");
   if (!list.length) {
-    el("main").innerHTML = '<div class="page cmp-page"><header class="cmp-intro"><p class="eyebrow">COMPARE</p><h1>Read the differences</h1></header>' +
-      '<p class="lede">' + esc("Nothing is selected yet. Tick the compare box on any recipe row — in the Directory, on a model-family page, on a recipe page, or in a My Hardware result — and a selection rail appears at the bottom of the screen.") + "</p>" +
+    el("main").innerHTML = '<div class="page cmp-page"><header class="cmp-intro"><p class="eyebrow">COMPARE</p><h1>Read the differences</h1>' +
+      '<p class="lede">' + esc("Nothing is selected yet. Tick the compare box on any recipe row — in the Directory, on a model-family page, on a recipe page, or in a My Hardware result — and a selection rail appears at the bottom of the screen.") + "</p></header>" +
       '<div class="empty"><h2>Good places to start</h2><p>' + esc("The families with the most alternatives to weigh up:") + "</p><ul class=\"notes\">" +
       D.model_order.map(function (mid) { return { id: mid, n: SETUPS.filter(function (s) { return s.model === mid; }).length }; })
         .sort(function (a, b) { return b.n - a.n; }).slice(0, 4)
@@ -1621,9 +1625,9 @@ function viewCompare() {
 
   if (n < 2) h += '<div class="banner b-info"><h3>' + esc("One recipe selected") + "</h3><p>" +
     esc("Comparison needs at least two. Add another from Recipes or a model page.") + "</p></div>";
-  else if (!issues.length) h += '<div class="banner b-ok"><h3>' + esc("● These are directly comparable") + "</h3><p>" +
+  else if (!issues.length) h += '<div class="banner b-ok"><h3>' + esc("These are directly comparable") + "</h3><p>" +
     esc("Same engine, same hardware class, same metric, same statistic and same concurrency. This is the one case where the numbers can be read against each other.") + "</p></div>";
-  else h += '<div class="banner b-warn"><h3>' + esc("▲ These recipes are not directly comparable") + "</h3><ul>" +
+  else h += '<div class="banner b-warn"><h3>' + esc("These recipes are not directly comparable") + "</h3><ul>" +
     issues.map(function (i) { return "<li>" + esc(i.t) + "</li>"; }).join("") + "</ul></div>";
 
   h += '<p class="lede" style="margin-top:12px">' + esc("No overall winner is calculated. Nothing below is highlighted as best — the sections state what each recipe records, and the banner states why the records may not line up.") + "</p>";
@@ -1660,7 +1664,7 @@ function viewCompare() {
     return o.length ? esc(o.map(function (x) { return FACETS.os.name(x); }).join(", ")) : null;
   });
   h += cmpRow("Required fork", list, function (s) {
-    return s.engine.requires_fork ? '<span class="mark m-warn">' + esc("⤴ yes") + "</span>" : esc("no — stock engine");
+    return s.engine.requires_fork ? '<span class="mark m-warn">' + esc("fork required") + "</span>" : esc("no — stock engine");
   });
   h += cmpRow("Speculative decoding", list, function (s) { return esc(s.engine.spec_decode || "none"); });
   h += cmpRow("Draft model", list, function (s) { return s.engine.draft_model ? '<span class="mono">' + esc(s.engine.draft_model) + "</span>" : null; });
@@ -1972,7 +1976,7 @@ var GOALS = [
 function viewHardware() {
   var p = state.profile;
   setRail("");
-  el("mast-sub").innerHTML = esc("Check the directory against one machine. Nothing here narrows the Directory, and no unconditional “fits” verdict is ever shown.");
+  el("mast-note").innerHTML = esc("Check the directory against one machine. Nothing here narrows the Directory, and no unconditional “fits” verdict is ever shown.");
 
   var h = '<div class="page hw-page"><header class="hw-intro"><p class="eyebrow">MY HARDWARE</p><h1>Check against my machine</h1>' +
     '<p class="lede">Choose a recorded device class or describe your own. The result keeps measured evidence, memory arithmetic, and uncertainty separate.</p></header>' +
@@ -2148,12 +2152,36 @@ function viewRecipe(id) {
   setRail("");
   if (!s) return notFound("No recipe with the id " + id + " is in this dataset.");
   var m = modelOf(s), c = conf(s), rep = repDecode(s), req = s.requirements || {};
-  el("mast-sub").innerHTML = esc(s.slug_note || "");
+  var rv = s.variation || {}, re = s.engine || {}, reng = ENG[re.id] || {};
+  /* The summary sets as the entry's lede, so the sub-bar does not repeat it. */
+  el("mast-note").innerHTML = "";
   var condition = rep ? condOf(rep) : "No single-stream measurement recorded";
-  var provenance = ["box: owner-measured", "forum: community-reported", "vendor: vendor-reported", "○: not recorded"];
+  /* Four marks told apart by shape and fill before colour, each followed by
+     its tier word in the sans -- a mark never travels alone. */
+  var provenance = [
+    { tier: "box", t: "Box \u2014 measured here" },
+    { tier: "forum", t: "Forum \u2014 community-reported" },
+    { tier: "vendor", t: "Vendor \u2014 publisher-claimed" },
+    { tier: "none", t: "Not stated by any source" }
+  ];
+  /* The collation statement: checkpoint, engine and hardware class, joined by
+     hairlines. Change any part and it is a different record with a different
+     id. This is the one place the page asserts identity, and nothing else. */
+  var collation = '<div class="collation">' +
+     '<div><dt>Checkpoint</dt><dd>' + esc(rv.checkpoint || "not recorded") +
+       (rv.quant ? '<br><span class="q">' + esc(rv.quant) + "</span>" : "") + "</dd></div>" +
+     '<div><dt>Engine</dt><dd>' + esc(reng.name || re.id || "not recorded") +
+       '<br><span class="' + (re.requires_fork ? "f" : "q") + '">' +
+       esc(re.requires_fork ? "custom fork required" : "stock build") + "</span></dd></div>" +
+     '<div><dt>Hardware class</dt><dd>' + esc(hwFirstLabel(s) || "not recorded") +
+       (req.memory_gb != null ? '<br><span class="q">' + esc(gb(req.memory_gb) + " recorded") + "</span>" : "") +
+       "</dd></div></div>";
   var h = '<div class="page recipe-page"><p class="crumb"><a href="#/recipes">Recipes</a> ' + esc("→") +
      ' <a href="#/models/' + esc(s.model) + '">' + esc(m.name || s.model) + "</a> " + esc("→ this recipe") + "</p>" +
+     '<header class="page-head"><p class="eyebrow">' + esc("Recipe · one exact runnable setup") + "</p>" +
      "<h1>" + esc(s.title) + "</h1>" +
+     (s.slug_note ? '<p class="lede">' + esc(s.slug_note) + "</p>" : "") +
+     collation + "</header>" +
      '<div class="recipe-layout"><div class="recipe-main"><div class="res-act recipe-actions">' +
      (s.run && s.run.command ? copyBtn(s.run.command, "Copy launch command") : '<span class="mark m-none">' + esc("Launch command not recorded") + "</span>") +
      '<a class="btn" href="#/hardware">Check against my hardware</a>' +
@@ -2163,7 +2191,7 @@ function viewRecipe(id) {
      '<span class="mark m-none">' + esc(READY_GLYPH[readiness(s)] + " " + READY_WORD[readiness(s)]) + "</span>" +
      '<span class="mark m-none">' + esc(s.status || "status unrecorded") + "</span>" +
      '<span class="mark m-none">' + esc("updated " + (s.updated || "—") + " · " + freshness(s).word) + "</span></div>";
-  h += '<div class="psec">' + detailBody(s, { page: true }) + '</div></div><aside class="recipe-rail" aria-label="Recipe summary"><section><h2>CONDITION SUMMARY</h2><dl><dt>Headline</dt><dd>' + esc(condition) + '</dd><dt>Memory</dt><dd>' + esc(req.memory_gb == null ? "not recorded" : gb(req.memory_gb)) + '</dd><dt>Hardware</dt><dd>' + esc(hwFirstLabel(s) || "not recorded") + '</dd></dl><p>Compatibility is checked only in My Hardware; this recipe is not a bare fits claim.</p></section><section><h2>PROVENANCE KEY</h2><ul>' + provenance.map(function (x) { return '<li>' + esc(x) + '</li>'; }).join("") + '</ul><p>Confidence dimensions remain separate; they are not a ranking.</p></section></aside></div></div>';
+  h += '<div class="psec">' + detailBody(s, { page: true }) + '</div></div><aside class="recipe-rail" aria-label="Recipe summary"><section><h2>CONDITION SUMMARY</h2><dl><dt>Headline</dt><dd>' + esc(condition) + '</dd><dt>Memory</dt><dd>' + esc(req.memory_gb == null ? "not recorded" : gb(req.memory_gb)) + '</dd><dt>Hardware</dt><dd>' + esc(hwFirstLabel(s) || "not recorded") + '</dd></dl><p>Compatibility is checked only in My Hardware; this recipe is not a bare fits claim.</p></section><section><h2>PROVENANCE KEY</h2><ul class="pkey">' + provenance.map(function (x) { return '<li><span class="pmark" data-tier="' + x.tier + '" aria-hidden="true"></span>' + esc(x.t) + '</li>'; }).join("") + '</ul><p>Confidence dimensions remain separate; they are not a ranking.</p></section></aside></div></div>';
   el("main").innerHTML = h;
 }
 function viewModel(id) {
@@ -2172,7 +2200,7 @@ function viewModel(id) {
   if (!m) return notFound("No model family with the id " + id + " is in this dataset.");
   var list = sorted(SETUPS.filter(function (s) { return s.model === id; }));
   var a = m.architecture || {}, c = m.context || {};
-  el("mast-sub").innerHTML = esc(m.summary ? String(m.summary).slice(0, 190) : "");
+  el("mast-note").innerHTML = esc(m.summary ? String(m.summary).slice(0, 190) : "");
   var h = '<div class="page wide"><p class="crumb"><a href="#/">Models</a> ' + esc("→ model family") + "</p>" +
     "<h1>" + esc(m.name) + "</h1>";
   if (m.summary) h += '<p class="lede">' + esc(m.summary) + "</p>";
@@ -2206,7 +2234,7 @@ function viewPublisher(id) {
   if (!p) return notFound("No publisher with the id " + id + " is in this registry.");
   var asPub = SETUPS.filter(function (s) { return (s.variation || {}).publisher === id; });
   var asBuilder = SETUPS.filter(function (s) { return s.builder === id; });
-  el("mast-sub").innerHTML = esc(p.role || "");
+  el("mast-note").innerHTML = esc(p.role || "");
   var h = '<div class="page wide"><p class="crumb"><a href="#/recipes">Recipes</a> ' + esc("→ publisher") + "</p><h1>" + esc(p.name) + "</h1>" +
     '<p class="lede">' + esc(p.role || "") + "</p>" +
     '<div class="psec"><div class="kv two"><dt>Kind</dt><dd>' + esc(p.kind || "") + "</dd>" +
@@ -2219,7 +2247,7 @@ function viewPublisher(id) {
   el("main").innerHTML = h + "</div>";
 }
 function notFound(msg) {
-  el("mast-sub").textContent = "";
+  el("mast-note").textContent = "";
   el("main").innerHTML = '<div class="page"><h1>Not found</h1><p class="lede">' + esc(msg) + "</p>" +
     '<div class="empty"><h2>Where to go instead</h2><ul class="notes">' +
     '<li><a href="#/">Models</a> — choose a model and inspect its practical minimum</li>' +
@@ -2232,7 +2260,7 @@ function notFound(msg) {
 
 function viewMethodology() {
   setRail("");
-  el("mast-sub").innerHTML = esc("How the evidence labels are defined, how derived values are computed, and what the dataset does not record.");
+  el("mast-note").innerHTML = esc("How the evidence labels are defined, how derived values are computed, and what the dataset does not record.");
   var tiers = { box: 0, forum: 0, vendor: 0, none: 0 };
   SETUPS.forEach(function (s) { tiers[s.provenance_tier || "none"]++; });
   var noSpeed = SETUPS.filter(function (s) { return !speeds(s).length; }).length;
@@ -2306,7 +2334,7 @@ function viewMethodology() {
 
 function viewContribute() {
   setRail("");
-  el("mast-sub").innerHTML = esc("What a recipe needs before it can be accepted, and why a number without a source is deleted rather than downgraded.");
+  el("mast-note").innerHTML = esc("What a recipe needs before it can be accepted, and why a number without a source is deleted rather than downgraded.");
   var h = '<div class="page"><h1>Contribute a recipe</h1>' +
     '<p class="lede">' + esc("The unit of an entry is one runnable setup: one checkpoint, one engine configuration, one hardware class. A model with eight checkpoints across three engines is twenty-four entries, not one row — because that is the thing that actually gets run and actually gets measured.") + "</p>";
   h += '<div class="psec"><h2>What an entry needs</h2><ul class="notes">' +
@@ -2366,6 +2394,7 @@ function writeQuery(path, params) {
   var qs = serializeQuery(params);
   var next = path + (qs ? "?" + qs : "");
   if (location.hash !== next) history.replaceState(null, "", next);
+  syncRouteLine();
 }
 function patchQuery(path, patch) {
   var cur = parseHash().q || {};
@@ -2429,6 +2458,7 @@ function route() {
     if (on) t.setAttribute("aria-current", "page"); else t.removeAttribute("aria-current");
   });
   document.body.setAttribute("data-route", state.route);
+  syncRouteLine();
   el("shell").style.gridTemplateColumns = state.route === "directory" && !state.mobile && window.innerWidth >= 1180
     ? "var(--rail-w) minmax(0,1fr)" : "minmax(0,1fr)";
 
@@ -2509,6 +2539,23 @@ function setMode(next) {
 }
 
 /* ---------------------------------------------------------------- events */
+/* The theme control is named, never a bare glyph: the label says what the
+   next press gives you, and the cycle is dark -> light -> system. */
+function syncThemeLabel() {
+  var b = el("theme"), l = el("theme-label");
+  if (!b || !l) return;
+  var cur = document.documentElement.getAttribute("data-theme");
+  var next = cur === "dark" ? "light" : cur === "light" ? "" : "dark";
+  l.textContent = next === "dark" ? "Dark" : next === "light" ? "Light" : "System";
+  b.setAttribute("aria-label", "Switch colour theme, currently " +
+    (cur || "following the system") + ". Next: " + (next || "system"));
+}
+/* The shelf mark. The sheet names the reader's exact position, including the
+   query state, so a route can be lifted straight out of the page and shared. */
+function syncRouteLine() {
+  var r = el("mast-route");
+  if (r) r.textContent = "#" + (location.hash.replace(/^#/, "") || "/");
+}
 function nav(hash) { if (location.hash === hash) route(); else location.hash = hash; }
 function setFilter(k, v) {
   if (v) state.f[k] = v; else delete state.f[k];
@@ -2610,6 +2657,7 @@ document.addEventListener("click", function (e) {
     if (next) document.documentElement.setAttribute("data-theme", next);
     else document.documentElement.removeAttribute("data-theme");
     store("qlr.theme", next);
+    syncThemeLabel();
     return;
   }
   if (t.id === "mode-lite") { setMode("lite"); return; }
@@ -2869,6 +2917,7 @@ function spy() {
 (function boot() {
   var th = store("qlr.theme");
   if (th) document.documentElement.setAttribute("data-theme", th);
+  syncThemeLabel();
   var saved = sess("qlr.compare");
   if (Array.isArray(saved)) state.compare = saved.filter(function (id) { return SETUPS.some(function (s) { return s.id === id; }); }).slice(0, CMP_MAX);
   var prof = store("qlr.profile.current");

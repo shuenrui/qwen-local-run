@@ -607,8 +607,10 @@ def main():
         strips = page.evaluate("""() => {
           var out = {};
           document.querySelectorAll('[data-ev]').forEach(function(b){
-            out[b.getAttribute('data-ev')] = { glyphs: b.innerText.replace(/\\s+/g,''),
-                                               label: b.getAttribute('aria-label') };
+            out[b.getAttribute('data-ev')] = {
+              glyphs: [].slice.call(b.querySelectorAll('i')).map(function(i){
+                return i.getAttribute('data-lvl'); }),
+              label: b.getAttribute('aria-label') };
           });
           return out;
         }""")
@@ -616,18 +618,18 @@ def main():
         def py_perf(s):
             sp = speeds(s)
             if not sp:
-                return "○"
+                return "empty"
             box = [m for m in sp if m["provenance"] == "box"]
             if any((m.get("n") or 0) > 1 and m.get("method") for m in box):
-                return "●"
+                return "full"
             forum = [m for m in sp if m["provenance"] == "forum"]
             if any((m.get("n") or 0) > 1 or m.get("stat") for m in forum):
-                return "◑"
+                return "three"
             if box:
-                return "◑"
+                return "three"
             if forum:
-                return "◐"
-            return "◔"
+                return "half"
+            return "one"
 
         bad_strip, unlabeled = [], []
         for s in SET:
