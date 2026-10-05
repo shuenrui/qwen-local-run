@@ -1,0 +1,360 @@
+[
+ {
+  "id": "6a9ed439000000001103a069",
+  "title": "低成本本地部署qwen3.8 27b方案",
+  "desc": "低成本本地部署qwen3.8 27b方案，显卡8卡2070，总显存64G，自制开放式机架-显卡住楼房，同时满足静音和散热需求。使用unsloth studio部署qwen3.8 27b模型，Q6_K_M量化版本，上下文设置到200k，开启tensor和mtp，生成token的速度可以到30token/秒。很多人问我用的啥主板，我打算点赞过500就公布，包括细节[坏笑R]，现在只能先猜一下了[回招呼]。主板限制条件:非服务器主板、8个以上pcie。\n补充:近期经过研究，实现使用vllm在这8张2070显卡（其中有一张2060s和1张2070s）的机器上跑出了120token/秒的生成速度。使用的是qwen 3.8 27b nvfp4模型。受限于普通主板，预填充的速度还是比较低。但总体上已经快了很多。当然，速度是有代价的，要跑出这个速度需要关闭视觉，还要把上下文长度减小到131k。",
+  "time": 1788793913000,
+  "user": "极客老猫",
+  "ip": "北京",
+  "tags": []
+ },
+ {
+  "id": "6aad2652000000002700b056",
+  "title": "Qwen3.8被压到5.9GB，8GB显卡实测🔬",
+  "desc": "PrismML刚发布的Ternary Bonsai 2 27B\n把Qwen3.8 27B用三值量化压到只有5.9GB\n官方说保留98.2%性能，我拿8GB显卡实测了\n\t\n📊 四款27B模型速度对比\n\t\nQwen3.6-35B（MoE）：30.79 tok/s ⭐最快\n旧版Bonsai 27B（1-bit）：38.1 tok/s\n新版Bonsai 2 27B（三值）：6.57 tok/s\nQwen3.8-27B原版（Q4_K_M）：3.82 tok/s\n\t\n新版比原版快1.7倍！但比MoE架构慢4.7倍\n\t\n📈 官方14项基准测试（满分100）\n\t\n数学（4项）：96.57 vs 97.06 → 保留99.5%\n编码（4项）：81.58 vs 82.17 → 保留99.3%\n指令遵循：82.66 vs 81.25 → 反超1.7%\n知识推理：83.95 vs 86.66 → 保留96.9%\n智能体调用：77.57 vs 79.74 → 保留97.3%\n视觉（5项）：78.59 vs 81.64 → 保留96.3%\n\t\n总体：83.9 vs 85.4 → 保留98.2%\n\t\n🔧 本机6维度能力横评（满分60）\n\t\n旧版Bonsai 27B（1-bit）：36/60 ❌知识硬伤\nQwen3.8-27B原版：48.5/60\nQwen3.6-35B（MoE）：58/60 ⭐最强\n\t\n旧版Bonsai知识质量有硬伤（常识题胡编）\n新版声称98.2%保留，本机未重测\n\t\n🤔 为什么三值量化反而快了？\n\t\n三值{-1,0,+1}计算比FP4简单\n省了浮点运算，纯整数更快\n但比1-bit复杂，所以比旧版Bonsai慢\n\t\n✅ 新版能做什么\n\t\n8GB显卡能装（显存6957MB）\n数学接近满血（96.57 vs 97.06）\n编码保留高（81.58 vs 82.17）\nApache 2.0可商用\n\t\n❌ 不能做什么\n\t\n速度太慢，实时对话体验差\n长上下文会OOM（剩余1.2GB）\n不适合Agent循环\n\t\n💡 一句话总结\n\t\n8GB跑27B，MoE仍是最佳选择\n三值量化是有趣的尝试，但速度是硬伤\n\t\n#Qwen3.8 #Bonsai #27B #三值量化 #8GB显卡 #本地大模型 #PrismML #AI推理 #我这行的AI路[话题]#",
+  "time": 1789822381000,
+  "user": "跑通为止",
+  "ip": "陕西",
+  "tags": [
+   "我这行的AI路"
+  ]
+ },
+ {
+  "id": "6ab0681c0000000012037ca8",
+  "title": "8GB能跑Qwen3.8 27B？我之前测错了5倍！",
+  "desc": "之前测试 8GB 显卡跑 27B 模型，结果只有：❌ 6.57 tok/s\n\t\n当时还以为：“8GB显存是不是只能跑小模型？”\n\t\n直到评论区一位网友提醒：8G显卡跑27B不应该这么慢。\n\t\n我重新检查了一遍，发现真的翻车了😂\n\t\n之前 llama.cpp 根本没有正确调用GPU，实际上跑的是CPU速度。\n\t\n换了正确版本的llama.cpp后,速度直接起飞👇\n\t\n🔥 RTX 5060 Laptop 8GB 实测：\n模型1： Bonsai 2 27B Ternary\n显存占用： 5.53GB\n速度： 🚀 32.15 tok/s\n\t\n模型2： Qwen3.8-27B IQ1_S\n显存占用： 5.76GB\n速度： 🚀 29.46 tok/s\n看起来两个模型大小差不多， 但实际体验差距非常明显。\n\t\n重点来了：❌ 不是“能塞进显存”就等于“能用”\n很多1bit量化模型虽然体积很小， 但是复杂任务能力下降明显。\n而原生低比特训练模型， 在压缩的同时保留了更多能力。\n\t\n对于8GB显卡玩家：\n✅ 可以尝试27B级别模型\n✅ 日常AI助手、知识问答、代码辅助都有机会\n❌ 不要期待长上下文、高强度推理媲美云端大模型\n\t\n另外提醒一个非常容易踩的坑：\n测试 llama.cpp 时一定看启动日志：\n有没有：offloading layers to GPU 没有的话，大概率是在用CPU硬扛。\n我的第一次测试： 6.57 tok/s ❌\n正确GPU测试： 32.15 tok/s ✅\n差了接近5倍。\n\t\n所以以后看到“8GB显卡跑大模型”，不要只看：\n❌ 模型大小\n❌ 显存占用\n❌ tok/s\n\t\n更重要的是：\n✅ 什么量化方案\n✅ GPU有没有真正跑起来\n✅ 实际任务能力怎么样\n\t\n#AI大模型 #本地部署 #Bonsai2[话题]# 27B#LLM #开源AI #AIGC #ComfyUI #显卡 #AI工具 #我这行的AI路[话题]#",
+  "time": 1789990260000,
+  "user": "跑通为止",
+  "ip": "陕西",
+  "tags": [
+   "Bonsai2",
+   "我这行的AI路"
+  ]
+ },
+ {
+  "id": "6ab2bd4f000000000a02270b",
+  "title": "震惊瘫坐，笔记本跑qwen38-27B，570token/s",
+  "desc": "分享下配置：模型 Qwen3.8-27B NVFP4，权重 16.78G，官方原生上下文 262144。引擎 ninfer，开 MTP 投机解码 + KV 量化，OpenAI 兼容接口在 127.0.0.1:8080/v1，model id 是 qwen3.8-27b，API Key 任意。机器 i9-14900HX + RTX 5090 Laptop 24G + 48G 内存，原生 Win11，压测 152-169W、55 度，是功耗墙不是降频。\n实测（引擎侧真实 token 计数）：262K 满窗大海捞针 230515 token，25%/50%/75% 三个深度密钥全部一字不差找回，prefill 971 tok/s；短上下文 prefill 3148 tok/s；8 路聚合 465-490 tok/s，极限数字输出约 660 tok/s；马拉松连跑数小时每路 60-63 tok/s 零衰减；前缀缓存命中 TTFT 从 8.3 秒降到 51-71 毫秒。\n四挡位（实测顶格值）：x1 单路 262K 窗口/32K 输出，x2 双路 168K/32K，x4 四路 65K/16K，x8 八路 18.5K/4K。硬约束是 KV 池 ≤ 窗口 × 并发，超了启动就拒。显存账：每路约 380MB 固定开销 + KV 池 + Graph 82MB/路，所以并发翻倍要交人头税，x8 每路只能压到 18.5K。#榨干软件howto[话题]# #游戏人王鲸[话题]# #大模型[话题]# #qwen38_27b[话题]# #ninfer[话题]# #5090[话题]# #本地大模型[话题]# #本地模型部署[话题]# #AI教程[话题]# #AI新手村[话题]#",
+  "time": 1790098767000,
+  "user": "游戏人王鲸",
+  "ip": "广东",
+  "tags": [
+   "榨干软件howto",
+   "游戏人王鲸",
+   "大模型",
+   "qwen38_27b",
+   "ninfer",
+   "5090",
+   "本地大模型",
+   "本地模型部署",
+   "AI教程",
+   "AI新手村"
+  ]
+ },
+ {
+  "id": "6ab7748900000000180078cc",
+  "title": "Qwen3.8 177B，8GB卡跑通了",
+  "desc": "Qwen3.8-Flash-Next，177B 参数、文件 72.5GB——跟之前那个 27B 不是一回事，这是旗舰。我这台 8GB 显存的机器，跑起来了。\n不是云，不是租卡，就在我桌上这台机器上。\n先交代账：模型 177B 参数、文件 72.5GB，我机器内存 32GB。怎么算都塞不下，还差 40 多 GB。\n所以我给它写的测试方案里就写好了\"预加载失败也能测\"——说白了，我赌它炸。\n\t\n📊 测前预期 vs 实测\n预期：加载失败，或慢到没法用\n实测：加载成功，6 token/s，6 项考试 56/60\n对，没看错。6 token/s，慢，但真能干活，数学题全对。\n\t\n🔧 中间踩的坑比结果精彩\n1️⃣ 系统差点拒绝我。虚拟内存上限 47GB，模型 72.5GB。我把上限拉到 96GB 重测，过了。玩大模型第一课：先改虚拟内存\n2️⃣ 有个提速技术，官方说快 70%。我折腾两小时，报错、崩、报错。最后发现它的加速部件 4.1GB，显卡塞不下。这条下篇单独讲\n3️⃣ 加载速度看姿势：走弯路 113 秒，默认方式 59 秒，第二次启动直接 37 秒。差 3 倍，纯姿势问题\n\t\n💡 实话\n6 token/s 不适合聊天，一问一答等半分钟。\n它适合挂机出活：写长稿、啃长文档、读图核数。\n8GB 显存扛 72.5GB 模型的意义就一句话：手里的卡，上限比想象的高。\n\t\n#8GB显卡实测 #Qwen3.8FlashNext #177B #本地大模型 #大模型部署 #AI实测 #量化 #低配显卡 #我这行的AI路[话题]#",
+  "time": 1790407817000,
+  "user": "跑通为止",
+  "ip": "陕西",
+  "tags": [
+   "我这行的AI路"
+  ]
+ },
+ {
+  "id": "6ab7be520000000002029d93",
+  "title": "32GB Mac mini 到底能不能实用地跑 27B？",
+  "desc": "🔥 Mac mini M6 32GB，能不能本地跑 27B 大模型？\n\t\n答案：**能，而且是真的可以日常使用。**\n\t\n最近把 Mac mini M6 32GB 搭成了本地 AI 主机，实测最新 **Qwen3.8-27B** 官方版和社区 Uncensored 版。全程本地运行，使用 llama.cpp + Metal GPU 加速。\n💻 配置\nMac mini M6\n32GB Unified Memory\n1TB SSD\n🚀 官方 Qwen3.8-27B\n模型：UD-Q4_K_XL\n参数：27.32B\n大小：16.34 GiB\nPrompt：**220.19 tokens/s**\n生成：**8.33 tokens/s**\n🚀 Qwen3.8-27B Uncensored\n模型：Q4_K_M\n参数：27.32B\n大小：15.65 GiB\nPrompt：**223.20 tokens/s**\n生成：**8.57 tokens/s**\n无审查版小约 0.69GiB，生成快约 2.9%，实际聊天基本感觉不到差距。\n\t\n⚡ GPU 是否真的工作？\nllama.cpp 已正确识别 Apple M6，Backend 为 **BLAS + Metal**，Unified Memory、BF16、Tensor 均正常，Metal 推荐最大 Working Set 约 26.8GB。\n所以不是 CPU 硬跑，而是真正使用 Metal GPU 本地推理。\n\t\n🤔 8.5 tokens/s 什么水平？\n大约每分钟生成 500 tokens，1000 tokens 长回答约 2 分钟。\n\t\n云端当然更快，但重点是：**一个完整的 27B 模型正在一台 Mac mini 上本地运行。**\n\t\n💡 为什么选 Q4？\n32GB 内存除了模型，还要留给 macOS、KV Cache、Context 和 Metal Buffer。Q8 接近 29GB，空间太紧；Q4 约 16GB，更适合实际长期使用。\n\t\n所以目前我的结论：\n**Mac mini M6 32GB + 27B Q4 是非常合适的组合。**\n\t\n#Macmini[话题]# #MacM6[话题]# #Qwen[话题]# #本地大模型[话题]# #本地AI[话题]# #LLM[话题]# #llamacpp[话题]# #AppleSilicon[话题]# #AI部署[话题]#",
+  "time": 1790426706000,
+  "user": "毕谷迪克",
+  "ip": "广东",
+  "tags": [
+   "Macmini",
+   "MacM6",
+   "Qwen",
+   "本地大模型",
+   "本地AI",
+   "LLM",
+   "llamacpp",
+   "AppleSilicon",
+   "AI部署"
+  ]
+ },
+ {
+  "id": "6ab8dcfd000000001203748d",
+  "title": "4台DGX Spark Qwen 3.8 flash 240K上下文",
+  "desc": "Qwen3.8-Flash-Next NVFP4，4台DGX Spark以TP4运行。我们的实测结果：240K长上下文检索精确命中；16路并发总解码吞吐469.6tok/s；MTP在测试的代码负载上带来1.41–2.13倍解码加速。\n启动时曾报“镜像不支持MTP”，最终定位为权重配置标签冲突，统一标签后成功启用。30分钟持续负载、65轮测试，未出现卡死。\n#DGXSpark[话题]# #Qwen[话题]# #本地部署[话题]# #大模型推理[话题]# #长上下文[话题]# #投机解码[话题]# #极算门JISUMEN[话题]#",
+  "time": 1790500093000,
+  "user": "极算门Ai工作站",
+  "ip": "广东",
+  "tags": [
+   "DGXSpark",
+   "Qwen",
+   "本地部署",
+   "大模型推理",
+   "长上下文",
+   "投机解码",
+   "极算门JISUMEN"
+  ]
+ },
+ {
+  "id": "6aba508900000000180134c7",
+  "title": "5090跑千问3.8 flash近60t/s",
+  "desc": "部署环境\nWindows 机器，32G 5090 + 192G 内存，WSL2 引擎。\n\t\n模型和权重\nRadixArk 的 NVFP4 量化版（Qwen4 架构预览）：125B MoE + 51B N-gram 嵌入，512 专家拉 top-10，每 token 就激活 6B，原生多模态带视觉。\n权重本地预转成 FTW 装载格式：冷装载压到 40 秒起来，热重启也是 40 秒。\n\t\n引擎版本\nFreeToken，现役 9/26 的 nightly main 支 0d652e73a，官方预编 wheel 免编译。\n\t\n关键参数\n--moe-strategy offload --moe-cpu-layers auto（整套方案灵魂，63.5G 专家住内存，GPU 逐 token 搬着算）\n--memory-ratio 0.95 --moe-cache-size 4096\n--moe-prefill-hit-d2d（缓存命中的专家走设备内拷贝，不挤 PCIe）\n--num-tokens 262144\n最大杠杆在环境层：FREETOKEN_PIN_BUDGET_GB=80 + ulimit -l unlimited。默认 pin 预算只给 40% 内存，63.5G 专家塞不下，7 个头尾层被锁去 CPU 解码，改完 decode 直接 +35-41%。\n\t\n实测（thinking 开、单流）\n32K 到 196K 四档：decode 中位 57-58 t/s，计数类重复模式能窜到 63-66；prefill 四档 2480-2575 基本持平，显存 31.2/31.8G 贴顶。\n\t\n运行功率平均才 157W（5090 满功率 575W）。专家住内存侧，瓶颈貌似在 PCIe 传输速度。#qwen38_27b[话题]# #5090[话题]# #本地部署[话题]# #大模型[话题]#",
+  "time": 1790595209000,
+  "user": "OP",
+  "ip": "山东",
+  "tags": [
+   "qwen38_27b",
+   "5090",
+   "本地部署",
+   "大模型"
+  ]
+ },
+ {
+  "id": "6abbd520000000001a023fa7",
+  "title": "12gb显存本地部署大模型最佳方案",
+  "desc": "Strata（图二）是一个专为Qwen3.8-Flash-Next-GSQ-RCO量化模型定制的神奇的开源本地模型推理引擎，经过实测运行Qwen3.8-Flash-Next-GSQ-RCO-q3s（3.5bpw ），168k上下文，推理速度峰值能达到48t/s（见图三），平均速度在40t/s左右，填充速度700t/s，总体性能是llama.cpp的好几倍。\n\t\n硬件需求：\n12gb以上显存显卡\n64gb系统内存\n\t\n如何使用：\n1，魔搭或者hf-mirror搜索Qwen3.8-Flash-Next-GSQ-RCO选择合适版本下载\n2，下载任意一个有免费模型的harness或者使用你的付费api把你的模型目录和github项目名称复制给ai让它给你部署\n\t\n12gb显存配置参考：\n--pack\nD:\\Strata-data\\packs\\iq3_s\n--native\nD:\\LLM_model\\root\\Qwen3.8-Flash-Next-GSQ-RCO\\Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00001-of-00002.gguf\n--ple-gguf\nD:\\LLM_model\\root\\Qwen3.8-Flash-Next-GSQ-RCO\\Qwen3.8-Flash-Next-GSQ-RCO-IQ3_S-00002-of-00002.gguf\n--expert-profile\nD:\\Strata\\data\\expert-profile.bin\n--expert-cache\nauto\n--prefill\nauto\n--spec\n4\n--spec-min-p\n0.5\n--mtp\nD:\\Strata-data\\mtp\\rt\n--max-context\n172032\n--kv\nint8\n--kv-resident\n32768\n--vision\n--vram-reserve-mib\n700\n#多模态人工智能[话题]# #本地部署大模型[话题]# #Qwen大模型[话题]#",
+  "time": 1790694688000,
+  "user": "root",
+  "ip": "广东",
+  "tags": [
+   "多模态人工智能",
+   "本地部署大模型",
+   "Qwen大模型"
+  ]
+ },
+ {
+  "id": "6abc8ce5000000000200fa9f",
+  "title": "16G 显存跑满 27B/256K 上下文",
+  "desc": "KVMem（kvmem/kvmem-llama.cpp）是一个基于 llama.cpp 的新方案：16GB 显存的卡跑 Qwen3.8-27B，256K 上下文拉满，decode 稳在 30-40 tok/s（5060 Ti 实测）。思路一句话：已完结的历史 KV 缓存放进系统内存当池子，GPU 只保留一个有限的激活窗口，每次只把当前问题最相关的部分捞回显存——256K 的工作区，显存里只常驻 32K。项目 9 月 14 日开源，已有 arXiv 论文（2609.04852，Virtualizing Million-Token Agent Workspaces on a Consumer GPU），24GB 5090 Laptop 上工作区可扩到 1M token。精度账：LongMemEval-S / AgentLongBench 上，32K GPU 窗口对全 256K 历史，85.6% vs 86.6% 准确率、60.9% vs 59.5% 任务成功率——几乎无损。OpenAI 兼容接口，chat/tools/vision 都支持，现有本地客户端直接指过去。\n以下是发布说明：\n仓库：https://github.com/kvmem/kvmem-llama.cpp\n#AGI[话题]# #大模型[话题]#",
+  "time": 1790741733000,
+  "user": "智柴网 | 你的 AI 外脑",
+  "ip": "美国",
+  "tags": [
+   "AGI",
+   "大模型"
+  ]
+ },
+ {
+  "id": "6abcdca30000000001008b31",
+  "title": "5090+64G内存跑Qwen3.8 Flash实测",
+  "desc": "🖥️ 配置（P2）\n5090 32G + 64G DDR5-6400 + Ultra 7 270K + TiPro9000 4TB\n刷X看到说5090能跑，装完真香😭\n\t\n📌 结论（P1）\n· 125B阿里新旗舰，12G显存的显卡就能跑\n· 解码93-114 tok/s，比阅读快\n· 256K上下文，19万token读41秒\n· 质量=满血99.4%\n· 完全离线，无限额度\n\t\n🧠 为什么它能跑（P3）\n125B MoE只激活6B、KV不随长度膨胀、稀疏注意力只看关键块——为省显存而生\n\t\n⚡ 三层各跑多快（P4）\n三层实测：显存命中93-114 / 内存命中69-72 / 极限39-58 tok/s\nSSD查表每token仅5MB/s；命中率常态91-95%\n\t\n🚀 还有三手加速（P5）\nMTP投机解码白捡1.6-1.8倍、专家热度越用越准、标定器调CPU worker再快20%\n\t\n📊 分上下文实测（P6）\n1K：93 / 64K：114 / 190K：108 tok/s（预填充4641）\n256K原生可用，GPU峰值99%\n\t\n🔬 稳定性与并发（P7）\n15万token连跑11次全成功、耗时33.5-34.8s无波动、内存显存零泄漏\n捞针10/11命中；8并发严格排队（加速比1.17×）→ 单人满速，多人要加卡\n\t\n🧪 不同显卡配方（P8）\n2070 8G约34 / 3060 12G约45 / 5070约62 / 3090约100 / 5090实测93-114 / 双卡160 tok/s\n内存才是门票：48G起步、64G甜点（能上256K）、128G解锁IQ3_S\n\t\n🎮 实战（P9-P11）\n· 一句prompt写出「鹈鹕骑车」游戏\n· Monitor面板全景监控 · OpenAI兼容直接接\n\t\n🎯 质量（P12）\nAIME数学满分=满血 / 推理-0.51 / 编程-1.14，保留99.4%\n\t\n📦 安装（P13）\nclone Strata→双击START-HERE.bat→选IQ3_XXS，权重走hf-mirror只要25分钟\n\t\n⚠️ 上手前（P14）\n64G能上256K但内存吃满；激活6B≠只要6G显存；SSD装NVMe\n\t\n💰 算账\n本地=一次投入无限续杯，数据不出本机。5090用户别犹豫\n\t\n#本地大模型 #Qwen3.8 #RTX5090 #Strata #AI部署",
+  "time": 1790762147000,
+  "user": "观界",
+  "ip": "江苏",
+  "tags": []
+ },
+ {
+  "id": "6abf1aee00000000020289de",
+  "title": "一台 DGX Spark 跑满 Qwen3.8 Flash Next",
+  "desc": "我们把自己在 DGX Spark 上跑 Qwen3.8 Flash Next 的推理引擎开源了,叫 Octojet,同时发布了它用的 NVFP4 权重。\n\t\n这是给 coding agent 用的场景优化的:提示词很长(几万到二十多万 token)、来回追问多、回复短。一台 Spark 同时跑 3 路、每路 26 万上下文,支持图片输入。\n\t\n和目前最快的公开方案对比(TensorFold v0.6.0 + 已发布的 NVFP4 权重,同一台机器、同样设置、同一轮测试):\n🔹 128k 提示词出首字:68.9 秒 vs 89.5 秒\n🔹 210k 提示词:117.9 秒 vs 152.3 秒\n🔹 Agent 追问一步:11.8 秒 vs 14.9 秒\n🔹 解码速度:62 vs 42 tok/s(聊天)\n🔹 和之前提示词共享 69k 前缀的新提示词:3.2 秒 vs 47.4 秒\n\t\n准确率持平(第二轮测试):GSM8K 245 vs 246/250,HumanEval 155 vs 158/164。\n\t\n也说说不如别人的地方:内存比 local-inference-lab 的权重多用约 6 GiB;权重目前只能用 Octojet 跑;只在 GB10 上测过。\n\t\n所有数字的对比版本号、设置和复现脚本都在仓库的 docs/benchmarks.md 里。感谢 Qwen、RadixArk、Vontra、TensorFold、MiaAI-Lab 和 turboderp 的工作。\n\t\n代码:github.com/octolixai/octojet\n模型:huggingface.co/octolix/Qwen3.8-Flash-Next-Octojet-NVFP4\n\t\n#大模型[话题]# #localllm[话题]# #dgxspark[话题]# #qwen[话题]# #英伟达[话题]#",
+  "time": 1790909167000,
+  "user": "Octolix",
+  "ip": "美国",
+  "tags": [
+   "大模型",
+   "localllm",
+   "dgxspark",
+   "qwen",
+   "英伟达"
+  ]
+ },
+ {
+  "id": "6abfc8080000000015003c54",
+  "title": "AI科技与狠活！12G显卡畅跑Qwen3.8 flash！",
+  "desc": "神项目Strata来袭！12G显卡轻松跑125B体量Qwen3.8 Flash Next！速度96t/s！#AI大模型[话题]# #大模型部署[话题]# #大模型评测[话题]# #开源模型[话题]# #开源大模型[话题]# #本地部署大模型[话题]# #AI大模型[话题]# #AI大模型评测[话题]# #Qwen模型[话题]#  #WeeklyPick[话题]#",
+  "time": 1790953480000,
+  "user": "AI 观模者",
+  "ip": "山东",
+  "tags": [
+   "AI大模型",
+   "大模型部署",
+   "大模型评测",
+   "开源模型",
+   "开源大模型",
+   "本地部署大模型",
+   "AI大模型",
+   "AI大模型评测",
+   "Qwen模型",
+   "WeeklyPick"
+  ]
+ },
+ {
+  "id": "6abff12f000000000e03c800",
+  "title": "DGX Spark实测Qwen 3.8 Flash Next",
+  "desc": "并发实测：中文短提示、每路输出 512 tokens、关闭思考。\n8路最高93.0 tok/s， 每路平均 12.1 tok/s 首字0.91 秒\n#DGX[话题]# #DGXSpark[话题]# #本地AI[话题]# #本地damo[话题]# #本地LLM[话题]# #英伟达AI电脑[话题]# #DGX_Spark[话题]# #GB10[话题]#",
+  "time": 1790964015000,
+  "user": "CyberGamers",
+  "ip": "美国",
+  "tags": [
+   "DGX",
+   "DGXSpark",
+   "本地AI",
+   "本地damo",
+   "本地LLM",
+   "英伟达AI电脑",
+   "DGX_Spark",
+   "GB10"
+  ]
+ },
+ {
+  "id": "6ac07bbe000000001203d62a",
+  "title": "满血版M5pro本地跑Qwen3.8实测",
+  "desc": "[一R]本地环境配置：\n1、主机：MacBook M5 pro满血版（18c CPU、20c GPU、64GB内存），macOS 27.0.1；\n2、LLM Server：oMLX 0.7.0；\n3、LLM：Qwen3.8-27B-4bit，默认配置；\n4、Agent：DeepSeek Harness 0.2.0-rc.2；\n[二R]测试案例：识别本地视频文件中内容；\n[三R]性能表现：平均输出速度：12tok/s，最高到15tok/s；\n[四R]主机负载：CPU负载不到20%，而GPU负载基本吃满（95%左右），内存最高占用到56GB（88%），单oMLX服务占用到25GB。主机底部烫手、风扇狂转、掉电飞快（开始未插96W电源）。。\n\t\n[五R]实测总结：12–15 tok/s 不是配置问题，而是「27B 稠密模型 + 视频输入」在这台机器上的物理上限附近，瓶颈有三处：\n① 解码被内存带宽锁死 —— 27B-4bit 权重约 14 GB，每生成一个 token 都要完整过一遍内存；理论上限约 20 tok/s，实测已达 60%–75%，解码端基本吃满。\n② 视频压在预填充环节 —— 累计 776 万输入 tokens 仅换回 14 万输出（55 : 1），预填充是纯 GPU 计算，这才是 GPU 100%、52 W、风扇狂转的根源；卡住吞吐的是预填充，不是生成。\n③ 配置与散热浪费 —— 32k 上下文 × 16 路并发 KV cache 严重过配，模型开机自启且永不空闲退出；热压力已到 Heavy 档，长跑必降频。\n[六R]优化建议（按收益排序）​：\n1. 换 8B 级 VLM 或 MoE（激活 3–4B）→ 解码提速 3–5 倍；\n2. 视频降采样：抽帧 0.5–1 fps、限制帧数、分辨率降至 448 px → 视觉 token 直降一个数量级；\n3. 两段式解耦：小 VLM 先转文字描述，再把文本喂给大模型；\n4. 收紧配置：上下文 8192/16384、并发 1–2、设 300 s 空闲超时；\n5. 保证 96 W 以上供电与散热，避免 LLM／剪辑／浏览器三开。\n\t\n#m5pro[话题]# #本地部署大模型[话题]# #Macbook[话题]# #Macbookpro[话题]# #本地ai[话题]# #qwen[话题]# #qwen38[话题]# #本地部署ai[话题]# #MLX[话题]# #本地大模型[话题]#",
+  "time": 1790999486000,
+  "user": "小般般",
+  "ip": "上海",
+  "tags": [
+   "m5pro",
+   "本地部署大模型",
+   "Macbook",
+   "Macbookpro",
+   "本地ai",
+   "qwen",
+   "qwen38",
+   "本地部署ai",
+   "MLX",
+   "本地大模型"
+  ]
+ },
+ {
+  "id": "6ac0d70f000000001c02c4fc",
+  "title": "16g 显存， 跑 Qwen 3.8 flash",
+  "desc": "4080s 16g\n64 g 内存\n\t\n项目方数据：RTX 5070 12GB + 64GB RAM，Q2_0 量化、4K 上下文，生成约 94 tok/s。\n\t\n关键不是把模型硬塞进显存，而是 GPU/CPU 协同。兼容 OpenAI/Anthropic API，目前一次处理一个请求。\ngithub.com/Niko1221/Strata",
+  "time": 1791022863000,
+  "user": "wes",
+  "ip": "美国",
+  "tags": []
+ },
+ {
+  "id": "6ac1178a000000000200df4c",
+  "title": "Spark DGX运行头部开源大模型进展一览1003",
+  "desc": "额...居然有人催更\n\t\n挑重要的说：\nGLM-5.3 Mia 4bpw + TF0.6\nprose C1 60.4/C2 79.2；C8 130.8；code C8 167\nhttps://github.com/MiaAI-Lab/GLM-5.3-Flash-EXL3-2x-DGX-Sparks-TensorFold\n\t\nQwen3.8-Flash-Next AutoRound\nhttps://github.com/dime-online/qwen3.8-Flash-DGX-UltraFast\n\t\nQwen3.8-Flash-Next hibrid48 v5.1\ncode74.6；JSON74.2；mixed56.4；prose44.7；C2 code107.3 agg\nhttps://github.com/myllmbox/qwen38-flash-next-recipe\n\t\n#大模型 #多模态人工智能 #本地大模型 #机器学习 #深度学习 #DGXSpark实测 #开源大模型",
+  "time": 1791039370000,
+  "user": "反射神经很长的蛙",
+  "ip": "上海",
+  "tags": []
+ },
+ {
+  "id": "6ac11a04000000001b01e9af",
+  "title": "【分享】Qwen3.8本地大模型部署推荐",
+  "desc": "本期实测对比两套 Qwen3.8 本地部署方案：方案A NInfer + Qwen3.8-27B NVFP4——解码均值 153 tok/s，4K 档预填充峰值 9,717 tok/s，支持 1-8 路并发，可跑满 256K 上下文；方案B Strata + Flash-Next 125B——仅需 12G 显存 + 大内存，Windows 一键安装，解码均值 104.9 tok/s，128K 超长预填充反超 A 约 13%，但仅单流、不支持并发。选型一句话：显存 ≥32G 选 A（速度+并发），32G 以下选 B（大模型+低门槛）。Qwen4 已官宣临近，下期预告双 R9700 64G 路线实测。#qwen[话题]# #5090[话题]#",
+  "time": 1791040004000,
+  "user": "困梦的杂物间",
+  "ip": "北京",
+  "tags": [
+   "qwen",
+   "5090"
+  ]
+ },
+ {
+  "id": "6ac1396d0000000015013f04",
+  "title": "4090 48+3080 20部署Qwen Next Flash测试",
+  "desc": "#本地部署[话题]# #AI[话题]# #qwen[话题]#  #RTX4090[话题]# #4090[话题]# #3080[话题]# #大模型[话题]#\n\t\n模型选择: 正常的Qwen Flash-Next肯定是单张卡装不下去的，所以选择了ISTA-DASLab/Qwen3.8-Flash-Next-GSQ-RCO-GGUF，本次涉及IQ3_XXS和 Q2_0两个版本，分别双卡、单卡部署。\n\t\n🖥️ 硬件： CPU：i7-14700K GPU：4090 48G+3080 20G  内存：DDR5 56G 🧠 推理框架：llama.cpp ⚙️\n\t\n📦 部署配置\n\t\nQwen3.8-Flash-Next IQ3_XXS：双卡 4090 48+3080 20\nQwen3.8-Flash-Next Q2_0：单卡 4090 48\n\t\n🛠️ 部署方式 模型是双分片 GGUF：分片1 是模型权重，进显存；分片2 是 26.8GB 的 n-gram 表，用 -lm mmap --lazy-mode on 留在内存，按需读行。\n\t\n两个模型都才用250k 上下文，KV 缓存 q8_0，👁️ 视觉多模态（mmproj）默认开启\n\t\n实测结果（250k 上下文配置）\n\t\n双卡（4090+3080） IQ3_XXS：上下文长度 250k，prefill 621 t/s，decode 54.3 t/s，显存占用 89.2% + 92.8%\n\t\n单卡 （4090）Q2：上下文长度 250k，prefill 832 t/s，decode 66.6 t/s，显存占用 96.8%\n\t\n单卡双卡显存基本在各自的Next Flash尺寸下被榨干\n\t\nprefill速度略慢，decode还行，完全可用，我刚部署好，无法做到各位大神那样夸张的速度，没事还需要多多研究，目前单4090的速度，prefill远低于27b q6  1200t/s，decode比27b 45t/s快了50%",
+  "time": 1791048045000,
+  "user": "MOMODO™",
+  "ip": "四川",
+  "tags": [
+   "本地部署",
+   "AI",
+   "qwen",
+   "RTX4090",
+   "4090",
+   "3080",
+   "大模型"
+  ]
+ },
+ {
+  "id": "6ac1b45900000000150013f6",
+  "title": "本地跑大模型：12G显卡就够了",
+  "desc": "一个叫 Strata 的开源框架，让普通游戏电脑能跑 125B 的大模型了。\n\t\n官方给的硬件要求：显卡 12G 显存起，内存 32G 起，硬盘约 80G（SSD），Windows 或 Linux。模型下载约 70G。\n\t\n它跑的是 Qwen3.8-Flash-Next，125B 的 MoE 模型 —— 一共 24,576 个「专家」，每写一个字只叫其中 10 个。\n\t\n所以显卡不用装下整个模型。官方把它拆成三层：显存留最常叫的几千个，内存放全部，SSD 放一张大索引表。官方的比喻是厨房 —— 天天用的放手边，其余放储藏室。\n\t\n官方实测，RTX 5070 12G + Ryzen 5 7600 + 64G 内存：\n· 出字 94 tokens/秒\n· 读入 2,650 tokens/秒（按 32K 文档测）\n\t\n官方给的参照是：一个 token 约等于四分之三个词，60 tokens/秒 就比你读得快。\n\t\n同价位的 AMD：RX 9070 XT 16G + 47G 内存，出字 60 tokens/秒。\n\t\n另外两条加速：小助手先猜接下来几个词，大模型一次全部核对，答案不变，快 1.6–1.8 倍；长文按块读，每块最多 8,192 tokens，超过 1,000 tokens/秒。\n\t\n一周里发生了什么，看一个对照：有推主记录，他双 5070ti 上周末只能跑 200 读入 / 10 出字，现在单卡 2,200 / 67，和官方数字同一量级。（他本人是这个框架的贡献者，自带立场。）\n\t\n然后就是显卡。Intel Arc Pro B70 32G，官方建议价 949 美元，一个月里涨了 26%–48%：韩国 +46~48%、美国 +30%、德国 +26%。报道归因是显存成本上涨，加上本地跑 AI 带来的真实需求。\n\t\n三个坑，先说清楚：\n\t\n1. 中文别选 Coder 版 —— 它砍掉一半专家，中文等 CJK 文本明显更弱。中文要选 Q2_0、IQ2_XS 或 IQ3_S。\n2. 一次只答一个请求，它不是服务器。\n3. 首次启动电脑会卡 1–3 分钟，要往内存里装 35–55G；第一条消息要全文读，3 万 tokens 约 1 分钟。\n\t\n#AI[话题]# #大模型[话题]# #本地部署[话题]# #显卡[话题]# #人工智能[话题]# #开源[话题]# #Qwen[话题]#\n#我这行的AI路[话题]# #HOWTO[话题]#",
+  "time": 1791079513000,
+  "user": "AI指北",
+  "ip": "湖南",
+  "tags": [
+   "AI",
+   "大模型",
+   "本地部署",
+   "显卡",
+   "人工智能",
+   "开源",
+   "Qwen",
+   "我这行的AI路",
+   "HOWTO"
+  ]
+ },
+ {
+  "id": "6ac1c0d100000000150054de",
+  "title": "4090 Qwen Next Flash GSQ-RCO IQ3_S 实测",
+  "desc": "#4090[话题]# #qwen[话题]# #ai[话题]# #本地部署[话题]# #3080[话题]# #agent[话题]#\n\t\n单4090 48无法单独部署IQ3_S，幸好手里还有一张3080 20g作为补充。\n200k q8 kv cache上下文到极限了，4090 48+3080 20显存几乎榨干，测试结果受到3080速度瓶颈限制，3080多出来的20g让部署IQ3_S 最重要的58g模型权重全进驻显存，实用性部署成为可能\n网上各种16g显存显卡+大内存部署，实用性我保持怀疑态度\n结果挺有意思，150k左右上下文还有30t/s以上的速度，最最关键的prefill速度几乎不降速，完全达到可使用状态\n部署方式:\n模型为双分片 GGUF：分片1 是 177B 权重（54.8G），进显存，`-ngl 99` 让 4090+3080 自动分层；分片2 是 26.8G 的 n-gram 表，用 `-lm mmap --lazy-mode on` 留在内存按需读取，不占显存。KV 缓存压 q8_0，上下文 200k，视觉多模态默认开启\n\t\n使用官方推荐档，基准 93.26 分，全部任务与 BF16 基座持平或反超，为Qwen Next Flash GSQ-RCO精度最高的。177B 模型装进两张消费级显卡（实测 65.7G / 68.9G）稳定跑 200k 上下文。长文预填充几乎不衰减：8k 时 717 t/s，18 万 token 仍 651 t/s，18 万 token 不到 5 分钟吃完；解码从短上下文 56 t/s 平滑降到 18 万 token 时的 29 t/s，全程无断崖式暴跌。",
+  "time": 1791082705000,
+  "user": "MOMODO™",
+  "ip": "四川",
+  "tags": [
+   "4090",
+   "qwen",
+   "ai",
+   "本地部署",
+   "3080",
+   "agent"
+  ]
+ },
+ {
+  "id": "6ac214aa0000000014039afe",
+  "title": "12G显存也能跑Qwen3.8-Flash-Next了",
+  "desc": "12G 显存也能跑 Qwen3.8-Flash-Next 了。\n\t\n以前这类 125B MoE 默认要服务器级显存。Strata 把工作拆开：热专家留在显卡，其余在内存，大查找表在 SSD。12G 是门槛，不是整模都住在显存里。\n\t\n官方用 RTX 5070 12G + 64G 内存测短对话：\n\t\n- Q2_0：94 tok/s（最快，合计约 37.6GB）\n- IQ2_XS：79 tok/s（推荐，约 39.2GB）\n- IQ3_S：53 tok/s（最接近原模，约 54.8GB）\n\t\n32G 内存先看 Coder；48G 能上 Q2_0 / IQ2_XS；64G 才能放开跑。Win / Linux，盘大约 80G。\n\t\n本机聊天、写代码、看图，也能把 OpenAI / Anthropic API 打到 127.0.0.1:8080，喂给 Agent。不上传。\n\t\n首次启动卡 1–3 分钟是正常的，别关窗口。数字来自仓库 README / MODELS.md，不是我本机复现。项目名搜 Strata。\n\t\n大家用了这个吗？评论区说说效果。\n\t\n#AI编程[话题]# #Agent[话题]# #本地大模型[话题]# #qwen[话题]# #英伟达[话题]#",
+  "time": 1791104170000,
+  "user": "诸葛暗",
+  "ip": "广东",
+  "tags": [
+   "AI编程",
+   "Agent",
+   "本地大模型",
+   "qwen",
+   "英伟达"
+  ]
+ },
+ {
+  "id": "6ac2ca75000000000a021468",
+  "title": "认真用本地模型写代码一周后，入手了第二台",
+  "desc": "倒不是纯因为本地模型多强[捂脸R][捂脸R]\n因为价格真的涨疯了，项目还没上线，靠倒卖GPU先挣个几千刀💵\n\t\n每天蹲每天蹲，从还在纠结原价dgx spark和acer要不要入，到两天后原价全缺货，再到价格一天涨一两百美元[失望R][失望R][失望R]二手行情eBay一度看到过八九千 💵 我的第一台ASUS gx10才买了$3400啊啊啊[抓狂R][抓狂R]\n\t\n最终在micro center Cambridge店蹲到货，立刻下单决定先买回来再接着纠结\n\t\n然后英伟达就又发布了64GB版本，减量但加价300💵 [汗颜R][汗颜R][汗颜R] 真的买成了期货投资产品\n\t\n还没有尝试两台链接因为有一台需要跑视频模型，另一台刚刚部署好了社区还热乎的vllm 千问flash next，单流能到40-50 t/s，非常ok👌，这个速度感觉都能赶上官方glm5.3 flash了（？）期待在实际项目中的表现，感觉会比27B更强\n\t\n#dgxspark[话题]# #本地大模型[话题]# #qwen38flashnext[话题]# #qwen38_27b[话题]#",
+  "time": 1791150709000,
+  "user": "在波屯搞AI的TWX",
+  "ip": "美国",
+  "tags": [
+   "dgxspark",
+   "本地大模型",
+   "qwen38flashnext",
+   "qwen38_27b",
+   "本地应该部署什么大模型 "
+  ]
+ },
+ {
+  "id": "6ac2fdbb000000000b006f1b",
+  "title": "AMD显卡本地部署Qwen 3.8 27B",
+  "desc": "我的是9070（不带XT）16G显卡，本地部署Qwen-3.8-27B-GSQ-RCO，IQ3_S，原生llama.cpp，视觉不用显卡跑能开128K的上下文，20~35t/s，视觉放显卡大约96k上下文，基本能用了。\n另外llama.cpp选vulkan版同样启动参数生成速度实测只有rocm版的一半，AMD玩家最好选rocm版。",
+  "time": 1791163835000,
+  "user": "持锤大只佬",
+  "ip": "湖南",
+  "tags": []
+ },
+ {
+  "id": "6ac31da10000000015012158",
+  "title": "Qwen3.8-Next-Flash三个低显存版本测试",
+  "desc": "引擎是Niko1221/Strata，配置是5060Ti 16Gx2+48G D4。分别测试了关思维链、16k思维链、40K思维链的结果，只展示40k思维链的因为其他都没法看。模型分别对应：\np1p2：Unsloth-iq2_xs-40k-xhigh\np3p4：思维链缩减swift-iq2_xs-40k-xhigh\np5：号称保留编程性能的剪枝coder-pruned-iq1_m-40k-xhigh\n\t\n性能这块不知道为什么能差这么多，见p6。猜测coder慢可能是因为剪枝了，引擎适配不到位。但总的来说这个速度是够用了，现在这些个针对模型单独适配的引擎是真的强。\n\t\n提示词都是一句话“大熊猫骑自行车送奶茶外卖”。然后说说效果：\nswift动画正常，但是脸上的鼻子画歪了。动画速度的调节有过度。奶茶菜单也很精致。\nUnsloth-iq2_xs动画正常，而且往奶茶里加珍珠的效果也是对的，虽然不知道为什么一个送外卖的要往奶茶里加珍珠。昼夜切换、速度档位调节也都是对的，缺点是下面的ui相对捡漏。总体上也挺好。\ncoder动画都动不起来，自适应分辨率也很糟糕。甚至没有满足最基础的指令，拉完了。\n\t\n其实更合理的方式应该是把模型接到dsh这样的harness，模型自己看自己调试的话也许会更好些。但是测都测了，放出来吧\n\t\n#howto玩坏AI[话题]# #ai[话题]# #大模型[话题]# #qwen38_flash_next[话题]# #qwen[话题]# #本地部署[话题]# #开源模型[话题]#",
+  "time": 1791172001000,
+  "user": "zxyzxy123",
+  "ip": "安徽",
+  "tags": [
+   "howto玩坏AI",
+   "ai",
+   "大模型",
+   "qwen38_flash_next",
+   "qwen",
+   "本地部署",
+   "开源模型"
+  ]
+ }
+]
