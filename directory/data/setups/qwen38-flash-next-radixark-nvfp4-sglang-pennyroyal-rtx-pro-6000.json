@@ -1,0 +1,128 @@
+{
+  "id": "qwen38-flash-next-radixark-nvfp4-sglang-pennyroyal-rtx-pro-6000",
+  "title": "Qwen3.8 Flash-Next NVFP4 on one RTX PRO 6000: SGLang-derived 'Pennyroyal' runtime",
+  "slug_note": "Author-reported 171 tok/s single-stream decode and 524K context on one 96 GB card, using a personal fork of SGLang.",
+  "model": "qwen3-8-flash-next",
+  "status": "reported",
+  "variation": {
+    "checkpoint": "RadixArk/Qwen3.8-Flash-Next-NVFP4",
+    "publisher": "radixark",
+    "quant": "nvfp4",
+    "quant_detail": "RadixArk NVFP4 checkpoint; FP8 target/native-MTP KV cache (per post)",
+    "format": "safetensors",
+    "size_gb": 135.3,
+    "url": "https://huggingface.co/RadixArk/Qwen3.8-Flash-Next-NVFP4",
+    "license": "other",
+    "downloads": null
+  },
+  "engine": {
+    "id": "sglang",
+    "config": "SGLang-derived custom runtime 'Pennyroyal' v2.1.0: native NEXTN MTP, FlashInfer GDN/CUTLASS MoE, Triton QSA sparse prefill, RecoverSSM CUDA graphs; TP=1; YaRN factor-2 524,288 ctx; FP8 KV; HiCache/NIXL NVMe persistence",
+    "image": null,
+    "requires_fork": true,
+    "draft_model": null,
+    "spec_decode": "mtp",
+    "flags": []
+  },
+  "hardware": [
+    "rtx-pro-6000"
+  ],
+  "requirements": {
+    "memory_gb": null,
+    "disk_gb": 135.3,
+    "min_vram_gb": null,
+    "notes": "Post does not state a memory requirement. Checkpoint is 135.3 GB on disk against 96 GB of VRAM, so the post's HiCache/NIXL host-RAM and NVMe paths are likely involved; not stated explicitly, not verified."
+  },
+  "run": {
+    "repo": "https://github.com/jpezzulli/sglang-rtxpro6000",
+    "command": null,
+    "steps": [
+      {
+        "kind": "do",
+        "text": "Use the launch recipe in https://github.com/jpezzulli/sglang-rtxpro6000 (release pennyroyal-v2.1.0); the post links it but does not paste a command"
+      },
+      {
+        "kind": "do",
+        "text": "Serve RadixArk/Qwen3.8-Flash-Next-NVFP4 with TP=1 and a 450 W power cap"
+      },
+      {
+        "kind": "do",
+        "text": "Validate with https://github.com/jpezzulli/pennyroyal-validation"
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "id": "m001",
+      "metric": "decode_per_stream",
+      "value": 171.09,
+      "unit": "tok/s",
+      "concurrency": 1,
+      "stat": "mean",
+      "provenance": "forum",
+      "source": "https://forums.developer.nvidia.com/t/optimized-qwen3-8-flash-next-on-1x-rtx-pro-6000-171-tok-s-524k-and-hicache-nixl-persistence/381722",
+      "date": "2026-08-28",
+      "method": "author's own campaign, TP=1, 450 W power cap (per post)",
+      "note": "C1 decode, per the post's canonical single-GPU campaign"
+    },
+    {
+      "id": "m002",
+      "metric": "decode_agg",
+      "value": 427.54,
+      "unit": "tok/s",
+      "concurrency": 4,
+      "stat": "mean",
+      "provenance": "forum",
+      "source": "https://forums.developer.nvidia.com/t/optimized-qwen3-8-flash-next-on-1x-rtx-pro-6000-171-tok-s-524k-and-hicache-nixl-persistence/381722",
+      "date": "2026-08-28",
+      "method": "author's own campaign, TP=1, 450 W power cap (per post)",
+      "note": "C4 aggregate decode"
+    },
+    {
+      "id": "m003",
+      "metric": "prefill_tok_s",
+      "value": 10103.7,
+      "unit": "tok/s",
+      "concurrency": 1,
+      "stat": "mean",
+      "provenance": "forum",
+      "source": "https://forums.developer.nvidia.com/t/optimized-qwen3-8-flash-next-on-1x-rtx-pro-6000-171-tok-s-524k-and-hicache-nixl-persistence/381722",
+      "date": "2026-08-28",
+      "method": "author's own campaign, TP=1, 450 W power cap (per post)",
+      "note": "64K cold prefill"
+    },
+    {
+      "id": "m004",
+      "metric": "prefill_tok_s",
+      "value": 7872.15,
+      "unit": "tok/s",
+      "concurrency": 1,
+      "stat": "mean",
+      "provenance": "forum",
+      "source": "https://forums.developer.nvidia.com/t/optimized-qwen3-8-flash-next-on-1x-rtx-pro-6000-171-tok-s-524k-and-hicache-nixl-persistence/381722",
+      "date": "2026-08-28",
+      "method": "author's own campaign, TP=1, 450 W power cap (per post)",
+      "note": "approximately 490K cold prefill; 3/3 needles exact"
+    }
+  ],
+  "caveats": [
+    "Author calls this a personal project, not a packaged product, and says Flash-Next 'remains early and system-specific'.",
+    "62,040.60 tok/s in the post is restored-prefix throughput after restart, not cold prefill, and is deliberately not recorded here.",
+    "Requires a custom SGLang fork; stock SGLang is not stated to work.",
+    "Checkpoint identity: the post says it serves 'the RadixArk NVFP4 checkpoint' but does not print the repo name. RadixArk/Qwen3.8-Flash-Next-NVFP4 is the matching public repo (exists on Hugging Face, 135.3 GB), so size and licence come from it. This match is inferred, not stated by the author."
+  ],
+  "provenance_tier": "forum",
+  "updated": "2026-10-05",
+  "sources": [
+    {
+      "url": "https://forums.developer.nvidia.com/t/optimized-qwen3-8-flash-next-on-1x-rtx-pro-6000-171-tok-s-524k-and-hicache-nixl-persistence/381722",
+      "kind": "post",
+      "note": "NVIDIA developer forum post by jpezzulli, 2026-08-28; backs every figure in measurements."
+    },
+    {
+      "url": "https://github.com/jpezzulli/sglang-rtxpro6000",
+      "kind": "repo",
+      "note": "Runtime source and launch recipe linked from the post."
+    }
+  ]
+}

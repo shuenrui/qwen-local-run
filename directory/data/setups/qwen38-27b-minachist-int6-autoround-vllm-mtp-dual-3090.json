@@ -1,0 +1,146 @@
+{
+  "id": "qwen38-27b-minachist-int6-autoround-vllm-mtp-dual-3090",
+  "title": "Qwen3.8-27B INT6 mixed AutoRound on dual RTX 3090: vLLM 0.28 TP=2 + MTP, BF16 KV",
+  "slug_note": "Author-reported ~101 tok/s narrative and ~138 tok/s code decode on two power-limited 3090s, with a 278K-token BF16 KV pool.",
+  "model": "qwen3-8-27b",
+  "status": "reported",
+  "variation": {
+    "checkpoint": "Minachist/Qwen3.8-27B-INT6-Mixed-AutoRound",
+    "publisher": "minachist",
+    "quant": "autoround",
+    "quant_detail": "INT6 mixed AutoRound",
+    "format": "safetensors",
+    "size_gb": 25.4,
+    "url": "https://huggingface.co/Minachist/Qwen3.8-27B-INT6-Mixed-AutoRound",
+    "license": "apache-2.0",
+    "downloads": null
+  },
+  "engine": {
+    "id": "vllm",
+    "config": "vLLM 0.28.0 + the small mixed-quant patch from the club-3090 quants repo; TP=2, PP=1, BF16 KV cache (278,335-token pool), FlashInfer attention, MTP n=4, chunked prefill, prefix caching",
+    "image": null,
+    "requires_fork": true,
+    "draft_model": null,
+    "spec_decode": "mtp",
+    "flags": [
+      "--tensor-parallel-size 2",
+      "--max-model-len 262144",
+      "--max-num-seqs 2",
+      "--max-num-batched-tokens 8192",
+      "--gpu-memory-utilization 0.95",
+      "--kv-cache-dtype bfloat16",
+      "--attention-backend FLASHINFER",
+      "--enable-prefix-caching",
+      "--mamba-cache-mode align",
+      "--enable-chunked-prefill",
+      "--long-prefill-token-threshold 2048",
+      "--reasoning-parser qwen3",
+      "--tool-call-parser qwen3_coder",
+      "--enable-auto-tool-choice"
+    ]
+  },
+  "hardware": [
+    {
+      "id": "gpu-24gb",
+      "count": 2
+    }
+  ],
+  "requirements": {
+    "memory_gb": null,
+    "disk_gb": 25.4,
+    "min_vram_gb": null,
+    "notes": "Post does not state VRAM use. Run on 2x 24 GB with 0.95 GPU memory utilisation. Not verified for any other card count."
+  },
+  "run": {
+    "repo": "https://github.com/noonghunna/club-3090/issues/1120",
+    "command": null,
+    "steps": [
+      {
+        "kind": "do",
+        "text": "Install vLLM 0.28.0 and apply the mixed-quant patch from the club-3090 quants repo (the post says it is needed; the post does not link the patch)"
+      },
+      {
+        "kind": "cmd",
+        "text": "vllm serve <local path to Minachist/Qwen3.8-27B-INT6-Mixed-AutoRound> --tensor-parallel-size 2 --pipeline-parallel-size 1 --max-model-len 262144 --max-num-seqs 2 --max-num-batched-tokens 8192 --gpu-memory-utilization 0.95 --kv-cache-dtype bfloat16 --attention-backend FLASHINFER --enable-prefix-caching --mamba-cache-mode align --enable-chunked-prefill --long-prefill-token-threshold 2048 --speculative-config '{\"method\":\"mtp\",\"num_speculative_tokens\":4,\"draft_sample_method\":\"probabilistic\"}' --reasoning-parser qwen3 --tool-call-parser qwen3_coder --enable-auto-tool-choice"
+      },
+      {
+        "kind": "do",
+        "text": "Benchmark with the club-3090 `scripts/report.sh --bench` harness"
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "id": "m001",
+      "metric": "decode_essay",
+      "value": 101.02,
+      "unit": "tok/s",
+      "concurrency": 1,
+      "stat": "peak",
+      "provenance": "forum",
+      "source": "https://github.com/noonghunna/club-3090/issues/1120",
+      "date": "2026-09-01",
+      "method": "club-3090 `report.sh --bench`, temp 0.6 top_p 0.95 top_k 20, single stream (per post)",
+      "note": "narrative run 1 of 5; the five runs range 94.48 to 101.02 tok/s"
+    },
+    {
+      "id": "m002",
+      "metric": "decode_code",
+      "value": 138.12,
+      "unit": "tok/s",
+      "concurrency": 1,
+      "stat": "peak",
+      "provenance": "forum",
+      "source": "https://github.com/noonghunna/club-3090/issues/1120",
+      "date": "2026-09-01",
+      "method": "club-3090 `report.sh --bench`, temp 0.6 top_p 0.95 top_k 20, single stream (per post)",
+      "note": "code run 1 of 5; the five runs range 130.37 to 138.12 tok/s"
+    },
+    {
+      "id": "m003",
+      "metric": "prefill_tok_s",
+      "value": 1690.6,
+      "unit": "tok/s",
+      "concurrency": 1,
+      "stat": "peak",
+      "provenance": "forum",
+      "source": "https://github.com/noonghunna/club-3090/issues/1120",
+      "date": "2026-09-01",
+      "method": "club-3090 `report.sh --bench`, temp 0.6 top_p 0.95 top_k 20, single stream (per post)",
+      "note": "10K-token prompt, run 1 of 3 (1688.0 to 1690.6)"
+    },
+    {
+      "id": "m004",
+      "metric": "ttft_ms",
+      "value": 79,
+      "unit": "ms",
+      "concurrency": 1,
+      "stat": "peak",
+      "provenance": "forum",
+      "source": "https://github.com/noonghunna/club-3090/issues/1120",
+      "date": "2026-09-01",
+      "method": "club-3090 `report.sh --bench` (per post)",
+      "note": "best narrative-run time to first token; narrative runs span 79 to 105 ms"
+    }
+  ],
+  "caveats": [
+    "Power-limited to 250 W per card, PCIe Gen4 x8/x8, no NVLink, p2p-patched; video output on GPU1 (author says ~3% utilisation headroom).",
+    "Author ran vLLM with auth enabled and had to adjust the bench harness; says it should not have affected results.",
+    "The post does not test long-context behaviour, which the author says is where the BF16 KV cache should help.",
+    "Needs a patched vLLM; stock vLLM is not stated to load this mixed quant."
+  ],
+  "provenance_tier": "forum",
+  "updated": "2026-10-05",
+  "sources": [
+    {
+      "url": "https://github.com/noonghunna/club-3090/issues/1120",
+      "kind": "post",
+      "note": "club-3090 issue by Ezgera, 2026-09-01; backs the launch flags and every figure in measurements."
+    },
+    {
+      "url": "https://huggingface.co/Minachist/Qwen3.8-27B-INT6-Mixed-AutoRound",
+      "kind": "model",
+      "note": "Checkpoint used; size and licence from the Hugging Face API."
+    }
+  ]
+}
