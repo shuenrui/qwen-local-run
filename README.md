@@ -46,11 +46,11 @@ The current snapshot contains:
 
 | | Coverage |
 |---|---:|
-| Runnable setups | 72 |
+| Runnable setups | 79 |
 | Model families | 22 |
-| Hardware classes | 6 |
+| Hardware classes | 10 |
 | Engines | 8 |
-| Publishers and builders | 33 |
+| Publishers and builders | 34 |
 
 Coverage spans Qwen 3.0, 3.5, 3.6, and 3.8 families from 4B to 397B,
 including dense, MoE, vision, and Omni models. Hardware lanes include 24 GB
@@ -127,12 +127,14 @@ the verification plan — is in
 
 ## Current limits
 
-- 33 of 65 setups carry measurements; 32 are sourced but untested.
+- 46 of 79 setups carry measurements; 33 are sourced but untested.
 - Owner measurements currently cover four Qwen3.8-27B NVFP4 and SGLang setups
   on DGX Spark.
 - Community measurements use different prompts, concurrency, context, and
   clocks; read each card's method and caveats before comparing numbers.
-- Current hardware coverage is NVIDIA- and Apple-focused.
+- Hardware coverage is NVIDIA- and Apple-focused. AMD Strix Halo has 1 setup; Intel Arc, CPU-only and ARM SBC have none yet.
+- A sourcing pass on 2026-10-05 found 487 unvetted candidates for those gaps (Strix Halo, Intel Arc, Mac 16-48 GB, cheap multi-GPU). They are not in `data/setups/` yet:
+  see `directory/tools/history/inputs/pass5-social/`. Converting one to a setup needs a measured figure, a run command or steps, and a checkpoint that maps to a known publisher.
 
 The full coverage notes, repository layout, benchmark-import workflow, and
 publishing procedure live in [`directory/README.md`](directory/README.md).
