@@ -1,0 +1,98 @@
+{
+  "id": "qwen38-27b-jonathancoletti-uncensored-q6k-lmstudio-mtp-rtx-5090",
+  "title": "Qwen3.8-27B Uncensored Q6_K on one RTX 5090: LM Studio (llama.cpp) with MTP",
+  "slug_note": "Forum-reported 72 tok/s decode and 2,430 tok/s prefill on a 5090 with a community uncensored Q6_K GGUF; the same thread shows a faster ninfer NVFP4 path.",
+  "model": "qwen3-8-27b",
+  "status": "reported",
+  "variation": {
+    "checkpoint": "JonathanColetti/Qwen3.8-27B-Uncensored-GGUF",
+    "publisher": "jonathancoletti",
+    "quant": "gguf-q6",
+    "quant_detail": "Q6_K (file Qwen3.8-27B-Uncensored-Q6_K.gguf)",
+    "format": "gguf",
+    "size_gb": 22.4,
+    "url": "https://huggingface.co/JonathanColetti/Qwen3.8-27B-Uncensored-GGUF",
+    "license": "apache-2.0",
+    "downloads": null
+  },
+  "engine": {
+    "id": "lm-studio",
+    "config": "LM Studio / llama.cpp, MTP max 2, measured with llama-benchy; total GPU use ~28.5 GB (per post)",
+    "image": null,
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "mtp",
+    "flags": []
+  },
+  "hardware": [
+    "rtx-5090"
+  ],
+  "requirements": {
+    "memory_gb": 28.5,
+    "disk_gb": 22.4,
+    "min_vram_gb": null,
+    "notes": "28.5 GB is the post's 'total GPU use' for this run, on a 32 GB card. Host was a 9950X3D with 96 GB DDR5-6400 on Linux. Not verified on a smaller card."
+  },
+  "run": {
+    "repo": "https://forum.level1techs.com/t/sanity-check-my-qwen3-8-5090-results-new-to-local-ai/254299",
+    "command": null,
+    "steps": [
+      {
+        "kind": "do",
+        "text": "Download Qwen3.8-27B-Uncensored-Q6_K.gguf from JonathanColetti/Qwen3.8-27B-Uncensored-GGUF"
+      },
+      {
+        "kind": "do",
+        "text": "Load it in LM Studio (llama.cpp backend) with MTP max set to 2"
+      },
+      {
+        "kind": "do",
+        "text": "Benchmark with llama-benchy; the post gives no command line"
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "id": "m001",
+      "metric": "decode_per_stream",
+      "value": 72.03,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://forum.level1techs.com/t/sanity-check-my-qwen3-8-5090-results-new-to-local-ai/254299",
+      "date": "2026-08-24",
+      "method": "herboh's llama-benchy run, MTP max 2 (per post table)",
+      "note": "reported as 72.03 ± 5.66 tok/s; the post does not label the statistic or the concurrency"
+    },
+    {
+      "id": "m002",
+      "metric": "prefill_tok_s",
+      "value": 2430.18,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://forum.level1techs.com/t/sanity-check-my-qwen3-8-5090-results-new-to-local-ai/254299",
+      "date": "2026-08-24",
+      "method": "herboh's llama-benchy run, MTP max 2 (per post table)",
+      "note": "reported as 2,430.18 ± 24.45 tok/s; prompt length not stated"
+    }
+  ],
+  "caveats": [
+    "Same thread, same 5090 (author herboh): ninfer with mixed NVFP4/FP8 measured 124.08 ± 10.56 tok/s decode and 8,143.82 ± 52.68 tok/s prefill (1.72x). Not recorded as its own setup because ninfer is not an engine in this directory yet.",
+    "Author notes tok/s varies heavily with output type, so figures from different prompts are not comparable.",
+    "The thread's original poster saw 31.60 tok/s on a different 5090 + Windows rig with the same checkpoint and Q6_K at MTP max 2 (not recorded here), so results vary a lot by setup.",
+    "Post does not give a command line, a prompt, a context length or a concurrency."
+  ],
+  "provenance_tier": "forum",
+  "updated": "2026-10-05",
+  "sources": [
+    {
+      "url": "https://forum.level1techs.com/t/sanity-check-my-qwen3-8-5090-results-new-to-local-ai/254299",
+      "kind": "thread",
+      "note": "Level1Techs forum post by herboh, 2026-08-24; backs the 72.03 and 2,430.18 figures, the 28.5 GB figure and the hardware."
+    },
+    {
+      "url": "https://huggingface.co/JonathanColetti/Qwen3.8-27B-Uncensored-GGUF",
+      "kind": "model",
+      "note": "Checkpoint used; size and licence from the Hugging Face API."
+    }
+  ]
+}

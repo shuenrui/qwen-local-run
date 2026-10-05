@@ -1,0 +1,129 @@
+{
+  "id": "qwen38-flash-next-unsloth-ud-q2kxl-ollama-vulkan-strix-halo",
+  "title": "Qwen3.8 Flash-Next 125B-A6B UD-Q2_K_XL on Strix Halo: Ollama (llama.cpp runner), Vulkan, Windows",
+  "slug_note": "Measured by a third-party fleet host: the whole 125B model fits in 128 GB unified memory at 262K context, decoding at 19.95 tok/s.",
+  "model": "qwen3-8-flash-next",
+  "status": "reported",
+  "variation": {
+    "checkpoint": "unsloth/Qwen3.8-Flash-Next-GGUF",
+    "publisher": "unsloth",
+    "quant": "gguf-q2",
+    "quant_detail": "UD-Q2_K_XL, republished as the single-blob Ollama tag frob/qwen3.8-flash-next:125b-a6b-ud-q2_K_XL (78.87 GB)",
+    "format": "gguf",
+    "size_gb": 78.9,
+    "url": "https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF",
+    "license": "other",
+    "downloads": null
+  },
+  "engine": {
+    "id": "ollama",
+    "config": "Ollama 0.33.2 (llama.cpp b10630) llama.cpp runner, Vulkan backend; OLLAMA_VULKAN=1 OLLAMA_IGPU_ENABLE=1; runner -c 262144 -np 1 --flash-attn auto -b 512 -ub 512; 49/49 layers offloaded",
+    "image": null,
+    "requires_fork": false,
+    "draft_model": null,
+    "spec_decode": "none",
+    "flags": [
+      "-c 262144",
+      "-np 1",
+      "--flash-attn auto",
+      "-b 512",
+      "-ub 512"
+    ]
+  },
+  "hardware": [
+    "strix-halo"
+  ],
+  "requirements": {
+    "memory_gb": 55.1,
+    "disk_gb": 79.8,
+    "min_vram_gb": null,
+    "notes": "Resident weights 51.3 GiB (55.09 GB) per the comment, with the OS agreeing; the comment says the n-gram table does not all become resident. 79.8 GB is the disk size including the vision projector. Host: 127.15 GB unified, Windows 11 build 26200."
+  },
+  "run": {
+    "repo": "https://github.com/waired-ai/waired-agent/issues/1192",
+    "command": null,
+    "steps": [
+      {
+        "kind": "do",
+        "text": "Set OLLAMA_VULKAN=1 and OLLAMA_IGPU_ENABLE=1"
+      },
+      {
+        "kind": "do",
+        "text": "Pull the single-blob tag frob/qwen3.8-flash-next:125b-a6b-ud-q2_K_XL from ollama.com (the Hugging Face route fails because Ollama refuses sharded GGUF)"
+      },
+      {
+        "kind": "do",
+        "text": "Run at 262,144 context with one slot; the comment shows the runner flags but not the exact ollama command"
+      }
+    ]
+  },
+  "measurements": [
+    {
+      "id": "m001",
+      "metric": "decode_per_stream",
+      "value": 19.95,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://github.com/waired-ai/waired-agent/issues/1192#issuecomment-5553594974",
+      "date": "2026-09-06",
+      "method": "waired fleet host sv-evox2, single request (per comment)",
+      "note": "single request at 262,144 ctx, no spill (size_vram equals size)",
+      "concurrency": 1
+    },
+    {
+      "id": "m002",
+      "metric": "prefill_tok_s",
+      "value": 293.99,
+      "unit": "tok/s",
+      "provenance": "forum",
+      "source": "https://github.com/waired-ai/waired-agent/issues/1192#issuecomment-5553594974",
+      "date": "2026-09-06",
+      "method": "waired fleet host sv-evox2, single request (per comment)",
+      "note": "same request; prompt length not stated",
+      "concurrency": 1
+    },
+    {
+      "id": "m003",
+      "metric": "memory_gb",
+      "value": 55.09,
+      "unit": "GB",
+      "provenance": "forum",
+      "source": "https://github.com/waired-ai/waired-agent/issues/1192#issuecomment-5553594974",
+      "date": "2026-09-06",
+      "method": "waired fleet host sv-evox2, single request (per comment)",
+      "note": "resident weights, per runner.size and /api/ps.size"
+    },
+    {
+      "id": "m004",
+      "metric": "disk_gb",
+      "value": 79.8,
+      "unit": "GB",
+      "provenance": "forum",
+      "source": "https://github.com/waired-ai/waired-agent/issues/1192#issuecomment-5553594974",
+      "date": "2026-09-06",
+      "method": "waired fleet host sv-evox2, single request (per comment)",
+      "note": "disk including the vision projector; the blob alone is 78.87 GB"
+    }
+  ],
+  "caveats": [
+    "Measured by the issue author's fleet host, not by the Ollama or unsloth teams.",
+    "The comment says Ollama's llama.cpp runner cannot load this architecture natively; it ran through the Vulkan integrated-GPU path.",
+    "The comment text dates the measurement 2026-09-06 while the comment is stamped 2026-09-05 (UTC); the text's date is used.",
+    "The tag is frob's republish of unsloth's UD-Q2_K_XL, not an official Qwen or unsloth Ollama tag.",
+    "License is the Qwen Community License 1.0 (HF license: other)."
+  ],
+  "provenance_tier": "forum",
+  "updated": "2026-10-05",
+  "sources": [
+    {
+      "url": "https://github.com/waired-ai/waired-agent/issues/1192#issuecomment-5553594974",
+      "kind": "post",
+      "note": "GitHub issue comment by gen16k, 2026-09-05/06; backs every figure, the runner flags and the memory numbers."
+    },
+    {
+      "url": "https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF",
+      "kind": "model",
+      "note": "Checkpoint family; size and licence from the Hugging Face API."
+    }
+  ]
+}

@@ -210,6 +210,12 @@
       "kind": "individual",
       "role": "INT6 mixed-precision AutoRound quant of Qwen3.8-27B (community).",
       "url": "https://huggingface.co/Minachist"
+    },
+    "jonathancoletti": {
+      "name": "JonathanColetti",
+      "kind": "individual",
+      "role": "Community uncensored GGUF quants of Qwen3.8-27B.",
+      "url": "https://huggingface.co/JonathanColetti"
     }
   }
 }
