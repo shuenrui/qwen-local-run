@@ -1,6 +1,6 @@
 {
   "id": "qwen38-flash-next-unsloth-gguf-llamacpp-4090-hybrid",
-  "title": "Qwen3.8-Flash-Next 180B \u2014 unsloth UD-Q4_K_XL on one RTX 4090 (hybrid MoE offload)",
+  "title": "Qwen3.8-Flash-Next 180B — unsloth UD-Q4_K_XL on one RTX 4090 (hybrid MoE offload)",
   "slug_note": "40 expert layers on the GPU, the rest streamed from 110GB of DDR4: 22.5 tok/s decode and 384 tok/s prefill at 80k context from a single 24GB card.",
   "model": "qwen3-8-flash-next",
   "status": "reported",
@@ -17,7 +17,7 @@
   },
   "engine": {
     "id": "llama-cpp",
-    "config": "llama.cpp built from PR #27742 (danielhanchen qwen-next branch \u2014 required for this architecture), CUDA, sm_86. -ncmoe 40 keeps 40 expert MoE layers on the GPU and streams the rest from system RAM; --fit off is required (auto-fitting mis-sizes this architecture); -b/-ub 4096 roughly doubles prompt ingestion.",
+    "config": "llama.cpp built from PR #27742 (danielhanchen qwen-next branch — required for this architecture), CUDA, sm_86. -ncmoe 40 keeps 40 expert MoE layers on the GPU and streams the rest from system RAM; --fit off is required (auto-fitting mis-sizes this architecture); -b/-ub 4096 roughly doubles prompt ingestion.",
     "image": null,
     "requires_fork": true,
     "draft_model": null,
@@ -56,8 +56,8 @@
         "text": "Download the 4 UD-Q4_K_XL shards from unsloth/Qwen3.8-Flash-Next-GGUF"
       },
       {
-        "kind": "cmd",
-        "text": "build llama.cpp from PR #27742: cmake -DGGML_CUDA=ON -DCMAKE_CUDA_ARCHITECTURES=native -DBUILD_SHARED_LIBS=OFF"
+        "kind": "do",
+        "text": "Build llama.cpp from PR #27742 (merged into llama.cpp master on 2026-08-27). The source configures the build with: -DGGML_CUDA=ON -DCMAKE_CUDA_ARCHITECTURES=native -DBUILD_SHARED_LIBS=OFF. The source does not give the other build commands."
       },
       {
         "kind": "cmd",
@@ -108,16 +108,16 @@
   ],
   "caveats": [
     "Method: continuous 28k-token prompt per run; 250k figures elsewhere in the thread are a configured window, not prompt length.",
-    "No MTP/dflash/KV-quant in these runs \u2014 author: spec-decode recipes 'not yet', and doubts they would double throughput with RAM offload.",
-    "Third-party reply (@foley2k2) gets 26-30 tok/s on Q3_XL \u2014 smaller quant trades context headroom for speed.",
-    "Author's same-hardware comparisons: DeepSeek V4 Flash Q4 ~12 tps, Poolside Laguna S 2.1 (118B MoE) Q4 ~12 tps \u2014 this lane is roughly double."
+    "No MTP/dflash/KV-quant in these runs — author: spec-decode recipes 'not yet', and doubts they would double throughput with RAM offload.",
+    "Third-party reply (@foley2k2) gets 26-30 tok/s on Q3_XL — smaller quant trades context headroom for speed.",
+    "Author's same-hardware comparisons: DeepSeek V4 Flash Q4 ~12 tps, Poolside Laguna S 2.1 (118B MoE) Q4 ~12 tps — this lane is roughly double."
   ],
   "provenance_tier": "forum",
   "sources": [
     {
       "url": "https://x.com/analogalok/status/2092697021790708148",
       "kind": "post",
-      "note": "builder's benchmark thread with method clarifications in replies; rot-prone \u2014 raw payloads archived under tools/history/inputs/pass4-social/raw/"
+      "note": "builder's benchmark thread with method clarifications in replies; rot-prone — raw payloads archived under tools/history/inputs/pass4-social/raw/"
     },
     {
       "url": "https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF",

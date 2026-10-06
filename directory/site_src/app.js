@@ -441,14 +441,24 @@ function isScriptOnly(s) {
   var c = (s.run || {}).command;
   return !!c && /^\.\/[\w.\-]+(\s|$)/.test(c.trim());
 }
+function vendorWord(v) {
+  return { NVIDIA: "NVIDIA hardware", Apple: "an Apple Silicon Mac", AMD: "AMD hardware", Lenovo: "NVIDIA hardware (Lenovo)" }[v] || (v ? v + " hardware" : "");
+}
 function needsLine(s) {
-  var req = s.requirements || {}, e = s.engine || {}, bits = [];
-  bits.push("memory " + (gb(req.memory_gb) || "not recorded"));
-  if (req.min_vram_gb != null) bits.push("VRAM " + gb(req.min_vram_gb));
-  bits.push("disk " + (gb(req.disk_gb) || "not recorded"));
-  bits.push(e.requires_fork ? "custom fork" : "stock engine");
-  bits.push(complexityWord(s));
-  return '<p class="qs-needs"><b>Needs</b> ' + esc(bits.join(" · ")) + "</p>";
+  var req = s.requirements || {}, e = s.engine || {};
+  var refs = (s.hwRefs || []).length ? s.hwRefs : (s.hardware || []).map(function (id) { return { id: id && id.id ? id.id : id }; });
+  var vendors = uniq(refs.map(function (ref) { return vendorWord((HW[ref.id] || {}).vendor); }).filter(Boolean));
+  var need = ["memory " + (gb(req.memory_gb) || "not recorded")];
+  if (req.min_vram_gb != null) need.push("graphics memory at least " + gb(req.min_vram_gb));
+  need.push("free disk " + (gb(req.disk_gb) || "not recorded"));
+  need.push(e.requires_fork ? "a special build of the engine" : "the standard engine");
+  need.push("difficulty: " + complexityWord(s));
+  var h = '<p class="qs-new">' + esc("New here? Paste these into a terminal, one at a time, from the top.") + "</p>" +
+    '<p class="qs-needs"><b>You will need</b> ' + esc(need.join(" · ")) + "</p>" +
+    '<p class="qs-needs"><b>Tested on</b> ' + esc(hwLabels(s).join(" · ") || "hardware not recorded") +
+    (vendors.length ? esc(" — made for " + vendors.join(" / ") + ".") : "") +
+    ' <a href="#/models/' + esc(s.model) + '">' + esc("Different hardware? See the other recipes for this model.") + "</a></p>";
+  return h;
 }
 function quickStartBody(s, opts) {
   opts = opts || {};

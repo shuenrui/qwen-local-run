@@ -1,6 +1,6 @@
 {
   "id": "qwen38-27b-atomicchat-gguf-llamacpp-4090-kv",
-  "title": "Qwen3.8-27B AtomicChat AD-Q4_K on RTX 4090 \u2014 KV-quant context ladder to 260k",
+  "title": "Qwen3.8-27B AtomicChat AD-Q4_K on RTX 4090 — KV-quant context ladder to 260k",
   "slug_note": "The 15.9GB AD layout frees ~800MB vs unsloth's UD-Q4_K_XL, pushing 24GB-card context ceilings to 110k (FP16 KV) / 190k (Q8 KV) / 260k (Q4 KV) at a flat ~42 tok/s.",
   "model": "qwen3-8-27b",
   "status": "reported",
@@ -10,7 +10,7 @@
     "checkpoint": "AtomicChat/Qwen3.8-27B-GGUF",
     "publisher": "atomicchat",
     "quant": "gguf-q4",
-    "quant_detail": "AD-Q4_K \u2014 Atomic Dynamic layer allocation; 15.9GB vs unsloth UD-Q4_K_XL 16.7GB; publisher's own imatrix on BF16, perplexity re-measured vs original weights",
+    "quant_detail": "AD-Q4_K — Atomic Dynamic layer allocation; 15.9GB vs unsloth UD-Q4_K_XL 16.7GB; publisher's own imatrix on BF16, perplexity re-measured vs original weights",
     "format": "gguf",
     "size_gb": 15.9,
     "url": "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF"
@@ -36,7 +36,7 @@
     "memory_gb": 24,
     "disk_gb": 17,
     "min_vram_gb": 24,
-    "notes": "23.50GB VRAM at the 110k FP16 ceiling, 23.72GB at 190k Q8, 22.35GB at 260k Q4 \u2014 everything stays on-card. VRAM-bound: full GPU offload, zero system RAM offload \u2014 24GB shown as a practical host floor; the ceiling is the card's 24GB (see notes)."
+    "notes": "23.50GB VRAM at the 110k FP16 ceiling, 23.72GB at 190k Q8, 22.35GB at 260k Q4 — everything stays on-card. VRAM-bound: full GPU offload, zero system RAM offload — 24GB shown as a practical host floor; the ceiling is the card's 24GB (see notes)."
   },
   "capabilities": {
     "vision": false,
@@ -56,7 +56,11 @@
       },
       {
         "kind": "cmd",
-        "text": "llama-server -m Qwen3.8-27B-AD-Q4_K.gguf -c {110000|190000|260000} -ngl 99 --port 8080 [-ctv q8_0 -ctk q8_0 | -ctv q4_0 -ctk q4_0]"
+        "text": "llama-server -m Qwen3.8-27B-AD-Q4_K.gguf -c 190000 -ngl 99 --port 8080 -ctv q8_0 -ctk q8_0"
+      },
+      {
+        "kind": "do",
+        "text": "The source also lists -c 260000 with -ctv q4_0 -ctk q4_0 (22.35GB, per its notes) and -c 110000."
       }
     ]
   },
@@ -128,18 +132,18 @@
     }
   ],
   "caveats": [
-    "Decode is flat (41.9-42.2 tok/s) across the whole KV ladder \u2014 the ceiling moves, the speed doesn't.",
+    "Decode is flat (41.9-42.2 tok/s) across the whole KV ladder — the ceiling moves, the speed doesn't.",
     "At 22.35GB for 260k Q4 KV the author believes 300k native is reachable on 24GB (untested).",
     "Comparison ceilings vs unsloth UD-Q4_K_XL on the same card: FP16 KV 100k->110k, Q8 170k->190k.",
     "AtomicChat is a first-time publisher for this directory; the quant card documents an own-imatrix, held-out perplexity method and publishes imatrix.gguf.",
-    "KL-divergence comparison charts live as images in the post replies \u2014 not extracted."
+    "KL-divergence comparison charts live as images in the post replies — not extracted."
   ],
   "provenance_tier": "forum",
   "sources": [
     {
       "url": "https://x.com/analogalok/status/2088625914682941719",
       "kind": "post",
-      "note": "builder's full VRAM/throughput matrix with repro commands; rot-prone \u2014 raw payloads archived under tools/history/inputs/pass4-social/raw/"
+      "note": "builder's full VRAM/throughput matrix with repro commands; rot-prone — raw payloads archived under tools/history/inputs/pass4-social/raw/"
     },
     {
       "url": "https://huggingface.co/AtomicChat/Qwen3.8-27B-GGUF",

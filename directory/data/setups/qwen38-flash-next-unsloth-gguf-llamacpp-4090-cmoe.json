@@ -1,6 +1,6 @@
 {
   "id": "qwen38-flash-next-unsloth-gguf-llamacpp-4090-cmoe",
-  "title": "Qwen3.8-Flash-Next 180B \u2014 one RTX 4090 + DDR4, full CPU-MoE offload (-cmoe) to 250k context",
+  "title": "Qwen3.8-Flash-Next 180B — one RTX 4090 + DDR4, full CPU-MoE offload (-cmoe) to 250k context",
   "slug_note": "All 512 expert layers pinned to system RAM, attention on the GPU: VRAM drops 24GB -> 11.7GB with ~zero decode penalty, opening a 250k context window at ~21 tok/s.",
   "model": "qwen3-8-flash-next",
   "status": "reported",
@@ -56,12 +56,16 @@
         "text": "Download the 4 UD-Q4_K_XL shards from unsloth/Qwen3.8-Flash-Next-GGUF"
       },
       {
-        "kind": "cmd",
-        "text": "build llama.cpp from PR #27742 (see the hybrid lane)"
+        "kind": "do",
+        "text": "Build llama.cpp the same way as the hybrid recipe (PR #27742, merged into llama.cpp master on 2026-08-27)."
       },
       {
         "kind": "cmd",
-        "text": "llama-server -m Qwen3.8-Flash-Next-UD-Q4_K_XL-00001-of-00004.gguf -c {80000|180000|250000} --fit off -b 4096 -ub 4096 -cmoe"
+        "text": "llama-server -m Qwen3.8-Flash-Next-UD-Q4_K_XL-00001-of-00004.gguf -c 250000 --fit off -b 4096 -ub 4096 -cmoe"
+      },
+      {
+        "kind": "do",
+        "text": "The source also reports this recipe at -c 80000 and -c 180000, in place of -c 250000."
       }
     ]
   },
@@ -120,7 +124,7 @@
     }
   ],
   "caveats": [
-    "250k is the configured window; the benchmark prompt was 28k tokens at every context level \u2014 decode holds 20.8-21.0 tok/s across 80k->250k.",
+    "250k is the configured window; the benchmark prompt was 28k tokens at every context level — decode holds 20.8-21.0 tok/s across 80k->250k.",
     "Prefill 355-364 tok/s across contexts with -b/-ub 4096.",
     "Author's framing: a 4090 + ~100GB of cheap DDR4 serves 125B-class MoE inference; a 3090 + $1000 of DDR4 'would do the job' (untested).",
     "Decode is ~1.6 tok/s slower than the hybrid -ncmoe lane at 80k; the trade buys 12GB of VRAM back and 3x the context."
@@ -130,7 +134,7 @@
     {
       "url": "https://x.com/analogalok/status/2092697021790708148#cmoe-full-offload",
       "kind": "post",
-      "note": "second config from the same benchmark thread; rot-prone \u2014 raw payloads archived under tools/history/inputs/pass4-social/raw/"
+      "note": "second config from the same benchmark thread; rot-prone — raw payloads archived under tools/history/inputs/pass4-social/raw/"
     },
     {
       "url": "https://huggingface.co/unsloth/Qwen3.8-Flash-Next-GGUF",
