@@ -460,6 +460,31 @@ function needsLine(s) {
     ' <a href="#/models/' + esc(s.model) + '">' + esc("Different hardware? See the other recipes for this model.") + "</a></p>";
   return h;
 }
+function forkNote(s) {
+  var e = s.engine || {};
+  if (!e.requires_fork) return "";
+  var src = (s.sources || []).filter(function (x) { return /github\.com\/[^\/]+\/[^\/]+\/(pull|commit|tree)\//.test(x.url || ""); })[0] ||
+    (s.sources || []).filter(function (x) { return /github\.com/.test(x.url || ""); })[0];
+  return '<div class="flagnote"><p><b>' + esc("Heads up: ") + "</b>" +
+    esc("this recipe needs a modified build of the engine, not the standard release. Plan for extra setup time.") + "</p>" +
+    (e.config ? "<details><summary>" + esc("What is the special build?") + "</summary><p>" + esc(e.config) + "</p></details>" : "") +
+    (src ? '<p><a href="' + esc(src.url) + '" target="_blank" rel="noopener">' + esc("Where the build comes from") + "</a></p>" : "") + "</div>";
+}
+/* Generic plain-language definitions. They explain words, not this dataset's numbers. */
+var WORDS = [
+  ["Quant (Q4, FP8…)", "A smaller, lower-precision copy of the model. It uses less memory and can lose a little quality."],
+  ["MoE (mixture of experts)", "A model that uses only part of its weights for each word, so it can run faster than its size suggests."],
+  ["Decode tok/s", "How fast the model writes its answer. A token is about three quarters of a word."],
+  ["Prefill tok/s", "How fast the model reads your prompt before it starts answering."],
+  ["Context", "How much text the model can keep in mind at once, such as your chat so far."],
+  ["VRAM / unified memory", "VRAM is the memory on a graphics card. Macs and some PCs share one pool of memory instead."],
+  ["Fork", "A modified copy of a program. It is not the standard release, so you may have to build it yourself."]
+];
+function wordsHelp() {
+  return "<details class=\"words\"><summary>" + esc("New to these words?") + "</summary><dl>" + WORDS.map(function (w) {
+    return "<dt>" + esc(w[0]) + "</dt><dd>" + esc(w[1]) + "</dd>";
+  }).join("") + "</dl></details>";
+}
 function quickStartBody(s, opts) {
   opts = opts || {};
   var r = s.run || {}, cmds = cmdTexts(s), h = "";
@@ -469,7 +494,7 @@ function quickStartBody(s, opts) {
     if (!opts.compact && (r.steps || []).length) h += stepsHtml(s);
     return h;
   }
-  h += needsLine(s);
+  h += needsLine(s) + forkNote(s) + (opts.compact ? "" : wordsHelp());
   if (isScriptOnly(s)) {
     h += '<p class="qs-note">' + esc("This command is a script inside the builder's repository. Run it from a clone of ") +
       (r.repo ? '<a href="' + esc(r.repo) + '" target="_blank" rel="noopener">' + esc(r.repo) + "</a>" : esc("the recorded repository")) + ".</p>";
@@ -604,7 +629,6 @@ function detailBody(s, opts) {
   var qsTitle = cmdTexts(s).length ? "Quick start" : "How to start it";
   var s3 = quickStartBody(s) + '<div class="kv" style="margin-top:9px"><dt>Repository</dt><dd><a href="' + esc(r.repo) + '" target="_blank" rel="noopener">' + esc(r.repo) + "</a></dd>" +
     (r.profile ? "<dt>Profile</dt><dd><span class=\"mono\">" + esc(r.profile) + "</span></dd>" : "") + "</div>";
-  if (e.requires_fork) s3 += '<p class="flagnote">' + esc("This recipe depends on a custom fork or patch, not the stock engine release — confirm it still applies before you start.") + "</p>";
   var h = sec(qsTitle, s3);
   h += sec("What this recipe runs", s1);
 
@@ -2035,6 +2059,26 @@ var GOALS = [
   ["fast", "Highest measured throughput", "sort", function (s) { var r = repDecode(s); return r ? r.value : -1; }]
 ];
 
+function fitHintHtml(p) {
+  var rows = SETUPS.map(function (s) { return { s: s, r: classify(s, p) }; });
+  var ok = rows.filter(function (x) { return x.r.group === "exact" || x.r.group === "similar" || x.r.group === "estimated"; });
+  if (ok.length > 3) return "";
+  var cand = rows.filter(function (x) { return x.r.group === "unsupported" && x.r.req != null && x.r.avail != null; })
+    .sort(function (a, b) { return a.r.req - b.r.req; });
+  if (!cand.length) return "";
+  var c = cand[0], r = c.r, avail = Math.round(r.avail * 10) / 10, gap = Math.round((r.req - r.avail) * 10) / 10;
+  var ladder = [16, 24, 32, 64, 96, 128, 256].filter(function (n) { return n - r.reserve > r.avail; }).map(function (n) {
+    var k = SETUPS.filter(function (s) { var q = (s.requirements || {}).memory_gb; return q != null && q <= n - r.reserve; }).length;
+    return k ? gb(n) + ": " + k : null;
+  }).filter(Boolean).slice(0, 4);
+  var head = ok.length === 0 ? "Nothing recorded fits this machine yet" : "Only " + ok.length + " recipe" + (ok.length === 1 ? "" : "s") + " fit this machine as recorded";
+  return '<div class="banner b-info" style="margin-top:12px"><h3>' + esc(head) + "</h3>" +
+    "<p>" + esc("Closest recipe that does not fit: ") + '<a href="#/recipes/' + esc(c.s.id) + '">' + esc(c.s.title) + "</a>" +
+    esc(" records " + gb(r.req) + " of memory. You have " + gb(avail) + " after the reserve, so it is " + gb(gap) + " short.") + "</p>" +
+    (ladder.length ? "<p>" + esc("What more memory would unlock, using each recipe's recorded requirement (recipes that fit): " + ladder.join(" · ") + ".") + "</p>" : "") +
+    "<p>" + esc("This shows a gap in what the directory has recorded, not a verdict on your machine. ") +
+    '<a href="#/contribute">' + esc("Add a recipe for a smaller machine") + "</a>.</p></div>";
+}
 function viewHardware() {
   var p = state.profile;
   setRail("");
@@ -2102,6 +2146,7 @@ function viewHardware() {
 
   var a = state.assume;
   h += '<p class="lede">' + esc(SETUPS.length + " recipes checked against ") + "<b>" + esc(p.name || p.chip || p.gpu || "your machine") + "</b></p>";
+  h += fitHintHtml(p);
   h += '<div class="assump"><label class="fld"><span class="lbl">Assumed context</span><select id="as-ctx">' +
     [4096, 8192, 16384, 32768, 131072, 262144].map(function (n) {
       return '<option value="' + n + '"' + (a.context === n ? " selected" : "") + ">" + esc(ctx(n)) + "</option>";
@@ -2535,7 +2580,17 @@ function route() {
   else if (state.route === "contribute") viewContribute();
   else notFound("The route “" + location.hash + "” does not exist in this directory.");
   renderRail();
+  setDocTitle();
   window.scrollTo(0, 0);
+}
+function setDocTitle() {
+  var base = "Qwen Local-Run Directory", id = (state.params || {}).id, t = "";
+  if (state.route === "recipe") { var s = SETUPS.filter(function (x) { return x.id === id; })[0]; t = s ? s.title : "Recipe not found"; }
+  else if (state.route === "model") { var m = MODELS[id]; t = m ? m.name + " — recipes" : "Model not found"; }
+  else if (state.route === "publisher") { t = ((PUB[id] || {}).name || id || "Publisher"); }
+  else t = { "models-home": "Models", directory: "All recipes", hardware: "Check my hardware", compare: "Compare recipes",
+    methodology: "Methodology", contribute: "Contribute" }[state.route] || "Page not found";
+  document.title = t + " · " + base;
 }
 function setRail(html) { var r = el("rail"); r.innerHTML = html; r.hidden = !html; }
 function announce(msg) { var l = el("live"); if (l) l.textContent = msg; }
