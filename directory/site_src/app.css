@@ -1201,3 +1201,10 @@ tr.det>td{padding:0;border-bottom:1px solid var(--rule-2)}
   .model-page-baseline .baseline-spec>div.wide{grid-column:auto}
 }
 @media print{.mast,.rail,.bar,.crail,.foot{display:none}}
+
+.qs-needs{margin:0 0 8px;color:var(--ink-2);font-size:13.5px;line-height:1.5}
+.qs-needs b{font-weight:600;color:var(--ink)}
+.qs-note,.qs-lead{margin:8px 0;color:var(--ink-2);font-size:13.5px;line-height:1.5}
+.baseline-qs{margin-top:14px}
+.baseline-qs .steps{margin:6px 0}
+.baseline-qs .btn{margin-top:6px}

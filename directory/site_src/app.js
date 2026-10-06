@@ -420,13 +420,63 @@ function copyBtn(text, label) {
 function cmdBlock(text) {
   return '<div class="cmd"><code>' + esc(text) + "</code>" + copyBtn(text) + "</div>";
 }
-function stepsHtml(s) {
+function stepsHtml(s, cmds) {
   var steps = (s.run || {}).steps || [];
+  if (!steps.length && cmds && cmds.length) return '<ol class="steps">' + cmds.map(function (t) { return "<li>" + cmdBlock(t) + "</li>"; }).join("") + "</ol>";
   if (!steps.length) return '<p class="prose">' + esc("No ordered steps are recorded for this recipe. The linked repository is the source.") + "</p>";
   return '<ol class="steps">' + steps.map(function (x) {
     if (x.kind === "cmd") return "<li>" + cmdBlock(x.text) + "</li>";
     return '<li><span class="do">' + esc(x.text) + "</span></li>";
   }).join("") + "</ol>";
+}
+/* Quick start: commands only, in order. Nothing is synthesised: every line is a
+   recorded step of kind "cmd", or the recorded run.command. */
+function cmdTexts(s) {
+  var r = s.run || {}, out = [];
+  (r.steps || []).forEach(function (x) { if (x.kind === "cmd" && x.text && out.indexOf(x.text) < 0) out.push(x.text); });
+  if (r.command && out.indexOf(r.command) < 0) out.push(r.command);
+  return out;
+}
+function isScriptOnly(s) {
+  var c = (s.run || {}).command;
+  return !!c && /^\.\/[\w.\-]+(\s|$)/.test(c.trim());
+}
+function needsLine(s) {
+  var req = s.requirements || {}, e = s.engine || {}, bits = [];
+  bits.push("memory " + (gb(req.memory_gb) || "not recorded"));
+  if (req.min_vram_gb != null) bits.push("VRAM " + gb(req.min_vram_gb));
+  bits.push("disk " + (gb(req.disk_gb) || "not recorded"));
+  bits.push(e.requires_fork ? "custom fork" : "stock engine");
+  bits.push(complexityWord(s));
+  return '<p class="qs-needs"><b>Needs</b> ' + esc(bits.join(" · ")) + "</p>";
+}
+function quickStartBody(s, opts) {
+  opts = opts || {};
+  var r = s.run || {}, cmds = cmdTexts(s), h = "";
+  if (!cmds.length) {
+    h += '<p class="qs-lead"><span class="mark m-none">' + esc("○ No command recorded yet") + "</span> " +
+      esc("This is a lead, not a recipe. ") + '<a href="#/contribute">' + esc("Contribute a command") + "</a></p>";
+    if (!opts.compact && (r.steps || []).length) h += stepsHtml(s);
+    return h;
+  }
+  h += needsLine(s);
+  if (isScriptOnly(s)) {
+    h += '<p class="qs-note">' + esc("This command is a script inside the builder's repository. Run it from a clone of ") +
+      (r.repo ? '<a href="' + esc(r.repo) + '" target="_blank" rel="noopener">' + esc(r.repo) + "</a>" : esc("the recorded repository")) + ".</p>";
+  }
+  if (opts.compact) {
+    h += '<ol class="steps">' + cmds.slice(0, 3).map(function (t) { return "<li>" + cmdBlock(t) + "</li>"; }).join("") + "</ol>";
+    if (cmds.length > 3) h += '<p class="qs-note">' + esc((cmds.length - 3) + " more command" + (cmds.length - 3 === 1 ? "" : "s") + " on the full recipe.") + "</p>";
+    return h;
+  }
+  h += stepsHtml(s, cmds);
+  /* The recorded launch command must stay visible whenever the copy button copies it:
+     show it after the steps unless a step already carries the exact same text. */
+  var stepCmds = (r.steps || []).filter(function (x) { return x.kind === "cmd"; }).map(function (x) { return x.text; });
+  if (r.command && (r.steps || []).length && stepCmds.indexOf(r.command) < 0) {
+    h += '<p class="qs-note">' + esc("Recorded launch command:") + "</p>" + cmdBlock(r.command);
+  }
+  return h;
 }
 function capLine(s) {
   var c = s.capabilities || {}, m = modelOf(s), out = [];
@@ -541,7 +591,12 @@ function detailBody(s, opts) {
     "<dt>Engine</dt><dd><a href=\"" + esc(eng.url || "#/methodology") + '" target="_blank" rel="noopener">' + esc(eng.name || e.id) + "</a></dd>" +
     "<dt>Custom fork / patch</dt><dd>" + (e.requires_fork ? '<span class="mark m-warn">' + esc("fork required") + "</span>" : esc("not required")) + "</dd>" +
     "</div>";
-  var h = sec("What this recipe runs", s1);
+  var qsTitle = cmdTexts(s).length ? "Quick start" : "How to start it";
+  var s3 = quickStartBody(s) + '<div class="kv" style="margin-top:9px"><dt>Repository</dt><dd><a href="' + esc(r.repo) + '" target="_blank" rel="noopener">' + esc(r.repo) + "</a></dd>" +
+    (r.profile ? "<dt>Profile</dt><dd><span class=\"mono\">" + esc(r.profile) + "</span></dd>" : "") + "</div>";
+  if (e.requires_fork) s3 += '<p class="flagnote">' + esc("This recipe depends on a custom fork or patch, not the stock engine release — confirm it still applies before you start.") + "</p>";
+  var h = sec(qsTitle, s3);
+  h += sec("What this recipe runs", s1);
 
   /* 2. What it needs */
   var hwRefs = (s.hwRefs || []).length ? s.hwRefs : (s.hardware || []).map(function (id) { return { id: id, count: 1 }; });
@@ -561,12 +616,7 @@ function detailBody(s, opts) {
   if (offloadUnstated(s)) s2 += '<p class="flagnote">' + esc("Offload not stated — the recorded resident memory exceeds the named device's capacity and the source does not explain how the rest fits. Do not assume RAM or SSD offload from this alone.") + "</p>";
   h += sec("What it needs", s2);
 
-  /* 3. How to start it */
-  var s3 = (r.command ? cmdBlock(r.command) : '<p class="prose">' + esc("No single copyable command is recorded. Follow the ordered steps below.") + "</p>") +
-    stepsHtml(s) + '<div class="kv" style="margin-top:9px"><dt>Repository</dt><dd><a href="' + esc(r.repo) + '" target="_blank" rel="noopener">' + esc(r.repo) + "</a></dd>" +
-    (r.profile ? "<dt>Profile</dt><dd><span class=\"mono\">" + esc(r.profile) + "</span></dd>" : "") + "</div>";
-  if (e.requires_fork) s3 += '<p class="flagnote">' + esc("This recipe depends on a custom fork or patch, not the stock engine release — confirm it still applies before you start.") + "</p>";
-  h += sec("How to start it", s3);
+  /* 3. Quick start (rendered first, see below) */
 
   /* 4. What was observed */
   var s4;
@@ -1161,6 +1211,8 @@ function modelPreview(m) {
         (speed.source ? '<a data-speed-source="' + esc(speed.source) + '" href="' + esc(speed.source) + '" target="_blank" rel="noopener">Open measurement source</a>' : '');
     } else h += '<p class="na">No single-stream decode measurement is recorded for this baseline.</p>';
     h += '</div>';
+    h += '<div class="baseline-qs"><span class="lbl">Quick start</span>' + quickStartBody(s, { compact: true }) +
+      '<a class="btn" href="#/recipes/' + esc(s.id) + '">' + esc("Full recipe") + '</a></div>';
     var trade = [];
     if (e.requires_fork) trade.push("This baseline requires a custom engine build.");
     capConflicts(s).forEach(function (x) { trade.push(x + " is disabled by this runtime."); });
@@ -2183,7 +2235,7 @@ function viewRecipe(id) {
      (s.slug_note ? '<p class="lede">' + esc(s.slug_note) + "</p>" : "") +
      collation + "</header>" +
      '<div class="recipe-layout"><div class="recipe-main"><div class="res-act recipe-actions">' +
-     (s.run && s.run.command ? copyBtn(s.run.command, "Copy launch command") : '<span class="mark m-none">' + esc("Launch command not recorded") + "</span>") +
+     (cmdTexts(s).length ? copyBtn(cmdTexts(s).join("\n"), cmdTexts(s).length > 1 ? "Copy all commands" : "Copy launch command") : '<span class="mark m-none">' + esc("Launch command not recorded") + "</span>") +
      '<a class="btn" href="#/hardware">Check against my hardware</a>' +
      '<button type="button" class="btn" data-cmp="' + esc(s.id) + '">' + esc(state.compare.indexOf(s.id) >= 0 ? "Remove from compare" : "Add to compare") + "</button>" +
      '</div><div class="recipe-meta"><span><b>Added</b> ' + esc(s.added || "not recorded") + '</span><span><b>Verified</b> ' + esc(s.verified || "not recorded") + '</span><span><b>Citations</b> ' + esc(String((s.sources || []).length)) + '</span><span><b>Flagged conditions</b> ' + esc(String((s.caveats || []).length)) + '</span></div>' +

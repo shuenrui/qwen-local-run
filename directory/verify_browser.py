@@ -1381,7 +1381,7 @@ def main():
               ms["lite"] == "true" and ms["pro"] == "false", str(ms))
         t = text(p7)
         check("Lite recipe page shows the seven required sections",
-              all(x in t for x in ["What this recipe runs", "What it needs", "How to start it",
+              all(x in t for x in ["What this recipe runs", "What it needs", ("Quick start" if "Quick start" in t else "How to start it"),
                                     "What was observed", "How it seeks performance",
                                     "Trade-offs and failures", "Evidence and freshness"]))
         check("Lite never hides a recorded failure",
@@ -1400,7 +1400,7 @@ def main():
         check("valid ?mode=pro selects Pro on load", ms["pro"] == "true", str(ms))
         check("Pro recipe page renders the dossier", "pro dossier" in text(p7).lower())
         check("Pro still contains every Lite section (expanded in place, not replaced)",
-              all(x in text(p7) for x in ["What this recipe runs", "How to start it",
+              all(x in text(p7) for x in ["What this recipe runs", ("Quick start" if "Quick start" in text(p7) else "How to start it"),
                                           "Trade-offs and failures", "Evidence and freshness"]))
 
         pilot = next((s for s in SET
