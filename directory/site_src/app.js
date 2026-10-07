@@ -2585,7 +2585,9 @@ function route() {
     state.f = {};
     Object.keys(r.q).forEach(function (k) {
       if (FACETS[k] || k === "pmin" || k === "pmax") state.f[k] = r.q[k];
-      if (FACETS[k] || k === "pmin" || k === "pmax") { if (ADVANCED.indexOf(k) >= 0 || k === "pmin" || k === "pmax") state.adv = true; }
+      if (FACETS[k] || k === "pmin" || k === "pmax") {
+        if ((ADVANCED.indexOf(k) >= 0 && k !== "family") || k === "pmin" || k === "pmax") state.adv = true;
+      }
     });
   }
   if (state.route === "compare" && r.q.sel) {
