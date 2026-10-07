@@ -2350,6 +2350,23 @@ function modelDetails(m) {
   if (m.fit_note) h += '<section class="psec"><h3>Fit note</h3><p>' + esc(m.fit_note) + "</p></section>";
   return h + "</div></details>";
 }
+function modelBaselineQuickStart(m) {
+  var s = baselineSetup(m);
+  if (!s) return "";
+  var speed = baselineSpeed(s), h = '<section class="model-baseline-start" aria-label="Practical baseline quick start">';
+  h += '<div class="baseline-speed"><span class="lbl">Recorded speed on the selected baseline</span>';
+  if (speed) {
+    h += '<div class="speed-line" data-evidence-field="speed"><strong data-speed-metric="' + esc(speed.metric) + '">' +
+      esc(speed.value) + '<small>' + esc(" " + speed.unit) + '</small></strong><span data-speed-condition="' +
+      esc(metricWord(speed.metric) + (speed.stat ? " · " + speed.stat : "")) + '" data-speed-concurrency="' +
+      esc(speed.concurrency != null ? String(speed.concurrency) : "1") + '" data-speed-provenance="' +
+      esc(speed.provenance || "") + '">' + esc(condOf(speed)) + '</span></div>';
+    if (speed.source) h += '<a href="' + esc(speed.source) + '" target="_blank" rel="noopener">Open measurement source</a>';
+  } else h += '<p class="na">No single-stream decode measurement is recorded for this baseline.</p>';
+  h += '</div><div class="baseline-qs"><span class="lbl">Quick start</span>' + quickStartBody(s, { compact: true }) +
+    '<a class="btn" href="#/recipes/' + esc(s.id) + '">Full recipe</a></div></section>';
+  return h;
+}
 function viewModel(id) {
   var m = MODELS[id];
   setRail("");
@@ -2357,7 +2374,8 @@ function viewModel(id) {
   var list = modelRecipes(id);
   el("mast-note").innerHTML = "";
   var h = '<div class="page wide model-family-page"><p class="crumb"><a href="#/">Models</a> ' +
-    esc("→ model family") + "</p><h1>" + esc(m.name) + "</h1>" + featuredRecipeTable(m, list) + modelDetails(m) + "</div>";
+    esc("→ model family") + "</p><h1>" + esc(m.name) + "</h1>" + featuredRecipeTable(m, list) +
+    modelBaselineQuickStart(m) + modelDetails(m) + "</div>";
   el("main").innerHTML = h;
 }
 function viewPublisher(id) {
