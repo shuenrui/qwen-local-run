@@ -2293,9 +2293,9 @@ function viewRecipe(id) {
   var h = '<div class="page recipe-page"><p class="crumb"><a href="#/recipes">Recipes</a> ' + esc("→") +
      ' <a href="#/models/' + esc(s.model) + '">' + esc(m.name || s.model) + "</a> " + esc("→ this recipe") + "</p>" +
      '<header class="page-head"><p class="eyebrow">' + esc("Recipe · one exact runnable setup") + "</p>" +
-     "<h1>" + esc(s.title) + "</h1>" +
+     '<div class="recipe-heading"><div class="recipe-heading-copy"><h1>' + esc(s.title) + "</h1>" +
      (s.slug_note ? '<p class="lede">' + esc(s.slug_note) + "</p>" : "") +
-     collation + "</header>" +
+     "</div>" + collation + "</div></header>" +
      '<div class="recipe-layout"><div class="recipe-main"><div class="res-act recipe-actions">' +
      (cmdTexts(s).length ? copyBtn(cmdTexts(s).join("\n"), cmdTexts(s).length > 1 ? "Copy all commands" : "Copy launch command") : '<span class="mark m-none">' + esc("Launch command not recorded") + "</span>") +
      '<a class="btn" href="#/hardware">Check against my hardware</a>' +

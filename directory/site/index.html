@@ -945,6 +945,12 @@ tr.det>td{padding:0;border-bottom:1px solid var(--rule-2)}
 .page.wide{max-width:none}
 .page>.page-head{border-top:2px solid var(--ink);padding:22px 0 0}
 .recipe-page>.page-head{padding-bottom:0}
+.recipe-heading{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(320px,.8fr);
+  gap:clamp(22px,3.5vw,48px);align-items:center;margin-top:10px}
+.recipe-heading-copy{min-width:0}
+.recipe-heading-copy>h1{margin:0;font:400 clamp(34px,5vw,52px)/1.04 var(--font-display);
+  letter-spacing:-.015em;max-width:24ch}
+.recipe-heading-copy>p.lede{margin-top:14px;font-size:17px;line-height:1.6;color:var(--ink);max-width:62ch}
 .page-kicker{font:700 11px/1.3 var(--font-ui);letter-spacing:.14em;
   text-transform:uppercase;color:var(--sel)}
 .page h1{margin-top:8px;font:400 clamp(30px,4vw,44px)/1.04 var(--font-display);
@@ -985,13 +991,15 @@ tr.det>td{padding:0;border-bottom:1px solid var(--rule-2)}
 .recipe-rail ul{display:grid;gap:9px;color:var(--ink-2);font:400 12.5px/1.45 var(--font-ui)}
 /* The collation statement: the one place the product asserts identity.
    Change any part and it is a different record with a different id. */
-.collation{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));
-  border-top:1px solid var(--rule-2);border-bottom:1px solid var(--rule-2);margin-top:26px}
-.collation>div{padding:14px 22px;border-left:1px solid var(--rule-2)}
+.collation{display:grid;grid-template-columns:minmax(0,1fr);
+  border-top:1px solid var(--rule-2);border-bottom:1px solid var(--rule-2);margin:0}
+.collation>div{display:grid;grid-template-columns:minmax(88px,.42fr) minmax(0,1fr);gap:10px;
+  align-items:start;padding:9px 0;border-bottom:1px solid var(--rule-2)}
+.collation>div:last-child{border-bottom:0}
 .collation>div:first-child{padding-left:0;border-left:0}
 .collation dt{font:700 10.5px/1.3 var(--font-ui);letter-spacing:.12em;
-  text-transform:uppercase;color:var(--ink-3);margin-bottom:7px}
-.collation dd{margin:0;font:400 13.5px/1.65 var(--font-mono);color:var(--ink);overflow-wrap:anywhere}
+  text-transform:uppercase;color:var(--ink-3);margin:2px 0 0}
+.collation dd{margin:0;font:400 12.5px/1.5 var(--font-mono);color:var(--ink);overflow-wrap:anywhere}
 .collation dd .q{color:var(--ink-3)}
 .collation dd .f{color:var(--warn)}
 .recipe-actions{margin-top:20px;padding:0 0 10px;border-bottom:0;display:flex;gap:12px;flex-wrap:wrap}
@@ -1196,6 +1204,8 @@ tr.det>td{padding:0;border-bottom:1px solid var(--rule-2)}
   .model-preview{position:static;grid-row:1;max-height:none;margin-top:12px}
   .model-index{grid-row:2}
   .model-list-head,.model-row{grid-template-columns:minmax(190px,1.2fr) minmax(200px,1fr) 126px 30px}
+  .recipe-heading{grid-template-columns:minmax(0,1fr);gap:16px;align-items:start}
+  .collation{max-width:none}
 }
 @media (max-width:719px){
   .mast-bar{height:auto;flex-wrap:wrap;padding:7px 14px 0;gap:10px}
@@ -1220,7 +1230,9 @@ tr.det>td{padding:0;border-bottom:1px solid var(--rule-2)}
   .cmp col.k{width:150px}
   .page{padding:14px 0 30px}
   .recipe-layout{grid-template-columns:minmax(0,1fr);gap:22px;margin-top:14px}
-  .recipe-page>h1{font-size:39px;max-width:15ch}
+  .recipe-heading{gap:12px}
+  .recipe-heading-copy>h1{font-size:39px;max-width:15ch}
+  .recipe-heading-copy>p.lede{margin-top:11px;font-size:15px}
   .recipe-rail{position:static;display:grid;grid-template-columns:1fr 1fr;gap:18px;border-top:1px solid var(--rule-2);padding-top:13px}
   .recipe-rail section+section{border-top:0;margin-top:0;padding-top:0}
   .recipe-actions .copy{width:100%}
@@ -3609,9 +3621,9 @@ function viewRecipe(id) {
   var h = '<div class="page recipe-page"><p class="crumb"><a href="#/recipes">Recipes</a> ' + esc("→") +
      ' <a href="#/models/' + esc(s.model) + '">' + esc(m.name || s.model) + "</a> " + esc("→ this recipe") + "</p>" +
      '<header class="page-head"><p class="eyebrow">' + esc("Recipe · one exact runnable setup") + "</p>" +
-     "<h1>" + esc(s.title) + "</h1>" +
+     '<div class="recipe-heading"><div class="recipe-heading-copy"><h1>' + esc(s.title) + "</h1>" +
      (s.slug_note ? '<p class="lede">' + esc(s.slug_note) + "</p>" : "") +
-     collation + "</header>" +
+     "</div>" + collation + "</div></header>" +
      '<div class="recipe-layout"><div class="recipe-main"><div class="res-act recipe-actions">' +
      (cmdTexts(s).length ? copyBtn(cmdTexts(s).join("\n"), cmdTexts(s).length > 1 ? "Copy all commands" : "Copy launch command") : '<span class="mark m-none">' + esc("Launch command not recorded") + "</span>") +
      '<a class="btn" href="#/hardware">Check against my hardware</a>' +
