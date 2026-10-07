@@ -77,7 +77,7 @@ enforces that.
 
 ## Current coverage
 
-72 setups, 22 model families, 6 hardware classes, 8 engines, and 33 publishers.
+83 setups, 22 model families, 10 hardware classes, 8 engines, and 36 publishers.
 Eight model families currently have a curated practical baseline; fourteen are
 shown as `Not verified yet` rather than receiving an estimated requirement.
 Model families span the 3.0, 3.5, 3.6, and 3.8 lines including VL and Omni.
@@ -91,6 +91,12 @@ Reddit hard-403s this environment, so per the owner's mirror-accepted decision
 (2026-09-10) Reddit-sourced numbers enter only via a pullpush/arctic-shift
 mirror recorded in `mirror_url`, with the quote lifted from the mirror
 payload; `check_links.py` verifies the mirror.
+
+**Installing a recipe:** see [INSTALLATION_GUIDE.md](INSTALLATION_GUIDE.md) for
+the host details to collect, how to read recipe evidence, and the reviewed
+status of the 40 recipes that lacked copyable commands in the October 2026
+audit. It distinguishes verified commands from GUI steps and incomplete or
+conflicting upstream instructions.
 
 Scope of the family list, from an audit of the Qwen org on HuggingFace:
 there is **no Qwen 4 series** — 3.8 is the newest line. Deliberately excluded

@@ -44,15 +44,19 @@
   },
   "run": {
     "repo": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
-    "command": null,
+    "command": "llama serve -hf unsloth/Qwen3.8-27B-GGUF:UD-Q4_K_M",
     "steps": [
       {
         "kind": "do",
-        "text": "Download unsloth/Qwen3.8-27B-GGUF"
+        "text": "Install llama.cpp for your operating system using the model card's macOS/Linux, Windows, prebuilt-binary or source-build instructions."
+      },
+      {
+        "kind": "cmd",
+        "text": "llama serve -hf unsloth/Qwen3.8-27B-GGUF:UD-Q4_K_M"
       },
       {
         "kind": "do",
-        "text": "llama.cpp with CUDA or Metal, Q4_K_M or smaller to stay on-card"
+        "text": "Use a llama.cpp build at ece963f41 (~b10450) or newer with Flash Attention enabled; older CUDA build 221f0f6 silently corrupts output."
       }
     ]
   },

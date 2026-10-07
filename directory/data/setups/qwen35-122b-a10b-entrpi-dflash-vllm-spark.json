@@ -42,11 +42,13 @@
   },
   "run": {
     "repo": "https://github.com/Entrpi/qwen3.5-122B-A10B-on-spark",
-    "command": null,
+    "command": "./install.sh --start --profile dflash",
     "steps": [
-      {"kind": "do", "text": "Run the repo's one-shot installer"},
-      {"kind": "do", "text": "Choose the DFlash profile for agent workloads"},
-      {"kind": "do", "text": "--load-format fastsafetensors cuts time-to-READY to ~3 min versus ~12"}
+      {"kind": "cmd", "text": "git clone https://github.com/Entrpi/qwen3.5-122B-A10B-on-spark.git"},
+      {"kind": "cmd", "text": "cd qwen3.5-122B-A10B-on-spark"},
+      {"kind": "do", "text": "DGX Spark / aarch64 Linux only. Requires Docker with NVIDIA Container Toolkit and at least 75 GiB free disk; allow about 40 GiB for the vLLM image and 67 GiB for weights."},
+      {"kind": "cmd", "text": "./install.sh --start --profile dflash"},
+      {"kind": "do", "text": "The installer validates the host, pulls the pinned image and weights, starts the OpenAI-compatible server on port 8000, then waits for readiness and runs a smoke test. Use --help to review installer options before starting."}
     ]
   },
   "measurements": [

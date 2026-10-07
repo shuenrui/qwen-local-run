@@ -42,11 +42,16 @@
     "max_context": null
   },
   "run": {
-    "command": null,
-    "repo": "https://github.com/blazux",
+    "command": "./flash serve",
+    "repo": "https://github.com/blazux/qwen3.8-Flash-DGX",
     "profile": null,
     "steps": [
-      {"kind": "do", "text": "See the builder's repo."}
+      {"kind": "cmd", "text": "git clone https://github.com/blazux/qwen3.8-Flash-DGX.git"},
+      {"kind": "cmd", "text": "cd qwen3.8-Flash-DGX"},
+      {"kind": "cmd", "text": "./flash doctor"},
+      {"kind": "cmd", "text": "./flash setup"},
+      {"kind": "cmd", "text": "./flash serve"},
+      {"kind": "do", "text": "DGX Spark only. Setup requires Docker with NVIDIA GPU support, approximately 124 GiB checkpoint download, and sufficient free disk. The first serve compiles kernels and warms caches."}
     ],
     "auto_bootable": false
   },

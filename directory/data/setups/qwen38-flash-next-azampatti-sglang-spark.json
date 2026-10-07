@@ -42,11 +42,17 @@
     "max_context": 200000
   },
   "run": {
-    "command": null,
-    "repo": "https://github.com/azampatti",
+    "command": "~/launch-3.8flash.sh",
+    "repo": "https://github.com/azampatti/GB10-3.8-Flash-Next",
     "profile": null,
     "steps": [
-      {"kind": "do", "text": "See the builder's repo for the one-command install."}
+      {"kind": "cmd", "text": "git clone https://github.com/azampatti/GB10-3.8-Flash-Next.git"},
+      {"kind": "cmd", "text": "cd GB10-3.8-Flash-Next"},
+      {"kind": "do", "text": "Requires DGX Spark / GB10 (SM121), Docker with NVIDIA Container Toolkit, about 105 GiB free RAM plus 16 GiB swap at launch, and about 40 GB free disk."},
+      {"kind": "cmd", "text": "huggingface-cli download RadixArk/Qwen3.8-Flash-Next-NVFP4"},
+      {"kind": "cmd", "text": "./install-3.8flash.sh"},
+      {"kind": "cmd", "text": "~/launch-3.8flash.sh"},
+      {"kind": "do", "text": "The installer applies the required SM121 patches and builds the n-gram table; allow about 16 minutes for installation and 9 minutes for the first server start."}
     ],
     "auto_bootable": false
   },
@@ -67,7 +73,6 @@
   "caveats": [
     "Vision is OFF — this is a language-only build. If you need image or video input, this is not the lane.",
     "The builder states a 60 tok/s upgrade is 'days away'. Treat the current number as a floor, and treat the promise as marketing until it ships.",
-    "Exact repo URL could not be pinned from our sources beyond the GitHub account; verify before following the install steps.",
     "The checkpoint card states no license field; the weights lineage is Qwen Apache-2.0.",
     "Builder runtimes carry their own terms on top of the weights (Mia's scripts are AGPL-3.0)."
   ],

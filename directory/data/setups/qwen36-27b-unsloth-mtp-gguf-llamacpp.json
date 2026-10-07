@@ -44,10 +44,11 @@
   },
   "run": {
     "repo": "https://huggingface.co/unsloth/Qwen3.6-27B-MTP-GGUF",
-    "command": null,
+    "command": "llama-server -hf unsloth/Qwen3.6-27B-MTP-GGUF:UD-Q4_K_XL -ngl 99 -c 8192 -fa on -np 1 --spec-type draft-mtp --spec-draft-n-max 2",
     "steps": [
-      {"kind": "do", "text": "Download unsloth/Qwen3.6-27B-MTP-GGUF"},
-      {"kind": "do", "text": "llama.cpp with --speculative-type or draft from the MTP head, per repo notes"}
+      {"kind": "do", "text": "Install a current llama.cpp build with CUDA for NVIDIA or Metal for Apple Silicon, following the model card's platform-specific instructions."},
+      {"kind": "cmd", "text": "llama-server -hf unsloth/Qwen3.6-27B-MTP-GGUF:UD-Q4_K_XL -ngl 99 -c 8192 -fa on -np 1 --spec-type draft-mtp --spec-draft-n-max 2"},
+      {"kind": "do", "text": "The source notes MTP does not yet support multiple parallel slots or --mmproj; remove -np 1 only after checking the current engine docs."}
     ]
   },
   "measurements": [],

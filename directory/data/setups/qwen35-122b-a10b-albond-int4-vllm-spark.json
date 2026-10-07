@@ -45,13 +45,15 @@
     "max_context": 262144
   },
   "run": {
-    "command": null,
+    "command": "./install.sh --launch",
     "repo": "https://github.com/albond/DGX_Spark_Qwen3.5-122B-A10B-AR-INT4",
     "profile": "profiles/qwen3.5-122b-albond.env",
     "steps": [
-      {"kind": "do", "text": "Clone the builder's repo"},
-      {"kind": "do", "text": "See the builder's repo — manual vLLM boot"},
-      {"kind": "do", "text": "Point profiles/qwen3.5-122b-albond.env at the running PORT with auto=false to benchmark it"}
+      {"kind": "cmd", "text": "git clone https://github.com/albond/DGX_Spark_Qwen3.5-122B-A10B-AR-INT4.git"},
+      {"kind": "cmd", "text": "cd DGX_Spark_Qwen3.5-122B-A10B-AR-INT4"},
+      {"kind": "do", "text": "DGX Spark / GB10 only. The installer checks Docker GPU access and host prerequisites, prepares the model and builds the pinned vLLM image. It does not call sudo; it prints any required system package command and exits for you to review."},
+      {"kind": "cmd", "text": "./install.sh --launch"},
+      {"kind": "do", "text": "First-time vLLM build can take 30–60 minutes. The directory's own benchmark harness remains manual-only; see the full recipe before using its profile."}
     ],
     "auto_bootable": false
   },

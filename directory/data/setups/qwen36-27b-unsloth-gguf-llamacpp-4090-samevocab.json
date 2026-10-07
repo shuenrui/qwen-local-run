@@ -42,11 +42,22 @@
   },
   "run": {
     "repo": "https://github.com/outsourc-e/qwen36-4090-recipes",
-    "command": null,
+    "command": "./configs/start-mainline-c1-agg.sh",
     "steps": [
-      {"kind": "do", "text": "Build mainline llama.cpp with CUDA 12.8"},
-      {"kind": "do", "text": "Load the Q4_K_M target plus the Qwen3.5-4B same-vocab draft"},
-      {"kind": "do", "text": "Run the repo's bench-split.py quality gate before trusting any speed number"}
+      {"kind": "cmd", "text": "git clone https://github.com/outsourc-e/qwen36-4090-recipes.git ~/qwen36-4090-recipes"},
+      {"kind": "cmd", "text": "mkdir -p ~/llama-mainline"},
+      {"kind": "cmd", "text": "git clone --depth 1 https://github.com/ggerganov/llama.cpp ~/llama-mainline/llama.cpp"},
+      {"kind": "cmd", "text": "cd ~/llama-mainline/llama.cpp"},
+      {"kind": "cmd", "text": "export PATH=/usr/local/cuda-12.8/bin:$PATH"},
+      {"kind": "cmd", "text": "export CUDACXX=/usr/local/cuda-12.8/bin/nvcc"},
+      {"kind": "cmd", "text": "cmake -B build -DGGML_CUDA=ON -DCMAKE_BUILD_TYPE=Release -DCMAKE_CUDA_COMPILER=$CUDACXX -DCUDAToolkit_ROOT=/usr/local/cuda-12.8"},
+      {"kind": "cmd", "text": "cmake --build build --config Release -j 16 --target llama-server"},
+      {"kind": "cmd", "text": "cd ~/qwen36-4090-recipes"},
+      {"kind": "cmd", "text": "export LLAMA_MAINLINE=$HOME/llama-mainline"},
+      {"kind": "cmd", "text": "export MODELS_DIR=/path/to/your/gguf/folder"},
+      {"kind": "do", "text": "Download Qwen3.6-27B-Q4_K_M.gguf and Qwen3.5-4B-Q4_K_M.gguf. In the recipe checkout, set LLAMA_MAINLINE=$HOME/llama-mainline and MODELS_DIR to that model folder before launching."},
+      {"kind": "cmd", "text": "./configs/start-mainline-c1-agg.sh"},
+      {"kind": "do", "text": "Linux/WSL with CUDA 12.8 and one RTX 4090. Run the repository's bench/bench-split.py quality checks before relying on the same-vocabulary speculative decoding output."}
     ]
   },
   "measurements": [

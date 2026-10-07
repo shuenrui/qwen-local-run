@@ -43,11 +43,13 @@
   },
   "run": {
     "repo": "https://github.com/hasso5703/dgx-spark-qwen38",
-    "command": null,
+    "command": "MODEL_CHOICE=flash ./install.sh",
     "steps": [
-      {"kind": "do", "text": "Follow the repo's one-command install"},
-      {"kind": "do", "text": "Select the flash-next NVFP4 + MTP target"},
-      {"kind": "do", "text": "Keep the PLE table on NVMe; it is mmap-served, not loaded"}
+      {"kind": "cmd", "text": "git clone https://github.com/hasso5703/dgx-spark-qwen38.git"},
+      {"kind": "cmd", "text": "cd dgx-spark-qwen38"},
+      {"kind": "do", "text": "DGX Spark / GB10 only. This installs a persistent systemd service and downloads the container and model. Keep about 230 GB free for the NVMe-mapped PLE table and model files."},
+      {"kind": "cmd", "text": "MODEL_CHOICE=flash ./install.sh"},
+      {"kind": "do", "text": "The upstream quick-start guide describes this as the Flash-Next lane; the repository recommends NVMe-backed PLE to reduce fixed host-memory use."}
     ]
   },
   "measurements": [

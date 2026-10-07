@@ -42,10 +42,14 @@
   },
   "run": {
     "repo": "https://github.com/petems/qwen-local-silicon-32to64gb-macbook-guide",
-    "command": null,
+    "command": "./start-llama-server.sh",
     "steps": [
-      {"kind": "do", "text": "Run the guide's check-compatibility.sh probe"},
-      {"kind": "do", "text": "Use the RAM auto-detecting start-launcher"},
+      {"kind": "cmd", "text": "git clone https://github.com/petems/qwen-local-silicon-32to64gb-macbook-guide.git"},
+      {"kind": "cmd", "text": "cd qwen-local-silicon-32to64gb-macbook-guide"},
+      {"kind": "cmd", "text": "./check-compatibility.sh"},
+      {"kind": "cmd", "text": "brew install llama.cpp"},
+      {"kind": "cmd", "text": "./start-llama-server.sh"},
+      {"kind": "do", "text": "Apple Silicon Mac only. The launcher auto-detects RAM, model and context; allow 30–50 GB free disk. Review the compatibility report before downloading weights."},
       {"kind": "do", "text": "Stay at Q4_K_M or below on 32 GB machines"}
     ]
   },

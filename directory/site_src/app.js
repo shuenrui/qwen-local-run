@@ -280,7 +280,7 @@ var state = {
   route: "models-home", params: {}, path: "#/", q: "",
   f: {}, sort: "updated", adv: false, flat: false,
   expanded: {}, compare: [], profile: null,
-  modelQ: "", modelGen: "", modelArch: "", modelBaseline: "", selectedModel: null,
+  modelQ: "", modelGen: "", modelArch: "", modelBaseline: "", selectedModel: null, modelOpen: null,
   mopen: {}, mcompare: [],
   assume: { context: 8192, concurrency: 1, reserve: null },
   mobile: false,
@@ -301,6 +301,58 @@ function baselineSetup(m) {
   return b.status === "selected" ? setupById(b.setup) : null;
 }
 function modelRecipes(mid) { return SETUPS.filter(function (s) { return s.model === mid; }); }
+function featureEvidenceRank(s) {
+  return { box: 0, forum: 1, vendor: 2 }[s.provenance_tier] == null ? 3 :
+    { box: 0, forum: 1, vendor: 2 }[s.provenance_tier];
+}
+function featureNovelty(s, chosen) {
+  var e = (s.engine || {}).id, hw = s.hardware || [];
+  var newEngine = e && !chosen.some(function (x) { return ((x.engine || {}).id) === e; });
+  var newHardware = hw.some(function (id) {
+    return !chosen.some(function (x) { return (x.hardware || []).indexOf(id) >= 0; });
+  });
+  return (newHardware ? 2 : 0) + (newEngine ? 1 : 0);
+}
+function featuredRecipes(m, list) {
+  var chosen = [], baseline = baselineSetup(m);
+  if (baseline && list.some(function (s) { return s.id === baseline.id; })) chosen.push(baseline);
+  while (chosen.length < 5 && chosen.length < list.length) {
+    var candidates = list.filter(function (s) {
+      return !chosen.some(function (x) { return x.id === s.id; });
+    });
+    candidates.sort(function (a, b) {
+      var d = featureEvidenceRank(a) - featureEvidenceRank(b);
+      if (d) return d;
+      d = featureNovelty(b, chosen) - featureNovelty(a, chosen);
+      if (d) return d;
+      d = (repDecode(b) ? 1 : 0) - (repDecode(a) ? 1 : 0);
+      if (d) return d;
+      d = ((b.run || {}).command ? 1 : 0) - ((a.run || {}).command ? 1 : 0);
+      if (d) return d;
+      d = complexity(a) - complexity(b);
+      if (d) return d;
+      return String(a.title).localeCompare(String(b.title));
+    });
+    chosen.push(candidates[0]);
+  }
+  return chosen;
+}
+function featuredVerification(s) {
+  return {
+    box: ["Measured", "Owner-measured result"],
+    forum: ["Reported", "Community-reported result"],
+    vendor: ["Claimed", "Publisher claim"],
+    none: ["Unmeasured", "No measurement recorded"]
+  }[s.provenance_tier || "none"];
+}
+function featuredContext(s) {
+  var c = s.capabilities || {};
+  return c.long_context != null ? ctx(c.long_context) : c.max_context != null ? ctx(c.max_context) : "Not recorded";
+}
+function featuredRecipeLabel(s) {
+  var v = s.variation || {}, quant = v.quant_detail || v.quant || v.format || "Build";
+  return pubName(v.publisher) + " · " + String(quant).split(/[;,]/)[0].trim();
+}
 function modelSearchBlob(m) {
   var a = m.architecture || {};
   return [m.id, m.name, m.family, m.generation, a.kind, a.params_total_b,
@@ -1239,7 +1291,7 @@ function modelPreview(m) {
 function writeModelHash() {
   if (state.route !== "models-home") return;
   writeQuery("#/", {
-    model: state.selectedModel || undefined, q: state.modelQ, gen: state.modelGen,
+    model: state.modelOpen || undefined, q: state.modelQ, gen: state.modelGen,
     arch: state.modelArch, baseline: state.modelBaseline, mode: modeParam()
   });
 }
@@ -1291,16 +1343,13 @@ function paramsCell(a) {
 function miBand() {
   var gens = seriesOf(D.model_order.map(function (id) { return MODELS[id]; }));
   return '<section class="mi-band">' +
-    '<div class="mi-band-l"><div class="mi-kicker">' + esc("Index") + "</div>" +
+    '<div class="mi-band-title"><span class="mi-kicker">' + esc("Index") + "</span>" +
     '<h1 class="mi-title">' + esc("Models") + "</h1></div>" +
-    '<div class="mi-band-r"><p class="mi-intro">' +
-      esc(D.model_order.length + " model families in " + gens.length +
-        " released series, with " + SETUPS.length +
-        " recipes recorded against them. Sizes, dates and context windows are the publisher\u2019s; open a family to read the recipe this directory keeps as its best record, and who measured it.") +
-    '</p><div class="mi-all">' +
-      '<button type="button" class="mi-btn mi-btn-g" id="mi-open-all">' + esc("Open all") + "</button>" +
-      '<button type="button" class="mi-btn" id="mi-close-all">' + esc("Close all") + "</button>" +
-    "</div></div></section>";
+    '<p class="mi-intro">' +
+      esc(D.model_order.length + " model families · " + gens.length +
+        " released series · " + SETUPS.length +
+        " recipes. Select a family to preview featured builds.") +
+    "</p></section>";
 }
 function miHead() {
   return '<div class="mi-head"><span class="mi-head-sp" aria-hidden="true"></span>' +
@@ -1327,6 +1376,7 @@ function miGroups(list, sel) {
 function miFam(m, num, on) {
   var a = m.architecture || {}, c = m.context || {}, recs = modelRecipes(m.id).length;
   var open = !!state.mopen[m.id], cmp = state.mcompare.indexOf(m.id) >= 0;
+  var previewOpen = state.modelOpen === m.id;
   var bits = [a.kind === "moe" ? "MoE" : (a.kind || "architecture not recorded")];
   if (a.params_total_b != null) bits.push(a.params_total_b + "B total");
   if (a.params_active_b != null) bits.push(a.params_active_b + "B active");
@@ -1346,7 +1396,7 @@ function miFam(m, num, on) {
       '<span class="mi-num">' + esc(num) + '</span><span class="mi-glyph" aria-hidden="true">' +
       (open ? "\u2013" : "+") + "</span></button>" +
     '<a class="toc-item' + (on ? " is-sel" : "") + '" href="#/models/' + esc(m.id) +
-      '" data-model-select="' + esc(m.id) + '"' +
+      '" data-model-select="' + esc(m.id) + '" aria-expanded="' + previewOpen + '" aria-controls="featured-' + esc(m.id) + '"' +
       (on ? ' data-toc-selected="true" aria-current="true"' : "") + '>' +
       '<span class="mi-cell mi-name"><span class="mi-nm">' + esc(m.name) +
         '</span><span class="mi-leader" aria-hidden="true"></span></span>' +
@@ -1364,7 +1414,9 @@ function miFam(m, num, on) {
       (intro ? '<span class="toc-intro sr">' + esc(intro) + "</span>" : "") +
     "</a></div>" +
     '<div class="kept' + (open && !baselineSetup(m) ? " kept-empty" : "") + '" id="kept-' + esc(m.id) + '"' +
-      (open ? "" : " hidden") + ">" + (open ? keptHtml(m) : "") + "</div></li>";
+      (open ? "" : " hidden") + ">" + (open ? keptHtml(m) : "") + "</div>" +
+    '<div class="mi-family-featured" id="featured-' + esc(m.id) + '" role="region" aria-label="' + esc("Featured recipes for " + m.name) + '"' +
+      (previewOpen ? "" : " hidden") + ">" + (previewOpen ? featuredRecipeTable(m, modelRecipes(m.id)) : "") + "</div></li>";
 }
 /* Who keeps the figure: the directory for owner-measured rows, the named
    builder for community reports, the publisher for its own claim. */
@@ -1400,7 +1452,7 @@ function keptHtml(m) {
       ? "Practical minimum not verified yet. " + why + " The " + plural(recs, "recipe") +
         " recorded for this family stay visible in the family record; none is promoted into this strip without reported or measured evidence."
       : "No recipe on record. Nobody has submitted a runnable setup for this family, and the directory has not benched one. That is a gap in this index, not a statement about the model.") +
-      '</p><p class="kept-links"><a href="#/models/' + esc(m.id) + '">' + esc("Open the family record") + "</a>" +
+      '</p><p class="kept-links"><a href="#/models/' + esc(m.id) + '" data-model-select="' + esc(m.id) + '">' + esc("Show featured recipes") + "</a>" +
       (recs ? "" : " \u00b7 <a href=\"#/contribute\">" + esc("Contribute a recipe") + "</a>") + "</p></div></div>";
   }
   var rep = baselineSpeed(s), keeper = keeperOf(s, rep);
@@ -1429,11 +1481,11 @@ function keptHtml(m) {
     (notes.length > 2 ? '<div class="kept-note is-flag"><a href="#/recipes/' + esc(s.id) + '">' +
       esc(plural(notes.length - 2, "more caveat") + " in the recipe record") + "</a></div>" : "") +
     '<div class="kept-foot">' + esc("Decode figures are single-stream tok/s at the recipe\u2019s own recorded context; verified is the date this directory last reviewed the baseline. ") +
-    '<a href="#/models/' + esc(m.id) + '">' + esc("Open the family record") + "</a></div></div>";
+    '<a href="#/models/' + esc(m.id) + '" data-model-select="' + esc(m.id) + '">' + esc("Show featured recipes") + "</a></div></div>";
 }
 function miReading() {
   return '<div class="mi-reading"><div class="mi-reading-k">' + esc("Reading this index") + "</div><p>" +
-    esc("Release dates, parameter counts and context windows are the publisher\u2019s, at native context. Two-figure counts are total then active parameters. Inside an open family, the kept-by line is the recipe this directory curates as that family\u2019s practical minimum: who recorded it, its record, hardware class, single-stream decode reading with its condition and provenance, and the date the baseline was last reviewed. Provenance tiers are stated per figure and never blended. \u201cNone yet\u201d is a gap in this directory, not a statement that the model does not run; whether any of it runs on your machine is answered only in My Hardware.") +
+    esc("Click a model name to expand its featured recipes here; View all recipes opens the complete family list. The numbered evidence control opens that family\u2019s practical-baseline note. Release dates, parameter counts and context windows come from publishers. Evidence tiers stay separate. \u201cNone yet\u201d is a gap in this directory, not a statement that the model does not run; whether a recipe runs on your machine is answered only in My Hardware.") +
     "</p></div>";
 }
 
@@ -1458,10 +1510,11 @@ function renderModelBar() {
 function viewModelsHome() {
   setRail("");
   var list = modelList();
-  el("mast-note").innerHTML = esc("Every Qwen family with a recorded local lane, newest series first. Open a family for the recipe this directory keeps as its best record; the full recipe directory stays at #/recipes.");
+  el("mast-note").innerHTML = esc("Every Qwen family with a recorded local lane. Open a family to preview featured recipes, then view the complete recipe list.");
 
   var h = '<div class="models-home">' + miBand() + tocControls(list);
   if (!list.length) {
+    state.modelOpen = null; state.selectedModel = null;
     h += '<div class="empty"><h2>No models match</h2><p>' +
       esc("Clear the search or filters to return to all " + D.model_order.length + " models.") +
       '</p><button type="button" class="btn btn-p" id="model-clear">Clear model filters</button></div></div>';
@@ -1471,10 +1524,10 @@ function viewModelsHome() {
     return;
   }
 
-  // Default selection: keep the current one if it is still visible, otherwise the
-  // first visible model. URL ?model= is already resolved into state by route().
-  var sel = (state.selectedModel && list.some(function (m) { return m.id === state.selectedModel; }))
-    ? state.selectedModel : list[0].id;
+  // Keep the index closed by default. The selected family is the one whose
+  // featured recipe table is expanded inline.
+  if (state.modelOpen && !list.some(function (m) { return m.id === state.modelOpen; })) state.modelOpen = null;
+  var sel = state.modelOpen || null;
   state.selectedModel = sel;
 
   h += '<div class="model-master mh-split mi-full">' +
@@ -1484,7 +1537,7 @@ function viewModelsHome() {
   "</div></div>";
   el("main").innerHTML = h;
   renderModelBar();
-  announce(list.length + " of " + D.model_order.length + " models; showing " + MODELS[sel].name);
+  announce(list.length + " of " + D.model_order.length + " model families" + (sel ? "; showing featured recipes for " + MODELS[sel].name : ""));
   writeModelHash();
 }
 
@@ -1510,8 +1563,7 @@ function tocItem(m, num, on) {
   var rel = releasedWord(m.released);
   bits.push(rel ? "released " + rel : "launch date not recorded");
   var intro = introText(m.summary, 168);
-  // The href drives mobile (rows navigate to the model page) and progressive
-  // enhancement; on desktop the click handler intercepts it to select in place.
+  // Keep a direct model-route fallback; the delegated click opens the preview inline.
   return '<li><a class="toc-item' + (on ? " is-sel" : "") + '" href="#/models/' + esc(m.id) + '" data-model-select="' + esc(m.id) + '"' +
     (on ? ' data-toc-selected="true" aria-current="true"' : "") + '>' +
     '<span class="toc-n">' + esc(num) + '</span><span class="toc-sep" aria-hidden="true">/</span>' +
@@ -2256,19 +2308,30 @@ function viewRecipe(id) {
   h += '<div class="psec">' + detailBody(s, { page: true }) + '</div></div><aside class="recipe-rail" aria-label="Recipe summary"><section><h2>CONDITION SUMMARY</h2><dl><dt>Headline</dt><dd>' + esc(condition) + '</dd><dt>Memory</dt><dd>' + esc(req.memory_gb == null ? "not recorded" : gb(req.memory_gb)) + '</dd><dt>Hardware</dt><dd>' + esc(hwFirstLabel(s) || "not recorded") + '</dd></dl><p>Compatibility is checked only in My Hardware; this recipe is not a bare fits claim.</p></section><section><h2>PROVENANCE KEY</h2><ul class="pkey">' + provenance.map(function (x) { return '<li><span class="pmark" data-tier="' + x.tier + '" aria-hidden="true"></span>' + esc(x.t) + '</li>'; }).join("") + '</ul><p>Confidence dimensions remain separate; they are not a ranking.</p></section></aside></div></div>';
   el("main").innerHTML = h;
 }
-function viewModel(id) {
-  var m = MODELS[id];
-  setRail("");
-  if (!m) return notFound("No model family with the id " + id + " is in this dataset.");
-  var list = sorted(SETUPS.filter(function (s) { return s.model === id; }));
+function featuredRecipeTable(m, list) {
+  var featured = featuredRecipes(m, list);
+  var rows = featured.map(function (s) {
+    var r = repDecode(s), verify = featuredVerification(s);
+    var device = hwLabels(s).join(" · ") || "Not recorded";
+    var engine = (ENG[(s.engine || {}).id] || {}).name || (s.engine || {}).id || "Not recorded";
+    return '<tr><th scope="row"><a href="#/recipes/' + esc(s.id) + '" title="' + esc(s.title) + '">' +
+      esc(featuredRecipeLabel(s)) + '</a></th><td data-label="TOK/s">' + (r ? esc(r.value + " " + r.unit) : "Not reported") +
+      '</td><td data-label="Device">' + esc(device) + '</td><td data-label="Engine">' + esc(engine) +
+      '</td><td data-label="Context">' + esc(featuredContext(s)) +
+      '</td><td data-label="Verified"><span class="featured-verification" title="' + esc(verify[1]) + '">' + esc(verify[0]) + "</span></td></tr>";
+  }).join("");
+  return '<section class="model-featured" aria-labelledby="featured-title-' + esc(m.id) + '"><h2 id="featured-title-' + esc(m.id) + '">Featured recipes</h2>' +
+    '<div class="featured-table-scroll"><table class="featured-table"><caption>' + esc("Featured builds for " + m.name) +
+    '</caption><thead><tr><th scope="col">Recipe</th><th scope="col">TOK/s</th><th scope="col">Device</th>' +
+    '<th scope="col">Engine</th><th scope="col">Context</th><th scope="col">Verified</th></tr></thead><tbody>' + rows +
+    '</tbody></table></div><a class="btn btn-p featured-all" href="#/recipes?family=' + encodeURIComponent(m.id) + '">' +
+    esc("View all " + plural(list.length, "recipe")) + "</a></section>";
+}
+function modelDetails(m) {
   var a = m.architecture || {}, c = m.context || {};
-  el("mast-note").innerHTML = esc(m.summary ? String(m.summary).slice(0, 190) : "");
-  var h = '<div class="page wide"><p class="crumb"><a href="#/">Models</a> ' + esc("→ model family") + "</p>" +
-    "<h1>" + esc(m.name) + "</h1>";
+  var h = '<details class="model-details"><summary>Model details and limits</summary><div class="model-details-body">';
   if (m.summary) h += '<p class="lede">' + esc(m.summary) + "</p>";
-  h += '<div class="psec model-page-baseline"><h2>Practical baseline</h2>' + modelPreview(m) + '</div>';
-  h += '<div class="psec"><h2>Architecture and limits</h2><div class="kv two">' +
-    "<dt>Generation</dt><dd>" + esc(m.generation) + "</dd>" +
+  h += '<div class="kv two"><dt>Generation</dt><dd>' + esc(m.generation) + "</dd>" +
     "<dt>Architecture</dt><dd>" + esc(a.kind === "moe" ? "MoE" : a.kind || "") + (a.hybrid ? esc(" · hybrid") : "") + "</dd>" +
     "<dt>Total params</dt><dd>" + (a.params_total_b != null ? esc(a.params_total_b + "B") : na()) + "</dd>" +
     "<dt>Active params</dt><dd>" + (a.params_active_b != null ? esc(a.params_active_b + "B") : (a.kind === "dense" ? esc("all — dense") : na())) + "</dd>" +
@@ -2280,14 +2343,21 @@ function viewModel(id) {
     "<dt>Modalities</dt><dd>" + esc((m.modalities || []).join(" · ")) + "</dd>" +
     "<dt>Weight license</dt><dd>" + esc(m.license || "") + "</dd>" +
     "<dt>Released</dt><dd>" + (m.released ? esc(m.released) : na()) + "</dd>" +
-    "<dt>Official card</dt><dd><a href=\"" + esc(m.url) + '" target="_blank" rel="noopener">' + esc(m.url) + "</a></dd>" +
-    "</div></div>";
-  if ((m.known_regressions || []).length) h += '<div class="psec"><h2 style="color:var(--warn)">' + esc("▲ Known regressions") +
-    '</h2><ul class="notes warn">' + m.known_regressions.map(function (r) { return "<li>" + esc(r) + "</li>"; }).join("") + "</ul></div>";
-  if (m.sampler_guidance) h += '<div class="psec"><h2>Sampler guidance</h2><p>' + esc(m.sampler_guidance) + "</p></div>";
-  if (m.fit_note) h += '<div class="psec"><h2>Fit note</h2><p>' + esc(m.fit_note) + "</p></div>";
-  h += '<div class="psec"><h2>' + esc(plural(list.length, "recipe") + " for this family") + "</h2>" +
-    rowsHtml(list, m.name) + "</div></div>";
+    "<dt>Official card</dt><dd><a href=\"" + esc(m.url) + '" target="_blank" rel="noopener">' + esc(m.url) + "</a></dd></div>";
+  if ((m.known_regressions || []).length) h += '<section class="psec"><h3>' + esc("Known regressions") +
+    '</h3><ul class="notes warn">' + m.known_regressions.map(function (r) { return "<li>" + esc(r) + "</li>"; }).join("") + "</ul></section>";
+  if (m.sampler_guidance) h += '<section class="psec"><h3>Sampler guidance</h3><p>' + esc(m.sampler_guidance) + "</p></section>";
+  if (m.fit_note) h += '<section class="psec"><h3>Fit note</h3><p>' + esc(m.fit_note) + "</p></section>";
+  return h + "</div></details>";
+}
+function viewModel(id) {
+  var m = MODELS[id];
+  setRail("");
+  if (!m) return notFound("No model family with the id " + id + " is in this dataset.");
+  var list = modelRecipes(id);
+  el("mast-note").innerHTML = "";
+  var h = '<div class="page wide model-family-page"><p class="crumb"><a href="#/">Models</a> ' +
+    esc("→ model family") + "</p><h1>" + esc(m.name) + "</h1>" + featuredRecipeTable(m, list) + modelDetails(m) + "</div>";
   el("main").innerHTML = h;
 }
 function viewPublisher(id) {
@@ -2495,7 +2565,8 @@ function route() {
     state.modelGen = r.q.gen || "";
     state.modelArch = r.q.arch || "";
     state.modelBaseline = r.q.baseline === "selected" || r.q.baseline === "missing" ? r.q.baseline : "";
-    state.selectedModel = MODELS[r.q.model] ? r.q.model : state.selectedModel;
+    state.modelOpen = MODELS[r.q.model] ? r.q.model : null;
+    state.selectedModel = state.modelOpen;
   }
   if (state.route === "directory") {
     state.q = r.q.q || "";
@@ -2697,7 +2768,7 @@ document.addEventListener("change", function (e) {
   }
 });
 document.addEventListener("click", function (e) {
-  var t = e.target.closest ? e.target.closest("[data-hero-gen],[data-exp],[data-copy],[data-clear],[data-rail-f],[data-rail-clear],[data-jump],[data-cmp],[data-ev],[data-grp],[data-goal],[data-load],[data-model-select],[data-mode-jump],[data-mopen],[data-hwchip],[data-hwmemory],#model-clear,#clear-all,#adv-toggle,#cmp-clear,#theme,#mode-lite,#mode-pro,#hw-detect,#hw-save,#hw-clear,#hw-export,#hw-import,#mi-open-all,#mi-close-all,#mi-compare-clear,#mi-compare-go") : null;
+  var t = e.target.closest ? e.target.closest("[data-hero-gen],[data-exp],[data-copy],[data-clear],[data-rail-f],[data-rail-clear],[data-jump],[data-cmp],[data-ev],[data-grp],[data-goal],[data-load],[data-model-select],[data-mode-jump],[data-mopen],[data-hwchip],[data-hwmemory],#model-clear,#clear-all,#adv-toggle,#cmp-clear,#theme,#mode-lite,#mode-pro,#hw-detect,#hw-save,#hw-clear,#hw-export,#hw-import,#mi-compare-clear,#mi-compare-go") : null;
   if (!t) {
     hidePop();
     /* Clicking anywhere on a row header toggles it — the expander triangle is
@@ -2729,10 +2800,8 @@ document.addEventListener("click", function (e) {
   var modelSelect = t.getAttribute("data-model-select");
   if (modelSelect) {
     if (e.preventDefault) e.preventDefault();
-    // Mobile follows the entry to the model-family page; desktop/tablet selects
-    // in place and updates the sticky evidence panel + the ?model= URL.
-    if (state.mobile) { nav("#/models/" + modelSelect); return; }
-    state.selectedModel = modelSelect;
+    state.modelOpen = state.modelOpen === modelSelect ? null : modelSelect;
+    state.selectedModel = state.modelOpen;
     viewModelsHome();
     var selected = document.querySelector('[data-model-select="' + modelSelect + '"]');
     if (selected) selected.focus();
@@ -2745,16 +2814,6 @@ document.addEventListener("click", function (e) {
   var mopen = t.getAttribute("data-mopen");
   if (mopen) {
     state.mopen[mopen] = !state.mopen[mopen];
-    viewModelsHome();
-    return;
-  }
-  if (t.id === "mi-open-all") {
-    modelList().forEach(function (m) { state.mopen[m.id] = true; });
-    viewModelsHome();
-    return;
-  }
-  if (t.id === "mi-close-all") {
-    state.mopen = {};
     viewModelsHome();
     return;
   }

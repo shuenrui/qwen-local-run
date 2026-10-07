@@ -42,10 +42,11 @@
   },
   "run": {
     "repo": "https://github.com/waybarrios/vllm-mlx",
-    "command": null,
+    "command": "vllm-mlx serve mlx-community/Qwen3-30B-A3B-4bit --host 127.0.0.1 --port 8000",
     "steps": [
-      {"kind": "do", "text": "Install vllm-mlx from the repo"},
-      {"kind": "do", "text": "Serve the 4-bit MLX model"},
+      {"kind": "cmd", "text": "uv tool install 'vllm-mlx==0.4.1'"},
+      {"kind": "cmd", "text": "vllm-mlx serve mlx-community/Qwen3-30B-A3B-4bit --host 127.0.0.1 --port 8000"},
+      {"kind": "do", "text": "Apple Silicon Mac only. The first start downloads and loads the model; the cited reference server release is vllm-mlx 0.4.1."},
       {"kind": "do", "text": "Optionally set --moe-top-k and --warm-prompts for the quoted gains"}
     ]
   },

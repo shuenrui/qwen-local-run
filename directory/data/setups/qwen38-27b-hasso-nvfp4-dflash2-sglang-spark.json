@@ -45,11 +45,13 @@
   },
   "run": {
     "repo": "https://github.com/hasso5703/dgx-spark-qwen38",
-    "command": null,
+    "command": "./install.sh",
     "steps": [
-      {"kind": "do", "text": "Follow the repo's one-command boot-persistent SGLang install"},
-      {"kind": "do", "text": "Select the 27B NVFP4 + DFlash2 target"},
-      {"kind": "do", "text": "./bench.sh to reproduce the decode numbers"}
+      {"kind": "cmd", "text": "git clone https://github.com/hasso5703/dgx-spark-qwen38.git"},
+      {"kind": "cmd", "text": "cd dgx-spark-qwen38"},
+      {"kind": "do", "text": "DGX Spark / GB10 only. The installer downloads pinned container images and checkpoints and creates a boot-persistent systemd service. Review the upstream install options before running it."},
+      {"kind": "cmd", "text": "./install.sh"},
+      {"kind": "cmd", "text": "./bench.sh"}
     ]
   },
   "measurements": [

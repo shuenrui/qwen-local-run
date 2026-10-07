@@ -42,10 +42,13 @@
   },
   "run": {
     "repo": "https://github.com/r0b0tlab/qwen38-27b-nvfp4-sm121-sglang",
-    "command": null,
+    "command": "bash scripts/click_run_dflash2.sh",
     "steps": [
-      {"kind": "do", "text": "./click_run_dflash2.sh (or dspark / eagle variants)"},
-      {"kind": "do", "text": "Scripts download and validate checkpoints and drafts automatically"}
+      {"kind": "cmd", "text": "git clone https://github.com/r0b0tlab/qwen38-27b-nvfp4-sm121-sglang"},
+      {"kind": "do", "text": "Change into the cloned qwen38-27b-nvfp4-sm121-sglang directory. Requires a GB10-class GPU, Docker with NVIDIA Container Toolkit, and about 25 GB free disk plus Docker image space."},
+      {"kind": "cmd", "text": "pip install -U \"huggingface_hub[cli]\""},
+      {"kind": "cmd", "text": "bash scripts/click_run_dflash2.sh"},
+      {"kind": "do", "text": "The script downloads and validates the checkpoints and draft, builds the overlay image if needed, starts the server, and runs a semantic health check."}
     ]
   },
   "measurements": [

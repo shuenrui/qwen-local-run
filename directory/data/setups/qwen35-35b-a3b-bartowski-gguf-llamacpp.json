@@ -44,10 +44,11 @@
   },
   "run": {
     "repo": "https://huggingface.co/bartowski/Qwen_Qwen3.5-35B-A3B-GGUF",
-    "command": null,
+    "command": "llama-server -hf bartowski/Qwen_Qwen3.5-35B-A3B-GGUF:Q4_K_M",
     "steps": [
-      {"kind": "do", "text": "Download bartowski/Qwen_Qwen3.5-35B-A3B-GGUF"},
-      {"kind": "do", "text": "llama.cpp CUDA or Metal; Q4_K_M fits 24 GB with KV room"}
+      {"kind": "do", "text": "Install llama.cpp for your operating system using the model card's prebuilt-binary or source-build instructions."},
+      {"kind": "cmd", "text": "llama-server -hf bartowski/Qwen_Qwen3.5-35B-A3B-GGUF:Q4_K_M"},
+      {"kind": "do", "text": "The Q4_K_M checkpoint is the recorded 24 GB consumer-GPU lane; Apple Silicon can use the Metal build."}
     ]
   },
   "measurements": [],
