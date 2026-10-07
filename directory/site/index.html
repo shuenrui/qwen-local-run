@@ -943,10 +943,11 @@ tr.det>td{padding:0;border-bottom:1px solid var(--rule-2)}
    the bigger the type sets, the lighter it sets. */
 .page{padding:0 0 40px;max-width:none}
 .page.wide{max-width:none}
+.recipe-page{--recipe-main-track:minmax(0,68ch);--recipe-rail-track:minmax(0,300px);--recipe-column-gap:48px}
 .page>.page-head{border-top:2px solid var(--ink);padding:22px 0 0}
 .recipe-page>.page-head{padding-bottom:0}
-.recipe-heading{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(320px,.8fr);
-  gap:clamp(22px,3.5vw,48px);align-items:center;margin-top:10px}
+.recipe-heading{display:grid;grid-template-columns:var(--recipe-main-track) var(--recipe-rail-track);
+  gap:var(--recipe-column-gap);align-items:center;margin-top:10px}
 .recipe-heading-copy{min-width:0}
 .recipe-heading-copy>h1{margin:0;font:400 clamp(34px,5vw,52px)/1.04 var(--font-display);
   letter-spacing:-.015em;max-width:24ch}
@@ -977,7 +978,8 @@ tr.det>td{padding:0;border-bottom:1px solid var(--rule-2)}
 
 /* Recipe detail: the main column reads like a dossier; the rail keeps the
    measurement conditions and provenance visible while the title is in view. */
-.recipe-layout{display:grid;grid-template-columns:minmax(0,68ch) minmax(0,300px);gap:48px;align-items:start;margin-top:28px}
+.recipe-layout{display:grid;grid-template-columns:var(--recipe-main-track) var(--recipe-rail-track);
+  gap:var(--recipe-column-gap);align-items:start;margin-top:28px}
 .recipe-main{min-width:0}
 .recipe-rail{position:sticky;top:112px;border-top:2px solid var(--ink);padding-top:14px}
 .recipe-rail section+section{border-top:1px solid var(--rule-2);margin-top:24px;padding-top:15px}
@@ -1204,7 +1206,11 @@ tr.det>td{padding:0;border-bottom:1px solid var(--rule-2)}
   .model-preview{position:static;grid-row:1;max-height:none;margin-top:12px}
   .model-index{grid-row:2}
   .model-list-head,.model-row{grid-template-columns:minmax(190px,1.2fr) minmax(200px,1fr) 126px 30px}
-  .recipe-heading{grid-template-columns:minmax(0,1fr);gap:16px;align-items:start}
+}
+@media (max-width:1079px){
+  .recipe-heading,.recipe-layout{grid-template-columns:minmax(0,1fr);gap:18px}
+  .recipe-heading{align-items:start}
+  .recipe-layout{margin-top:18px}
   .collation{max-width:none}
 }
 @media (max-width:719px){
@@ -2205,10 +2211,9 @@ function engineCell(s) {
 }
 
 function rowTr(s) {
-  var v = s.variation || {}, open = !!state.expanded[s.id], picked = state.compare.indexOf(s.id) >= 0;
+  var v = s.variation || {}, picked = state.compare.indexOf(s.id) >= 0;
   var cls = [];
   if (picked) cls.push("sel-on");
-  if (open) cls.push("open");
   if (failures(s).length) cls.push("fail");
   var f = freshness(s);
   var h = '<tr class="' + cls.join(" ") + '" data-row="' + esc(s.id) + '">' +
@@ -2224,17 +2229,12 @@ function rowTr(s) {
     '<td class="c-ev">' + evStrip(s) + "</td>" +
     '<td class="c-upd"><div class="l1" style="font-weight:400;font-size:13px">' + esc(String(s.updated || "").slice(0, 7)) + "</div>" +
       '<div class="l2">' + esc(f.word) + "</div></td>" +
-    '<td class="c-exp"><button type="button" class="exp-btn" data-exp="' + esc(s.id) + '" aria-expanded="' + open +
-      '" aria-controls="d-' + esc(s.id) + '" aria-label="' + esc((open ? "Collapse " : "Expand ") + s.title) + '">' +
-      esc(open ? "▾" : "▸") + "</button></td></tr>";
-  if (open) {
-    h += '<tr class="det" id="d-' + esc(s.id) + '"><td colspan="10"><div class="det-in">' + detailBody(s) + "</div></td></tr>";
-  }
+    '<td class="c-exp"><a class="exp-btn" href="#/recipes/' + esc(s.id) + '" aria-label="' + esc("Open full recipe: " + s.title) + '">→</a></td></tr>';
   return h;
 }
 
 function rowLi(s) {
-  var v = s.variation || {}, e = s.engine || {}, open = !!state.expanded[s.id], picked = state.compare.indexOf(s.id) >= 0;
+  var v = s.variation || {}, e = s.engine || {}, picked = state.compare.indexOf(s.id) >= 0;
   var cls = [];
   if (picked) cls.push("sel-on");
   if (failures(s).length) cls.push("fail");
@@ -2252,9 +2252,7 @@ function rowLi(s) {
     '<div class="mrow-dec">' + decodeCell(s) + "</div>" +
     '<div class="mrow-act"><span class="mark m-none">' + esc(READY_GLYPH[k] + " " + READY_WORD[k]) + "</span>" +
     evStrip(s) +
-    '<button type="button" class="btn" data-exp="' + esc(s.id) + '" aria-expanded="' + open +
-      '" aria-controls="d-' + esc(s.id) + '">' + esc(open ? "▾ less" : "▸ details") + "</button></div>";
-  if (open) h += '<div class="det-in" id="d-' + esc(s.id) + '">' + detailBody(s) + "</div>";
+    '<a class="btn" href="#/recipes/' + esc(s.id) + '">' + esc("Open full recipe →") + "</a></div>";
   return h + "</div></div></li>";
 }
 
@@ -4117,15 +4115,12 @@ document.addEventListener("click", function (e) {
   var t = e.target.closest ? e.target.closest("[data-hero-gen],[data-exp],[data-copy],[data-clear],[data-rail-f],[data-rail-clear],[data-jump],[data-cmp],[data-ev],[data-grp],[data-goal],[data-load],[data-model-select],[data-mode-jump],[data-mopen],[data-hwchip],[data-hwmemory],#model-clear,#clear-all,#adv-toggle,#cmp-clear,#theme,#mode-lite,#mode-pro,#hw-detect,#hw-save,#hw-clear,#hw-export,#hw-import,#mi-compare-clear,#mi-compare-go") : null;
   if (!t) {
     hidePop();
-    /* Clicking anywhere on a row header toggles it — the expander triangle is
-       the keyboard affordance, but pointer users expect the whole row to be
-       the target. Interactive children (compare checkbox, buttons, links,
-       evidence popovers) and the open detail panel are excluded. */
+    /* Clicking the non-interactive part of a recipe row opens its full page.
+       Compare controls, links and evidence popovers keep their own actions. */
     var rowEl = e.target.closest ? e.target.closest("[data-row]") : null;
     if (rowEl && !e.target.closest("input,button,a,select,textarea,label,.det-in")) {
       var rid = rowEl.getAttribute("data-row");
-      if (state.expanded[rid]) delete state.expanded[rid]; else state.expanded[rid] = 1;
-      rerenderRow(rid);
+      if (rid) location.hash = "#/recipes/" + encodeURIComponent(rid);
     }
     return;
   }

@@ -926,10 +926,11 @@ tr.det>td{padding:0;border-bottom:1px solid var(--rule-2)}
    the bigger the type sets, the lighter it sets. */
 .page{padding:0 0 40px;max-width:none}
 .page.wide{max-width:none}
+.recipe-page{--recipe-main-track:minmax(0,68ch);--recipe-rail-track:minmax(0,300px);--recipe-column-gap:48px}
 .page>.page-head{border-top:2px solid var(--ink);padding:22px 0 0}
 .recipe-page>.page-head{padding-bottom:0}
-.recipe-heading{display:grid;grid-template-columns:minmax(0,1.45fr) minmax(320px,.8fr);
-  gap:clamp(22px,3.5vw,48px);align-items:center;margin-top:10px}
+.recipe-heading{display:grid;grid-template-columns:var(--recipe-main-track) var(--recipe-rail-track);
+  gap:var(--recipe-column-gap);align-items:center;margin-top:10px}
 .recipe-heading-copy{min-width:0}
 .recipe-heading-copy>h1{margin:0;font:400 clamp(34px,5vw,52px)/1.04 var(--font-display);
   letter-spacing:-.015em;max-width:24ch}
@@ -960,7 +961,8 @@ tr.det>td{padding:0;border-bottom:1px solid var(--rule-2)}
 
 /* Recipe detail: the main column reads like a dossier; the rail keeps the
    measurement conditions and provenance visible while the title is in view. */
-.recipe-layout{display:grid;grid-template-columns:minmax(0,68ch) minmax(0,300px);gap:48px;align-items:start;margin-top:28px}
+.recipe-layout{display:grid;grid-template-columns:var(--recipe-main-track) var(--recipe-rail-track);
+  gap:var(--recipe-column-gap);align-items:start;margin-top:28px}
 .recipe-main{min-width:0}
 .recipe-rail{position:sticky;top:112px;border-top:2px solid var(--ink);padding-top:14px}
 .recipe-rail section+section{border-top:1px solid var(--rule-2);margin-top:24px;padding-top:15px}
@@ -1187,7 +1189,11 @@ tr.det>td{padding:0;border-bottom:1px solid var(--rule-2)}
   .model-preview{position:static;grid-row:1;max-height:none;margin-top:12px}
   .model-index{grid-row:2}
   .model-list-head,.model-row{grid-template-columns:minmax(190px,1.2fr) minmax(200px,1fr) 126px 30px}
-  .recipe-heading{grid-template-columns:minmax(0,1fr);gap:16px;align-items:start}
+}
+@media (max-width:1079px){
+  .recipe-heading,.recipe-layout{grid-template-columns:minmax(0,1fr);gap:18px}
+  .recipe-heading{align-items:start}
+  .recipe-layout{margin-top:18px}
   .collation{max-width:none}
 }
 @media (max-width:719px){

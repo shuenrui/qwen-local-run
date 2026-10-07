@@ -877,10 +877,9 @@ function engineCell(s) {
 }
 
 function rowTr(s) {
-  var v = s.variation || {}, open = !!state.expanded[s.id], picked = state.compare.indexOf(s.id) >= 0;
+  var v = s.variation || {}, picked = state.compare.indexOf(s.id) >= 0;
   var cls = [];
   if (picked) cls.push("sel-on");
-  if (open) cls.push("open");
   if (failures(s).length) cls.push("fail");
   var f = freshness(s);
   var h = '<tr class="' + cls.join(" ") + '" data-row="' + esc(s.id) + '">' +
@@ -896,17 +895,12 @@ function rowTr(s) {
     '<td class="c-ev">' + evStrip(s) + "</td>" +
     '<td class="c-upd"><div class="l1" style="font-weight:400;font-size:13px">' + esc(String(s.updated || "").slice(0, 7)) + "</div>" +
       '<div class="l2">' + esc(f.word) + "</div></td>" +
-    '<td class="c-exp"><button type="button" class="exp-btn" data-exp="' + esc(s.id) + '" aria-expanded="' + open +
-      '" aria-controls="d-' + esc(s.id) + '" aria-label="' + esc((open ? "Collapse " : "Expand ") + s.title) + '">' +
-      esc(open ? "▾" : "▸") + "</button></td></tr>";
-  if (open) {
-    h += '<tr class="det" id="d-' + esc(s.id) + '"><td colspan="10"><div class="det-in">' + detailBody(s) + "</div></td></tr>";
-  }
+    '<td class="c-exp"><a class="exp-btn" href="#/recipes/' + esc(s.id) + '" aria-label="' + esc("Open full recipe: " + s.title) + '">→</a></td></tr>';
   return h;
 }
 
 function rowLi(s) {
-  var v = s.variation || {}, e = s.engine || {}, open = !!state.expanded[s.id], picked = state.compare.indexOf(s.id) >= 0;
+  var v = s.variation || {}, e = s.engine || {}, picked = state.compare.indexOf(s.id) >= 0;
   var cls = [];
   if (picked) cls.push("sel-on");
   if (failures(s).length) cls.push("fail");
@@ -924,9 +918,7 @@ function rowLi(s) {
     '<div class="mrow-dec">' + decodeCell(s) + "</div>" +
     '<div class="mrow-act"><span class="mark m-none">' + esc(READY_GLYPH[k] + " " + READY_WORD[k]) + "</span>" +
     evStrip(s) +
-    '<button type="button" class="btn" data-exp="' + esc(s.id) + '" aria-expanded="' + open +
-      '" aria-controls="d-' + esc(s.id) + '">' + esc(open ? "▾ less" : "▸ details") + "</button></div>";
-  if (open) h += '<div class="det-in" id="d-' + esc(s.id) + '">' + detailBody(s) + "</div>";
+    '<a class="btn" href="#/recipes/' + esc(s.id) + '">' + esc("Open full recipe →") + "</a></div>";
   return h + "</div></div></li>";
 }
 
@@ -2789,15 +2781,12 @@ document.addEventListener("click", function (e) {
   var t = e.target.closest ? e.target.closest("[data-hero-gen],[data-exp],[data-copy],[data-clear],[data-rail-f],[data-rail-clear],[data-jump],[data-cmp],[data-ev],[data-grp],[data-goal],[data-load],[data-model-select],[data-mode-jump],[data-mopen],[data-hwchip],[data-hwmemory],#model-clear,#clear-all,#adv-toggle,#cmp-clear,#theme,#mode-lite,#mode-pro,#hw-detect,#hw-save,#hw-clear,#hw-export,#hw-import,#mi-compare-clear,#mi-compare-go") : null;
   if (!t) {
     hidePop();
-    /* Clicking anywhere on a row header toggles it — the expander triangle is
-       the keyboard affordance, but pointer users expect the whole row to be
-       the target. Interactive children (compare checkbox, buttons, links,
-       evidence popovers) and the open detail panel are excluded. */
+    /* Clicking the non-interactive part of a recipe row opens its full page.
+       Compare controls, links and evidence popovers keep their own actions. */
     var rowEl = e.target.closest ? e.target.closest("[data-row]") : null;
     if (rowEl && !e.target.closest("input,button,a,select,textarea,label,.det-in")) {
       var rid = rowEl.getAttribute("data-row");
-      if (state.expanded[rid]) delete state.expanded[rid]; else state.expanded[rid] = 1;
-      rerenderRow(rid);
+      if (rid) location.hash = "#/recipes/" + encodeURIComponent(rid);
     }
     return;
   }
